@@ -4,16 +4,41 @@
 % This is a simple template for a XeLaTeX document using the "article" class,
 % with the fontspec package to easily select fonts.
 
-\documentclass[11pt]{article} % use larger type; default would be 10pt
+ % use larger type; default would be 10pt
+\documentclass[11pt]{article}
+\usepackage[czech]{babel}
 
-% \usepackage{fontspec} % Font selection for XeLaTeX; see fontspec.pdf for documentation
-%\defaultfontfeatures{Mapping=tex-text} % to support TeX conventions like ``---''
-\usepackage{xunicode} % Unicode support for LaTeX character names (accents, European chars, etc)
+% Unicode support for LaTeX character names (accents, European chars, etc)
+\usepackage{xunicode}
 \usepackage{xltxtra} % Extra customizations for XeLaTeX
 
-\setmainfont{Nimbus Roman No9 L} % set the main body font (\textrm), assumes Charis SIL is installed
+%\usepackage[utf8x]{inputenc}
+
+% syntax highlight
+\usepackage{listings}
+\usepackage{xcolor}
+
+% colors
+\definecolor{javared}{rgb}{0.0,0.4,0.8} % for strings
+\definecolor{javagreen}{rgb}{0.55,0.55,0.55} % comments
+\definecolor{javapurple}{rgb}{0.8,0.4,0,0} % keywords
+\definecolor{javadocblue}{rgb}{0.45,0.45,0.45} % javadoc
+
+
+% define backgroundcolor
+\definecolor{bggray}{rgb}{0.97, 0.97, 0.97}
+
+
+% lsset
+\input{listings.tex}
+
+
+% \usepackage{fontspec} % Font selection for XeLaTeX; see fontspec.pdf for documentation
+% \defaultfontfeatures{Mapping=tex-text} % to support TeX conventions like ``---''
+
+\setmainfont{Liberation Serif} % set the main body font (\textrm), assumes Charis SIL is installed
 %\setsansfont{Deja Vu Sans}
-\setmonofont{Monaco}
+\setmonofont{Liberation Mono}
 
 % other LaTeX packages.....
 \usepackage{geometry} % See geometry.pdf to learn the layout options. There are lots.
@@ -37,22 +62,49 @@
 
 Ctěný čtenáři,
 
-tato kniha by Vás měla povzbudit v nesnadné úloze osvojení si svého prvního programovacího jazyka. Není-li tento jazyk první prosím Vás o shovívavost v podrobnostech do kterých v úvodu této knihy zabíhám. Šíře znalostí, které se mouhou vyskytovat u potenciálních čtenářů tohoto skromného průvodce je pro autora velikou neznámou.
+tato kniha by Vás měla povzbudit v nesnadné úloze osvojení si svého prvního programovacího jazyka. Není-li tento jazyk první, prosím Vás o shovívavost v podrobnostech do kterých v úvodu této knihy zabíhám. Šíře znalostí, které se mouhou vyskytovat u potenciálních čtenářů tohoto skromného průvodce je pro autora první velikou neznámou.
 
-V obou případech Vás tedy prosím o shovívavost ve způsobu popisu programovacího jazyka a prostředí Processing. Sám jako samouk též nemohu zaručit absolutní, stoprocentní a všeobecnou platnost všech tvrzení. Tímto Vás tedy žádám o jakékoli věcné podněty, doplnění či reformulace jednotlivých trzení.
+V obou případech Vás tedy prosím o shovívavost ve způsobu popisu programovacího jazyka a prostředí Processing. Sám jakožto samouk též nemohu zaručit absolutní, stoprocentní a všeobecnou platnost všech tvrzení. Tímto Vás tedy žádám o jakékoli věcné podněty, pro pozdější doplnění či reformulace jednotlivých trzení.
 
 Má snaha provést začínající i středně pokročilé uživatele jazykem bude vždy nezbytně nedostatečná, berte ji prosím spíše než-li za všeobjímající text, za průvodce nesnadnými začátky.
 
-Čtete-li knihu z jiných důvodů než učení se tajům programovacích jazyků, pokusím se text knihy proložit sčetnými poznatky nabytými moji několikaletou zkušeností sdílení života se stroji.
+Čtete-li knihu z jiných důvodů, než z důvodu učení se tajům programovacích jazyků, pokusím se text knihy proložit sčetnými poznatky nabytými moji několikaletou zkušeností sdílení života se stroji.
 
-Dostala-li se vám tato kniha do rukou prostou náhodou, to je mi líto, jste zřejmně systémovým omylem a věru netuším, co v ni dále najdete, a proto bych i Vás rád pobídl alespon k začtení se do světa odtřženého od všednosti, do světa skriptů a kódů. 
+Dostala-li se vám tato kniha do rukou jinou cestou, nebo dokonce prostou náhodou, to je mi líto, jedná se zřejmně o systémový omyl, tedy věru netuším, co v ni dále najdete, a proto bych i Vás rád pobídl alespoň k začtení se do světa odtřženého od všednosti, do světa skriptů a kódů. 
+
+
+\subsection{Jazyk}
+
+
+\begin{enumerate}
+\item
+K tomu abychom sdělili informaci, používáme jazyk.
+
+
+\item
+Jazyk musíme umět přisbůsobit tak, aby informoval, vtělil jistou skutečnost - myšlenku sdělovanému subjeku.
+
+\item
+Jazyk má nutně několik úrovní, zdaleka ne všechny jsme schopni reflektovat.
+
+\item
+Úrovně, které jsme schopni reflektovat, také jen částečně umíme logicky popsat.
+
+\item
+Logicky popsaným jazykem a vnitřně uceleným systémem jsme proto schopni vysvětlit pouhý fragment skutečnosti.
+
+\item
+V případě programovacího jazyka je nutné si uvědomit, že informujeme jen zanedbatelně velikou skutečnost fyzicky nepřesahující dimenze součástí stroje\footnote{nejvíce pak procesoru paměti, skutečnost na pevném disku a grafických procesorů}, ale tím zpětně i sebe sama a druhé lidi\footnote{potažmo jakkoli širší skutečnost (zvířata, rostliny, cokoli o čem ani dále netušíme)}, symbolicky a nepřímo popisujeme zkratku skutečnosti nepoměřitelně daleko větší.
+\end{enumerate}
 
 
 \subsection{Jednoduchost jazyka}
 
-Snaha po spřístupnění programování jako takového širší veřejnosti dala vzniknout rodině jazyků, které jsou patřičně zjednodušeny tak aby je mohli obsluhovat i neodborníci. Výchozím bodem pro zjednodušení programování je odpověd na situaci, kdy programovací jazyky vytvářeli lidé se zvláštním nadáním pro ryze technické uvažování. Technické uvažování je speciální schopnost, pro kterou nemá každý člověk správné predispozice. Současně programování v současnosti znamená určitý stupen širší svobody při komunikaci se strojem. K míře svobody, která má své silné kritiky\footnote{včetně mne samotného}, se nyní nechci vyjadřovat, ale zjednodušeně z pouhého uživatele, který používá daný nástroj, schopnost programování z tohoto uživatele činí potencionálního strůjce vlastních nástrojů.
+Snaha po spřístupnění programování jako takového širší veřejnosti dala již na konci dvacátého století vzniknout rodině jazyků, které jsou patřičně zjednodušeny tak, aby je mohli obsluhovat i neodborníci.
 
-Hovořím-li o stroji mám dnes na mysli počítač. Termín stroj používám záměrně pro zdůraznění jisté formy strojového přemýšlení v historickém kontextu.
+Výchozím bodem pro zjednodušení programování je odpověd na situaci, kdy programovací jazyky vytvářeli především lidé se zvláštním nadáním pro ryze technické uvažování. Technické uvažování je speciální schopnost, pro kterou nemá každý člověk správné predispozice. Současně, programování v dnes znamená určitý stupeň širší svobody při komunikaci se strojem. K míře svobody, která má své silné kritiky\footnote{včetně mne samotného}, se nyní nechci vyjadřovat, ale zjednodušeně z pohledu pouhého uživatele který používá daný nástroj, schopnost programovat činí z uživatele již potencionálního strůjce vlastních nástrojů.
+
+Hovořím-li o stroji, mám dnes na mysli spotřební počítač. Termín {\em stroj} používám záměrně pro zdůraznění jisté formy strojového přemýšlení v historickém kontextu.\footnote{V současné době se setkáváme nejčastěji s počítači založenými na mikroprocessorech výrobců Intel, AMD a v poslední době rostoucí firmou zabývající se velmi drobnými processory Atmel. Architektury procesorů dnes nejšastěji rozdělujeme na 32 a 64-bitové processory. Nárokům trhu na větší výkon stroje se dnes vychází vstříc množením jader v jednom stroji.}
 
 Nástroje jsou pak programy zkonstrouvané pro jistou činnost. Obvykle je nástroj vyvíjen za jedním účelem, který plní uživatelsky co nejpřivětivější cestou. Tato cesta je pro uživatele snadno schůdná a nabízí mu standartní škálu dovedností nástroje. Aniž bychom si toto přiliž uvědomovali, současná vizuální kultura je ovlivněna těmito nástroji daleko více než je na první pohled patrné. A technické možnosti jsou současným tržním hladem pro inovaci konfiskovány a proměnovány ve zboží. V této situaci je důležité znát nástroje i jejich vznik pro reflexi nebo kritiku v širších souvislostech.
 
@@ -97,7 +149,7 @@ Jazyk, který je nutně limitovaný svojí vnitřní dokonalostí (dokonavostí?
 
 \subsection{Otevřenost softwaru}
 
-Jazyk nazvaný Processing je jedním z jazyků, který byl vytvořen v diskurzu zjednodnušování programování. Jako každý jiný programovací jazyk je i Processing navržen pro jisté účely. V případě tohoto programovacího jazyka se nejvíce jedná o důraz na rychý vývoj a snadné nakládání s obrazem i prostorem. Z více technického pohledu pak processing vyniká otevřeností zdrojového kódu a důraz na multiplatformnost.
+Jazyk nazvaný Processing je jedním z jazyků, který byl vytvořen v diskurzu zjednodnušování programování. Jako každý jiný programovací jazyk je i Processing navržen pro jisté účely. V případě tohoto programovacího jazyka se nejvíce jedná o důraz na rychý vývoj a zjednodušené nakládání s obrazem i prostorem. Z více technického pohledu pak processing vyniká otevřeností zdrojového kódu a důraz na multiplatformnost.
 
 Jazyk i programovací prostředí Processing je v současnosti tzv. otevřený software, což znamená, že i samotný zdrojový kód je volně k dispozici a šiřitelný pod MIT licencí [dpolnit licence GPL 3.0 .. atd]. Z pohledu uživatele je velmi příjemné, že samotný software je k dostání zdarma na stránkách projektu. Za jeho užívání není nutné platit žádné poplatky, a to i v přpadě komerčních užití.
 
@@ -249,6 +301,23 @@ Podpora načítání XML tabulek.
 
 Neříkají-li vám tyto zkratky nic, nevadí, jedná se většinou o datové standarty a typy zařízení se kterými můžete s pomocí knihoven pracovat. Každá z těchto knihoven má svoji dobrou dokumentaci na stránkách projektu, nebo přímo v tzv. {\em Examples}, příkladech pro každou knihovnu, lze tímto způsobem zobrazit základní nápovědu. 
 
+
+
+\newpage
+\section{Základní pravidla a zvyklosti, Hello world!}
+
+Jako každý jazyk i Proccessing má svá pravidla. Můžeme je přirovnat ke gramatice, v počítačových programech se gramatika nazývá {\em syntax}.
+
+Pro ukázku srovnání takových pravidel se často používá ten nejzákladnější program, tzv. {/em Hello world!}\footnote{překlad: Ahoj světe!}.
+
+V jazyku Processing je takový program možné napsat pouze na jeden řádek:
+
+\begin{lstlisting}
+println("Hello world!");
+\end{lstlisting}
+
+
+
 \newpage
 \section{Orientace v prostoru}
 
@@ -264,15 +333,15 @@ Plochu je možné představit si jako prázdný prostor, na kterém je možno zo
 
 Na první pohled by se mohlo zdát, že například při zobrazení obdélníku, příkaz:
 
-\begin{verbatim}
+\begin{lstlisting}
 rect(x,y,šířka,výska);
-\end{verbatim}
+\end{lstlisting}
 
 jehož výsledkem je kresba pouhého obdélníku je zbytečně komplikovaný, oproti jiným zobrazovacím metodám. Důležité je si zde uvědomit koncepci processingu, který tímto zobrazením primitivních objektů sestavuje celý obraz. To co se zpočátku může zdát jako nadbytečná práce, tj. psaním koordinátů každeho ze zobrazovaných objektů se posléze ukáže jako sofistikovaný a velmi ulehčující způsob přemýšlení o obraze. Veškeré parametry oddělené čárkou v kulatých závorkách příkazu {\em rect} náleží samotným vstupním hodnotám. Příkaz {\em rect} očekává čtyři parametry. Parametry mohou být celá čísla nebo čísla s desetinnou čárkou. Pro názornost, zadáme-li do parametrů ''natvrdo'' hodnoty:
 
-\begin{verbatim}
+\begin{lstlisting}
 rect(8,6,7,5);
-\end{verbatim}
+\end{lstlisting}
 
 Výsledné zobrazení na naší pomyslné ploše bude následující:
 
@@ -305,19 +374,19 @@ Processing pořebuje nejdříve vědět zda-li nádoba obsahuje text nebo čísl
 
 Datatypů je jen několik, dají se vcelku snadno zapamatovat:
 
-\begin{verbatim}
+\begin{lstlisting}
 int mojeCeleCislo = 1;
 
 float mojeCisloSDesetinnouCarkou = 1.33;
 
 boolean mojePravdaCiNepravda = true;
 
-String mujSlovniRetezec = "ahoj světe!";
+String mujSlovniRetezec = "Ahoj svete!";
 
 char mujJednotlivyZnak = 'K';
 
 color mojeBarva = color(255,127,1);
-\end{verbatim}
+\end{lstlisting}
 
 Takovému zápisu bude již Processing rozumět. Vepsáním těchto řádků do processingového editoru již dochází k alokaci vašich informací ve správných datatypech v paměti. Vysvětleme si nyní několik nejasností.
 
@@ -338,25 +407,25 @@ Nejjednodušší výstup z programu je tisk do tzv. konzole. Konzoli jsme si ji�
 Tiskem do konzole si nyní můžeme například zkontrolovat obsah našich proměnných. To můžeme provést následujícími dvěma způsoby:
 
 
-\begin{verbatim}
+\begin{lstlisting}
 print(mojeCeleCislo);
 
 println(mujSlovniRetezec);
-\end{verbatim}
+\end{lstlisting}
 
 Oba příkazy tisknou obsah našich proměnných. Jediný rozdíl mezi příkazy je ten, že druhý příkaz končí znakem:
  
-\begin{verbatim}
+\begin{lstlisting}
 "\n"
-\end{verbatim}
+\end{lstlisting}
 
 jedná se o tzv. {\em newline character}, přidáním speciálního charakteru příkaz tiskne pokaždé na nový řádek. Není nutné si pamatovat tento speciální znak, postačí když si zapamatujeme přikaz {\em println( cokoli );}
 
 Spustíme-li program nyní, v konzoli se nám ukáže výstup z našeho programu:
 
-\begin{verbatim}
+\begin{lstlisting}
 1ahoj světe!
-\end{verbatim}
+\end{lstlisting}
 
 Zde je názorně vidět, že tisk pomocí pouhého příkazu {\em print} nepoložil další příkaz na nový řádek, a tedy vytiskl {\em 1ahoj} dohromady.
 
@@ -384,7 +453,7 @@ Nyní si ukážeme co s již definovanými proměnnými můžeme dělat. Jenotli
 
 První proměnná {\em mojeCeleCislo}, které byla přiřazena hodnota {\em 1}, je takzvaný {\em Integer}, tedy celé číslo. Tento typ může mít hodnotu\footnote{na 32-bitových strojích} v rozsahu {\em -65575 až 65576} [upřesnit] . V rozmezí těchto hodnot můžeme provádět různé matematické operace mezi čísly:
 
-\begin{verbatim}
+\begin{lstlisting}
 int prvniCislo = 1;
 int druheCislo = 5;
 int tretiCislo;
@@ -392,18 +461,18 @@ int tretiCislo;
 tretiCislo = prvniCislo + druheCislo;
 
 println(tretiCislo);
-\end{verbatim}
+\end{lstlisting}
 
 Tímto jsme provedli základní matematickou operaci, sečetli jsme dvě čísla a následně jsme výsledek vytiskli do konzole.
 
 Další možné operace jsou:
 
-\begin{verbatim}
+\begin{lstlisting}
 // aritmetické operace
-a + b
-a - b
-a * b
-a / b
+a + b;
+a - b;
+a * b;
+a / b;
 
 // přírůstky
 a += b;
@@ -414,8 +483,7 @@ a ++;
 a --;
 
 // modulo (přebytek po dělení)
-a % b
-
+a % b;
 
 // a konečně logické porovnávání
 // větší, menší
@@ -434,13 +502,13 @@ a != b;
 // ale odpověd ANO nebo NE, TRUE nebo FALSE
 // pravda nebo nepravda, datatyp boolean
 
-\end{verbatim}
+\end{lstlisting}
 
 Celá čísla neboli {\em int} nebudou mít problém se sčítáním, odčítáním a násobením celých čísel. V případě dělení může nastat logicky problém, výsledek nemůsí být celé číslo. Budeme-li chtít výsledek takové operace uchovat v paměti, tj. zapsat pod naši proměnnou, musíme použít datatyp operující s desetinou čárkou, nebo výsledek zaokrouhlit na celé číslo.
 
 například:
 
-\begin{verbatim}
+\begin{lstlisting}
 int a = 10;
 int b = 3;
 float c;
@@ -448,13 +516,13 @@ float c;
 c = a / b;
 
 println(c); 
-\end{verbatim}
+\end{lstlisting}
 
 Vytiskne {\em 3.0}. Pozor, to není správný výsledek! Kde se stala chyba? Processing operující s celými čisly, speciálně při dělení předpokldádá výsledek opět za celé číslo. Tedy ono zaokrouhlení provádí již sám. Zde si dovolím nesouhlasit s tvůrci, kteří se tímto snaží začátečníky vyvarovat chyb. Stačí si nyní pamatovat, že pro přesné dělení čísel bychom měli dělit vždy číslem s desetinnou čárkou, tj. s datatypem {\em float}.
 
 Tedy správně by dělení mělo proběhnout takto:
 
-\begin{verbatim}
+\begin{lstlisting}
 float a = 10;
 float b = 3;
 float c;
@@ -462,13 +530,13 @@ float c;
 c = a / b;
 
 println(c); 
-\end{verbatim}
+\end{lstlisting}
 
 Tisk do konzole již ukazuje správnou hodnotu {\em 3.333333} .
 
 Pro další operace s čísly bych pro přesnost výsledků důrazně doporučil používat jen float. Další operace mohou vypadat například takto:
 
-\begin{verbatim}
+\begin{lstlisting}
 float a = 3;
 float b;
 
@@ -489,7 +557,7 @@ b = pow(a,-3);
 println(b);
 
 // atp.
-\end{verbatim}
+\end{lstlisting}
 
 \item{{\em char a String}, znak a řetězec znaků, text}
 
@@ -497,7 +565,7 @@ S textem nelze operovat stejně jako s čísly, je logické, že nemůžeme nás
 
 Pro označení hodnoty řetězce se používají dvojité uvozovky. S textem se pracuje následovně:
 
-\begin{verbatim}
+\begin{lstlisting}
 String prvniSlovo = "Ahoj";
 String druheSlovo = "světe!";
 String slovniSpojeni;
@@ -505,17 +573,17 @@ String slovniSpojeni;
 slovniSpojeni = prvniSlovo + " " + druheSlovo;
 
 println("Dvě spojená slova: " + sovniSpojeni);
-\end{verbatim}
+\end{lstlisting}
 
 Všimněte si prosím vloženeé mezery mezi slova " ". Uvozená mezera je počítána také jako řetězec textu. Výsledným tiskem do konzole tedy dostaneme následující řetězec textu:
 
-\begin{verbatim}
+\begin{lstlisting}
 Dvě spojená slova: Ahoj světe!
-\end{verbatim}
+\end{lstlisting}
 
 Zde jsme provedli jednu ze základních operací s textem, spojování řetězců. {\em String} lze také spojit s jednotlivými znaky, nebo také s čísly, výsledkem bude ovšem vždy další {\em String}.
 
-\begin{verbatim}
+\begin{lstlisting}
 int a = 1;
 int b = 2;
 String slova = "test";
@@ -529,7 +597,7 @@ String slova = "test";
 slova += " " + a + " " + b;
 
 println(slova);
-\end{verbatim}
+\end{lstlisting}
 
 Výsledkem bude: {\em test 1 2}.
 
@@ -541,7 +609,7 @@ Výsledkem bude: {\em test 1 2}.
 Boolean je nejjednodušším datatypem v Processingu, může vyjadřovat pouze dva stavy. Pravdu {\em true}, nebo nepravdu {\em false}. Žádnou jinou hodnotu {\em boolean} nepřijímá a je proto  ,co se paměti týče, velmi úsporný datatyp. Operace s booleany se nazývají logické operace a vypadají následovně:
 
 
-\begin{verbatim}
+\begin{lstlisting}
 boolean prvniTvrzeni = true;
 boolean druheTvrzeni = false;
 boolean tretiTvrzeni;
@@ -574,7 +642,7 @@ tretiTvrzeni = (prvniTvrzeni != druheTvrzeni);
 
 println(tretiTvrzeni);
 
-\end{verbatim}
+\end{lstlisting}
 
 Boolean je možné si představit jako vypínač světla. Zapnuto a vypnuto jsou jediné dva stavy podobného vypínače. Booleany často řídí tok programu, je možné si je představit jako přepínače mezi jednotlivými stavy programu.
 
@@ -584,7 +652,7 @@ Boolean je možné si představit jako vypínač světla. Zapnuto a vypnuto jsou
 
 Uvedením do stavů programu se můžeme dostat k první opravdové struktuře v programu. Zkusme nyní nastínit jak taková struktura vypadá. Patrně nejpřímější řízení dějů v programu je podmínka. Podmínka říká, jestliže je něco pravda, spust následové příkazy. Uvedu zde krátký příklad podobné struktury:
 
-\begin{verbatim}
+\begin{lstlisting}
 boolean prepinac = false;
 int hodnota;
 
@@ -596,7 +664,7 @@ if(prepinac == true){
 
 println(hodnota);
 
-\end{verbatim}
+\end{lstlisting}
 
 Velmi prostá struktura je v tomto příkladě vytvořená jednou podmínkou. Podmínka je v Processingu (a řadě jiných jazyků) značena slovem {\em if}, "jestli". "Jestli" potřebuje dostat odpověd v kulatých závorkách, ta může být jen pravda nebo nepravda, k tomu se hodí nejlépe již zmíněný {\em boolean}, nebo například porovnávání dvou čísel, znaků nebo řetězců znaků, tj. operace které nám vrátí {\em TRUE} nebo {\em FALSE}.
 
@@ -625,13 +693,13 @@ Nyní zpět k hodnotám. Máme-li již jakékoli hodnoty v paměti programu, mů
 
 Processing je, co se týče grafického výstupu, navržen pro přímou experimentální interakci vznikajícího programu s uživatelem. To znaměná, že pokaždé kdy chete vidět výsledek kódu, stačí pouze stisknout tlačítko {\em RUN}. Zpětná vazba spolu s vaší interpretací a úmyslem má potom veliký vliv na následné úpravy v kódu. Tímto způsobem můžete doslova "vysochat" výslednou podobu programu.
 
-/subsection{Zobrazení}
+\subsection{Zobrazení}
 
 Jak zobrazit hodnoty, které uchovává program v paměti? Jakákoli hodnota lze použít například jako jeden z argumentů v kreslících funkcích.
 
 Již zminovaný {\em rect}, tedy rectangle - obdélník, vyžaduje ke svému úspěšnému vykreslení čtyři parametry, čtyři číselné hodnoty \footnote{zde nezáleží jestli se jedná o celé číslo int nebo číslo s destinnou čárkou float}. Tyto parametry, hodnoty, můžeme budto zadat jako přímé číselné hodnoty, nebo do těchto parametrů můžeme zadat naši proměnnou která obsahuje číslo. Názorně:
 
-\begin{verbatim}
+\begin{lstlisting}
 
 // první způsob vykreslení obdéníku
 rect( 10, 8, 40, 20 );
@@ -642,7 +710,7 @@ int druheCislo = 8;
 
 rect( prvniCislo, druheCislo, 40, 20 );
 
-\end{verbatim}
+\end{lstlisting}
 
 
 Již nyní je nám zřemé jak hodnoty mohou ovlivnit zobrazení. Namísto hodnot zadaných čísleně se zde v druhém způsobu vykreslení obdélníku objevují naše proměnné, které mají již zadaný obsah. Výsledek zobrazení bude v obou případech stejný, ovšem z hlediska struktury programu je druhý způsob daleko flexibilnější.
