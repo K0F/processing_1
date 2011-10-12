@@ -124,7 +124,7 @@ Co činí předem jakýkoli jazyk absolutně nedokonalým je nejprve fakt, že j
 
 Použiji zde pro názornost rozdíl programovacího jazyka s jazykem českým. Český jazyk, stejně tak jako jakýkoli mluvený nebo psaný jazyk, je jazykem organickým ustáleným po staletí užívání. Jazyk jak ho známe slouží ke komunikaci mezi lidmi, lze tedy použít například pro popis krajiny. Přestože k dokonalému popisu krajiny ztěží kdy můžeme dojít, těmito slovy které se opírají o určitou sdílenou zkušenost, lze poměrně dobře přiblížit určitý obraz věcí.
 
-Pokusili bychom se pro popis krajiny použít jazyk programovací, dostaneme se velmi rychle do nesnází. Programovací jazyk není jazykem určeným primárně pro předání informací mezi lidmi, ale pro komunikaci člověka se strojem. Jeho vnitřní logická konzistence, tvrdá logická struktura, která nedovoluje v jeden okamžik jinou než jednu interpretaci, je jeho velikou předností při definici exaktních parametrů. Podobnost s řečí spočívá ve vazbě slov, které reprezentují jednotlivé hodnoty a operace. Hlavní odlišnost je v jeho syntetickém původu, jedná se o jazyk umělý a účelu ke kterému byl zkonstruován. Programovací jazyk je přednostně zkonstuovaný pro definici známého a pochopeného. V případě neznámých nebo nepoznaných veličin, jako je napřiklad pocit z rozkvetlé louky, je programovací jazyk víceméně k ničemu. 
+Pokusili bychom se pro popis krajiny použít jazyk programovací, dostaneme se velmi rychle do nesnází. Programovací jazyk není jazykem určeným primárně pro předání informací mezi lidmi, ale pro komunikaci člověka se strojem. Jeho vnitřní logická konzistence, tvrdá logická struktura, která nedovoluje v jeden okamžik jinou než jednu interpretaci, je jeho velikou předností při definici exaktních parametrů. Podobnost s řečí spočívá ve vazbě slov, které reprezentují jednotlivé hodnoty a operace. Hlavní odlišnost je v jeho syntetickém původu, jedná se o jazyk umělý a účelu ke kterému byl zkonstruován. Programovací jazyk je přednostně zkonstuovaný pro definici známého a pochopeného. V případě neznámých nebo nepoznaných veličin, je programovací jazyk víceméně k ničemu. 
 
 Chceme-li komunikovat se strojem musíme tedy svůj způsob vyjadřování přizpůsobit logicky dokonalému jazyku - vnitřní logice fungování stroje. Počítač není navržen k tomu aby něčemu rozuměl, počítač je navržen k řešení jasně definovaných otázek. Tato kniha se pokusí srozumitelnou formou popstat jeden z možných způsobů jak si osvojit takový jazyk a potažmo způsob uvažování, který vede k jasné definici problému. Hovoříme-li o programování, máme na mysli proces tvorby jisté logické struktury. Osvojení si programování spočívá ve schopnosti definovat problém nebo jasně formulovat otázku, tak aby stroj na ni mohl odpovědět.
 
@@ -177,11 +177,11 @@ Nazývám tento způsob programování empirický, tedy přístup, kdy podle zku
 
 Proces poznávání struktur jazyka při tvorbě obrazu prostřednictvím processingu bych přirovnal k postupu od začátečnické malby na tkaninu k postupnému tkání gobelínu. Zde je nutno podotknout, že ne každý tvůrce využívající Processing chce tkát gobelín a najde-li nástroj vhodný "jen" pro "malbu" na plátno, je to dobrý nástroj.
 
-\subsection{Budování vlastního neuronálního kompileru zkušeností}
+\subsection{???}
 
 
 
-Učení se programovacímu jazyku je, at absurdum, násilným vpádem do uspřádanosti v naší mysli. A osvojení si programovacího jazyka je defacto přisbpůsobení jistých našich "přirozených" struktur strukturám cizím, jedná se o jistou formu novodobého kolonialismu (gramotnosti chete-li), jehož projevy jsem sám vždy vyčítal klasickému vzdělávání, a kterého se nyní sám, tvorbou tohoto průvodce, dopouštím, a to aniž bych o správnosti všech důsledků byl nýní nezlomně přesvědčen.
+Učení se programovacímu jazyku je, at absurdum, násilným vpádem do uspřádanosti v naší mysli. A osvojení si programovacího jazyka je defacto přizbpůsobení jistých našich "přirozených" struktur strukturám cizím, jedná se o jistou formu novodobého kolonialismu (gramotnosti chete-li), jehož projevy jsem sám vždy vyčítal klasickému vzdělávání, a kterého se nyní sám, tvorbou tohoto průvodce, dopouštím, a to aniž bych o správnosti všech důsledků byl nýní nezlomně přesvědčen.
 
 [????]
 
@@ -195,7 +195,7 @@ Základní rozhraní tvoří textový editor s několika nezbytnými funkcemi. P
 
 
 \begin{center}
-\includegraphics[scale = 1]{buttons.png}
+\includegraphics[scale = 1]{imgs/buttons.png}
 \end{center}
 
 
@@ -220,7 +220,7 @@ Další konvencí se kterou se často setkáte je tzv. {\em indenting}, zarovná
 
 
 \begin{center}
-\includegraphics[scale = 0.75]{editor.png}
+\includegraphics[scale = 0.75]{imgs/editor.png}
 \end{center}
 
 Horní lišta editoru označuje záložky, kliknutím na šipku v na pravé straně lišty se vám zobrazí možnosti operací se záložkami. Pro začátek s nimi nebudeme operovat. V případě delšího kódu záložky slouží k lepší organizaci struktury programu. V podstatě se dá říci, že každá záložka odpovídá jednomu souboru ve sketchi. Co je to sketch popíšu níže.
@@ -324,7 +324,7 @@ println("Hello world!");
 Plocha programu by sa dala přirovnat k listu papíru, popřípadě k malířskému plátnu. Ve standartním dvoudimenzionálním módu má dva základní paramery {\em X} a {\em Y}, ty označují souřadnice, ve kterých se veškeré kreslící operace pohybují. Důležité je zmínit, že oproti jisté konvenci v matematických grafech levý horní roh nese hodnotu {\em X = 0}, {\em Y = 0}. Směrem dolů hodnota {\em Y} přibývá stejně tak jaho hodnota {\em X} přibývá směrem doprava.\\
 
 \begin{center}
-\includegraphics[scale = 1]{grid2d.png}
+\includegraphics[scale = 1]{imgs/grid2d.png}
 \end{center}
 
 Tato konvence je převzata ze standartu počítačové grafiky, kdy první pixel v levém horním rohu nese sořadnicovou hodnotu právě {\em X = 0}, {\em Y = 0}. Obrácená osa Y se může ze začátku jevit matoucí. Důvody pro zdánlivé převrácení os pochopíme později například právě při operacích se samotnými obrazovými body, pixely, které jsou standartně uspořádány od levého horního rohu doprava a níže.
@@ -346,7 +346,7 @@ rect(8,6,7,5);
 Výsledné zobrazení na naší pomyslné ploše bude následující:
 
 \begin{center}
-\includegraphics[scale = 1]{gridRect2d.png}
+\includegraphics[scale = 1]{imgs/gridRect2d.png}
 \end{center}
 
 
