@@ -7,16 +7,28 @@
  % use larger type; default would be 10pt
 \documentclass[11pt]{article}
 \usepackage[czech]{babel}
-
+\usepackage{ucs}
 % Unicode support for LaTeX character names (accents, European chars, etc)
-\usepackage{xunicode}
-\usepackage{xltxtra} % Extra customizations for XeLaTeX
+\usepackage{fontenc}
+\usepackage{xltxtra,fontspec,xunicode}
 
 %\usepackage[utf8x]{inputenc}
 
 % syntax highlight
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{makeidx}
+\usepackage{index}     % balík pro indexování
+
+\newindex{default}{idx}{ind}{Rejstřík}
+\newindex{cmnd}{cdx}{cnd}{Rejstřík příkazů}
+
+
+% pomocné příkazy
+\def\cindex{\index*[cmnd]}        % zařazení do rejstříku příkazů
+\newcommand{\hla}[1]{\textit{#1}} % pro vysvětlení pojmu
+
+
 
 % colors
 \definecolor{javared}{rgb}{0.0,0.4,0.8} % for strings
@@ -29,15 +41,24 @@
 \definecolor{bggray}{rgb}{0.97, 0.97, 0.97}
 
 
-% lsset
+% lsset, kód jak vypadá
 \input{listings.tex}
 
 
 % \usepackage{fontspec} % Font selection for XeLaTeX; see fontspec.pdf for documentation
 % \defaultfontfeatures{Mapping=tex-text} % to support TeX conventions like ``---''
 
-\setmainfont{Liberation Serif} % set the main body font (\textrm), assumes Charis SIL is installed
-%\setsansfont{Deja Vu Sans}
+\usepackage{fontspec}
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{\leftmark}\chead{ \hrulefill \vspace{-7pt}}\rhead{\emph{Processing 1.0}}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+\setmainfont{Liberation Serif} %URW Gothic L,DejaVu Sans,Georgia,Jumpcrew Cologne,Libertinage,LMSans12, Nimbus Sans L
+\setromanfont{Liberation Serif}
+\setsansfont{Liberation Sans}
 \setmonofont{Liberation Mono}
 
 % other LaTeX packages.....
@@ -45,6 +66,8 @@
 \geometry{a4paper} % or letterpaper (US) or a5paper or....
 %\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
 
+
+\usepackage[dvips]{hyperref}
 \usepackage{graphicx} % support the \includegraphics command and options
 \usepackage{verbatim}
 
@@ -55,22 +78,46 @@
 
 
 
+%bibliografie
+\bibliography{ProcessingBib}
+
+
 \begin{document}
 
 
 \section{Úvodní slovo}
 
-Ctěný čtenáři,
+Vážený čtenáři,
 
-tato kniha by Vás měla povzbudit v nesnadné úloze osvojení si svého prvního programovacího jazyka. Není-li tento jazyk první, prosím Vás o shovívavost v podrobnostech do kterých v úvodu této knihy zabíhám. Šíře znalostí, které se mouhou vyskytovat u potenciálních čtenářů tohoto skromného průvodce je pro autora první velikou neznámou.
+tato kniha by Vás měla povzbudit v nesnadné úloze osvojení si vašeho prvního programovacího jazyka. Není-li tento jazyk první, prosím Vás o shovívavost v podrobnostech, do kterých v úvodu této knihy zabíhám. Šíře znalostí, které se mohou vyskytovat u potenciálních čtenářů tohoto průvodce je pro autora první velikou neznámou.
 
-V obou případech Vás tedy prosím o shovívavost ve způsobu popisu programovacího jazyka a prostředí Processing. Sám jakožto samouk též nemohu zaručit absolutní, stoprocentní a všeobecnou platnost všech tvrzení. Tímto Vás tedy žádám o jakékoli věcné podněty, pro pozdější doplnění či reformulace jednotlivých trzení.
+V obou případech Vás tedy prosím o shovívavost ve způsobu popisu programovacího jazyka a prostředí Processing. Sám jako samouk nemohu zaručit absolutní, stoprocentní a všeobecnou platnost všech tvrzení. Tímto Vás tedy žádám o věcné podněty pro pozdější doplnění nebo přeformulování jednotlivých trzení.
 
-Má snaha provést začínající i středně pokročilé uživatele jazykem bude vždy nezbytně nedostatečná, berte ji prosím spíše než-li za všeobjímající text, za průvodce nesnadnými začátky.
+Má snaha provést začínající i středně pokročilé uživatele jazykem bude vždy nezbytně nedostatečná, berte ji prosím spíše za průvodce nesnadnými začátky.
 
-Čtete-li knihu z jiných důvodů, než z důvodu učení se tajům programovacích jazyků, pokusím se text knihy proložit sčetnými poznatky nabytými moji několikaletou zkušeností sdílení života se stroji.
+Čtete-li knihu z jiných důvodů, než z důvodu učení se programovacímu jazyků, pokusím se text knihy proložit poznatky nabytými moji několikaletou zkušeností sdílení života se stroji.
 
-Dostala-li se vám tato kniha do rukou jinou cestou, nebo dokonce prostou náhodou, to je mi líto, jedná se zřejmně o systémový omyl, tedy věru netuším, co v ni dále najdete, a proto bych i Vás rád pobídl alespoň k začtení se do světa odtřženého od všednosti, do světa skriptů a kódů. 
+Dostala-li se vám tato kniha do rukou jinou cestou nebo dokonce náhodou, jedná se zřejmně o systémový omyl, tedy věru netuším, co v ni dále najdete, a proto bych i Vás rád pobídl alespoň k začtení se do světa skriptů a kódů. 
+
+
+\subsection{Návod ke čtení knihy}
+
+Text je řazený do jednotlivých kapitol a podkapitol jejichž pořadí by mělo odpovídat procesu učení se novému programovacímu jazyku. Pořadí a obsah jednolivých kapitol vychází ze zkušenosti s vlastním učením se, a zároveň koresponduje s podobnými oficiálními průvodci psanými tvůrci programovacího jazyka Processing. Jedná se o ověřený postup, který by měl co možná nejsrozumitelnější formou podat základy programovacího jazyka Processing.
+
+Následující text bude podléhat určitým zákonitostem. Holý text (který nyní čtete) je člověku srozumitelný popis. Text v šedém rámování bude značit samotný strojový kód kerý je strozumitelný Processingu. Výrazy psané {\em kuzívou} budou vždy znamenat výrazy, jejichž definici můžete nalézt ve jmenném \index[cmd]{WTF} Wtf.
+
+, tj. na konci knihy. Takové výrazy, budou mít vždy jasnou definici.
+
+
+
+Pravidla:
+
+\begin{enumerate}
+\item
+Klasický text, rozdělený do kapitol je pouhý popis. Tento text Vás bude provázet celou procedurou.
+
+
+\end{enumerate}
 
 
 \subsection{Jazyk}
@@ -78,29 +125,29 @@ Dostala-li se vám tato kniha do rukou jinou cestou, nebo dokonce prostou náhod
 
 \begin{enumerate}
 \item
-K tomu abychom sdělili informaci, používáme jazyk.
+K tomu, abychom sdělili informaci, používáme jazyk.
 
 
 \item
-Jazyk musíme umět přisbůsobit tak, aby informoval, vtělil jistou skutečnost - myšlenku sdělovanému subjeku.
+Jazyk musíme umět přisbůsobit tomu, aby informoval, sdělil jistou skutečnost - myšlenku sdělovanému subjeku.
 
 \item
 Jazyk má nutně několik úrovní, zdaleka ne všechny jsme schopni reflektovat.
 
 \item
-Úrovně, které jsme schopni reflektovat, také jen částečně umíme logicky popsat.
+Úrovně, které jsme schopni reflektovat, jen částečně umíme logicky popsat.
 
 \item
-Logicky popsaným jazykem a vnitřně uceleným systémem jsme proto schopni vysvětlit pouhý fragment skutečnosti.
+Logicky popsaným jazykem a vnitřně uceleným systémem jsme schopni vysvětlit pouhý fragment skutečnosti.
 
 \item
-V případě programovacího jazyka je nutné si uvědomit, že informujeme jen zanedbatelně velikou skutečnost fyzicky nepřesahující dimenze součástí stroje\footnote{nejvíce pak procesoru paměti, skutečnost na pevném disku a grafických procesorů}, ale tím zpětně i sebe sama a druhé lidi\footnote{potažmo jakkoli širší skutečnost (zvířata, rostliny, cokoli o čem ani dále netušíme)}, symbolicky a nepřímo popisujeme zkratku skutečnosti nepoměřitelně daleko větší.
+V případě programovacího jazyka si je nutné uvědomit, že programujeme (inforujeme) stroj. Dnešní stroje ve fyzi jen zanedbatelně velikou skutečnost fyzicky nepřesahující dimenze součástí stroje\footnote{nejvíce pak procesoru paměti, skutečnost na pevném disku a grafických procesorů}, ale tím zpětně i sebe sama a druhé lidi\footnote{potažmo jakkoli širší skutečnost (zvířata, rostliny, cokoli o čem ani dále netušíme)}, symbolicky a nepřímo popisujeme zkratku skutečnosti nepoměřitelně daleko větší.
 \end{enumerate}
 
 
 \subsection{Jednoduchost jazyka}
 
-Snaha po spřístupnění programování jako takového širší veřejnosti dala již na konci dvacátého století vzniknout rodině jazyků, které jsou patřičně zjednodušeny tak, aby je mohli obsluhovat i neodborníci.
+Snaha po spřístupnění programování širší veřejnosti dala již na konci dvacátého století vzniknout rodině jazyků, které jsou patřičně zjednodušeny tak, aby je mohli obsluhovat i neodborníci.
 
 Výchozím bodem pro zjednodušení programování je odpověd na situaci, kdy programovací jazyky vytvářeli především lidé se zvláštním nadáním pro ryze technické uvažování. Technické uvažování je speciální schopnost, pro kterou nemá každý člověk správné predispozice. Současně, programování v dnes znamená určitý stupeň širší svobody při komunikaci se strojem. K míře svobody, která má své silné kritiky\footnote{včetně mne samotného}, se nyní nechci vyjadřovat, ale zjednodušeně z pohledu pouhého uživatele který používá daný nástroj, schopnost programovat činí z uživatele již potencionálního strůjce vlastních nástrojů.
 
@@ -120,7 +167,7 @@ Programovací jazyk processing vychází z laboratoří MIT, kde se celé odděl
 
 Co je to dokonalý jazyk? Nejprve je zapotřebí říci, že absolutně dokonalý jazyk neexistuje. Jazyk si můžeme představit jako systém vzájemných vztahů, který je schopen popsat jednotlivé symboly nebo objekty. Symboly můžeme nazvat předměty, tyto předměty dále mají své vlastní hodnoty a vlastnosti, jazyk kromě definic takových vlastností operuje a popisuje jednotlivé jevy a vztahy mezi těmito předměty. Jednodušší popis jazyka je v pojetí výpočetní techniky určitý ucelený systém schopný popsat rozmanité problémy řešitelné strojem.
 
-Co činí předem jakýkoli jazyk absolutně nedokonalým je nejprve fakt, že jakýmkoli jazykem nedokážeme vyjádřit původ jazyka, tj. jeho strůjce; člověka. Jazyk použitý pro instuktáž stroje je vnitřně konzistentní a funguje logicky hermeticky, tj. nepřipouští jiný než jeden výklad konkrétního textu. Pojetí dokonalosti jazyka ve smyslu vnitřní logické konzistence je naprostou nezytností v pojetí interpretace strojem, na druhou stranu téměř nepřekonatelnou překážkou v případě abstraktnějšíh úvah o programování jako takovém.
+Co činí předem jakýkoli jazyk absolutně nedokonalým je nejprve fakt, že jakýmkoli jazykem nedokážeme vyjádřit původ jazyka, tj. jeho strůjce; člověka. Jazyk použitý pro instuktáž stroje je vnitřně konzistentní a funguje logicky hermeticky, tj. nepřipouští jiný než jeden výklad konkrétního textu. Pojetí dokonalosti jazyka ve smyslu vnitřní logické konzistence je naprostou nezbytností v pojetí interpretace strojem, na druhou stranu téměř nepřekonatelnou překážkou v případě abstraktnějšíh úvah o programování jako takovém.
 
 Použiji zde pro názornost rozdíl programovacího jazyka s jazykem českým. Český jazyk, stejně tak jako jakýkoli mluvený nebo psaný jazyk, je jazykem organickým ustáleným po staletí užívání. Jazyk jak ho známe slouží ke komunikaci mezi lidmi, lze tedy použít například pro popis krajiny. Přestože k dokonalému popisu krajiny ztěží kdy můžeme dojít, těmito slovy které se opírají o určitou sdílenou zkušenost, lze poměrně dobře přiblížit určitý obraz věcí.
 
@@ -383,7 +430,7 @@ boolean mojePravdaCiNepravda = true;
 
 String mujSlovniRetezec = "Ahoj svete!";
 
-char mujJednotlivyZnak = 'K';
+char mujJednotlivyZnak = 'A';
 
 color mojeBarva = color(255,127,1);
 \end{lstlisting}
@@ -748,5 +795,44 @@ Animace, neboli-li vdechuntí žívota, se v processingu provádí opakovaným k
 .
 \newpage
 \section{Experimenty}
+
+
+\newpage
+\section{Rejstřík pojmů}
+
+\printindex
+
+\newpage
+\section{Zdroje}
+
+\begin{thebibliography}{9}
+
+
+\bibitem{Maya Deren} Maya Deren , \emph{An Anagram of Ideas on Art, Form and Film}, Alicat Book Shop Press, 1946.
+
+\bibitem{Stan Brakhage} Stan Brakhage, \emph{Metaphors on Vision}, in Film Culture, č. 30, podzim 1963.
+
+\bibitem{Simon Field and Peter Sainsbury} Simon Field and Peter Sainsbury, \emph{ZORNS LEMMA and HAPAX LEGOMENA}, Interview with Hollis Frampton, č. 4, podzim 1972.
+
+\bibitem{Hollis Framton1} Hollis Framton, \emph{Circles Of Confusion}, in For a Metahistoy of Film, MIT press 1986, Eaton, New York, červen 1971
+
+\bibitem{Bruce Jenkins \& Susan Krane} Bruce Jenkins \& Susan Krane, \emph{Hollis Frampton: Recollections-Recreations}, The MIT Press, Cambridge MA, ISBN 0-262-10030-4,  1984
+
+\bibitem{Barry Goldensohn}Barry Goldensohn, \emph{Memoir of Hollis Frampton}, 1985, in Michelson, Annette, Hollis Frampton: A Special Issue October, 32 MIT Press, Cambridge, Massachusetts (pp. 7-16)
+
+\bibitem{Annette Michelson}Annette Michelson, \emph{Hollis Frampton: A Special Issue October}, 32 MIT Press, Cambridge, Massachusetts,  1985
+
+\bibitem{Hollis Frampton and Carl Andre}Hollis Frampton and Carl Andre, \emph{12 Dialogues}, 1962-1963, New York University Press, 1981
+Hollis Frampton, \emph{Circles of Confusion: Film, Photography, Texts}, 1968-1980, Rochester: Visual Studies Workshop Press, 1983.
+
+\bibitem{William Wees}William Wees, \emph{Light Moving in Time: Studies in the Visual Aesthetics of Avant-Garde Film }, University of California Press, 1992.
+
+\bibitem{P. Adams Sitney}P. Adams Sitney, \emph{Visionary Film: The American Avant-Garde}, 1943-2000, Oxford Unviresity Press, ISBN-13: 978-0195148862, 2002
+
+\bibitem{Matt Teichman}Matt Teichman, \emph{Prelude to the Philosophy of Hollis Frampton}, v občasníku Film-Philosophy, Open Humanities Press, ISSN 1466-4615, č. 8 článek. 33, 2004
+
+\bibitem{Parallel to Perception} Harold Cohen, \emph{Paraller to Percetion}, University of California at San Diego:   \url{http://processing.org/discourse/yabb2/YaBB.pl?num=1139859247/0}
+
+\end{thebibliography}
 
 \end{document}
