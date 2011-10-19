@@ -5,7 +5,7 @@
 % with the fontspec package to easily select fonts.
 
  % use larger type; default would be 10pt
-\documentclass[11pt]{article}
+\documentclass[11pt,twopage]{book}
 \usepackage[czech]{babel}
 \usepackage{ucs}
 % Unicode support for LaTeX character names (accents, European chars, etc)
@@ -20,13 +20,12 @@
 \usepackage{makeidx}
 \usepackage{index}     % balík pro indexování
 
-\newindex{default}{idx}{ind}{Rejstřík}
-\newindex{cmnd}{cdx}{cnd}{Rejstřík příkazů}
+\makeindex
 
 
 % pomocné příkazy
-\def\cindex{\index*[cmnd]}        % zařazení do rejstříku příkazů
-\newcommand{\hla}[1]{\textit{#1}} % pro vysvětlení pojmu
+%\def\cindex{\index*[cmnd]}        % zařazení do rejstříku příkazů
+%\newcommand{\hla}[1]{\textit{#1}} % pro vysvětlení pojmu
 
 
 
@@ -50,11 +49,11 @@
 
 \usepackage{fontspec}
 %%% HEADERS & FOOTERS
-\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
-\pagestyle{fancy} % options: empty , plain , fancy
-\renewcommand{\headrulewidth}{0pt} % customise the layout...
-\lhead{\leftmark}\chead{ \hrulefill \vspace{-7pt}}\rhead{\emph{Processing 1.0}}
-\lfoot{}\cfoot{\thepage}\rfoot{}
+%\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+%\pagestyle{fancy} % options: empty , plain , fancy
+%\renewcommand{\headrulewidth}{0pt} % customise the layout...
+%\lhead{\leftmark}\chead{}\rhead{\emph{Processing 1.0}}
+%\lfoot{}\cfoot{\thepage}\rfoot{}
 
 \setmainfont{Liberation Serif} %URW Gothic L,DejaVu Sans,Georgia,Jumpcrew Cologne,Libertinage,LMSans12, Nimbus Sans L
 \setromanfont{Liberation Serif}
@@ -84,6 +83,11 @@
 
 \begin{document}
 
+\tableofcontents
+
+
+\chapter{Preludium}
+
 
 \section{Úvodní slovo}
 
@@ -97,14 +101,15 @@ Má snaha provést začínající i středně pokročilé uživatele jazykem bud
 
 Čtete-li knihu z jiných důvodů, než z důvodu učení se programovacímu jazyků, pokusím se text knihy proložit poznatky nabytými moji několikaletou zkušeností sdílení života se stroji.
 
-Dostala-li se vám tato kniha do rukou jinou cestou nebo dokonce náhodou, jedná se zřejmně o systémový omyl, tedy věru netuším, co v ni dále najdete, a proto bych i Vás rád pobídl alespoň k začtení se do světa skriptů a kódů. 
+Dostala-li se vám tato kniha do rukou jinou cestou nebo dokonce náhodou nebo omylem, tedy věru netuším, co v ni dále najdete, a proto bych i Vás rád pobídl alespoň k začtení se do světa skriptů a kódů. 
 
+\section{Jak číst tuto knihu?}
 
 \subsection{Návod ke čtení knihy}
 
-Text je řazený do jednotlivých kapitol a podkapitol jejichž pořadí by mělo odpovídat procesu učení se novému programovacímu jazyku. Pořadí a obsah jednolivých kapitol vychází ze zkušenosti s vlastním učením se, a zároveň koresponduje s podobnými oficiálními průvodci psanými tvůrci programovacího jazyka Processing. Jedná se o ověřený postup, který by měl co možná nejsrozumitelnější formou podat základy programovacího jazyka Processing.
+Text je řazený do jednotlivých kapitol a podkapitol jejichž pořadí by mělo odpovídat procesu učení se novému programovacímu jazyku. Pořadí a obsah jednolivých kapitol vychází ze zkušenosti s vlastním učením se, a zároveň koresponduje s podobnými ofic-iálními průvodci psanými tvůrci programovacího jazyka Processing. Jedná se o ověřený postup, který by měl co možná nejsrozumitelnější formou podat základy programovacího jazyka Processing.
 
-Následující text bude podléhat určitým zákonitostem. Holý text (který nyní čtete) je člověku srozumitelný popis. Text v šedém rámování bude značit samotný strojový kód kerý je strozumitelný Processingu. Výrazy psané {\em kuzívou} budou vždy znamenat výrazy, jejichž definici můžete nalézt ve jmenném \index[cmd]{WTF} Wtf.
+Následující text bude podléhat určitým zákonitostem. Holý text (který nyní čtete) je člověku srozumitelný popis. Text v šedém rámování bude značit samotný strojový kód kerý je strozumitelný Processingu. Výrazy psané {\em kuzívou} budou vždy znamenat výrazy, jejichž definici můžete nalézt ve jmenném.
 
 , tj. na konci knihy. Takové výrazy, budou mít vždy jasnou definici.
 
@@ -120,8 +125,9 @@ Klasický text, rozdělený do kapitol je pouhý popis. Tento text Vás bude pro
 \end{enumerate}
 
 
-\subsection{Jazyk}
+\section{Jazyk}
 
+\subsection{Definice jazyka}
 
 \begin{enumerate}
 \item
@@ -194,6 +200,8 @@ Jazyk, který je nutně limitovaný svojí vnitřní dokonalostí (dokonavostí?
 
 [Důvody pro processing]
 
+\section{Tvorba softwaru}
+
 \subsection{Otevřenost softwaru}
 
 Jazyk nazvaný Processing je jedním z jazyků, který byl vytvořen v diskurzu zjednodnušování programování. Jako každý jiný programovací jazyk je i Processing navržen pro jisté účely. V případě tohoto programovacího jazyka se nejvíce jedná o důraz na rychý vývoj a zjednodušené nakládání s obrazem i prostorem. Z více technického pohledu pak processing vyniká otevřeností zdrojového kódu a důraz na multiplatformnost.
@@ -224,15 +232,11 @@ Nazývám tento způsob programování empirický, tedy přístup, kdy podle zku
 
 Proces poznávání struktur jazyka při tvorbě obrazu prostřednictvím processingu bych přirovnal k postupu od začátečnické malby na tkaninu k postupnému tkání gobelínu. Zde je nutno podotknout, že ne každý tvůrce využívající Processing chce tkát gobelín a najde-li nástroj vhodný "jen" pro "malbu" na plátno, je to dobrý nástroj.
 
-\subsection{???}
-
-
-
-Učení se programovacímu jazyku je, at absurdum, násilným vpádem do uspřádanosti v naší mysli. A osvojení si programovacího jazyka je defacto přizbpůsobení jistých našich "přirozených" struktur strukturám cizím, jedná se o jistou formu novodobého kolonialismu (gramotnosti chete-li), jehož projevy jsem sám vždy vyčítal klasickému vzdělávání, a kterého se nyní sám, tvorbou tohoto průvodce, dopouštím, a to aniž bych o správnosti všech důsledků byl nýní nezlomně přesvědčen.
 
 [????]
 
-\newpage
+\chapter{Processing jako prostředí}
+
 \section{Základní prostředí}
 
 Processing představuje ucelené programovací prostředí tzv. IDE\footnote{Integrated Development Enviroment}. Jedná se o kompletní prostředí určené především k rapidnímu vývoji aplikací. Samotný program je jedna otevřeným softwarem\footnote{tj. s otevřeným veřejně dostupným zdrojovým kódem} a zdarma ke stažení pro všechny majoritní platformy tedy pro GNU / Linux, Mac OS x i pro Windows na stránkách projektu processing.org. Celý jazyk i samotné IDE vychází pod licencí GNU/GPL 2 jedná se tedy o svobodný software. Díky této licenci můžete jakýkoli výstup z tohoto softwaru můžete publikovat, použit pro jakékoli účely v četně např. komereční aplikace.
@@ -255,7 +259,9 @@ Processingová sketch nemusí být nutně uložena aby jste ji mohli spustit. No
 
 Mezi základní operace patří vytvoření nové sketche (3), otevření předešlé (4), uložení (5) a export (6).
 
-Tlačítka mají dále speciální vlastnosti s podržením tlačítka {\em SHIFT} tlačítko s novou sketchí otevře také nové okno editoru. V kombinaci s načtením předchozí sketche (4) otevřete též sketch v novém editoru aniž by jste ztratili předchozí okno. U uložení se modifikace projevuje funkcí uložit jako. U exportu stisknutím klávesy {\em SHIFT} přepínáte mezi exportem samostatné aplikace nebo tzv. appletu, aplikace schopné běžet v prohlížeči nebo obecně na webových stránkách.
+Tlačítka mají dále speciální vlastnosti s podržením tlačítka
+\index{SHIFT}
+tlačítko s novou sketchí otevře také nové okno editoru. V kombinaci s načtením předchozí sketche (4) otevřete též sketch v novém editoru aniž by jste ztratili předchozí okno. U uložení se modifikace projevuje funkcí uložit jako. U exportu stisknutím klávesy {\em SHIFT} přepínáte mezi exportem samostatné aplikace nebo tzv. appletu, aplikace schopné běžet v prohlížeči nebo obecně na webových stránkách.
 
 \subsection{Editor}
 
@@ -365,7 +371,8 @@ println("Hello world!");
 
 
 
-\newpage
+\chapter{Processing jako jazyk}
+
 \section{Orientace v prostoru}
 
 Plocha programu by sa dala přirovnat k listu papíru, popřípadě k malířskému plátnu. Ve standartním dvoudimenzionálním módu má dva základní paramery {\em X} a {\em Y}, ty označují souřadnice, ve kterých se veškeré kreslící operace pohybují. Důležité je zmínit, že oproti jisté konvenci v matematických grafech levý horní roh nese hodnotu {\em X = 0}, {\em Y = 0}. Směrem dolů hodnota {\em Y} přibývá stejně tak jaho hodnota {\em X} přibývá směrem doprava.\\
@@ -408,17 +415,27 @@ V další části se budeme zabývat stavbou programu. Pod odpudivým názvem se
 \newpage
 \section{Stavba programu}
 
+\subsection{Logika programování}
+Pro začátek je dobré si představit program jako sadu instrukcí. Každá instrukce má svůj význam a své místo. Instrukce se píší v programovacím jazyku a jejich interpretace je vždy pro stroj jednoznačná. Stroje podle svého návrhu nedělají nic kromě toho co mají takovým způsobem instruováno.
 
-Stavbou programu se rozumí samotná funkčnost programu. Pro základní pochopení fungování programu je nejdříve třeba pochopit základní datatypy.
+Veškeré programy které používáte, dokonce i programy, které nevíte že používáte byly někdy naprogramovány lidmi pomocí programovacích jazyků. Programovací jazyk je pouze, plánovací forma zápisu programu. K tomu, aby byl program spuštěn, musí být v případě jazyku Processing převeden do strojového kódu. Strojový kód se liší od toho zdrojového, našeho čitelného plánovacího jazyka, tím že není čitelný pro člověka, je čitelný pro stroj.
+
+Počítač je "rychlý blbec". Umí rychle vykonávat sled banálních operací. Programovací jazyk slouží k vytvoření smyslu ve sledu banálních operací. Procesu převodu ze zdrojového kódu do strojového se nazývá kompilace.
+
+O kompilaci toho nemusíme naštěstí vědět mnoho, vše bylo již tvůrci Processingu shrnuto pod tlačítko spustit.
 
 \subsection{Základní datatypy}
 
-Processing rozlišuje mezi jednotlivými datatypy. Datatyp je typ informace, kterou program drží ve své paměti. Informace, které se nacházejí v paměti se musí nacházet pod správným datatypem, tak aby program věděl jak s nimi operovat.
+Ke stavboě programu potřebujeme stavební materiál. Pro základní pochopení fungování programu je nezbytné nejdříve pochopit základní datatypy. Datatyp si lze obecně představit jako obálku na informaci.
 
-Pro datatyp je možné představit si různé praralely, má oblíbená je podobnost s nádobami. Datatyp si můžeme představit jako tvar nádoby. Do různých nádob, lišících se tvarem, se změstná různý obsah. Typy obsahů se dají názorně představit na rozdílu mezi textovou informací a informací číselnou.
+Processing rozlišuje mezi jednotlivými datatypy. Informace, které se nacházejí v paměti se musí nacházet pod správným datatypem, tak aby program věděl jak s nimi operovat.
 
-Processing pořebuje nejdříve vědět zda-li nádoba obsahuje text nebo číslo, aby mohla s touto nádobou operovat. Například, nelze provést matematickou operaci mezi dvěmi slovy. Sčítat, odčítat, dělit či násobit se dají pouze čísla.
+Pro datatyp je možné představit si různé praralely, má oblíbená je podobnost s obálkami nebo nádobami. Různé datatypy si můžeme představit jako tvary nádob. Do různých nádob, lišících se tvarem, se změstná různý obsah. Typy obsahů se dají názorně představit na rozdílu mezi textovou informací a informací číselnou.
 
+Processing pořebuje nejdříve vědět zda nádoba obsahuje text nebo číslo, aby mohl s touto nádobou operovat. Například, nelze provést matematickou operaci mezi dvěmi slovy. Sčítat, odčítat, dělit či násobit se dají pouze čísla.
+
+
+\subsection{Seznam základních datatypů}
 Datatypů je jen několik, dají se vcelku snadno zapamatovat:
 
 \begin{lstlisting}
@@ -768,6 +785,7 @@ Veškeré příkazy které jsme si zatím ukázali byli spušteny pouze jednou. 
 
 V další kapitole si předvedeme jak vdechnout procesům pohyb a stálost, další kapitola je věnovaná animaci.
 
+
 \section{Animace a interakce}
 
 Animace, neboli-li vdechuntí žívota, se v processingu provádí opakovaným kreslením na plátno.
@@ -802,37 +820,6 @@ Animace, neboli-li vdechuntí žívota, se v processingu provádí opakovaným k
 
 \printindex
 
-\newpage
-\section{Zdroje}
 
-\begin{thebibliography}{9}
-
-
-\bibitem{Maya Deren} Maya Deren , \emph{An Anagram of Ideas on Art, Form and Film}, Alicat Book Shop Press, 1946.
-
-\bibitem{Stan Brakhage} Stan Brakhage, \emph{Metaphors on Vision}, in Film Culture, č. 30, podzim 1963.
-
-\bibitem{Simon Field and Peter Sainsbury} Simon Field and Peter Sainsbury, \emph{ZORNS LEMMA and HAPAX LEGOMENA}, Interview with Hollis Frampton, č. 4, podzim 1972.
-
-\bibitem{Hollis Framton1} Hollis Framton, \emph{Circles Of Confusion}, in For a Metahistoy of Film, MIT press 1986, Eaton, New York, červen 1971
-
-\bibitem{Bruce Jenkins \& Susan Krane} Bruce Jenkins \& Susan Krane, \emph{Hollis Frampton: Recollections-Recreations}, The MIT Press, Cambridge MA, ISBN 0-262-10030-4,  1984
-
-\bibitem{Barry Goldensohn}Barry Goldensohn, \emph{Memoir of Hollis Frampton}, 1985, in Michelson, Annette, Hollis Frampton: A Special Issue October, 32 MIT Press, Cambridge, Massachusetts (pp. 7-16)
-
-\bibitem{Annette Michelson}Annette Michelson, \emph{Hollis Frampton: A Special Issue October}, 32 MIT Press, Cambridge, Massachusetts,  1985
-
-\bibitem{Hollis Frampton and Carl Andre}Hollis Frampton and Carl Andre, \emph{12 Dialogues}, 1962-1963, New York University Press, 1981
-Hollis Frampton, \emph{Circles of Confusion: Film, Photography, Texts}, 1968-1980, Rochester: Visual Studies Workshop Press, 1983.
-
-\bibitem{William Wees}William Wees, \emph{Light Moving in Time: Studies in the Visual Aesthetics of Avant-Garde Film }, University of California Press, 1992.
-
-\bibitem{P. Adams Sitney}P. Adams Sitney, \emph{Visionary Film: The American Avant-Garde}, 1943-2000, Oxford Unviresity Press, ISBN-13: 978-0195148862, 2002
-
-\bibitem{Matt Teichman}Matt Teichman, \emph{Prelude to the Philosophy of Hollis Frampton}, v občasníku Film-Philosophy, Open Humanities Press, ISSN 1466-4615, č. 8 článek. 33, 2004
-
-\bibitem{Parallel to Perception} Harold Cohen, \emph{Paraller to Percetion}, University of California at San Diego:   \url{http://processing.org/discourse/yabb2/YaBB.pl?num=1139859247/0}
-
-\end{thebibliography}
 
 \end{document}
