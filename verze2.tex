@@ -5,7 +5,7 @@
 % with the fontspec package to easily select fonts.
 
  % use larger type; default would be 10pt
-\documentclass[10pt,twopage]{book}
+\documentclass[11pt,twopage]{book}
 \usepackage[czech]{babel}
 \usepackage{ucs}
 % Unicode support for LaTeX character names (accents, European chars, etc)
@@ -28,7 +28,7 @@
     pdfproducer={AMU}, % producer of the document
     pdfkeywords={processing} {příručka} {kof}, % list of keywords
     pdfnewwindow=true,      % links in new window
-    colorlinks=true,       % false: boxed links; true: colored links
+    colorlinks=false,       % false: boxed links; true: colored links
     linkcolor=orange,          % color of internal links
     citecolor=green,        % color of links to bibliography
     filecolor=magenta,      % color of file links
@@ -157,17 +157,24 @@ Obyčejný text --- člověku srozumitelný popis.
 \item
 \begin{lstlisting}
 /**
-* Text v šedém rámování bude značit samotný strojový kód,
-* vždy ve formě která je již srozumitelná Processingu.
+* Barevný text v šedém rámování bude značit samotný strojový kód,
+* vždy ve formě, která je již srozumitelná Processingu.
 */
+
+boolean pravda = true;
+
 \end{lstlisting}
 
 
 \item
-{\em CONTROL + T} --- klávesové zktatky, psané pomocí velkých písmen a kurzívou.
+{\textsc CONTROL + T} --- klávesové zktatky, psané pomocí ``malých kapitálek``
 
 \item
-\textbf{Processing}\index{Processing} --- Indexované pojmy a jmenné názvy vysvětlené přímo v textu, registrované v \textbf{Indexu}\index{index} na konci knihy. Tučně bude vždy označen název tam kde je vysvětlován.
+\textit{*.pde} --- jména souborů a adresářů, psané ``kurzívou``
+
+\item
+\textbf{Indexované pojmy}\index{Indexované pojmy} --- jmenné názvy vysvětlené přímo v textu, registrované v \textbf{Indexu}\index{index} na konci knihy. ``Tučně`` bude vždy označen název tam, kde je v textu vysvětlován.
+
 
 \item
 \Glspl{výraz ve slovníku} --- výrazy, jejichž definici můžete nalézt ve slovníku na konci knihy.
