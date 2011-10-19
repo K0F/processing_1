@@ -12,13 +12,43 @@
 \usepackage{fontenc}
 \usepackage{xltxtra,fontspec,xunicode}
 
+\usepackage[dvips]{hyperref}
+
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={Processing 1.0},    % title
+    pdfauthor={Kryštof Pešek},     % author
+    pdfsubject={Processing 1.0},   % subject of the document
+    pdfcreator={Kryštof Pešek},   % creator of the document
+    pdfproducer={AMU}, % producer of the document
+    pdfkeywords={processing} {příručka} {kof}, % list of keywords
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=orange,          % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=red           % color of external links
+}
+
+\usepackage{graphicx} % support the \includegraphics command and options
+\usepackage{verbatim}
+
 %\usepackage[utf8x]{inputenc}
 
 % syntax highlight
 \usepackage{listings}
 \usepackage{xcolor}
-\usepackage{makeidx}
-\usepackage{index}     % balík pro indexování
+
+\usepackage[xindy]{glossaries}
+
+
+%\usepackage{makeidx}
+%\usepackage{index}     % balík pro indexování
 
 \makeindex
 
@@ -37,21 +67,21 @@
 
 
 % define backgroundcolor
-\definecolor{bggray}{rgb}{0.97, 0.97, 0.97}
+\definecolor{bggray}{rgb}{0.97, 0.97, 0.99}
 
 
 % lsset, kód jak vypadá
 \input{listings.tex}
 
 
-% \usepackage{fontspec} % Font selection for XeLaTeX; see fontspec.pdf for documentation
-% \defaultfontfeatures{Mapping=tex-text} % to support TeX conventions like ``---''
+\usepackage{fontspec} % Font selection for XeLaTeX; see fontspec.pdf for documentation
+\defaultfontfeatures{Mapping=tex-text} % to support TeX conventions like ``---''
 
-
-\setmainfont{Liberation Serif} %URW Gothic L,DejaVu Sans,Georgia,Jumpcrew Cologne,Libertinage,LMSans12, Nimbus Sans L
+\setmainfont{Liberation Serif}
+%\setmainfont{Liberation Serif} %URW Gothic L,DejaVu Sans,Georgia,Jumpcrew Cologne,Libertinage,LMSans12, Nimbus Sans L
 \setromanfont{Liberation Serif}
 \setsansfont{Liberation Sans}
-\setmonofont{Liberation Mono}
+\setmonofont{Monaco}
 
 % other LaTeX packages.....
 \usepackage{geometry} % See geometry.pdf to learn the layout options. There are lots.
@@ -59,9 +89,6 @@
 %\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
 
 
-\usepackage[dvips]{hyperref}
-\usepackage{graphicx} % support the \includegraphics command and options
-\usepackage{verbatim}
 
 \title{Processing}
 \author{Kryštof Pešek}
@@ -69,12 +96,22 @@
          % otherwise the current date is printed 
 
 
+%tvorba slovniku
+\input{slovnik.tex}
+\makeglossaries
+
+
+
+
 
 %bibliografie
 \bibliography{ProcessingBib}
 
 
+\usepackage{pdfpages}
+
 \begin{document}
+
 
 \tableofcontents
 
@@ -84,6 +121,8 @@
 
 \section{Úvodní slovo}
 
+
+
 Vážený čtenáři,
 
 tato kniha by Vás měla povzbudit v nesnadné úloze osvojení si vašeho prvního programovacího jazyka. Není-li tento jazyk první, prosím Vás o shovívavost v podrobnostech, do kterých v úvodu této knihy zabíhám. Šíře znalostí, které se mohou vyskytovat u potenciálních čtenářů tohoto průvodce je pro autora první velikou neznámou.
@@ -92,9 +131,9 @@ V obou případech Vás tedy prosím o shovívavost ve způsobu popisu programov
 
 Má snaha provést začínající i středně pokročilé uživatele jazykem bude vždy nezbytně nedostatečná, berte ji prosím spíše za průvodce nesnadnými začátky.
 
-Čtete-li knihu z jiných důvodů, než z důvodu učení se programovacímu jazyků, pokusím se text knihy proložit poznatky nabytými moji několikaletou zkušeností sdílení života se stroji.
+Čtete-li knihu z jiných důvodů, než z důvodu učení se programovacímu jazyků, pokusím se text knihy proložit poznatky nabytými moji několikaletou zkušeností sdílení života se \gls{stroj}i.
 
-Dostala-li se vám tato kniha do rukou jinou cestou nebo dokonce náhodou nebo omylem, tedy věru netuším, co v ni dále najdete, a proto bych i Vás rád pobídl alespoň k začtení se do světa skriptů a kódů. 
+Dostala-li se vám tato kniha do rukou jinou cestou nebo dokonce náhodou nebo omylem, tedy věru netuším, co v ni dále najdete, a proto bych i Vás rád pobídl alespoň k začtení se do světa skriptů a kódů.
 
 \section{Jak číst tuto knihu?}
 
@@ -102,8 +141,25 @@ Dostala-li se vám tato kniha do rukou jinou cestou nebo dokonce náhodou nebo o
 
 Text je řazený do jednotlivých kapitol a podkapitol jejichž pořadí by mělo odpovídat procesu učení se novému programovacímu jazyku. Pořadí a obsah jednolivých kapitol vychází ze zkušenosti s vlastním učením se, a zároveň koresponduje s podobnými ofic-iálními průvodci psanými tvůrci programovacího jazyka Processing. Jedná se o ověřený postup, který by měl co možná nejsrozumitelnější formou podat základy programovacího jazyka Processing.
 
-Následující text bude podléhat určitým zákonitostem. Holý text (který nyní čtete) je člověku srozumitelný popis. Text v šedém rámování bude značit samotný strojový kód kerý je strozumitelný Processingu. Výrazy psané {\em kuzívou} budou vždy znamenat výrazy, jejichž definici můžete nalézt ve jmenném.
+Následující text bude podléhat určitým zákonitostem. V knize se objeví několik typů textu, které budou vždy odlišeny stylem zápisu. Rozdělění je následující:
 
+\begin{itemize}
+
+\item
+Obyčejný text je člověku srozumitelný popis.
+
+\item
+\begin{lstlisting}
+/**
+* Text v šedém rámování bude značit samotný strojový kód,
+* vždy ve formě která je již srozumitelná Processingu.
+*/
+\end{lstlisting}
+
+\item
+Indexované výrazy\index{výraz} budou vždy znamenat výrazy, jejichž definici můžete nalézt ve jmenném rejstříku.
+
+\end{itemize}
 , tj. na konci knihy. Takové výrazy, budou mít vždy jasnou definici.
 
 
@@ -128,7 +184,7 @@ K tomu, abychom sdělili informaci, používáme jazyk.
 
 
 \item
-Jazyk musíme umět přisbůsobit tomu, aby informoval, sdělil jistou skutečnost - myšlenku sdělovanému subjeku.
+Jazyk musíme umět přisbůsobit tomu, aby informoval, sdělil jistou skutečnost - myšlenku sdělovanému subjektu.
 
 \item
 Jazyk má nutně několik úrovní, zdaleka ne všechny jsme schopni reflektovat.
@@ -252,9 +308,8 @@ Processingová sketch nemusí být nutně uložena aby jste ji mohli spustit. No
 
 Mezi základní operace patří vytvoření nové sketche (3), otevření předešlé (4), uložení (5) a export (6).
 
-Tlačítka mají dále speciální vlastnosti s podržením tlačítka
-\index{SHIFT}
-tlačítko s novou sketchí otevře také nové okno editoru. V kombinaci s načtením předchozí sketche (4) otevřete též sketch v novém editoru aniž by jste ztratili předchozí okno. U uložení se modifikace projevuje funkcí uložit jako. U exportu stisknutím klávesy {\em SHIFT} přepínáte mezi exportem samostatné aplikace nebo tzv. appletu, aplikace schopné běžet v prohlížeči nebo obecně na webových stránkách.
+Tlačítka mají dále speciální vlastnosti s podržením tlačítka \index{SHIFT}
+tlačítko s novou sketchí otevře také nové okno editoru. V kombinaci s načtením předchozí sketche (4) otevřete též sketch v novém editoru aniž by jste ztratili předchozí okno. U uložení se modifikace projevuje funkcí uložit jako. U exportu stisknutím klávesy \index{SHIFT} přepínáte mezi exportem samostatné aplikace nebo tzv. appletu, aplikace schopné běžet v prohlížeči nebo obecně na webových stránkách.
 
 \subsection{Editor}
 
@@ -352,9 +407,9 @@ Neříkají-li vám tyto zkratky nic, nevadí, jedná se většinou o datové st
 \newpage
 \section{Základní pravidla a zvyklosti, Hello world!}
 
-Jako každý jazyk i Proccessing má svá pravidla. Můžeme je přirovnat ke gramatice, v počítačových programech se gramatika nazývá {\em syntax}.
+Jako každý jazyk i Proccessing má svá pravidla, můžeme je přirovnat ke gramatice u mluven0ho jazyka. V počítačových programech se gramatika nazývá {\em syntaxí}.
 
-Pro ukázku srovnání takových pravidel se často používá ten nejzákladnější program, tzv. {/em Hello world!}\footnote{překlad: Ahoj světe!}.
+Pro ukázku srovnání takových pravidel se často používá ten nejzákladnější program, tzv. {\em Hello world!}\footnote{překlad: Ahoj světe!}.
 
 V jazyku Processing je takový program možné napsat pouze na jeden řádek:
 
@@ -812,10 +867,13 @@ Animace, neboli-li vdechuntí žívota, se v processingu provádí opakovaným k
 \section{Experimenty}
 
 
-\newpage
-\section{Rejstřík pojmů}
+\chapter{Rejstřík pojmů}
+\section{Jmenný seznam pojmů}
 
-\printindex
+\printglossaries
+
+
+%\printindex
 
 
 
