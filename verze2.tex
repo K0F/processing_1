@@ -5,7 +5,7 @@
 % with the fontspec package to easily select fonts.
 
  % use larger type; default would be 10pt
-\documentclass[11pt,twopage]{book}
+\documentclass[10pt,twopage]{book}
 \usepackage[czech]{babel}
 \usepackage{ucs}
 % Unicode support for LaTeX character names (accents, European chars, etc)
@@ -47,10 +47,6 @@
 \usepackage[xindy]{glossaries}
 
 
-%\usepackage{makeidx}
-%\usepackage{index}     % balík pro indexování
-
-\makeindex
 
 
 % pomocné příkazy
@@ -96,6 +92,12 @@
          % otherwise the current date is printed 
 
 
+
+\usepackage{makeidx}
+\usepackage{index}     % balík pro indexování
+
+\makeindex
+
 %tvorba slovniku
 \input{slovnik.tex}
 \makeglossaries
@@ -105,7 +107,7 @@
 
 
 %bibliografie
-\bibliography{ProcessingBib}
+%\bibliography{ProcessingBib}
 
 
 \usepackage{pdfpages}
@@ -141,12 +143,16 @@ Dostala-li se vám tato kniha do rukou jinou cestou nebo dokonce náhodou nebo o
 
 Text je řazený do jednotlivých kapitol a podkapitol jejichž pořadí by mělo odpovídat procesu učení se novému programovacímu jazyku. Pořadí a obsah jednolivých kapitol vychází ze zkušenosti s vlastním učením se, a zároveň koresponduje s podobnými ofic-iálními průvodci psanými tvůrci programovacího jazyka Processing. Jedná se o ověřený postup, který by měl co možná nejsrozumitelnější formou podat základy programovacího jazyka Processing.
 
-Následující text bude podléhat určitým zákonitostem. V knize se objeví několik typů textu, které budou vždy odlišeny stylem zápisu. Rozdělění je následující:
+Následující text bude podléhat určitým zákonitostem. V knize se objeví několik typů textu, které budou vždy odlišeny stylem zápisu.
+
+Pravidla:
 
 \begin{itemize}
 
 \item
-Obyčejný text je člověku srozumitelný popis.
+Obyčejný text --- člověku srozumitelný popis.
+
+
 
 \item
 \begin{lstlisting}
@@ -156,22 +162,19 @@ Obyčejný text je člověku srozumitelný popis.
 */
 \end{lstlisting}
 
+
 \item
-Indexované výrazy\index{výraz} budou vždy znamenat výrazy, jejichž definici můžete nalézt ve jmenném rejstříku.
+{\em CONTROL + T} --- klávesové zktatky, psané pomocí velkých písmen a kurzívou.
+
+\item
+\textbf{Processing}\index{Processing} --- Indexované pojmy a jmenné názvy vysvětlené přímo v textu, registrované v \textbf{Indexu}\index{index} na konci knihy. Tučně bude vždy označen název tam kde je vysvětlován.
+
+\item
+\Glspl{výraz ve slovníku} --- výrazy, jejichž definici můžete nalézt ve slovníku na konci knihy.
 
 \end{itemize}
-, tj. na konci knihy. Takové výrazy, budou mít vždy jasnou definici.
 
 
-
-Pravidla:
-
-\begin{enumerate}
-\item
-Klasický text, rozdělený do kapitol je pouhý popis. Tento text Vás bude provázet celou procedurou.
-
-
-\end{enumerate}
 
 
 \section{Jazyk}
@@ -867,9 +870,8 @@ Animace, neboli-li vdechuntí žívota, se v processingu provádí opakovaným k
 \section{Experimenty}
 
 
-\chapter{Rejstřík pojmů}
-\section{Jmenný seznam pojmů}
-
+\chapter{Rejstříky}
+\printindex
 \printglossaries
 
 
