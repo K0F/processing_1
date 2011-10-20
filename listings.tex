@@ -17,9 +17,21 @@ numbersep=10pt,
 tabsize=4,
 showspaces=false,
 showstringspaces=false,
-backgroundcolor=\color{bggray},
-extendedchars=\true,
-inputencoding=utf8x}
+backgroundcolor=\color{bggray}
+}
+
+\lstset{literate=%
+{š}{\v{s}}1
+{č}{\v{v}}1
+{ž}{\v{\z}}1
+{ř}{\v{\r}}1
+{ß}{{\ss}}2
+}
+
+\lstset{
+inputencoding=utf8,
+extendedchars=true
+}
 
 
 

@@ -38,9 +38,6 @@
 
 % Automaticke reference.. In section~\nameref{sec:marker} we defined...
 
-\def\chapterautorefname{chapt}
-\def\sectionautorefname{sect}
-\def\subsectionautorefname{subsect}
 
 \usepackage{graphicx} % support the \includegraphics command and options
 \usepackage{verbatim}
@@ -73,10 +70,21 @@
 
 %%% BUBLINY
 
-\newcommand{\info}[1]{\todo[color=gray!15]{{\em #1}}}
-\newcommand{\otazka}[1]{\todo[color=orange!60]{{\em #1}}}
-\newcommand{\kof}[1]{\todo[color=green!70]{{\em #1}}}
+\usepackage{setspace}
 
+\newcommand{\info}[1]{\todo[color=gray!15]{\em #1}}
+\newcommand{\otazka}[1]{\todo[color=orange!60]{\em #1}}
+\newcommand{\kof}[1]{\todo[color=green!70]{\em #1}}
+
+
+\newcommand{\klavesy}[1]{\textsuperscript{\em #1}}
+
+\newcommand{\slovnik}[1]{\textbf{\gls{#1}}}
+\newcommand{\Slovnik}[1]{\textbf{\Gls{#1}}}
+\newcommand{\slovnikpl}[1]{\textbf{\glspl{#1}}}
+\newcommand{\Slovnikpl}[1]{\textbf{\Glspl{#1}}}
+
+\newcommand{\vyraz}[1]{\textit{\gls{#1}}}
 
 %\newcounter{todocounter}
 %\newcommand{\bokem}[2][]
@@ -88,11 +96,6 @@
 % pomocné příkazy
 %\def\cindex{\index*[cmnd]}        % zařazení do rejstříku příkazů
 %\newcommand{\hla}[1]{\textit{#1}} % pro vysvětlení pojmu
-
-
-
-
-
 
 
 % lsset, kód jak vypadá
@@ -129,11 +132,8 @@
 
 %tvorba slovniku
 \input{slovnik.tex}
+
 \makeglossaries
-
-
-
-
 
 %bibliografie
 %\bibliography{ProcessingBib}
@@ -143,6 +143,7 @@
 
 \begin{document}
 
+\index{obsah}
 
 \tableofcontents
 
@@ -170,7 +171,7 @@ V obou případech Vás tedy prosím o shovívavost ve způsobu popisu programov
 
 Má snaha provést začínající i středně pokročilé uživatele jazykem bude vždy nezbytně nedostatečná, berte ji prosím spíše za průvodce nesnadnými začátky.
 
-Čtete-li knihu z jiných důvodů, než z důvodu učení se programovacímu jazyku, pokusím se text knihy proložit poznatky nabytými moji několikaletou zkušeností sdílení života se \gls{stroj}i.
+Čtete-li knihu z jiných důvodů, než z důvodu učení se programovacímu jazyku, pokusím se text knihy proložit poznatky nabytými moji několikaletou zkušeností sdílení života se stroji.
 
 Dostala-li se vám tato kniha do rukou jinou cestou nebo dokonce náhodou nebo omylem, tedy věru netuším, co v ni dále najdete, a proto bych i Vás rád pobídl alespoň k začtení se do světa skriptů a kódů.
 
@@ -178,18 +179,20 @@ Dostala-li se vám tato kniha do rukou jinou cestou nebo dokonce náhodou nebo o
 
 \subsection{Uspořádání informací}
 
-Text je řazený do jednotlivých kapitol a dále stromově do dvou úrovní podkapitol. Pořadí kapitol by mělo odpovídat procesu učení se novému programovacímu jazyku.
+Text je řazený do jednotlivých  kapitol\ref{obsah} a dále stromově do dvou úrovní podkapitol. Pořadí kapitol by mělo odpovídat sledu potřebných informací nezbytných k naučení se programovacímu jazyku Processing.
 
-Pořadí a obsah jednotlivých kapitol vychází ze zkušenosti s vlastním učením se, a zároveň z veliké míry koresponduje s podobnými oficiálními průvodci psanými tvůrci a komunitou kolem programovacího jazyka Processing.
+Pořadí a obsah jednotlivých kapitol vychází jednak ze mé vlastní zkušenosti s učením se, a zároveň z veliké míry koresponduje s podobnými oficiálními průvodci psanými tvůrci a komunitou kolem programovacího jazyka Processing.
 
-Zvolená forma textu odpovídá již ověřeným postupům. Následující text bude podléhat určitým zákonitostem. V knize se objeví několik typů textu, které budou vždy odlišeny stylem zápisu.
+Zvolená forma textu odpovídá ověřeným postupům. Následující text bude podléhat určitým zákonitostem. V knize se objeví několik typů textu, které budou vždy odlišeny stylem zápisu.
+
+\subsection{Pravidla formátování}
 
 Pravidla\index{pravidla textu} jsou následující:
 
 \begin{itemize}
 
 \item
-Obyčejný text --- člověku srozumitelný popis ve formě textu.
+Obyčejný text --- člověku srozumitelný popis ve formě klasického textu.
 
 \item
 \begin{lstlisting}
@@ -204,20 +207,19 @@ boolean pravda = true;
 
 
 \item
-{\textsc CONTROL + T} --- klávesové zkratky, psané pomocí ``malých kapitálek``
+\klavesy{CONTROL + T} --- klávesové zkratky, psané pomocí ``superscriptu``
 
 \item
-\textit{*.pde} --- jména souborů a adresářů, psané ``kurzívou``
+\vyraz{boolean} --- jednotlivé příkazy a oficiální názvy v textu, zařazené do slovníku, psané ``kurzívou``
 
 \item
-\Glspl{výraz ve slovníku} --- výrazy, jejichž definici můžete nalézt ve slovníku na konci  knihy. 
-
+\Slovnikpl{výraz ve slovníku} --- ostatní výrazy, jejichž definici můžete nalézt ve slovníku na konci  knihy.
 
 \item
 Shrnutí důležitých nových informací \info{Poznámky na okraji pro shrnutí nebo zdůraznění informace budou v šedé bublině} v textu.
 
 \item
-Kontrolní otázky \otazka{Jakou barvu má bublina značící kontrolní otázku?} v textu.
+Kontrolní otázky \otazka{Jakou barvu má bublina značící otázku?} v textu.
 
 \end{itemize}
 
@@ -258,7 +260,7 @@ Výchozím bodem pro zjednodušení programování je odpověď na situaci, kdy 
 
 K míře svobody, která má své silné kritiky\footnote{včetně mne samotného}, se nyní nechci vyjadřovat, ale zjednodušeně z pohledu pouhého uživatele který používá daný nástroj, schopnost programovat činí z uživatele již potencionálního strůjce vlastních nástrojů.
 
-Hovořím-li o stroji, mám dnes na mysli spotřební počítač. Termín \textbf{stroj}\index{stroj} používám záměrně pro zdůraznění jisté formy strojového přemýšlení v historickém kontextu. Stroje jsou 
+Hovořím-li o stroji, mám dnes na mysli spotřební počítač. Termín \slovnik{stroj}\index{stroj} používám záměrně pro zdůraznění jisté formy strojového přemýšlení v historickém kontextu.
 
 Nástroje jsou pak programy zkonstruované pro jistou činnost. Obvykle je nástroj vyvíjen za jedním účelem, který plní uživatelsky co nejpřívětivější cestou. Tato cesta je pro uživatele snadno schůdná a nabízí mu standartní škálu dovedností nástroje.
 
@@ -342,7 +344,7 @@ Proces poznávání struktur jazyka při tvorbě obrazu prostřednictvím Proces
 
 \section{Základní prostředí}
 
-Processing představuje ucelené programovací prostředí tzv. IDE\footnote{Integrated Development Enviroment}. Jedná se o kompletní prostředí určené především k rapidnímu vývoji aplikací. Samotný program je jedna otevřeným softwarem\footnote{tj. s otevřeným veřejně dostupným zdrojovým kódem} a zdarma ke stažení pro všechny majoritní platformy tedy pro GNU / Linux, Mac OS x i pro Windows na stránkách projektu processing.org. Celý jazyk i samotné IDE vychází pod licencí GNU/GPL 2 jedná se tedy o svobodný software. Díky této licenci můžete jakýkoli výstup z tohoto softwaru můžete publikovat, použit pro jakékoli účely v četně např. komerční aplikace.
+Processing představuje ucelené programovací prostředí tzv. IDE\footnote{Integrated Development Enviroment}. Jedná se o kompletní prostředí určené především k rapidnímu vývoji aplikací. Samotný program je jedna otevřeným softwarem\footnote{tj. s otevřeným veřejně dostupným zdrojovým kódem} a zdarma ke stažení pro všechny majoritní platformy tedy pro \slovnik{GNU / Linux}, Mac OS x i pro Windows na stránkách projektu processing.org. Celý jazyk i samotné IDE vychází pod licencí \slovnik{GNU / GPL} 2 jedná se tedy o svobodný software. Díky této licenci můžete jakýkoli výstup z tohoto softwaru můžete publikovat, použit pro jakékoli účely v četně např. komerční aplikace.
 
 
 Základní rozhraní tvoří textový editor s několika nezbytnými funkcemi. Patrně nejdůležitější je v liště tlačítko (1) tzv. RUN. Které kompiluje a spouští program aktuálně rozpracovaný v textovém editoru. (2) Tlačítko STOP naopak program zastaví. V případě chyby v programu lze též využít jako vynucené zavření programu. Zbylé tlačítka slouží k diskovým operacím. \\
@@ -362,8 +364,7 @@ Processingová sketch nemusí být nutně uložena aby jste ji mohli spustit. No
 
 Mezi základní operace patří vytvoření nové sketche (3), otevření předešlé (4), uložení (5) a export (6).
 
-Tlačítka mají dále speciální vlastnosti s podržením tlačítka \index{SHIFT}
-tlačítko s novou sketchí otevře také nové okno editoru. V kombinaci s načtením předchozí sketche (4) otevřete též sketch v novém editoru aniž by jste ztratili předchozí okno. U uložení se modifikace projevuje funkcí uložit jako. U exportu stisknutím klávesy \index{SHIFT} přepínáte mezi exportem samostatné aplikace nebo tzv. appletu, aplikace schopné běžet v prohlížeči nebo obecně na webových stránkách.
+Tlačítka mají dále speciální vlastnosti s podržením tlačítka tlačítko s novou sketchí otevře také nové okno editoru. V kombinaci s načtením předchozí sketche (4) otevřete též sketch v novém editoru aniž by jste ztratili předchozí okno. U uložení se modifikace projevuje funkcí uložit jako. U exportu stisknutím klávesy \klavesy{SHIFT} přepínáte mezi exportem samostatné aplikace nebo tzv. appletu, aplikace schopné běžet v prohlížeči nebo obecně na webových stránkách.
 
 \subsection{Editor}
 
