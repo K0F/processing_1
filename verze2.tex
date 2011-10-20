@@ -47,11 +47,37 @@
 
 %\usepackage[utf8x]{inputenc}
 
+
+
+\usepackage[xindy]{glossaries}
+
+
 % syntax highlight
 \usepackage{listings}
 \usepackage{xcolor}
 
-\usepackage[xindy]{glossaries}
+% colors
+\definecolor{javared}{rgb}{0.0,0.4,0.8} % for strings
+\definecolor{javagreen}{rgb}{0.55,0.55,0.55} % comments
+\definecolor{javapurple}{rgb}{0.8,0.4,0,0} % keywords
+\definecolor{javadocblue}{rgb}{0.45,0.45,0.45} % javadoc
+% define backgroundcolor
+\definecolor{bggray}{rgb}{0.97, 0.97, 0.99}
+
+
+\usepackage{marginnote}
+\usepackage[textsize=footnotesize,textwidth=3cm]{todonotes}
+\setlength{\marginparwidth}{3.1cm}
+
+
+
+%%% BUBLINY
+
+\newcommand{\bokem}[1]{\todo[color=gray!15]{{\em #1}}}
+
+%\newcounter{todocounter}
+%\newcommand{\bokem}[2][]
+%{\stepcounter{todocounter}\todo[#1]{\thetodocounter: #2}}
 
 
 
@@ -62,15 +88,8 @@
 
 
 
-% colors
-\definecolor{javared}{rgb}{0.0,0.4,0.8} % for strings
-\definecolor{javagreen}{rgb}{0.55,0.55,0.55} % comments
-\definecolor{javapurple}{rgb}{0.8,0.4,0,0} % keywords
-\definecolor{javadocblue}{rgb}{0.45,0.45,0.45} % javadoc
 
 
-% define backgroundcolor
-\definecolor{bggray}{rgb}{0.97, 0.97, 0.99}
 
 
 % lsset, kód jak vypadá
@@ -186,6 +205,10 @@ boolean pravda = true;
 \item
 \Glspl{výraz ve slovníku} --- výrazy, jejichž definici můžete nalézt ve slovníku na konci knihy.
 
+
+\item
+Upozornění na důležité informace \bokem{Důležité upozornění vypadá takto} v kapitole.
+
 \end{itemize}
 
 
@@ -201,7 +224,7 @@ K tomu, abychom sdělili informaci, používáme jazyk.
 
 
 \item
-Jazyk musíme umět přizbůsobit tomu, aby informoval, sdělil jistou skutečnost - myšlenku sdělovanému subjektu.
+Jazyk musíme umět přizpůsobit tomu, aby informoval, sdělil jistou skutečnost - myšlenku sdělovanému subjektu.
 
 \item
 Jazyk má nutně několik úrovní, zdaleka ne všechny jsme schopni reflektovat.
@@ -213,13 +236,13 @@ Jazyk má nutně několik úrovní, zdaleka ne všechny jsme schopni reflektovat
 Logicky popsaným jazykem a vnitřně uceleným systémem jsme schopni vysvětlit pouhý fragment skutečnosti.
 
 \item
-V případě programovacího jazyka si je nutné uvědomit, že programujeme (inforujeme) stroj. Dnešní stroje popisují jen zanedbatelně velikou skutečnost fyzicky nepřesahující dimenze součástí stroje\footnote{nejvíce pak procesoru paměti, skutečnost na pevném disku a grafických procesorů}, ale tím zpětně i sebe sama a druhé lidi\footnote{potažmo jakkoli širší skutečnost (zvířata, rostliny, cokoli o čem ani dále netušíme)}, symbolicky a nepřímo popisujeme zkratku skutečnosti nepoměřitelně daleko větší.
+V případě programovacího jazyka si je nutné uvědomit, že programujeme (informujeme) stroj. Dnešní stroje popisují jen zanedbatelně velikou skutečnost fyzicky nepřesahující dimenze součástí stroje\footnote{nejvíce pak procesoru paměti, skutečnost na pevném disku a grafických procesorů}, ale tím zpětně i sebe sama a druhé lidi\footnote{potažmo jakkoli širší skutečnost (zvířata, rostliny, cokoli o čem ani dále netušíme)}, symbolicky a nepřímo popisujeme zkratku skutečnosti nepoměřitelně daleko větší.
 \end{enumerate}
 
 
 \subsection{Jednoduchost jazyka}
 
-Snaha po zpřístupnění programování širší veřejnosti dala již na konci dvacátého století vzniknout rodině jazyků, které jsou patřičně zjednodušeny tak, aby je mohli obsluhovat i neodborníci.
+Snaha po  zpřístupnění programování širší veřejnosti dala již na konci dvacátého století vzniknout rodině jazyků, které jsou patřičně zjednodušeny tak, aby je mohli obsluhovat i neodborníci.
 
 Výchozím bodem pro zjednodušení programování je odpověď na situaci, kdy programovací jazyky vytvářeli především lidé se zvláštním nadáním pro ryze technické uvažování. Technické uvažování je speciální schopnost, pro kterou nemá každý člověk správné predispozice. Současně, programování v dnes znamená určitý stupeň širší svobody při komunikaci se strojem. K míře svobody, která má své silné kritiky\footnote{včetně mne samotného}, se nyní nechci vyjadřovat, ale zjednodušeně z pohledu pouhého uživatele který používá daný nástroj, schopnost programovat činí z uživatele již potencionálního strůjce vlastních nástrojů.
 
