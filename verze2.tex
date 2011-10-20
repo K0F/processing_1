@@ -38,9 +38,9 @@
 
 % Automaticke reference.. In section~\nameref{sec:marker} we defined...
 
-\def\sectionautorefname{Chapter}
-\def\sectionautorefname{Section}
-\def\sectionautorefname{Subsection}
+\def\chapterautorefname{chapt}
+\def\sectionautorefname{sect}
+\def\subsectionautorefname{subsect}
 
 \usepackage{graphicx} % support the \includegraphics command and options
 \usepackage{verbatim}
@@ -73,7 +73,10 @@
 
 %%% BUBLINY
 
-\newcommand{\bokem}[1]{\todo[color=gray!15]{{\em #1}}}
+\newcommand{\info}[1]{\todo[color=gray!15]{{\em #1}}}
+\newcommand{\otazka}[1]{\todo[color=orange!60]{{\em #1}}}
+\newcommand{\kof}[1]{\todo[color=green!70]{{\em #1}}}
+
 
 %\newcounter{todocounter}
 %\newcommand{\bokem}[2][]
@@ -147,6 +150,14 @@
 \chapter{Úvod}
 
 
+
+\vfill
+
+\begin{center}
+\includegraphics[scale = 0.65]{imgs/thePainOfFleetingJoy_1.jpg}
+\end{center}
+
+
 \section{Úvodní slovo}
 
 
@@ -163,22 +174,22 @@ Má snaha provést začínající i středně pokročilé uživatele jazykem bud
 
 Dostala-li se vám tato kniha do rukou jinou cestou nebo dokonce náhodou nebo omylem, tedy věru netuším, co v ni dále najdete, a proto bych i Vás rád pobídl alespoň k začtení se do světa skriptů a kódů.
 
-\section{Jak číst tuto knihu?}
+\section{Forma knihy}
 
-\subsection{Návod ke čtení knihy}
+\subsection{Uspořádání informací}
 
-Text je řazený do jednotlivých kapitol a podkapitol jejichž pořadí by mělo odpovídat procesu učení se novému programovacímu jazyku. Pořadí a obsah jednotlivých kapitol vychází ze zkušenosti s vlastním učením se, a zároveň koresponduje s podobnými oficiálními průvodci psanými tvůrci programovacího jazyka Processing. Jedná se o ověřený postup, který by měl co možná nejsrozumitelnější formou podat základy programovacího jazyka Processing.
+Text je řazený do jednotlivých kapitol a dále stromově do dvou úrovní podkapitol. Pořadí kapitol by mělo odpovídat procesu učení se novému programovacímu jazyku.
 
-Následující text bude podléhat určitým zákonitostem. V knize se objeví několik typů textu, které budou vždy odlišeny stylem zápisu.
+Pořadí a obsah jednotlivých kapitol vychází ze zkušenosti s vlastním učením se, a zároveň z veliké míry koresponduje s podobnými oficiálními průvodci psanými tvůrci a komunitou kolem programovacího jazyka Processing.
 
-Pravidla:
+Zvolená forma textu odpovídá již ověřeným postupům. Následující text bude podléhat určitým zákonitostem. V knize se objeví několik typů textu, které budou vždy odlišeny stylem zápisu.
+
+Pravidla\index{pravidla textu} jsou následující:
 
 \begin{itemize}
 
 \item
-Obyčejný text --- člověku srozumitelný popis.
-
-
+Obyčejný text --- člověku srozumitelný popis ve formě textu.
 
 \item
 \begin{lstlisting}
@@ -199,15 +210,14 @@ boolean pravda = true;
 \textit{*.pde} --- jména souborů a adresářů, psané ``kurzívou``
 
 \item
-\textbf{Indexované pojmy}\index{Indexované pojmy} --- jmenné názvy vysvětlené přímo v textu, registrované v \textbf{Indexu}\index{index} na konci knihy. ``Tučně`` bude vždy označen název tam, kde je v textu vysvětlován.
+\Glspl{výraz ve slovníku} --- výrazy, jejichž definici můžete nalézt ve slovníku na konci  knihy. 
 
 
 \item
-\Glspl{výraz ve slovníku} --- výrazy, jejichž definici můžete nalézt ve slovníku na konci knihy.
-
+Shrnutí důležitých nových informací \info{Poznámky na okraji pro shrnutí nebo zdůraznění informace budou v šedé bublině} v textu.
 
 \item
-Upozornění na důležité informace \bokem{Důležité upozornění vypadá takto} v kapitole.
+Kontrolní otázky \otazka{Jakou barvu má bublina značící kontrolní otázku?} v textu.
 
 \end{itemize}
 
@@ -244,11 +254,15 @@ V případě programovacího jazyka si je nutné uvědomit, že programujeme (in
 
 Snaha po  zpřístupnění programování širší veřejnosti dala již na konci dvacátého století vzniknout rodině jazyků, které jsou patřičně zjednodušeny tak, aby je mohli obsluhovat i neodborníci.
 
-Výchozím bodem pro zjednodušení programování je odpověď na situaci, kdy programovací jazyky vytvářeli především lidé se zvláštním nadáním pro ryze technické uvažování. Technické uvažování je speciální schopnost, pro kterou nemá každý člověk správné predispozice. Současně, programování v dnes znamená určitý stupeň širší svobody při komunikaci se strojem. K míře svobody, která má své silné kritiky\footnote{včetně mne samotného}, se nyní nechci vyjadřovat, ale zjednodušeně z pohledu pouhého uživatele který používá daný nástroj, schopnost programovat činí z uživatele již potencionálního strůjce vlastních nástrojů.
+Výchozím bodem pro zjednodušení programování je odpověď na situaci, kdy programovací jazyky vytvářeli především lidé se zvláštním nadáním pro ryze technické uvažování. Technické uvažování je zvláštní nadání, pro které nemá každý člověk správné predispozice. Programování dnes znamená především určitý stupeň svobody při komunikaci se strojem.
 
-Hovořím-li o stroji, mám dnes na mysli spotřební počítač. Termín {\em stroj} používám záměrně pro zdůraznění jisté formy strojového přemýšlení v historickém kontextu.\footnote{V současné době se setkáváme nejčastěji s počítači založenými na mikroprocesorech výrobců Intel, AMD a v poslední době rostoucí firmou zabývající se velmi drobnými processory Atmel. Architektury procesorů dnes nejčastěji rozdělujeme na 32 a 64-bitové processory. Nárokům trhu na větší výkon stroje se dnes vychází vstříc množením jader v jednom stroji.}
+K míře svobody, která má své silné kritiky\footnote{včetně mne samotného}, se nyní nechci vyjadřovat, ale zjednodušeně z pohledu pouhého uživatele který používá daný nástroj, schopnost programovat činí z uživatele již potencionálního strůjce vlastních nástrojů.
 
-Nástroje jsou pak programy zkonstruované pro jistou činnost. Obvykle je nástroj vyvíjen za jedním účelem, který plní uživatelsky co nejpřívětivější cestou. Tato cesta je pro uživatele snadno schůdná a nabízí mu standartní škálu dovedností nástroje. Aniž bychom si toto příliš uvědomovali, současná vizuální kultura je ovlivněna těmito nástroji daleko více než je na první pohled patrné. A technické možnosti jsou současným tržním hladem pro inovaci konfiskovány a proměňovány ve zboží. V této situaci je důležité znát nástroje i jejich vznik pro reflexi nebo kritiku v širších souvislostech.
+Hovořím-li o stroji, mám dnes na mysli spotřební počítač. Termín \textbf{stroj}\index{stroj} používám záměrně pro zdůraznění jisté formy strojového přemýšlení v historickém kontextu. Stroje jsou 
+
+Nástroje jsou pak programy zkonstruované pro jistou činnost. Obvykle je nástroj vyvíjen za jedním účelem, který plní uživatelsky co nejpřívětivější cestou. Tato cesta je pro uživatele snadno schůdná a nabízí mu standartní škálu dovedností nástroje.
+
+Aniž bychom si to často uvědomovali, současná vizuální kultura je ovlivněna těmito nástroji daleko více, než je na první pohled zřejmé. Technické možnosti jsou současným tržním hladem pro inovaci konfiskovány a proměňovány ve zboží. V této situaci je důležité znát nástroje i jejich vznik pro reflexi nebo kritiku v širších souvislostech.
 
 Tato kniha je spíše než-li jednomu nástroji věnována programu pro tvorbu takových nástrojů. Jak již vyplývá z této definice použití Processingu není limitováno jen úhlem pohledu autora tohoto textu. Návod by se měl stát spíše pobídkou k co nejrozmanitější tvorbě vlastních nástrojů, sloužících opět k co možná nejširší škále možných účelů.
 
@@ -907,7 +921,7 @@ Statická kresba na plátno je jen jeden z možných výstupů.
 \section{Experimenty}
 
 
-\chapter{Rejstříky}
+\chapter{Rejstřík pojmů}
 \printindex
 \printglossaries
 
