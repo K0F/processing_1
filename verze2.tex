@@ -5,14 +5,32 @@
 % with the fontspec package to easily select fonts.
 
  % use larger type; default would be 10pt
-\documentclass[11pt,twopage]{book}
+\documentclass[12pt,twopage]{book}
 \usepackage[czech]{babel}
 \usepackage{ucs}
 % Unicode support for LaTeX character names (accents, European chars, etc)
 \usepackage{fontenc}
 \usepackage{xltxtra,fontspec,xunicode}
 
+% syntax highlight
+\usepackage{listings}
+\usepackage{xcolor}
+
+% colors
+\definecolor{javared}{rgb}{0.0,0.4,0.8} % for strings
+\definecolor{javagreen}{rgb}{0.55,0.55,0.55} % comments
+\definecolor{javapurple}{rgb}{0.8,0.4,0,0} % keywords
+\definecolor{javadocblue}{rgb}{0.45,0.45,0.45} % javadoc
+% define backgroundcolor
+\definecolor{bggray}{rgb}{0.97, 0.97, 0.99}
+
+
+
+
+\definecolor{bublina1}{rgb}{0.75,0.75,0.75} % for strings
+\definecolor{bublina2}{rgb}{0.33,0.66,0.99} % comments
 \usepackage[dvips]{hyperref}
+
 
 \hypersetup{
     bookmarks=true,         % show bookmarks bar?
@@ -28,8 +46,8 @@
     pdfproducer={AMU}, % producer of the document
     pdfkeywords={processing} {příručka} {kof}, % list of keywords
     pdfnewwindow=true,      % links in new window
-    colorlinks=false,       % false: boxed links; true: colored links
-    linkcolor=orange,          % color of internal links
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=bublina2,          % color of internal links
     citecolor=green,        % color of links to bibliography
     filecolor=magenta,      % color of file links
     urlcolor=red           % color of external links
@@ -52,19 +70,6 @@
 \usepackage[xindy]{glossaries}
 
 
-% syntax highlight
-\usepackage{listings}
-\usepackage{xcolor}
-
-% colors
-\definecolor{javared}{rgb}{0.0,0.4,0.8} % for strings
-\definecolor{javagreen}{rgb}{0.55,0.55,0.55} % comments
-\definecolor{javapurple}{rgb}{0.8,0.4,0,0} % keywords
-\definecolor{javadocblue}{rgb}{0.45,0.45,0.45} % javadoc
-% define backgroundcolor
-\definecolor{bggray}{rgb}{0.97, 0.97, 0.99}
-
-
 \usepackage{marginnote}
 \usepackage[textsize=footnotesize,textwidth=3cm]{todonotes}
 \setlength{\marginparwidth}{3.1cm}
@@ -75,9 +80,9 @@
 
 \usepackage{setspace}
 
-\newcommand{\bublina}[1]{\todo[color=gray!15]{\em #1}}
-\newcommand{\otazka}[1]{\todo[color=orange!60]{\em #1}}
-\newcommand{\kof}[1]{\todo[color=green!70]{\em #1}}
+\newcommand{\bublina}[1]{\todo[color=bublina1]{\em #1}}
+\newcommand{\otazka}[1]{\todo[color=bublina2]{\em #1}}
+\newcommand{\kof}[1]{\todo[color=javadocblue]{\em #1}}
 
 
 \newcommand{\klavesy}[1]{\textsc{\em #1}}
@@ -88,6 +93,7 @@
 \newcommand{\Slovnikpl}[1]{\textbf{\Glspl{#1}}}
 
 \newcommand{\vyraz}[1]{\textit{\gls{#1}}}
+
 
 %\newcounter{todocounter}
 %\newcommand{\bokem}[2][]
@@ -109,9 +115,12 @@
 
 \setmainfont{Liberation Sans}%Liberation Serif}
 %\setmainfont{Liberation Serif} %URW Gothic L,DejaVu Sans,Georgia,Jumpcrew Cologne,Libertinage,LMSans12, Nimbus Sans L
-\setmainfont[Mapping=tex-text,Ligatures={Common,Historical},Numbers={OldStyle}]{Liberation Serif}
-\setsansfont{Liberation Sans}
+\setmainfont[Mapping=tex-text,Ligatures={Common},BoldFont={* Bold}, ItalicFont={* Italic},Numbers={OldStyle}]{Liberation Serif}
+\setsansfont[Scale=1,Mapping=tex-text,Ligatures={Common,Rare,Historical},Numbers={OldStyle}]{Calluna Italic}
 \setmonofont{Monaco}
+
+\usepackage{sectsty}
+\allsectionsfont{\sffamily}
 
 
 % other LaTeX packages.....
@@ -156,9 +165,9 @@
 
 
 \vfill
-
+\thispagestyle{empty}
 \begin{center}
-\includegraphics[scale = 0.65]{imgs/thePainOfFleetingJoy_1.jpg}
+\includegraphics[scale = 0.5]{imgs/thePainOfFleetingJoy_1.jpg}
 \end{center}
 
 
@@ -184,7 +193,7 @@ Dostala-li se vám tato kniha do rukou jinou cestou nebo dokonce náhodou nebo o
 
 Text je řazený do jednotlivých  kapitol a dále stromově do dvou úrovní podkapitol. Pořadí kapitol by mělo odpovídat sledu potřebných informací nezbytných k naučení se programovacímu jazyku Processing.
 
-Pořadí a obsah jednotlivých kapitol vychází jednak ze mé vlastní zkušenosti s učením se, a zároveň z veliké míry koresponduje s podobnými oficiálními průvodci psanými tvůrci a komunitou kolem programovacího jazyka Processing.
+Pořadí a obsah jednotlivých kapitol vychází z mé zkušenosti s učením se programovat v jazyce Processing, a z veliké míry koresponduje s podobnými oficiálními průvodci. Ty píší samotní tvůrci a širší komunita lidí kolem programovacího jazyka Processing.
 
 Zvolená forma textu odpovídá ověřeným postupům. Následující text bude podléhat určitým zákonitostem. V knize se objeví několik typů textu, které budou vždy odlišeny stylem zápisu.
 
@@ -320,11 +329,11 @@ Z pohledu vývojáře znamená otevřenost zdrojového kódu zásadní věc, jed
 
 Processing na první pohled není ničím zvláštní programovací jazyk. V podstatě by se dalo říci, že se jedná pouze o rozsáhlou knihovnu pro jazyk Java. To co Processing řadí mezi oblíbené softwary pro tvorbu dnes je nejvíce přívětivá komunita uživatelů s velmi odlišnými stupni znalostí a úhly pohledu. Zvláštní důraz je v komunitě kladen na poskytnutí co největší podpory právě začínajícím uživatelům. Tomu odpovídá i počet rozmanitých průvodců a rozsáhlá, velmi dobře stučně napsaná dokumentace ke každému z příkazů v Processingu.
 
-K otevřenosti v kódu v neposlední řadě přistupuje i celá řada velmi zkušených tvůrců. Tím se uživatel na jakémkoli stupni znalostí může kdykoli naučit nové postupy nebo může svobodně recyklovat algoritmy druhých uživatelů. Processing a čím dál více jeho uživatelů ctí filosofii otevřeného softwaru která (mimo jiné) hlásá: {\em Vědomosti nesmí být privatizovány!}
+K otevřenosti v kódu v neposlední řadě přistupuje i celá řada velmi zkušených tvůrců. Tím se uživatel na jakémkoli stupni znalostí může kdykoli naučit nové postupy nebo může svobodně recyklovat algoritmy druhých uživatelů. Processing a čím dál více jeho uživatelů ctí filosofii otevřeného softwaru která (mimo jiné) hlásá: \uv{\em Vědomosti nesmí být privatizovány!}
 
 \subsection{Procesualita, živý program}
 
-Hlavní doménou Processingu je schopnost vytvářet "živé" programy, tj. programy běžící v reálném čase. Již jméno programovacího jazyka Processing napovídá akcent jisté procesuality, v čase se odvíjející události.
+Hlavní doménou Processingu je schopnost vytvářet \uv{živé} programy, tj. programy běžící v reálném čase. Již jméno programovacího jazyka Processing napovídá akcent jisté procesuality, v čase se odvíjející události.
 
 Obraz vytvořený tímto způsobem, na první pohled zaměnitelný s videem, nemusí například podléhat časové omezenosti, nebo může určitým způsobem reagovat na své okolí. Generovaný obraz může být například takto vtažen do kontextu, ve kterém se nachází. Možností jak nakládat s těmito specifickými možnostmi je nepřeberné množství.
 
@@ -338,7 +347,7 @@ Tato základní jednoduchost na druhou stranu nezdržuje uživatele od myšlenko
 
 Nazývám tento způsob programování empirický, tedy přístup, kdy podle zkušenosti s běžícím programem je dotvářen i samotný zdrojový kód. Mnoho technicky zaměřených lidí by zřejmě mohlo tento postup kritizovat pro přílišnou reduktivnost a amatérský přístup k programování. Zde bych oponoval faktem, že motivace lidí vytvářející například instalaci do galerie nezajímá příliš dokonalost (když už tedy vůbec) programu. Program je v pojetí tvůrců jen prostředníkem pro další sdělení, a jestliže toto sdělení předá je to dobrý program.
 
-Proces poznávání struktur jazyka při tvorbě obrazu prostřednictvím Processingu bych přirovnal k postupu od začátečnické malby na tkaninu k postupnému tkání gobelínu. Zde je nutno podotknout, že ne každý tvůrce využívající Processing chce tkát gobelín a najde-li nástroj vhodný "jen" pro "malbu" na plátno, je to dobrý nástroj.
+Proces poznávání struktur jazyka při tvorbě obrazu prostřednictvím Processingu bych přirovnal k postupu od začátečnické malby na tkaninu k postupnému tkání gobelínu. Zde je nutno podotknout, že ne každý tvůrce využívající Processing chce tkát gobelín a najde-li nástroj vhodný \uv{jen} pro \uv{malbu} na plátno, je to dobrý nástroj.
 
 
 [????]
