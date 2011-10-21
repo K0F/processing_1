@@ -45,6 +45,9 @@
 %\usepackage[utf8x]{inputenc}
 
 
+%uvozovky cs
+\renewcommand\uv[1]{\quotedblbase #1\textquotedblleft}%
+
 
 \usepackage[xindy]{glossaries}
 
@@ -72,12 +75,12 @@
 
 \usepackage{setspace}
 
-\newcommand{\info}[1]{\todo[color=gray!15]{\em #1}}
+\newcommand{\bublina}[1]{\todo[color=gray!15]{\em #1}}
 \newcommand{\otazka}[1]{\todo[color=orange!60]{\em #1}}
 \newcommand{\kof}[1]{\todo[color=green!70]{\em #1}}
 
 
-\newcommand{\klavesy}[1]{\textsuperscript{\em #1}}
+\newcommand{\klavesy}[1]{\textsc{\em #1}}
 
 \newcommand{\slovnik}[1]{\textbf{\gls{#1}}}
 \newcommand{\Slovnik}[1]{\textbf{\Gls{#1}}}
@@ -103,13 +106,13 @@
 
 
 \usepackage{fontspec} % Font selection for XeLaTeX; see fontspec.pdf for documentation
-\defaultfontfeatures{Mapping=tex-text} % to support TeX conventions like ``---''
 
-\setmainfont{Liberation Serif}
+\setmainfont{Liberation Sans}%Liberation Serif}
 %\setmainfont{Liberation Serif} %URW Gothic L,DejaVu Sans,Georgia,Jumpcrew Cologne,Libertinage,LMSans12, Nimbus Sans L
-\setromanfont{Liberation Serif}
+\setmainfont[Mapping=tex-text,Ligatures={Common,Historical},Numbers={OldStyle}]{Liberation Serif}
 \setsansfont{Liberation Sans}
 \setmonofont{Monaco}
+
 
 % other LaTeX packages.....
 \usepackage{geometry} % See geometry.pdf to learn the layout options. There are lots.
@@ -159,7 +162,7 @@
 \end{center}
 
 
-\section{Úvodní slovo}
+\section{Předmluva}
 
 
 
@@ -179,7 +182,7 @@ Dostala-li se vám tato kniha do rukou jinou cestou nebo dokonce náhodou nebo o
 
 \subsection{Uspořádání informací}
 
-Text je řazený do jednotlivých  kapitol\ref{obsah} a dále stromově do dvou úrovní podkapitol. Pořadí kapitol by mělo odpovídat sledu potřebných informací nezbytných k naučení se programovacímu jazyku Processing.
+Text je řazený do jednotlivých  kapitol a dále stromově do dvou úrovní podkapitol. Pořadí kapitol by mělo odpovídat sledu potřebných informací nezbytných k naučení se programovacímu jazyku Processing.
 
 Pořadí a obsah jednotlivých kapitol vychází jednak ze mé vlastní zkušenosti s učením se, a zároveň z veliké míry koresponduje s podobnými oficiálními průvodci psanými tvůrci a komunitou kolem programovacího jazyka Processing.
 
@@ -207,16 +210,16 @@ boolean pravda = true;
 
 
 \item
-\klavesy{CONTROL + T} --- klávesové zkratky, psané pomocí ``superscriptu``
+\klavesy{CONTROL + T} --- klávesové zkratky, psané pomocí \uv{malých kapitálek}
 
 \item
-\vyraz{boolean} --- jednotlivé příkazy a oficiální názvy v textu, zařazené do slovníku, psané ``kurzívou``
+\vyraz{boolean} --- jednotlivé příkazy a oficiální názvy v textu, zařazené do slovníku, psané \uv{kur\-zívou}
 
 \item
 \Slovnikpl{výraz ve slovníku} --- ostatní výrazy, jejichž definici můžete nalézt ve slovníku na konci  knihy.
 
 \item
-Shrnutí důležitých nových informací \info{Poznámky na okraji pro shrnutí nebo zdůraznění informace budou v šedé bublině} v textu.
+Shrnutí důležitých nových informací \bublina{Poznámky na okraji pro shrnutí nebo zdůraznění informace budou v šedé bublině} v textu.
 
 \item
 Kontrolní otázky \otazka{Jakou barvu má bublina značící otázku?} v textu.
@@ -389,7 +392,7 @@ Naopak v případě názvu proměnných, nebo jakýchkoli funkčních definic, j
 
 Sketch, neboli náčrt, označuje samostatný projekt Processingu. Dělením projektů na sketche jsou uspořádány jednotlivé projekty Processingu. Sketch je ve své podstatě složka obsahující alespoň stejně jeden stejně nazvaný soubor s příponou {\em *.pde}. Sktech při vytvoření nevyžaduje název, je jí přidělen pouze aktuální datový kód zaznamenávající datum vytvoření. Tímto decentním způsobem Processing toleruje například nejasnost záměru autora při vytváření nového díla, jeho název či pracovní název lze tímto způsobem přiřadit až později, po nabytí jasnějších obrysů.
 
-Program si vystačí pouze se samotným zdrojovým kódem tj. souborem (soubory) {\em *.pde}. Ovšem v případě operujeme-li s externími daty stojícími mimo zdrojový kód, jakékoli jiné soubory, můžeme využít dvě možnosti. První možnost je soubor, se kterým potřebujeme operovat tažením myši přesunout na textové pole Processing IDE. Touto operací bude soubor zapsán do naší sketche automaticky. Druhá možnost je operaci provést manuálně, stačí vytvořit v adresáři sketche adresář s názvem {\em DATA}. Processing tuto složku automaticky rozpozná a soubory v této složce budou dobře dostupné pro pozdější operace.
+Program si vystačí pouze se samotným zdrojovým kódem tj. souborem (soubory) {\em *.pde}. Ovšem v případě operujeme-li s externími daty stojícími mimo zdrojový kód, jakékoli jiné soubory, můžeme využít dvě možnosti. První možnost je soubor, se kterým potřebujeme operovat tažením myši přesunout na textové pole Processing \index{IDE}IDE. Touto operací bude soubor zapsán do naší sketche automaticky. Druhá možnost je operaci provést manuálně, stačí vytvořit v adresáři sketche adresář s názvem \slovnik{DATA}. Processing tuto složku automaticky rozpozná a soubory v této složce budou dobře dostupné pro pozdější operace.
 
 Ke standartním adresářům, které se často objevují ve struktuře skteche, si stačí zapamatovat jen dva již zmíněný adresář nazvaný {\em DATA}. Tento adresář je využíván při práci s jakýmikoliv vnějšími daty jako jsou např. obrázky, zvuky, videa, vektorové grafiky nebo například textové soubory. Druhý adresář nazvaný {\em CODE} obsahuje externí zdrojový kód, popřípadě kód kompilovaný v podobě knihovny, mající nejčastěji přípony {\em *.java, *.class, *.jre}. Tento adresář se nalézá v systémové cestě daného projektu a umístíme-li zde soubory budou též dobře dostupné z daného projektu. Adresář {\em CODE} nás zatím nemusí příliš zajímat, později se jeho prostřednictvím můžeme pokusit rozšiřovat funkce Processingu.
 
