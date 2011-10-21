@@ -412,65 +412,6 @@ Místo na disku, které Processing využívá k uskladnění sktechí se nazýv�
 
 Ve sketchbooku se dále nachází jeden speciální adresář nazvaný {\em libraries}. Adresář v sobě uchovává externí rozšíření Processingu o komunitní knihovny. Standartně Processing již své základní knihovny nese v sobě, tj. jsou standartně přidány do samotného Processingu. V tomto adresáři se nacházejí knihovny které budete moci použít později. Na stránkách projektu {\em http://processing.org} můžete nalézt velké množství komunitních knihoven s dobrou dokumentací, volně ke stažení. Veškeré tyto knihovny tedy Processing potřeuje nalézt v tomto adresáři.
 
-\subsection{Knihovny}
-
-Ve skecthbooku se dále nacházejí (od verze ...) veškeré rozšíření za pomocí takzvaných knihoven neboli libraries. Ty jsou umístěny v adresáři sketchbooku ve složce {\em libraries}. Knihovny jsou silným rozšířením celého jazyka a pokrývají mnoho možností s nakládaáním s externími daty, zajišťují komunikaci zařízeními, práci s videem, zvukem, nebo s trojdimenzionálními daty či vektorovým obrazem.
-
-Zmínka o knihovnách bývá často ve standartních průvodcích Processingem až jako pokročilá lekce. Myslím si že je dobré mít přehled o knihovnách okamžitě v úvodu. Knihovnami se dá dobře ilustrovat k čemu lidé převážně Processing využívají a jakým způsobem je rozšiřován. To nutně neznamená že jazyk musíte používat právě k těmto účelům ale je dobré mít od začátku přehled o kontextu.
-
-Ve zkratce jak již jsem zmínil knihovny se dělí na dvě základní skupiny. Jednu tvoří interní knihovny Processingu, které přichází již nainstalované se softwarem. Tyto knihovny se dají nalézt pod tlačítkem sketch > Import Library.
-K základní výbavě knihoven patří tyto:
-
-\begin{itemize}
-\item
-Video
-
-Základní rozhraní mezi Apple Qucktime a Processingem. U platformy Linux, musíme využít alternativy.
-
-\item
-Network
-Zajišťuje základní síťovou + internetovou komunikaci. 
-
-\item
-Serial
-Podpora pro komunikaci se sériovými porty, externí zařízeni typu (RS-232).
-
-\item
-PDF Export
-Knihovna pro export do PDF.
-
-\item
-OpenGL
-Technologie pro podporu java implementace akcelerované grafiky JOGL.
-
-\item
-Minim
-Využívá JavaSound API ke snadné obsluze zvukového výstupu.
-
-\item
-DXF Export
-Knihovna pro exportování vektorových dat ve formátu DXF (Autocad, 3D).
-
-\item
-Arduino
-Knihovna určená pro komunikaci s Arduinem.
-
-\item
-Netscape.JavaScript
-Nese metody pro komunikaci s Javascriptem a processingovým appletem ve své webové podobě.
-
-\item
-Candy SVG Import
-Knihovna pro načítání vektorové grafiky ve formátu SVG (Inkscape, Adobe Illustrator)
-
-\item
-XML Import
-Podpora načítání XML tabulek.
-\end{itemize}
-
-Neříkají-li vám tyto zkratky nic, nevadí, jedná se většinou o datové standarty a typy zařízení se kterými můžete s pomocí knihoven pracovat. Každá z těchto knihoven má svoji dobrou dokumentaci na stránkách projektu, nebo přímo v tzv. {\em Examples}, příkladech pro každou knihovnu, lze tímto způsobem zobrazit základní nápovědu. 
-
-
 
 \newpage
 \section{Základní pravidla a zvyklosti, Hello world!}
@@ -903,29 +844,93 @@ V další kapitole si předvedeme jak vdechnout procesům pohyb a stálost, dal�
 
 
 \section{Animace a interakce}
+\index{animace}
+Statická kresba na plátno je jen jeden z možných výstupů. Animace v Processingu znamená překreslovat plátno pokaždé jinými obrazy. Processing je právě silný v pohyblivém obraze. Nyní si ukážeme základní postup při tvorbě pohyblivého obrazu.
 
-Statická kresba na plátno je jen jeden z možných výstupů.
+Základní funkce pro vyvolání překreslování výstupního okna je funkce \vyraz{draw()}.
 
-\newpage
+\begin{lstlisting}
+void draw(){
+	// 60x za vteřinu spuštěná operace
+}
+\end{lstlisting}
+
+
 \section{Datatypy, paměť programu}
-.
-\newpage
 \section{Proměnlivost}
-.
-\newpage
 \section{Pokročilejší logické operace}
-.
 
 \chapter{Práce s daty}
 
 \section{Parsing, získávání hodnot z externích dat}
-.
-\newpage
 \section{Vizualizace hodnot}
 
 
 \chapter{Rozšíření Processingu}
 \section{Knihovny}
+
+\subsection{Vestavěné knihovny}
+\index{vestavěné knihovny}
+
+Ve skecthbooku se dále nacházejí (od verze ...) veškeré rozšíření za pomocí takzvaných knihoven neboli libraries. Ty jsou umístěny v adresáři sketchbooku ve složce {\em libraries}. Knihovny jsou silným rozšířením celého jazyka a pokrývají mnoho možností s nakládaáním s externími daty, zajišťují komunikaci zařízeními, práci s videem, zvukem, nebo s trojdimenzionálními daty či vektorovým obrazem.
+
+Zmínka o knihovnách bývá často ve standartních průvodcích Processingem až jako pokročilá lekce. Myslím si že je dobré mít přehled o knihovnách okamžitě v úvodu. Knihovnami se dá dobře ilustrovat k čemu lidé převážně Processing využívají a jakým způsobem je rozšiřován. To nutně neznamená že jazyk musíte používat právě k těmto účelům ale je dobré mít od začátku přehled o kontextu.
+
+Ve zkratce jak již jsem zmínil knihovny se dělí na dvě základní skupiny. Jednu tvoří interní knihovny Processingu, které přichází již nainstalované se softwarem. Tyto knihovny se dají nalézt pod tlačítkem sketch > Import Library.
+K základní výbavě knihoven patří tyto:
+
+\begin{itemize}
+\item
+Video
+
+Základní rozhraní mezi Apple Qucktime a Processingem. U platformy Linux, musíme využít alternativy.
+
+\item
+Network
+Zajišťuje základní síťovou + internetovou komunikaci. 
+
+\item
+Serial
+Podpora pro komunikaci se sériovými porty, externí zařízeni typu (RS-232).
+
+\item
+PDF Export
+Knihovna pro export do PDF.
+
+\item
+OpenGL
+Technologie pro podporu java implementace akcelerované grafiky JOGL.
+
+\item
+Minim
+Využívá JavaSound API ke snadné obsluze zvukového výstupu.
+
+\item
+DXF Export
+Knihovna pro exportování vektorových dat ve formátu DXF (Autocad, 3D).
+
+\item
+Arduino
+Knihovna určená pro komunikaci s Arduinem.
+
+\item
+Netscape.JavaScript
+Nese metody pro komunikaci s Javascriptem a processingovým appletem ve své webové podobě.
+
+\item
+Candy SVG Import
+Knihovna pro načítání vektorové grafiky ve formátu SVG (Inkscape, Adobe Illustrator)
+
+\item
+XML Import
+Podpora načítání XML tabulek.
+\end{itemize}
+
+Neříkají-li vám tyto zkratky nic, nevadí, jedná se většinou o datové standarty a typy zařízení se kterými můžete s pomocí knihoven pracovat. Každá z těchto knihoven má svoji dobrou dokumentaci na stránkách projektu, nebo přímo v tzv. {\em Examples}, příkladech pro každou knihovnu, lze tímto způsobem zobrazit základní nápovědu. 
+
+
+
+
 \section{Nástroje}
 .
 \newpage
