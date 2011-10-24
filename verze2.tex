@@ -16,6 +16,8 @@
 \usepackage{listings}
 \usepackage{xcolor}
 
+\usepackage{cleveref}
+
 
 % colors
 \definecolor{javared}{rgb}{0.0,0.4,0.8} % for strings
@@ -25,6 +27,7 @@
 % define backgroundcolor
 \definecolor{bggray}{rgb}{0.97, 0.97, 0.99}
 
+\frenchspacing
 
 
 
@@ -55,7 +58,9 @@
 }
 
 
-% Automaticke reference.. In section~\nameref{sec:marker} we defined...
+\usepackage{makeidx}
+\usepackage{index}     % balík pro indexování
+\usepackage[all]{hypcap}
 
 
 \usepackage{graphicx} % support the \includegraphics command and options
@@ -75,8 +80,8 @@
 \usepackage[textsize=footnotesize,textwidth=3cm]{todonotes}
 \setlength{\marginparwidth}{3.1cm}
 
-
-
+\newcommand{\oddil}[1]{\section{#1}\label{sec:#1}}
+\newcommand{\pododdil}[1]{\subsection{#1}\label{subsec:#1}}
 %%% BUBLINY
 
 \usepackage{setspace}
@@ -88,12 +93,16 @@
 
 \newcommand{\klavesy}[1]{\textsc{\em #1}}
 
-\newcommand{\slovnik}[1]{\textbf{\gls{#1}}}
-\newcommand{\Slovnik}[1]{\textbf{\Gls{#1}}}
-\newcommand{\slovnikpl}[1]{\textbf{\glspl{#1}}}
-\newcommand{\Slovnikpl}[1]{\textbf{\Glspl{#1}}}
+\newcommand{\slovnik}[1]{\textbf{\gls{#1}}\index{#1}}
+\newcommand{\Slovnik}[1]{\textbf{\Gls{#1}}\index{#1}}
+\newcommand{\slovnikpl}[1]{\textbf{\glspl{#1}}\index{#1}}
+\newcommand{\Slovnikpl}[1]{\textbf{\Glspl{#1}}\index{#1}}
 
-\newcommand{\vyraz}[1]{\textit{\gls{#1}}}
+\newcommand{\definice}[2]{\newglossaryentry{#1}{ }{ name={#1},description{#2} } }
+
+\newcommand{\vyraz}[1]{\textit{\gls{#1}}\index{#1}}
+
+
 
 
 %\newcounter{todocounter}
@@ -117,12 +126,11 @@
 \setmainfont{Liberation Sans}%Liberation Serif}
 %\setmainfont{Liberation Serif} %URW Gothic L,DejaVu Sans,Georgia,Jumpcrew Cologne,Libertinage,LMSans12, Nimbus Sans L
 \setmainfont[Mapping=tex-text,Ligatures={Common},BoldFont={* Bold}, ItalicFont={* Italic},Numbers={OldStyle}]{Liberation Serif}
-\setsansfont[Scale=1,Mapping=tex-text,Ligatures={Common,Rare,Historical},Numbers={OldStyle}]{Calluna Italic}
+\setsansfont[Scale=1,Mapping=tex-text,Ligatures={Common,Rare,Historical},Numbers={OldStyle}]{Calluna}
 \setmonofont{Monaco}
 
 \usepackage{sectsty}
 \allsectionsfont{\sffamily}
-
 
 % other LaTeX packages.....
 \usepackage{geometry} % See geometry.pdf to learn the layout options. There are lots.
@@ -138,8 +146,6 @@
 
 
 
-\usepackage{makeidx}
-\usepackage{index}     % balík pro indexování
 
 \makeindex
 
@@ -172,7 +178,8 @@
 \end{center}
 
 
-\section{Předmluva}
+\oddil{Předmluva}
+
 
 
 
@@ -188,9 +195,9 @@ Má snaha provést začínající i středně pokročilé uživatele jazykem bud
 
 Dostala-li se vám tato kniha do rukou jinou cestou nebo dokonce náhodou nebo omylem, tedy věru netuším, co v ni dále najdete, a proto bych i Vás rád pobídl alespoň k začtení se do světa skriptů a kódů.
 
-\section{Forma knihy}
+\oddil{Forma knihy}
 
-\subsection{Uspořádání informací}
+\pododdil{Uspořádání informací}
 
 Text je řazený do jednotlivých  kapitol a dále stromově do dvou úrovní podkapitol. Pořadí kapitol by mělo odpovídat sledu potřebných informací nezbytných k naučení se programovacímu jazyku Processing.
 
@@ -198,16 +205,17 @@ Pořadí a obsah jednotlivých kapitol vychází z mé zkušenosti s učením se
 
 Zvolená forma textu odpovídá ověřeným postupům. Následující text bude podléhat určitým zákonitostem. V knize se objeví několik typů textu, které budou vždy odlišeny stylem zápisu.
 
-\subsection{Pravidla formátování}
+\pododdil{Pravidla formátování v knize}
 
 Pravidla\index{pravidla textu} jsou následující:
 
 \begin{itemize}
 
-\item
-Obyčejný text --- člověku srozumitelný popis ve formě klasického textu.
+\item[Obyčejný text:]
+člověku srozumitelný popis ve formě klasického textu.
 
-\item
+\item[\texttt{\small kód:}]
+
 \begin{lstlisting}
 /**
 * Barevný text v šedém rámování bude značit samotný strojový kód,
@@ -219,29 +227,33 @@ boolean pravda = true;
 \end{lstlisting}
 
 
-\item
-\klavesy{CONTROL + T} --- klávesové zkratky, psané pomocí \uv{malých kapitálek}
+\item[\klavesy{CONTROL + T}:]
+klávesové zkratky, psané pomocí \uv{malých kapitálek}
+
+\item[\slovnik{slovník}:]
+výrazy a pojmy, jejichž definici můžete nalézt ve slovníku na konci knihy
+
+\item[\vyraz{boolean}:]
+jednotlivé příkazy a oficiální příkazy Processingu, které jsou zároveň zařazeny do slovníku
 
 \item
-\vyraz{boolean} --- jednotlivé příkazy a oficiální názvy v textu, zařazené do slovníku, psané \uv{kur\-zívou}
+Shrnutí nebo zvýraznění důležitých informací v textu se nachází na postranní bublině v šedé barvě.\bublina{Poznámky na okraji pro shrnutí nebo zdůraznění informace budou v šedé bublině}  
 
 \item
-\Slovnikpl{výraz ve slovníku} --- ostatní výrazy, jejichž definici můžete nalézt ve slovníku na konci  knihy.
-
-\item
-Shrnutí důležitých nových informací \bublina{Poznámky na okraji pro shrnutí nebo zdůraznění informace budou v šedé bublině} v textu.
-
-\item
-Kontrolní otázky \otazka{Jakou barvu má bublina značící otázku?} v textu.
+Kontrolní otázky v textu se nachází v bublině modré barvy. \otazka{Jakou barvu má bublina značící otázku?}
 
 \end{itemize}
 
 
 
 
-\section{Jazyk}
+\oddil{Jazyk}
 
-\subsection{Definice jazyka}
+
+
+\begin{comment}
+
+\pododdil{Definice jazyka}
 
 \begin{enumerate}
 \item
@@ -264,8 +276,9 @@ Logicky popsaným jazykem a vnitřně uceleným systémem jsme schopni vysvětli
 V případě programovacího jazyka si je nutné uvědomit, že programujeme (informujeme) stroj. Dnešní stroje popisují jen zanedbatelně velikou skutečnost fyzicky nepřesahující dimenze součástí stroje\footnote{nejvíce pak procesoru paměti, skutečnost na pevném disku a grafických procesorů}, ale tím zpětně i sebe sama a druhé lidi\footnote{potažmo jakkoli širší skutečnost (zvířata, rostliny, cokoli o čem ani dále netušíme)}, symbolicky a nepřímo popisujeme zkratku skutečnosti nepoměřitelně daleko větší.
 \end{enumerate}
 
+\end{comment}
 
-\subsection{Jednoduchost jazyka}
+\pododdil{Jednoduchý programovací jazyk}
 
 Snaha po  zpřístupnění programování širší veřejnosti dala již na konci dvacátého století vzniknout rodině jazyků, které jsou patřičně zjednodušeny tak, aby je mohli obsluhovat i neodborníci.
 
@@ -287,7 +300,7 @@ Processing vychází z koncepce snadného přístupu k programování. Za běžn
 Programovací jazyk processing vychází z laboratoří MIT, kde se celé oddělení věnuje právě koncepcím zjednodušování programovacích jazyků .... historie small talk atd. zde
 
 
-\subsection{Dokonalost jazyka}
+\pododdil{Dokonalost jazyka}
 
 Co je to dokonalý jazyk? Nejprve je zapotřebí říci, že absolutně dokonalý jazyk neexistuje. Jazyk si můžeme představit jako systém vzájemných vztahů, který je schopen popsat jednotlivé symboly nebo objekty. Symboly můžeme nazvat předměty, tyto předměty dále mají své vlastní hodnoty a vlastnosti, jazyk kromě definic takových vlastností operuje a popisuje jednotlivé jevy a vztahy mezi těmito předměty. Jednodušší popis jazyka je v pojetí výpočetní techniky určitý ucelený systém schopný popsat rozmanité problémy řešitelné strojem.
 
@@ -301,12 +314,12 @@ Chceme-li komunikovat se strojem musíme tedy svůj způsob vyjadřování přiz
 
 Vtip celé věci spočívá v tom, že ovládneme-li formálně jazyk určený stroji, můžeme prostřednictvím tohoto stroje hovořit i ke člověku, tj. popisovat pocity z rozkvetlých luk.
 
-\subsection{Volba jazyka}
+\pododdil{Volba jazyka}
 
 
 Ve výpočetní technice se nachází celá škála programovacích jazyků i prostředí. Tyto jazyky mají svoji genezi a byli historicky vyvíjeny především počítačovými odborníky. Jejich dokonalost lze těžko ocenit z vnějšího pohledu, a to právě z důvodu jejich konstrukce, která odpovídá a částečně podléhá určitým účelům, ke kterým byli tyto jazyky původně navrženy. Celistvý pohled na vývoj programovacích jazyků zde není možné obsáhnout. Základní rozdělení programovacích jazyků dle historického vývoje můžeme dnes označit na dvě skupiny, jazyky procedurální a objektově orientované.
 
-Processing se svojí stavbou na základech Javy řadí k objektově orientovaným jazykům. Jeho společnými příbuznými jsou kromě {\em Javy} jazyky jako {\em C++, C\#,} nebo {\em VisualBasic}. Toto rozdělení pojednává o koncepci jazyka a jeho základních struktur. Ke kterým se dostaneme později. 
+Processing se svojí stavbou na základech Javy řadí k objektově orientovaným jazykům.\footnote{ Jeho společnými příbuznými jsou kromě {\em Javy} jazyky jako {\em C++, C\#,} nebo {\em VisualBasic}} Toto rozdělení pojednává o koncepci jazyka a jeho základních struktur. Ke kterým se dostaneme později. 
 
 V posledních přibližně dvaceti letech se mezi programovacími jazyky postupně objevuje tendence po větší srozumitelnosti a potažmo zjednodušení programování jako takového. Programování v této koncepci zjednodušování již není jen jazykem odborníků, ale je demokraticky přístupný širší veřejnosti z rozmanitých - prioritně netechnických oborů.
 
@@ -318,21 +331,22 @@ Jazyk, který je nutně limitovaný svojí vnitřní dokonalostí (dokonavostí?
 
 [Důvody pro processing]
 
-\section{Tvorba softwaru}
+\oddil{Tvorba softwaru}
 
-\subsection{Otevřenost softwaru}
+\pododdil{Otevřenost softwaru}
 
-Jazyk nazvaný Processing je jedním z jazyků, který byl vytvořen v diskurzu zjednodušování programování. Jako každý jiný programovací jazyk je i Processing navržen pro jisté účely. V případě tohoto programovacího jazyka se nejvíce jedná o důraz na rychlý vývoj a zjednodušené nakládání s obrazem i prostorem. Z více technického pohledu pak processing vyniká otevřeností zdrojového kódu a důraz na multiplatformnost.
+Jazyk nazvaný Processing je jedním z jazyků, který byl vytvořen v diskurzu zjednodušování programování. Jako každý jiný programovací jazyk je i Processing navržen pro jisté účely. V případě tohoto programovacího jazyka se nejvíce jedná o důraz na rychlý vývoj a zjednodušené nakládání s obrazem i prostorem. Z více technického pohledu pak Processing vyniká otevřeností zdrojového kódu a důraz na multiplatformnost.
 
-Jazyk i programovací prostředí Processing je v současnosti tzv. otevřený software, což znamená, že i samotný zdrojový kód je volně k dispozici a šiřitelný pod MIT licencí [dpolnit licence GPL 3.0 .. atd]. Z pohledu uživatele je velmi příjemné, že samotný software je k dostání zdarma na stránkách projektu. Za jeho užívání není nutné platit žádné poplatky, a to i v přpadě komerčních užití.
+Z pohledu vývojáře je velmi důležité, že jazyk i programovací prostředí Processing je v současnosti \slovnik{otevřený software}, což znamená, že prostředí i samotný zdrojový kód je volně k dispozici. Processing je dále šiřitelný pod \slovnikpl{MIT licence}. Pro vývojáře otevřenost zdrojového kódu znamená zásadní věc, jednoduše pro dosažitelnost celého zdroje, který se dá následně například implementovat do různých prostředí. Další možnost vývojáře je rozšířit jazyk o vlastní knihovnu, a tím participovat na projektu. Otevřenost kódu teoreticky navyšuje počet možných participantů a de facto celý projekt udržuje v dlouhodobém horizontu naživu.
 
-Z pohledu vývojáře znamená otevřenost zdrojového kódu zásadní věc, jednoduše pro dosažitelnost celého zdroje, který se dá následně například implementovat do různých prostředí, nebo kvůli možnosti rozšířit jazyk o vlastní knihovnu. Otevřenost kódu udržuje počet participantů a de facto celý projekt v dlouhodobém horizontu naživu.
+Z pohledu samotného uživatele je velmi příjemné, že samotný software je k dostání zdarma na stránkách projektu. Za jeho užívání není nutné platit žádné poplatky, a to i v přpadě komerčních užití. V případě potřeby vyjádření vděku za práci autorů je možné zmínit kdekoli ve Vašem produktu \slovnik{Built with Processing}.
+
 
 Processing na první pohled není ničím zvláštní programovací jazyk. V podstatě by se dalo říci, že se jedná pouze o rozsáhlou knihovnu pro jazyk Java. To co Processing řadí mezi oblíbené softwary pro tvorbu dnes je nejvíce přívětivá komunita uživatelů s velmi odlišnými stupni znalostí a úhly pohledu. Zvláštní důraz je v komunitě kladen na poskytnutí co největší podpory právě začínajícím uživatelům. Tomu odpovídá i počet rozmanitých průvodců a rozsáhlá, velmi dobře stučně napsaná dokumentace ke každému z příkazů v Processingu.
 
 K otevřenosti v kódu v neposlední řadě přistupuje i celá řada velmi zkušených tvůrců. Tím se uživatel na jakémkoli stupni znalostí může kdykoli naučit nové postupy nebo může svobodně recyklovat algoritmy druhých uživatelů. Processing a čím dál více jeho uživatelů ctí filosofii otevřeného softwaru která (mimo jiné) hlásá: \uv{Vědomosti nesmí být privatizovány!}
 
-\subsection{Procesualita, živý program}
+\pododdil{Procesualita, živý program}
 
 Hlavní doménou Processingu je schopnost vytvářet \uv{živé} programy, tj. programy běžící v reálném čase. Již jméno programovacího jazyka Processing napovídá akcent jisté procesuality, v čase se odvíjející události.
 
@@ -340,7 +354,7 @@ Obraz vytvořený tímto způsobem, na první pohled zaměnitelný s videem, nem
 
 [rozvést více]
 
-\subsection{Empirický přístup k programování}
+\pododdil{Empirický přístup k programování}
 
 	I když zásadní odlišnost s jinými programovacími jazyky bychom hledali stěží, Processing proslul zejména pro snadnost použití. Kompilovat program není otázkou nastavování kompileru a veškerých jeho parametrů, program jednoduše po stisku tlačítka {\em RUN} běží (je-li správně napsán). Samozřejmě tento redukcionistický přístup má své nevýhody, speciálně při rozsáhlejších projektech tato jednoduchost může dokonce omezovat. Processing ovšem jako svobodný software lze naimplementovat do řady jiných prostředí, a potřebujete-li si kompilační proces nastavit sami, nic Vám například nebrání použít Processing jen jako knihovnu do {\em Javy}.
 
@@ -355,7 +369,7 @@ Proces poznávání struktur jazyka při tvorbě obrazu prostřednictvím Proces
 
 \chapter{Processing jako prostředí}
 
-\section{Základní prostředí}
+\oddil{Základní prostředí}
 
 Processing představuje ucelené programovací prostředí tzv. IDE\footnote{Integrated Development Enviroment}. Jedná se o kompletní prostředí určené především k rapidnímu vývoji aplikací. Samotný program je jedna otevřeným softwarem\footnote{tj. s otevřeným veřejně dostupným zdrojovým kódem} a zdarma ke stažení pro všechny majoritní platformy tedy pro \slovnik{GNU / Linux}, Mac OS x i pro Windows na stránkách projektu processing.org. Celý jazyk i samotné IDE vychází pod licencí \slovnik{GNU / GPL} 2 jedná se tedy o svobodný software. Díky této licenci můžete jakýkoli výstup z tohoto softwaru můžete publikovat, použit pro jakékoli účely v četně např. komerční aplikace.
 
@@ -369,7 +383,7 @@ Základní rozhraní tvoří textový editor s několika nezbytnými funkcemi. P
 
 
 \newpage
-\subsection{Základní diskové operace}
+\pododdil{Základní diskové operace}
 
 Ty operace jež něco zapisují či načítají z disku. Tyto opera zahrnují veškerou manipulaci se sketchí, její vytvoření, uložení, načtení či export do webového formátu či kompilaci do spustitelné aplikace.
 
@@ -379,14 +393,19 @@ Mezi základní operace patří vytvoření nové sketche (3), otevření přede
 
 Tlačítka mají dále speciální vlastnosti s podržením tlačítka tlačítko s novou sketchí otevře také nové okno editoru. V kombinaci s načtením předchozí sketche (4) otevřete též sketch v novém editoru aniž by jste ztratili předchozí okno. U uložení se modifikace projevuje funkcí uložit jako. U exportu stisknutím klávesy \klavesy{SHIFT} přepínáte mezi exportem samostatné aplikace nebo tzv. appletu, aplikace schopné běžet v prohlížeči nebo obecně na webových stránkách.
 
-\subsection{Editor}
+\pododdil{Editor}
 
 Editor je textové pole a je vaším hlavním komunikačním nástrojem s Processingem. Veškeré informace které zadáte do tohoto pole budou interpretovány samotným Processingem. Textový editor není nijak dokonalý, pro začátek si s ním ovšem vystačíme. Formát který tento editor produkuje je ve své podstatě textový soubor s příponou {\em *.pde}.
 
-Textový editor má několik funkcí, které vám mohou usnadnit práci. Odlišuje například mezi příkazy Processingu odlišnými barvami, tato zdánlivá banalita vám speciálně v začátcích nebo v případě objemnějších kódů může výrazně zpřehlednit organizaci programu. Jedná se o programátorskou konvenci obecně v anglickém jazyce nazývanou {\em syntax highlighting}.
 
-Další konvencí se kterou se často setkáte je tzv. {\em indenting}, zarovnávání kódu do úhledných paragrafů. V Processingu si ze začátku vystačíte se standartím zarovnáním, posléze lze zarovnávání aktivovat stiskem kombinace kláves {\em CONTROL (APPLE) + T}.\\
 
+
+Textový editor má několik funkcí, které vám mohou usnadnit práci. Odlišuje například mezi příkazy Processingu odlišnými barvami, tato zdánlivá banalita vám speciálně v začátcích nebo v případě objemnějších kódů může výrazně zpřehlednit organizaci programu. Jedná se o programátorskou konvenci obecně v anglickém jazyce nazývanou \slovnik{syntax highlighting}.
+
+
+Další konvencí se kterou se často setkáte je tzv. \slovnik{indenting}, zarovnávání kódu do úhledných paragrafů. V Processingu si ze začátku vystačíte se standartím zarovnáním, posléze lze zarovnávání aktivovat stiskem kombinace kláves \klavesy{CONTROL (APPLE) + T}.
+
+Více o konvencích se dočtete na straně~\pageref{Předmluva}
 
 \begin{center}
 \includegraphics[scale = 0.75]{imgs/editor.png}
@@ -398,7 +417,7 @@ Jak můžete vidět na obrázku editor operuje i českými znaky, ačkoli bych j
 
 Naopak v případě názvu proměnných, nebo jakýchkoli funkčních definic, je použití diakritiky v devadesáti procesntech nefunkční.\footnote{standartní jazykové kódování, ve kterém Processing operuje je {\em UTF-8}}
 
-\subsection{Sketch}
+\pododdil{Sketch}
 
 Sketch, neboli náčrt, označuje samostatný projekt Processingu. Dělením projektů na sketche jsou uspořádány jednotlivé projekty Processingu. Sketch je ve své podstatě složka obsahující alespoň stejně jeden stejně nazvaný soubor s příponou {\em *.pde}. Sktech při vytvoření nevyžaduje název, je jí přidělen pouze aktuální datový kód zaznamenávající datum vytvoření. Tímto decentním způsobem Processing toleruje například nejasnost záměru autora při vytváření nového díla, jeho název či pracovní název lze tímto způsobem přiřadit až později, po nabytí jasnějších obrysů.
 
@@ -406,7 +425,7 @@ Program si vystačí pouze se samotným zdrojovým kódem tj. souborem (soubory)
 
 Ke standartním adresářům, které se často objevují ve struktuře skteche, si stačí zapamatovat jen dva již zmíněný adresář nazvaný {\em DATA}. Tento adresář je využíván při práci s jakýmikoliv vnějšími daty jako jsou např. obrázky, zvuky, videa, vektorové grafiky nebo například textové soubory. Druhý adresář nazvaný {\em CODE} obsahuje externí zdrojový kód, popřípadě kód kompilovaný v podobě knihovny, mající nejčastěji přípony {\em *.java, *.class, *.jre}. Tento adresář se nalézá v systémové cestě daného projektu a umístíme-li zde soubory budou též dobře dostupné z daného projektu. Adresář {\em CODE} nás zatím nemusí příliš zajímat, později se jeho prostřednictvím můžeme pokusit rozšiřovat funkce Processingu.
 
-\subsection{Sktechbook a uspořádání}
+\pododdil{Sktechbook a uspořádání}
 
 Místo na disku, které Processing využívá k uskladnění sktechí se nazývá povšechně sketchbook a je v podstatě pouze adresář obsahující jednotlivé projekty. Koncepce sketchbooku spočívá v uspořádání jednotlivých projektů do organizované formy a ačkoli nevnáší do jednotlivých projektů sám o sobě řád může napomoci k vytvoření řádu vlastního. Ze své zkušenosti mohu říci, že organizace jednotlivých projektů do jakékoli struktury má opravdu smysl. Mnou preferovaná struktura obsahuje jednotlivé roky následně ještě dělené do měsíců, ale možnosti organizace záleží čistě na uživatelových preferencích. Tímto chci spíše ilustrovat možnosti uspořádání než-li nezbytnost, ale přítomnost vašeho systému od počátku vřele doporučuji.
 
@@ -418,18 +437,20 @@ Ve sketchbooku se dále nachází jeden speciální adresář nazvaný {\em libr
 
 
 
-\section{Syntax}
+\oddil{Syntax}
 
-\section{Základní pravidla a zvyklosti}
+\oddil{Základní pravidla a zvyklosti}
 
 V programování obecně platí jisté zákonitosti. Není tomu jinak i u pravidel, které nejsou důležité pro čtení kódu strojem ale pro člověka. Speciální zákonitosti formátování kódu mají ryze praktickou funkci. Jedná se o standart dodržovaný programátory, tak aby mezi sebou byli schopni sdílet své úsilí.
 
-V problematice programování obecně platí, že není nic složitějšího, než číst cizí kód, nebo dokonce vlastní s odstupem času. Při programování se lidská mysl dostává do stavu mimořádné bdělosti tzv. \slovnik{flow}, stavu ve kterém mysl vědomě drží celý\footnote{nebo větší části} programu.
+\index{flow}
+
+V problematice programování obecně platí, že není nic složitějšího, než číst cizí kód, nebo dokonce vlastní s odstupem času. Při programování se lidská mysl dostává do stavu mimořádné bdělosti tzv. \slovnik{flow}\index{flow}, stavu ve kterém mysl vědomě drží celý\footnote{nebo větší části} programu.
 
 Pokaždé když si programátor navodí takový stav, vše v kódu\footnote{podle míry ovládnutí programovacího jazyka} se pro něj jeví srozumitelné. Formátování a standarty velmi napomáhají k rychlému navození bdělého stavu, protože sami o sobě jsou jistou formou jazyka.
 
 
-\section{Orientace v prostoru}
+\oddil{Orientace v prostoru}
 
 Plocha programu by sa dala přirovnat k listu papíru, popřípadě k malířskému plátnu. Ve standartním dvoudimenzionálním módu má dva základní parametry {\em X} a {\em Y}, ty označují souřadnice, ve kterých se veškeré kreslící operace pohybují. Důležité je zmínit, že oproti jisté konvenci v matematických grafech levý horní roh nese hodnotu {\em X = 0}, {\em Y = 0}. Směrem dolů hodnota {\em Y} přibývá stejně tak jaho hodnota {\em X} přibývá směrem doprava.\\
 
@@ -469,9 +490,9 @@ Celé řemeslné umění psaní kódu v podstatě záleží na eleganci v zápis
 V další části se budeme zabývat stavbou programu. Pod odpudivým názvem se skrývají právě tato jednoduchá pravidla, která by měla tvořit základ dalším experimentům.   
 
 \newpage
-\section{Stavba programu}
+\oddil{Stavba programu}
 
-\subsection{Logika programování}
+\pododdil{Logika programování}
 Pro začátek je dobré si představit program jako sadu instrukcí. Každá instrukce má svůj význam a své místo. Instrukce se píší v programovacím jazyku a jejich interpretace je vždy pro stroj jednoznačná. Stroje podle svého návrhu nedělají nic kromě toho co mají takovým způsobem instruováno.
 
 Veškeré programy které používáte, dokonce i programy, které nevíte že používáte byly někdy naprogramovány lidmi pomocí programovacích jazyků. Programovací jazyk je pouze, plánovací forma zápisu programu. K tomu, aby byl program spuštěn, musí být v případě jazyku Processing převeden do strojového kódu. Strojový kód se liší od toho zdrojového, našeho čitelného plánovacího jazyka, tím že není čitelný pro člověka, je čitelný pro stroj.
@@ -480,7 +501,7 @@ Počítač je "rychlý blbec". Umí rychle vykonávat sled banálních operací.
 
 O kompilaci toho nemusíme naštěstí vědět mnoho, vše bylo již tvůrci Processingu shrnuto pod tlačítko spustit.
 
-\subsection{Základní datatypy}
+\pododdil{Základní datatypy}
 
 Ke stavbě programu potřebujeme stavební materiál. Pro základní pochopení fungování programu je nezbytné nejdříve pochopit základní datatypy. Datatyp si lze obecně představit jako obálku na informaci.
 
@@ -491,7 +512,7 @@ Pro datatyp je možné představit si různé paralely, má oblíbená je podobn
 Processing potřebuje nejdříve vědět zda nádoba obsahuje text nebo číslo, aby mohl s touto nádobou operovat. Například, nelze provést matematickou operaci mezi dvěma slovy. Sčítat, odčítat, dělit či násobit se dají pouze čísla.
 
 
-\subsection{Seznam základních datatypů}
+\pododdil{Seznam základních datatypů}
 Datatypů je jen několik, dají se vcelku snadno zapamatovat:
 
 \begin{lstlisting}
@@ -518,7 +539,7 @@ Podivné názvy jako například {\em mojeCeleCislo} tzv. proměnných, jen ukaz
 
 Proměnná nesmí být číslo, ale slovní název. Programátorské konvence při pojmenovávání proměnných jsou ryze praktické. Proměnná by měla mít co možná nejkratší a nejvýstižnější název.  Toto je spíše dobré doporučení než-li pravidlo. Správným pojmenováním proměnných docílíte větší přehlednosti v kódu kratší délkou si ušetříte zbytečné psaní.
 
-\subsection{Tisk do konzole}
+\pododdil{Tisk do konzole}
 
 Tento jednoduchý program, zatím jen definoval pár proměnných do správných datových typů zatím nedělá nic zajímavého. Celá alokace probíhá uvnitř programu. Processing dělá většinu svých operací skrytě. Program kreslí nebo jinak interaguje s uživatelem jen je-li o to požádán.
 
@@ -560,7 +581,7 @@ Bohužel chybové hlášení se nedá označit za dokonalé a pro začátečník
 V případě chyby se vás Processing bude snažit přesměrovat na řádek, kde chyba pravděpodobně vznikla. V případě takto jednoduchých programů, jaké si zde ukazujeme, chybu identifikuje zcela bezchybně, bohužel tomu tak nebude ve všech případech.
 
 
-\subsection{Základní operace s datatypy}
+\pododdil{Základní operace s datatypy}
 
 Náš program nyní nedělá nic světoborného. Definuje pár proměnných a následně některé z nich tiskne do konzole. Operujeme zde stále s abstraktními hodnotami které se zapisují do paměti programu a ty pak z paměti zpětně získáváme.
 
@@ -768,7 +789,7 @@ Boolean je možné si představit jako vypínač světla. Zapnuto a vypnuto jsou
 
 \end{itemize}
 
-\subsection{Podmínka}
+\pododdil{Podmínka}
 
 Uvedením do stavů programu se můžeme dostat k první opravdové struktuře v programu. Zkusme nyní nastínit jak taková struktura vypadá. Patrně nejpřímější řízení dějů v programu je podmínka. Podmínka říká, jestliže je něco pravda, spusť následné příkazy. Uvedu zde krátký příklad podobné struktury:
 
@@ -795,7 +816,7 @@ V tomto konkrétním případě se k proměnné {\em hodnota} přiřadí číslo
 
 To program následně ověřuje tiskem do konzole, kde se objeví {\em 0}.
 
-\section{Hodnota a její zobrazení}
+\oddil{Hodnota a její zobrazení}
 
 K čemu jsou vlastně hodnoty dobré? Tisk do konzole je jen kontrolní mechanismus většinou se nejedná o výslednou podobu programu.
 
@@ -813,7 +834,7 @@ Nyní zpět k hodnotám. Máme-li již jakékoli hodnoty v paměti programu, mů
 
 Processing je, co se týče grafického výstupu, navržen pro přímou experimentální interakci vznikajícího programu s uživatelem. To znamená, že pokaždé kdy chcete vidět výsledek kódu, stačí pouze stisknout tlačítko {\em RUN}. Zpětná vazba spolu s vaší interpretací a úmyslem má potom veliký vliv na následné úpravy v kódu. Tímto způsobem můžete doslova "vysochat" výslednou podobu programu.
 
-\subsection{Zobrazení}
+\pododdil{Zobrazení}
 
 Jak zobrazit hodnoty, které uchovává program v paměti? Jakákoli hodnota lze použít například jako jeden z argumentů v kreslících funkcích.
 
@@ -842,7 +863,7 @@ Veškeré příkazy které jsme si zatím ukázali byli spuštěny pouze jednou.
 V další kapitole si předvedeme jak vdechnout procesům pohyb a stálost, další kapitola je věnovaná animaci.
 
 
-\section{Animace a interakce}
+\oddil{Animace a interakce}
 \index{animace}
 Statická kresba na plátno je jen jeden z možných výstupů. Animace v Processingu znamená překreslovat plátno pokaždé jinými obrazy. Processing je právě silný v pohyblivém obraze. Nyní si ukážeme základní postup při tvorbě pohyblivého obrazu.
 
@@ -855,23 +876,23 @@ void draw(){
 \end{lstlisting}
 
 
-\section{Datatypy, paměť programu}
-\section{Proměnlivost}
-\section{Pokročilejší logické operace}
+\oddil{Datatypy, paměť programu}
+\oddil{Proměnlivost}
+\oddil{Pokročilejší logické operace}
 
 \chapter{Práce s daty}
 
-\section{Parsing, získávání hodnot z externích dat}
-\section{Vizualizace hodnot}
+\oddil{Parsing, získávání hodnot z externích dat}
+\oddil{Vizualizace hodnot}
 
 
 \chapter{Rozšíření Processingu}
-\section{Knihovny}
+\oddil{Knihovny}
 
-\subsection{Vestavěné knihovny}
+\pododdil{Vestavěné knihovny}
 \index{vestavěné knihovny}
 
-Ve skecthbooku se dále nacházejí (od verze ...) veškeré rozšíření za pomocí takzvaných knihoven neboli libraries. Ty jsou umístěny v adresáři sketchbooku ve složce {\em libraries}. Knihovny jsou silným rozšířením celého jazyka a pokrývají mnoho možností s nakládaáním s externími daty, zajišťují komunikaci zařízeními, práci s videem, zvukem, nebo s trojdimenzionálními daty či vektorovým obrazem.
+Ve skecthbooku se dále nacházejí\footnote{od verze 1.0} veškeré rozšíření za pomocí takzvaných knihoven neboli libraries. Ty jsou umístěny v adresáři sketchbooku ve složce {\em libraries}. Knihovny jsou silným rozšířením celého jazyka a pokrývají mnoho možností s nakládaáním s externími daty, zajišťují komunikaci zařízeními, práci s videem, zvukem, nebo s trojdimenzionálními daty či vektorovým obrazem.
 
 Zmínka o knihovnách bývá často ve standartních průvodcích Processingem až jako pokročilá lekce. Myslím si že je dobré mít přehled o knihovnách okamžitě v úvodu. Knihovnami se dá dobře ilustrovat k čemu lidé převážně Processing využívají a jakým způsobem je rozšiřován. To nutně neznamená že jazyk musíte používat právě k těmto účelům ale je dobré mít od začátku přehled o kontextu.
 
@@ -930,18 +951,18 @@ Neříkají-li vám tyto zkratky nic, nevadí, jedná se většinou o datové st
 
 
 
-\section{Nástroje}
+\oddil{Nástroje}
 .
 \newpage
-\section{Komplexní program}
+\oddil{Komplexní program}
 .
 \newpage
-\section{Experimenty}
+\oddil{Experimenty}
 
 
 \chapter{Rejstřík pojmů}
-\printindex
 \printglossaries
+\printindex
 
 
 %\printindex
