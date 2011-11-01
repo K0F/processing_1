@@ -245,7 +245,40 @@ Kontrolní otázky v textu se nachází v bublině modré barvy. \otazka{Jakou b
 \end{itemize}
 
 
+\chapter{Postaveno Processingem}
 
+
+[tři příklady zde]
+
+Instalace. Web applet. Video. Fyzický výstup?
+
+\begin{comment}
+
+\oddil{idea space - a cyclic universe}
+
+
+\begin{center}
+\includegraphics[scale = 0.55]{imgs/ideaspace1.jpg}
+\end{center}
+
+\begin{itemize}
+\item
+Autor: Karsten Schmidt / toxi
+\item
+Rok: 2004
+\item
+Médium: generovaná grafika - černobílý tisk
+\item
+Anotace:
+stills of an ongoing visualization project of a space with a steadily increasing number of moving particles attracted by slowly moving, invisible gravitational centres. the cyclic nature of the space itself acts as four dimensional history, causing each particle to leave a persistent trace in time as well as in space. the paradoxical result of this setup is that whereas the number of particles is approaching infinity there's no increase in computational cost.
+
+as the particles move through space they become attracted by the various, initially randomly positioned gravitational centres. the force of attraction follows the classic "inverse square law" in physics, meaning a particle is a lot more influenced and accelerated by a close attractor than by ones further away. the more particles are in a highly active gravitational reqion of the space, the more clearly lines start to appear, showing the trajectory of these particles through space as well as time towards the locally strongest gravitational center.
+
+\end{itemize}
+
+\end{comment}
+
+\chapter{Co je to programovací jazyk?}
 
 \oddil{Jazyk}
 
@@ -369,9 +402,27 @@ Proces poznávání struktur jazyka při tvorbě obrazu prostřednictvím Proces
 
 \chapter{Processing jako prostředí}
 
-\oddil{Základní prostředí}
 
-Processing představuje ucelené programovací prostředí tzv. IDE\footnote{Integrated Development Enviroment}. Jedná se o kompletní prostředí určené především k rapidnímu vývoji aplikací. Samotný program je jedna otevřeným softwarem\footnote{tj. s otevřeným veřejně dostupným zdrojovým kódem} a zdarma ke stažení pro všechny majoritní platformy tedy pro \slovnik{GNU / Linux}, Mac OS x i pro Windows na stránkách projektu processing.org. Celý jazyk i samotné IDE vychází pod licencí \slovnik{GNU / GPL} 2 jedná se tedy o svobodný software. Díky této licenci můžete jakýkoli výstup z tohoto softwaru můžete publikovat, použit pro jakékoli účely v četně např. komerční aplikace.
+Processing představuje ucelené programovací prostředí tzv. IDE\footnote{Integrated Development Enviroment}. Jedná se o kompletní prostředí určené především k rychlému vývoji aplikací. Samotný program je jednak otevřeným softwarem\footnote{tj. s otevřeným veřejně dostupným zdrojovým kódem}, a také zdarma ke stažení pro všechny majoritní platformy. Processing je k dispozici pro \slovnik{GNU / Linux}, Mac OS i pro Microsoft Windows na stránkách projektu processing.org. Porcessing je teoreticky možné spustit v jakémkoli prostředí umožňujícím chod Javy. Celý jazyk i samotné IDE vychází pod licencí \slovnik{GNU / GPL} jedná se tedy o svobodný software. Díky této licenci můžete jakýkoli výstup z tohoto softwaru můžete publikovat, použit pro jakékoli účely včetně například užití v komerčních aplikacích.
+
+
+\pododdil{Sketch}
+
+Sketch, neboli náčrt, označuje samostatný projekt Processingu. Dělením projektů na sketche jsou uspořádány jednotlivé projekty Processingu. Sketch je ve své podstatě složka obsahující alespoň stejně jeden stejně nazvaný soubor s příponou {\em *.pde}. Sktech při vytvoření nevyžaduje název, je jí přidělen pouze aktuální datový kód zaznamenávající datum vytvoření. Tímto decentním způsobem Processing toleruje například nejasnost záměru autora při vytváření nového díla, jeho název či pracovní název lze tímto způsobem přiřadit až později, po nabytí jasnějších obrysů.
+
+Program si vystačí pouze se samotným zdrojovým kódem tj. souborem (soubory) {\em *.pde}. Ovšem v případě operujeme-li s externími daty stojícími mimo zdrojový kód, jakékoli jiné soubory, můžeme využít dvě možnosti. První možnost je soubor, se kterým potřebujeme operovat tažením myši přesunout na textové pole Processing \index{IDE}IDE. Touto operací bude soubor zapsán do naší sketche automaticky. Druhá možnost je operaci provést manuálně, stačí vytvořit v adresáři sketche adresář s názvem \slovnik{DATA}. Processing tuto složku automaticky rozpozná a soubory v této složce budou dobře dostupné pro pozdější operace.
+
+Ke standartním adresářům, které se často objevují ve struktuře skteche, si stačí zapamatovat jen dva již zmíněný adresář nazvaný {\em DATA}. Tento adresář je využíván při práci s jakýmikoliv vnějšími daty jako jsou např. obrázky, zvuky, videa, vektorové grafiky nebo například textové soubory. Druhý adresář nazvaný {\em CODE} obsahuje externí zdrojový kód, popřípadě kód kompilovaný v podobě knihovny, mající nejčastěji přípony {\em *.java, *.class, *.jre}. Tento adresář se nalézá v systémové cestě daného projektu a umístíme-li zde soubory budou též dobře dostupné z daného projektu. Adresář {\em CODE} nás zatím nemusí příliš zajímat, později se jeho prostřednictvím můžeme pokusit rozšiřovat funkce Processingu.
+
+
+\pododdil{Sktechbook a uspořádání}
+
+Místo na disku, které Processing využívá k uskladnění sktechí se nazývá povšechně sketchbook a je v podstatě pouze adresář obsahující jednotlivé projekty. Koncepce sketchbooku spočívá v uspořádání jednotlivých projektů do organizované formy a ačkoli nevnáší do jednotlivých projektů sám o sobě řád může napomoci k vytvoření řádu vlastního. Ze své zkušenosti mohu říci, že organizace jednotlivých projektů do jakékoli struktury má opravdu smysl. Mnou preferovaná struktura obsahuje jednotlivé roky následně ještě dělené do měsíců, ale možnosti organizace záleží čistě na uživatelových preferencích. Tímto chci spíše ilustrovat možnosti uspořádání než-li nezbytnost, ale přítomnost vašeho systému od počátku vřele doporučuji.
+
+Ve sketchbooku se dále nachází jeden speciální adresář nazvaný {\em libraries}. Adresář v sobě uchovává externí rozšíření Processingu o komunitní knihovny. Standartně Processing již své základní knihovny nese v sobě, tj. jsou standartně přidány do samotného Processingu. V tomto adresáři se nacházejí knihovny které budete moci použít později. Na stránkách projektu {\em http://processing.org} můžete nalézt velké množství komunitních knihoven s dobrou dokumentací, volně ke stažení. Veškeré tyto knihovny tedy Processing potřebuje nalézt v tomto adresáři.
+
+
+\oddil{Základní prostředí}
 
 
 Základní rozhraní tvoří textový editor s několika nezbytnými funkcemi. Patrně nejdůležitější je v liště tlačítko (1) tzv. RUN. Které kompiluje a spouští program aktuálně rozpracovaný v textovém editoru. (2) Tlačítko STOP naopak program zastaví. V případě chyby v programu lze též využít jako vynucené zavření programu. Zbylé tlačítka slouží k diskovým operacím. \\
@@ -417,19 +468,6 @@ Jak můžete vidět na obrázku editor operuje i českými znaky, ačkoli bych j
 
 Naopak v případě názvu proměnných, nebo jakýchkoli funkčních definic, je použití diakritiky v devadesáti procesntech nefunkční.\footnote{standartní jazykové kódování, ve kterém Processing operuje je {\em UTF-8}}
 
-\pododdil{Sketch}
-
-Sketch, neboli náčrt, označuje samostatný projekt Processingu. Dělením projektů na sketche jsou uspořádány jednotlivé projekty Processingu. Sketch je ve své podstatě složka obsahující alespoň stejně jeden stejně nazvaný soubor s příponou {\em *.pde}. Sktech při vytvoření nevyžaduje název, je jí přidělen pouze aktuální datový kód zaznamenávající datum vytvoření. Tímto decentním způsobem Processing toleruje například nejasnost záměru autora při vytváření nového díla, jeho název či pracovní název lze tímto způsobem přiřadit až později, po nabytí jasnějších obrysů.
-
-Program si vystačí pouze se samotným zdrojovým kódem tj. souborem (soubory) {\em *.pde}. Ovšem v případě operujeme-li s externími daty stojícími mimo zdrojový kód, jakékoli jiné soubory, můžeme využít dvě možnosti. První možnost je soubor, se kterým potřebujeme operovat tažením myši přesunout na textové pole Processing \index{IDE}IDE. Touto operací bude soubor zapsán do naší sketche automaticky. Druhá možnost je operaci provést manuálně, stačí vytvořit v adresáři sketche adresář s názvem \slovnik{DATA}. Processing tuto složku automaticky rozpozná a soubory v této složce budou dobře dostupné pro pozdější operace.
-
-Ke standartním adresářům, které se často objevují ve struktuře skteche, si stačí zapamatovat jen dva již zmíněný adresář nazvaný {\em DATA}. Tento adresář je využíván při práci s jakýmikoliv vnějšími daty jako jsou např. obrázky, zvuky, videa, vektorové grafiky nebo například textové soubory. Druhý adresář nazvaný {\em CODE} obsahuje externí zdrojový kód, popřípadě kód kompilovaný v podobě knihovny, mající nejčastěji přípony {\em *.java, *.class, *.jre}. Tento adresář se nalézá v systémové cestě daného projektu a umístíme-li zde soubory budou též dobře dostupné z daného projektu. Adresář {\em CODE} nás zatím nemusí příliš zajímat, později se jeho prostřednictvím můžeme pokusit rozšiřovat funkce Processingu.
-
-\pododdil{Sktechbook a uspořádání}
-
-Místo na disku, které Processing využívá k uskladnění sktechí se nazývá povšechně sketchbook a je v podstatě pouze adresář obsahující jednotlivé projekty. Koncepce sketchbooku spočívá v uspořádání jednotlivých projektů do organizované formy a ačkoli nevnáší do jednotlivých projektů sám o sobě řád může napomoci k vytvoření řádu vlastního. Ze své zkušenosti mohu říci, že organizace jednotlivých projektů do jakékoli struktury má opravdu smysl. Mnou preferovaná struktura obsahuje jednotlivé roky následně ještě dělené do měsíců, ale možnosti organizace záleží čistě na uživatelových preferencích. Tímto chci spíše ilustrovat možnosti uspořádání než-li nezbytnost, ale přítomnost vašeho systému od počátku vřele doporučuji.
-
-Ve sketchbooku se dále nachází jeden speciální adresář nazvaný {\em libraries}. Adresář v sobě uchovává externí rozšíření Processingu o komunitní knihovny. Standartně Processing již své základní knihovny nese v sobě, tj. jsou standartně přidány do samotného Processingu. V tomto adresáři se nacházejí knihovny které budete moci použít později. Na stránkách projektu {\em http://processing.org} můžete nalézt velké množství komunitních knihoven s dobrou dokumentací, volně ke stažení. Veškeré tyto knihovny tedy Processing potřebuje nalézt v tomto adresáři.
 
 
 
@@ -865,9 +903,13 @@ V další kapitole si předvedeme jak vdechnout procesům pohyb a stálost, dal�
 
 \oddil{Animace a interakce}
 \index{animace}
-Statická kresba na plátno je jen jeden z možných výstupů. Animace v Processingu znamená překreslovat plátno pokaždé jinými obrazy. Processing je právě silný v pohyblivém obraze. Nyní si ukážeme základní postup při tvorbě pohyblivého obrazu.
+Statická kresba na plátno je jen jeden z možných výstupů. Animace v Processingu znamená překreslovat plátno pokaždé jinými obrazy. Processing je jazyk využívaný zjeména v pohyblivém obraze. Nyní si ukážeme základní postup při tvorbě pohyblivého obrazu.
 
-Základní funkce pro vyvolání překreslování výstupního okna je funkce \vyraz{draw()}.
+Základní funkce pro vyvolání překreslování výstupního okna je funkce \vyraz{draw()}. Jedná se o základní smyčku, která zajišťuje jakoukoli proměnlivost, tedy animaci v obraze. Smyčka je de facto operace, která v programu vyjadřuje rozměr času.
+
+Velmi zjedoušeně řečeno smyčka je prostředek pro změnu není změnou sama o sobě. Smyčka zajišťuje sousledné volání příkazů v neustálém trvání\footnote{po dobu běhu programu}. V Processingu si v podstatě uvědomíme, že psaním příkazů do smyčky píšeme pravidla jakoby pro jedno okénko ve filmu. Pohyb je vždy zajištěn proměnou našich datatypů, které v tomto okénku figurují.
+
+Tedy například napíšeme-li takto, samotnou smyčku:
 
 \begin{lstlisting}
 void draw(){
@@ -875,10 +917,18 @@ void draw(){
 }
 \end{lstlisting}
 
+Vše uzavřeno do složených závorek bude spuštěno šedesátkrát za vteřinu. Bude-li obsah základní smyčky \vyraz{draw()} neměnný.
 
-\oddil{Datatypy, paměť programu}
+Interakce se dá poté definovat jako přímý vstup do proměnných tedy do obsahu našich hodnot.
+
+
 \oddil{Proměnlivost}
+
+
+\oddil{Skladování informací, paměť programu}
 \oddil{Pokročilejší logické operace}
+\oddil{Uspořádání, stuktura programu}
+\oddil{Pravděpodobnost a trvání}
 
 \chapter{Práce s daty}
 
