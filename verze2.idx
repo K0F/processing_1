@@ -19,12 +19,14 @@
 \indexentry {animace}{33}
 \indexentry {draw()}{33}
 \indexentry {void}{33}
-\indexentry {draw()}{33}
+\indexentry {draw()}{34}
 \indexentry {background()}{34}
 \indexentry {rect()}{34}
-\indexentry {void}{34}
-\indexentry {vestavěné knihovny}{37}
-\indexentry {true}{43}
-\indexentry {false}{43}
-\indexentry {sketch}{43}
-\indexentry {GNU / GPL}{43}
+\indexentry {mouseX}{35}
+\indexentry {mouseY}{35}
+\indexentry {void}{35}
+\indexentry {vestavěné knihovny}{39}
+\indexentry {true}{45}
+\indexentry {false}{45}
+\indexentry {sketch}{45}
+\indexentry {GNU / GPL}{45}

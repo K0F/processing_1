@@ -891,7 +891,6 @@ rect( prvniCislo, druheCislo, 40, 20 );
 
 \end{lstlisting}
 
-
 Již nyní je nám zřejmé jak hodnoty mohou ovlivnit zobrazení. Namísto hodnot zadaných číselně se zde v druhém způsobu vykreslení obdélníku objevují naše proměnné, které mají již zadaný obsah. Výsledek zobrazení bude v obou případech stejný, ovšem z hlediska struktury programu je druhý způsob daleko flexibilnější.
 
 Představme si nyní, že hodnota zadaná prvním způsobem zápisu se již nikdy v průběhu programu nemůže proměnit. V případě druhého způsobu zápisu získáváme díky možnosti změny jednoho parametru kontrolu nad kreslícím výstupem.
@@ -900,9 +899,11 @@ Veškeré příkazy které jsme si zatím ukázali byli spuštěny pouze jednou.
 
 V další kapitole si předvedeme jak vdechnout procesům pohyb a stálost, další kapitola je věnovaná animaci.
 
-
 \oddil{Animace a interakce}
 \index{animace}
+
+\pododdil{Animace}
+
 Statická kresba na plátno je jen jeden z možných výstupů. Animace v Processingu znamená překreslovat plátno pokaždé jinými obrazy. Processing je jazyk využívaný zjeména v pohyblivém obraze. Nyní si ukážeme základní postup při tvorbě pohyblivého obrazu.
 
 Základní funkce pro vyvolání překreslování výstupního okna je funkce \vyraz{draw()}. Funkce je uvozena slovem \vyraz{void}. Více o funkcích se dozvíme v kapitole. Jedná se o základní smyčku, která zajišťuje jakoukoli proměnlivost, tedy animaci v obraze. Smyčka je de facto operace, která v programu vyjadřuje rozměr času.
@@ -917,16 +918,45 @@ void draw(){
 }
 \end{lstlisting}
 
-Vše uzavřeno do složených závorek bude spuštěno šedesátkrát za vteřinu. Bude-li obsah základní funkce \vyraz{draw()} neměnný.
+Vše uzavřeno do složených závorek bude spuštěno šedesátkrát za vteřinu. Bude-li obsah základní funkce \vyraz{draw()} neměnný, tj. budeme-li volat šedesátkrát za vteřinu to samé, animace bude ovšem jen abstraktní pojem.
 
-Z tomto příkladě již dochází ke spuštění smyčky. Výsledkem bude pouze šedivá plocha v rozměrech sto krát sto pixelů, jelikož na plátno nebylo zatím nic vykresleno. Následujícími příkazy \vyraz{background()} a \vyraz{rect()}nakreslíme nejprve plné pozadí a následovně obdélník.
+V tomto příkladě již dochází ke spuštění smyčky. Výsledkem bude pouze šedivá plocha v rozměrech sto krát sto pixelů, jelikož na plátno nebylo zatím nic vykresleno. Následujícími příkazy \vyraz{background()} a \vyraz{rect()} nakreslíme nejprve plné pozadí a následovně obdélník. Zápis bude vypadat následovně:
 
 \begin{lstlisting}
-void setup
+void setup(){
+	// pozadí
+	background(255);
+	// obdélník se čtyřmi parametry
+	rect(10,10,30,30);
+}
 \end{lstlisting}
 
+\pododdil{Interakce}
 
-Interakce se dá poté definovat jako přímý vstup do proměnných tedy do obsahu našich hodnot. V 
+Interakce se dá definovat vlastně jako animace\footnote{tedy program trvající v čase} s přímým vstupem uživatele do proměnných, tedy do obsahu našich hodnot. Interakce je do jisté míry při práci s počítačem pozorovatelná neustále. Pouhý pohyb myši lze považovat za interakci člověka se strojem. Pohyb uživatele přímo proměňuje hodnoty vykreslující pozici kurzoru, stiskem klávesy opět například interaktivně píšeme text atd.
+
+Při interakci je nutné do určité míry předvídat chování uživatele. Interakce primárně vychází z fyzické zkušenosti s předměty kolem nás. Interakcí je myšleno vše co může uživatel přímo ovlivnit.
+
+Interakce se dá rozdělit do dvou základních oblastí na interakci přímou a nepřímou, nebo chcete-li na interakci vědomou a nevědomou. Mezi těmito kategoriemi neexistuje jednoznačná hranice.
+
+Obecně je toto rozlišení spíše stupnicí od jednoduchých přímo a okamžitě viditelných jevů po uživatelově vstupu ke komplikovanějším procedurám spouštěným jen s částečným vědomím uživatele.
+
+Základní tedy přímou interakci si můžeme ukázat na následujícím příkladě:
+
+\begin{lstlisting}
+void setup(){
+	size(640,480);
+}
+
+
+void draw(){
+	background(255);
+	// v3imn2te si parametr; mouseX a mouseY
+	rect(mouseX,mouseY,30,30);
+}
+\end{lstlisting}
+
+Toto je jedna z nejzákladnějších možných interakcí. Vstupem pro pozici kresleného obdélníku se nám stávají dva parametry \vyraz{mouseX} a \vyraz{mouseY}
 
 
 \oddil{Proměnlivost}
