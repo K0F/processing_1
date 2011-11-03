@@ -905,7 +905,7 @@ V další kapitole si předvedeme jak vdechnout procesům pohyb a stálost, dal�
 \index{animace}
 Statická kresba na plátno je jen jeden z možných výstupů. Animace v Processingu znamená překreslovat plátno pokaždé jinými obrazy. Processing je jazyk využívaný zjeména v pohyblivém obraze. Nyní si ukážeme základní postup při tvorbě pohyblivého obrazu.
 
-Základní funkce pro vyvolání překreslování výstupního okna je funkce \vyraz{draw()}. Jedná se o základní smyčku, která zajišťuje jakoukoli proměnlivost, tedy animaci v obraze. Smyčka je de facto operace, která v programu vyjadřuje rozměr času.
+Základní funkce pro vyvolání překreslování výstupního okna je funkce \vyraz{draw()}. Funkce je uvozena slovem \vyraz{void}. Více o funkcích se dozvíme v kapitole. Jedná se o základní smyčku, která zajišťuje jakoukoli proměnlivost, tedy animaci v obraze. Smyčka je de facto operace, která v programu vyjadřuje rozměr času.
 
 Velmi zjedoušeně řečeno smyčka je prostředek pro změnu není změnou sama o sobě. Smyčka zajišťuje sousledné volání příkazů v neustálém trvání\footnote{po dobu běhu programu}. V Processingu si v podstatě uvědomíme, že psaním příkazů do smyčky píšeme pravidla jakoby pro jedno okénko ve filmu. Pohyb je vždy zajištěn proměnou našich datatypů, které v tomto okénku figurují.
 
@@ -917,17 +917,25 @@ void draw(){
 }
 \end{lstlisting}
 
-Vše uzavřeno do složených závorek bude spuštěno šedesátkrát za vteřinu. Bude-li obsah základní smyčky \vyraz{draw()} neměnný.
+Vše uzavřeno do složených závorek bude spuštěno šedesátkrát za vteřinu. Bude-li obsah základní funkce \vyraz{draw()} neměnný.
 
-Interakce se dá poté definovat jako přímý vstup do proměnných tedy do obsahu našich hodnot.
+Z tomto příkladě již dochází ke spuštění smyčky. Výsledkem bude pouze šedivá plocha v rozměrech sto krát sto pixelů, jelikož na plátno nebylo zatím nic vykresleno. Následujícími příkazy \vyraz{background()} a \vyraz{rect()}nakreslíme nejprve plné pozadí a následovně obdélník.
+
+\begin{lstlisting}
+void setup
+\end{lstlisting}
+
+
+Interakce se dá poté definovat jako přímý vstup do proměnných tedy do obsahu našich hodnot. V 
 
 
 \oddil{Proměnlivost}
 
-
+\oddil{Uspořádání, stuktura programu}
+\index{void}
 \oddil{Skladování informací, paměť programu}
 \oddil{Pokročilejší logické operace}
-\oddil{Uspořádání, stuktura programu}
+
 \oddil{Pravděpodobnost a trvání}
 
 \chapter{Práce s daty}
