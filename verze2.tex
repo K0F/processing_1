@@ -923,13 +923,38 @@ Vše uzavřeno do složených závorek bude spuštěno šedesátkrát za vteřin
 V tomto příkladě již dochází ke spuštění smyčky. Výsledkem bude pouze šedivá plocha v rozměrech sto krát sto pixelů, jelikož na plátno nebylo zatím nic vykresleno. Následujícími příkazy \vyraz{background()} a \vyraz{rect()} nakreslíme nejprve plné pozadí a následovně obdélník. Zápis bude vypadat následovně:
 
 \begin{lstlisting}
-void setup(){
+void draw(){
 	// pozadí
 	background(255);
 	// obdélník se čtyřmi parametry
-	rect(10,10,30,30);
+	rect( 10 , 10 , 30 , 30 );
 }
 \end{lstlisting}
+
+Takový zápis již provádí animaci a kreslí na plátno. Animace ovšem v tomto případě nebude patrná jelikož zatím se v obraze nic neproměňuje. Veškeré hodnoty jsou statické tudíž se vykresluje jeden čtverec na bílém pozadí na stále stejném místě.
+
+K rozhýbání objektů jednoduše potřebujeme proměnit jeden z parametrů v čase. Abychom docílili animace zkusme například vložit namísto parametru pro kresbu čtverce v ose X počítadlo okének. Processing má proměnnou s údajem o počtu uběhlých okének pod názvem \vyraz{frameCount}.
+
+Vyraz \vyraz{frameCount} lze využít následovně:
+
+\begin{lstlisting}
+void setup(){
+	size(640,480);
+}
+
+
+void draw(){
+	// pozadí
+	background(255);
+	// pohyb v ose X pomocí proměnné frameCount
+	rect( frameCount % width , 10 , 30 , 30 );
+}
+
+\end{lstlisting}
+
+Výsledkem tohoto zápisu bude již první animace. Čtverec se bude pohybovat rychlostí šedesáti pixelů za vteřinu z leva do prava.
+
+
 
 \pododdil{Interakce}
 
