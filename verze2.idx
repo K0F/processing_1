@@ -4,39 +4,39 @@
 \indexentry {boolean}{5}
 \indexentry {stroj}{10}
 \indexentry {stroj}{10}
-\indexentry {otevřený software}{12}
-\indexentry {MIT licence}{12}
+\indexentry {otevřený software}{13}
+\indexentry {MIT licence}{13}
 \indexentry {Built with Processing}{13}
-\indexentry {GNU / Linux}{15}
-\indexentry {GNU / GPL}{15}
-\indexentry {IDE}{15}
-\indexentry {DATA}{15}
-\indexentry {syntax highlighting}{18}
-\indexentry {indenting}{18}
-\indexentry {flow}{21}
-\indexentry {flow}{21}
-\indexentry {flow}{21}
-\indexentry {rect()}{33}
-\indexentry {setup()}{34}
-\indexentry {draw()}{34}
-\indexentry {setup()}{34}
-\indexentry {draw()}{34}
-\indexentry {draw()}{34}
-\indexentry {void}{34}
-\indexentry {animace}{35}
-\indexentry {draw()}{35}
-\indexentry {draw()}{35}
-\indexentry {background()}{35}
+\indexentry {GNU / Linux}{17}
+\indexentry {GNU / GPL}{17}
+\indexentry {IDE}{17}
+\indexentry {DATA}{17}
+\indexentry {syntax highlighting}{20}
+\indexentry {indenting}{20}
+\indexentry {flow}{23}
+\indexentry {flow}{23}
+\indexentry {flow}{23}
 \indexentry {rect()}{35}
-\indexentry {frameCount}{35}
-\indexentry {frameCount}{35}
-\indexentry {interakce}{36}
-\indexentry {interakce}{36}
-\indexentry {mouseX}{37}
-\indexentry {mouseY}{37}
-\indexentry {void}{37}
-\indexentry {vestavěné knihovny}{41}
-\indexentry {true}{47}
-\indexentry {false}{47}
-\indexentry {sketch}{47}
-\indexentry {GNU / GPL}{48}
+\indexentry {setup()}{36}
+\indexentry {draw()}{36}
+\indexentry {setup()}{36}
+\indexentry {draw()}{36}
+\indexentry {draw()}{36}
+\indexentry {void}{36}
+\indexentry {animace}{37}
+\indexentry {draw()}{37}
+\indexentry {draw()}{37}
+\indexentry {background()}{37}
+\indexentry {rect()}{37}
+\indexentry {frameCount}{37}
+\indexentry {frameCount}{37}
+\indexentry {interakce}{38}
+\indexentry {interakce}{38}
+\indexentry {mouseX}{39}
+\indexentry {mouseY}{39}
+\indexentry {void}{39}
+\indexentry {vestavěné knihovny}{43}
+\indexentry {true}{49}
+\indexentry {false}{49}
+\indexentry {sketch}{49}
+\indexentry {GNU / GPL}{50}
