@@ -16,27 +16,27 @@
 \indexentry {flow}{21}
 \indexentry {flow}{21}
 \indexentry {flow}{21}
-\indexentry {rect()}{32}
-\indexentry {setup()}{33}
-\indexentry {draw()}{33}
-\indexentry {setup()}{33}
-\indexentry {draw()}{33}
-\indexentry {draw()}{33}
-\indexentry {void}{33}
-\indexentry {animace}{34}
+\indexentry {rect()}{33}
+\indexentry {setup()}{34}
+\indexentry {draw()}{34}
+\indexentry {setup()}{34}
 \indexentry {draw()}{34}
 \indexentry {draw()}{34}
-\indexentry {background()}{34}
-\indexentry {rect()}{34}
-\indexentry {frameCount}{34}
-\indexentry {frameCount}{34}
-\indexentry {interakce}{35}
-\indexentry {interakce}{35}
-\indexentry {mouseX}{36}
-\indexentry {mouseY}{36}
-\indexentry {void}{36}
-\indexentry {vestavěné knihovny}{39}
-\indexentry {true}{45}
-\indexentry {false}{45}
-\indexentry {sketch}{45}
-\indexentry {GNU / GPL}{46}
+\indexentry {void}{34}
+\indexentry {animace}{35}
+\indexentry {draw()}{35}
+\indexentry {draw()}{35}
+\indexentry {background()}{35}
+\indexentry {rect()}{35}
+\indexentry {frameCount}{35}
+\indexentry {frameCount}{35}
+\indexentry {interakce}{36}
+\indexentry {interakce}{36}
+\indexentry {mouseX}{37}
+\indexentry {mouseY}{37}
+\indexentry {void}{37}
+\indexentry {vestavěné knihovny}{41}
+\indexentry {true}{47}
+\indexentry {false}{47}
+\indexentry {sketch}{47}
+\indexentry {GNU / GPL}{48}
