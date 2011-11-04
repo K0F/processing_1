@@ -906,7 +906,7 @@ V další kapitole si předvedeme jak vdechnout procesům pohyb a stálost, dal�
 
 Statická kresba na plátno je jen jeden z možných výstupů. Animace v Processingu znamená překreslovat plátno pokaždé jinými obrazy. Processing je jazyk využívaný zjeména v pohyblivém obraze. Nyní si ukážeme základní postup při tvorbě pohyblivého obrazu.
 
-Základní funkce pro vyvolání překreslování výstupního okna je funkce \vyraz{draw()}. Funkce je uvozena slovem \vyraz{void}. Více o funkcích se dozvíme v kapitole. Jedná se o základní smyčku, která zajišťuje jakoukoli proměnlivost, tedy animaci v obraze. Smyčka je de facto operace, která v programu vyjadřuje rozměr času.
+Základní funkce pro vyvolání překreslování výstupního okna je funkce \vyraz{draw()}. \bublina{void draw() je základní funkce pro spuštění překreslování plátna} Funkce je uvozena slovem \vyraz{void}. Více o funkcích se dozvíme v kapitole. Jedná se o základní smyčku, která zajišťuje jakoukoli proměnlivost, tedy animaci v obraze. Smyčka je de facto operace, která v programu vyjadřuje rozměr času.
 
 Velmi zjedoušeně řečeno smyčka je prostředek pro změnu není změnou sama o sobě. Smyčka zajišťuje sousledné volání příkazů v neustálém trvání\footnote{po dobu běhu programu}. V Processingu si v podstatě uvědomíme, že psaním příkazů do smyčky píšeme pravidla jakoby pro jedno okénko ve filmu. Pohyb je vždy zajištěn proměnou našich datatypů, které v tomto okénku figurují.
 
@@ -933,7 +933,7 @@ void draw(){
 
 Takový zápis již provádí animaci a kreslí na plátno. Animace ovšem v tomto případě nebude patrná jelikož zatím se v obraze nic neproměňuje. Veškeré hodnoty jsou statické tudíž se vykresluje jeden čtverec na bílém pozadí na stále stejném místě.
 
-K rozhýbání objektů jednoduše potřebujeme proměnit jeden z parametrů v čase. Abychom docílili animace zkusme například vložit namísto parametru pro kresbu čtverce v ose X počítadlo okének. Processing má proměnnou s údajem o počtu uběhlých okének pod názvem \vyraz{frameCount}.
+K rozhýbání objektů jednoduše potřebujeme proměnit jeden z parametrů v čase.\bublina{Animace je proměna obrazu v čase, jednotlivá okénka se v čase musí lišit.} Abychom docílili animace zkusme například vložit namísto parametru pro kresbu čtverce v ose X počítadlo okének. Processing má proměnnou s údajem o počtu uběhlých okének pod názvem \vyraz{frameCount}.
 
 Vyraz \vyraz{frameCount} lze využít následovně:
 
