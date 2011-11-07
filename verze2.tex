@@ -976,7 +976,7 @@ void draw(){
 
 Výsledkem tohoto zápisu bude již první animace. Čtverec se bude pohybovat rychlostí šedesáti pixelů za vteřinu z leva do prava. Tato hodnota v podstatě udává počet vykreslených cyklů funkce \vyraz{draw()}, ta je v tomto případě pouze využita k pohybu vykreslovaného čtverce.
 
-Tento pohyb je velmi názorný ukazuje že hodnota z počtu vykreslených okének lze použít jako hodnotu kdekoli. Steně tak si můžeme založit i vlastní proměnnou která bude mít tu samou funcki.
+Tento pohyb je velmi názorný ukazuje, že hodnota počtu vykreslených okének lze použít například i jako hodnotu pro animaci. Stejně tak si můžeme založit i vlastní proměnnou, která bude mít identickou funkci.\footnote{v tomto konkrétním příkladě to sice nedává smysl, dá se použít stejně tak standartní proměnná \vyraz{frameCount}, příklad je zde jen pro ilustraci možností využití proměnných}
 
 \begin{lstlisting}
 // naše proměnná nazvaná příznačne: počítadlo
@@ -1005,7 +1005,7 @@ void draw(){
 
 \end{lstlisting}
 
- je to jedna ze základních proměnných Processingu, pomocí které lze například časovat animace.\footnote{Existují i jiné zápisy například pomocí výrazu millis ... [doplnit]}
+ je to jedna ze základních proměnných Processingu, pomocí které lze například časovat animace.\footnote{existují i jiné zápisy například pomocí funkce \vyraz{millis()} ... [doplnit]}
 
 
 
