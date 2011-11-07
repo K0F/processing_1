@@ -30,11 +30,12 @@
 \indexentry {rect()}{37}
 \indexentry {frameCount}{37}
 \indexentry {frameCount}{37}
-\indexentry {interakce}{38}
-\indexentry {interakce}{38}
+\indexentry {draw()}{38}
+\indexentry {interakce}{39}
+\indexentry {interakce}{39}
 \indexentry {mouseX}{39}
 \indexentry {mouseY}{39}
-\indexentry {void}{39}
+\indexentry {void}{40}
 \indexentry {vestavěné knihovny}{43}
 \indexentry {true}{49}
 \indexentry {false}{49}

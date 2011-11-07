@@ -187,7 +187,7 @@ Vážený čtenáři,
 
 tato kniha by Vás měla povzbudit v nesnadné úloze osvojení si vašeho prvního programovacího jazyka. Není-li tento jazyk první, prosím Vás o shovívavost v podrobnostech, do kterých v úvodu této knihy zabíhám. Šíře znalostí, které se mohou vyskytovat u potenciálních čtenářů tohoto průvodce je pro autora první velikou neznámou.
 
-V obou případech Vás tedy prosím o shovívavost ve způsobu popisu programovacího jazyka a prostředí Processing. Sám jako samouk nemohu zaručit absolutní, stoprocentní a všeobecnou platnost všech tvrzení. Tímto Vás tedy žádám o věcné podněty pro pozdější doplnění nebo přeformulování jednotlivých tvrzení.
+V obou případech Vás tedy prosím o shovívavost ve způsobu popisu programovacího jazyka a prostředí Processing. Sám jako samouk a člověk zaměřen především výtvarným směrem nemohu zaručit absolutní, stoprocentní a všeobecnou platnost všech tvrzení. Tímto Vás tedy žádám o věcné podněty pro pozdější doplnění nebo přeformulování jednotlivých tvrzení.
 
 Má snaha provést začínající i středně pokročilé uživatele jazykem bude vždy nezbytně nedostatečná, berte ji prosím spíše za průvodce nesnadnými začátky.
 
@@ -974,7 +974,38 @@ void draw(){
 
 \end{lstlisting}
 
-Výsledkem tohoto zápisu bude již první animace. Čtverec se bude pohybovat rychlostí šedesáti pixelů za vteřinu z leva do prava.
+Výsledkem tohoto zápisu bude již první animace. Čtverec se bude pohybovat rychlostí šedesáti pixelů za vteřinu z leva do prava. Tato hodnota v podstatě udává počet vykreslených cyklů funkce \vyraz{draw()}, ta je v tomto případě pouze využita k pohybu vykreslovaného čtverce.
+
+Tento pohyb je velmi názorný ukazuje že hodnota z počtu vykreslených okének lze použít jako hodnotu kdekoli. Steně tak si můžeme založit i vlastní proměnnou která bude mít tu samou funcki.
+
+\begin{lstlisting}
+// naše proměnná nazvaná příznačne: počítadlo
+int pocitadlo = 0;
+
+
+void setup(){
+	size(640,480);
+	
+}
+
+void draw(){
+	background(0);
+	rect( pocitadlo, 10 , 30 , 30 );
+
+	// zde již přičíáme hodnotu, lze napsat i zkrácným zápisem:
+	// pocitadlo++;
+
+	pocitadlo += 1;
+
+	// zde můžeme použít modulo na omezení počítadla na šířku plátna
+
+	pocitadlo = pocitadlo % width;
+
+}
+
+\end{lstlisting}
+
+ je to jedna ze základních proměnných Processingu, pomocí které lze například časovat animace.\footnote{Existují i jiné zápisy například pomocí výrazu millis ... [doplnit]}
 
 
 
