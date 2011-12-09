@@ -173,9 +173,9 @@
 
 \vfill
 \thispagestyle{empty}
-\begin{center}
-\includegraphics[scale = 0.5]{imgs/thePainOfFleetingJoy_1.jpg}
-\end{center}
+%\begin{center}
+%\includegraphics[scale = 0.5]{imgs/thePainOfFleetingJoy_1.jpg}
+%\end{center}
 
 
 \oddil{Předmluva}
@@ -613,7 +613,7 @@ Spustíme-li program nyní, v konzoli se nám ukáže výstup z našeho programu
 
 Zde je názorně vidět, že tisk pomocí pouhého příkazu {\em print} nepoložil další příkaz na nový řádek, a tedy vytiskl {\em 1ahoj} dohromady.
 
-Tisk do konzole se hojně používá při ladění programu. Kdykoli se na něco potřebujete kódu zeptat můžete tak učinit tímto prostým příkazem.
+Tisk do konzole se hojně používá při ladění programu. Kdykoli se na něco potřebujete kódu zeptat můžete tak učinit tímto prostým příkazem.\9
 
 V konzoli se tisk projevuje bílou barvou. Další možný obsah konzole jsou chyby. Ty jsou označeny barvou červenou. Processing vám chybou naznačuje, že něco není v pořádku s vaším kódem. V případě takto jednoduchého programu se v drtivé většině případů bude jednat o překlep, či zapomenutý znak.
 
@@ -942,7 +942,7 @@ void draw(){
 }
 \end{lstlisting}
 
-Vše uzavřeno do složených závorek bude spuštěno šedesátkrát za vteřinu. Bude-li obsah základní funkce \vyraz{draw()} neměnný, tj. budeme-li volat šedesátkrát za vteřinu to samé, animace bude ovšem jen abstraktní pojem.
+Vše uzavřeno do složených závorek bude spuštěno šedesátkrát za vteřinu. Bude-li obsah základní funkce \vyraz{draw()} neměnný, tj. budeme-li volat šedesátkrát za vteřinu to samé, animace bude ovšem v případě vizuálního výstupu jen abstraktním pojmem.
 
 V tomto příkladě již dochází ke spuštění smyčky. Výsledkem bude pouze šedivá plocha v rozměrech sto krát sto pixelů, jelikož na plátno nebylo zatím nic vykresleno. Následujícími příkazy \vyraz{background()} a \vyraz{rect()} nakreslíme nejprve plné pozadí a následovně obdélník. Zápis bude vypadat následovně:
 
@@ -1042,6 +1042,8 @@ Toto je jedna z nejzákladnějších možných interakcí. Vstupem pro pozici kr
 
 \oddil{Proměnlivost}
 
+Proměnlivost se dotýká základní myšlenky Programu. Trvání v čase
+
 \oddil{Uspořádání, stuktura programu}
 \index{void}
 \oddil{Skladování informací, paměť programu}
@@ -1063,18 +1065,23 @@ Toto je jedna z nejzákladnějších možných interakcí. Vstupem pro pozici kr
 
 Ve skecthbooku se dále nacházejí\footnote{od verze 1.0} veškeré rozšíření za pomocí takzvaných knihoven neboli libraries. Ty jsou umístěny v adresáři sketchbooku ve složce {\em libraries}. Knihovny jsou silným rozšířením celého jazyka a pokrývají mnoho možností s nakládaáním s externími daty, zajišťují komunikaci zařízeními, práci s videem, zvukem, nebo s trojdimenzionálními daty či vektorovým obrazem.
 
-Zmínka o knihovnách bývá často ve standartních průvodcích Processingem až jako pokročilá lekce. Knihovny jsou menší moduly, které je možné využít ve vašem projektu. Knihovny jsou většinou jednoúčelové rozšíření Processingu. becně platíže je dobré mít přehled o existujících knihovnách, jejich znalost může zásadně ulehčit práci s rozmanitými formáty nebo běžnými výpočetními problémy.
+
+Knihovny jsou v podstatě moduly které se zaměřují většinou na jeden problém. Některé moduly umí například komunikovat s kamerou, jiné umí přenášet informace přes síť nebo komunikovat se zařízeními. Knihovna je sada příkazů, která rozšiřuje samotný jazyk o nové možnosti.
+
 
 Knihovnami se také dá dobře ilustrovat k čemu uživatelé Processingu převážně programovací prostředí využívají. To sice nemusí být v žádném případě směrodatné pro vaší práci, může to být ovšem i velmi inspirativní. Knihovny Vám pomohou získat jistý přehled o kontextu užívání Processingu.
 
-Ve zkratce jak již jsem zmínil knihovny se dělí na dvě základní skupiny. Jednu tvoří interní knihovny Processingu, které přichází již nainstalované se softwarem. Tyto knihovny se dají nalézt pod tlačítkem sketch > Import Library.
-K základní výbavě knihoven patří tyto:
+Knihovny se  nejobecněji dělí na dvě základní skupiny. Jednu tvoří interní knihovny Processingu, které přichází již nainstalované se softwarem a knihovny vější, vytvořené komunitou uživatelů. Veškeré nainstalovaná knihovny, které má Processing k dispozici, lze nalézt pod tlačítkem sketch > Import Library.
+
+
+Výčet komunitnách knihoven je již poměrné obsáhlý, pro ilustraci zde budeme hovořit jen o knihovnách vestavěných. Věstavěných knihoven je nepoměrně méně, jejich výčet se proměňuje relativně pomalu, jejich dokumentace je kvalitně zpracovaná:
+
 
 \begin{itemize}
 \item
 Video
 
-Základní rozhraní mezi Apple Qucktime a Processingem. U platformy Linux, musíme využít alternativy.
+Základní rozhraní mezi Apple Qucktime a Processingem. U platformy Linux, tato knihovna dlouhodobě nefunguje kvůli závislosti na propietárním softwaru, musíme tedy využít alternativy.
 
 \item
 Network
@@ -1117,7 +1124,9 @@ XML Import
 Podpora načítání XML tabulek.
 \end{itemize}
 
-Neříkají-li vám tyto zkratky nic, nevadí, jedná se většinou o datové standarty a typy zařízení se kterými můžete s pomocí knihoven pracovat. Každá z těchto knihoven má svoji dobrou dokumentaci na stránkách projektu, nebo přímo v tzv. {\em Examples}, příkladech pro každou knihovnu, lze tímto způsobem zobrazit základní nápovědu. 
+Neříkají-li vám tyto zkratky nic, nevadí, jedná se většinou o datové standarty a typy zařízení se kterými můžete s pomocí knihoven pracovat. Každá z těchto knihoven má svoji dobrou dokumentaci na stránkách projektu, nebo přímo v tzv. {\em Examples}, příkladech pro každou knihovnu, lze tímto způsobem zobrazit základní nápovědu.
+
+
 
 
 
