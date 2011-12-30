@@ -2,44 +2,44 @@
 \indexentry {pravidla textu}{6}
 \indexentry {slovník}{6}
 \indexentry {boolean}{7}
-\indexentry {stroj}{14}
-\indexentry {stroj}{14}
-\indexentry {otevřený software}{19}
-\indexentry {MIT licence}{19}
-\indexentry {Built with Processing}{19}
-\indexentry {GNU / Linux}{23}
-\indexentry {GNU / GPL}{23}
-\indexentry {IDE}{24}
-\indexentry {DATA}{24}
-\indexentry {syntax highlighting}{26}
-\indexentry {indenting}{26}
-\indexentry {flow}{29}
-\indexentry {flow}{30}
-\indexentry {flow}{30}
+\indexentry {stroj}{12}
+\indexentry {stroj}{12}
+\indexentry {otevřený software}{17}
+\indexentry {MIT licence}{17}
+\indexentry {Built with Processing}{17}
+\indexentry {GNU / Linux}{21}
+\indexentry {GNU / GPL}{21}
+\indexentry {IDE}{22}
+\indexentry {DATA}{22}
+\indexentry {syntax highlighting}{24}
+\indexentry {indenting}{24}
+\indexentry {flow}{27}
+\indexentry {flow}{28}
+\indexentry {flow}{28}
+\indexentry {rect()}{43}
+\indexentry {setup()}{44}
+\indexentry {draw()}{44}
+\indexentry {setup()}{44}
+\indexentry {draw()}{44}
+\indexentry {draw()}{44}
+\indexentry {void}{44}
+\indexentry {animace}{44}
+\indexentry {draw()}{44}
+\indexentry {draw()}{45}
+\indexentry {background()}{45}
 \indexentry {rect()}{45}
-\indexentry {setup()}{46}
+\indexentry {frameCount}{45}
+\indexentry {frameCount}{45}
 \indexentry {draw()}{46}
-\indexentry {setup()}{46}
-\indexentry {draw()}{46}
-\indexentry {draw()}{46}
-\indexentry {void}{46}
-\indexentry {animace}{46}
-\indexentry {draw()}{46}
-\indexentry {draw()}{47}
-\indexentry {background()}{47}
-\indexentry {rect()}{47}
-\indexentry {frameCount}{47}
-\indexentry {frameCount}{47}
-\indexentry {draw()}{48}
-\indexentry {frameCount}{48}
-\indexentry {interakce}{49}
-\indexentry {interakce}{49}
-\indexentry {millis()}{49}
-\indexentry {mouseX}{50}
-\indexentry {mouseY}{50}
-\indexentry {void}{50}
-\indexentry {vestavěné knihovny}{53}
-\indexentry {true}{61}
-\indexentry {false}{61}
-\indexentry {sketch}{61}
-\indexentry {GNU / GPL}{62}
+\indexentry {frameCount}{46}
+\indexentry {interakce}{47}
+\indexentry {interakce}{47}
+\indexentry {millis()}{47}
+\indexentry {mouseX}{48}
+\indexentry {mouseY}{48}
+\indexentry {void}{48}
+\indexentry {vestavěné knihovny}{51}
+\indexentry {true}{59}
+\indexentry {false}{59}
+\indexentry {sketch}{59}
+\indexentry {GNU / GPL}{60}

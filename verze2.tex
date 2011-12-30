@@ -101,12 +101,9 @@
 
 
 
-%\newcounter{todocounter}
-%\newcommand{\bokem}[2][]
-%{\stepcounter{todocounter}\todo[#1]{\thetodocounter: #2}}
-
-
-
+\newcounter{todocounter}
+\newcommand{\bokem}[2][]
+{\stepcounter{todocounter}\todo[#1]{\thetodocounter: #2}}
 
 % pomocné příkazy
 %\def\cindex{\index*[cmnd]}        % zařazení do rejstříku příkazů
@@ -173,7 +170,7 @@
 \vfill
 \thispagestyle{empty}
 %\begin{center}
-%\includegraphics[scale = 0.5]{imgs/thePainOfFleetingJoy_1.jpg}
+%\includegraphics[width=1\textwidth]{imgs/thePainOfFleetingJoy_1.jpg}
 %\end{center}
 
 
@@ -258,7 +255,7 @@ Instalace. Web applet. Video. Fyzický výstup?
 
 
 \begin{center}
-\includegraphics[scale = 0.55]{imgs/ideaspace1.jpg}
+\includegraphics[width = 1\textwidth]{imgs/ideaspace1.jpg}
 \end{center}
 
 \begin{itemize}
@@ -428,7 +425,7 @@ Základní rozhraní tvoří textový editor s několika nezbytnými funkcemi. P
 
 
 \begin{center}
-\includegraphics[scale = 1]{imgs/buttons.png}
+\includegraphics[width = 1\textwidth]{imgs/buttons.png}
 \end{center}
 
 
@@ -458,7 +455,7 @@ Další konvencí se kterou se často setkáte je tzv. \slovnik{indenting}, zaro
 Více o konvencích se dočtete na straně~\pageref{Předmluva}
 
 \begin{center}
-\includegraphics[scale = 0.75]{imgs/editor.png}
+\includegraphics[width = 1\textwidth]{imgs/editor.png}
 \end{center}
 
 Horní lišta editoru označuje záložky, kliknutím na šipku v na pravé straně lišty se vám zobrazí možnosti operací se záložkami. Pro začátek s nimi nebudeme operovat. V případě delšího kódu záložky slouží k lepší organizaci struktury programu. V podstatě se dá říci, že každá záložka odpovídá jednomu souboru ve sketchi. Co je to sketch popíšu níže.
@@ -498,7 +495,7 @@ V programování obecně platí jisté zákonitosti. Není tomu jinak i u pravid
 Plocha programu by sa dala přirovnat k listu papíru, popřípadě k malířskému plátnu. Ve standartním dvoudimenzionálním módu má dva základní parametry {\em X} a {\em Y}, ty označují souřadnice, ve kterých se veškeré kreslící operace pohybují. Důležité je zmínit, že oproti jisté konvenci v matematických grafech levý horní roh nese hodnotu {\em X = 0}, {\em Y = 0}. Směrem dolů hodnota {\em Y} přibývá stejně tak jaho hodnota {\em X} přibývá směrem doprava.\\
 
 \begin{center}
-\includegraphics[scale = 1]{imgs/grid2d.png}
+\includegraphics[width = 1\textwidth]{imgs/grid2d.png}
 \end{center}
 
 Tato konvence je převzata ze standartu počítačové grafiky, kdy první pixel v levém horním rohu nese souřadnicovou hodnotu právě {\em X = 0}, {\em Y = 0}. Obrácená osa Y se může ze začátku jevit matoucí. Důvody pro zdánlivé převrácení os pochopíme později například právě při operacích se samotnými obrazovými body, pixely, které jsou standartně uspořádány od levého horního rohu doprava a níže.
@@ -508,7 +505,7 @@ Plochu je možné představit si jako prázdný prostor, na kterém je možno zo
 Na první pohled by se mohlo zdát, že například při zobrazení obdélníku, příkaz:
 
 \begin{lstlisting}
-rect(x,y,šířka,výska);
+rect(x,y,šířka,výška);
 \end{lstlisting}
 
 jehož výsledkem je kresba pouhého obdélníku je zbytečně komplikovaný, oproti jiným zobrazovacím metodám. Důležité je si zde uvědomit koncepci Processingu, který tímto zobrazením primitivních objektů sestavuje celý obraz. To co se zpočátku může zdát jako nadbytečná práce, tj. psaním koordinátů každého ze zobrazovaných objektů se posléze ukáže jako sofistikovaný a velmi ulehčující způsob přemýšlení o obraze. Veškeré parametry oddělené čárkou v kulatých závorkách příkazu {\em rect} náleží samotným vstupním hodnotám. Příkaz {\em rect} očekává čtyři parametry. Parametry mohou být celá čísla nebo čísla s desetinnou čárkou. Pro názornost, zadáme-li do parametrů ''natvrdo'' hodnoty:
@@ -520,7 +517,7 @@ rect(8,6,7,5);
 Výsledné zobrazení na naší pomyslné ploše bude následující:
 
 \begin{center}
-\includegraphics[scale = 1]{imgs/gridRect2d.png}
+\includegraphics[width = 1\textwidth]{imgs/gridRect2d.png}
 \end{center}
 
 
