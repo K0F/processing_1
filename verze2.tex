@@ -38,7 +38,7 @@
 
 \hypersetup{
     bookmarks=true,         % show bookmarks bar?
-    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
     pdftoolbar=true,        % show Acrobat’s toolbar?
     pdfmenubar=true,        % show Acrobat’s menu?
     pdffitwindow=false,     % window fit to page when opened
@@ -71,10 +71,6 @@
 
 %uvozovky cs
 \renewcommand\uv[1]{\quotedblbase #1\textquotedblleft}%
-
-
-\usepackage[xindy]{glossaries}
-
 
 \usepackage{marginnote}
 \usepackage[textsize=footnotesize,textwidth=3cm]{todonotes}
@@ -126,7 +122,7 @@
 \setmainfont{Liberation Sans}%Liberation Serif}
 %\setmainfont{Liberation Serif} %URW Gothic L,DejaVu Sans,Georgia,Jumpcrew Cologne,Libertinage,LMSans12, Nimbus Sans L
 \setmainfont[Mapping=tex-text,Ligatures={Common},BoldFont={* Bold}, ItalicFont={* Italic},Numbers={OldStyle}]{Liberation Serif}
-\setsansfont[Scale=1,Mapping=tex-text,Ligatures={Common,Rare,Historical},Numbers={OldStyle}]{Calluna}
+\setsansfont[Scale=1,Mapping=tex-text,Ligatures={Common,Rare},Numbers={OldStyle}]{Calluna}
 \setmonofont{Monaco}
 
 \usepackage{sectsty}
@@ -149,10 +145,13 @@
 
 \makeindex
 
+\usepackage[xindy]{glossaries}
+
 %tvorba slovniku
 \input{slovnik.tex}
-
 \makeglossaries
+
+
 
 %bibliografie
 %\bibliography{ProcessingBib}
@@ -199,11 +198,11 @@ Dostala-li se vám tato kniha do rukou jinou cestou nebo dokonce náhodou nebo o
 
 \pododdil{Uspořádání informací}
 
-Text je řazený do jednotlivých  kapitol a dále stromově do dvou úrovní podkapitol. Pořadí kapitol by mělo odpovídat sledu potřebných informací nezbytných k naučení se programovacímu jazyku Processing.
+Text je řazený do jednotlivých  kapitol a dále stromově do dvou úrovní podkapitol. Pořadí kapitol by mělo odpovídat sledu informací nezbytných k plynulému učení se programovacímu jazyku Processing.
 
-Pořadí a obsah jednotlivých kapitol vychází z mé zkušenosti s učením se programovat v jazyce Processing, a z veliké míry koresponduje s podobnými oficiálními průvodci. Ty píší samotní tvůrci a širší komunita lidí kolem programovacího jazyka Processing.
+Pořadí a obsah jednotlivých kapitol vychází z mé vlastní zkušenosti s učením se programovat v jazyce Processing. Z veliké míry koresponduje s podobnými průvodci. Původce píší samotní tvůrci a širší komunita uživatelů kolem programovacího jazyka Processing.
 
-Zvolená forma textu odpovídá ověřeným postupům. Následující text bude podléhat určitým zákonitostem. V knize se objeví několik typů textu, které budou vždy odlišeny stylem zápisu.
+Zvolená forma textu odpovídá ověřeným postupům. Následující text bude podléhat určitým zákonitostem. V knize se objeví několik typů textu, které budou vždy odlišeny vlastní formou zápisu.
 
 \pododdil{Pravidla formátování v knize}
 
@@ -218,8 +217,9 @@ Pravidla\index{pravidla textu} jsou následující:
 
 \begin{lstlisting}
 /**
-* Barevný text v šedém rámování bude značit samotný strojový kód,
-* vždy ve formě, která je již srozumitelná Processingu.
+* Barevný text v šedém rámování bude značit samotný
+* strojový kód, vždy ve formě, která je již
+* srozumitelná Processingu.
 */
 
 boolean pravda = true;
@@ -371,16 +371,16 @@ Jazyk nazvaný Processing je jedním z jazyků, který byl vytvořen v diskurzu 
 
 Z pohledu vývojáře je velmi důležité, že jazyk i programovací prostředí Processing je v současnosti \slovnik{otevřený software}, což znamená, že prostředí i samotný zdrojový kód je volně k dispozici. Processing je dále šiřitelný pod \slovnikpl{MIT licence}. Pro vývojáře otevřenost zdrojového kódu znamená zásadní věc, jednoduše pro dosažitelnost celého zdroje, který se dá následně například implementovat do různých prostředí. Další možnost vývojáře je rozšířit jazyk o vlastní knihovnu, a tím participovat na projektu. Otevřenost kódu teoreticky navyšuje počet možných participantů a de facto celý projekt udržuje v dlouhodobém horizontu naživu.
 
-Z pohledu samotného uživatele je velmi příjemné, že samotný software je k dostání zdarma na stránkách projektu. Za jeho užívání není nutné platit žádné poplatky, a to i v přpadě komerčních užití. V případě potřeby vyjádření vděku za práci autorů je možné zmínit kdekoli ve Vašem produktu \slovnik{Built with Processing}.
+Z pohledu samotného uživatele je velmi příjemné, že samotný software je k dostání zdarma na stránkách projektu. Za jeho užívání není nutné platit žádné poplatky, a to i v případě komerčních užití. V případě potřeby vyjádření vděku za práci autorů je možné zmínit kdekoli ve Vašem produktu \slovnik{Built with Processing}.
 
 
-Processing na první pohled není ničím zvláštní programovací jazyk. V podstatě by se dalo říci, že se jedná pouze o rozsáhlou knihovnu pro jazyk Java. To co Processing řadí mezi oblíbené softwary pro tvorbu dnes je nejvíce přívětivá komunita uživatelů s velmi odlišnými stupni znalostí a úhly pohledu. Zvláštní důraz je v komunitě kladen na poskytnutí co největší podpory právě začínajícím uživatelům. Tomu odpovídá i počet rozmanitých průvodců a rozsáhlá, velmi dobře stučně napsaná dokumentace ke každému z příkazů v Processingu.
+Processing na první pohled není ničím zvláštní programovací jazyk. V podstatě by se dalo říci, že se jedná pouze o rozsáhlou knihovnu pro jazyk Java. To co Processing řadí mezi oblíbené softwary pro tvorbu dnes je nejvíce přívětivá komunita uživatelů s velmi odlišnými stupni znalostí a úhly pohledu. Zvláštní důraz je v komunitě kladen na poskytnutí co největší podpory právě začínajícím uživatelům. Tomu odpovídá i počet rozmanitých průvodců a rozsáhlá, velmi dobře stručně napsaná dokumentace ke každému z příkazů v Processingu.
 
 K otevřenosti v kódu v neposlední řadě přistupuje i celá řada velmi zkušených tvůrců. Tím se uživatel na jakémkoli stupni znalostí může kdykoli naučit nové postupy nebo může svobodně recyklovat algoritmy druhých uživatelů. Processing a čím dál více jeho uživatelů ctí filosofii otevřeného softwaru která (mimo jiné) hlásá: \uv{Vědomosti nesmí být privatizovány!}
 
 \pododdil{Procesualita, živý program}
 
-Hlavní doménou Processingu je schopnost vytvářet \uv{živé} programy, tj. programy běžící v reálném čase. Již jméno programovacího jazyka Processing napovídá akcent jisté procesuality, v čase se odvíjející události.
+Hlavní doménou Processingu je schopnost vytvářet \uv{živé} programy, tj. programy běžící v reálném čase. Již jméno programovacího jazyka Processing napovídá akcent v čase se odvíjejících události.
 
 Obraz vytvořený tímto způsobem, na první pohled zaměnitelný s videem, nemusí například podléhat časové omezenosti, nebo může určitým způsobem reagovat na své okolí. Generovaný obraz může být například takto vtažen do kontextu, ve kterém se nachází. Možností jak nakládat s těmito specifickými možnostmi je nepřeberné množství.
 
@@ -613,7 +613,7 @@ Spustíme-li program nyní, v konzoli se nám ukáže výstup z našeho programu
 
 Zde je názorně vidět, že tisk pomocí pouhého příkazu {\em print} nepoložil další příkaz na nový řádek, a tedy vytiskl {\em 1ahoj} dohromady.
 
-Tisk do konzole se hojně používá při ladění programu. Kdykoli se na něco potřebujete kódu zeptat můžete tak učinit tímto prostým příkazem.\9
+Tisk do konzole se hojně používá při ladění programu. Kdykoli se na něco potřebujete kódu zeptat můžete tak učinit tímto prostým příkazem.
 
 V konzoli se tisk projevuje bílou barvou. Další možný obsah konzole jsou chyby. Ty jsou označeny barvou červenou. Processing vám chybou naznačuje, že něco není v pořádku s vaším kódem. V případě takto jednoduchého programu se v drtivé většině případů bude jednat o překlep, či zapomenutý znak.
 
@@ -1042,7 +1042,10 @@ Toto je jedna z nejzákladnějších možných interakcí. Vstupem pro pozici kr
 
 \oddil{Proměnlivost}
 
-Proměnlivost se dotýká základní myšlenky Programu. Trvání v čase
+Potřebujeme-li programu vdechnout život, musíme již uvažovat o proměnlivosti. Ta se dotýká základní myšlenky programu trvajícího v čase. Proměnlivost je změna hodnot v délce běhu programu a lze si ji představit například jako rozdíl mezi dvěma okénky filmu.
+
+Proměnlivost je nezbytnou součástí animace. Animovat lze hodnoty a tím například jevy které se v programu zobrazují.
+
 
 \oddil{Uspořádání, stuktura programu}
 \index{void}
