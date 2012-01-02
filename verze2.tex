@@ -425,7 +425,7 @@ Základní rozhraní tvoří textový editor s několika nezbytnými funkcemi. P
 
 
 \begin{center}
-\includegraphics[width = 1\textwidth]{imgs/buttons.png}
+\includegraphics[width = 0.6\textwidth]{imgs/buttons.png}
 \end{center}
 
 
@@ -495,7 +495,7 @@ V programování obecně platí jisté zákonitosti. Není tomu jinak i u pravid
 Plocha programu by sa dala přirovnat k listu papíru, popřípadě k malířskému plátnu. Ve standartním dvoudimenzionálním módu má dva základní parametry {\em X} a {\em Y}, ty označují souřadnice, ve kterých se veškeré kreslící operace pohybují. Důležité je zmínit, že oproti jisté konvenci v matematických grafech levý horní roh nese hodnotu {\em X = 0}, {\em Y = 0}. Směrem dolů hodnota {\em Y} přibývá stejně tak jaho hodnota {\em X} přibývá směrem doprava.\\
 
 \begin{center}
-\includegraphics[width = 1\textwidth]{imgs/grid2d.png}
+\includegraphics[width = 0.65\textwidth]{imgs/grid2d.png}
 \end{center}
 
 Tato konvence je převzata ze standartu počítačové grafiky, kdy první pixel v levém horním rohu nese souřadnicovou hodnotu právě {\em X = 0}, {\em Y = 0}. Obrácená osa Y se může ze začátku jevit matoucí. Důvody pro zdánlivé převrácení os pochopíme později například právě při operacích se samotnými obrazovými body, pixely, které jsou standartně uspořádány od levého horního rohu doprava a níže.
@@ -1041,7 +1041,43 @@ Toto je jedna z nejzákladnějších možných interakcí. Vstupem pro pozici kr
 
 Potřebujeme-li programu vdechnout život, musíme již uvažovat o proměnlivosti. Ta se dotýká základní myšlenky programu trvajícího v čase. Proměnlivost je změna hodnot v délce běhu programu a lze si ji představit například jako rozdíl mezi dvěma okénky filmu.
 
-Proměnlivost je nezbytnou součástí animace. Animovat lze hodnoty a tím například jevy které se v programu zobrazují.
+Proměnlivost je nezbytnou součástí animace. Rozpohybovat lze hodnoty, a tím například jevy, které se v programu zobrazují. Pohyb je proměna stavu v čase.
+
+Pro příklad si můžeme ukázat jak proměna jedné hodnoty ovlivňuje obraz. K tomu abychom mohli hodnotu proměňovat musíme ji nejdříve pojmenovat.
+
+\begin{lstlisting}
+int y = 0;
+\end{lstlisting}
+
+Tímto jsme pojmenovali svoji proměnnou. Jednou z možných variant zápisu je okamžité přiřazení hodnoty, tedy y je nyní nula. Pro animaci hodnoty použijeme přírůstek, tedy při kresbě jednotlivého okénka přičteme k hodnotě 1. Abychom viděli nějaký výsledek, můžeme opět kreslit objekt, který bude využívat proměňující se hodnotu v čase.
+
+\begin{lstlisting}
+void setup(){
+	size(640,480);
+}
+
+void draw(){
+	background(255);
+	
+	// prirustek o jedna
+	// lze zapsat i zkracene y++;
+	y += 1;
+	
+	// kresba
+	line( 0 , y , width , y );
+
+}
+\end{lstlisting}
+
+Po spuštění tohoto programu uvidíte animaci trvající 480 okének. Animace bude pokračovat i nadále, hodnota y se bude stále proměňovat. Kresba bude teoreticky probíhat mimo plátno. K tomu abychom kresbu udrželi v mezích plátna, můžeme použít jednoduchou podmínku, která bude vracet hodnotu y zpět na nulu.
+
+
+\begin{lstlisting}
+if(y > height){
+	y = 0;
+}
+\end{lstlisting}
+
 
 
 \oddil{Uspořádání, stuktura programu}
