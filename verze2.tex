@@ -181,7 +181,9 @@
 
 Vážený čtenáři,
 
-tato kniha by Vás měla povzbudit v nesnadné úloze osvojení si vašeho prvního programovacího jazyka. Není-li tento jazyk první, prosím Vás o shovívavost v podrobnostech, do kterých v úvodu této knihy zabíhám. Šíře znalostí, které se mohou vyskytovat u potenciálních čtenářů tohoto průvodce je pro autora první velikou neznámou.
+tato kniha by Vás měla povzbudit v nesnadné úloze osvojení si vašeho prvního programovacího jazyka. Autor této knihy předpokládá Vaše malé nebo dokonce žádné zkušenosti s programováním. Celá kniha by vás měla postupně provázet touto dramatickou zkušností postupného ovládání stroje od základních výpočetních operací k pokročilejším.
+
+Není-li tento jazyk první, prosím Vás o shovívavost v podrobnostech, do kterých v úvodu této knihy zabíhám. Šíře znalostí, které se mohou vyskytovat u potenciálních čtenářů tohoto průvodce je pro autora první velikou neznámou.
 
 V obou případech Vás tedy prosím o shovívavost ve způsobu popisu programovacího jazyka a prostředí Processing. Sám jako samouk a člověk zaměřen především výtvarným směrem nemohu zaručit absolutní, stoprocentní a všeobecnou platnost všech tvrzení. Tímto Vás tedy žádám o věcné podněty pro pozdější doplnění nebo přeformulování jednotlivých tvrzení.
 
@@ -447,7 +449,7 @@ Editor je textové pole a je vaším hlavním komunikačním nástrojem s Proces
 
 
 
-Textový editor má několik funkcí, které vám mohou usnadnit práci. Odlišuje například mezi příkazy Processingu odlišnými barvami, tato zdánlivá banalita vám speciálně v začátcích nebo v případě objemnějších kódů může výrazně zpřehlednit organizaci programu. Jedná se o programátorskou konvenci obecně v anglickém jazyce nazývanou \slovnik{syntax highlighting}.
+Textový editor má několik funkcí, které vám mohou usnadnit práci. Odlišuje například mezi příkazy Processingu odlišnými barvami, tato zdánlivá drobnost speciálně v začátcích napomůže nebo v případě objemnějších kódů může výrazně zpřehlednit organizaci programu. Jedná se o programátorskou konvenci obecně v anglickém jazyce nazývanou \slovnik{syntax highlighting}.
 
 
 Další konvencí se kterou se často setkáte je tzv. \slovnik{indenting}, zarovnávání kódu do úhledných paragrafů. V Processingu si ze začátku vystačíte se standartím zarovnáním, posléze lze zarovnávání aktivovat stiskem kombinace kláves \klavesy{CONTROL (APPLE) + T}.
@@ -517,7 +519,7 @@ rect(8,6,7,5);
 Výsledné zobrazení na naší pomyslné ploše bude následující:
 
 \begin{center}
-\includegraphics[width = 1\textwidth]{imgs/gridRect2d.png}
+\includegraphics[width = 0.65\textwidth]{imgs/gridRect2d.png}
 \end{center}
 
 
@@ -1077,6 +1079,13 @@ if(y > height){
 	y = 0;
 }
 \end{lstlisting}
+
+Celá tato procedura jen ilustruje logiku programu. Hodnota y je zde přímo zobrazena, ale stejně tak se dá použít kdekoli jinde, tedy ne nezbytně na kresbu. Pro lepší představu jiného použití uvedu následující příklad.
+
+Pod hodnotou si lze například představit pevně stanovenou hodnotu, dejme tomu výšku domu. Zadání výšky nemusí nepostaví dům ale stanoví hodnotu se kterou můžeme dál počítat. Známe-li výšku plánované budovy, můžeme například přidávat patra dokud se této výšky nedosáhne. Tento postup již lze považovat za logickou konstrukci a jedním ze základních postupů jak takové logiky v programu docílit je podmínka.
+
+
+Q
 
 
 
