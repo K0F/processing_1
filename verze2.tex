@@ -1041,9 +1041,15 @@ Toto je jedna z nejzákladnějších možných interakcí. Vstupem pro pozici kr
 
 \oddil{Proměnlivost}
 
-Potřebujeme-li programu vdechnout život, musíme již uvažovat o proměnlivosti. Ta se dotýká základní myšlenky programu trvajícího v čase. Proměnlivost je změna hodnot v délce běhu programu a lze si ji představit například jako rozdíl mezi dvěma okénky filmu.
 
-Proměnlivost je nezbytnou součástí animace. Rozpohybovat lze hodnoty, a tím například jevy, které se v programu zobrazují. Pohyb je proměna stavu v čase.
+Potřebujeme-li programu vdechnout život, musíme nejprve pochopit jakým způsobem se program může proměňovat. Proměnlivost se dotýká základní myšlenky programu trvajícího v čase. K tomu abychom takovou proměnlivost mohli okem pozorovat, program může komunikovat pomocí různých výstupů. Processing který byl navržen s důrazem na vizuální výstup, bude nejčastěji komunikovat právě vizuálně. Obecně řečeno proměnlivost je jakákoli změna hodnot v délce běhu programu, lze si ji představit například jako rozdíl mezi dvěma okénky filmu.
+
+U filmových okének je rozdíl sice velmi těžko definovatelný ilustruje ale dobře celý problém. Film nám spostředkovává iluzi pohybu sledem několika okének za vteřinu. Přesně stejně se chová i vizuální program. Rozdíl mezi filmem a programem je zhruba ten, že program může mít teoreticky dva a více různých konců, nebo nemusí končit vůbec. Zde by se dalo namítnout že program je také nakonec nositelem kauzálního sledu operací. Vtip je v tom, že stejný program spuštěný dvakrát nemusí produkovat stejný výsledek.
+
+Změny v chodu programu se dá docílit několika způsoby. Základní změna v běhu programu je lidská intervence, která je z pohledu programu (respektive tvůrce programu) jen velmi těžko předpovídatelná. Změna v chování programu bez takového vnějšího zásahu je pak vždy umělá. (viz náhodnost)
+
+
+Vraťme se ovšem k Proměnlivosti. Proměnlivost je nezbytnou součástí animace. Pohyb je proměna stavu v čase. Měli bychom zde mít vždy na paměti, že program nerozumí tomu co zrovna zobrazuje, program rozumí pouze hodnotám. Rozpohybovat lze tyto hodnoty, a tím posléze například jevy, které se v programu zobrazují a člověku dají nějaký smysl. 
 
 Pro příklad si můžeme ukázat jak proměna jedné hodnoty ovlivňuje obraz. K tomu abychom mohli hodnotu proměňovat musíme ji nejdříve pojmenovat.
 
@@ -1084,10 +1090,8 @@ Celá tato procedura jen ilustruje logiku programu. Hodnota y je zde přímo zob
 
 Pod hodnotou si lze například představit pevně stanovenou hodnotu, dejme tomu výšku domu. Zadání výšky nemusí nepostaví dům ale stanoví hodnotu se kterou můžeme dál počítat. Známe-li výšku plánované budovy, můžeme například přidávat patra dokud se této výšky nedosáhne. Tento postup již lze považovat za logickou konstrukci a jedním ze základních postupů jak takové logiky v programu docílit je podmínka.
 
-
-Q
-
-
+\oddil{Podmínka}
+\oddil{Náhoda}
 
 \oddil{Uspořádání, stuktura programu}
 \index{void}
@@ -1126,7 +1130,7 @@ Výčet komunitnách knihoven je již poměrné obsáhlý, pro ilustraci zde bud
 \item
 Video
 
-Základní rozhraní mezi Apple Qucktime a Processingem. U platformy Linux, tato knihovna dlouhodobě nefunguje kvůli závislosti na propietárním softwaru, musíme tedy využít alternativy.
+Základní rozhraní mezi Apple Qucktime a Processingem. U platformy Linux, tato knihovna dlouhodobě nefunguje kvůli závislosti na propietárním softwaru, musíme tedy využít alternativy. Například implementace nativní knihovny GStreamer.
 
 \item
 Network
