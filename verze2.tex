@@ -5,7 +5,7 @@
 % with the fontspec package to easily select fonts.
 
  % use larger type; default would be 10pt
-\documentclass[10pt,twopage]{book}
+\documentclass[11pt,twopage]{book}
 \usepackage[czech]{babel}
 \usepackage{ucs}
 % Unicode support for LaTeX character names (accents, European chars, etc)
@@ -73,8 +73,8 @@
 \renewcommand\uv[1]{\quotedblbase #1\textquotedblleft}%
 
 \usepackage{marginnote}
-\usepackage[textsize=footnotesize,textwidth=3cm]{todonotes}
-\setlength{\marginparwidth}{3.1cm}
+\usepackage[textsize=footnotesize,textwidth=1.8cm]{todonotes}
+\setlength{\marginparwidth}{1.8cm}
 
 \newcommand{\oddil}[1]{\section{#1}\label{sec:#1}}
 \newcommand{\pododdil}[1]{\subsection{#1}\label{subsec:#1}}
@@ -163,7 +163,7 @@
 \tableofcontents
 
 
-\chapter{Úvod}
+\chapter{O knize}
 
 
 
@@ -174,14 +174,26 @@
 %\end{center}
 
 
-\oddil{Předmluva}
+\oddil{Úvodem}
 
 
 
 
 Vážený čtenáři,
 
-tato kniha by Vás měla povzbudit v nesnadné úloze osvojení si vašeho prvního programovacího jazyka. Autor této knihy předpokládá Vaše malé nebo dokonce žádné zkušenosti s programováním. Celá kniha by vás měla postupně provázet touto dramatickou zkušností postupného ovládání stroje od základních výpočetních operací k pokročilejším.
+tato kniha by Vás měla povzbudit v cestě k osvojení si vašeho prvního programovacího jazyka. Autor této knihy nepředpokládá žádnou Vaší předchozí zkušenost s programováním. V případě, že již určitou zkušenost máte, některé kapitoly pro Vás budou možná rutinní. Celá kniha by vás měla postupně provázet vytváření zkušeností postupného ovládání stroje od základních výpočetních operací k tvorbě pokročilejších nástrojů.
+
+Kniha je psána v takovém sledu, jak bych já sám považoval za důležité přijímat v určitý moment nové informace. Programování je bezesporu myšlenkově nákladná operace. Mým záměrem je postupně redukovat náročnost a proměnit psaní programu v lehkost.
+
+Cestu k této lehkosti Vám neumím jednoduše předat, pedagogickou lehkost jsem nikdy nepocítil. Tato kniha by proto měla být odložena vždy, bude-li mít čtenář nutkání si něco sám vyzkoušet, to považuji za absolutně nejrychlejší a zároveň nejlepší způsob učení se novému.
+
+Proces tvůrčího programování obsahuje prvek intuice, která vychází podstatnou měrou ze zkušenosti. Pro podporu Vaší intuice při psaní programu je nutné ovládnout základní jazyk natolik, aby jste byli schopni pocítit určitou jistotu. Přestanete-li se již zabývat funkčností programu a získáte-li v ní jistotu, přijmete jazyk za vlastní nástroj, a tím je možné nechat hovořit právě Vaší intuici. Intuici sám považuji za avantgardu logiky, protože je před ní vždy minimálně o krok napřed.
+
+K vystavění schopností intuice je nejvíce nezbytná schopnost pozorování. Samotná intuice nezmůže v komunikaci se strojem nic. Stroj neví co počítá, ale dokáže spočítat i to, co nevíte sami.
+
+Stroj je rychlý nástroj pro ověření Vaší intuice a zde je zapotřebí být pozorný. Můžeme to nazvat experimentální přístup, výsledky by měli být Vámi vždy intuitivně a hlavně kriticky zkoumány. Zpětnou dekonstrukcí intuice, rozborem Vaší jistoty získáváte postupně dar rozumění věci. Dar je to danajský, rozumění je jen ustálená podoba, která musí být opět zpochybněna intuicí; nutno podotknout, že opakovaným prověřením se často jen více utvrzuje. Ale o tom později.
+
+...
 
 Není-li tento jazyk první, prosím Vás o shovívavost v podrobnostech, do kterých v úvodu této knihy zabíhám. Šíře znalostí, které se mohou vyskytovat u potenciálních čtenářů tohoto průvodce je pro autora první velikou neznámou.
 
@@ -269,9 +281,10 @@ Rok: 2004
 Médium: generovaná grafika - černobílý tisk
 \item
 Anotace:
-stills of an ongoing visualization project of a space with a steadily increasing number of moving particles attracted by slowly moving, invisible gravitational centres. the cyclic nature of the space itself acts as four dimensional history, causing each particle to leave a persistent trace in time as well as in space. the paradoxical result of this setup is that whereas the number of particles is approaching infinity there's no increase in computational cost.
 
-as the particles move through space they become attracted by the various, initially randomly positioned gravitational centres. the force of attraction follows the classic "inverse square law" in physics, meaning a particle is a lot more influenced and accelerated by a close attractor than by ones further away. the more particles are in a highly active gravitational reqion of the space, the more clearly lines start to appear, showing the trajectory of these particles through space as well as time towards the locally strongest gravitational center.
+Stills of an ongoing visualization project of a space with a steadily increasing number of moving particles attracted by slowly moving, invisible gravitational centres. the cyclic nature of the space itself acts as four dimensional history, causing each particle to leave a persistent trace in time as well as in space. the paradoxical result of this setup is that whereas the number of particles is approaching infinity there's no increase in computational cost.
+
+As the particles move through space they become attracted by the various, initially randomly positioned gravitational centres. the force of attraction follows the classic "inverse square law" in physics, meaning a particle is a lot more influenced and accelerated by a close attractor than by ones further away. the more particles are in a highly active gravitational reqion of the space, the more clearly lines start to appear, showing the trajectory of these particles through space as well as time towards the locally strongest gravitational center.
 
 \end{itemize}
 
