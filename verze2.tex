@@ -5,7 +5,7 @@
 % with the fontspec package to easily select fonts.
 
  % use larger type; default would be 10pt
-\documentclass[11pt,twopage]{book}
+\documentclass[11pt]{book}
 \usepackage[czech]{babel}
 \usepackage{ucs}
 % Unicode support for LaTeX character names (accents, European chars, etc)
@@ -1118,6 +1118,223 @@ Celá tato procedura jen ilustruje logiku programu. Hodnota y je zde přímo zob
 Pod hodnotou si lze například představit pevně stanovenou hodnotu, dejme tomu výšku domu. Zadání výšky nemusí nepostaví dům ale stanoví hodnotu se kterou můžeme dál počítat. Známe-li výšku plánované budovy, můžeme například přidávat patra dokud se této výšky nedosáhne. Tento postup již lze považovat za logickou konstrukci a jedním ze základních postupů jak takové logiky v programu docílit je podmínka.
 
 \oddil{Podmínka}
+
+
+\pododdil{if}
+
+Podmínka je jeden ze základních stavebních kamenů programu. Podmínku lze použít ve všech případech, kdy předpokládáme odpověď ano nebo ne. Podmínka v Processingu stejně tak jako ve většině ostatních jazyků konstruována příkazem.
+
+Konstrukce podmínky vypadá pak následnovně:
+
+
+\begin{lstlisting}
+
+boolean pravda = true;
+
+if(pravda == true){
+
+    // spust nasledujici blok
+
+}
+
+\end{lstlisting}
+
+Za povšimnutí zde stojí dvojité rovnítko. Tento speciální symbol se používá při porovnávání dvou stran. Proměnná nazvaná {\em pravda} získala hodnotu {true}. V případě podmínky nezáleží na počtu proměnných v kulatých závorkách, otázka může být i více kombinovaná záleží na výsledky, který vždy musí být pravda nebo nepravda, tedy {\em true} nebo {\em false}. Pro zkonstruování takové věty lze použít následující znaménka.
+
+\begin{lstlisting}
+
+boolean pravda = true;
+int cislo = 3;
+String text = "Lorem ipsum dolor et amet";
+
+if(cislo == 3){
+
+    // tato podminka je spustena
+
+}
+
+
+if(cislo != 3){
+
+    // tato podminka neni spustena, znamenko nerovna se je opakem rovnitka
+
+}
+
+
+if(cislo > 3){
+
+    // tato podminka neni spustena cislo neni vetsi nez 3
+
+}
+
+
+if(cislo < 3){
+
+    // tato podminka neni spustena cislo neni mensi nez 3
+
+}
+
+
+if(cislo >= 3){
+
+    // tato podminka je spustena, znamenko vetsi nebo rovna se, cislo rovna se 3
+
+}
+
+
+if(cislo <= 3){
+
+    // tato podminka je spustena, znamenko mensi nebo rovna se, cislo rovna se 3
+
+}
+
+if(text.equals("Lorem ipsum dolor et amet")){
+
+	// tato podminka je spustena, porovnavani textu je take mozne, osem pozor
+	// k porovnavani celych retezcu, textu se pouziva funkce equals("String")
+
+}
+
+\end{lstlisting}
+
+Takovým výčtem operací jsme si pokryli základní konstrukci podmínky. Další znaménka slouží ke skládání jednotlivých otázek. Znaménko pro logicke A je:
+
+\begin{lstlisting}
+boolean a = true;
+boolean b = false;
+
+if(a == true && b == false){
+
+	// tento blok bude spusten, a je pravda A b je pravda
+
+}
+
+
+if(a == true && b == true){
+
+	// tento blok nebude spusten, b totiz neni pravda, b == false
+
+}
+
+\end{lstlisting}
+
+
+("appersand" se na české klávesnici nevyskytuje, na anglické klávesnici jej naleznete většinou pod SHIFT - 7), pro logické NEBO se používá dvojitá svislá čára tzv. pipe:
+
+\begin{lstlisting}
+boolean a = true;
+boolean b = false;
+
+if(a == true || b == false){
+
+	// tento blok bude spusten, k tomu staci pouze ze a je pravda NEBO b je pravda
+
+}
+
+
+if(a == true || b == true){
+
+	// tento blok bude tedy opet spusten
+
+}
+
+
+if(a == false || b == true){
+
+	// tento blok jiz spusten nebude, ani a ani b neni pravda 
+
+}
+
+\end{lstlisting}
+
+Za pomoci skládání otázek můžeme zkonstruovat celé věty a složitější otázky. V kombinaci s kulatými závorkami si vystačíme pouze s logickým AND a OR. Zkusme si ilustrovat situaci následovně:
+
+
+\begin{lstlisting}
+boolean a = true;
+boolean b = true;
+boolean c = false;
+
+if( (a && b) || c ){
+
+	// tento blok bude spuštěn
+	
+}
+
+if( !(a && b) || c ){
+
+	// tento blok nebude spuštěn
+	
+}
+
+\end{lstlisting}
+
+Jaký je rozdíl mezi prvním a druhým blokem? Poslední specialita booleanovských operací je znaménko vykřičník. Takové znaménko před proměnou typu boolean znamená opak tvrzení tedy, je li {\em pravda} pravdou, {\em !pravda} je nepravdou tedy výsledkem je {\em false}.
+
+
+Dále si všiměte, že v podmínce chybí jakékoli porovnávací znaménko. Ve skutečném programování se setkáte spíše s tímto zápisem, je to zápis zkrácený. Namísto neustálého rozepisování {\em něco rovná se rovná se true} lze napsat pouze {\me něco} v kulatých závorkách. Je-li naše {\em něco} datového typu {\em boolean} Processing bude takovému zápisu rozumět. Tedy nejjednodušší zápis může vypadat i takto:
+
+  
+\begin{lstlisting}
+boolean a = true;
+
+if(a)
+	//pouze tento jediný řádek bude spuštěn
+	
+	
+	
+if(a){
+	// cely tento blok
+	// bude spusten
+}
+\end{lstlisting}
+
+K úplnému zkrácení se dají i vypustit i složené závorky, to vede opět k rychlejšímu zápisu. Rozdílem takového zápisu je fakt, že taková podmínka spouští pouze jeden následující řádek. Přestože je to naprosto správný způsob programování, nekteří programátoři takový zápis neradi používají z důvodu zhoršení přehlednosti v kódu. Opět se s takovým zápisem často setkáte, člověk je jednoduše líný živočišný druh a {\em if} se v programování používá opravdu často.
+
+\pododdil{else}
+
+K dalšímu rozšíření podmínek slouží příkaz {\else} a dá se přeložit takto. Jestliže je něco pravda udělej toto, jestliže ne udělej něco jiného. Zápis vypadá takto:
+
+\begin{lstlisting}
+boolean a = false;
+
+if(a){
+
+	// kdyby a bylo true, tak bu se spustil tento blok kodu 
+
+}else{
+
+	// ale protoze je nase a false, spusti se nyni kod
+	// v tomto bloku
+	
+}
+\end{lstlisting}
+
+
+
+\pododdil{ ? : }
+
+Abychom podmínky vyčerpali nadobro ukážeme si poslední možný zápis, který je ještě úspornější.
+  
+  
+\begin{lstlisting}
+boolean a = true;
+
+if(a)
+	background(0);
+	
+	
+background( a ? 0 : 255 );
+
+\end{lstlisting}
+      
+
+
+
+
+
+
+
 \oddil{Náhoda}
 
 \oddil{Uspořádání, stuktura programu}
