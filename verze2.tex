@@ -18,7 +18,6 @@
 
 \usepackage{cleveref}
 
-
 % colors
 \definecolor{javared}{rgb}{0.0,0.4,0.8} % for strings
 \definecolor{javagreen}{rgb}{0.55,0.55,0.55} % comments
@@ -29,12 +28,9 @@
 
 \frenchspacing
 
-
-
 \definecolor{bublina1}{rgb}{0.75,0.75,0.75} % for strings
 \definecolor{bublina2}{rgb}{0.33,0.66,0.99} % comments
 \usepackage[dvips]{hyperref}
-
 
 \hypersetup{
     bookmarks=true,         % show bookmarks bar?
@@ -1139,7 +1135,7 @@ if(pravda == true){
 
 \end{lstlisting}
 
-Za povšimnutí zde stojí dvojité rovnítko. Tento speciální symbol se používá při porovnávání dvou stran. Proměnná nazvaná {\em pravda} získala hodnotu {true}. V případě podmínky nezáleží na počtu proměnných v kulatých závorkách, otázka může být i více kombinovaná záleží na výsledky, který vždy musí být pravda nebo nepravda, tedy {\em true} nebo {\em false}. Pro zkonstruování takové věty lze použít následující znaménka.
+Za povšimnutí zde stojí dvojité rovnítko. Tento speciální symbol se používá při porovnávání dvou stran. Proměnná nazvaná {\em pravda} získala hodnotu {\em true}. V případě podmínky nezáleží na počtu proměnných v kulatých závorkách, otázka může být i více kombinovaná záleží na výsledky, který vždy musí být pravda nebo nepravda, tedy {\em true} nebo {\em false}. Pro zkonstruování takové věty lze použít následující znaménka.
 
 \begin{lstlisting}
 
@@ -1219,7 +1215,7 @@ if(a == true && b == true){
 \end{lstlisting}
 
 
-("appersand" se na české klávesnici nevyskytuje, na anglické klávesnici jej naleznete většinou pod SHIFT - 7), pro logické NEBO se používá dvojitá svislá čára tzv. pipe:
+("appersand" se na české klávesnici nevyskytuje, na anglické klávesnici jej naleznete většinou pod \klavesy {SHIFT - 7}), pro logické NEBO se používá dvojitá svislá čára tzv. pipe:
 
 \begin{lstlisting}
 boolean a = true;
@@ -1272,7 +1268,7 @@ if( !(a && b) || c ){
 Jaký je rozdíl mezi prvním a druhým blokem? Poslední specialita booleanovských operací je znaménko vykřičník. Takové znaménko před proměnou typu boolean znamená opak tvrzení tedy, je li {\em pravda} pravdou, {\em !pravda} je nepravdou tedy výsledkem je {\em false}.
 
 
-Dále si všiměte, že v podmínce chybí jakékoli porovnávací znaménko. Ve skutečném programování se setkáte spíše s tímto zápisem, je to zápis zkrácený. Namísto neustálého rozepisování {\em něco rovná se rovná se true} lze napsat pouze {\me něco} v kulatých závorkách. Je-li naše {\em něco} datového typu {\em boolean} Processing bude takovému zápisu rozumět. Tedy nejjednodušší zápis může vypadat i takto:
+Dále si všiměte, že v podmínce chybí jakékoli porovnávací znaménko. Ve skutečném programování se setkáte spíše s tímto zápisem, je to zápis zkrácený. Namísto neustálého rozepisování {\em něco rovná se rovná se true} lze napsat pouze v kulatých závorkách. Je-li naše {\em něco} datového typu {\em boolean} Processing bude takovému zápisu rozumět. Tedy nejjednodušší zápis může vypadat i takto:
 
   
 \begin{lstlisting}
@@ -1293,7 +1289,7 @@ K úplnému zkrácení se dají i vypustit i složené závorky, to vede opět k
 
 \pododdil{else}
 
-K dalšímu rozšíření podmínek slouží příkaz {\else} a dá se přeložit takto. Jestliže je něco pravda udělej toto, jestliže ne udělej něco jiného. Zápis vypadá takto:
+K dalšímu rozšíření podmínek slouží příkaz {\em else} a dá se přeložit takto. Jestliže je něco pravda udělej toto, jestliže ne udělej něco jiného. Zápis vypadá takto:
 
 \begin{lstlisting}
 boolean a = false;
