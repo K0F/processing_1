@@ -286,6 +286,15 @@ As the particles move through space they become attracted by the various, initia
 
 %\end{comment}
 
+
+\chapter{Cíle knihy}
+
+\oddil{Konktrétní zadání}
+
+Cílem této knihy je provést uživatele začátečníka sérií příkladů, které budou v průběhu ilustrovat znalosti nebytné k naprogramování postupných stádií programu. Jako první cíl si vytyčíme jednoduchý interaktivní program. Interaktivní program tedy takový, který dokáže určitým způsobem reagovat na uživatele. Tento program by ve výsledku měl přečíst polohu myši a na jeho základě provést proměnu v obraze.
+
+Na úvod je třeba říci, že vytyčení konkrétního cíle není vždy nezbytné. Processing již počítá s možností, že uživatel nebude od počátku znát konkrétní zadání a bude jen volně experimentovat s funkcemi jazyka. Proto Processing automaticky pojmenovává nové projekty, v žargonu Processingu Sketche, podle data svého vytvoření.
+
 \chapter{Co je to programovací jazyk?}
 
 \oddil{Počátky programovacího jazyka}
@@ -367,7 +376,7 @@ Tato tendence postupně dala vzniknout celé rodině programovacích jazyků
 \footnote{vyjmenovat jazyky zde + historie?}
 které mají ve snaze přiblížit potenciál výpočetní techniky blíže k jiným, netechnickým oborům. V neposlední řadě i oborům výtvarným. V technických kruzích je ovšem již sama disciplína psaní programů považována za tvůrčí činnost. V pojetí výtvarného umění dnes převažuje pohled na programování jako na velmi technickou zdatnost, rigidní a notně limitovanou činnost.
 
-Jazyk, který je nutně limitovaný svojí nezbytnou dokonalostí ovšem nemusí nutně limitovat svého uživatele ve sdělení. Uživatel se ovšem musí do určité míry, naučením se základních struktur, přizpůsobit stroji k uskutečnění takové zdárné komunikace.
+Jazyk, který je nutně limitovaný svojí nezbytnou dokonalostí ovšem nemusí nutně limitovat svého uživatele ve sdělení. Uživatel se ovšem musí do určité míry, osvojením si základních struktur, přizpůsobit stroji k uskutečnění takové zdárné komunikace.
 
 
 \oddil{Proč zrovna Processing?}
@@ -1065,7 +1074,7 @@ Toto je jedna z nejzákladnějších možných interakcí. Vstupem pro pozici kr
 \oddil{Proměnlivost}
 
 
-Potřebujeme-li programu vdechnout život, musíme nejprve pochopit jakým způsobem se program může proměňovat. Proměnlivost se dotýká základní myšlenky programu trvajícího v čase. K tomu abychom takovou proměnlivost mohli okem pozorovat, program může komunikovat pomocí různých výstupů. Processing který byl navržen s důrazem na vizuální výstup, bude nejčastěji komunikovat právě vizuálně. Obecně řečeno proměnlivost je jakákoli změna hodnot v délce běhu programu, lze si ji představit například jako rozdíl mezi dvěma okénky filmu.
+Potřebujeme-li programu vdechnout život, musíme nejprve pochopit jakým způsobem se program může proměňovat. Proměnlivost se dotýká základní myšlenky programu trvajícího v čase. K tomu abychom takovou proměnlivost mohli okem pozorovat, program může komunikovat pomocí různých výstupů. Processing, který byl navržen s důrazem na vizuální výstup, bude nejčastěji komunikovat právě vizuálně. Obecně řečeno proměnlivost je jakákoli změna hodnot v délce běhu programu, lze si ji představit například jako rozdíl mezi dvěma okénky filmu.
 
 U filmových okének je rozdíl sice velmi těžko definovatelný ilustruje ale dobře celý problém. Film nám spostředkovává iluzi pohybu sledem několika okének za vteřinu. Přesně stejně se chová i vizuální program. Rozdíl mezi filmem a programem je zhruba ten, že program může mít teoreticky dva a více různých konců, nebo nemusí končit vůbec. Zde by se dalo namítnout že program je také nakonec nositelem kauzálního sledu operací. Vtip je v tom, že stejný program spuštěný dvakrát nemusí produkovat stejný výsledek.
 
@@ -1268,6 +1277,15 @@ if( !(a && b) || c ){
 Jaký je rozdíl mezi prvním a druhým blokem? Poslední specialita booleanovských operací je znaménko vykřičník. Takové znaménko před proměnou typu boolean znamená opak tvrzení tedy, je li {\em pravda} pravdou, {\em !pravda} je nepravdou tedy výsledkem je {\em false}.
 
 
+\begin{lstlisting}
+boolean pravda = true;
+
+println( pravda ); // tiskne true
+println( !pravda ); // tiskne false
+\end{lstlisting}
+
+
+
 Dále si všiměte, že v podmínce chybí jakékoli porovnávací znaménko. Ve skutečném programování se setkáte spíše s tímto zápisem, je to zápis zkrácený. Namísto neustálého rozepisování {\em něco rovná se rovná se true} lze napsat pouze v kulatých závorkách. Je-li naše {\em něco} datového typu {\em boolean} Processing bude takovému zápisu rozumět. Tedy nejjednodušší zápis může vypadat i takto:
 
   
@@ -1326,12 +1344,33 @@ background( a ? 0 : 255 );
       
 
 
-
-
-
-
-
 \oddil{Náhoda}
+
+Proč má smysl v případě strojů vůbec hovořit o náhodě. Náhoda je z pohledu výpočetní techniky třeba vnímat jako vnější vliv. V rámci počítačové logiky náhoda v podstatě neexistuje. Každý jev má svoji příčinu a může mít svůj následek. Počítačové jazyky znají jen pojem takzvané pseudonáhodnosti.
+
+Předložka pseudo, již nastiňuje určitou náhražku. Pseudonáhodnost je ve své podstatě strojová simulace náhody v čistě logickém prostředí. Náhodou pojmenováváme zpravidla jev, který nedokážeme pro jeho složitost předpovědět. Reálný svět vnímaný člověkem obsahuje takzvanou pravou náhodu, tedy to, co skutečně nelze vypozorovat.
+
+Situace přenesení náhody do světa logického uvažování je velmi problematická proto, že člověku se velmi těžko stroji popisuje fakt srozumitelnosti. Některé jednoduché pravidla srozumitelné jsou, jiné z pohledu výpočtu podobně jednoduché již ne.
+
+Pseudonáhodou člověk definuje takový výpočet, který samozřejmě vychází z logického výpočtu, člověk jej již ovšem nedokáže předpovědět.
+
+Konkrétní příklad jak lze v processingu vygenerovat pseudonáhodné číslo je:
+
+\begin{lstlisting}
+float nahodna = random(10);
+println(nahoda);
+\end{lstlisting}
+
+Proměnná nazvaná nahoda nyní přijímá pseudonáhodnou hodnotu od nuly do deseti jež následovně vytiskne do konzole. Druhý možný zápis je zadání dvou čísel tedy rozsahu výsledné pseudonáhodné hodnoty.
+
+
+\begin{lstlisting}
+float nahodna = random(10,20);
+println(nahoda);
+\end{lstlisting}
+
+Jak je zřejmě pochopitelné náhoda se nyní bude pohybovat v rozmezí čísla od deseti do dvaceti.
+
 
 \oddil{Uspořádání, stuktura programu}
 \index{void}
