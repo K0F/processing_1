@@ -387,9 +387,15 @@ Programy jsme dnes zvyklí spíše konzumovat a využívat než opravdu sami vyt
 
 Processing se svým způsobem neliší od žádného jiného programu který běžně využíváme. Jedná se o sadu příkazů a samotné programovací prostředí, které nám dovoluje určitou formou vytvářet svébytný program. I když se jedná již o programování nelze jej běžně zaměňovat s klasickou tvorbou dospělého nástroje.
 
-Zde si musíme uvědomit, že náš potencionální produkt - program bude vždy spíše banální v porovnání se samotným prostředím Processingu. Procesingový kód je výčet všech možností, které můžeme při tvorbě našeho programu využít. Obecně se dá říci, že Processing je nástroj pro tvorbu speciálních nástrojů. Výsledek našeho programování bude vždy obsahovat poměrně velkou část Processingu samotného.
+Zde si musíme uvědomit, že náš potencionální produkt - program bude vždy spíše banální v porovnání se samotným prostředím Processingu. Procesingový kód je výčet všech možností, které můžeme při tvorbě našeho programu využít. Obecně se dá říci, že Processing je nástroj pro tvorbu speciálních nástrojů. Výsledek našeho programování bude vždy pravděpodobně obsahovat poměrně větší část Processingu samotného.
 
-Je dobré okamžitě od začátku pochopit k čemu Processing lze využít a k čemu jej opravdu chceme využívat. Processing se především hodí k rychlé tvorbě programu, ověření teze nebo spontánního nápadu. Tvorba dospělejších nástrojů není sice nemožná, obecně ale platí, že Processing bude svými zkrácenými zápisy a jednoduchostí prostředí velmi nápomocný v začátcích. Může se ovšem stát více nevhodným v případě pokročilejších projektů. 
+Je dobré okamžitě od začátku pochopit k čemu Processing lze využít a k čemu jej opravdu chceme využívat. Processing se především hodí k rychlé tvorbě programu, ověření teze nebo spontánního nápadu. Pro podobné programování se také vžil pojem "rapid engineering". Tvorba dospělejších nástrojů není sice nemožná, obecně ale platí, že Processing bude svými zkrácenými zápisy a jednoduchostí prostředí velmi nápomocný v začátcích. Může se ovšem stát více nevhodným v případě rozsáhlejších projektů.
+
+Processing se svojí kontrukcí zejména hodí pro práci s obrazem a tedy obrazu bude také věnována nejrozáhlejší část této knihy. Výstupy z Processingu lze nadále zpracovávat, Processing může tak sloužit například jako mezičlánek ve výrobním procesu.
+
+Dnes je Processing zejména využíván grafickými designéry, designéry užitého umění, tvůrci webových aplikací, softwarovými návrháři, vizuálními umělci a umělci kteří se věnují instalacím v prostoru nebo živé projekci. K Processingu si ovšem nacházejí cestu i více technické obory, zejména architekti, badatelé přírodních věd, statistici a všeobecně tvůrci softwaru, ale Processing nachází využití i v oborech zabývající se humanitními vědami jako například sociologové nebo jazykovědci.
+
+Processing se neomezuje na jeden obor, svojí koncepcí spíše nabízí společnou platformu pro mezioborovou komunikaci.
 
 
 \pododdil{Otevřenost softwaru}
@@ -1370,14 +1376,34 @@ Jak je zřejmě pochopitelné náhoda se nyní bude pohybovat v rozmezí čísla
 
 \oddil{Uspořádání, stuktura programu}
 \index{void}
+
+Jednotlivé bloky kódu lze dále strukturovat. Strukturování v kódu se provádí zpravidla tam kde potřebujeme opakovaně spouštět identický blok kódu.
+
+Typickým příkladem může být kresba 
+
 \oddil{Ukládání informací, paměť programu}
+
+Kresba do okna programu je jen jeden způsob výstupu programu. V určitém momentu budeme potřebovat zaznamenat obraz nebo jiná data pro další práci nebo archivaci. Processing umí ukládat data do razmanitých formátů, při práci s obrazem se jedná o základní druhy bitmap a vektorového výstupu ve standartizovaném formátu pdf.
+
+Při ukládání holých dat můžeme například využít prosté textové soubory, které se hodí při dalším zpracování pomocí Processingu. Velmi častý formát takového zápisu je takzavný CSV, což je v podstatě textový soubor obsahující data oddělená čárkou. Jeho velikost závisí na objemu dat. V případě hieraticky strukturovaných dat lze k uložení hearitcky uposřádaný formát XML.
+
+
+\pododdil{Ukládání obrazových dat}
+\pododdil{Ukládání holých dat}
+\pododdil{Tisk do pdf}
+
+
+
+\chapter{Práce s daty}
+
+
+\oddil{Parsing, získávání hodnot z externích dat}
+
 \oddil{Pokročilejší logické operace}
 
 \oddil{Pravděpodobnost a trvání}
 
-\chapter{Práce s daty}
 
-\oddil{Parsing, získávání hodnot z externích dat}
 \oddil{Vizualizace hodnot}
 
 
