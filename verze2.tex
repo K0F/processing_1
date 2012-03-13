@@ -525,6 +525,35 @@ V programování obecně platí jisté zákonitosti. Není tomu jinak i u pravid
 
 \oddil{Syntax}
 
+\oddil{Klávesové zkratky}
+
+\begin{lstlisting}
+// ctrl+r - spusti program (ctrl+shift+r - present mode)
+// ctrl+t - autoformat, beautyfier, zarovnava text
+// ctrl+k - otevre adresar sketche
+// ctlr+f - klasicky find, replace nastroj
+// ctrl+s - save, se shiftem pak -save as
+// ctrl+e - export jako applet, se shiftem - jako aplikace
+\end{lstlisting}
+
+
+\oddil{Kometář}
+\begin{lstlisting}
+
+// komentar je uvozen dvemi doprednymi lomitky
+
+/* viceradkovy komentar je uvozen doprednym lomitkem
+a hvezdickou ukonce hvezickou a lomitkem v obracenem poradi
+
+toto je viceradkovy KOMENTAR
+toto je viceradkovy KOMENTAR
+toto je viceradkovy KOMENTAR
+toto je viceradkovy KOMENTAR
+*/
+
+/*zacatek .............. konec*/
+
+\end{lstlisting}
 
 \oddil{Orientace v prostoru}
 
@@ -603,6 +632,7 @@ String mujSlovniRetezec = "Ahoj svete!";
 char mujJednotlivyZnak = 'A';
 
 color mojeBarva = color(255,127,1);
+
 \end{lstlisting}
 
 Takovému zápisu bude již Processing rozumět. Vepsáním těchto řádků do processingového editoru již dochází k alokaci vašich informací ve správných datatypech v paměti. Vysvětleme si nyní několik nejasností.
@@ -614,6 +644,23 @@ Každý příkaz je ukončen středníkem {\em ;} .
 Podivné názvy jako například {\em mojeCeleCislo} tzv. proměnných, jen ukazují, že název pro svoji proměnnou můžete zvolit téměř podle libosti. Co do výjimek v názvech proměnných. Proměnná nesmí mít v názvu mezeru tedy prázdný znak. Podle zvyklostí by dále proměnná měla začínat malým písmenem a potřebujete-li nutně pro název použít víceslovný název použijte velké písmeno namísto mezery.
 
 Proměnná nesmí být číslo, ale slovní název. Programátorské konvence při pojmenovávání proměnných jsou ryze praktické. Proměnná by měla mít co možná nejkratší a nejvýstižnější název.  Toto je spíše dobré doporučení než-li pravidlo. Správným pojmenováním proměnných docílíte větší přehlednosti v kódu kratší délkou si ušetříte zbytečné psaní.
+
+
+\pododdil{barva}
+\begin{lstlisting}
+	/*
+   color(0..255); // -skala sede
+   color(0..255,0..255); // - skala sede + alpha kanal
+   color(0..255,0..255,0..255); // red green blue
+   color(0..255,0..255,0..255,0..255) // red green blue + alpha
+   
+   .. nebo take: color(#FFCC00).. v html stylu =(hex)(0xFFFFCC00)
+   vice o barevnych modech pod "colorMode()" - HSB,RGB,RGBA...
+*/
+\end{lstlisting}
+
+
+
 
 \pododdil{Tisk do konzole}
 
@@ -910,7 +957,39 @@ Tento příklad je trochu extrémní, ale naprosto pravdivý. Věc kterou se sna
 
 Nyní zpět k hodnotám. Máme-li již jakékoli hodnoty v paměti programu, můžeme kterékoli z nich namapovat na jakoukoli kreslící funkci. Zde začíná naše experimentální část, často se totiž stává, že výsledek kreslení neumíme plně předpovědět a teprve zobrazením nám kresba vzhledem k hodnotě začne dávat smysl.
 
-Processing je, co se týče grafického výstupu, navržen pro přímou experimentální interakci vznikajícího programu s uživatelem. To znamená, že pokaždé kdy chcete vidět výsledek kódu, stačí pouze stisknout tlačítko {\em RUN}. Zpětná vazba spolu s vaší interpretací a úmyslem má potom veliký vliv na následné úpravy v kódu. Tímto způsobem můžete doslova "vysochat" výslednou podobu programu.
+Processing je, co se týče grafického výstupu, navržen pro přímou experimentální interakci vznikajícího programu s uživatelem. To znamená, že pokaždé kdy chcete vidět výsledek kódu, stačí pouze stisknout tlačítko {\em RUN}. Zpětná vazba spolu s vaší interpretací a úmyslem má potom veliký vliv na následné úpravy v kódu. Tímto způsobem můžete řekněme "vysochat" výslednou podobu programu.
+
+\pododdil{Základní struktura programu}
+
+\begin{lstlisting}
+// Zakladni funkce programu
+// pro pochopeni processingu je dobre zacit s dvemi zakladnimi funkcemi:
+// (o funkcich obecne, vice v prikladu _06_Funkce) 
+
+// 1. "setup()" - funkce, ktera je spustena na zacatku programu, pouze jednou
+// slouzi k vychozimu nastaveni programu
+void setup(){ // "{" znamenko znacici pocatek funkce
+  // hned prvni udaj by mel rikat jak je ramecek velky, prikaz "size"
+  size(200,200); //velikost ramecku v "size(int x,int y)" - x a y v pixelech
+  
+  frameRate(15); //"frameRate(int kolik)" - snimku za vterinu, bez tohoto prikazu prednastaveno 60fps 
+  
+  println("tisk ze setup-u! " + frameCount); // tisk do konzole, tento bude spusten jednou
+  // zajimava promenna "frameCount" uchovava pocet vykreslenych okenek
+  // ze "setupu" to bude vzdy = 0
+  
+}// "}" znamenko znacici konec funkce
+
+
+// 2. "draw()" - funkce, ktera je spoustana cyklicky, nekolikrat do vteriny - podle "frameRate" - nyni 15x za vterinu
+void draw(){
+  // v teto smycce se vetsinou provadi kresba, animace, zivy vypocet, prvni co je dobre vykreslit je pozadi
+  background(0); //"background" vyplni celou plochu barvou, s jednim udajem od 0..255 - color
+  println("tisk z draw-u! " + frameCount);  // tisk do konzole je cyklicky opakovan, "frameCount" vraci udaj o poctu prekresleni
+}// "}" znamenko znacici konec funkce
+
+\end{lstlisting}
+
 
 \pododdil{Zobrazení}
 
