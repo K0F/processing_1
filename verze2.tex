@@ -917,9 +917,246 @@ Boolean je možné si představit jako vypínač světla. Zapnuto a vypnuto jsou
 
 \end{itemize}
 
-\pododdil{Podmínka}
 
-Uvedením do stavů programu se můžeme dostat k první opravdové struktuře v programu. Zkusme nyní nastínit jak taková struktura vypadá. Patrně nejpřímější řízení dějů v programu je podmínka. Podmínka říká, jestliže je něco pravda, spusť následné příkazy. Uvedu zde krátký příklad podobné struktury:
+\pododdil{Základní struktura programu}
+
+\begin{lstlisting}
+void setup(){ // "{" znamenko znacici pocatek funkce
+  // prvni udaj by mel rikat jak je ramecek velky, prikaz "size"
+  //velikost ramecku v "size(int x,int y)" - x a y v pixelech
+  size(200,200);
+  
+  //"frameRate(int kolik)" - snimku za vterinu, bez tohoto prikazu prednastaveno 60fps 
+  frameRate(15); 
+}
+
+// 2. "draw()" - funkce, ktera je spoustana cyklicky, nekolikrat do vteriny - podle "frameRate" - nyni 15x za vterinu
+void draw(){
+  // v teto smycce se vetsinou provadi kresba, animace, zivy vypocet, prvni co je dobre vykreslit je pozadi
+  background(0); //"background" vyplni celou plochu barvou, s jednim udajem od 0..255 - color
+  println("tisk z draw-u! " + frameCount);  // tisk do konzole je cyklicky opakovan, "frameCount" vraci udaj o poctu prekresleni
+}// "}" znamenko znacici konec funkce
+
+\end{lstlisting}
+
+
+\pododdil{Zobrazení}
+
+Jak zobrazit hodnoty, které uchovává program v paměti? Jakákoli hodnota lze použít například jako jeden z argumentů v kreslících funkcích.
+
+Již zmiňovaný \vyraz{rect()}, tedy rectangle - obdélník, vyžaduje ke svému úspěšnému vykreslení čtyři parametry, čtyři číselné hodnoty \footnote{zde nezáleží jestli se jedná o celé číslo int nebo číslo s desetinnou čárkou float}. Tyto parametry, hodnoty, můžeme buďto zadat jako přímé číselné hodnoty, nebo do těchto parametrů můžeme zadat naši proměnnou která obsahuje číslo. Názorně:
+
+\begin{lstlisting}
+
+// první způsob vykreslení obdéníku
+rect( 10, 8, 40, 20 );
+
+// druhý způsob vykreslení obdélníku
+int prvniCislo = 10;
+int druheCislo = 8;
+
+rect( prvniCislo, druheCislo, 40, 20 );
+
+\end{lstlisting}
+
+Již nyní je nám zřejmé jak hodnoty mohou ovlivnit zobrazení. Namísto hodnot zadaných číselně se zde v druhém způsobu vykreslení obdélníku objevují naše proměnné, které mají již zadaný obsah. Výsledek zobrazení bude v obou případech stejný, ovšem z hlediska struktury programu je druhý způsob daleko flexibilnější.
+
+Představme si nyní, že hodnota zadaná prvním způsobem zápisu se již nikdy v průběhu programu nemůže proměnit. V případě druhého způsobu zápisu získáváme díky možnosti změny jednoho parametru kontrolu nad kreslícím výstupem.
+
+Veškeré příkazy které jsme si zatím ukázali byli spuštěny pouze jednou. To znamená, že obdélník byl vykreslen a program, který již neměl žádné další příkazy jednoduše skončil.
+
+V další kapitole si předvedeme jak vdechnout procesům pohyb a stálost, další kapitola je věnovaná animaci.
+
+\oddil{Základní funkce programu}
+
+Processing rozlišuje mezi jednotlivými programovacími přístupy. Textový editor se automaticky přizpůsobí způsobu programování. Tímto přístupem se Processing snaží co nejvíce nablížit začátečníkovi. Základní prostředí nám dovoluje pouze nakreslit tvary a ukončit program. K pohybu v čase musíme Processingu definovat základní strukturu programu.
+
+Nejzákladnější dvě funkce se kterými se budeme při programování setkávat jsou funkce \vyraz{setup()} a \vyraz{draw()}.
+
+\begin{itemize}
+\item
+\vyraz{setup()} je funkcí, která bude spuštěna jednou na začátku programu. Zde se nejčastěji nastavují počáteční parametry které si potřebujeme připravit než se spustí kreslící funkce.
+
+\item
+\vyraz{draw()} je funkce pro opakované kreslení, bude spouštěna stále po dobu chodu programu, zde budeme nejčastěji kreslit tvary a provádě proměnlivé výpočty pro animaci.
+\end{itemize} 
+
+
+Základní funkce pro vyvolání překreslování výstupního okna je funkce \vyraz{draw()}. \bublina{void draw() je základní funkce pro spuštění překreslování plátna} Funkce je uvozena slovem \vyraz{void}. Více o funkcích se dozvíme v kapitole. Jedná se o základní smyčku, která zajišťuje jakoukoli proměnlivost, tedy animaci v obraze. Smyčka je de facto operace, která v programu vyjadřuje rozměr času.
+
+
+\oddil{Animace a interakce}
+\index{animace}
+
+\pododdil{Animace}
+
+Statická kresba na plátno je jen jeden z možných výstupů. Animace v Processingu znamená překreslovat plátno pokaždé jinými obrazy. Processing je jazyk využívaný zjeména v pohyblivém obraze. Nyní si ukážeme základní postup při tvorbě pohyblivého obrazu.
+
+
+Velmi zjedoušeně řečeno smyčka \vyraz{draw()} je prostředek pro změnu, pozor není změnou sama o sobě. Smyčka zajišťuje sousledné volání příkazů v neustálém trvání\footnote{po dobu běhu programu}. V Processingu si v podstatě uvědomíme, že psaním příkazů do smyčky píšeme pravidla jakoby pro jedno okénko ve filmu. Pohyb je vždy zajištěn proměnou našich datatypů, které v tomto okénku figurují.
+
+Tedy například napíšeme-li takto, samotnou smyčku:
+
+\begin{lstlisting}
+void draw(){
+	// 60x za vteřinu spuštěná operace
+}
+\end{lstlisting}
+
+Vše uzavřeno do složených závorek bude spuštěno šedesátkrát za vteřinu. Bude-li obsah základní funkce \vyraz{draw()} neměnný, tj. budeme-li volat šedesátkrát za vteřinu to samé, animace bude ovšem v případě vizuálního výstupu jen abstraktním pojmem.
+
+V tomto příkladě již dochází ke spuštění smyčky. Výsledkem bude pouze šedivá plocha v rozměrech sto krát sto pixelů, jelikož na plátno nebylo zatím nic vykresleno. Následujícími příkazy \vyraz{background()} a \vyraz{rect()} nakreslíme nejprve plné pozadí a následovně obdélník. Zápis bude vypadat následovně:
+
+\begin{lstlisting}
+void draw(){
+	// pozadí
+	background(255);
+	// obdélník se čtyřmi parametry
+	rect( 10 , 10 , 30 , 30 );
+}
+\end{lstlisting}
+
+Takový zápis již provádí animaci a kreslí na plátno. Animace ovšem v tomto případě nebude patrná jelikož zatím se v obraze nic neproměňuje. Veškeré hodnoty jsou statické tudíž se vykresluje jeden čtverec na bílém pozadí na stále stejném místě.
+
+K rozhýbání objektů jednoduše potřebujeme proměnit jeden z parametrů v čase.\bublina{Animace je proměna obrazu v čase, jednotlivá okénka se v čase musí lišit.} Abychom docílili animace zkusme například vložit namísto parametru pro kresbu čtverce v ose X počítadlo okének. Processing má proměnnou s údajem o počtu uběhlých okének pod názvem \vyraz{frameCount}.
+
+Vyraz \vyraz{frameCount} lze využít následovně:
+
+\begin{lstlisting}
+void setup(){
+	size(640,480);
+}
+
+
+void draw(){
+	// pozadí
+	background(255);
+	// pohyb v ose X pomocí proměnné frameCount
+	rect( frameCount % width , 10 , 30 , 30 );
+}
+
+\end{lstlisting}
+
+Výsledkem tohoto zápisu bude již první animace. Čtverec se bude pohybovat rychlostí šedesáti pixelů za vteřinu z leva do prava. Tato hodnota v podstatě udává počet vykreslených cyklů funkce \vyraz{draw()}, ta je v tomto případě pouze využita k pohybu vykreslovaného čtverce.
+
+Tento pohyb je velmi názorný ukazuje, že hodnota počtu vykreslených okének lze použít například i jako hodnotu pro animaci. Stejně tak si můžeme založit i vlastní proměnnou, která bude mít identickou funkci.\footnote{v tomto konkrétním příkladě to sice nedává smysl, dá se použít stejně tak standartní proměnná \vyraz{frameCount}, příklad je zde jen pro ilustraci možností využití proměnných}
+
+\begin{lstlisting}
+// naše proměnná nazvaná příznačne: počítadlo
+int pocitadlo = 0;
+
+
+void setup(){
+	size(640,480);
+	
+}
+
+void draw(){
+	background(0);
+	rect( pocitadlo, 10 , 30 , 30 );
+
+	// zde již přičíáme hodnotu, lze napsat i zkrácným zápisem:
+	// pocitadlo++;
+
+	pocitadlo += 1;
+
+	// zde můžeme použít modulo na omezení počítadla na šířku plátna
+
+	pocitadlo = pocitadlo % width;
+
+}
+
+\end{lstlisting}
+
+ je to jedna ze základních proměnných Processingu, pomocí které lze například časovat animace.\footnote{existují i jiné zápisy například pomocí funkce \vyraz{millis()} ... [doplnit]}
+
+
+
+\pododdil{Interakce}
+
+\Slovnik{interakce} se dá obecně definovat jako vzájemné působení. V počítačové terminologii se nejvíce má na mysli vzájemné působení člověka a stroje. Přímá interakce z podstaty vzájemného působení vyžaduje rozměr času animaci\footnote{tedy program trvající v čase}. To umožňuje uživateli přímý vstup do proměnných, tedy do obsahu našich hodnot.
+
+Je dobré si uvědomit, že \slovnik{interakce} je do jisté míry při práci s počítačem pozorovatelná neustále. Pouhý pohyb myši lze považovat za interakci člověka se strojem. Pohyb uživatele přímo proměňuje hodnoty vykreslující pozici kurzoru, stiskem klávesy v textovém editoru například píšeme text atd.
+
+Při interakci je nutné do určité míry předvídat chování uživatele. Interakce primárně vychází z fyzické zkušenosti s předměty kolem nás. Interakcí je myšleno vše co může uživatel přímo ovlivnit.
+
+Interakce se dá rozdělit do dvou základních oblastí na interakci přímou a nepřímou, nebo chcete-li na interakci vědomou a nevědomou. Mezi těmito kategoriemi neexistuje jednoznačná hranice.
+
+Obecně je toto rozlišení spíše stupnicí od jednoduchých přímo a okamžitě viditelných jevů po uživatelově vstupu ke komplikovanějším procedurám spouštěným jen s částečným vědomím uživatele.
+
+Základní tedy přímou interakci si můžeme ukázat na následujícím příkladě:
+
+\begin{lstlisting}
+void setup(){
+	size(640,480);
+}
+
+void draw(){
+	background(255);
+	// všimněte si parametrů mouseX a mouseY
+	rect(mouseX,mouseY,30,30);
+}
+\end{lstlisting}
+
+Toto je jedna z nejzákladnějších možných interakcí. Vstupem pro pozici kresleného obdélníku se nám stávají dva parametry \vyraz{mouseX} a \vyraz{mouseY}.
+
+
+\oddil{Proměnlivost}
+
+
+Potřebujeme-li programu vdechnout život, musíme nejprve pochopit jakým způsobem se program může proměňovat. Proměnlivost se dotýká základní myšlenky programu trvajícího v čase. K tomu abychom takovou proměnlivost mohli okem pozorovat, program může komunikovat pomocí různých výstupů. Processing, který byl navržen s důrazem na vizuální výstup, bude nejčastěji komunikovat právě vizuálně. Obecně řečeno proměnlivost je jakákoli změna hodnot v délce běhu programu, lze si ji představit například jako rozdíl mezi dvěma okénky filmu.
+
+U filmových okének je rozdíl sice velmi těžko definovatelný ilustruje ale dobře celý problém. Film nám spostředkovává iluzi pohybu sledem několika okének za vteřinu. Přesně stejně se chová i vizuální program. Rozdíl mezi filmem a programem je zhruba ten, že program může mít teoreticky dva a více různých konců, nebo nemusí končit vůbec. Zde by se dalo namítnout že program je také nakonec nositelem kauzálního sledu operací. Vtip je v tom, že stejný program spuštěný dvakrát nemusí produkovat stejný výsledek.
+
+Změny v chodu programu se dá docílit několika způsoby. Základní změna v běhu programu je lidská intervence, která je z pohledu programu (respektive tvůrce programu) jen velmi těžko předpovídatelná. Změna v chování programu bez takového vnějšího zásahu je pak vždy umělá. (viz náhodnost)
+
+
+Vraťme se ovšem k Proměnlivosti. Proměnlivost je nezbytnou součástí animace. Pohyb je proměna stavu v čase. Měli bychom zde mít vždy na paměti, že program nerozumí tomu co zrovna zobrazuje, program rozumí pouze hodnotám. Rozpohybovat lze tyto hodnoty, a tím posléze například jevy, které se v programu zobrazují a člověku dají nějaký smysl. 
+
+Pro příklad si můžeme ukázat jak proměna jedné hodnoty ovlivňuje obraz. K tomu abychom mohli hodnotu proměňovat musíme ji nejdříve pojmenovat.
+
+\begin{lstlisting}
+int y = 0;
+\end{lstlisting}
+
+Tímto jsme pojmenovali svoji proměnnou. Jednou z možných variant zápisu je okamžité přiřazení hodnoty, tedy y je nyní nula. Pro animaci hodnoty použijeme přírůstek, tedy při kresbě jednotlivého okénka přičteme k hodnotě 1. Abychom viděli nějaký výsledek, můžeme opět kreslit objekt, který bude využívat proměňující se hodnotu v čase.
+
+\begin{lstlisting}
+void setup(){
+	size(640,480);
+}
+
+void draw(){
+	background(255);
+	
+	// prirustek o jedna
+	// lze zapsat i zkracene y++;
+	y += 1;
+	
+	// kresba
+	line( 0 , y , width , y );
+
+}
+\end{lstlisting}
+
+Po spuštění tohoto programu uvidíte animaci trvající 480 okének. Animace bude pokračovat i nadále, hodnota y se bude stále proměňovat. Kresba bude teoreticky probíhat mimo plátno. K tomu abychom kresbu udrželi v mezích plátna, můžeme použít jednoduchou podmínku, která bude vracet hodnotu y zpět na nulu.
+
+
+\begin{lstlisting}
+if(y > height){
+	y = 0;
+}
+\end{lstlisting}
+
+Celá tato procedura jen ilustruje logiku programu. Hodnota y je zde přímo zobrazena, ale stejně tak se dá použít kdekoli jinde, tedy ne nezbytně na kresbu. Pro lepší představu jiného použití uvedu následující příklad.
+
+Pod hodnotou si lze například představit pevně stanovenou hodnotu, dejme tomu výšku domu. Zadání výšky nemusí nepostaví dům ale stanoví hodnotu se kterou můžeme dál počítat. Známe-li výšku plánované budovy, můžeme například přidávat patra dokud se této výšky nedosáhne. Tento postup již lze považovat za logickou konstrukci a jedním ze základních postupů jak takové logiky v programu docílit je podmínka.
+
+
+
+\oddil{Podmínka}
+
+Uvedením do stavů programu se můžeme dostat k prvnímu opravdovému strukturování programu. Zkusme nyní nastínit jak taková struktura vypadá. Patrně nejpřímější řízení dějů v programu je podmínka. Podmínka říká, jestliže je něco pravda, spusť následné příkazy. Podmínka funguje v podstatě jako výhybka, která odklání program do jeho různých cest. Uvedu zde krátký příklad vytváření podobné struktury v programu:
 
 \begin{lstlisting}
 boolean prepinac = false;
@@ -1165,244 +1402,42 @@ background( a ? 0 : 255 );
 
 
 
-\pododdil{Základní struktura programu}
+
+\oddil{Náhoda}
+
+Proč má smysl v případě strojů vůbec hovořit o náhodě. Náhoda je z pohledu výpočetní techniky třeba vnímat jako vnější vliv. V rámci počítačové logiky náhoda v podstatě neexistuje. Každý jev má svoji příčinu a může mít svůj následek. Počítačové jazyky znají jen pojem takzvané pseudonáhodnosti.
+
+Předložka pseudo, již nastiňuje určitou náhražku. Pseudonáhodnost je ve své podstatě strojová simulace náhody v čistě logickém prostředí. Náhodou pojmenováváme zpravidla jev, který nedokážeme pro jeho složitost předpovědět. Reálný svět vnímaný člověkem obsahuje takzvanou pravou náhodu, tedy to, co skutečně nelze vypozorovat.
+
+Situace přenesení náhody do světa logického uvažování je velmi problematická proto, že člověku se velmi těžko stroji popisuje fakt srozumitelnosti. Některé jednoduché pravidla srozumitelné jsou, jiné z pohledu výpočtu podobně jednoduché již ne.
+
+Pseudonáhodou člověk definuje takový výpočet, který samozřejmě vychází z logického výpočtu, člověk jej již ovšem nedokáže předpovědět.
+
+Konkrétní příklad jak lze v Processingu vygenerovat pseudonáhodné číslo je:
 
 \begin{lstlisting}
-void setup(){ // "{" znamenko znacici pocatek funkce
-  // prvni udaj by mel rikat jak je ramecek velky, prikaz "size"
-  //velikost ramecku v "size(int x,int y)" - x a y v pixelech
-  size(200,200);
-  
-  //"frameRate(int kolik)" - snimku za vterinu, bez tohoto prikazu prednastaveno 60fps 
-  frameRate(15); 
-}
-
-// 2. "draw()" - funkce, ktera je spoustana cyklicky, nekolikrat do vteriny - podle "frameRate" - nyni 15x za vterinu
-void draw(){
-  // v teto smycce se vetsinou provadi kresba, animace, zivy vypocet, prvni co je dobre vykreslit je pozadi
-  background(0); //"background" vyplni celou plochu barvou, s jednim udajem od 0..255 - color
-  println("tisk z draw-u! " + frameCount);  // tisk do konzole je cyklicky opakovan, "frameCount" vraci udaj o poctu prekresleni
-}// "}" znamenko znacici konec funkce
-
+float nahodna = random(10);
+println(nahoda);
 \end{lstlisting}
 
-
-\pododdil{Zobrazení}
-
-Jak zobrazit hodnoty, které uchovává program v paměti? Jakákoli hodnota lze použít například jako jeden z argumentů v kreslících funkcích.
-
-Již zmiňovaný \vyraz{rect()}, tedy rectangle - obdélník, vyžaduje ke svému úspěšnému vykreslení čtyři parametry, čtyři číselné hodnoty \footnote{zde nezáleží jestli se jedná o celé číslo int nebo číslo s desetinnou čárkou float}. Tyto parametry, hodnoty, můžeme buďto zadat jako přímé číselné hodnoty, nebo do těchto parametrů můžeme zadat naši proměnnou která obsahuje číslo. Názorně:
-
-\begin{lstlisting}
-
-// první způsob vykreslení obdéníku
-rect( 10, 8, 40, 20 );
-
-// druhý způsob vykreslení obdélníku
-int prvniCislo = 10;
-int druheCislo = 8;
-
-rect( prvniCislo, druheCislo, 40, 20 );
-
-\end{lstlisting}
-
-Již nyní je nám zřejmé jak hodnoty mohou ovlivnit zobrazení. Namísto hodnot zadaných číselně se zde v druhém způsobu vykreslení obdélníku objevují naše proměnné, které mají již zadaný obsah. Výsledek zobrazení bude v obou případech stejný, ovšem z hlediska struktury programu je druhý způsob daleko flexibilnější.
-
-Představme si nyní, že hodnota zadaná prvním způsobem zápisu se již nikdy v průběhu programu nemůže proměnit. V případě druhého způsobu zápisu získáváme díky možnosti změny jednoho parametru kontrolu nad kreslícím výstupem.
-
-Veškeré příkazy které jsme si zatím ukázali byli spuštěny pouze jednou. To znamená, že obdélník byl vykreslen a program, který již neměl žádné další příkazy jednoduše skončil.
-
-V další kapitole si předvedeme jak vdechnout procesům pohyb a stálost, další kapitola je věnovaná animaci.
-
-\oddil{Základní funkce programu}
-
-Processing rozlišuje mezi jednotlivými programovacími přístupy. Textový editor se automaticky přizpůsobí způsobu programování. Tímto přístupem se Processing snaží co nejvíce nablížit začátečníkovi. Základní prostředí nám dovoluje pouze nakreslit tvary a ukončit program. K pohybu v čase musíme Processingu definovat základní strukturu programu.
-
-Nejzákladnější dvě funkce se kterými se budeme při programování setkávat jsou funkce \vyraz{setup()} a \vyraz{draw()}.
-
-\begin{itemize}
-\item
-\vyraz{setup()} je funkcí, která bude spuštěna jednou na začátku programu. Zde se nejčastěji nastavují počáteční parametry které si potřebujeme připravit než se spustí kreslící funkce.
-
-\item
-\vyraz{draw()} je funkce pro opakované kreslení, bude spouštěna stále po dobu chodu programu, zde budeme nejčastěji kreslit tvary a provádě proměnlivé výpočty pro animaci.
-\end{itemize} 
-
-
-Základní funkce pro vyvolání překreslování výstupního okna je funkce \vyraz{draw()}. \bublina{void draw() je základní funkce pro spuštění překreslování plátna} Funkce je uvozena slovem \vyraz{void}. Více o funkcích se dozvíme v kapitole. Jedná se o základní smyčku, která zajišťuje jakoukoli proměnlivost, tedy animaci v obraze. Smyčka je de facto operace, která v programu vyjadřuje rozměr času.
-
-
-\oddil{Animace a interakce}
-\index{animace}
-
-\pododdil{Animace}
-
-Statická kresba na plátno je jen jeden z možných výstupů. Animace v Processingu znamená překreslovat plátno pokaždé jinými obrazy. Processing je jazyk využívaný zjeména v pohyblivém obraze. Nyní si ukážeme základní postup při tvorbě pohyblivého obrazu.
-
-
-Velmi zjedoušeně řečeno smyčka \vyraz{draw()} je prostředek pro změnu, pozor není změnou sama o sobě. Smyčka zajišťuje sousledné volání příkazů v neustálém trvání\footnote{po dobu běhu programu}. V Processingu si v podstatě uvědomíme, že psaním příkazů do smyčky píšeme pravidla jakoby pro jedno okénko ve filmu. Pohyb je vždy zajištěn proměnou našich datatypů, které v tomto okénku figurují.
-
-Tedy například napíšeme-li takto, samotnou smyčku:
-
-\begin{lstlisting}
-void draw(){
-	// 60x za vteřinu spuštěná operace
-}
-\end{lstlisting}
-
-Vše uzavřeno do složených závorek bude spuštěno šedesátkrát za vteřinu. Bude-li obsah základní funkce \vyraz{draw()} neměnný, tj. budeme-li volat šedesátkrát za vteřinu to samé, animace bude ovšem v případě vizuálního výstupu jen abstraktním pojmem.
-
-V tomto příkladě již dochází ke spuštění smyčky. Výsledkem bude pouze šedivá plocha v rozměrech sto krát sto pixelů, jelikož na plátno nebylo zatím nic vykresleno. Následujícími příkazy \vyraz{background()} a \vyraz{rect()} nakreslíme nejprve plné pozadí a následovně obdélník. Zápis bude vypadat následovně:
-
-\begin{lstlisting}
-void draw(){
-	// pozadí
-	background(255);
-	// obdélník se čtyřmi parametry
-	rect( 10 , 10 , 30 , 30 );
-}
-\end{lstlisting}
-
-Takový zápis již provádí animaci a kreslí na plátno. Animace ovšem v tomto případě nebude patrná jelikož zatím se v obraze nic neproměňuje. Veškeré hodnoty jsou statické tudíž se vykresluje jeden čtverec na bílém pozadí na stále stejném místě.
-
-K rozhýbání objektů jednoduše potřebujeme proměnit jeden z parametrů v čase.\bublina{Animace je proměna obrazu v čase, jednotlivá okénka se v čase musí lišit.} Abychom docílili animace zkusme například vložit namísto parametru pro kresbu čtverce v ose X počítadlo okének. Processing má proměnnou s údajem o počtu uběhlých okének pod názvem \vyraz{frameCount}.
-
-Vyraz \vyraz{frameCount} lze využít následovně:
-
-\begin{lstlisting}
-void setup(){
-	size(640,480);
-}
-
-
-void draw(){
-	// pozadí
-	background(255);
-	// pohyb v ose X pomocí proměnné frameCount
-	rect( frameCount % width , 10 , 30 , 30 );
-}
-
-\end{lstlisting}
-
-Výsledkem tohoto zápisu bude již první animace. Čtverec se bude pohybovat rychlostí šedesáti pixelů za vteřinu z leva do prava. Tato hodnota v podstatě udává počet vykreslených cyklů funkce \vyraz{draw()}, ta je v tomto případě pouze využita k pohybu vykreslovaného čtverce.
-
-Tento pohyb je velmi názorný ukazuje, že hodnota počtu vykreslených okének lze použít například i jako hodnotu pro animaci. Stejně tak si můžeme založit i vlastní proměnnou, která bude mít identickou funkci.\footnote{v tomto konkrétním příkladě to sice nedává smysl, dá se použít stejně tak standartní proměnná \vyraz{frameCount}, příklad je zde jen pro ilustraci možností využití proměnných}
-
-\begin{lstlisting}
-// naše proměnná nazvaná příznačne: počítadlo
-int pocitadlo = 0;
-
-
-void setup(){
-	size(640,480);
-	
-}
-
-void draw(){
-	background(0);
-	rect( pocitadlo, 10 , 30 , 30 );
-
-	// zde již přičíáme hodnotu, lze napsat i zkrácným zápisem:
-	// pocitadlo++;
-
-	pocitadlo += 1;
-
-	// zde můžeme použít modulo na omezení počítadla na šířku plátna
-
-	pocitadlo = pocitadlo % width;
-
-}
-
-\end{lstlisting}
-
- je to jedna ze základních proměnných Processingu, pomocí které lze například časovat animace.\footnote{existují i jiné zápisy například pomocí funkce \vyraz{millis()} ... [doplnit]}
-
-
-
-\pododdil{Interakce}
-
-\Slovnik{interakce} se dá obecně definovat jako vzájemné působení. V počítačové terminologii se nejvíce má na mysli vzájemné působení člověka a stroje. Přímá interakce z podstaty vzájemného působení vyžaduje rozměr času animaci\footnote{tedy program trvající v čase}. To umožňuje uživateli přímý vstup do proměnných, tedy do obsahu našich hodnot.
-
-Je dobré si uvědomit, že \slovnik{interakce} je do jisté míry při práci s počítačem pozorovatelná neustále. Pouhý pohyb myši lze považovat za interakci člověka se strojem. Pohyb uživatele přímo proměňuje hodnoty vykreslující pozici kurzoru, stiskem klávesy v textovém editoru například píšeme text atd.
-
-Při interakci je nutné do určité míry předvídat chování uživatele. Interakce primárně vychází z fyzické zkušenosti s předměty kolem nás. Interakcí je myšleno vše co může uživatel přímo ovlivnit.
-
-Interakce se dá rozdělit do dvou základních oblastí na interakci přímou a nepřímou, nebo chcete-li na interakci vědomou a nevědomou. Mezi těmito kategoriemi neexistuje jednoznačná hranice.
-
-Obecně je toto rozlišení spíše stupnicí od jednoduchých přímo a okamžitě viditelných jevů po uživatelově vstupu ke komplikovanějším procedurám spouštěným jen s částečným vědomím uživatele.
-
-Základní tedy přímou interakci si můžeme ukázat na následujícím příkladě:
-
-\begin{lstlisting}
-void setup(){
-	size(640,480);
-}
-
-void draw(){
-	background(255);
-	// všimněte si parametrů mouseX a mouseY
-	rect(mouseX,mouseY,30,30);
-}
-\end{lstlisting}
-
-Toto je jedna z nejzákladnějších možných interakcí. Vstupem pro pozici kresleného obdélníku se nám stávají dva parametry \vyraz{mouseX} a \vyraz{mouseY}.
-
-
-\oddil{Proměnlivost}
-
-
-Potřebujeme-li programu vdechnout život, musíme nejprve pochopit jakým způsobem se program může proměňovat. Proměnlivost se dotýká základní myšlenky programu trvajícího v čase. K tomu abychom takovou proměnlivost mohli okem pozorovat, program může komunikovat pomocí různých výstupů. Processing, který byl navržen s důrazem na vizuální výstup, bude nejčastěji komunikovat právě vizuálně. Obecně řečeno proměnlivost je jakákoli změna hodnot v délce běhu programu, lze si ji představit například jako rozdíl mezi dvěma okénky filmu.
-
-U filmových okének je rozdíl sice velmi těžko definovatelný ilustruje ale dobře celý problém. Film nám spostředkovává iluzi pohybu sledem několika okének za vteřinu. Přesně stejně se chová i vizuální program. Rozdíl mezi filmem a programem je zhruba ten, že program může mít teoreticky dva a více různých konců, nebo nemusí končit vůbec. Zde by se dalo namítnout že program je také nakonec nositelem kauzálního sledu operací. Vtip je v tom, že stejný program spuštěný dvakrát nemusí produkovat stejný výsledek.
-
-Změny v chodu programu se dá docílit několika způsoby. Základní změna v běhu programu je lidská intervence, která je z pohledu programu (respektive tvůrce programu) jen velmi těžko předpovídatelná. Změna v chování programu bez takového vnějšího zásahu je pak vždy umělá. (viz náhodnost)
-
-
-Vraťme se ovšem k Proměnlivosti. Proměnlivost je nezbytnou součástí animace. Pohyb je proměna stavu v čase. Měli bychom zde mít vždy na paměti, že program nerozumí tomu co zrovna zobrazuje, program rozumí pouze hodnotám. Rozpohybovat lze tyto hodnoty, a tím posléze například jevy, které se v programu zobrazují a člověku dají nějaký smysl. 
-
-Pro příklad si můžeme ukázat jak proměna jedné hodnoty ovlivňuje obraz. K tomu abychom mohli hodnotu proměňovat musíme ji nejdříve pojmenovat.
-
-\begin{lstlisting}
-int y = 0;
-\end{lstlisting}
-
-Tímto jsme pojmenovali svoji proměnnou. Jednou z možných variant zápisu je okamžité přiřazení hodnoty, tedy y je nyní nula. Pro animaci hodnoty použijeme přírůstek, tedy při kresbě jednotlivého okénka přičteme k hodnotě 1. Abychom viděli nějaký výsledek, můžeme opět kreslit objekt, který bude využívat proměňující se hodnotu v čase.
-
-\begin{lstlisting}
-void setup(){
-	size(640,480);
-}
-
-void draw(){
-	background(255);
-	
-	// prirustek o jedna
-	// lze zapsat i zkracene y++;
-	y += 1;
-	
-	// kresba
-	line( 0 , y , width , y );
-
-}
-\end{lstlisting}
-
-Po spuštění tohoto programu uvidíte animaci trvající 480 okének. Animace bude pokračovat i nadále, hodnota y se bude stále proměňovat. Kresba bude teoreticky probíhat mimo plátno. K tomu abychom kresbu udrželi v mezích plátna, můžeme použít jednoduchou podmínku, která bude vracet hodnotu y zpět na nulu.
+Proměnná nazvaná nahoda nyní přijímá pseudonáhodnou hodnotu od nuly do deseti jež následovně vytiskne do konzole. Druhý možný zápis je zadání dvou čísel tedy rozsahu výsledné pseudonáhodné hodnoty.
 
 
 \begin{lstlisting}
-if(y > height){
-	y = 0;
-}
+float nahodna = random(10,20);
+println(nahoda);
 \end{lstlisting}
 
-Celá tato procedura jen ilustruje logiku programu. Hodnota y je zde přímo zobrazena, ale stejně tak se dá použít kdekoli jinde, tedy ne nezbytně na kresbu. Pro lepší představu jiného použití uvedu následující příklad.
-
-Pod hodnotou si lze například představit pevně stanovenou hodnotu, dejme tomu výšku domu. Zadání výšky nemusí nepostaví dům ale stanoví hodnotu se kterou můžeme dál počítat. Známe-li výšku plánované budovy, můžeme například přidávat patra dokud se této výšky nedosáhne. Tento postup již lze považovat za logickou konstrukci a jedním ze základních postupů jak takové logiky v programu docílit je podmínka.
+Jak je zřejmě pochopitelné náhoda se nyní bude pohybovat v rozmezí čísla od deseti do dvaceti.
 
 
-\oddil{Funkce}
+\oddil{Uspořádání, stuktura programu}
+\index{void}
 
-Funkce
+Jednotlivé bloky kódu lze dále strukturovat. Strukturování v kódu se provádí zpravidla tam kde potřebujeme opakovaně spouštět identický blok kódu nebo si potřebujeme zpřehlednit probíhající operace.
+
+
+\pododdil{Funkce}
 
 Nejjednoduším řešením problému je jeho rozdělení na menší části. Problém jak dojít k jednomu výsledku se dá rozložit na jednotlivé po sobě jdoucí události a ty postupně popsat.
 
@@ -1520,6 +1555,7 @@ void nakresliObdelnik(int _x, int _y, int _sirka, int _vyska){
 	rect( _x , _y , _sirka, _vyska );
 }
 
+
 \end{lstlisting}
 
 
@@ -1552,40 +1588,6 @@ Nyní zpět k hodnotám. Máme-li již jakékoli hodnoty v paměti programu, mů
 Processing je, co se týče grafického výstupu, navržen pro přímou experimentální interakci vznikajícího programu s uživatelem. To znamená, že pokaždé kdy chcete vidět výsledek kódu, stačí pouze stisknout tlačítko {\em RUN}. Zpětná vazba spolu s vaší interpretací a úmyslem má potom veliký vliv na následné úpravy v kódu. Tímto způsobem můžete řekněme "vysochat" výslednou podobu programu.
 
 
-\oddil{Náhoda}
-
-Proč má smysl v případě strojů vůbec hovořit o náhodě. Náhoda je z pohledu výpočetní techniky třeba vnímat jako vnější vliv. V rámci počítačové logiky náhoda v podstatě neexistuje. Každý jev má svoji příčinu a může mít svůj následek. Počítačové jazyky znají jen pojem takzvané pseudonáhodnosti.
-
-Předložka pseudo, již nastiňuje určitou náhražku. Pseudonáhodnost je ve své podstatě strojová simulace náhody v čistě logickém prostředí. Náhodou pojmenováváme zpravidla jev, který nedokážeme pro jeho složitost předpovědět. Reálný svět vnímaný člověkem obsahuje takzvanou pravou náhodu, tedy to, co skutečně nelze vypozorovat.
-
-Situace přenesení náhody do světa logického uvažování je velmi problematická proto, že člověku se velmi těžko stroji popisuje fakt srozumitelnosti. Některé jednoduché pravidla srozumitelné jsou, jiné z pohledu výpočtu podobně jednoduché již ne.
-
-Pseudonáhodou člověk definuje takový výpočet, který samozřejmě vychází z logického výpočtu, člověk jej již ovšem nedokáže předpovědět.
-
-Konkrétní příklad jak lze v Processingu vygenerovat pseudonáhodné číslo je:
-
-\begin{lstlisting}
-float nahodna = random(10);
-println(nahoda);
-\end{lstlisting}
-
-Proměnná nazvaná nahoda nyní přijímá pseudonáhodnou hodnotu od nuly do deseti jež následovně vytiskne do konzole. Druhý možný zápis je zadání dvou čísel tedy rozsahu výsledné pseudonáhodné hodnoty.
-
-
-\begin{lstlisting}
-float nahodna = random(10,20);
-println(nahoda);
-\end{lstlisting}
-
-Jak je zřejmě pochopitelné náhoda se nyní bude pohybovat v rozmezí čísla od deseti do dvaceti.
-
-
-\oddil{Uspořádání, stuktura programu}
-\index{void}
-
-Jednotlivé bloky kódu lze dále strukturovat. Strukturování v kódu se provádí zpravidla tam kde potřebujeme opakovaně spouštět identický blok kódu.
-
-Typickým příkladem může být kresba 
 
 \oddil{Ukládání informací, paměť programu}
 
@@ -1638,7 +1640,7 @@ void draw(){
 }
 
 void mousePressed(){
-	save(“obrazek.png”);
+	save("obrazek.png");
 }
 
 \end{lstlisting}
@@ -1664,7 +1666,7 @@ void setup(){
 void draw(){
 	// kresba probehne zde
 
-	save(“obrazek” + nf( frameCount , 5 ) + “.png”);
+	save("obrazek" + nf( frameCount , 5 ) + ".png");
 }
 
 \end{lstlisting}
@@ -1681,7 +1683,7 @@ void setup(){
 void draw(){
 	// kresba probehne zde
 
-	saveFrame(“obrazek#####.png”);
+	saveFrame("obrazek#####.png");
 }
 
 \end{lstlisting}
@@ -1689,10 +1691,10 @@ void draw(){
 Příkaz saveFrame vyžaduje stejně jako příkaz save() cestu k ukládanému souboru. Příkaz má ovšem navíc tu vlastnost, vložíme-li do názvu souboru znaky křížku, Processing je rozpozná jako počet nul v počítadle okének.
 
 
- 
 
 \pododdil{Ukládání holých dat}
-\pododdil{Tisk do pdf}
+
+\pododdil{Tisk do pdf, ukládání vektorů}
 
 
 
