@@ -942,49 +942,240 @@ V našem příkladě se jedná o druhou větev podmínky, ta sice není povinná
 
 V tomto konkrétním případě se k proměnné {\em hodnota} přiřadí číslo {\em 0}.
 
-To program následně ověřuje tiskem do konzole, kde se objeví {\em 0}.
+To program následně ověřuje tiskem do konzole, kde se objeví {\em 0}
 
-\oddil{Hodnota a její zobrazení}
 
-K čemu jsou vlastně hodnoty dobré? Tisk do konzole je jen kontrolní mechanismus většinou se nejedná o výslednou podobu programu.
+\pododdil{if}
 
-Po celou dobu sčítání a odčítání hodnot jsme nezavolali žádnou funkci, která by kreslila na plátno.
+Podmínka je jeden ze základních stavebních kamenů programu. Podmínku lze použít ve všech případech, kdy předpokládáme odpověď ano nebo ne. Podmínka v Processingu stejně tak jako ve většině ostatních jazyků konstruována příkazem.
 
-Nyní je na čase ukázat si jakým způsobem Processing rozumí kresbě. Ty samé hodnoty které máme nyní v paměti mohou být použity pro jakýkoli kreslící výstup. Řekněme že chceme z těchto hodnot zobrazit například elipsu. K tomu potřebujeme zavolat funkci pro tvorbu elipsy, pokud ji nechceme zrovna z nějakých důvodů popisovat matematicky (to je samozřejmě dokonale možné).
+Konstrukce podmínky vypadá pak následnovně:
 
-Processing nemá předdefinované žádné složité tvary. Pracuje sám o sobě pouze s tvary primitivními, jako je bod, linka, trojúhelník, obdélník a elipsa. Pomocí těchto tvarů lze zkonstruovat nepřeberné množství obrazů. Představíme-li si nyní digitálně zpracovanou fotografii, můžeme například říci že je zkonstruována z bodů. Jednotlivé body, tj. pixely mají jinou barevnou hodnotu a takto poskládaný obraz se ve výsledku jeví jako fotografie.
 
-Problém v případě konstrukce syntetické fotografie nespočívá v geometrii; ta je známa, mřížka bodů s počtem šířky krát výšky obrazových bodů digitální fotografie. Problém je v barevných hodnotách, které neznáme a synteticky jakoukoli matematickou funkcí těžko obsáhneme.
+\begin{lstlisting}
 
-Dat pro výpočet fotorealistického obrazu potřebujeme opravdu hodně, nástroje které dokáží simulovat fotorealistický obraz existují a není jich málo. Dokonce i v Processingu existují podobné rozšíření které buď přímo zpracovává jí a zajištují obrazový výstup.
+boolean pravda = true;
 
-Tento příklad je trochu extrémní, ale naprosto pravdivý. Věc kterou se snažím ilustrovat je ta, že i s minimálním počtem primitivních geometrických tvarů lze docílit téměř nekonečné (spočitatelně obrovské) množství obrazů, což by nám mělo nadlouho stačit.
+if(pravda == true){
 
-Nyní zpět k hodnotám. Máme-li již jakékoli hodnoty v paměti programu, můžeme kterékoli z nich namapovat na jakoukoli kreslící funkci. Zde začíná naše experimentální část, často se totiž stává, že výsledek kreslení neumíme plně předpovědět a teprve zobrazením nám kresba vzhledem k hodnotě začne dávat smysl.
+    // spust nasledujici blok
 
-Processing je, co se týče grafického výstupu, navržen pro přímou experimentální interakci vznikajícího programu s uživatelem. To znamená, že pokaždé kdy chcete vidět výsledek kódu, stačí pouze stisknout tlačítko {\em RUN}. Zpětná vazba spolu s vaší interpretací a úmyslem má potom veliký vliv na následné úpravy v kódu. Tímto způsobem můžete řekněme "vysochat" výslednou podobu programu.
+}
+
+\end{lstlisting}
+
+Za povšimnutí zde stojí dvojité rovnítko. Tento speciální symbol se používá při porovnávání dvou stran. Proměnná nazvaná {\em pravda} získala hodnotu {\em true}. V případě podmínky nezáleží na počtu proměnných v kulatých závorkách, otázka může být i více kombinovaná záleží na výsledky, který vždy musí být pravda nebo nepravda, tedy {\em true} nebo {\em false}. Pro zkonstruování takové věty lze použít následující znaménka.
+
+\begin{lstlisting}
+
+boolean pravda = true;
+int cislo = 3;
+String text = "Lorem ipsum dolor et amet";
+
+if(cislo == 3){
+
+    // tato podminka je spustena
+
+}
+
+
+if(cislo != 3){
+
+    // tato podminka neni spustena, znamenko nerovna se je opakem rovnitka
+
+}
+
+
+if(cislo > 3){
+
+    // tato podminka neni spustena cislo neni vetsi nez 3
+
+}
+
+
+if(cislo < 3){
+
+    // tato podminka neni spustena cislo neni mensi nez 3
+
+}
+
+
+if(cislo >= 3){
+
+    // tato podminka je spustena, znamenko vetsi nebo rovna se, cislo rovna se 3
+
+}
+
+
+if(cislo <= 3){
+
+    // tato podminka je spustena, znamenko mensi nebo rovna se, cislo rovna se 3
+
+}
+
+if(text.equals("Lorem ipsum dolor et amet")){
+
+	// tato podminka je spustena, porovnavani textu je take mozne, osem pozor
+	// k porovnavani celych retezcu, textu se pouziva funkce equals("String")
+
+}
+
+\end{lstlisting}
+
+Takovým výčtem operací jsme si pokryli základní konstrukci podmínky. Další znaménka slouží ke skládání jednotlivých otázek. Znaménko pro logicke A je:
+
+\begin{lstlisting}
+boolean a = true;
+boolean b = false;
+
+if(a == true && b == false){
+
+	// tento blok bude spusten, a je pravda A b je pravda
+
+}
+
+
+if(a == true && b == true){
+
+	// tento blok nebude spusten, b totiz neni pravda, b == false
+
+}
+
+\end{lstlisting}
+
+
+("appersand" se na české klávesnici nevyskytuje, na anglické klávesnici jej naleznete většinou pod \klavesy {SHIFT - 7}), pro logické NEBO se používá dvojitá svislá čára tzv. pipe:
+
+\begin{lstlisting}
+boolean a = true;
+boolean b = false;
+
+if(a == true || b == false){
+
+	// tento blok bude spusten, k tomu staci pouze ze a je pravda NEBO b je pravda
+
+}
+
+
+if(a == true || b == true){
+
+	// tento blok bude tedy opet spusten
+
+}
+
+
+if(a == false || b == true){
+
+	// tento blok jiz spusten nebude, ani a ani b neni pravda 
+
+}
+
+\end{lstlisting}
+
+Za pomoci skládání otázek můžeme zkonstruovat celé věty a složitější otázky. V kombinaci s kulatými závorkami si vystačíme pouze s logickým AND a OR. Zkusme si ilustrovat situaci následovně:
+
+
+\begin{lstlisting}
+boolean a = true;
+boolean b = true;
+boolean c = false;
+
+if( (a && b) || c ){
+
+	// tento blok bude spuštěn
+	
+}
+
+if( !(a && b) || c ){
+
+	// tento blok nebude spuštěn
+	
+}
+
+\end{lstlisting}
+
+Jaký je rozdíl mezi prvním a druhým blokem? Poslední specialita booleanovských operací je znaménko vykřičník. Takové znaménko před proměnou typu boolean znamená opak tvrzení tedy, je li {\em pravda} pravdou, {\em !pravda} je nepravdou tedy výsledkem je {\em false}.
+
+
+\begin{lstlisting}
+boolean pravda = true;
+
+println( pravda ); // tiskne true
+println( !pravda ); // tiskne false
+\end{lstlisting}
+
+
+
+Dále si všiměte, že v podmínce chybí jakékoli porovnávací znaménko. Ve skutečném programování se setkáte spíše s tímto zápisem, je to zápis zkrácený. Namísto neustálého rozepisování {\em něco rovná se rovná se true} lze napsat pouze v kulatých závorkách. Je-li naše {\em něco} datového typu {\em boolean} Processing bude takovému zápisu rozumět. Tedy nejjednodušší zápis může vypadat i takto:
+
+  
+\begin{lstlisting}
+boolean a = true;
+
+if(a)
+	//pouze tento jediný řádek bude spuštěn
+	
+	
+	
+if(a){
+	// cely tento blok
+	// bude spusten
+}
+\end{lstlisting}
+
+K úplnému zkrácení se dají i vypustit i složené závorky, to vede opět k rychlejšímu zápisu. Rozdílem takového zápisu je fakt, že taková podmínka spouští pouze jeden následující řádek. Přestože je to naprosto správný způsob programování, nekteří programátoři takový zápis neradi používají z důvodu zhoršení přehlednosti v kódu. Opět se s takovým zápisem často setkáte, člověk je jednoduše líný živočišný druh a {\em if} se v programování používá opravdu často.
+
+\pododdil{else}
+
+K dalšímu rozšíření podmínek slouží příkaz {\em else} a dá se přeložit takto. Jestliže je něco pravda udělej toto, jestliže ne udělej něco jiného. Zápis vypadá takto:
+
+\begin{lstlisting}
+boolean a = false;
+
+if(a){
+
+	// kdyby a bylo true, tak bu se spustil tento blok kodu 
+
+}else{
+
+	// ale protoze je nase a false, spusti se nyni kod
+	// v tomto bloku
+	
+}
+\end{lstlisting}
+
+
+
+\pododdil{ ? : }
+
+Abychom podmínky vyčerpali nadobro ukážeme si poslední možný zápis, který je ještě úspornější.
+  
+  
+\begin{lstlisting}
+boolean a = true;
+
+if(a)
+	background(0);
+	
+	
+background( a ? 0 : 255 );
+
+\end{lstlisting}
+      
+
+
 
 \pododdil{Základní struktura programu}
 
 \begin{lstlisting}
-// Zakladni funkce programu
-// pro pochopeni processingu je dobre zacit s dvemi zakladnimi funkcemi:
-// (o funkcich obecne, vice v prikladu _06_Funkce) 
-
-// 1. "setup()" - funkce, ktera je spustena na zacatku programu, pouze jednou
-// slouzi k vychozimu nastaveni programu
 void setup(){ // "{" znamenko znacici pocatek funkce
-  // hned prvni udaj by mel rikat jak je ramecek velky, prikaz "size"
-  size(200,200); //velikost ramecku v "size(int x,int y)" - x a y v pixelech
+  // prvni udaj by mel rikat jak je ramecek velky, prikaz "size"
+  //velikost ramecku v "size(int x,int y)" - x a y v pixelech
+  size(200,200);
   
-  frameRate(15); //"frameRate(int kolik)" - snimku za vterinu, bez tohoto prikazu prednastaveno 60fps 
-  
-  println("tisk ze setup-u! " + frameCount); // tisk do konzole, tento bude spusten jednou
-  // zajimava promenna "frameCount" uchovava pocet vykreslenych okenek
-  // ze "setupu" to bude vzdy = 0
-  
-}// "}" znamenko znacici konec funkce
-
+  //"frameRate(int kolik)" - snimku za vterinu, bez tohoto prikazu prednastaveno 60fps 
+  frameRate(15); 
+}
 
 // 2. "draw()" - funkce, ktera je spoustana cyklicky, nekolikrat do vteriny - podle "frameRate" - nyni 15x za vterinu
 void draw(){
@@ -1208,226 +1399,157 @@ Celá tato procedura jen ilustruje logiku programu. Hodnota y je zde přímo zob
 
 Pod hodnotou si lze například představit pevně stanovenou hodnotu, dejme tomu výšku domu. Zadání výšky nemusí nepostaví dům ale stanoví hodnotu se kterou můžeme dál počítat. Známe-li výšku plánované budovy, můžeme například přidávat patra dokud se této výšky nedosáhne. Tento postup již lze považovat za logickou konstrukci a jedním ze základních postupů jak takové logiky v programu docílit je podmínka.
 
-\oddil{Podmínka}
 
+\oddil{Funkce}
 
-\pododdil{if}
+Funkce
 
-Podmínka je jeden ze základních stavebních kamenů programu. Podmínku lze použít ve všech případech, kdy předpokládáme odpověď ano nebo ne. Podmínka v Processingu stejně tak jako ve většině ostatních jazyků konstruována příkazem.
+Nejjednoduším řešením problému je jeho rozdělení na menší části. Problém jak dojít k jednomu výsledku se dá rozložit na jednotlivé po sobě jdoucí události a ty postupně popsat.
 
-Konstrukce podmínky vypadá pak následnovně:
-
+Dílčí operace si pro přehlednost můžeme definovat do bloku takzvané funkce. Základní funkcí je takzvaný void. Void v podstatě tvoří blok kódu který je spuštěn jeho pozdějším zavoláním. Jestliže jednotilvé proměnné by ve větě mohli označovat podstatná jména funkce se dají chápat jako slovesa. S funkcemi jsme se setkali již dříve při definici základních smyček programu.
 
 \begin{lstlisting}
 
-boolean pravda = true;
+void setup(){
 
-if(pravda == true){
+}
 
-    // spust nasledujici blok
+void draw(){
+	nakresliObdelnik();
+}
 
+void nakresliObdelnik(){
+	rect(10,10,20,20);
 }
 
 \end{lstlisting}
 
-Za povšimnutí zde stojí dvojité rovnítko. Tento speciální symbol se používá při porovnávání dvou stran. Proměnná nazvaná {\em pravda} získala hodnotu {\em true}. V případě podmínky nezáleží na počtu proměnných v kulatých závorkách, otázka může být i více kombinovaná záleží na výsledky, který vždy musí být pravda nebo nepravda, tedy {\em true} nebo {\em false}. Pro zkonstruování takové věty lze použít následující znaménka.
+Vedle standartních funkcí Processingu setup a draw jsme si nyní definovali třetí funkci nakresli obdélník. Tato funkce je pak spuštěna unitř kreslící smyčky draw.
+
+V tomto konkrétním případě samotná funkce nedává mnoho smyslu. Příkaz rect v podstatě není nic jiného než-li funkcí processingu “nakresli odélník”. Všimněme si ovšem že tato funkce rect má v kulatých závorkách parametry, které označují kde má být obdélník vykreslen. Tyto parametry se v programování obecně nazývají arguments.
+
+Chceme-li vytvořit funkci a potřebujeme-li do ní poslat vstupní parametry, můsíme při její definici vepsat do kulatých závorek jaké parametry bude funkce očekávat.
+
 
 \begin{lstlisting}
 
-boolean pravda = true;
-int cislo = 3;
-String text = "Lorem ipsum dolor et amet";
-
-if(cislo == 3){
-
-    // tato podminka je spustena
-
-}
-
-
-if(cislo != 3){
-
-    // tato podminka neni spustena, znamenko nerovna se je opakem rovnitka
-
-}
-
-
-if(cislo > 3){
-
-    // tato podminka neni spustena cislo neni vetsi nez 3
-
-}
-
-
-if(cislo < 3){
-
-    // tato podminka neni spustena cislo neni mensi nez 3
-
-}
-
-
-if(cislo >= 3){
-
-    // tato podminka je spustena, znamenko vetsi nebo rovna se, cislo rovna se 3
-
-}
-
-
-if(cislo <= 3){
-
-    // tato podminka je spustena, znamenko mensi nebo rovna se, cislo rovna se 3
-
-}
-
-if(text.equals("Lorem ipsum dolor et amet")){
-
-	// tato podminka je spustena, porovnavani textu je take mozne, osem pozor
-	// k porovnavani celych retezcu, textu se pouziva funkce equals("String")
-
+void nakresliObdelnik(int x, int y){
+	rect( x , y , 20 , 20 );
 }
 
 \end{lstlisting}
 
-Takovým výčtem operací jsme si pokryli základní konstrukci podmínky. Další znaménka slouží ke skládání jednotlivých otázek. Znaménko pro logicke A je:
+Jednotlivé parametry se v kulatých závorách oddělují čárkou a může jich být teoreticky neomezené množství.
+
+Důležité je upozornit že vstupní hodnoty jsou vytvořeny pokaždé spustíme-li funkci a zanikají je-li funkce ukončena. Takovým proměným se říká dočasné. V programátorské praxi se můžeme setkat s jejich uvozovanim podtržítkem.
+
 
 \begin{lstlisting}
-boolean a = true;
-boolean b = false;
 
-if(a == true && b == false){
-
-	// tento blok bude spusten, a je pravda A b je pravda
-
-}
-
-
-if(a == true && b == true){
-
-	// tento blok nebude spusten, b totiz neni pravda, b == false
-
+void nakresliObdelnik( int _x, int _y ){
+	rect( _x , _y , 20 , 20 );
 }
 
 \end{lstlisting}
 
+Podtržítka nemají žádou funkci jsou jen součástí názvu proměnné a programátoři je používají pro lepší organizaci.
 
-("appersand" se na české klávesnici nevyskytuje, na anglické klávesnici jej naleznete většinou pod \klavesy {SHIFT - 7}), pro logické NEBO se používá dvojitá svislá čára tzv. pipe:
+V processingu lze dále definovat funkce, které se jmenují stejně ale musí mít jinou skladbu vstupních hodnot. Představme si že budme potřebovat dvě funkce nakresliobdelnik, jednu můžeme nechat bez vstupních parametrů a druhou budeme definovat s parametry x a y. Tímto způsobem můžeme odlišit dvě různé funkce pouze způsobem spuštění.
+
 
 \begin{lstlisting}
-boolean a = true;
-boolean b = false;
 
-if(a == true || b == false){
-
-	// tento blok bude spusten, k tomu staci pouze ze a je pravda NEBO b je pravda
-
+void nakresliObdelnik( int _x, int _y ){
+	rect( _x , _y , 20 , 20 );
 }
 
-
-if(a == true || b == true){
-
-	// tento blok bude tedy opet spusten
-
+void nakresliObdelnik(){
+	rect( 10 , 10 , 20 , 20 );
 }
 
-
-if(a == false || b == true){
-
-	// tento blok jiz spusten nebude, ani a ani b neni pravda 
-
+void draw(){
+	nakresliObdelnik();
+	nakresliObdelnik( 10 , 20 );
 }
 
 \end{lstlisting}
 
-Za pomoci skládání otázek můžeme zkonstruovat celé věty a složitější otázky. V kombinaci s kulatými závorkami si vystačíme pouze s logickým AND a OR. Zkusme si ilustrovat situaci následovně:
+Tento příklad je správně a vykreslí dva různé obdélníky. Máme nyní na výběr potřebujeme-li zadat parametry nebo ne, v druhém případě se nakreslí obdélník v předem nadefinované pozici.
 
+
+Void je pouze jedna z možností definic funkcí. Další mozné funkce můžeme definovat podle datatypů, které budeme očekávat za výsledek funkce. Tedy můžeme si definovat funkci, která nám zjistí zda-li se kurzor nachází v daném obdélníku. Namísto prázdného void budeme očekávat odpověď ve tvaru boolean pravdu nebo nepravdu. Funkce uvozená datatypem bude vždy očekávat odpověď ve stejném tvaru takového datatypu. Pomocí slova return můžeme funkci přiřknout výsledek, v tomto případě true nebo false.
 
 \begin{lstlisting}
-boolean a = true;
-boolean b = true;
-boolean c = false;
 
-if( (a && b) || c ){
+Void setup(){
 
-	// tento blok bude spuštěn
+	// ...
+
+}
+
+void draw(){
+	if( jeKurzorVObdelniku(10,20,20,20) == true ){
+		nakresliOdelnik(10,20);
+	}
+
+}
+
+boolean jeKurzorVObdelniku(int _x, int _y, int _sirka, int _vyska){
 	
+	if(mouseX >= _x && mouseX <= _x +_sirka &&
+	mouseY >= _y && mouseY <= _y +_vyska){
+	
+		return true;
+	
+	}else{
+	
+		return false;
+	
+	}
 }
 
-if( !(a && b) || c ){
+void nakresliObdelnik(){
+	rect( 10 , 10 , 20 , 20 );
+}
 
-	// tento blok nebude spuštěn
-	
+void nakresliObdelnik(int _x, int _y){
+	rect( _x , _y , 20 , 20 );
+}
+
+void nakresliObdelnik(int _x, int _y, int _sirka, int _vyska){
+	rect( _x , _y , _sirka, _vyska );
 }
 
 \end{lstlisting}
 
-Jaký je rozdíl mezi prvním a druhým blokem? Poslední specialita booleanovských operací je znaménko vykřičník. Takové znaménko před proměnou typu boolean znamená opak tvrzení tedy, je li {\em pravda} pravdou, {\em !pravda} je nepravdou tedy výsledkem je {\em false}.
 
+Bude-li se kurzor nacházet v prostoru vymezeném v otázce, nakreslí se obdélník o stejné velikosti. Náš program již začíná být strukturovaný. Tímto způsobem můžeme dále větvit podmínky a rozdělovat kód do jednotlivých spustitelných bloků příkazů.
 
-\begin{lstlisting}
-boolean pravda = true;
+Funkce stejně jako proměnné doporučuji pojmenovávat stručně a výstižně. U funkcí dále platí, že by měli dělat pouze jednu věc a měli by ji dělat dobře. Je lepší problém rozdělit na více funkcí a tím  strukturovat program. Strukturování podobným způsobem je velmi výhodné budete-li se ke kódu vracet s odstupem času, nebo bude-li jej číst někdo jiný než vy.
 
-println( pravda ); // tiskne true
-println( !pravda ); // tiskne false
-\end{lstlisting}
+Budete-li kód chtít sdílet, je dobré jej učinit co nejvíce čitelný pro druhé lidi. Ze je velmi dobrá tradice napsat ke každé funkci, jeden řádek nebo odstavec o tom co funkce přesně dělá  (u které to není na první pohled zřejmé).
 
+Co se délky funkcí týče dobré pravidlo zní: Přesáhnete-li počet vnitřích proměnných tucet, měli by jste už přemýšlet o rozdělení do dvou funkcí.
 
+\oddil{Hodnota a její zobrazení}
 
-Dále si všiměte, že v podmínce chybí jakékoli porovnávací znaménko. Ve skutečném programování se setkáte spíše s tímto zápisem, je to zápis zkrácený. Namísto neustálého rozepisování {\em něco rovná se rovná se true} lze napsat pouze v kulatých závorkách. Je-li naše {\em něco} datového typu {\em boolean} Processing bude takovému zápisu rozumět. Tedy nejjednodušší zápis může vypadat i takto:
+K čemu jsou vlastně hodnoty dobré? Tisk do konzole je jen kontrolní mechanismus většinou se nejedná o výslednou podobu programu.
 
-  
-\begin{lstlisting}
-boolean a = true;
+Po celou dobu sčítání a odčítání hodnot jsme nezavolali žádnou funkci, která by kreslila na plátno.
 
-if(a)
-	//pouze tento jediný řádek bude spuštěn
-	
-	
-	
-if(a){
-	// cely tento blok
-	// bude spusten
-}
-\end{lstlisting}
+Nyní je na čase ukázat si jakým způsobem Processing rozumí kresbě. Ty samé hodnoty které máme nyní v paměti mohou být použity pro jakýkoli kreslící výstup. Řekněme že chceme z těchto hodnot zobrazit například elipsu. K tomu potřebujeme zavolat funkci pro tvorbu elipsy, pokud ji nechceme zrovna z nějakých důvodů popisovat matematicky (to je samozřejmě dokonale možné).
 
-K úplnému zkrácení se dají i vypustit i složené závorky, to vede opět k rychlejšímu zápisu. Rozdílem takového zápisu je fakt, že taková podmínka spouští pouze jeden následující řádek. Přestože je to naprosto správný způsob programování, nekteří programátoři takový zápis neradi používají z důvodu zhoršení přehlednosti v kódu. Opět se s takovým zápisem často setkáte, člověk je jednoduše líný živočišný druh a {\em if} se v programování používá opravdu často.
+Processing nemá předdefinované žádné složité tvary. Pracuje sám o sobě pouze s tvary primitivními, jako je bod, linka, trojúhelník, obdélník a elipsa. Pomocí těchto tvarů lze zkonstruovat nepřeberné množství obrazů. Představíme-li si nyní digitálně zpracovanou fotografii, můžeme například říci že je zkonstruována z bodů. Jednotlivé body, tj. pixely mají jinou barevnou hodnotu a takto poskládaný obraz se ve výsledku jeví jako fotografie.
 
-\pododdil{else}
+Problém v případě konstrukce syntetické fotografie nespočívá v geometrii; ta je známa, mřížka bodů s počtem šířky krát výšky obrazových bodů digitální fotografie. Problém je v barevných hodnotách, které neznáme a synteticky jakoukoli matematickou funkcí těžko obsáhneme.
 
-K dalšímu rozšíření podmínek slouží příkaz {\em else} a dá se přeložit takto. Jestliže je něco pravda udělej toto, jestliže ne udělej něco jiného. Zápis vypadá takto:
+Dat pro výpočet fotorealistického obrazu potřebujeme opravdu hodně, nástroje které dokáží simulovat fotorealistický obraz existují a není jich málo. Dokonce i v Processingu existují podobné rozšíření které buď přímo zpracovává jí a zajištují obrazový výstup.
 
-\begin{lstlisting}
-boolean a = false;
+Tento příklad je trochu extrémní, ale naprosto pravdivý. Věc kterou se snažím ilustrovat je ta, že i s minimálním počtem primitivních geometrických tvarů lze docílit téměř nekonečné (spočitatelně obrovské) množství obrazů, což by nám mělo nadlouho stačit.
 
-if(a){
+Nyní zpět k hodnotám. Máme-li již jakékoli hodnoty v paměti programu, můžeme kterékoli z nich namapovat na jakoukoli kreslící funkci. Zde začíná naše experimentální část, často se totiž stává, že výsledek kreslení neumíme plně předpovědět a teprve zobrazením nám kresba vzhledem k hodnotě začne dávat smysl.
 
-	// kdyby a bylo true, tak bu se spustil tento blok kodu 
-
-}else{
-
-	// ale protoze je nase a false, spusti se nyni kod
-	// v tomto bloku
-	
-}
-\end{lstlisting}
-
-
-
-\pododdil{ ? : }
-
-Abychom podmínky vyčerpali nadobro ukážeme si poslední možný zápis, který je ještě úspornější.
-  
-  
-\begin{lstlisting}
-boolean a = true;
-
-if(a)
-	background(0);
-	
-	
-background( a ? 0 : 255 );
-
-\end{lstlisting}
-      
+Processing je, co se týče grafického výstupu, navržen pro přímou experimentální interakci vznikajícího programu s uživatelem. To znamená, že pokaždé kdy chcete vidět výsledek kódu, stačí pouze stisknout tlačítko {\em RUN}. Zpětná vazba spolu s vaší interpretací a úmyslem má potom veliký vliv na následné úpravy v kódu. Tímto způsobem můžete řekněme "vysochat" výslednou podobu programu.
 
 
 \oddil{Náhoda}
