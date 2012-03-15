@@ -1595,6 +1595,102 @@ Při ukládání holých dat můžeme například využít prosté textové soub
 
 
 \pododdil{Ukládání obrazových dat}
+
+
+
+Doposud jsme pracovali s obrazem, který je dočasný. Po zavření okna Processingu obraz nenávratně zmizí. K tomu abychom z Processingu dostali obrazový výstup, potřebujeme kresbu uložit do souboru.
+
+Processing umí ukládat různé formáty soubourů. Nejběžněji budeme potřebovat uložit obrazová data jako rastrový obrázek. Formát obrázku si můžeme zvolit.
+
+Processing umí ukládat rastrová data do následujících formátů:
+
+
+\begin{itemize}
+\item
+TIFF – nekomprimovaný obraz s příponou *.tif, *.tiff
+\item
+TARGA – ztrátově komprimovaný obraz s příponou *.tga
+\item
+JPEG – ztrátově komprimovaný obraz s příponou *.jpg
+\item
+PNG – bezztrátově komprimovaný obraz s příponou *.png
+
+\end{itemize}
+
+S některými formáty jste se již mohli setkat v minulosti. Jedná se o standartní a rozšířené formáty pro uchovávání obrazových dat.
+
+Uložení obrázku ze současného plátna se provádí příkazem save(). Příkaz potřebuje znát cestu a koncovku souboru. Nenapíšeme-li plnou cestu Processing data uloží přímo do naší sketche.
+
+Nevíte-li kterou koncovku soboru zvolit, doporučil bych vám vřele formát PNG. Takzvaný Portable Network Graphics je standart, který vyniká relativně malou velikostí a bezztrátovou kompresí dat. Vaše data tak budou uložena jedna k jedné a můžete s nimi beze ztráty dále operovat. 
+
+Samotné ukládání se provádí následujícím způsobem:
+
+\begin{lstlisting} 
+
+void setup(){
+	size(640,480);
+}
+
+void draw(){
+	background(255);
+	line(mouseX,mouseY,pmouseX,pmouseY);
+
+}
+
+void mousePressed(){
+	save(“obrazek.png”);
+}
+
+\end{lstlisting}
+
+
+Příkaz save() provede uložení obrazových dat okamžitě. Kdybychom vložili příkaz do kreslící smyčky Processing by se pokusil ukládat obrázek šedesátkrát za vteřinu, což by se mu z důvodů relativní náročnosti operace zřejmně nepodařilo a byli bychom svědky zpomalení rychlosti ve vykreslování.
+
+V příkladě tedy budeme ukládat obrázek jen po kliknutí myší.
+
+
+
+
+
+Nyní si představme, že z nějakého důvodu potřebujeme zachytit plnou sekvenci po sobě jdoucích obrázků. Problém příkazu save() je ten, že v případě natrvdo zadané cesty bude stále přepisovat obrazovými daty tentýž soubor. Abychom uložili vícero obrázků potřebujeme proměňovat cestu kam Processing obrázky ukládá. Můžeme k tomu využít počítadlo nebo zvláštní příkaz processingu saveFrame();
+
+\begin{lstlisting} 
+
+
+void setup(){
+	size(640,480);
+}
+
+void draw(){
+	// kresba probehne zde
+
+	save(“obrazek” + nf( frameCount , 5 ) + “.png”);
+}
+
+\end{lstlisting}
+
+Využití počítadle je možné, ale trochu zdlouhavé. Všimněte si zde pouze způsobu jakým číslujeme názvy souborů. Hodnota frameCount se mění podle počtu vykreslených okének. Příkaz nf() je zde z kosmetických důvodů, přidává pouze daný počet nul před naše počítadlo. Celý tento zápis se se dá ovšem elegantně zkrátit příkazem saveFrame()
+
+
+\begin{lstlisting} 
+
+void setup(){
+	size(640,480);
+}
+
+void draw(){
+	// kresba probehne zde
+
+	saveFrame(“obrazek#####.png”);
+}
+
+\end{lstlisting}
+
+Příkaz saveFrame vyžaduje stejně jako příkaz save() cestu k ukládanému souboru. Příkaz má ovšem navíc tu vlastnost, vložíme-li do názvu souboru znaky křížku, Processing je rozpozná jako počet nul v počítadle okének.
+
+
+ 
+
 \pododdil{Ukládání holých dat}
 \pododdil{Tisk do pdf}
 
