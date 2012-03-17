@@ -39,23 +39,23 @@
 \indexentry {interakce}{57}
 \indexentry {mouseX}{58}
 \indexentry {mouseY}{58}
-\indexentry {random()}{67}
-\indexentry {void}{68}
-\indexentry {void}{68}
-\indexentry {save()}{74}
+\indexentry {random()}{68}
+\indexentry {void}{69}
+\indexentry {void}{69}
 \indexentry {save()}{75}
-\indexentry {saveFrame()}{75}
-\indexentry {frameCount}{75}
+\indexentry {save()}{76}
+\indexentry {saveFrame()}{76}
+\indexentry {frameCount}{76}
 \indexentry {nf()}{76}
 \indexentry {saveFrame()}{76}
-\indexentry {saveFrame()}{76}
-\indexentry {save()}{76}
-\indexentry {vestavěné knihovny}{79}
-\indexentry {true}{87}
-\indexentry {false}{87}
-\indexentry {fill()}{87}
-\indexentry {stroke()}{87}
-\indexentry {sketch}{87}
-\indexentry {GNU / GPL}{88}
-\indexentry {save()}{90}
-\indexentry {frameCount()}{90}
+\indexentry {saveFrame()}{77}
+\indexentry {save()}{77}
+\indexentry {vestavěné knihovny}{81}
+\indexentry {true}{89}
+\indexentry {false}{89}
+\indexentry {fill()}{89}
+\indexentry {stroke()}{89}
+\indexentry {sketch}{89}
+\indexentry {GNU / GPL}{90}
+\indexentry {save()}{92}
+\indexentry {frameCount()}{92}

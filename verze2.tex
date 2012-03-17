@@ -168,6 +168,7 @@
 \thispagestyle{empty}
 \newpage
 
+\vfill
 
 Nakladatelství AMU.
 
@@ -1228,6 +1229,38 @@ void draw(){
 
 Toto je jedna z nejzákladnějších možných interakcí. Vstupem pro pozici kresleného obdélníku se nám stávají dva parametry \vyraz{mouseX} a \vyraz{mouseY}.
 
+\oddil{Pohyb a dynamika}
+
+K docílení jednoduché interakce není zapotřebí mnoho. Animace je ovšem složitější problém který budeme řešit v Processingu nejvíce matematicky. Zdá se, že dosažení dynamického pohybu je jeden z průvodních jevů pokročilého programování.
+
+ Nyní si můžeme ukázat jak lze zkombinovat dosavadní znalosti k vytvoření nelineárního pohybu.
+ 
+ \begin{lstlisting}
+float x;
+float y;
+float rychlost;
+
+void setup(){
+	size(640,480);
+     x = width / 2;
+     y = height / 2;
+     rychlost = 0.1;
+}
+
+void draw(){
+	background(255);
+	x += (mouseX - x) * rychlost;
+     y += (mouseY - y) * rychlost;
+     rect(x,y,30,30);
+}
+\end{lstlisting}
+
+Čtverec bude nyní následovat kurzor nelineárním pohybem. Dynamika pohybu je dána prostou formulí:
+\begin{lstlisting}
+x += (mouseX - x) * rychlost;
+y += (mouseY - y) * rychlost; 
+\end{lstlisting}
+K prmoěným {\em x} a {\em y} přiřazujeme zlomek rozdílu mezi pozicí kurzoru a proměnou v obou osách. Tuto formuli lze využít téměř kdekoli, například při jemném přechodu barev a vyhlazování hodnot obecně.
 
 \oddil{Proměnlivost}
 
@@ -1753,7 +1786,6 @@ Nevíte-li kterou koncovku soboru zvolit, doporučil bych vám vřele formát PN
 Samotné ukládání se provádí následujícím způsobem:
 
 \begin{lstlisting} 
-
 void setup(){
 	size(640,480);
 }
@@ -1782,8 +1814,6 @@ V příkladě tedy budeme ukládat obrázek jen po kliknutí myší.
 Nyní si představme, že z nějakého důvodu potřebujeme zachytit plnou sekvenci po sobě jdoucích obrázků. Problém příkazu save() je ten, že v případě natrvdo zadané cesty bude stále přepisovat obrazovými daty tentýž soubor. Abychom uložili vícero obrázků potřebujeme proměňovat cestu kam Processing obrázky ukládá. Můžeme k tomu využít počítadlo nebo zvláštní příkaz processingu \slovnik{saveFrame()};
 
 \begin{lstlisting} 
-
-
 void setup(){
 	size(640,480);
 }
@@ -1800,7 +1830,6 @@ Využití počítadle je možné, ale trochu zdlouhavé. Všimněte si zde pouze
 
 
 \begin{lstlisting} 
-
 void setup(){
 	size(640,480);
 }
