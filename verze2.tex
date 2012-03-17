@@ -521,6 +521,24 @@ Jak můžete vidět na obrázku editor operuje i českými znaky, ačkoli bych j
 Naopak v případě názvu proměnných, nebo jakýchkoli funkčních definic, je použití diakritiky v devadesáti procesntech nefunkční.\footnote{standartní jazykové kódování, ve kterém Processing operuje je {\em UTF-8}}
 
 
+\oddil{Klávesové zkratky}
+
+\begin{itemize}
+\item[\klavesy{CTRL + r}]  spustí program
+\item[\klavesy{CTRL + SHIFT + r}] takzvaný present mode spustí program a zatemní zbytek obrazovky
+\item[\klavesy{CTRL + t}] automatické formatování textu, zarovnavá text do odrážek
+\item[\klavesy{CTRL + k}] otevře adresář konktrétního projektu
+\item[\klavesy{CTRL + f}] vyhledávání v textu a nástroj pro hromadné nahrazování
+\item[\klavesy{CTRL + SHIFT + f}] vyhledávání v označeného příkazu v referencích
+\item[\klavesy{CTRL + s}] save, uloží projekt na disk
+\item[\klavesy{CTRL + SHIFT + s}] uložit jako
+
+\item[\klavesy{CTRL + e}] export jako webový applet, otevře exportovaný projekt
+\item[\klavesy{CTRL + SHIFT + e}] export jako aplikace, zobrazí okno s výběrem platform pro export
+
+\end{itemize}
+
+* značí klávesu \klavesy{CTRL} PC a \klavesy{APPLE} na Mac.
 
 
 \chapter{Processing jako jazyk}
@@ -543,76 +561,12 @@ Pokaždé když si programátor takový stav přivodí, vše v kódu\footnote{po
 V programování obecně platí jisté zákonitosti. Není tomu jinak i u pravidel, které nejsou důležité pro čtení kódu strojem ale pro člověka. Speciální zákonitosti formátování kódu mají ryze praktickou funkci. Jedná se o standart dodržovaný programátory, tak aby mezi sebou byli schopni sdílet své úsilí.
 
 
-\oddil{Syntax}
+\oddil{Syntaxe}
 
-\oddil{Klávesové zkratky}
-
-\begin{lstlisting}
-// ctrl+r - spusti program (ctrl+shift+r - present mode)
-// ctrl+t - autoformat, beautyfier, zarovnava text
-// ctrl+k - otevre adresar sketche
-// ctlr+f - klasicky find, replace nastroj
-// ctrl+s - save, se shiftem pak -save as
-// ctrl+e - export jako applet, se shiftem - jako aplikace
-\end{lstlisting}
+Nyní jsme připraveni seznámit se s syntaxí programovacího jazyka. Syntaxe je sada pravidel, které budeme muset dodržovat, při práci s programovacím jazykem. 
 
 
-\oddil{Kometář}
-\begin{lstlisting}
-
-// komentar je uvozen dvemi doprednymi lomitky
-
-/* viceradkovy komentar je uvozen doprednym lomitkem
-a hvezdickou ukonce hvezickou a lomitkem v obracenem poradi
-
-toto je viceradkovy KOMENTAR
-toto je viceradkovy KOMENTAR
-toto je viceradkovy KOMENTAR
-toto je viceradkovy KOMENTAR
-*/
-
-/*zacatek .............. konec*/
-
-\end{lstlisting}
-
-\oddil{Orientace v prostoru}
-
-Plocha programu by sa dala přirovnat k listu papíru, popřípadě k malířskému plátnu. Ve standartním dvoudimenzionálním módu má dva základní parametry {\em X} a {\em Y}, ty označují souřadnice, ve kterých se veškeré kreslící operace pohybují. Důležité je zmínit, že oproti jisté konvenci v matematických grafech levý horní roh nese hodnotu {\em X = 0}, {\em Y = 0}. Směrem dolů hodnota {\em Y} přibývá stejně tak jaho hodnota {\em X} přibývá směrem doprava.\\
-
-\begin{center}
-\includegraphics[width = 0.65\textwidth]{imgs/grid2d.png}
-\end{center}
-
-Tato konvence je převzata ze standartu počítačové grafiky, kdy první pixel v levém horním rohu nese souřadnicovou hodnotu právě {\em X = 0}, {\em Y = 0}. Obrácená osa Y se může ze začátku jevit matoucí. Důvody pro zdánlivé převrácení os pochopíme později například právě při operacích se samotnými obrazovými body, pixely, které jsou standartně uspořádány od levého horního rohu doprava a níže.
-
-Plochu je možné představit si jako prázdný prostor, na kterém je možno zobrazovat grafiku. Tvary nebo například text se zobrazují právě prostřednictvím zdrojového kódu tj. instrukcemi psanými v editoru.
-
-Na první pohled by se mohlo zdát, že například při zobrazení obdélníku, příkaz:
-
-\begin{lstlisting}
-rect(x,y,šířka,výška);
-\end{lstlisting}
-
-jehož výsledkem je kresba pouhého obdélníku je zbytečně komplikovaný, oproti jiným zobrazovacím metodám. Důležité je si zde uvědomit koncepci Processingu, který tímto zobrazením primitivních objektů sestavuje celý obraz. To co se zpočátku může zdát jako nadbytečná práce, tj. psaním koordinátů každého ze zobrazovaných objektů se posléze ukáže jako sofistikovaný a velmi ulehčující způsob přemýšlení o obraze. Veškeré parametry oddělené čárkou v kulatých závorkách příkazu {\em rect} náleží samotným vstupním hodnotám. Příkaz {\em rect} očekává čtyři parametry. Parametry mohou být celá čísla nebo čísla s desetinnou čárkou. Pro názornost, zadáme-li do parametrů ''natvrdo'' hodnoty:
-
-\begin{lstlisting}
-rect(8,6,7,5);
-\end{lstlisting}
-
-Výsledné zobrazení na naší pomyslné ploše bude následující:
-
-\begin{center}
-\includegraphics[width = 0.65\textwidth]{imgs/gridRect2d.png}
-\end{center}
-
-
-Zamyslíme-li se například o tom, že bychom v jakémkoli jiném nástroji chtěli zobrazit vícero, například tisíc obdélníků, na první pohled jednodušší GUI \footnote{zkratka pro "Guided User Interface" klasické grafické editory jako Gimp nebo Photoshop} grafické editory nám nedovolí tuto operaci učinit jinak, než že musíme všech tisíc obdélníků nakreslit. V případě Processingu nám bude stačit vytvořit rutinu pro kreslení libovolného počtu obdélníků a pak tuto rutinu spustit.
-
-Zde se již dostáváme k samotnému jádru Processingového přemýšlení. Programování obecně dokáže velmi ulehčit operace jejichž pravidelnost dokážeme popsat. Veškeré umění psaní programu tedy spočívá v definicích těchto chování a redukci složitých jevů na jednoduché rovnice.
-
-Celé řemeslné umění psaní kódu v podstatě záleží na eleganci v zápisu složitějších vztahů mezi různými parametry. Dovednosti se člověk učí postupně, osvojení si gramatické korektnosti a logické posloupnosti se mohou zpočátku jevit zbytečně komplikované, ovšem i po ovládnutí pouhých pár jednoduchých pravidel lze Processing využít kreativním způsobem.
-
-V další části se budeme zabývat stavbou programu. Pod odpudivým názvem se skrývají právě tato jednoduchá pravidla, která by měla tvořit základ dalším experimentům.   
+  
 
 \newpage
 \oddil{Stavba programu}
@@ -625,6 +579,41 @@ Veškeré programy které používáte, dokonce i programy, které nevíte že p
 Počítač je pouhý stroj. Umí dnes opravdu rychle vykonávat sled banálních operací. Programovací jazyk slouží k vytvoření smyslu ve sledu banálních operací. Procesu převodu ze zdrojového kódu do strojového se nazývá kompilace.
 
 O kompilaci toho nemusíme naštěstí vědět mnoho, vše bylo již tvůrci Processingu a jazyku Java shrnuto pod tlačítko spustit.
+
+
+
+\pododdil{Kometář}
+
+Komentář je vše co program ignoruje. Je to místo v programu učené ke čtení člověku. Kometáře dále často slouží k rychlé editaci programu. Odkomentováním řádky funkčního kódu lze vynechat některé funkce Processingu.
+
+
+Nádsleduje zápis tak, jak jej již můžete vepsat do editoru Processingu. Vřele doporučuji mít v této chvíli Processing v průběhu čtení knihy zapnutý a po ruce, aby jste si příklady v rámečcích mohli vyzkoušet. Komentář je řádek textu, nebo její část uvozená dvěma dopřednými lomítky.
+
+\begin{lstlisting}
+// komentar je uvozen dvemi doprednymi lomitky
+\end{lstlisting}
+
+Spustíte-li nyní program tlačítkem RUN, objeví se šedé okénko prvního Processingového programu. Jelikož jste zatím nedefinovali nic funkčního, program také nic nedělá.
+
+V praxi je pak často využívaný i druhý způsob komentáře, takzvaný víceřádkový komentář. Ten začíná dopředným lomítkem a hvězdičkou a končí těmito znaky v obráceném pořadí.
+
+\begin{lstlisting}
+/* viceradkovy komentar je uvozen
+doprednym lomitkem a hvezdickou
+ukoncen hvezickou a lomitkem 
+(v obracenem poradi)
+
+toto je viceradkovy KOMENTAR
+toto je viceradkovy KOMENTAR
+toto je viceradkovy KOMENTAR
+toto je viceradkovy KOMENTAR
+*/
+
+/*zacatek .............. konec*/
+
+\end{lstlisting}
+
+Komentáře v Processingu poznáte vždy nejrychleji tak, že je bude editor obarvovat šedou barvou.
 
 \pododdil{Základní datatypy}
 
@@ -651,8 +640,6 @@ String mujSlovniRetezec = "Ahoj svete!";
 
 char mujJednotlivyZnak = 'A';
 
-color mojeBarva = color(255,127,1);
-
 \end{lstlisting}
 
 Takovému zápisu bude již Processing rozumět. Vepsáním těchto řádků do processingového editoru již dochází k alokaci vašich informací ve správných datatypech v paměti. Vysvětleme si nyní několik nejasností.
@@ -667,19 +654,28 @@ Proměnná nesmí být číslo, ale slovní název. Programátorské konvence p�
 
 
 \pododdil{barva}
+
+Zvláštním datatyp v Processingu je \vyraz{color()}. Barvy lze definovat následujícími způsoby. 
+
 \begin{lstlisting}
-	/*
-   color(0..255); // -skala sede
-   color(0..255,0..255); // - skala sede + alpha kanal
-   color(0..255,0..255,0..255); // red green blue
-   color(0..255,0..255,0..255,0..255) // red green blue + alpha
+// skala sede, 0 = cerna, 255 = bila
+color mojeBarvaSeda = color(127);
+
+// skala sede s pruhlednosti
+color mojeBarvaSeda2 = color(255,127);
+
+// cervena, modra, zelena
+color mojeBarvaOranzova = color(255,127,0);
    
-   .. nebo take: color(#FFCC00).. v html stylu =(hex)(0xFFFFCC00)
-   vice o barevnych modech pod "colorMode()" - HSB,RGB,RGBA...
-*/
+// cervena, modra, zelena, pruhlednost 
+color mojeBarvaOranzova2 = color(255,127,0,127);
+   
+   
+// barva zapis ve stylu HTML, v hexadecimalnim tvaru
+color mojeBarvaOranzova3 = color(#FFCC00);
 \end{lstlisting}
 
-
+Pro výběr vaší oblíbené barvy lze využít nástroj z lišty Tools, Color Selector.
 
 
 \pododdil{Tisk do konzole}
@@ -885,7 +881,7 @@ println(slova);
 
 Výsledkem bude: {\em test 1 2}.
 
-Řetězce se dají dále porovnávat seřazovat, dá se v nich vyhledávat znak či slovo a tak podobně. Pro náše účely zatím postačí si uvědomit rozdílné operace mezi textem a číslem.
+Řetězce se dají dále porovnávat, seřazovat, lze v nich vyhledávat znak či slovo a tak podobně. Pro náše účely zatím postačí si uvědomit rozdílné operace mezi textem a číslem.
 
 
 \item{{\em boolean}, neboli pravda nebo nepravda}
@@ -953,6 +949,46 @@ void draw(){
 }// "}" znamenko znacici konec funkce
 
 \end{lstlisting}
+
+
+\oddil{Orientace v prostoru}
+
+Plocha programu by sa dala přirovnat k listu papíru, popřípadě k malířskému plátnu. Ve standartním dvoudimenzionálním módu má dva základní parametry {\em X} a {\em Y}, ty označují souřadnice, ve kterých se veškeré kreslící operace pohybují. Důležité je zmínit, že oproti jisté konvenci v matematických grafech levý horní roh nese hodnotu {\em X = 0}, {\em Y = 0}. Směrem dolů hodnota {\em Y} přibývá stejně tak jaho hodnota {\em X} přibývá směrem doprava.\\
+
+\begin{center}
+\includegraphics[width = 0.65\textwidth]{imgs/grid2d.png}
+\end{center}
+
+Tato konvence je převzata ze standartu počítačové grafiky, kdy první pixel v levém horním rohu nese souřadnicovou hodnotu právě {\em X = 0}, {\em Y = 0}. Obrácená osa Y se může ze začátku jevit matoucí. Důvody pro zdánlivé převrácení os pochopíme později například právě při operacích se samotnými obrazovými body, pixely, které jsou standartně uspořádány od levého horního rohu doprava a níže.
+
+Plochu je možné představit si jako prázdný prostor, na kterém je možno zobrazovat grafiku. Tvary nebo například text se zobrazují právě prostřednictvím zdrojového kódu tj. instrukcemi psanými v editoru.
+
+Na první pohled by se mohlo zdát, že například při zobrazení obdélníku, příkaz:
+
+\begin{lstlisting}
+rect(x,y,šířka,výška);
+\end{lstlisting}
+
+jehož výsledkem je kresba pouhého obdélníku je zbytečně komplikovaný, oproti jiným zobrazovacím metodám. Důležité je si zde uvědomit koncepci Processingu, který tímto zobrazením primitivních objektů sestavuje celý obraz. To co se zpočátku může zdát jako nadbytečná práce, tj. psaním koordinátů každého ze zobrazovaných objektů se posléze ukáže jako sofistikovaný a velmi ulehčující způsob přemýšlení o obraze. Veškeré parametry oddělené čárkou v kulatých závorkách příkazu {\em rect} náleží samotným vstupním hodnotám. Příkaz {\em rect} očekává čtyři parametry. Parametry mohou být celá čísla nebo čísla s desetinnou čárkou. Pro názornost, zadáme-li do parametrů ''natvrdo'' hodnoty:
+
+\begin{lstlisting}
+rect(8,6,7,5);
+\end{lstlisting}
+
+Výsledné zobrazení na naší pomyslné ploše bude následující:
+
+\begin{center}
+\includegraphics[width = 0.65\textwidth]{imgs/gridRect2d.png}
+\end{center}
+
+
+Zamyslíme-li se například o tom, že bychom v jakémkoli jiném nástroji chtěli zobrazit vícero, například tisíc obdélníků, na první pohled jednodušší GUI \footnote{zkratka pro "Guided User Interface" klasické grafické editory jako Gimp nebo Photoshop} grafické editory nám nedovolí tuto operaci učinit jinak, než že musíme všech tisíc obdélníků nakreslit. V případě Processingu nám bude stačit vytvořit rutinu pro kreslení libovolného počtu obdélníků a pak tuto rutinu spustit.
+
+Zde se již dostáváme k samotnému jádru Processingového přemýšlení. Programování obecně dokáže velmi ulehčit operace jejichž pravidelnost dokážeme popsat. Veškeré umění psaní programu tedy spočívá v definicích těchto chování a redukci složitých jevů na jednoduché rovnice.
+
+Celé řemeslné umění psaní kódu v podstatě záleží na eleganci v zápisu složitějších vztahů mezi různými parametry. Dovednosti se člověk učí postupně, osvojení si gramatické korektnosti a logické posloupnosti se mohou zpočátku jevit zbytečně komplikované, ovšem i po ovládnutí pouhých pár jednoduchých pravidel lze Processing využít kreativním způsobem.
+
+V další části se budeme zabývat stavbou programu. Pod odpudivým názvem se skrývají právě tato jednoduchá pravidla, která by měla tvořit základ dalším experimentům. 
 
 
 \pododdil{Zobrazení}
@@ -1083,7 +1119,9 @@ void draw(){
 
 \end{lstlisting}
 
- je to jedna ze základních proměnných Processingu, pomocí které lze například časovat animace.\footnote{existují i jiné zápisy například pomocí funkce \vyraz{millis()} ... [doplnit]}
+Definicí této hodnoty lze například časovat animace. Další metodou je animaci časovat pomocí funkce \vyraz{millis()}. Tato funkce je nezávislá na počtu vykreslených okének za vteřinu, měří počet uběhnutých milivteřin od startu programu. Může se nám také hodit pro precizní časování událostí v programu.
+
+   
 
 
 
@@ -1428,7 +1466,7 @@ Situace přenesení náhody do světa logického uvažování je velmi problemat
 
 Pseudonáhodou člověk definuje takový výpočet, který samozřejmě vychází z logického výpočtu, člověk jej již ovšem nedokáže předpovědět.
 
-Konkrétní příklad jak lze v Processingu vygenerovat pseudonáhodné číslo je:
+Konkrétní příklad jak lze v Processingu vygenerovat pseudonáhodné pomocí příkazu \slovnik{random()} číslo je:
 
 \begin{lstlisting}
 float nahodna = random(10);
@@ -1636,7 +1674,7 @@ PNG – bezztrátově komprimovaný obraz s příponou *.png
 
 S některými formáty jste se již mohli setkat v minulosti. Jedná se o standartní a rozšířené formáty pro uchovávání obrazových dat.
 
-Uložení obrázku ze současného plátna se provádí příkazem save(). Příkaz potřebuje znát cestu a koncovku souboru. Nenapíšeme-li plnou cestu Processing data uloží přímo do naší sketche.
+Uložení obrázku ze současného plátna se provádí příkazem \slovnik{save()}. Příkaz potřebuje znát cestu a koncovku souboru. Nenapíšeme-li plnou cestu Processing data uloží přímo do naší sketche.
 
 Nevíte-li kterou koncovku soboru zvolit, doporučil bych vám vřele formát PNG. Takzvaný Portable Network Graphics je standart, který vyniká relativně malou velikostí a bezztrátovou kompresí dat. Vaše data tak budou uložena jedna k jedné a můžete s nimi beze ztráty dále operovat. 
 
@@ -1661,7 +1699,7 @@ void mousePressed(){
 \end{lstlisting}
 
 
-Příkaz save() provede uložení obrazových dat okamžitě. Kdybychom vložili příkaz do kreslící smyčky Processing by se pokusil ukládat obrázek šedesátkrát za vteřinu, což by se mu z důvodů relativní náročnosti operace zřejmně nepodařilo a byli bychom svědky zpomalení rychlosti ve vykreslování.
+Příkaz \slovnik{save()} provede uložení obrazových dat okamžitě. Kdybychom vložili příkaz do kreslící smyčky Processing by se pokusil ukládat obrázek šedesátkrát za vteřinu, což by se mu z důvodů relativní náročnosti operace zřejmně nepodařilo a byli bychom svědky zpomalení rychlosti ve vykreslování.
 
 V příkladě tedy budeme ukládat obrázek jen po kliknutí myší.
 
@@ -1669,7 +1707,7 @@ V příkladě tedy budeme ukládat obrázek jen po kliknutí myší.
 
 
 
-Nyní si představme, že z nějakého důvodu potřebujeme zachytit plnou sekvenci po sobě jdoucích obrázků. Problém příkazu save() je ten, že v případě natrvdo zadané cesty bude stále přepisovat obrazovými daty tentýž soubor. Abychom uložili vícero obrázků potřebujeme proměňovat cestu kam Processing obrázky ukládá. Můžeme k tomu využít počítadlo nebo zvláštní příkaz processingu saveFrame();
+Nyní si představme, že z nějakého důvodu potřebujeme zachytit plnou sekvenci po sobě jdoucích obrázků. Problém příkazu save() je ten, že v případě natrvdo zadané cesty bude stále přepisovat obrazovými daty tentýž soubor. Abychom uložili vícero obrázků potřebujeme proměňovat cestu kam Processing obrázky ukládá. Můžeme k tomu využít počítadlo nebo zvláštní příkaz processingu \slovnik{saveFrame()};
 
 \begin{lstlisting} 
 
@@ -1686,7 +1724,7 @@ void draw(){
 
 \end{lstlisting}
 
-Využití počítadle je možné, ale trochu zdlouhavé. Všimněte si zde pouze způsobu jakým číslujeme názvy souborů. Hodnota frameCount se mění podle počtu vykreslených okének. Příkaz nf() je zde z kosmetických důvodů, přidává pouze daný počet nul před naše počítadlo. Celý tento zápis se se dá ovšem elegantně zkrátit příkazem saveFrame()
+Využití počítadle je možné, ale trochu zdlouhavé. Všimněte si zde pouze způsobu jakým číslujeme názvy souborů. Hodnota \slovnik{frameCount} se mění podle počtu vykreslených okének. Příkaz \slovnik{nf()} je zde z kosmetických důvodů, přidává pouze daný počet nul před naše počítadlo. Celý tento zápis se se dá ovšem elegantně zkrátit příkazem \slovnik{saveFrame()}.
 
 
 \begin{lstlisting} 
@@ -1703,11 +1741,12 @@ void draw(){
 
 \end{lstlisting}
 
-Příkaz saveFrame vyžaduje stejně jako příkaz save() cestu k ukládanému souboru. Příkaz má ovšem navíc tu vlastnost, vložíme-li do názvu souboru znaky křížku, Processing je rozpozná jako počet nul v počítadle okének.
+Příkaz \slovnik{saveFrame()} vyžaduje stejně jako příkaz \slovnik{save()} cestu k ukládanému souboru. Příkaz má ovšem navíc tu vlastnost, vložíme-li do názvu souboru znaky křížku, Processing je rozpozná jako počet nul v počítadle okének.
 
 
 
 \pododdil{Ukládání holých dat}
+
 
 \pododdil{Tisk do pdf, ukládání vektorů}
 
