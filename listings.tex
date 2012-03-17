@@ -1,15 +1,16 @@
 % Add your keywords here,  and have this in a separate file
 % and include it in your preamble
-\lstset{emph={abs, acos, alpha, ambient, ambientLight, append, applyMatrix, arc, arraycopy, asin, atan, atan2, background, beginCamera, beginRecord, beginShape, bezier, bezierDetail, bezierPoint, bezierTangent, bezierVertex, binary, blend, blendColor, blue, box, brightness, camera, ceil, colorMode, concat, constrain, cos, createFont, createGraphics, createImage, createWriter, cursor, curve, curveDetail, curvePoint, curveTightness, curveVertex, day, degrees, delay, directionalLight, dist, draw, ellipse, ellipseMode, emissive, endCamera, endRecord, endShape, exit, exp, expand, fill, filter, floor, frustum, get, green, hex, hint, hour, hue, image, imageMode, join, keyReleased, keyTyped, lerp, lerpColor, lightFalloff, lights, lightSpecular, line, link, loadBytes, loadFont, loadImage, loadPixels, loadStrings, log, loop, mag, map, match, max, millis, min, minute, modelX, modelY, modelZ, month, mouseClicked, mouseDragged, mouseMoved, mouseReleased, nf, nfc, nfp, nfs, noCursor, noFill, noise, noiseDetail, noiseSeed, noLoop, norm, normal, noSmooth, noStroke, noTint, open, openStream, ortho, param, perspective, list, beginDraw, endDraw, blend, copy, mask, set, point, pointLight, popMatrix, pow, printCamera, printMatrix, printProjection, close, flush, print, println, pushMatrix, quad, radians, random, randomSeed, rect, rectMode, red, redraw, resetMatrix, reverse, rotate, rotateX, rotateY, rotateZ, round, saturation, save, saveBytes, saveFrame, saveStrings, scale, screenX, screenY, screenZ, second, setup, shininess, shorten, sin, size, smooth, sort, specular, sphere, sphereDetail, splice, split, splitTokens, spotLight, sq, sqrt, status, str, charAt, equals, indexOf, length, substring, toLowerCase, toUpperCase, stroke, strokeCap, strokeJoin, strokeWeight, subset, tan, text, textAlign, textAscent, textDescent, textFont, textLeading, textMode, textSize, texture, textureMode, textWidth, tint, translate, triangle, trim, unbinary, unhex, unhint, updatePixels, vertex, year, keyPressed, mousePressed, frameRate, String, color}
+\lstset{emph={abs, acos, alpha, ambient, ambientLight, append, applyMatrix, arc, arraycopy, asin, atan, atan2, background, beginCamera, beginRecord, beginShape, bezier, bezierDetail, bezierPoint, bezierTangent, bezierVertex, binary, blend, blendColor, blue, box, brightness, camera, ceil, colorMode, concat, constrain, cos, createFont, createGraphics, createImage, createWriter, cursor, curve, curveDetail, curvePoint, curveTightness, curveVertex, day, degrees, delay, directionalLight, dist, draw, ellipse, ellipseMode, emissive, endCamera, endRecord, endShape, exit, exp, expand, fill, frameCount, filter, floor, frustum, get, green, hex, hint, hour, hue, image, imageMode, join, keyReleased, keyTyped, lerp, lerpColor, lightFalloff, lights, lightSpecular, line, link, loadBytes, loadFont, loadImage, loadPixels, loadStrings, log, loop, mag, map, match, max, millis, min, minute, modelX, modelY, modelZ, month, mouseClicked, mouseDragged, mouseMoved, mouseReleased, nf, nfc, nfp, nfs, noCursor, noFill, noise, noiseDetail, noiseSeed, noLoop, norm, normal, noSmooth, noStroke, noTint, open, openStream, ortho, param, perspective, list, beginDraw, endDraw, blend, copy, mask, set, point, pointLight, popMatrix, pow, printCamera, printMatrix, printProjection, close, flush, print, println, pushMatrix, quad, radians, random, randomSeed, rect, rectMode, red, redraw, resetMatrix, reverse, rotate, rotateX, rotateY, rotateZ, round, saturation, save, saveBytes, saveFrame, saveStrings, scale, screenX, screenY, screenZ, second, setup, shininess, shorten, sin, size, smooth, sort, specular, sphere, sphereDetail, splice, split, splitTokens, spotLight, sq, sqrt, status, str, charAt, equals, indexOf, length, substring, toLowerCase, toUpperCase, stroke, strokeCap, strokeJoin, strokeWeight, subset, tan, text, textAlign, textAscent, textDescent, textFont, textLeading, textMode, textSize, texture, textureMode, textWidth, tint, translate, triangle, trim, unbinary, unhex, unhint, updatePixels, vertex, year, keyPressed, mousePressed, frameRate, String, color}
 , emphstyle={\color{javapurple}}%
 }%
 
 
 
 \lstset{
+breaklines=true,
 language=Java,
 basicstyle=\footnotesize\ttfamily,
-frame=none,
+frame=single,
 framesep=10pt,
 keywordstyle=\color{javapurple},
 stringstyle=\color{javared},
@@ -19,11 +20,11 @@ stepnumber=2,
 numbersep=10pt,
 tabsize=4,
 showspaces=false,
-showstringspaces=true,
+showstringspaces=false,
 backgroundcolor=\color{bggray},
 literate = {{š}{{\vs}}1 {ě}{{\ve}}1 {č}{{\vc}}1 {ž}{{\vz}}1 {ř}{{\vr}}1 {ň}{{\vn}}1},
 inputencoding=utf8,
-extendedchars=true,
+extendedchars=false
 }
 
 

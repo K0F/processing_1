@@ -5,7 +5,7 @@
 % with the fontspec package to easily select fonts.
 
  % use larger type; default would be 10pt
-\documentclass[11pt]{book}
+\documentclass[10pt]{book}
 \usepackage[czech]{babel}
 \usepackage{ucs}
 % Unicode support for LaTeX character names (accents, European chars, etc)
@@ -13,7 +13,9 @@
 \usepackage{xltxtra,fontspec,xunicode}
 
 % syntax highlight
-\usepackage{listings}
+
+
+\usepackage{listingsutf8}
 \usepackage{xcolor}
 
 \usepackage{cleveref}
@@ -115,8 +117,10 @@
 \setmainfont{Liberation Sans}%Liberation Serif}
 %\setmainfont{Liberation Serif} %URW Gothic L,DejaVu Sans,Georgia,Jumpcrew Cologne,Libertinage,LMSans12, Nimbus Sans L
 \setmainfont[Mapping=tex-text,Ligatures={Common},BoldFont={* Bold}, ItalicFont={* Italic},Numbers={OldStyle}]{Liberation Serif}
-\setsansfont[Scale=1,Mapping=tex-text,Ligatures={Common,Rare},Numbers={OldStyle}]{Calluna}
+\setsansfont[Scale=1,Mapping=tex-text,Ligatures={Common,Rare},Numbers={OldStyle}]{Teuton Weiss}
 \setmonofont{Monaco}
+
+
 
 \usepackage{sectsty}
 \allsectionsfont{\sffamily}
@@ -165,7 +169,13 @@
 \newpage
 
 
-.
+Nakladatelství AMU.
+
+ISBN 978-80-7331-224-4
+
+{\em Vysázeno s \XeLaTeX}
+
+
 \thispagestyle{empty}
 
 
@@ -303,16 +313,42 @@ As the particles move through space they become attracted by the various, initia
 
 \oddil{Konktrétní zadání}
 
-Cílem této knihy je provést uživatele začátečníka sérií příkladů, které budou v průběhu ilustrovat znalosti nebytné k naprogramování postupných stádií programu. Jako první cíl si vytyčíme jednoduchý interaktivní program. Interaktivní program tedy takový, který dokáže určitým způsobem reagovat na uživatele. Tento program by ve výsledku měl přečíst polohu myši a na jeho základě provést proměnu v obraze.
+Cílem této knihy je provést uživatele začátečníka sérií příkladů, které budou v průběhu ilustrovat znalosti nebytné k naprogramování postupných stádií programu. Jako první cíl si vytyčíme jednoduchý interaktivní program. Interaktivní program je takový, který dokáže určitým způsobem reagovat na uživatele. Tento program by ve výsledku měl přečíst polohu myši a na jeho základě provést proměnu v obraze.
 
 Na úvod je třeba říci, že vytyčení konkrétního cíle není vždy nezbytné. Processing již počítá s možností, že uživatel nebude od počátku znát konkrétní zadání a bude jen volně experimentovat s funkcemi jazyka. Proto Processing automaticky pojmenovává nové projekty, v žargonu Processingu Sketche, podle data svého vytvoření.
 
-\chapter{Co je to programovací jazyk?}
+
+\chapter{Dobré zdroje v začátcích}
+
+\oddil{Síť}
+
+Autor knihy předpokládá že má čtenář v roce 2012 přístup ke globální síti internet.
+
+Nejlepší reference pro práci s Processingem zůstává tato síť. Processing byl vyvinut síťovou komunitou a je také v síti nejlépe zdokumentován. Existuje několik dobrých obecných stránek s průvodci. Za všechny lze jmenovat domovskou stránku projektu processing.org. Zde naleznete téměř vše co by jste mohli potřebovat. Nacházejí se zde zdokumentované veškeré příkazy Processingu. Je zde i záložka {\em Learning} s jednotlivými průvodci do různých oblastí. 
+
+Nejadresněji se vám dostane pomoci prostřednictvím webových fór nebo IRC kanálů. Na fórech se již řešil téměř jakýkoli problém, stačí proto vyhledávat klíčová slova vašeho konkrétního dotazu a velmi rychle by jste měli nalézt řešení.
+ 
+   Na síti je dále obrovské množství uživatelů volně sdílících své programy včetně zdrojových kódů. Nejpočetnější komunita sídlí zřejmě na portálu openprocessing.org založeném a zpravovaném Sinanem Ascigolu.
+   
+Veškerá dokumentace je v angličtině včetně webových fór i dalších knih o programování. Nemáte-li problém s jazykem míst k zdokonalování se v Processingu bude vždy dostatek.
+
+\oddil{Knihy}
+
+Ano, jednu z nich držíte v ruce. V minulosti vyšlo bezmála desítka podobných knih na toto téma. Jsou bezesporu obsáhlejší než jaké tato kniha měla kdy v úmyslu. Mezi všemi doporučují nejvíce původní knihu od samotných tvůrců Processingu Casey Rease a Bena Frye nazvanou {\em Processing: A Programming Handbook for Visual Designers and Artists}.
+
+Dále kniha Daniela Shiffmana {\em Learning Processing: A Beginner's Guide to Programming Images, Animation, and Interaction} je jednou z velmi podrobně napsaných knich o Processingu.
+
+Knihy se dají opatřit a rozhodně bych to doporučoval všem kteří potřebují mít opravdu dobrou dokumentaci vždy při ruce. V neposlední řadě bych také upozornil na to, že koupí knihy podporujete tvůrce svobodného softwaru, a tím potažmo i svobodný software jako takový.
+
+\oddil{Experiment}
+
+Nejdůležitějším zdrojem vašich vlastních zkušeností bude vždy samotné experimentování s programováním. Na tuto část kladu největší důraz a v průběhu této knihy to i několikrát zopakuji, je vždy dobré odložit knihy a reference a pustit se do neznámých vod, zkušenost kterou takto naberete, bude vždy ta nejhodnotnější. Nebojte se sami experimentovat.
+
+\chapter{K čemu slouží programovací jazyk?}
 
 \oddil{Počátky programovacího jazyka}
 
-
-Výchozím bodem v tvorbě počítačové logiky byla přirozená lidská komunikace v podobě řeči. Člověk používá jazyk  a při tvorbě zcela nového systému pravidel zákonitě sahá po známém prostředku.
+Výchozím bodem v tvorbě počítačové logiky jak ji známe dnes byla přirozená lidská komunikace v podobě řeči. Člověk používá jazyk  a při tvorbě zcela nového systému pravidel zákonitě sahá po známém prostředku.
 
 Na počátku ale nebyl lidský jazyk. Se stroji se v jejich raných fázích vývoje hovořilo čistě strojovým jazykem, už v podobě číselných řad, nebo později holého strojového kódu, který přešel na logiku pokročilejších obvodů. Programovací jazyk se objevil již v padesátých letech minulého století a osvědčil se jako prostředek pro člověka, který začínal být limitován oproti kapacitě stroje schopného obsáhnout složitější úlohy. Řešením pro vzrůstající složitost logiky programů se stala lidská řeč.
 
@@ -320,7 +356,7 @@ Na počátku ale nebyl lidský jazyk. Se stroji se v jejich raných fázích vý
 
 Počítačový jazyk není jeden, počítačových jazyků jsou celé rozvětvené rodiny. Konceptů, jak lépe hovořit srozumitelně pro člověka a zároveň ke stroji je celá řada, žádný z nich nedokáže kopírovat plně lidský jazyk v jeho přirozené struktuře. Důvodů je několik, jeden z nejpodstatnějších je fakt, že lidská řeč neodpovídá organizaci ve struktuře stroje, jednoduše proto že člověk své řeči sám nerozumí natolik, aby popsal sám všechny její zákonitosti logickou cestou.
 
-Jednoduše řečeno lidský jazyk není popsán tak dokonale, aby jsme ho byli schopni vysvětlit stroji. Pokusy o průnik lidské řeči a logického obvodu sahají do absolutních počátků interakce člověka se strojem a představují pro tvůrce strojů závažný problém. Tento problém v padesátých letech minulého století definoval Alan Turning, jeden ze zakladatelů výpočetní techniky tak jak ji dnes známe. Alan Turning spolu s Gordonem Wechmanem stáli v době druhé světové války u vývoje dekryptovacího stroje německých šifer nazvaného Bomba (The Bomb). Alan Turning v poválečné éře definoval formální rámec počítače jak jej známe dnes. Koncepce později nazvaná Turningův stroj vycházela zejména z matematických potřeb a jednalo se o snahu vytvořit kompletní výpočetní jednotku schopnou řešit veškeré známé matematické operace. 
+Jednoduše řečeno lidský jazyk není popsán tak dokonale, aby jsme ho byli schopni vysvětlit stroji. Pokusy o průnik lidské řeči a logického obvodu sahají do absolutních počátků interakce člověka se strojem a představují pro tvůrce strojů závažný problém. Tento problém v padesátých letech minulého století definoval Alan Turning, jeden ze zakladatelů výpočetní techniky tak jak ji dnes známe. Alan Turning spolu s Gordonem Wechmanem stáli v době druhé světové války u vývoje dekryptovacího stroje německých šifer nazvaného Bomba {\em (The Bomb)}. Alan Turning v poválečné éře definoval formální rámec počítače jak jej známe dnes. Koncepce později nazvaná Turningův stroj vycházela zejména z matematických potřeb a jednalo se o snahu vytvořit kompletní výpočetní jednotku schopnou řešit veškeré známé matematické operace. 
 
 
 Je pozoruhodné, že Alan Turning se již při raných stádiích vývoje počítačů zabývá takzvanou umělou inteligencí. Z toho je zřejmé, že stroje podobné počítačům se od počátku svého vývoje připodobňují struktuře lidského uvažování. Alan Turning sestavil pro stroje známý experiment nazvaný turningův test. Turningův test měl prověřit schopnosti stroje replikovat lidské chování, není náhodou že prostředek pro komunikaci v testu byla zvolena právě řeč. Test spočíval v modelové situaci stroje schopného napodobit lidskou komunikaci, tak dokonale aby člověk nebyl schopen rozeznat že komunikuje se strojem. Zajímavé na této definici lidské intelignece je zejména její vágnost, která v podstatě ilustruje míru porozumění logického uvažování lidské mysli jako takové.
@@ -352,7 +388,6 @@ Tato kniha je spíše než-li jednomu nástroji věnována programu pro tvorbu t
 Processing vychází z koncepce snadného přístupu k programování. Za běžných okolností by se vnímavý člověk měl být schopen naučit jednoduché struktuře programu a schopnosti vytvořit vlastní program v průběhu několika dní. Na druhou stranu, právě predispozice našeho uvažování jsou natolik rozmanité, že takovou prognózu nelze brát jinak než jen za orientační.
 
 
-Programovací jazyk Processing vychází z laboratoří MIT, kde se celé oddělení věnuje právě koncepcím zjednodušování programovacích jazyků .... historie small talk atd. zde
 
 
 \oddil{Dokonalost jazyka}
@@ -391,9 +426,26 @@ Jazyk, který je nutně limitovaný svojí nezbytnou dokonalostí, ovšem nemus�
 
 \oddil{Proč zrovna Processing?}
 
-\oddil{Kritika Processingu}
+Processing je vhodný nástroj pro první experimenty s programováním z několika důvodů.
 
-[Důvody proti Processingu]
+Prvním důvodem je jednoduchost směrem k uživateli, Processing se snaží začátečníky co nejméně zatížit zbytečnými informacemi. Processing prezentuje programování jako přístupnou a ovládnutelnou schopnost. Processing toho dosahuje především rychlou odezvou vizuálního prostředí. Jednoduše řečeno v momentu kdy spustíme kód vidíme okamžitě jeho vizuální výsledek. Taková ilustrativnost je v začátcích téměř nezbytná.
+
+Processing lze velmi krátkým kódem programovat sofistikované programy. Pro příklad zde uvedu soutěž nazvanou {\em Tiny Sketch} portály Rhizome.org a Openprocessing.org. Processing dokáže být natolik úsporný že za pomoci maximálně dvouseti znaků, zde tvůrci byli schopni naprogramovat svébytné programy.
+
+
+\begin{center}
+\includegraphics[width = 1.0\textwidth]{imgs/tinysketch.png}
+\end{center}
+
+
+
+Snad největší předností pro začínající programátory je výtečná dokumentace a velmi přívětivá komunita lidí poskytující neúnavně rady začátečníkům.
+
+
+\oddil{Nedostatky Processingu}
+
+Processing byl v minulosti nejvíce kritizován pro samotnou aplikaci vývojového prostředí, která se přes úsilí vývojářů stále nedá označit za bezchybnou. Editor je dost pomalý a některé jeho funkce jako chybová hlášení nefungují zrovna nejlépe. I když si s prostředím zpočátku dokonale vystačíme, pro rozsáhlejší projekty bych sám doporučil využívat Processing i v jiných prostředích (NetBeans, Eclipse, Vim atp.). Samotný Processing lze implementovat téměř kamkoli, kde se dá vyvíjet jazyk Java.
+
 
 \oddil{Tvorba softwaru}
 
@@ -447,8 +499,6 @@ Nazývám tento způsob programování empirický, tedy přístup, kdy podle zku
 Proces poznávání struktur jazyka při tvorbě obrazu prostřednictvím Processingu bych přirovnal k postupu od začátečnické malby na tkaninu k postupnému tkaní gobelínu. Zde je nutno podotknout, že ne každý tvůrce využívající Processing chce tkát gobelín a najde-li nástroj vhodný \uv{jen} pro \uv{malbu} na plátno, je to dobrý nástroj.
 
 
-[????]
-
 \chapter{Processing jako prostředí}
 
 
@@ -457,14 +507,19 @@ Processing představuje ucelené programovací prostředí tzv. IDE\footnote{Int
 \oddil{Základní prostředí}
 
 
-Základní rozhraní tvoří textový editor s několika nezbytnými funkcemi. Patrně nejdůležitější je v liště tlačítko (1) tzv. RUN. Které kompiluje a spouští program aktuálně rozpracovaný v textovém editoru. (2) Tlačítko STOP naopak program zastaví. V případě chyby v programu lze též využít jako vynucené zavření programu. Zbylé tlačítka slouží k diskovým operacím. \\
+
+\begin{center}
+\includegraphics[width = 0.8\textwidth]{imgs/processing.png}
+\end{center}
+
+
+Základní rozhraní tvoří textový editor s několika nezbytnými funkcemi. Patrně nejdůležitější je v liště tlačítko (1) tzv. RUN. Které kompiluje a spouští program aktuálně rozpracovaný v textovém editoru. (2) Tlačítko STOP naopak program zastaví. V případě chyby v programu lze též využít jako vynucené zavření programu. Zbylé tlačítka slouží k diskovým operacím.
 
 
 \begin{center}
 \includegraphics[width = 0.6\textwidth]{imgs/buttons.png}
 \end{center}
 
-\newpage
 \pododdil{Základní diskové operace}
 
 Ty operace jež něco zapisují či načítají z disku. Tyto operace zahrnují veškerou manipulaci se sketchí, její vytvoření, uložení, načtení či export do webového formátu či kompilaci do spustitelné aplikace.
@@ -478,14 +533,14 @@ Tlačítka mají dále speciální vlastnosti s podržením tlačítka tlačítk
 
 \pododdil{Sketch}
 
-Sketch, neboli náčrt, označuje samostatný projekt Processingu. Dělením projektů na sketche jsou uspořádány jednotlivé projekty Processingu. Sketch je ve své podstatě složka obsahující alespoň stejně jeden stejně nazvaný soubor s příponou {\em *.pde}. Sktech při vytvoření nevyžaduje název, je jí přidělen pouze aktuální datový kód zaznamenávající datum vytvoření. Tímto decentním způsobem Processing toleruje například nejasnost záměru autora při vytváření nového díla, jeho název či pracovní název lze tímto způsobem přiřadit až později, po nabytí jasnějších obrysů.
+Sketch je v Processingu označení pro jednotlivé projekty. Sketch je ve své podstatě složka obsahující alespoň stejně jeden stejně nazvaný soubor s příponou {\em *.pde}. Sktech při vytvoření nevyžaduje název, je jí přidělen pouze aktuální datový kód zaznamenávající datum vytvoření. Tímto decentním způsobem Processing toleruje například nejasnost záměru autora při vytváření nového díla, jeho název či pracovní název lze tímto způsobem přiřadit až později, po nabytí jasnějších obrysů.
 
 Program si vystačí pouze se samotným zdrojovým kódem tj. souborem (soubory) {\em *.pde}. Ovšem v případě operujeme-li s externími daty stojícími mimo zdrojový kód, jakékoli jiné soubory, můžeme využít dvě možnosti. První možnost je soubor, se kterým potřebujeme operovat tažením myši přesunout na textové pole Processing \index{IDE}IDE. Touto operací bude soubor zapsán do naší sketche automaticky. Druhá možnost je operaci provést manuálně, stačí vytvořit v adresáři sketche adresář s názvem \slovnik{DATA}. Processing tuto složku automaticky rozpozná a soubory v této složce budou dobře dostupné pro pozdější operace.
 
-Ke standartním adresářům, které se často objevují ve struktuře skteche, si stačí zapamatovat jen dva již zmíněný adresář nazvaný {\em DATA}. Tento adresář je využíván při práci s jakýmikoliv vnějšími daty jako jsou např. obrázky, zvuky, videa, vektorové grafiky nebo například textové soubory. Druhý adresář nazvaný {\em CODE} obsahuje externí zdrojový kód, popřípadě kód kompilovaný v podobě knihovny, mající nejčastěji přípony {\em *.java, *.class, *.jre}. Tento adresář se nalézá v systémové cestě daného projektu a umístíme-li zde soubory budou též dobře dostupné z daného projektu. Adresář {\em CODE} nás zatím nemusí příliš zajímat, později se jeho prostřednictvím můžeme pokusit rozšiřovat funkce Processingu.
+Ke standartním adresářům, které se často objevují ve struktuře skteche, si stačí zapamatovat jen dva již zmíněný adresář nazvaný {\em DATA}. Tento adresář je využíván při práci s jakýmikoliv vnějšími daty jako jsou např. obrázky, zvuky, videa, vektorové grafiky nebo například textové soubory. Druhý adresář nazvaný {\em CODE} obsahuje externí zdrojový kód, popřípadě kód kompilovaný v podobě knihovny, mající nejčastěji přípony {\em *.java, *.class, *.jre}. Tento adresář se nalézá v systémové cestě daného projektu a umístíme-li zde soubory budou též dobře dostupné z daného projektu. Adresář {\em CODE} nás zatím nemusí příliš zajímat, později se jeho prostřednictvím můžeme pokusit rozšiřovat funkce Processingu externím kódem.
 
 
-\pododdil{Sktechbook a uspořádání}
+\pododdil{Sktechbook}
 
 Místo na disku, které Processing využívá k uskladnění sktechí se nazývá povšechně sketchbook a je v podstatě pouze adresář obsahující jednotlivé projekty. Koncepce sketchbooku spočívá v uspořádání jednotlivých projektů do organizované formy a ačkoli nevnáší do jednotlivých projektů sám o sobě řád může napomoci k vytvoření řádu vlastního. Ze své zkušenosti mohu říci, že organizace jednotlivých projektů do jakékoli struktury má opravdu smysl. Mnou preferovaná struktura obsahuje jednotlivé roky následně ještě dělené do měsíců, ale možnosti organizace záleží čistě na uživatelových preferencích. Tímto chci spíše ilustrovat možnosti uspořádání než-li nezbytnost, ale přítomnost vašeho systému od počátku vřele doporučuji.
 
@@ -648,14 +703,16 @@ První slovo na každém řádku označuje odlišný datatyp (náš tvar nádoby
 
 Každý příkaz je ukončen středníkem {\em ;} .
 
-Podivné názvy jako například {\em mojeCeleCislo} tzv. proměnných, jen ukazují, že název pro svoji proměnnou můžete zvolit téměř podle libosti. Co do výjimek v názvech proměnných. Proměnná nesmí mít v názvu mezeru tedy prázdný znak. Podle zvyklostí by dále proměnná měla začínat malým písmenem a potřebujete-li nutně pro název použít víceslovný název použijte velké písmeno namísto mezery.
+Podivné názvy jako například {\em mojeCeleCislo} tzv. proměnných, jen ukazují, že název pro svoji proměnnou můžete zvolit téměř podle libosti. Co do výjimek v názvech proměnných. Proměnná nesmí mít v názvu mezeru tedy prázdný znak. Podle zvyklostí by dále proměnná měla začín
+
+at malým písmenem a potřebujete-li nutně pro název použít víceslovný název použijte velké písmeno namísto mezery.
 
 Proměnná nesmí být číslo, ale slovní název. Programátorské konvence při pojmenovávání proměnných jsou ryze praktické. Proměnná by měla mít co možná nejkratší a nejvýstižnější název.  Toto je spíše dobré doporučení než-li pravidlo. Správným pojmenováním proměnných docílíte větší přehlednosti v kódu kratší délkou si ušetříte zbytečné psaní.
 
 
-\pododdil{barva}
+\pododdil{Barva}
 
-Zvláštním datatyp v Processingu je \vyraz{color()}. Barvy lze definovat následujícími způsoby. 
+Zvláštním datatyp v Processingu je datatyp určený pro barvy, \vyraz{color()}. Barvy lze definovat následujícími způsoby. 
 
 \begin{lstlisting}
 // skala sede, 0 = cerna, 255 = bila
@@ -670,12 +727,15 @@ color mojeBarvaOranzova = color(255,127,0);
 // cervena, modra, zelena, pruhlednost 
 color mojeBarvaOranzova2 = color(255,127,0,127);
    
-   
 // barva zapis ve stylu HTML, v hexadecimalnim tvaru
 color mojeBarvaOranzova3 = color(#FFCC00);
 \end{lstlisting}
 
 Pro výběr vaší oblíbené barvy lze využít nástroj z lišty Tools, Color Selector.
+
+Základní barevné nastavení je 24-bitové RGB, to znamená že každá barevná jednoho kanálu má 8-bitů, tedy 256 různých stupňů. Nejvyšší stupeň je ovšem 255, jelikož ten nejnižší není 1 nýbrž 0.
+
+Kolorimetrické prostory a jejich rozmezí se dají volně definovat pomocí příkazu \vyraz{colorMode()}.
 
 
 \pododdil{Tisk do konzole}
@@ -931,24 +991,55 @@ Boolean je možné si představit jako vypínač světla. Zapnuto a vypnuto jsou
 
 \pododdil{Základní struktura programu}
 
+Processing rozlišuje mezi jednotlivými programovacími přístupy. Textový editor se automaticky přizpůsobí způsobu programování. Tímto přístupem se Processing snaží co nejvíce nablížit začátečníkovi. Základní prostředí nám dovoluje pouze nakreslit tvary a ukončit program. K pohybu v čase musíme Processingu definovat základní strukturu programu.
+
+Nejzákladnější dvě funkce se kterými se budeme při programování setkávat jsou funkce \vyraz{setup()} a \vyraz{draw()}.
+
+\begin{itemize}
+\item
+\vyraz{setup()} je funkcí, která bude spuštěna jednou na začátku programu. Zde se nejčastěji nastavují počáteční parametry které si potřebujeme připravit než se spustí kreslící funkce.
+
+\item
+\vyraz{draw()} je funkce pro opakované kreslení, bude spouštěna stále po dobu chodu programu, zde budeme nejčastěji kreslit tvary a provádě proměnlivé výpočty pro animaci.
+\end{itemize} 
+
+
+Základní funkce pro vyvolání překreslování výstupního okna je funkce \vyraz{draw()}. \bublina{void draw() je základní funkce pro spuštění překreslování plátna} Funkce je uvozena slovem \vyraz{void}. Více o funkcích se dozvíme v kapitole. Jedná se o základní smyčku, která zajišťuje jakoukoli proměnlivost, tedy animaci v obraze. Smyčka je de facto operace, která v programu vyjadřuje rozměr času.
+
+Základní struktura bude vypadat asi takto:
+
+
 \begin{lstlisting}
-void setup(){ // "{" znamenko znacici pocatek funkce
-  // prvni udaj by mel rikat jak je ramecek velky, prikaz "size"
-  //velikost ramecku v "size(int x,int y)" - x a y v pixelech
-  size(200,200);
+void setup(){ 
   
-  //"frameRate(int kolik)" - snimku za vterinu, bez tohoto prikazu prednastaveno 60fps 
+  size(200,200);
   frameRate(15); 
+  println("tisk z funkce setup()");  
+
 }
 
-// 2. "draw()" - funkce, ktera je spoustana cyklicky, nekolikrat do vteriny - podle "frameRate" - nyni 15x za vterinu
+
 void draw(){
-  // v teto smycce se vetsinou provadi kresba, animace, zivy vypocet, prvni co je dobre vykreslit je pozadi
-  background(0); //"background" vyplni celou plochu barvou, s jednim udajem od 0..255 - color
-  println("tisk z draw-u! " + frameCount);  // tisk do konzole je cyklicky opakovan, "frameCount" vraci udaj o poctu prekresleni
-}// "}" znamenko znacici konec funkce
+
+  background(0); 
+  println("tisk z funkce draw() " + frameCount);  
+
+}
 
 \end{lstlisting}
+
+Po spuštění programu uvidíte v konzoli následující výstup:
+
+
+
+tisk z funkce setup()
+tisk z funkce draw() 1
+tisk z funkce draw() 2
+tisk z funkce draw() 3
+tisk z funkce draw() 4
+
+
+
 
 
 \oddil{Orientace v prostoru}
@@ -1018,22 +1109,6 @@ Veškeré příkazy které jsme si zatím ukázali byli spuštěny pouze jednou.
 
 V další kapitole si předvedeme jak vdechnout procesům pohyb a stálost, další kapitola je věnovaná animaci.
 
-\oddil{Základní funkce programu}
-
-Processing rozlišuje mezi jednotlivými programovacími přístupy. Textový editor se automaticky přizpůsobí způsobu programování. Tímto přístupem se Processing snaží co nejvíce nablížit začátečníkovi. Základní prostředí nám dovoluje pouze nakreslit tvary a ukončit program. K pohybu v čase musíme Processingu definovat základní strukturu programu.
-
-Nejzákladnější dvě funkce se kterými se budeme při programování setkávat jsou funkce \vyraz{setup()} a \vyraz{draw()}.
-
-\begin{itemize}
-\item
-\vyraz{setup()} je funkcí, která bude spuštěna jednou na začátku programu. Zde se nejčastěji nastavují počáteční parametry které si potřebujeme připravit než se spustí kreslící funkce.
-
-\item
-\vyraz{draw()} je funkce pro opakované kreslení, bude spouštěna stále po dobu chodu programu, zde budeme nejčastěji kreslit tvary a provádě proměnlivé výpočty pro animaci.
-\end{itemize} 
-
-
-Základní funkce pro vyvolání překreslování výstupního okna je funkce \vyraz{draw()}. \bublina{void draw() je základní funkce pro spuštění překreslování plátna} Funkce je uvozena slovem \vyraz{void}. Více o funkcích se dozvíme v kapitole. Jedná se o základní smyčku, která zajišťuje jakoukoli proměnlivost, tedy animaci v obraze. Smyčka je de facto operace, která v programu vyjadřuje rozměr času.
 
 
 \oddil{Animace a interakce}
@@ -1453,9 +1528,6 @@ background( a ? 0 : 255 );
 \end{lstlisting}
       
 
-
-
-
 \oddil{Náhoda}
 
 Proč má smysl v případě strojů vůbec hovořit o náhodě. Náhoda je z pohledu výpočetní techniky třeba vnímat jako vnější vliv. V rámci počítačové logiky náhoda v podstatě neexistuje. Každý jev má svoji příčinu a může mít svůj následek. Počítačové jazyky znají jen pojem takzvané pseudonáhodnosti.
@@ -1494,7 +1566,7 @@ Jednotlivé bloky kódu lze dále strukturovat. Strukturování v kódu se prov�
 
 Nejjednoduším řešením problému je jeho rozdělení na menší části. Problém jak dojít k jednomu výsledku se dá rozložit na jednotlivé po sobě jdoucí události a ty postupně popsat.
 
-Dílčí operace si pro přehlednost můžeme definovat do bloku takzvané funkce. Základní funkcí je takzvaný void. Void v podstatě tvoří blok kódu který je spuštěn jeho pozdějším zavoláním. Jestliže jednotilvé proměnné by ve větě mohli označovat podstatná jména funkce se dají chápat jako slovesa. S funkcemi jsme se setkali již dříve při definici základních smyček programu.
+Dílčí operace si pro přehlednost můžeme definovat do bloku takzvané funkce. Základní funkcí je takzvaný \vyraz{void}. Void v podstatě tvoří blok kódu který je spuštěn jeho pozdějším zavoláním. Jestliže jednotlivé proměnné by ve větě mohli označovat podstatná jména funkce se dají chápat jako slovesa. S funkcemi jsme se setkali již dříve při definici základních smyček programu.
 
 \begin{lstlisting}
 
@@ -1833,10 +1905,6 @@ Podpora načítání XML tabulek.
 \end{itemize}
 
 Neříkají-li vám tyto zkratky nic, nevadí, jedná se většinou o datové standarty a typy zařízení se kterými můžete s pomocí knihoven pracovat. Každá z těchto knihoven má svoji dobrou dokumentaci na stránkách projektu, nebo přímo v tzv. {\em Examples}, příkladech pro každou knihovnu, lze tímto způsobem zobrazit základní nápovědu.
-
-
-
-
 
 
 \oddil{Nástroje}
