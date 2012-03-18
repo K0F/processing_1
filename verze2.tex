@@ -1223,7 +1223,7 @@ if( !(a && b) || c ){
 
 \end{lstlisting}
 
-Jaký je rozdíl mezi prvním a druhým blokem? Poslední specialita booleanovských operací je znaménko vykřičník. Takové znaménko před proměnou typu \vyraz{boolean} znamená opak tvrzení tedy, je li {\em pravda} pravdou, {\em !pravda} je nepravdou tedy výsledkem je \vyraz{false}.
+Jaký je rozdíl mezi prvním a druhým blokem? Poslední specialita booleanovských operací je znaménko vykřičník. Takové znaménko před proměnou typu \vyraz{boolean} znamená opak tvrzení tedy, je li {\em pravda} pravdou, {\em !pravda} \label{!pravda} je nepravdou tedy výsledkem je \vyraz{false}.
 
 
 \begin{lstlisting}
@@ -1295,7 +1295,7 @@ background( a ? 0 : 255 );
 
 \oddil{Zobrazení}
 
-\poddodil{Orientace v prostoru}
+\pododdil{Orientace v prostoru}
 
 Plocha programu by sa dala přirovnat k listu papíru, popřípadě k malířskému plátnu. Ve standartním dvoudimenzionálním módu má dva základní parametry {\em X} a {\em Y}, ty označují souřadnice, ve kterých se veškeré kreslící operace pohybují. Důležité je zmínit, že oproti jisté konvenci v matematických grafech levý horní roh nese hodnotu {\em X = 0}, {\em Y = 0}. Směrem dolů hodnota {\em Y} přibývá stejně tak jaho hodnota {\em X} přibývá směrem doprava.\\
 
@@ -1365,6 +1365,57 @@ V další kapitole si předvedeme jak vdechnout procesům pohyb a stálost, dal�
 
 
 \oddil{Pohyb}
+
+\poddodil{Proměnlivost}
+
+
+Potřebujeme-li programu vdechnout život, musíme nejprve pochopit jakým způsobem se program může proměňovat. Proměnlivost se dotýká základní myšlenky programu trvajícího v čase. K tomu abychom takovou proměnlivost mohli okem pozorovat, program může komunikovat pomocí různých výstupů. Processing, který byl navržen s důrazem na vizuální výstup, bude nejčastěji komunikovat právě vizuálně. Obecně řečeno proměnlivost je jakákoli změna hodnot v délce běhu programu, lze si ji představit například jako rozdíl mezi dvěma okénky filmu.
+
+U filmových okének je rozdíl sice velmi těžko definovatelný ilustruje ale dobře celý problém. Film nám spostředkovává iluzi pohybu sledem několika okének za vteřinu. Přesně stejně se chová i vizuální program. Rozdíl mezi filmem a programem je zhruba ten, že program může mít teoreticky dva a více různých konců, nebo nemusí končit vůbec. Zde by se dalo namítnout že program je také nakonec nositelem kauzálního sledu operací. Vtip je v tom, že stejný program spuštěný dvakrát nemusí produkovat stejný výsledek.
+
+Změny v chodu programu se dá docílit několika způsoby. Základní změna v běhu programu je lidská intervence, která je z pohledu programu (respektive tvůrce programu) jen velmi těžko předpovídatelná. Změna v chování programu bez takového vnějšího zásahu je pak vždy umělá. (viz náhodnost)
+
+
+Vraťme se ovšem k Proměnlivosti. Proměnlivost je nezbytnou součástí animace. Pohyb je proměna stavu v čase. Měli bychom zde mít vždy na paměti, že program nerozumí tomu co zrovna zobrazuje, program rozumí pouze hodnotám. Rozpohybovat lze tyto hodnoty, a tím posléze například jevy, které se v programu zobrazují a člověku dají nějaký smysl. 
+
+Pro příklad si můžeme ukázat jak proměna jedné hodnoty ovlivňuje obraz. K tomu abychom mohli hodnotu proměňovat musíme ji nejdříve pojmenovat.
+
+\begin{lstlisting}
+int y = 0;
+\end{lstlisting}
+
+Tímto jsme pojmenovali svoji proměnnou. Jednou z možných variant zápisu je okamžité přiřazení hodnoty, tedy y je nyní nula. Pro animaci hodnoty použijeme přírůstek, tedy při kresbě jednotlivého okénka přičteme k hodnotě 1. Abychom viděli nějaký výsledek, můžeme opět kreslit objekt, který bude využívat proměňující se hodnotu v čase.
+
+\begin{lstlisting}
+void setup(){
+	size(640,480);
+}
+
+void draw(){
+	background(255);
+	
+	// prirustek o jedna
+	// lze zapsat i zkracene y++;
+	y += 1;
+	
+	// kresba
+	line( 0 , y , width , y );
+
+}
+\end{lstlisting}
+
+Po spuštění tohoto programu uvidíte animaci trvající 480 okének. Animace bude pokračovat i nadále, hodnota y se bude stále proměňovat. Kresba bude teoreticky probíhat mimo plátno. K tomu abychom kresbu udrželi v mezích plátna, můžeme použít jednoduchou podmínku, která bude vracet hodnotu y zpět na nulu.
+
+
+\begin{lstlisting}
+if(y > height){
+	y = 0;
+}
+\end{lstlisting}
+
+Celá tato procedura jen ilustruje logiku programu. Hodnota y je zde přímo zobrazena, ale stejně tak se dá použít kdekoli jinde, tedy ne nezbytně na kresbu. Pro lepší představu jiného použití uvedu následující příklad.
+
+Pod hodnotou si lze například představit pevně stanovenou hodnotu, dejme tomu výšku domu. Zadání výšky nemusí nepostaví dům ale stanoví hodnotu se kterou můžeme dál počítat. Známe-li výšku plánované budovy, můžeme například přidávat patra dokud se této výšky nedosáhne. Tento postup již lze považovat za logickou konstrukci a jedním ze základních postupů jak takové logiky v programu docílit je podmínka.
 
 \pododdil{Animace}
 
@@ -1477,6 +1528,38 @@ void draw(){
 
 Toto je jedna z nejzákladnějších možných interakcí. Vstupem pro pozici kresleného obdélníku se nám stávají dva parametry \vyraz{mouseX} a \vyraz{mouseY}.
 
+Čtení pozice myši je jedním nejsnazších možných způsobů interakce stroje z člověkem. Nyní si ukážeme jak lze detekovat stisknutí tlačítka myši. Pro tento účel můžeme využít předdefinovaných metod Processingu. K detekci kliku lze použít funkci \vyraz{mousePressed()}.
+
+
+\begin{lstlisting}
+boolean stisknuto = false;
+
+void setup(){
+	size(640,480);
+}
+
+void draw(){
+	background(255);
+	
+	if(stisknuto){
+		fill(255);
+	}else{
+		fill(255,0,0);
+	}
+	
+	// všimněte si parametrů mouseX a mouseY
+	rect(mouseX,mouseY,30,30);
+}
+
+void mousePressed(){
+	stisknuto = !stisknuto;
+}
+
+\end{lstlisting}
+
+Všimněte si poslední funkce. Ta je programem spuštěna jen tehdy stiskne-li uživatel tlačítko myši. Abychom uchovali informaci o stisku přepneme jím stav jedné z našich proměnných nazvané. Jednořádkový zápis s vykřičníkem je zkrácení pro přepnutí stavu. \odkaz{Podmínka}
+
+
 \pododdil{Dynamika pohybu}
 
 K docílení jednoduché interakce není zapotřebí mnoho. Animace je ovšem složitější problém který budeme řešit v Processingu nejvíce matematicky. Zdá se, že dosažení dynamického pohybu je jeden z průvodních jevů pokročilého programování.
@@ -1508,58 +1591,12 @@ void draw(){
 x += (mouseX - x) * rychlost;
 y += (mouseY - y) * rychlost; 
 \end{lstlisting}
-K prmoěným {\em x} a {\em y} přiřazujeme zlomek rozdílu mezi pozicí kurzoru a proměnou v obou osách. Tuto formuli lze využít téměř kdekoli, například při jemném přechodu barev a vyhlazování hodnot obecně.
+K proměnným {\em x} a {\em y} přiřazujeme zlomek rozdílu mezi pozicí kurzoru a proměnou v obou osách. Tuto formuli lze využít téměř kdekoli, například při jemném přechodu barev a vyhlazování hodnot obecně.
 
-\oddil{Proměnlivost}
-
-
-Potřebujeme-li programu vdechnout život, musíme nejprve pochopit jakým způsobem se program může proměňovat. Proměnlivost se dotýká základní myšlenky programu trvajícího v čase. K tomu abychom takovou proměnlivost mohli okem pozorovat, program může komunikovat pomocí různých výstupů. Processing, který byl navržen s důrazem na vizuální výstup, bude nejčastěji komunikovat právě vizuálně. Obecně řečeno proměnlivost je jakákoli změna hodnot v délce běhu programu, lze si ji představit například jako rozdíl mezi dvěma okénky filmu.
-
-U filmových okének je rozdíl sice velmi těžko definovatelný ilustruje ale dobře celý problém. Film nám spostředkovává iluzi pohybu sledem několika okének za vteřinu. Přesně stejně se chová i vizuální program. Rozdíl mezi filmem a programem je zhruba ten, že program může mít teoreticky dva a více různých konců, nebo nemusí končit vůbec. Zde by se dalo namítnout že program je také nakonec nositelem kauzálního sledu operací. Vtip je v tom, že stejný program spuštěný dvakrát nemusí produkovat stejný výsledek.
-
-Změny v chodu programu se dá docílit několika způsoby. Základní změna v běhu programu je lidská intervence, která je z pohledu programu (respektive tvůrce programu) jen velmi těžko předpovídatelná. Změna v chování programu bez takového vnějšího zásahu je pak vždy umělá. (viz náhodnost)
+Druhá proměnná {\em rychlost} by se k docílení podobného efektu měla pohybovat v rozmezí od 0 do 1.
 
 
-Vraťme se ovšem k Proměnlivosti. Proměnlivost je nezbytnou součástí animace. Pohyb je proměna stavu v čase. Měli bychom zde mít vždy na paměti, že program nerozumí tomu co zrovna zobrazuje, program rozumí pouze hodnotám. Rozpohybovat lze tyto hodnoty, a tím posléze například jevy, které se v programu zobrazují a člověku dají nějaký smysl. 
 
-Pro příklad si můžeme ukázat jak proměna jedné hodnoty ovlivňuje obraz. K tomu abychom mohli hodnotu proměňovat musíme ji nejdříve pojmenovat.
-
-\begin{lstlisting}
-int y = 0;
-\end{lstlisting}
-
-Tímto jsme pojmenovali svoji proměnnou. Jednou z možných variant zápisu je okamžité přiřazení hodnoty, tedy y je nyní nula. Pro animaci hodnoty použijeme přírůstek, tedy při kresbě jednotlivého okénka přičteme k hodnotě 1. Abychom viděli nějaký výsledek, můžeme opět kreslit objekt, který bude využívat proměňující se hodnotu v čase.
-
-\begin{lstlisting}
-void setup(){
-	size(640,480);
-}
-
-void draw(){
-	background(255);
-	
-	// prirustek o jedna
-	// lze zapsat i zkracene y++;
-	y += 1;
-	
-	// kresba
-	line( 0 , y , width , y );
-
-}
-\end{lstlisting}
-
-Po spuštění tohoto programu uvidíte animaci trvající 480 okének. Animace bude pokračovat i nadále, hodnota y se bude stále proměňovat. Kresba bude teoreticky probíhat mimo plátno. K tomu abychom kresbu udrželi v mezích plátna, můžeme použít jednoduchou podmínku, která bude vracet hodnotu y zpět na nulu.
-
-
-\begin{lstlisting}
-if(y > height){
-	y = 0;
-}
-\end{lstlisting}
-
-Celá tato procedura jen ilustruje logiku programu. Hodnota y je zde přímo zobrazena, ale stejně tak se dá použít kdekoli jinde, tedy ne nezbytně na kresbu. Pro lepší představu jiného použití uvedu následující příklad.
-
-Pod hodnotou si lze například představit pevně stanovenou hodnotu, dejme tomu výšku domu. Zadání výšky nemusí nepostaví dům ale stanoví hodnotu se kterou můžeme dál počítat. Známe-li výšku plánované budovy, můžeme například přidávat patra dokud se této výšky nedosáhne. Tento postup již lze považovat za logickou konstrukci a jedním ze základních postupů jak takové logiky v programu docílit je podmínka.
 
 
 
