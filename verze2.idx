@@ -1,4 +1,4 @@
-\indexentry {obsah}{4}
+\indexentry {obsah}{3}
 \indexentry {Úvodem}{9}
 \indexentry {Forma knihy}{11}
 \indexentry {Uspořádání informací}{11}
@@ -124,6 +124,7 @@
 \indexentry {void}{83}
 \indexentry {Funkce}{83}
 \indexentry {void}{83}
+\indexentry {Třída a objekt}{86}
 \indexentry {class}{88}
 \indexentry {Propiska}{88}
 \indexentry {class}{89}
@@ -134,31 +135,40 @@
 \indexentry {Náhoda}{89}
 \indexentry {random()}{90}
 \indexentry {Ukládání informací}{91}
-\indexentry {Ukládání obrazových dat}{91}
+\indexentry {CSV}{91}
+\indexentry {Ukládání obrazových dat}{92}
 \indexentry {save()}{92}
-\indexentry {save()}{92}
+\indexentry {save()}{93}
 \indexentry {saveFrame()}{93}
 \indexentry {frameCount}{93}
 \indexentry {nf()}{93}
 \indexentry {saveFrame()}{93}
-\indexentry {saveFrame()}{93}
-\indexentry {save()}{93}
+\indexentry {saveFrame()}{94}
+\indexentry {save()}{94}
 \indexentry {Ukládání holých dat}{94}
-\indexentry {Tisk do pdf, ukládání vektorů}{94}
-\indexentry {Načítání informací}{94}
-\indexentry {Pokročilejší operace se String}{94}
-\indexentry {Parsing, získávání hodnot z externích dat}{94}
-\indexentry {Knihovny}{97}
-\indexentry {Vestavěné knihovny}{97}
-\indexentry {vestavěné knihovny}{97}
-\indexentry {Nástroje}{99}
-\indexentry {Komplexní program}{100}
-\indexentry {Experimenty}{101}
-\indexentry {true}{105}
-\indexentry {false}{105}
-\indexentry {fill()}{105}
-\indexentry {stroke()}{105}
-\indexentry {sketch}{105}
-\indexentry {GNU / GPL}{106}
-\indexentry {save()}{108}
-\indexentry {frameCount()}{108}
+\indexentry {CSV}{94}
+\indexentry {float}{95}
+\indexentry {draw()}{95}
+\indexentry {frameCount()}{95}
+\indexentry {exit()}{95}
+\indexentry {saveStrings()}{96}
+\indexentry {Tisk do pdf, ukládání vektorů}{96}
+\indexentry {Načítání informací}{96}
+\indexentry {Načítání obrázků}{96}
+\indexentry {Načítání textových souborů}{96}
+\indexentry {Pokročilejší operace se String}{96}
+\indexentry {Parsing, získávání hodnot z externích dat}{96}
+\indexentry {Knihovny}{99}
+\indexentry {Vestavěné knihovny}{99}
+\indexentry {vestavěné knihovny}{99}
+\indexentry {Nástroje}{101}
+\indexentry {Komplexní program}{102}
+\indexentry {Experimenty}{103}
+\indexentry {true}{107}
+\indexentry {false}{107}
+\indexentry {fill()}{107}
+\indexentry {stroke()}{107}
+\indexentry {sketch}{107}
+\indexentry {GNU / GPL}{109}
+\indexentry {save()}{111}
+\indexentry {frameCount()}{111}

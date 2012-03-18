@@ -169,10 +169,14 @@
 \newpage
 .
 \thispagestyle{empty}
-\newpage
+
 
 \vfill
 
+Původní elektronický dokument
+\begin{verbatim}
+https://github.com/K0F/processing_kniha_pracovni
+\end{verbatim}
 Nakladatelství AMU.
 
 ISBN 978-80-7331-224-4
@@ -1985,9 +1989,9 @@ Budete-li kód chtít sdílet, je dobré jej učinit co nejvíce čitelný pro d
 Co se délky funkcí týče dobré pravidlo zní: Přesáhnete-li počet vnitřích proměnných tucet, měli by jste už přemýšlet o rozdělení do dvou funkcí.
 
 
-\pooddil{Třída a objekt}
+\pododdil{Třída a objekt}
 
-Funkce jsou jeden způsob jakým si můžeme strukturovat program. Veškerý kód, který jsme doposud psali je vlastněn takzvanou třídou. Třída vlastní veškeré funkce i proměnné, které v Processingu běžně píšeme. Můžeme to nazvat mateřským objektem. V rámci tohoto objektu můžeme definovat své vlastní objekty, které můžou mít různé vlastnosti.
+Funkce jsou jeden způsob jakým můžeme strukturovat program. Veškerý kód, který jsme doposud psali je vlastněn takzvanou třídou. Třída vlastní veškeré funkce i proměnné, které v Processingu běžně píšeme. Můžeme to nazvat mateřským objektem. V rámci tohoto objektu můžeme definovat své vlastní objekty, které můžou mít různé vlastnosti.
 
 V úvodu jsme se dozvěděli že Processing je objektově orientovaný jazyk. Nad tím je na čase se pozastavit. Co to vlastně znamená objekt. Ilustrace koncepce programování je prostá, stačí se rozhlédnout kolem sebe a zaměřit se na jeden konkrétní objekt (hrnek, propiska, kniha). Tento objekt má některé vlastnosti. Tak například propiska má svoji hmotnost, rozměry ve tří osách, barvu náplně, obsah náplně a barvu jako takovou, pravděpodobně také nějaké logo jako potisk. Tužka dále může být \uv{rozcvaknutá} nebo \uv{zacvaknutá}, mohli bychom takto pokračovat dále. Všechny tyto vlastnosti si můžeme představit jako naše proměnné. Třída pak bude to, co mají propisky společného, jednotlivými paremetry budeme odlišovat jednu propisku od od druhé.
 
@@ -2116,8 +2120,15 @@ println(nahoda);
 Jak je zřejmě pochopitelné náhoda se nyní bude pohybovat v rozmezí čísla od deseti do dvaceti.
 
 
-
 \chapter{Práce s daty}
+
+
+Jak jsme si v úvodu knihy \odkaz{Sketch} zmínili, adresář pro externí soubory se nazývá DATA. Tento adresář je umístěný přímo v adresáři projektu. Veškeré soubory, které do tohoto adresáře umístíme budou programu dostupné.
+
+V případě ukládání bude Processing zapisovat relativně do adresáře projektu.
+
+Ukažme si nyní jakým způsobem můžeme uložit a načíst vnější data do našeho programu.
+
 
 
 
@@ -2126,7 +2137,7 @@ Jak je zřejmě pochopitelné náhoda se nyní bude pohybovat v rozmezí čísla
 
 Kresba do okna programu je jen jeden způsob výstupu programu. V určitém momentu budeme potřebovat zaznamenat obraz nebo jiná data pro další práci nebo archivaci. Processing umí ukládat data do razmanitých formátů, při práci s obrazem se jedná o základní druhy bitmap a vektorového výstupu ve standartizovaném formátu pdf.
 
-Při ukládání holých dat můžeme například využít prosté textové soubory, které se hodí při dalším zpracování pomocí Processingu. Velmi častý formát takového zápisu je takzavný CSV, což je v podstatě textový soubor obsahující data oddělená čárkou. Jeho velikost závisí na objemu dat. V případě hieraticky strukturovaných dat lze k uložení hearitcky uposřádaný formát XML.
+Při ukládání holých dat můžeme například využít prosté textové soubory, které se hodí při dalším zpracování pomocí Processingu. Velmi častý formát takového zápisu je takzavný \slovnik{CSV}, což je v podstatě textový soubor obsahující data oddělená čárkou. Jeho velikost závisí na objemu dat. V případě hieraticky strukturovaných dat lze k uložení hearitcky uposřádaný formát XML.
 
 
 \pododdil{Ukládání obrazových dat}
@@ -2176,7 +2187,7 @@ void mousePressed(){
 \end{lstlisting}
 
 
-Příkaz \slovnik{save()} provede uložení obrazových dat okamžitě. Kdybychom vložili příkaz do kreslící smyčky Processing by se pokusil ukládat obrázek šedesátkrát za vteřinu, což by se mu z důvodů relativní náročnosti operace zřejmně nepodařilo a byli bychom svědky zpomalení rychlosti ve vykreslování.
+Příkaz \vyraz{save()} provede uložení obrazových dat okamžitě. Kdybychom vložili příkaz do kreslící smyčky Processing by se pokusil ukládat obrázek šedesátkrát za vteřinu, což by se mu z důvodů relativní náročnosti operace zřejmně nepodařilo a byli bychom svědky zpomalení rychlosti ve vykreslování.
 
 V příkladě tedy budeme ukládat obrázek jen po kliknutí myší.
 
@@ -2184,7 +2195,7 @@ V příkladě tedy budeme ukládat obrázek jen po kliknutí myší.
 
 
 
-Nyní si představme, že z nějakého důvodu potřebujeme zachytit plnou sekvenci po sobě jdoucích obrázků. Problém příkazu save() je ten, že v případě natrvdo zadané cesty bude stále přepisovat obrazovými daty tentýž soubor. Abychom uložili vícero obrázků potřebujeme proměňovat cestu kam Processing obrázky ukládá. Můžeme k tomu využít počítadlo nebo zvláštní příkaz processingu \slovnik{saveFrame()};
+Nyní si představme, že z nějakého důvodu potřebujeme zachytit plnou sekvenci po sobě jdoucích obrázků. Problém příkazu save() je ten, že v případě natrvdo zadané cesty bude stále přepisovat obrazovými daty tentýž soubor. Abychom uložili vícero obrázků potřebujeme proměňovat cestu kam Processing obrázky ukládá. Můžeme k tomu využít počítadlo nebo zvláštní příkaz processingu \vyraz{saveFrame()};
 
 \begin{lstlisting} 
 void setup(){
@@ -2199,7 +2210,7 @@ void draw(){
 
 \end{lstlisting}
 
-Využití počítadle je možné, ale trochu zdlouhavé. Všimněte si zde pouze způsobu jakým číslujeme názvy souborů. Hodnota \slovnik{frameCount} se mění podle počtu vykreslených okének. Příkaz \slovnik{nf()} je zde z kosmetických důvodů, přidává pouze daný počet nul před naše počítadlo. Celý tento zápis se se dá ovšem elegantně zkrátit příkazem \slovnik{saveFrame()}.
+Využití počítadle je možné, ale trochu zdlouhavé. Všimněte si zde pouze způsobu jakým číslujeme názvy souborů. Hodnota \vyraz{frameCount} se mění podle počtu vykreslených okének. Příkaz \vyraz{nf()} je zde z kosmetických důvodů, přidává pouze daný počet nul před naše počítadlo. Celý tento zápis se se dá ovšem elegantně zkrátit příkazem \vyraz{saveFrame()}.
 
 
 \begin{lstlisting} 
@@ -2215,27 +2226,83 @@ void draw(){
 
 \end{lstlisting}
 
-Příkaz \slovnik{saveFrame()} vyžaduje stejně jako příkaz \slovnik{save()} cestu k ukládanému souboru. Příkaz má ovšem navíc tu vlastnost, vložíme-li do názvu souboru znaky křížku, Processing je rozpozná jako počet nul v počítadle okének.
+Příkaz \vyraz{saveFrame()} vyžaduje stejně jako příkaz \vyraz{save()} cestu k ukládanému souboru. Příkaz má ovšem navíc tu vlastnost, vložíme-li do názvu souboru znaky křížku, Processing je rozpozná jako počet nul v počítadle okének.
 
 
 
 \pododdil{Ukládání holých dat}
 
+Ukládání informací do obrazu je jen pouze jedna z možností. Někdy se nám může hodit uložit informace v jiném formátu. Řekněme že potřebujeme uložit pozice myši pro pozdejší animaci. Jistě bychom mohli uložit tuto informaci do série obrázků, z hlediska programování by to ovšem nebylo velmi prozřetelné.
+
+Konkrétní údaje o pohybu kurzoru známe. Můžeme je tedy zaznamenat například do nám již známého pole souřadnic. Pro tento účel si vytvoříme program, který bude umět zaznamenávat údaje o pohybu kurzoru do textového souboru. Předtím než se pustíme do práce je dobré si uvědomit že text neobsahuje číselné informace. Vzpomínáte na kapitolu o základních datatypech? \odkaz{Základní datatypy} S textem, tedy ani potažmo textovým souborem, nelze manipulovat jako s čísly.
+
+Při ukládání dat do textové podoby tedy musíme mít již na mysli jak je posléze budeme číst a proto zvolíme vhodný formát pro ukládání. Vhodným formátem pro uchovávání informací v textové podobě je takzvaný \slovnik{CSV}, comma separated value. Jak z anglického názvu vyplývá jedná se o hodnoty, které jsou oddělené čárkou. Pro naše potřeby budou stačit hodnoty dvě pro osu X a osu Y našeho kurzoru.
+
+Program si můžeme navrhnout následovně:
+
+\begin{lstlisting}
+float osaX[];
+float osaY[];
+int pocetHodnot = 300;
+
+void setup(){
+
+	size(640,480);
+	osaX = new float[pocetHodnot];
+	osaY = new float[pocetHodnot];
+}
+
+
+void draw(){
+
+	osaX[frameCount] = mouseX;
+	osaY[frameCount] = mouseY;
+
+	if(frameCount >= pocetHodnot-1){
+		ulozDoSouboru();
+		exit();
+	}
+}
+
+void ulozDoSouboru(){
+
+	String[] holyText = new String[pocetHodnot];
+	for(int i = 0 ; i < pocetHodnot; i++){
+		holyText[i] = osaX[i]+", "+osaY[i];
+	}
+	
+	saveStrings("soubor.csv",holyText);
+}
+\end{lstlisting}
+
+Program je hotový. Rozeberme si doposud nevídané věci. Pole by nám měla být již srozumitelná, v tomto případě pouze používáme datatyp \vyraz{float}. Vytvořili jsme si dvě rozdílná pole pro dvě osy.
+
+ Ve funkci \vyraz{draw()} nyní dochází k samotnému zápisu, a to pomocí již známé proměnné \vyraz{frameCount()}. Pokaždé je hodnota zapsána na novou pozici. Následuje podmínka, která dříve novým příkazem \vyraz{exit()} ukončuje program. Podmínka je spuštěna pouze tehdy, máme-li již dostatečný počet zaznamenaných hodnot.
+ 
+Podmínka navíc, předtím než ukončí celý program, spustí námi definovanou funkci pro uložení nashromážděných dat.
+
+Tato funkce za pomoci smyčky převede číselné informace do textové podoby. Proměnné {\em osaX} a {\em osaY} funkce spojí dohromady pomocí znaménka plus spolu s čárkou a mezerou. Dále již následuje funkce Processingu \vyraz{saveStrings()}, která zajištuje zápis pole textu do souboru. Koncovku jsem zde zvolil {\em *.csv}, ale je možné použít jakoukoli jinou, např. {\em *.txt}.
+
+ Podívejme se nyní do adresáře projektu. (pomocí klávesy \klavesy{CTRL + k}). Soubor s názvem {\em soubor.csv} by měl být plný zaznamenaných hodnot.
+ 
+ 
+ \begin{center}
+\includegraphics[width = 1\textwidth]{imgs/csv.png}
+\end{center}
 
 \pododdil{Tisk do pdf, ukládání vektorů}
 
 
 \oddil{Načítání informací}
 
+\pododdil{Načítání obrázků}
+\pododdil{Načítání textových souborů}
 
 
-\pododdil{Pokročilejší operace se String}
+\oddil{Pokročilejší operace se String}
 \pododdil{Parsing, získávání hodnot z externích dat}
 
-
-
 \chapter{Vizualizace hodnot}
-
 
 \chapter{Rozšíření Processingu}
 \oddil{Knihovny}
