@@ -280,28 +280,32 @@ Kontrolní otázky v textu se nachází v bublině modré barvy. \otazka{Jakou b
 
 \chapter{Postaveno Processingem}
 
+\oddil{Vizualizace}
 
-[tři příklady zde]
+\textbf{Robert Hogin}, také známý pod pseudonymem {\em flight 404}, zůstává jednou z oslavovaných ikon processingové komunity. Jeho práce s vizualizacemi je vždy velmi dynamická a technicky obdivuhodná.
 
-Instalace. Web applet. Video. Fyzický výstup?
+Hogin pracuje s jazyky Processing a Cinder. V obou případech skrze tato prostředí ovšem programuje přímo aplikaci OpenGL, která zprostředkovává pokyny samotnému grafickému jádru.
 
-%\begin{comment}
 
-\oddil{Magnetic Ink}
+\includegraphics[width = 1\textwidth]{imgs/writtenimages.jpg}
 
-\includegraphics[width = 1\textwidth]{imgs/magneticInk.jpg}
+Ilustrace pochází z projektu z Hodginova práce, která byla vybrána jako jedna ze 42 prací do prvního vydání knihy {\em Written Images}. Kniha je kurátorskou prácí a samostatného výtvarného projektu dánského tvůrce \textbf{Marcina Ignace} vydané v roce 2011. Samotná kniha je konceptuálním počinem, automatizací vychází každý výtisk s posunem o jedno okénko a tím ilustruje ducha generativní tvorby. Kniha je zpracována také softwarem Processing.
 
-\begin{itemize}
-\item
-Autor: Robert Hogin
-\item
-Rok: 2008
-\item
-Médium: generovaná grafika
-\item
-Anotace:
-\begin{itemize}
 
+
+\includegraphics[width = 1\textwidth]{imgs/writtenimages.png}
+
+
+
+
+
+
+
+
+
+ 
+
+\newpage
 \oddil{Idea Space - A Cyclic Universe}
 
 
@@ -636,19 +640,9 @@ Pokaždé když si programátor takový stav přivodí, vše v kódu\footnote{po
 \oddil{Základní pravidla a zvyklosti}
 
 V programování obecně platí jisté zákonitosti. Není tomu jinak i u pravidel, které nejsou důležité pro čtení kódu strojem ale pro člověka. Speciální zákonitosti formátování kódu mají ryze praktickou funkci. Jedná se o standart dodržovaný programátory, tak aby mezi sebou byli schopni sdílet své úsilí.
-
-
-\oddil{Syntaxe}
-
-Nyní jsme připraveni seznámit se s syntaxí programovacího jazyka. Syntaxe je sada pravidel, které budeme muset dodržovat, při práci s programovacím jazykem. 
-
-
   
-
-\newpage
-\oddil{Stavba programu}
-
-\pododdil{Logika programování}
+  
+\oddil{Logika programování}
 Pro začátek je dobré si představit program jako sadu instrukcí. Každá instrukce má svůj význam a své místo. Instrukce se píší v programovacím jazyku a jejich interpretace je vždy pro stroj jednoznačná. Stroje podle svého návrhu nedělají nic kromě toho co mají takovým způsobem instruováno.
 
 Veškeré programy které používáte, dokonce i programy, které nevíte že používáte byly někdy naprogramovány lidmi pomocí programovacích jazyků. Programovací jazyk je pouze, plánovací forma zápisu programu. K tomu, aby byl program spuštěn, musí být v případě jazyku Processing převeden do strojového kódu. Strojový kód se liší od toho zdrojového, našeho čitelného plánovacího jazyka, tím že není čitelný pro člověka, je čitelný pro stroj.
@@ -656,6 +650,10 @@ Veškeré programy které používáte, dokonce i programy, které nevíte že p
 Počítač je pouhý stroj. Umí dnes opravdu rychle vykonávat sled banálních operací. Programovací jazyk slouží k vytvoření smyslu ve sledu banálních operací. Procesu převodu ze zdrojového kódu do strojového se nazývá kompilace.
 
 O kompilaci toho nemusíme naštěstí vědět mnoho, vše bylo již tvůrci Processingu a jazyku Java shrnuto pod tlačítko spustit.
+
+\newpage
+\chapter{Stavba programu a syntax}
+
 
 
 \pododdil{Kometář}
@@ -1350,7 +1348,7 @@ Nyní zpět k hodnotám. Máme-li již jakékoli hodnoty v paměti programu, mů
 
 Processing je, co se týče grafického výstupu, navržen pro přímou experimentální interakci vznikajícího programu s uživatelem. To znamená, že pokaždé kdy chcete vidět výsledek kódu, stačí pouze stisknout tlačítko {\em RUN}. Zpětná vazba spolu s vaší interpretací a úmyslem má potom veliký vliv na následné úpravy v kódu. Tímto způsobem můžete řekněme "vysochat" výslednou podobu programu.
 
-\pododdil{Kresba}
+\oddil{Kresba}
 
 Jak zobrazit hodnoty, které uchovává program v paměti? Jakákoli hodnota lze použít například jako jeden z argumentů v kreslících funkcích.
 
@@ -2020,7 +2018,12 @@ Jak je zřejmě pochopitelné náhoda se nyní bude pohybovat v rozmezí čísla
 
 
 
-\oddil{Ukládání informací, paměť programu}
+\chapter{Práce s daty}
+
+
+
+
+\oddil{Ukládání informací}
 
 Kresba do okna programu je jen jeden způsob výstupu programu. V určitém momentu budeme potřebovat zaznamenat obraz nebo jiná data pro další práci nebo archivaci. Processing umí ukládat data do razmanitých formátů, při práci s obrazem se jedná o základní druhy bitmap a vektorového výstupu ve standartizovaném formátu pdf.
 
@@ -2028,8 +2031,6 @@ Při ukládání holých dat můžeme například využít prosté textové soub
 
 
 \pododdil{Ukládání obrazových dat}
-
-
 
 Doposud jsme pracovali s obrazem, který je dočasný. Po zavření okna Processingu obraz nenávratně zmizí. K tomu abychom z Processingu dostali obrazový výstup, potřebujeme kresbu uložit do souboru.
 
@@ -2125,18 +2126,16 @@ Příkaz \slovnik{saveFrame()} vyžaduje stejně jako příkaz \slovnik{save()} 
 \pododdil{Tisk do pdf, ukládání vektorů}
 
 
-
-\chapter{Práce s daty}
-
-
-\oddil{Parsing, získávání hodnot z externích dat}
-
-\oddil{Pokročilejší logické operace}
-
-\oddil{Pravděpodobnost a trvání}
+\oddil{Načítání informací}
 
 
-\oddil{Vizualizace hodnot}
+
+\pododdil{Pokročilejší operace se String}
+\pododdil{Parsing, získávání hodnot z externích dat}
+
+
+
+\chapter{Vizualizace hodnot}
 
 
 \chapter{Rozšíření Processingu}

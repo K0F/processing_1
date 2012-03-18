@@ -5,26 +5,26 @@
 \indexentry {Pravidla formátování v knize}{11}
 \indexentry {slovník}{11}
 \indexentry {boolean}{11}
-\indexentry {Magnetic Ink}{14}
-\indexentry {Idea Space - A Cyclic Universe}{15}
-\indexentry {Konktrétní zadání}{17}
-\indexentry {Síť}{19}
-\indexentry {Examples - příklady přímo v Processingu}{20}
-\indexentry {Knihy a průvodci}{20}
-\indexentry {Experiment}{21}
-\indexentry {Počátky programovacího jazyka}{23}
-\indexentry {Jednoduchý programovací jazyk}{25}
-\indexentry {stroj}{26}
-\indexentry {Dokonalost jazyka}{26}
-\indexentry {Volba vhodného jazyka}{28}
-\indexentry {Proč zrovna Processing?}{30}
-\indexentry {Tvorba softwaru}{31}
+\indexentry {Vizualizace}{13}
+\indexentry {Idea Space - A Cyclic Universe}{16}
+\indexentry {Konktrétní zadání}{19}
+\indexentry {Síť}{21}
+\indexentry {Examples - příklady přímo v Processingu}{22}
+\indexentry {Knihy a průvodci}{22}
+\indexentry {Experiment}{23}
+\indexentry {Počátky programovacího jazyka}{25}
+\indexentry {Jednoduchý programovací jazyk}{27}
+\indexentry {stroj}{27}
+\indexentry {Dokonalost jazyka}{28}
+\indexentry {Volba vhodného jazyka}{29}
+\indexentry {Proč zrovna Processing?}{31}
+\indexentry {Tvorba softwaru}{32}
 \indexentry {Otevřenost softwaru}{33}
-\indexentry {otevřený software}{33}
-\indexentry {MIT licence}{33}
-\indexentry {Built with Processing}{33}
+\indexentry {otevřený software}{34}
+\indexentry {MIT licence}{34}
+\indexentry {Built with Processing}{34}
 \indexentry {Syntetický obraz}{34}
-\indexentry {Empirický přístup k programování}{34}
+\indexentry {Empirický přístup k programování}{35}
 \indexentry {GNU / Linux}{37}
 \indexentry {GNU / GPL}{37}
 \indexentry {Základní prostředí}{38}
@@ -37,115 +37,112 @@
 \indexentry {syntax highlighting}{41}
 \indexentry {indenting}{41}
 \indexentry {Klávesové zkratky}{42}
-\indexentry {Soustředěná činnost}{45}
-\indexentry {flow}{46}
-\indexentry {Základní pravidla a zvyklosti}{46}
-\indexentry {Syntaxe}{46}
-\indexentry {Stavba programu}{47}
-\indexentry {Logika programování}{47}
+\indexentry {Soustředěná činnost}{43}
+\indexentry {flow}{44}
+\indexentry {Základní pravidla a zvyklosti}{44}
+\indexentry {Logika programování}{44}
 \indexentry {Kometář}{47}
 \indexentry {Základní datatypy}{48}
-\indexentry {Seznam základních datatypů}{49}
-\indexentry {Barva}{50}
-\indexentry {color()}{50}
+\indexentry {Seznam základních datatypů}{48}
+\indexentry {Barva}{49}
+\indexentry {color()}{49}
 \indexentry {colorMode()}{50}
-\indexentry {Tisk do konzole}{51}
+\indexentry {Tisk do konzole}{50}
 \indexentry {print()}{51}
 \indexentry {Základní operace s datatypy}{52}
-\indexentry {Základní struktura programu}{58}
-\indexentry {setup()}{58}
-\indexentry {draw()}{58}
-\indexentry {setup()}{58}
-\indexentry {draw()}{58}
-\indexentry {draw()}{58}
-\indexentry {void}{58}
-\indexentry {Podmínka}{59}
-\indexentry {if}{60}
-\indexentry {boolean}{63}
-\indexentry {false}{63}
-\indexentry {true}{63}
-\indexentry {boolean}{63}
-\indexentry {if}{64}
-\indexentry {else}{64}
-\indexentry {else}{64}
-\indexentry { ? : }{65}
-\indexentry {Zobrazení}{65}
-\indexentry {Orientace v prostoru}{65}
-\indexentry {Hodnota a její zobrazení}{68}
-\indexentry {Kresba}{70}
-\indexentry {rect()}{70}
-\indexentry {rect()}{70}
-\indexentry {point()}{71}
-\indexentry {line()}{71}
-\indexentry {ellipse()}{71}
-\indexentry {triangle()}{71}
-\indexentry {quad()}{71}
-\indexentry {Výplň a obrys}{71}
-\indexentry {point()}{71}
-\indexentry {line()}{71}
-\indexentry {fill()}{71}
-\indexentry {Pohyb}{72}
-\indexentry {Proměnlivost}{72}
-\indexentry {Animace}{74}
-\indexentry {draw()}{74}
-\indexentry {draw()}{74}
-\indexentry {draw()}{74}
-\indexentry {background()}{75}
-\indexentry {rect()}{75}
-\indexentry {frameCount}{75}
-\indexentry {frameCount}{75}
-\indexentry {draw()}{75}
-\indexentry {frameRate()}{76}
-\indexentry {setup()}{76}
-\indexentry {millis()}{76}
-\indexentry {frameCount}{76}
-\indexentry {Interakce}{77}
-\indexentry {interakce}{77}
-\indexentry {interakce}{77}
-\indexentry {mouseX}{78}
-\indexentry {mouseY}{78}
-\indexentry {mousePressed()}{78}
-\indexentry {Dynamika pohybu}{79}
-\indexentry {Pole}{80}
-\indexentry {new}{82}
-\indexentry {Smyčka}{82}
-\indexentry {for}{83}
-\indexentry {[}{84}
-\indexentry {[}{84}
-\indexentry {Uspořádání, stuktura programu}{85}
-\indexentry {void}{85}
-\indexentry {Funkce}{85}
-\indexentry {void}{86}
-\indexentry {Objekt}{89}
-\indexentry {Náhoda}{90}
-\indexentry {random()}{90}
-\indexentry {Ukládání informací, paměť programu}{91}
-\indexentry {Ukládání obrazových dat}{91}
-\indexentry {save()}{92}
-\indexentry {save()}{92}
-\indexentry {saveFrame()}{92}
-\indexentry {frameCount}{93}
-\indexentry {nf()}{93}
-\indexentry {saveFrame()}{93}
-\indexentry {saveFrame()}{93}
-\indexentry {save()}{93}
-\indexentry {Ukládání holých dat}{93}
-\indexentry {Tisk do pdf, ukládání vektorů}{93}
-\indexentry {Parsing, získávání hodnot z externích dat}{95}
-\indexentry {Pokročilejší logické operace}{95}
-\indexentry {Pravděpodobnost a trvání}{95}
-\indexentry {Vizualizace hodnot}{95}
-\indexentry {Knihovny}{97}
-\indexentry {Vestavěné knihovny}{97}
-\indexentry {vestavěné knihovny}{97}
-\indexentry {Nástroje}{99}
-\indexentry {Komplexní program}{100}
-\indexentry {Experimenty}{101}
-\indexentry {true}{105}
-\indexentry {false}{105}
-\indexentry {fill()}{105}
-\indexentry {stroke()}{105}
-\indexentry {sketch}{105}
-\indexentry {GNU / GPL}{106}
-\indexentry {save()}{108}
-\indexentry {frameCount()}{108}
+\indexentry {Základní struktura programu}{57}
+\indexentry {setup()}{57}
+\indexentry {draw()}{57}
+\indexentry {setup()}{57}
+\indexentry {draw()}{57}
+\indexentry {draw()}{57}
+\indexentry {void}{57}
+\indexentry {Podmínka}{58}
+\indexentry {if}{59}
+\indexentry {boolean}{62}
+\indexentry {false}{62}
+\indexentry {true}{62}
+\indexentry {boolean}{62}
+\indexentry {if}{63}
+\indexentry {else}{63}
+\indexentry {else}{63}
+\indexentry { ? : }{63}
+\indexentry {Zobrazení}{64}
+\indexentry {Orientace v prostoru}{64}
+\indexentry {Hodnota a její zobrazení}{66}
+\indexentry {Kresba}{67}
+\indexentry {rect()}{67}
+\indexentry {rect()}{68}
+\indexentry {point()}{68}
+\indexentry {line()}{68}
+\indexentry {ellipse()}{68}
+\indexentry {triangle()}{68}
+\indexentry {quad()}{68}
+\indexentry {Výplň a obrys}{69}
+\indexentry {point()}{69}
+\indexentry {line()}{69}
+\indexentry {fill()}{69}
+\indexentry {Pohyb}{69}
+\indexentry {Proměnlivost}{69}
+\indexentry {Animace}{71}
+\indexentry {draw()}{72}
+\indexentry {draw()}{72}
+\indexentry {draw()}{72}
+\indexentry {background()}{72}
+\indexentry {rect()}{72}
+\indexentry {frameCount}{73}
+\indexentry {frameCount}{73}
+\indexentry {draw()}{73}
+\indexentry {frameRate()}{73}
+\indexentry {setup()}{73}
+\indexentry {frameCount}{73}
+\indexentry {millis()}{74}
+\indexentry {Interakce}{74}
+\indexentry {interakce}{74}
+\indexentry {interakce}{74}
+\indexentry {mouseX}{75}
+\indexentry {mouseY}{75}
+\indexentry {mousePressed()}{75}
+\indexentry {Dynamika pohybu}{77}
+\indexentry {Pole}{78}
+\indexentry {new}{79}
+\indexentry {Smyčka}{80}
+\indexentry {for}{80}
+\indexentry {[}{81}
+\indexentry {[}{81}
+\indexentry {Uspořádání, stuktura programu}{82}
+\indexentry {void}{82}
+\indexentry {Funkce}{82}
+\indexentry {void}{82}
+\indexentry {Objekt}{86}
+\indexentry {Náhoda}{86}
+\indexentry {random()}{87}
+\indexentry {Ukládání informací}{89}
+\indexentry {Ukládání obrazových dat}{89}
+\indexentry {save()}{90}
+\indexentry {save()}{90}
+\indexentry {saveFrame()}{91}
+\indexentry {frameCount}{91}
+\indexentry {nf()}{91}
+\indexentry {saveFrame()}{91}
+\indexentry {saveFrame()}{91}
+\indexentry {save()}{91}
+\indexentry {Ukládání holých dat}{92}
+\indexentry {Tisk do pdf, ukládání vektorů}{92}
+\indexentry {Načítání informací}{92}
+\indexentry {Pokročilejší operace se String}{92}
+\indexentry {Parsing, získávání hodnot z externích dat}{92}
+\indexentry {Knihovny}{95}
+\indexentry {Vestavěné knihovny}{95}
+\indexentry {vestavěné knihovny}{95}
+\indexentry {Nástroje}{97}
+\indexentry {Komplexní program}{98}
+\indexentry {Experimenty}{99}
+\indexentry {true}{103}
+\indexentry {false}{103}
+\indexentry {fill()}{103}
+\indexentry {stroke()}{103}
+\indexentry {sketch}{103}
+\indexentry {GNU / GPL}{104}
+\indexentry {save()}{106}
+\indexentry {frameCount()}{106}
