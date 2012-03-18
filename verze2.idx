@@ -57,92 +57,108 @@
 \indexentry {draw()}{57}
 \indexentry {draw()}{57}
 \indexentry {void}{57}
-\indexentry {Podmínka}{58}
-\indexentry {if}{59}
-\indexentry {boolean}{62}
-\indexentry {false}{62}
-\indexentry {true}{62}
-\indexentry {boolean}{62}
-\indexentry {if}{63}
-\indexentry {else}{63}
-\indexentry {else}{63}
-\indexentry { ? : }{63}
-\indexentry {Zobrazení}{64}
-\indexentry {Orientace v prostoru}{64}
-\indexentry {Hodnota a její zobrazení}{66}
-\indexentry {Kresba}{67}
+\indexentry {Zobrazení}{58}
+\indexentry {Orientace v prostoru}{58}
+\indexentry {Hodnota a její zobrazení}{61}
+\indexentry {Kresba}{62}
+\indexentry {rect()}{62}
+\indexentry {rect()}{63}
+\indexentry {point()}{63}
+\indexentry {line()}{63}
+\indexentry {ellipse()}{63}
+\indexentry {triangle()}{63}
+\indexentry {quad()}{63}
+\indexentry {Výplň a obrys}{63}
+\indexentry {point()}{63}
+\indexentry {line()}{63}
+\indexentry {fill()}{63}
+\indexentry {Pohyb}{64}
+\indexentry {Proměnlivost}{64}
+\indexentry {Animace}{66}
+\indexentry {draw()}{66}
+\indexentry {draw()}{66}
+\indexentry {draw()}{67}
+\indexentry {background()}{67}
 \indexentry {rect()}{67}
-\indexentry {rect()}{68}
-\indexentry {point()}{68}
-\indexentry {line()}{68}
-\indexentry {ellipse()}{68}
-\indexentry {triangle()}{68}
-\indexentry {quad()}{68}
-\indexentry {Výplň a obrys}{69}
-\indexentry {point()}{69}
-\indexentry {line()}{69}
-\indexentry {fill()}{69}
-\indexentry {Pohyb}{69}
-\indexentry {Proměnlivost}{69}
-\indexentry {Animace}{71}
-\indexentry {draw()}{72}
-\indexentry {draw()}{72}
-\indexentry {draw()}{72}
-\indexentry {background()}{72}
-\indexentry {rect()}{72}
-\indexentry {frameCount}{73}
-\indexentry {frameCount}{73}
-\indexentry {draw()}{73}
-\indexentry {frameRate()}{73}
-\indexentry {setup()}{73}
-\indexentry {frameCount}{73}
-\indexentry {millis()}{74}
-\indexentry {Interakce}{74}
-\indexentry {interakce}{74}
-\indexentry {interakce}{74}
-\indexentry {mouseX}{75}
-\indexentry {mouseY}{75}
-\indexentry {mousePressed()}{75}
-\indexentry {Dynamika pohybu}{77}
+\indexentry {frameCount}{67}
+\indexentry {frameCount}{67}
+\indexentry {draw()}{68}
+\indexentry {frameRate()}{68}
+\indexentry {setup()}{68}
+\indexentry {millis()}{68}
+\indexentry {frameCount}{68}
+\indexentry {Dynamika pohybu}{69}
+\indexentry {Podmínka}{70}
+\indexentry {if}{70}
+\indexentry {boolean}{70}
+\indexentry {true}{70}
+\indexentry {false}{70}
+\indexentry {boolean}{70}
+\indexentry {else}{70}
+\indexentry {if}{70}
+\indexentry {else}{70}
+\indexentry {if}{71}
+\indexentry {true}{71}
+\indexentry {true}{71}
+\indexentry {false}{71}
+\indexentry {boolean}{73}
+\indexentry {false}{74}
+\indexentry {true}{74}
+\indexentry {boolean}{74}
+\indexentry {if}{74}
+\indexentry {else}{74}
+\indexentry {else}{74}
+\indexentry { ? : }{75}
+\indexentry {interakce}{75}
+\indexentry {interakce}{75}
+\indexentry {mouseX}{77}
+\indexentry {mouseY}{77}
+\indexentry {mousePressed()}{77}
 \indexentry {Pole}{78}
-\indexentry {new}{79}
+\indexentry {new}{80}
 \indexentry {Smyčka}{80}
 \indexentry {for}{80}
 \indexentry {[}{81}
 \indexentry {[}{81}
-\indexentry {Uspořádání, stuktura programu}{82}
-\indexentry {void}{82}
-\indexentry {Funkce}{82}
-\indexentry {void}{82}
-\indexentry {Objekt}{86}
-\indexentry {Náhoda}{86}
-\indexentry {random()}{87}
-\indexentry {Ukládání informací}{89}
-\indexentry {Ukládání obrazových dat}{89}
-\indexentry {save()}{90}
-\indexentry {save()}{90}
-\indexentry {saveFrame()}{91}
-\indexentry {frameCount}{91}
-\indexentry {nf()}{91}
-\indexentry {saveFrame()}{91}
-\indexentry {saveFrame()}{91}
-\indexentry {save()}{91}
-\indexentry {Ukládání holých dat}{92}
-\indexentry {Tisk do pdf, ukládání vektorů}{92}
-\indexentry {Načítání informací}{92}
-\indexentry {Pokročilejší operace se String}{92}
-\indexentry {Parsing, získávání hodnot z externích dat}{92}
-\indexentry {Knihovny}{95}
-\indexentry {Vestavěné knihovny}{95}
-\indexentry {vestavěné knihovny}{95}
-\indexentry {Nástroje}{97}
-\indexentry {Komplexní program}{98}
-\indexentry {Experimenty}{99}
-\indexentry {true}{103}
-\indexentry {false}{103}
-\indexentry {fill()}{103}
-\indexentry {stroke()}{103}
-\indexentry {sketch}{103}
-\indexentry {GNU / GPL}{104}
-\indexentry {save()}{106}
-\indexentry {frameCount()}{106}
+\indexentry {Uspořádání, stuktura programu}{83}
+\indexentry {void}{83}
+\indexentry {Funkce}{83}
+\indexentry {void}{83}
+\indexentry {class}{88}
+\indexentry {Propiska}{88}
+\indexentry {class}{89}
+\indexentry {new}{89}
+\indexentry {new}{89}
+\indexentry {new}{89}
+\indexentry {tečková syntaxe}{89}
+\indexentry {Náhoda}{89}
+\indexentry {random()}{90}
+\indexentry {Ukládání informací}{91}
+\indexentry {Ukládání obrazových dat}{91}
+\indexentry {save()}{92}
+\indexentry {save()}{92}
+\indexentry {saveFrame()}{93}
+\indexentry {frameCount}{93}
+\indexentry {nf()}{93}
+\indexentry {saveFrame()}{93}
+\indexentry {saveFrame()}{93}
+\indexentry {save()}{93}
+\indexentry {Ukládání holých dat}{94}
+\indexentry {Tisk do pdf, ukládání vektorů}{94}
+\indexentry {Načítání informací}{94}
+\indexentry {Pokročilejší operace se String}{94}
+\indexentry {Parsing, získávání hodnot z externích dat}{94}
+\indexentry {Knihovny}{97}
+\indexentry {Vestavěné knihovny}{97}
+\indexentry {vestavěné knihovny}{97}
+\indexentry {Nástroje}{99}
+\indexentry {Komplexní program}{100}
+\indexentry {Experimenty}{101}
+\indexentry {true}{105}
+\indexentry {false}{105}
+\indexentry {fill()}{105}
+\indexentry {stroke()}{105}
+\indexentry {sketch}{105}
+\indexentry {GNU / GPL}{106}
+\indexentry {save()}{108}
+\indexentry {frameCount()}{108}

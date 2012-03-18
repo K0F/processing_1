@@ -1055,235 +1055,14 @@ void draw(){
 Po spuštění programu uvidíte v konzoli následující výstup:
 
 
-
+\begin{lstlisting}
 tisk z funkce setup()
 tisk z funkce draw() 1
 tisk z funkce draw() 2
 tisk z funkce draw() 3
 tisk z funkce draw() 4
 
-
-
-\oddil{Podmínka}
-
-Uvedením do stavů programu se můžeme dostat k prvnímu opravdovému strukturování programu. Zkusme nyní nastínit jak taková struktura vypadá. Patrně nejpřímější řízení dějů v programu je podmínka. Podmínka říká, jestliže je něco pravda, spusť následné příkazy. Podmínka funguje v podstatě jako výhybka, která odklání program do jeho různých cest. Uvedu zde krátký příklad vytváření podobné struktury v programu:
-
-\begin{lstlisting}
-boolean prepinac = false;
-int hodnota;
-
-if(prepinac == true){
-    hodnota = 1;
-}else{
-    hodnota = 0;
-}
-
-println(hodnota);
-
 \end{lstlisting}
-
-Velmi prostá struktura je v tomto příkladě vytvořená jednou podmínkou. Podmínka je v Processingu (a řadě jiných jazyků) značena slovem {\em if}, "jestli". "Jestli" potřebuje dostat odpověd v kulatých závorkách, ta může být jen pravda nebo nepravda, k tomu se hodí nejlépe již zmíněný {\em boolean}, nebo například porovnávání dvou čísel, znaků nebo řetězců znaků, tj. operace které nám vrátí {\em TRUE} nebo {\em FALSE}.
-
-Definujeme-li tedy náš {\em boolean} na začátku jako nepravdu, podmínka se v tomto případě nenaplní a program spustí kód uvozený složenými závorkami následujícími až slovo {\em else}.
-V našem příkladě se jedná o druhou větev podmínky, ta sice není povinná ale pro ukázku jsem ji zde rovnou zmínil. Tedy za ukončením {\em if} a složených závorek můžeme dále slovem {\em else}, tzn. "jestliže ne", řící co se stane v případě nenaplnění naší podmínky.
-
-V tomto konkrétním případě se k proměnné {\em hodnota} přiřadí číslo {\em 0}.
-
-To program následně ověřuje tiskem do konzole, kde se objeví {\em 0}
-
-
-\pododdil{if}
-
-Podmínka je jeden ze základních stavebních kamenů programu. Podmínku lze použít ve všech případech, kdy předpokládáme odpověď ano nebo ne. Podmínka v Processingu stejně tak jako ve většině ostatních jazyků konstruována příkazem.
-
-Konstrukce podmínky vypadá pak následnovně:
-
-
-\begin{lstlisting}
-
-boolean pravda = true;
-
-if(pravda == true){
-
-    // spust nasledujici blok
-
-}
-
-\end{lstlisting}
-
-Za povšimnutí zde stojí dvojité rovnítko. Tento speciální symbol se používá při porovnávání dvou stran. Proměnná nazvaná {\em pravda} získala hodnotu {\em true}. V případě podmínky nezáleží na počtu proměnných v kulatých závorkách, otázka může být i více kombinovaná záleží na výsledky, který vždy musí být pravda nebo nepravda, tedy {\em true} nebo {\em false}. Pro zkonstruování takové věty lze použít následující znaménka.
-
-\begin{lstlisting}
-boolean pravda = true;
-int cislo = 3;
-String text = "Lorem ipsum dolor et amet";
-
-if(cislo == 3){
-    // tato podminka je spustena
-}
-
-if(cislo != 3){
-    // tato podminka neni spustena, znamenko nerovna se je opakem rovnitka
-}
-
-if(cislo > 3){
-    // tato podminka neni spustena cislo neni vetsi nez 3
-}
-
-if(cislo < 3){
-    // tato podminka neni spustena cislo neni mensi nez 3
-}
-
-if(cislo >= 3){
-    // tato podminka je spustena, znamenko vetsi nebo rovna se, cislo rovna se 3
-}
-
-if(cislo <= 3){
-    // tato podminka je spustena, znamenko mensi nebo rovna se, cislo rovna se 3
-}
-
-if(text.equals("Lorem ipsum dolor et amet")){
-	// tato podminka je spustena, porovnavani textu je take mozne, osem pozor
-	// k porovnavani celych retezcu, textu se pouziva funkce equals("String")
-}
-
-\end{lstlisting}
-
-Takovým výčtem operací jsme si pokryli základní konstrukci podmínky. Další znaménka slouží ke skládání jednotlivých otázek. Znaménko pro logicke A je:
-
-\begin{lstlisting}
-boolean a = true;
-boolean b = false;
-
-if(a == true && b == false){
-	// tento blok bude spusten, a je pravda A b je pravda
-}
-
-if(a == true && b == true){
-	// tento blok nebude spusten, b totiz neni pravda, b == false
-}
-
-\end{lstlisting}
-
-
-("appersand" se na české klávesnici nevyskytuje, na anglické klávesnici jej naleznete většinou pod \klavesy {SHIFT - 7}), pro logické NEBO se používá dvojitá svislá čára tzv. pipe:
-
-\begin{lstlisting}
-boolean a = true;
-boolean b = false;
-
-if(a == true || b == false){
-
-	// tento blok bude spusten, k tomu staci pouze ze a je pravda NEBO b je pravda
-
-}
-
-
-if(a == true || b == true){
-
-	// tento blok bude tedy opet spusten
-
-}
-
-
-if(a == false || b == true){
-
-	// tento blok jiz spusten nebude, ani a ani b neni pravda 
-
-}
-
-\end{lstlisting}
-
-Za pomoci skládání otázek můžeme zkonstruovat celé věty a složitější otázky. V kombinaci s kulatými závorkami si vystačíme pouze s logickým AND a OR. Zkusme si ilustrovat situaci následovně:
-
-
-\begin{lstlisting}
-boolean a = true;
-boolean b = true;
-boolean c = false;
-
-if( (a && b) || c ){
-
-	// tento blok bude spuštěn
-	
-}
-
-if( !(a && b) || c ){
-
-	// tento blok nebude spuštěn
-	
-}
-
-\end{lstlisting}
-
-Jaký je rozdíl mezi prvním a druhým blokem? Poslední specialita booleanovských operací je znaménko vykřičník. Takové znaménko před proměnou typu \vyraz{boolean} znamená opak tvrzení tedy, je li {\em pravda} pravdou, {\em !pravda} \label{!pravda} je nepravdou tedy výsledkem je \vyraz{false}.
-
-
-\begin{lstlisting}
-boolean pravda = true;
-
-println( pravda ); // tiskne true
-println( !pravda ); // tiskne false
-\end{lstlisting}
-
-
-
-Dále si všiměte, že v podmínce chybí jakékoli porovnávací znaménko. Ve skutečném programování se setkáte spíše s tímto zápisem, je to zápis zkrácený. Namísto neustálého rozepisování {\em něco rovná se rovná se \vyraz{true}} lze napsat pouze v kulatých závorkách. Je-li naše {\em něco} datového typu \vyraz{boolean} Processing bude takovému zápisu rozumět. Tedy nejjednodušší zápis může vypadat i takto:
-
-  
-\begin{lstlisting}
-boolean a = true;
-
-if(a)
-	//pouze tento jediný řádek bude spuštěn
-	
-	
-	
-if(a){
-	// cely tento blok
-	// bude spusten
-}
-\end{lstlisting}
-
-K úplnému zkrácení se dají i vypustit i složené závorky, to vede opět k rychlejšímu zápisu. Rozdílem takového zápisu je fakt, že taková podmínka spouští pouze jeden následující řádek. Přestože je to naprosto správný způsob programování, někteří programátoři takový zápis neradi používají z důvodu zhoršení přehlednosti v kódu. Opět se s takovým zápisem často setkáte, člověk je jednoduše líný živočišný druh a \vyraz{if} se v programování používá opravdu často.
-
-\pododdil{else}
-
-K dalšímu rozšíření podmínek slouží příkaz \vyraz{else} a dá se přeložit takto. Jestliže je něco pravda udělej toto, jestliže ne udělej něco jiného. Zápis vypadá takto:
-
-\begin{lstlisting}
-boolean a = false;
-
-if(a){
-
-	// kdyby a bylo true, tak bu se spustil tento blok kodu 
-
-}else{
-
-	// ale protoze je nase a false, spusti se nyni kod
-	// v tomto bloku
-	
-}
-\end{lstlisting}
-
-
-
-\pododdil{ ? : }
-
-Abychom podmínky vyčerpali nadobro ukážeme si poslední možný zápis, který je ještě úspornější.
-  
-  
-\begin{lstlisting}
-boolean a = true;
-
-if(a)
-	background(0);
-	
-	
-background( a ? 0 : 255 );
-
-\end{lstlisting}
-
 
 
 \oddil{Zobrazení}
@@ -1554,9 +1333,270 @@ void draw(){
 Definicí této hodnoty lze například časovat animace. Další metodou je animaci časovat pomocí funkce \vyraz{millis()}. Tato funkce je nezávislá na počtu vykreslených okének za vteřinu, měří počet uběhnutých milivteřin od startu programu. Může se nám také hodit pro precizní časování událostí v programu.
 
 
+\pododdil{Dynamika pohybu}
+
+K docílení jednoduché interakce není zapotřebí mnoho. Animace je ovšem složitější problém který budeme řešit v Processingu nejvíce matematicky. Zdá se, že dosažení dynamického pohybu je jeden z průvodních jevů pokročilého programování.
+
+ Nyní si můžeme ukázat jak lze zkombinovat dosavadní znalosti k vytvoření nelineárního pohybu.
+ 
+ \begin{lstlisting}
+float x;
+float y;
+float rychlost;
+
+void setup(){
+	size(640,480);
+     x = width / 2;
+     y = height / 2;
+     rychlost = 0.1;
+}
+
+void draw(){
+	background(255);
+	x += (mouseX - x) * rychlost;
+	y += (mouseY - y) * rychlost;
+	rect(x,y,30,30);
+}
+\end{lstlisting}
+
+Čtverec bude nyní následovat kurzor nelineárním pohybem. Dynamika pohybu je dána prostou formulí:
+\begin{lstlisting}
+x += (mouseX - x) * rychlost;
+y += (mouseY - y) * rychlost; 
+\end{lstlisting}
+K proměnným {\em x} a {\em y} přiřazujeme zlomek rozdílu mezi pozicí kurzoru a proměnou v obou osách. Tuto formuli lze využít téměř kdekoli, například při jemném přechodu barev a vyhlazování hodnot obecně.
+
+Druhá proměnná {\em rychlost} by se k docílení podobného efektu měla pohybovat v rozmezí od 0 do 1.
 
 
-\pododdil{Interakce}
+
+
+\oddil{Podmínka}
+
+Uvedením do stavů programu se můžeme dostat k prvnímu opravdovému strukturování programu. Zkusme nyní nastínit jak taková struktura vypadá. Patrně nejpřímější řízení dějů v programu je podmínka. Podmínka říká, jestliže je něco pravda, spusť následné příkazy. Podmínka funguje v podstatě jako výhybka, která odklání program do jeho různých cest. Uvedu zde krátký příklad vytváření podobné struktury v programu:
+
+\begin{lstlisting}
+boolean prepinac = false;
+int hodnota;
+
+if(prepinac == true){
+    hodnota = 1;
+}else{
+    hodnota = 0;
+}
+
+println(hodnota);
+
+\end{lstlisting}
+
+Velmi prostá struktura je v tomto příkladě vytvořená jednou podmínkou. Podmínka je v Processingu (a řadě jiných jazyků) značena slovem \vyraz{if}, "jestli". "Jestli" potřebuje dostat odpověd v kulatých závorkách, ta může být jen pravda nebo nepravda, k tomu se hodí nejlépe již zmíněný \vyraz{boolean}, nebo například porovnávání dvou čísel, znaků nebo řetězců znaků, tj. operace které nám vrátí \vyraz{true} nebo \vyraz{false}.
+
+Definujeme-li tedy náš \vyraz{boolean} na začátku jako nepravdu, podmínka se v tomto případě nenaplní a program spustí kód uvozený složenými závorkami následujícími až slovo \vyraz{else}.
+V našem příkladě se jedná o druhou větev podmínky, ta sice není povinná ale pro ukázku jsem ji zde rovnou zmínil. Tedy za ukončením \vyraz{if} a složených závorek můžeme dále slovem \vyraz{else}, tzn. "jestliže ne", řící co se stane v případě nenaplnění naší podmínky.
+
+V tomto konkrétním případě se k proměnné {\em hodnota} přiřadí číslo {\em 0}.
+
+To program následně ověřuje tiskem do konzole, kde se objeví {\em 0}
+
+
+\pododdil{if}
+
+Podmínka je jeden ze základních stavebních kamenů programu. Podmínku lze použít ve všech případech, kdy předpokládáme odpověď ano nebo ne. Podmínka v Processingu stejně tak jako ve většině ostatních jazyků konstruována příkazem.
+
+Konstrukce podmínky vypadá pak následnovně:
+
+
+\begin{lstlisting}
+
+boolean pravda = true;
+
+if(pravda == true){
+
+    // spust nasledujici blok
+
+}
+
+\end{lstlisting}
+
+Za povšimnutí zde stojí dvojité rovnítko. Tento speciální symbol se používá při porovnávání dvou stran. Proměnná nazvaná {\em pravda} získala hodnotu \vyraz{true}. V případě podmínky nezáleží na počtu proměnných v kulatých závorkách, otázka může být i více kombinovaná záleží na výsledky, který vždy musí být pravda nebo nepravda, tedy \vyraz{true} nebo \vyraz{false}. Pro zkonstruování takové věty lze použít následující znaménka.
+
+\begin{lstlisting}
+boolean pravda = true;
+int cislo = 3;
+String text = "Lorem ipsum dolor et amet";
+
+if(cislo == 3){
+    // tato podminka je spustena
+}
+
+if(cislo != 3){
+    // tato podminka neni spustena, znamenko nerovna se je opakem rovnitka
+}
+
+if(cislo > 3){
+    // tato podminka neni spustena cislo neni vetsi nez 3
+}
+
+if(cislo < 3){
+    // tato podminka neni spustena cislo neni mensi nez 3
+}
+
+if(cislo >= 3){
+    // tato podminka je spustena, znamenko vetsi nebo rovna se, cislo rovna se 3
+}
+
+if(cislo <= 3){
+    // tato podminka je spustena, znamenko mensi nebo rovna se, cislo rovna se 3
+}
+
+if(text.equals("Lorem ipsum dolor et amet")){
+	// tato podminka je spustena, porovnavani textu je take mozne, osem pozor
+	// k porovnavani celych retezcu, textu se pouziva funkce equals("String")
+}
+
+\end{lstlisting}
+
+Takovým výčtem operací jsme si pokryli základní konstrukci podmínky. Další znaménka slouží ke skládání jednotlivých otázek. Znaménko pro logicke A je:
+
+\begin{lstlisting}
+boolean a = true;
+boolean b = false;
+
+if(a == true && b == false){
+	// tento blok bude spusten, a je pravda A b je pravda
+}
+
+if(a == true && b == true){
+	// tento blok nebude spusten, b totiz neni pravda, b == false
+}
+
+\end{lstlisting}
+
+
+("appersand" se na české klávesnici nevyskytuje, na anglické klávesnici jej naleznete většinou pod \klavesy {SHIFT - 7}), pro logické NEBO se používá dvojitá svislá čára tzv. pipe:
+
+\begin{lstlisting}
+boolean a = true;
+boolean b = false;
+
+if(a == true || b == false){
+
+	// tento blok bude spusten, k tomu staci pouze ze a je pravda NEBO b je pravda
+
+}
+
+
+if(a == true || b == true){
+
+	// tento blok bude tedy opet spusten
+
+}
+
+
+if(a == false || b == true){
+
+	// tento blok jiz spusten nebude, ani a ani b neni pravda 
+
+}
+
+\end{lstlisting}
+
+Za pomoci skládání otázek můžeme zkonstruovat celé věty a složitější otázky. V kombinaci s kulatými závorkami si vystačíme pouze s logickým AND a OR. Zkusme si ilustrovat situaci následovně:
+
+
+\begin{lstlisting}
+boolean a = true;
+boolean b = true;
+boolean c = false;
+
+if( (a && b) || c ){
+
+	// tento blok bude spuštěn
+	
+}
+
+if( !(a && b) || c ){
+
+	// tento blok nebude spuštěn
+	
+}
+
+\end{lstlisting}
+
+Jaký je rozdíl mezi prvním a druhým blokem? Poslední specialita booleanovských operací je znaménko vykřičník. Takové znaménko před proměnou typu \vyraz{boolean} znamená opak tvrzení tedy, je li {\em pravda} pravdou, {\em !pravda} \label{!pravda} je nepravdou tedy výsledkem je \vyraz{false}.
+
+
+\begin{lstlisting}
+boolean pravda = true;
+
+println( pravda ); // tiskne true
+println( !pravda ); // tiskne false
+\end{lstlisting}
+
+
+
+Dále si všiměte, že v podmínce chybí jakékoli porovnávací znaménko. Ve skutečném programování se setkáte spíše s tímto zápisem, je to zápis zkrácený. Namísto neustálého rozepisování {\em něco rovná se rovná se \vyraz{true}} lze napsat pouze v kulatých závorkách. Je-li naše {\em něco} datového typu \vyraz{boolean} Processing bude takovému zápisu rozumět. Tedy nejjednodušší zápis může vypadat i takto:
+
+  
+\begin{lstlisting}
+boolean a = true;
+
+if(a)
+	//pouze tento jediný řádek bude spuštěn
+	
+	
+	
+if(a){
+	// cely tento blok
+	// bude spusten
+}
+\end{lstlisting}
+
+K úplnému zkrácení se dají i vypustit i složené závorky, to vede opět k rychlejšímu zápisu. Rozdílem takového zápisu je fakt, že taková podmínka spouští pouze jeden následující řádek. Přestože je to naprosto správný způsob programování, někteří programátoři takový zápis neradi používají z důvodu zhoršení přehlednosti v kódu. Opět se s takovým zápisem často setkáte, člověk je jednoduše líný živočišný druh a \vyraz{if} se v programování používá opravdu často.
+
+\pododdil{else}
+
+K dalšímu rozšíření podmínek slouží příkaz \vyraz{else} a dá se přeložit takto. Jestliže je něco pravda udělej toto, jestliže ne udělej něco jiného. Zápis vypadá takto:
+
+\begin{lstlisting}
+boolean a = false;
+
+if(a){
+
+	// kdyby a bylo true, tak bu se spustil tento blok kodu 
+
+}else{
+
+	// ale protoze je nase a false, spusti se nyni kod
+	// v tomto bloku
+	
+}
+\end{lstlisting}
+
+
+
+\pododdil{ ? : }
+
+Abychom podmínky vyčerpali nadobro ukážeme si poslední možný zápis, který je ještě úspornější.
+  
+  
+\begin{lstlisting}
+boolean a = true;
+
+if(a)
+	background(0);
+	
+	
+background( a ? 0 : 255 );
+
+\end{lstlisting}
+
+
+
+
+
+
+\ododdil{Interakce}
 
 \Slovnik{interakce} se dá obecně definovat jako vzájemné působení. V počítačové terminologii se nejvíce má na mysli vzájemné působení člověka a stroje. Přímá interakce z podstaty vzájemného působení vyžaduje rozměr času animaci\footnote{tedy program trvající v čase}. To umožňuje uživateli přímý vstup do proměnných, tedy do obsahu našich hodnot.
 
@@ -1626,42 +1666,6 @@ void mousePressed(){
 Všimněte si poslední funkce. Ta je programem spuštěna jen tehdy stiskne-li uživatel tlačítko myši. Abychom uchovali informaci o stisku přepneme jím stav jedné z našich proměnných nazvané {\em stisknuto}. Jednořádkový zápis s vykřičníkem je zkrácení pro přepnutí stavu. \odkaz{Podmínka}
 
 
-\pododdil{Dynamika pohybu}
-
-K docílení jednoduché interakce není zapotřebí mnoho. Animace je ovšem složitější problém který budeme řešit v Processingu nejvíce matematicky. Zdá se, že dosažení dynamického pohybu je jeden z průvodních jevů pokročilého programování.
-
- Nyní si můžeme ukázat jak lze zkombinovat dosavadní znalosti k vytvoření nelineárního pohybu.
- 
- \begin{lstlisting}
-float x;
-float y;
-float rychlost;
-
-void setup(){
-	size(640,480);
-     x = width / 2;
-     y = height / 2;
-     rychlost = 0.1;
-}
-
-void draw(){
-	background(255);
-	x += (mouseX - x) * rychlost;
-	y += (mouseY - y) * rychlost;
-	rect(x,y,30,30);
-}
-\end{lstlisting}
-
-Čtverec bude nyní následovat kurzor nelineárním pohybem. Dynamika pohybu je dána prostou formulí:
-\begin{lstlisting}
-x += (mouseX - x) * rychlost;
-y += (mouseY - y) * rychlost; 
-\end{lstlisting}
-K proměnným {\em x} a {\em y} přiřazujeme zlomek rozdílu mezi pozicí kurzoru a proměnou v obou osách. Tuto formuli lze využít téměř kdekoli, například při jemném přechodu barev a vyhlazování hodnot obecně.
-
-Druhá proměnná {\em rychlost} by se k docílení podobného efektu měla pohybovat v rozmezí od 0 do 1.
-
-
 \oddil{Pole}
 
 Jedna proměnná může uchovat pouze jednu hodnotu. V programování se brzy dostaneme do situace, kdy budeme potřebovat operovat s vícero hodnotami najednou. Tak například cheme-li použít deset čísel z fibonacciho řady můžete si je definovat postupně.
@@ -1727,7 +1731,7 @@ void setup(){
 }
 \end{lstlisting}
 
-Všimněte si že v zápisu se objevilo slovo \vyraz{new}. Toto slovo jsme zatím nepoužili a jeho význam rozvedeme později \odkaz{Objekt}. K tomu abychom přiřadili hodnotu jednotlivých míst v poli, musíme nejdříve vepsat do hranatých závorek kam budeme zapisovat. Stejně tak se později k číslu, které jsme uložili, můžeme dostat. 
+Všimněte si že v zápisu se objevilo slovo \vyraz{new}. Toto slovo jsme zatím nepoužili a jeho význam rozvedeme později \odkaz{Třída a objekt}. K tomu abychom přiřadili hodnotu jednotlivých míst v poli, musíme nejdříve vepsat do hranatých závorek kam budeme zapisovat. Stejně tak se později k číslu, které jsme uložili, můžeme dostat. 
 
 Tímto způsobem jsme si definovali pole o rozměru deseti hodnot. Stále je ovšem patrné že v kódu se zbytečně opakujeme rozepisováním názvu jedné proměnné.
 
@@ -1931,7 +1935,7 @@ Void je pouze jedna z možností definic funkcí. Další mozné funkce můžeme
 
 Void setup(){
 
-	// ...
+	size(640,480);
 
 }
 
@@ -1981,9 +1985,104 @@ Budete-li kód chtít sdílet, je dobré jej učinit co nejvíce čitelný pro d
 Co se délky funkcí týče dobré pravidlo zní: Přesáhnete-li počet vnitřích proměnných tucet, měli by jste už přemýšlet o rozdělení do dvou funkcí.
 
 
-\oddil{Objekt}
+\pooddil{Třída a objekt}
 
-.
+Funkce jsou jeden způsob jakým si můžeme strukturovat program. Veškerý kód, který jsme doposud psali je vlastněn takzvanou třídou. Třída vlastní veškeré funkce i proměnné, které v Processingu běžně píšeme. Můžeme to nazvat mateřským objektem. V rámci tohoto objektu můžeme definovat své vlastní objekty, které můžou mít různé vlastnosti.
+
+V úvodu jsme se dozvěděli že Processing je objektově orientovaný jazyk. Nad tím je na čase se pozastavit. Co to vlastně znamená objekt. Ilustrace koncepce programování je prostá, stačí se rozhlédnout kolem sebe a zaměřit se na jeden konkrétní objekt (hrnek, propiska, kniha). Tento objekt má některé vlastnosti. Tak například propiska má svoji hmotnost, rozměry ve tří osách, barvu náplně, obsah náplně a barvu jako takovou, pravděpodobně také nějaké logo jako potisk. Tužka dále může být \uv{rozcvaknutá} nebo \uv{zacvaknutá}, mohli bychom takto pokračovat dále. Všechny tyto vlastnosti si můžeme představit jako naše proměnné. Třída pak bude to, co mají propisky společného, jednotlivými paremetry budeme odlišovat jednu propisku od od druhé.
+
+To co s propiskou můžeme dělat si představme jako funkci. Tak například propisku můžeme \uv{rozcvaknout} a \uv{zacvknout}. Tužkou můžeme psát atp. Tyto činnosti ovlivňují naše parametry konkrétního objektu.
+
+Třída je tedy souhrn definicí, které vyjadřují nějaký typ objektu, propisku, tužku, hrnek. Objekt je pak konkrétní kus propisky, hrnku atp.
+
+V kódu naše propiska vypadá takto:
+
+
+\begin{lstlisting}
+class Propiska{
+
+	// promenne hodnoty propisky
+	float rozmery[];
+	float pozice[];
+	color barvaNaplne;
+	boolean zacvaknuta;
+	String napis;
+
+	// konstruktor misto pro vstupni hodnoty
+	Propiska(float _x, float _y, color _barva){
+		pozice = new float[2];
+		barvaNaplne = _barva;
+		
+		pozice[0] = 30;
+		pozice[1] = 40;
+	}
+	
+	// funkce propisky
+	void zacvakni(){
+		zacvaknuta = false;
+	}
+	
+	void rozcvakni(){
+		zacvaknuta = true;
+	}
+	
+	void napisNeco(){
+	
+		rozcvakni();
+		stroke(barvaNaplne);
+		line(pozice[0],pozice[1],10,10);
+		zacvakni();
+		// a tak dale
+	}
+}
+
+\end{lstlisting}
+
+Tímto jsme si definovali naši propisku. Než si ukážeme jak ji použít vysvětleme si některé nejasnosti. Třída se definuje pomocí slova \vyraz{class}, za ním následuje název třídy, v našem případě \vyraz{Propiska}.
+
+Uvnitř složených závorek, které vymezují definici nyní můžeme nastavit potřebné vlastnosti, proměnné. Následuje takzvaný konstruktor. Konstruktor není povinný ale pro ilustraci jej zde uvádím. Konstruktor se nám bude hodit později, kdy budeme chtít vytvořit naší propisku připravenou k práci.
+
+Konstruktor je místo, kde můžeme do nově vznikajícího objektu zaslat počáteční informace. Budu-li například potřebovat dvě propisky, jednu červenou a druhou modrou. Mohu je vytvořit následujícím způsobem.
+
+
+\begin{lstlisting}
+Propiska modraPropiska;
+Propiska cervenaPropiska;
+
+void setup(){
+
+	size(640,480);
+	
+	// vytvareni dvou objektu zde
+	modraPropiska = new Propiska(30,30,color(0,0,255));
+	cervenaPropiska = new Propiska(50,80,color(255,0,0));
+
+}
+
+
+void draw(){
+
+	modraPropiska.napisNeco();
+	cervenaPropiska.rozcvakni();
+
+}
+\end{lstlisting}
+
+Podobně můžeme nyní vytvářet propisek kolik budeme chtít. Definice třídy pomocí slova \vyraz{class} je jako připravená šablona. Vytvoření samotného objektu slovem \vyraz{new} vytváří jednu instanci.
+
+Příkaz \vyraz{new} se používá vždy, žádáme li třídu, tj. šablonu o manipulovatelný objekt. Tento příkaz se dá přirovnat k výrobě objektu. Slovem \vyraz{new} žádáme šablonu o produkt, se kterým budeme moci manipulovat.
+
+V předchozím příkladu je vyskytl ještě jeden důležitý znak, který není na první pohled dobře patrný. Novým znakem je tečka. Tečka je velmi důležitá v objektově orientovaném přemýšlení. Skrze tečku za objektem, propiskou se v Processingu můžeme dostat ke všem definovaným vnitřním proměnným, stejně tak jako můžeme spouštět veškeré funkce objektu.
+
+Použití tečky se v programátorském žargonu vyskytuje výraz \slovnik{tečková syntaxe}. V případě naší třídy ji můžeme ilustrativně využít pro změnu vnitřních hodnot objektu, změňme například barvu naší modré propisky na černou.
+ 
+\begin{lstlisting}
+modraPropiska.barvaNaplne = color(0);
+\end{lstlisting}
+
+Jak je z příkladu patrné, modrá propiska je objekt, který má pojmenovanou hodnotu barvaNaplne. K němu se dostaneme pomocí tečkové syntaxe a Processing nám jej dovolí změnit.
+
+Příklad s propiskou je ryze abstraktní a jistě naleznete sami řadu lepších. Zkuste se zamyslet o objektu a vlastnostech, které může objekt mít.
 
 
 
