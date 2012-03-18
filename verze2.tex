@@ -74,8 +74,8 @@
 \usepackage[textsize=footnotesize,textwidth=1.8cm]{todonotes}
 \setlength{\marginparwidth}{1.8cm}
 
-\newcommand{\oddil}[1]{\section{#1}\label{sec:#1}}
-\newcommand{\pododdil}[1]{\subsection{#1}\label{subsec:#1}}
+\newcommand{\oddil}[1]{\section{#1}\label{#1}}
+\newcommand{\pododdil}[1]{\subsection{#1}\label{#1}}
 %%% BUBLINY
 
 \usepackage{setspace}
@@ -95,6 +95,8 @@
 \newcommand{\definice}[2]{\newglossaryentry{#1}{ }{ name={#1},description{#2} } }
 
 \newcommand{\vyraz}[1]{\textit{\gls{#1}}\index{#1}}
+
+\newcommand{\odkaz}[1]{\textit{(str. \pageref*{#1})}}
 
 
 
@@ -284,7 +286,22 @@ Instalace. Web applet. Video. Fyzický výstup?
 
 %\begin{comment}
 
-\oddil{idea space - a cyclic universe}
+\oddil{Magnetic Ink}
+
+\includegraphics[width = 1\textwidth]{imgs/magneticInk.jpg}
+
+\begin{itemize}
+\item
+Autor: Robert Hogin
+\item
+Rok: 2008
+\item
+Médium: generovaná grafika
+\item
+Anotace:
+\begin{itemize}
+
+\oddil{Idea Space - A Cyclic Universe}
 
 
 \begin{center}
@@ -307,6 +324,8 @@ As the particles move through space they become attracted by the various, initia
 
 \end{itemize}
 
+
+
 %\end{comment}
 
 
@@ -325,7 +344,7 @@ Na úvod je třeba říci, že vytyčení konkrétního cíle není vždy nezbyt
 
 Autor knihy předpokládá že má čtenář v roce 2012 přístup ke globální síti internet.
 
-Nejlepší reference pro práci s Processingem zůstává tato síť. Processing byl vyvinut síťovou komunitou a je také v síti nejlépe zdokumentován. Existuje několik dobrých obecných stránek s průvodci. Za všechny lze jmenovat domovskou stránku projektu processing.org. Zde naleznete téměř vše co by jste mohli potřebovat. Nacházejí se zde zdokumentované veškeré příkazy Processingu. Je zde i záložka {\em Learning} s jednotlivými průvodci do různých oblastí. 
+Nejlepší reference pro práci s Processingem zůstává tato síť. Processing byl vyvinut síťovou komunitou a je také v síti nejlépe zdokumentován. Existuje několik dobrých obecných stránek s průvodci. Za všechny lze jmenovat domovskou stránku projektu {\em processing.org}. Zde naleznete téměř vše co by jste mohli potřebovat. Nacházejí se zde zdokumentované veškeré příkazy Processingu. Je zde i záložka {\em Learning} s jednotlivými průvodci do různých oblastí. 
 
 Nejadresněji se vám dostane pomoci prostřednictvím webových fór nebo IRC kanálů. Na fórech se již řešil téměř jakýkoli problém, stačí proto vyhledávat klíčová slova vašeho konkrétního dotazu a velmi rychle by jste měli nalézt řešení.
  
@@ -333,17 +352,28 @@ Nejadresněji se vám dostane pomoci prostřednictvím webových fór nebo IRC k
    
 Veškerá dokumentace je v angličtině včetně webových fór i dalších knih o programování. Nemáte-li problém s jazykem míst k zdokonalování se v Processingu bude vždy dostatek.
 
-\oddil{Knihy}
 
-Ano, jednu z nich držíte v ruce. V minulosti vyšlo bezmála desítka podobných knih na toto téma. Jsou bezesporu obsáhlejší než jaké tato kniha měla kdy v úmyslu. Mezi všemi doporučují nejvíce původní knihu od samotných tvůrců Processingu Casey Rease a Bena Frye nazvanou {\em Processing: A Programming Handbook for Visual Designers and Artists}.
+\oddil{Examples - příklady přímo v Processingu}
 
-Dále kniha Daniela Shiffmana {\em Learning Processing: A Beginner's Guide to Programming Images, Animation, and Interaction} je jednou z velmi podrobně napsaných knich o Processingu.
+Tato pomoc je vždy po ruce. Processing je navržený k výuce a je připraven poskytovat pomoc ze své podstaty. Přímo do aplikace Processingu jsou naimplementovány základní postupy v programování. Témata jsou pokrytá od základních operací až po pohyb v trojdimenzionálním prostoru nebo manipulaci s pixely.
 
-Knihy se dají opatřit a rozhodně bych to doporučoval všem kteří potřebují mít opravdu dobrou dokumentaci vždy při ruce. V neposlední řadě bych také upozornil na to, že koupí knihy podporujete tvůrce svobodného softwaru, a tím potažmo i svobodný software jako takový.
+Příkladů je zde dostatek a jsou přehledně uspořádány. Vřele doporučuji si je čas od času prolistovat.
+
+Ke všem příkladům se dostanete z Processingu skrze nabídku {\em File > Examples}
+
+\oddil{Knihy a průvodci}
+
+Ano, jednoho průvodce právě držíte v ruce (nebo čtete na obrazovce). V minulosti vyšlo bezmála desítka podobných knih na toto téma. Jsou bezesporu obsáhlejší než kdy měla tato kniha v úmyslu.
+
+Mezi všemi bych vám doporučil nejvíce původní knihu od samotných tvůrců Processingu Casey Rease a Bena Frye nazvanou {\em Processing: A Programming Handbook for Visual Designers and Artists}.
+
+A rozhodně pak knihu Daniela Shiffmana {\em Learning Processing: A Beginner's Guide to Programming Images, Animation, and Interaction} je jednou z velmi podrobně napsaných knich o Processingu.
+
+Knihy jsou vcelku dostupné a dají se opatřit přes internet. Rozhodně bych to doporučoval všem, kteří  potřebují mít opravdu dobrou dokumentaci vždy při ruce. V neposlední řadě bych také upozornil na to, že koupí knihy podporujete tvůrce svobodného softwaru, a tím potažmo i svobodný software jako takový.
 
 \oddil{Experiment}
 
-Nejdůležitějším zdrojem vašich vlastních zkušeností bude vždy samotné experimentování s programováním. Na tuto část kladu největší důraz a v průběhu této knihy to i několikrát zopakuji, je vždy dobré odložit knihy a reference a pustit se do neznámých vod, zkušenost kterou takto naberete, bude vždy ta nejhodnotnější. Nebojte se sami experimentovat.
+Nejdůležitějším zdrojem vašich vlastních zkušeností bude vždy samotné experimentování s programováním. Na tuto část kladu největší důraz a v průběhu této knihy to i několikrát zopakuji, je vždy dobré odložit knihy a reference a pustit se do neznámých vod, zkušenost kterou takto naberete, bude vždy ta nejhodnotnější. Nebojte se proto sami experimentovat.
 
 \chapter{K čemu slouží programovací jazyk?}
 
@@ -435,17 +465,12 @@ Processing lze velmi krátkým kódem programovat sofistikované programy. Pro p
 
 
 \begin{center}
-\includegraphics[width = 1.0\textwidth]{imgs/tinysketch.png}
+\includegraphics[width = 1\textwidth]{imgs/tinysketch.png}
 \end{center}
 
 
 
 Snad největší předností pro začínající programátory je výtečná dokumentace a velmi přívětivá komunita lidí poskytující neúnavně rady začátečníkům.
-
-
-\oddil{Nedostatky Processingu}
-
-Processing byl v minulosti nejvíce kritizován pro samotnou aplikaci vývojového prostředí, která se přes úsilí vývojářů stále nedá označit za bezchybnou. Editor je dost pomalý a některé jeho funkce jako chybová hlášení nefungují zrovna nejlépe. I když si s prostředím zpočátku dokonale vystačíme, pro rozsáhlejší projekty bych sám doporučil využívat Processing i v jiných prostředích (NetBeans, Eclipse, Vim atp.). Samotný Processing lze implementovat téměř kamkoli, kde se dá vyvíjet jazyk Java.
 
 
 \oddil{Tvorba softwaru}
@@ -637,13 +662,14 @@ Počítač je pouhý stroj. Umí dnes opravdu rychle vykonávat sled banálních
 O kompilaci toho nemusíme naštěstí vědět mnoho, vše bylo již tvůrci Processingu a jazyku Java shrnuto pod tlačítko spustit.
 
 
-
 \pododdil{Kometář}
+\label{komentar}
 
 Komentář je vše co program ignoruje. Je to místo v programu učené ke čtení člověku. Kometáře dále často slouží k rychlé editaci programu. Odkomentováním řádky funkčního kódu lze vynechat některé funkce Processingu.
 
 
 Nádsleduje zápis tak, jak jej již můžete vepsat do editoru Processingu. Vřele doporučuji mít v této chvíli Processing v průběhu čtení knihy zapnutý a po ruce, aby jste si příklady v rámečcích mohli vyzkoušet. Komentář je řádek textu, nebo její část uvozená dvěma dopřednými lomítky.
+
 
 \begin{lstlisting}
 // komentar je uvozen dvemi doprednymi lomitky
@@ -990,7 +1016,7 @@ Boolean je možné si představit jako vypínač světla. Zapnuto a vypnuto jsou
 \end{itemize}
 
 
-\pododdil{Základní struktura programu}
+\oddil{Základní struktura programu}
 
 Processing rozlišuje mezi jednotlivými programovacími přístupy. Textový editor se automaticky přizpůsobí způsobu programování. Tímto přístupem se Processing snaží co nejvíce nablížit začátečníkovi. Základní prostředí nám dovoluje pouze nakreslit tvary a ukončit program. K pohybu v čase musíme Processingu definovat základní strukturu programu.
 
@@ -1038,280 +1064,6 @@ tisk z funkce draw() 1
 tisk z funkce draw() 2
 tisk z funkce draw() 3
 tisk z funkce draw() 4
-
-
-
-
-
-\oddil{Orientace v prostoru}
-
-Plocha programu by sa dala přirovnat k listu papíru, popřípadě k malířskému plátnu. Ve standartním dvoudimenzionálním módu má dva základní parametry {\em X} a {\em Y}, ty označují souřadnice, ve kterých se veškeré kreslící operace pohybují. Důležité je zmínit, že oproti jisté konvenci v matematických grafech levý horní roh nese hodnotu {\em X = 0}, {\em Y = 0}. Směrem dolů hodnota {\em Y} přibývá stejně tak jaho hodnota {\em X} přibývá směrem doprava.\\
-
-\begin{center}
-\includegraphics[width = 0.65\textwidth]{imgs/grid2d.png}
-\end{center}
-
-Tato konvence je převzata ze standartu počítačové grafiky, kdy první pixel v levém horním rohu nese souřadnicovou hodnotu právě {\em X = 0}, {\em Y = 0}. Obrácená osa Y se může ze začátku jevit matoucí. Důvody pro zdánlivé převrácení os pochopíme později například právě při operacích se samotnými obrazovými body, pixely, které jsou standartně uspořádány od levého horního rohu doprava a níže.
-
-Plochu je možné představit si jako prázdný prostor, na kterém je možno zobrazovat grafiku. Tvary nebo například text se zobrazují právě prostřednictvím zdrojového kódu tj. instrukcemi psanými v editoru.
-
-Na první pohled by se mohlo zdát, že například při zobrazení obdélníku, příkaz:
-
-\begin{lstlisting}
-rect(x,y,šířka,výška);
-\end{lstlisting}
-
-jehož výsledkem je kresba pouhého obdélníku je zbytečně komplikovaný, oproti jiným zobrazovacím metodám. Důležité je si zde uvědomit koncepci Processingu, který tímto zobrazením primitivních objektů sestavuje celý obraz. To co se zpočátku může zdát jako nadbytečná práce, tj. psaním koordinátů každého ze zobrazovaných objektů se posléze ukáže jako sofistikovaný a velmi ulehčující způsob přemýšlení o obraze. Veškeré parametry oddělené čárkou v kulatých závorkách příkazu {\em rect} náleží samotným vstupním hodnotám. Příkaz {\em rect} očekává čtyři parametry. Parametry mohou být celá čísla nebo čísla s desetinnou čárkou. Pro názornost, zadáme-li do parametrů ''natvrdo'' hodnoty:
-
-\begin{lstlisting}
-rect(8,6,7,5);
-\end{lstlisting}
-
-Výsledné zobrazení na naší pomyslné ploše bude následující:
-
-\begin{center}
-\includegraphics[width = 0.65\textwidth]{imgs/gridRect2d.png}
-\end{center}
-
-
-Zamyslíme-li se například o tom, že bychom v jakémkoli jiném nástroji chtěli zobrazit vícero, například tisíc obdélníků, na první pohled jednodušší GUI \footnote{zkratka pro "Guided User Interface" klasické grafické editory jako Gimp nebo Photoshop} grafické editory nám nedovolí tuto operaci učinit jinak, než že musíme všech tisíc obdélníků nakreslit. V případě Processingu nám bude stačit vytvořit rutinu pro kreslení libovolného počtu obdélníků a pak tuto rutinu spustit.
-
-Zde se již dostáváme k samotnému jádru Processingového přemýšlení. Programování obecně dokáže velmi ulehčit operace jejichž pravidelnost dokážeme popsat. Veškeré umění psaní programu tedy spočívá v definicích těchto chování a redukci složitých jevů na jednoduché rovnice.
-
-Celé řemeslné umění psaní kódu v podstatě záleží na eleganci v zápisu složitějších vztahů mezi různými parametry. Dovednosti se člověk učí postupně, osvojení si gramatické korektnosti a logické posloupnosti se mohou zpočátku jevit zbytečně komplikované, ovšem i po ovládnutí pouhých pár jednoduchých pravidel lze Processing využít kreativním způsobem.
-
-V další části se budeme zabývat stavbou programu. Pod odpudivým názvem se skrývají právě tato jednoduchá pravidla, která by měla tvořit základ dalším experimentům. 
-
-
-\pododdil{Zobrazení}
-
-Jak zobrazit hodnoty, které uchovává program v paměti? Jakákoli hodnota lze použít například jako jeden z argumentů v kreslících funkcích.
-
-Již zmiňovaný \vyraz{rect()}, tedy rectangle - obdélník, vyžaduje ke svému úspěšnému vykreslení čtyři parametry, čtyři číselné hodnoty \footnote{zde nezáleží jestli se jedná o celé číslo int nebo číslo s desetinnou čárkou float}. Tyto parametry, hodnoty, můžeme buďto zadat jako přímé číselné hodnoty, nebo do těchto parametrů můžeme zadat naši proměnnou která obsahuje číslo. Názorně:
-
-\begin{lstlisting}
-
-// první způsob vykreslení obdéníku
-rect( 10, 8, 40, 20 );
-
-// druhý způsob vykreslení obdélníku
-int prvniCislo = 10;
-int druheCislo = 8;
-
-rect( prvniCislo, druheCislo, 40, 20 );
-
-\end{lstlisting}
-
-Již nyní je nám zřejmé jak hodnoty mohou ovlivnit zobrazení. Namísto hodnot zadaných číselně se zde v druhém způsobu vykreslení obdélníku objevují naše proměnné, které mají již zadaný obsah. Výsledek zobrazení bude v obou případech stejný, ovšem z hlediska struktury programu je druhý způsob daleko flexibilnější.
-
-Představme si nyní, že hodnota zadaná prvním způsobem zápisu se již nikdy v průběhu programu nemůže proměnit. V případě druhého způsobu zápisu získáváme díky možnosti změny jednoho parametru kontrolu nad kreslícím výstupem.
-
-Veškeré příkazy které jsme si zatím ukázali byli spuštěny pouze jednou. To znamená, že obdélník byl vykreslen a program, který již neměl žádné další příkazy jednoduše skončil.
-
-V další kapitole si předvedeme jak vdechnout procesům pohyb a stálost, další kapitola je věnovaná animaci.
-
-
-
-\oddil{Animace a interakce}
-\index{animace}
-
-\pododdil{Animace}
-
-Statická kresba na plátno je jen jeden z možných výstupů. Animace v Processingu znamená překreslovat plátno pokaždé jinými obrazy. Processing je jazyk využívaný zjeména v pohyblivém obraze. Nyní si ukážeme základní postup při tvorbě pohyblivého obrazu.
-
-
-Velmi zjedoušeně řečeno smyčka \vyraz{draw()} je prostředek pro změnu, pozor není změnou sama o sobě. Smyčka zajišťuje sousledné volání příkazů v neustálém trvání\footnote{po dobu běhu programu}. V Processingu si v podstatě uvědomíme, že psaním příkazů do smyčky píšeme pravidla jakoby pro jedno okénko ve filmu. Pohyb je vždy zajištěn proměnou našich datatypů, které v tomto okénku figurují.
-
-Tedy například napíšeme-li takto, samotnou smyčku:
-
-\begin{lstlisting}
-void draw(){
-	// 60x za vteřinu spuštěná operace
-}
-\end{lstlisting}
-
-Vše uzavřeno do složených závorek bude spuštěno šedesátkrát za vteřinu. Bude-li obsah základní funkce \vyraz{draw()} neměnný, tj. budeme-li volat šedesátkrát za vteřinu to samé, animace bude ovšem v případě vizuálního výstupu jen abstraktním pojmem.
-
-V tomto příkladě již dochází ke spuštění smyčky. Výsledkem bude pouze šedivá plocha v rozměrech sto krát sto pixelů, jelikož na plátno nebylo zatím nic vykresleno. Následujícími příkazy \vyraz{background()} a \vyraz{rect()} nakreslíme nejprve plné pozadí a následovně obdélník. Zápis bude vypadat následovně:
-
-\begin{lstlisting}
-void draw(){
-	// pozadí
-	background(255);
-	// obdélník se čtyřmi parametry
-	rect( 10 , 10 , 30 , 30 );
-}
-\end{lstlisting}
-
-Takový zápis již provádí animaci a kreslí na plátno. Animace ovšem v tomto případě nebude patrná jelikož zatím se v obraze nic neproměňuje. Veškeré hodnoty jsou statické tudíž se vykresluje jeden čtverec na bílém pozadí na stále stejném místě.
-
-K rozhýbání objektů jednoduše potřebujeme proměnit jeden z parametrů v čase.\bublina{Animace je proměna obrazu v čase, jednotlivá okénka se v čase musí lišit.} Abychom docílili animace zkusme například vložit namísto parametru pro kresbu čtverce v ose X počítadlo okének. Processing má proměnnou s údajem o počtu uběhlých okének pod názvem \vyraz{frameCount}.
-
-Vyraz \vyraz{frameCount} lze využít následovně:
-
-\begin{lstlisting}
-void setup(){
-	size(640,480);
-}
-
-
-void draw(){
-	// pozadí
-	background(255);
-	// pohyb v ose X pomocí proměnné frameCount
-	rect( frameCount % width , 10 , 30 , 30 );
-}
-
-\end{lstlisting}
-
-Výsledkem tohoto zápisu bude již první animace. Čtverec se bude pohybovat rychlostí šedesáti pixelů za vteřinu z leva do prava. Tato hodnota v podstatě udává počet vykreslených cyklů funkce \vyraz{draw()}, ta je v tomto případě pouze využita k pohybu vykreslovaného čtverce.
-
-Tento pohyb je velmi názorný ukazuje, že hodnota počtu vykreslených okének lze použít například i jako hodnotu pro animaci. Stejně tak si můžeme založit i vlastní proměnnou, která bude mít identickou funkci.\footnote{v tomto konkrétním příkladě to sice nedává smysl, dá se použít stejně tak standartní proměnná \vyraz{frameCount}, příklad je zde jen pro ilustraci možností využití proměnných}
-
-\begin{lstlisting}
-// naše proměnná nazvaná příznačne: počítadlo
-int pocitadlo = 0;
-
-
-void setup(){
-	size(640,480);
-	
-}
-
-void draw(){
-	background(0);
-	rect( pocitadlo, 10 , 30 , 30 );
-
-	// zde již přičíáme hodnotu, lze napsat i zkrácným zápisem:
-	// pocitadlo++;
-
-	pocitadlo += 1;
-
-	// zde můžeme použít modulo na omezení počítadla na šířku plátna
-
-	pocitadlo = pocitadlo % width;
-
-}
-
-\end{lstlisting}
-
-Definicí této hodnoty lze například časovat animace. Další metodou je animaci časovat pomocí funkce \vyraz{millis()}. Tato funkce je nezávislá na počtu vykreslených okének za vteřinu, měří počet uběhnutých milivteřin od startu programu. Může se nám také hodit pro precizní časování událostí v programu.
-
-   
-
-
-
-\pododdil{Interakce}
-
-\Slovnik{interakce} se dá obecně definovat jako vzájemné působení. V počítačové terminologii se nejvíce má na mysli vzájemné působení člověka a stroje. Přímá interakce z podstaty vzájemného působení vyžaduje rozměr času animaci\footnote{tedy program trvající v čase}. To umožňuje uživateli přímý vstup do proměnných, tedy do obsahu našich hodnot.
-
-Je dobré si uvědomit, že \slovnik{interakce} je do jisté míry při práci s počítačem pozorovatelná neustále. Pouhý pohyb myši lze považovat za interakci člověka se strojem. Pohyb uživatele přímo proměňuje hodnoty vykreslující pozici kurzoru, stiskem klávesy v textovém editoru například píšeme text atd.
-
-Při interakci je nutné do určité míry předvídat chování uživatele. Interakce primárně vychází z fyzické zkušenosti s předměty kolem nás. Interakcí je myšleno vše co může uživatel přímo ovlivnit.
-
-Interakce se dá rozdělit do dvou základních oblastí na interakci přímou a nepřímou, nebo chcete-li na interakci vědomou a nevědomou. Mezi těmito kategoriemi neexistuje jednoznačná hranice.
-
-Obecně je toto rozlišení spíše stupnicí od jednoduchých přímo a okamžitě viditelných jevů po uživatelově vstupu ke komplikovanějším procedurám spouštěným jen s částečným vědomím uživatele.
-
-Základní tedy přímou interakci si můžeme ukázat na následujícím příkladě:
-
-\begin{lstlisting}
-void setup(){
-	size(640,480);
-}
-
-void draw(){
-	background(255);
-	// všimněte si parametrů mouseX a mouseY
-	rect(mouseX,mouseY,30,30);
-}
-\end{lstlisting}
-
-Toto je jedna z nejzákladnějších možných interakcí. Vstupem pro pozici kresleného obdélníku se nám stávají dva parametry \vyraz{mouseX} a \vyraz{mouseY}.
-
-\oddil{Pohyb a dynamika}
-
-K docílení jednoduché interakce není zapotřebí mnoho. Animace je ovšem složitější problém který budeme řešit v Processingu nejvíce matematicky. Zdá se, že dosažení dynamického pohybu je jeden z průvodních jevů pokročilého programování.
-
- Nyní si můžeme ukázat jak lze zkombinovat dosavadní znalosti k vytvoření nelineárního pohybu.
- 
- \begin{lstlisting}
-float x;
-float y;
-float rychlost;
-
-void setup(){
-	size(640,480);
-     x = width / 2;
-     y = height / 2;
-     rychlost = 0.1;
-}
-
-void draw(){
-	background(255);
-	x += (mouseX - x) * rychlost;
-     y += (mouseY - y) * rychlost;
-     rect(x,y,30,30);
-}
-\end{lstlisting}
-
-Čtverec bude nyní následovat kurzor nelineárním pohybem. Dynamika pohybu je dána prostou formulí:
-\begin{lstlisting}
-x += (mouseX - x) * rychlost;
-y += (mouseY - y) * rychlost; 
-\end{lstlisting}
-K prmoěným {\em x} a {\em y} přiřazujeme zlomek rozdílu mezi pozicí kurzoru a proměnou v obou osách. Tuto formuli lze využít téměř kdekoli, například při jemném přechodu barev a vyhlazování hodnot obecně.
-
-\oddil{Proměnlivost}
-
-
-Potřebujeme-li programu vdechnout život, musíme nejprve pochopit jakým způsobem se program může proměňovat. Proměnlivost se dotýká základní myšlenky programu trvajícího v čase. K tomu abychom takovou proměnlivost mohli okem pozorovat, program může komunikovat pomocí různých výstupů. Processing, který byl navržen s důrazem na vizuální výstup, bude nejčastěji komunikovat právě vizuálně. Obecně řečeno proměnlivost je jakákoli změna hodnot v délce běhu programu, lze si ji představit například jako rozdíl mezi dvěma okénky filmu.
-
-U filmových okének je rozdíl sice velmi těžko definovatelný ilustruje ale dobře celý problém. Film nám spostředkovává iluzi pohybu sledem několika okének za vteřinu. Přesně stejně se chová i vizuální program. Rozdíl mezi filmem a programem je zhruba ten, že program může mít teoreticky dva a více různých konců, nebo nemusí končit vůbec. Zde by se dalo namítnout že program je také nakonec nositelem kauzálního sledu operací. Vtip je v tom, že stejný program spuštěný dvakrát nemusí produkovat stejný výsledek.
-
-Změny v chodu programu se dá docílit několika způsoby. Základní změna v běhu programu je lidská intervence, která je z pohledu programu (respektive tvůrce programu) jen velmi těžko předpovídatelná. Změna v chování programu bez takového vnějšího zásahu je pak vždy umělá. (viz náhodnost)
-
-
-Vraťme se ovšem k Proměnlivosti. Proměnlivost je nezbytnou součástí animace. Pohyb je proměna stavu v čase. Měli bychom zde mít vždy na paměti, že program nerozumí tomu co zrovna zobrazuje, program rozumí pouze hodnotám. Rozpohybovat lze tyto hodnoty, a tím posléze například jevy, které se v programu zobrazují a člověku dají nějaký smysl. 
-
-Pro příklad si můžeme ukázat jak proměna jedné hodnoty ovlivňuje obraz. K tomu abychom mohli hodnotu proměňovat musíme ji nejdříve pojmenovat.
-
-\begin{lstlisting}
-int y = 0;
-\end{lstlisting}
-
-Tímto jsme pojmenovali svoji proměnnou. Jednou z možných variant zápisu je okamžité přiřazení hodnoty, tedy y je nyní nula. Pro animaci hodnoty použijeme přírůstek, tedy při kresbě jednotlivého okénka přičteme k hodnotě 1. Abychom viděli nějaký výsledek, můžeme opět kreslit objekt, který bude využívat proměňující se hodnotu v čase.
-
-\begin{lstlisting}
-void setup(){
-	size(640,480);
-}
-
-void draw(){
-	background(255);
-	
-	// prirustek o jedna
-	// lze zapsat i zkracene y++;
-	y += 1;
-	
-	// kresba
-	line( 0 , y , width , y );
-
-}
-\end{lstlisting}
-
-Po spuštění tohoto programu uvidíte animaci trvající 480 okének. Animace bude pokračovat i nadále, hodnota y se bude stále proměňovat. Kresba bude teoreticky probíhat mimo plátno. K tomu abychom kresbu udrželi v mezích plátna, můžeme použít jednoduchou podmínku, která bude vracet hodnotu y zpět na nulu.
-
-
-\begin{lstlisting}
-if(y > height){
-	y = 0;
-}
-\end{lstlisting}
-
-Celá tato procedura jen ilustruje logiku programu. Hodnota y je zde přímo zobrazena, ale stejně tak se dá použít kdekoli jinde, tedy ne nezbytně na kresbu. Pro lepší představu jiného použití uvedu následující příklad.
-
-Pod hodnotou si lze například představit pevně stanovenou hodnotu, dejme tomu výšku domu. Zadání výšky nemusí nepostaví dům ale stanoví hodnotu se kterou můžeme dál počítat. Známe-li výšku plánované budovy, můžeme například přidávat patra dokud se této výšky nedosáhne. Tento postup již lze považovat za logickou konstrukci a jedním ze základních postupů jak takové logiky v programu docílit je podmínka.
 
 
 
@@ -1560,6 +1312,282 @@ background( a ? 0 : 255 );
 
 \end{lstlisting}
       
+
+
+
+
+
+\oddil{Orientace v prostoru}
+
+Plocha programu by sa dala přirovnat k listu papíru, popřípadě k malířskému plátnu. Ve standartním dvoudimenzionálním módu má dva základní parametry {\em X} a {\em Y}, ty označují souřadnice, ve kterých se veškeré kreslící operace pohybují. Důležité je zmínit, že oproti jisté konvenci v matematických grafech levý horní roh nese hodnotu {\em X = 0}, {\em Y = 0}. Směrem dolů hodnota {\em Y} přibývá stejně tak jaho hodnota {\em X} přibývá směrem doprava.\\
+
+\begin{center}
+\includegraphics[width = 0.65\textwidth]{imgs/grid2d.png}
+\end{center}
+
+Tato konvence je převzata ze standartu počítačové grafiky, kdy první pixel v levém horním rohu nese souřadnicovou hodnotu právě {\em X = 0}, {\em Y = 0}. Obrácená osa Y se může ze začátku jevit matoucí. Důvody pro zdánlivé převrácení os pochopíme později například právě při operacích se samotnými obrazovými body, pixely, které jsou standartně uspořádány od levého horního rohu doprava a níže.
+
+Plochu je možné představit si jako prázdný prostor, na kterém je možno zobrazovat grafiku. Tvary nebo například text se zobrazují právě prostřednictvím zdrojového kódu tj. instrukcemi psanými v editoru.
+
+Na první pohled by se mohlo zdát, že například při zobrazení obdélníku, příkaz:
+
+\begin{lstlisting}
+rect(x,y,šířka,výška);
+\end{lstlisting}
+
+jehož výsledkem je kresba pouhého obdélníku je zbytečně komplikovaný, oproti jiným zobrazovacím metodám. Důležité je si zde uvědomit koncepci Processingu, který tímto zobrazením primitivních objektů sestavuje celý obraz. To co se zpočátku může zdát jako nadbytečná práce, tj. psaním koordinátů každého ze zobrazovaných objektů se posléze ukáže jako sofistikovaný a velmi ulehčující způsob přemýšlení o obraze. Veškeré parametry oddělené čárkou v kulatých závorkách příkazu {\em rect} náleží samotným vstupním hodnotám. Příkaz {\em rect} očekává čtyři parametry. Parametry mohou být celá čísla nebo čísla s desetinnou čárkou. Pro názornost, zadáme-li do parametrů ''natvrdo'' hodnoty:
+
+\begin{lstlisting}
+rect(8,6,7,5);
+\end{lstlisting}
+
+Výsledné zobrazení na naší pomyslné ploše bude následující:
+
+\begin{center}
+\includegraphics[width = 0.65\textwidth]{imgs/gridRect2d.png}
+\end{center}
+
+
+Zamyslíme-li se například o tom, že bychom v jakémkoli jiném nástroji chtěli zobrazit vícero, například tisíc obdélníků, na první pohled jednodušší GUI \footnote{zkratka pro "Guided User Interface" klasické grafické editory jako Gimp nebo Photoshop} grafické editory nám nedovolí tuto operaci učinit jinak, než že musíme všech tisíc obdélníků nakreslit. V případě Processingu nám bude stačit vytvořit rutinu pro kreslení libovolného počtu obdélníků a pak tuto rutinu spustit.
+
+Zde se již dostáváme k samotnému jádru Processingového přemýšlení. Programování obecně dokáže velmi ulehčit operace jejichž pravidelnost dokážeme popsat. Veškeré umění psaní programu tedy spočívá v definicích těchto chování a redukci složitých jevů na jednoduché rovnice.
+
+Celé řemeslné umění psaní kódu v podstatě záleží na eleganci v zápisu složitějších vztahů mezi různými parametry. Dovednosti se člověk učí postupně, osvojení si gramatické korektnosti a logické posloupnosti se mohou zpočátku jevit zbytečně komplikované, ovšem i po ovládnutí pouhých pár jednoduchých pravidel lze Processing využít kreativním způsobem.
+
+V další části se budeme zabývat stavbou programu. Pod odpudivým názvem se skrývají právě tato jednoduchá pravidla, která by měla tvořit základ dalším experimentům. 
+
+
+\pododdil{Zobrazení}
+
+Jak zobrazit hodnoty, které uchovává program v paměti? Jakákoli hodnota lze použít například jako jeden z argumentů v kreslících funkcích.
+
+Již zmiňovaný \vyraz{rect()}, tedy rectangle - obdélník, vyžaduje ke svému úspěšnému vykreslení čtyři parametry, čtyři číselné hodnoty \footnote{zde nezáleží jestli se jedná o celé číslo int nebo číslo s desetinnou čárkou float}. Tyto parametry, hodnoty, můžeme buďto zadat jako přímé číselné hodnoty, nebo do těchto parametrů můžeme zadat naši proměnnou která obsahuje číslo. Názorně:
+
+\begin{lstlisting}
+
+// první způsob vykreslení obdéníku
+rect( 10, 8, 40, 20 );
+
+// druhý způsob vykreslení obdélníku
+int prvniCislo = 10;
+int druheCislo = 8;
+
+rect( prvniCislo, druheCislo, 40, 20 );
+
+\end{lstlisting}
+
+Již nyní je nám zřejmé jak hodnoty mohou ovlivnit zobrazení. Namísto hodnot zadaných číselně se zde v druhém způsobu vykreslení obdélníku objevují naše proměnné, které mají již zadaný obsah. Výsledek zobrazení bude v obou případech stejný, ovšem z hlediska struktury programu je druhý způsob daleko flexibilnější.
+
+Představme si nyní, že hodnota zadaná prvním způsobem zápisu se již nikdy v průběhu programu nemůže proměnit. V případě druhého způsobu zápisu získáváme díky možnosti změny jednoho parametru kontrolu nad kreslícím výstupem.
+
+Veškeré příkazy které jsme si zatím ukázali byli spuštěny pouze jednou. To znamená, že obdélník byl vykreslen a program, který již neměl žádné další příkazy jednoduše skončil.
+
+V další kapitole si předvedeme jak vdechnout procesům pohyb a stálost, další kapitola je věnovaná animaci.
+
+
+
+\oddil{Animace a interakce}
+\index{animace}
+
+\pododdil{Animace}
+
+Statická kresba na plátno je jen jeden z možných výstupů. Animace v Processingu znamená překreslovat plátno pokaždé jinými obrazy. Processing je jazyk využívaný zjeména v pohyblivém obraze. Nyní si ukážeme základní postup při tvorbě pohyblivého obrazu.
+
+
+Velmi zjedoušeně řečeno smyčka \vyraz{draw()} je prostředek pro změnu, pozor není změnou sama o sobě. Smyčka zajišťuje sousledné volání příkazů v neustálém trvání\footnote{po dobu běhu programu}. V Processingu si v podstatě uvědomíme, že psaním příkazů do smyčky píšeme pravidla jakoby pro jedno okénko ve filmu. Pohyb je vždy zajištěn proměnou našich datatypů, které v tomto okénku figurují.
+
+Tedy například napíšeme-li takto, samotnou smyčku:
+
+\begin{lstlisting}
+void draw(){
+	// 60x za vteřinu spuštěná operace
+}
+\end{lstlisting}
+
+Vše uzavřeno do složených závorek bude spuštěno šedesátkrát za vteřinu. Bude-li obsah základní funkce \vyraz{draw()} neměnný, tj. budeme-li volat šedesátkrát za vteřinu to samé, animace bude ovšem v případě vizuálního výstupu jen abstraktním pojmem.
+
+V tomto příkladě již dochází ke spuštění smyčky. Výsledkem bude pouze šedivá plocha v rozměrech sto krát sto pixelů, jelikož na plátno nebylo zatím nic vykresleno. Následujícími příkazy \vyraz{background()} a \vyraz{rect()} nakreslíme nejprve plné pozadí a následovně obdélník. Zápis bude vypadat následovně:
+
+\begin{lstlisting}
+void draw(){
+	// pozadí
+	background(255);
+	// obdélník se čtyřmi parametry
+	rect( 10 , 10 , 30 , 30 );
+}
+\end{lstlisting}
+
+Takový zápis již provádí animaci a kreslí na plátno. Animace ovšem v tomto případě nebude patrná jelikož zatím se v obraze nic neproměňuje. Veškeré hodnoty jsou statické tudíž se vykresluje jeden čtverec na bílém pozadí na stále stejném místě.
+
+K rozhýbání objektů jednoduše potřebujeme proměnit jeden z parametrů v čase.\bublina{Animace je proměna obrazu v čase, jednotlivá okénka se v čase musí lišit.} Abychom docílili animace zkusme například vložit namísto parametru pro kresbu čtverce v ose X počítadlo okének. Processing má proměnnou s údajem o počtu uběhlých okének pod názvem \vyraz{frameCount}.
+
+Vyraz \vyraz{frameCount} lze využít následovně:
+
+\begin{lstlisting}
+void setup(){
+	size(640,480);
+}
+
+
+void draw(){
+	// pozadí
+	background(255);
+	// pohyb v ose X pomocí proměnné frameCount
+	rect( frameCount % width , 10 , 30 , 30 );
+}
+
+\end{lstlisting}
+
+Výsledkem tohoto zápisu bude již první animace. Čtverec se bude pohybovat rychlostí šedesáti pixelů za vteřinu z leva do prava. Tato hodnota v podstatě udává počet vykreslených cyklů funkce \vyraz{draw()}, ta je v tomto případě pouze využita k pohybu vykreslovaného čtverce.
+
+Tento pohyb je velmi názorný ukazuje, že hodnota počtu vykreslených okének lze použít například i jako hodnotu pro animaci. Stejně tak si můžeme založit i vlastní proměnnou, která bude mít identickou funkci.\footnote{v tomto konkrétním příkladě to sice nedává smysl, dá se použít stejně tak standartní proměnná \vyraz{frameCount}, příklad je zde jen pro ilustraci možností využití proměnných}
+
+\begin{lstlisting}
+// naše proměnná nazvaná příznačne: počítadlo
+int pocitadlo = 0;
+
+
+void setup(){
+	size(640,480);
+	
+}
+
+void draw(){
+	background(0);
+	rect( pocitadlo, 10 , 30 , 30 );
+
+	// zde již přičíáme hodnotu, lze napsat i zkrácným zápisem:
+	// pocitadlo++;
+
+	pocitadlo += 1;
+
+	// zde můžeme použít modulo na omezení počítadla na šířku plátna
+
+	pocitadlo = pocitadlo % width;
+
+}
+
+\end{lstlisting}
+
+Definicí této hodnoty lze například časovat animace. Další metodou je animaci časovat pomocí funkce \vyraz{millis()}. Tato funkce je nezávislá na počtu vykreslených okének za vteřinu, měří počet uběhnutých milivteřin od startu programu. Může se nám také hodit pro precizní časování událostí v programu.
+
+   
+
+
+
+\pododdil{Interakce}
+
+\Slovnik{interakce} se dá obecně definovat jako vzájemné působení. V počítačové terminologii se nejvíce má na mysli vzájemné působení člověka a stroje. Přímá interakce z podstaty vzájemného působení vyžaduje rozměr času animaci\footnote{tedy program trvající v čase}. To umožňuje uživateli přímý vstup do proměnných, tedy do obsahu našich hodnot.
+
+Je dobré si uvědomit, že \slovnik{interakce} je do jisté míry při práci s počítačem pozorovatelná neustále. Pouhý pohyb myši lze považovat za interakci člověka se strojem. Pohyb uživatele přímo proměňuje hodnoty vykreslující pozici kurzoru, stiskem klávesy v textovém editoru například píšeme text atd.
+
+Při interakci je nutné do určité míry předvídat chování uživatele. Interakce primárně vychází z fyzické zkušenosti s předměty kolem nás. Interakcí je myšleno vše co může uživatel přímo ovlivnit.
+
+Interakce se dá rozdělit do dvou základních oblastí na interakci přímou a nepřímou, nebo chcete-li na interakci vědomou a nevědomou. Mezi těmito kategoriemi neexistuje jednoznačná hranice.
+
+Obecně je toto rozlišení spíše stupnicí od jednoduchých přímo a okamžitě viditelných jevů po uživatelově vstupu ke komplikovanějším procedurám spouštěným jen s částečným vědomím uživatele.
+
+Základní tedy přímou interakci si můžeme ukázat na následujícím příkladě:
+
+\begin{lstlisting}
+void setup(){
+	size(640,480);
+}
+
+void draw(){
+	background(255);
+	// všimněte si parametrů mouseX a mouseY
+	rect(mouseX,mouseY,30,30);
+}
+\end{lstlisting}
+
+Toto je jedna z nejzákladnějších možných interakcí. Vstupem pro pozici kresleného obdélníku se nám stávají dva parametry \vyraz{mouseX} a \vyraz{mouseY}.
+
+\pododdil{Pohyb a dynamika}
+
+K docílení jednoduché interakce není zapotřebí mnoho. Animace je ovšem složitější problém který budeme řešit v Processingu nejvíce matematicky. Zdá se, že dosažení dynamického pohybu je jeden z průvodních jevů pokročilého programování.
+
+ Nyní si můžeme ukázat jak lze zkombinovat dosavadní znalosti k vytvoření nelineárního pohybu.
+ 
+ \begin{lstlisting}
+float x;
+float y;
+float rychlost;
+
+void setup(){
+	size(640,480);
+     x = width / 2;
+     y = height / 2;
+     rychlost = 0.1;
+}
+
+void draw(){
+	background(255);
+	x += (mouseX - x) * rychlost;
+     y += (mouseY - y) * rychlost;
+     rect(x,y,30,30);
+}
+\end{lstlisting}
+
+Čtverec bude nyní následovat kurzor nelineárním pohybem. Dynamika pohybu je dána prostou formulí:
+\begin{lstlisting}
+x += (mouseX - x) * rychlost;
+y += (mouseY - y) * rychlost; 
+\end{lstlisting}
+K prmoěným {\em x} a {\em y} přiřazujeme zlomek rozdílu mezi pozicí kurzoru a proměnou v obou osách. Tuto formuli lze využít téměř kdekoli, například při jemném přechodu barev a vyhlazování hodnot obecně.
+
+\oddil{Proměnlivost}
+
+
+Potřebujeme-li programu vdechnout život, musíme nejprve pochopit jakým způsobem se program může proměňovat. Proměnlivost se dotýká základní myšlenky programu trvajícího v čase. K tomu abychom takovou proměnlivost mohli okem pozorovat, program může komunikovat pomocí různých výstupů. Processing, který byl navržen s důrazem na vizuální výstup, bude nejčastěji komunikovat právě vizuálně. Obecně řečeno proměnlivost je jakákoli změna hodnot v délce běhu programu, lze si ji představit například jako rozdíl mezi dvěma okénky filmu.
+
+U filmových okének je rozdíl sice velmi těžko definovatelný ilustruje ale dobře celý problém. Film nám spostředkovává iluzi pohybu sledem několika okének za vteřinu. Přesně stejně se chová i vizuální program. Rozdíl mezi filmem a programem je zhruba ten, že program může mít teoreticky dva a více různých konců, nebo nemusí končit vůbec. Zde by se dalo namítnout že program je také nakonec nositelem kauzálního sledu operací. Vtip je v tom, že stejný program spuštěný dvakrát nemusí produkovat stejný výsledek.
+
+Změny v chodu programu se dá docílit několika způsoby. Základní změna v běhu programu je lidská intervence, která je z pohledu programu (respektive tvůrce programu) jen velmi těžko předpovídatelná. Změna v chování programu bez takového vnějšího zásahu je pak vždy umělá. (viz náhodnost)
+
+
+Vraťme se ovšem k Proměnlivosti. Proměnlivost je nezbytnou součástí animace. Pohyb je proměna stavu v čase. Měli bychom zde mít vždy na paměti, že program nerozumí tomu co zrovna zobrazuje, program rozumí pouze hodnotám. Rozpohybovat lze tyto hodnoty, a tím posléze například jevy, které se v programu zobrazují a člověku dají nějaký smysl. 
+
+Pro příklad si můžeme ukázat jak proměna jedné hodnoty ovlivňuje obraz. K tomu abychom mohli hodnotu proměňovat musíme ji nejdříve pojmenovat.
+
+\begin{lstlisting}
+int y = 0;
+\end{lstlisting}
+
+Tímto jsme pojmenovali svoji proměnnou. Jednou z možných variant zápisu je okamžité přiřazení hodnoty, tedy y je nyní nula. Pro animaci hodnoty použijeme přírůstek, tedy při kresbě jednotlivého okénka přičteme k hodnotě 1. Abychom viděli nějaký výsledek, můžeme opět kreslit objekt, který bude využívat proměňující se hodnotu v čase.
+
+\begin{lstlisting}
+void setup(){
+	size(640,480);
+}
+
+void draw(){
+	background(255);
+	
+	// prirustek o jedna
+	// lze zapsat i zkracene y++;
+	y += 1;
+	
+	// kresba
+	line( 0 , y , width , y );
+
+}
+\end{lstlisting}
+
+Po spuštění tohoto programu uvidíte animaci trvající 480 okének. Animace bude pokračovat i nadále, hodnota y se bude stále proměňovat. Kresba bude teoreticky probíhat mimo plátno. K tomu abychom kresbu udrželi v mezích plátna, můžeme použít jednoduchou podmínku, která bude vracet hodnotu y zpět na nulu.
+
+
+\begin{lstlisting}
+if(y > height){
+	y = 0;
+}
+\end{lstlisting}
+
+Celá tato procedura jen ilustruje logiku programu. Hodnota y je zde přímo zobrazena, ale stejně tak se dá použít kdekoli jinde, tedy ne nezbytně na kresbu. Pro lepší představu jiného použití uvedu následující příklad.
+
+Pod hodnotou si lze například představit pevně stanovenou hodnotu, dejme tomu výšku domu. Zadání výšky nemusí nepostaví dům ale stanoví hodnotu se kterou můžeme dál počítat. Známe-li výšku plánované budovy, můžeme například přidávat patra dokud se této výšky nedosáhne. Tento postup již lze považovat za logickou konstrukci a jedním ze základních postupů jak takové logiky v programu docílit je podmínka.
+
+
 
 \oddil{Náhoda}
 

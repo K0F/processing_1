@@ -2,60 +2,60 @@
 \indexentry {pravidla textu}{11}
 \indexentry {slovník}{11}
 \indexentry {boolean}{11}
-\indexentry {stroj}{21}
-\indexentry {stroj}{21}
-\indexentry {otevřený software}{28}
-\indexentry {MIT licence}{28}
-\indexentry {Built with Processing}{28}
-\indexentry {GNU / Linux}{31}
-\indexentry {GNU / GPL}{31}
-\indexentry {IDE}{34}
-\indexentry {DATA}{34}
-\indexentry {syntax highlighting}{35}
-\indexentry {indenting}{35}
-\indexentry {flow}{37}
-\indexentry {flow}{38}
-\indexentry {flow}{38}
-\indexentry {color()}{42}
-\indexentry {colorMode()}{42}
-\indexentry {setup()}{50}
-\indexentry {draw()}{50}
-\indexentry {setup()}{50}
-\indexentry {draw()}{50}
-\indexentry {draw()}{50}
-\indexentry {void}{50}
-\indexentry {rect()}{54}
-\indexentry {animace}{55}
-\indexentry {draw()}{55}
-\indexentry {draw()}{55}
-\indexentry {background()}{55}
-\indexentry {rect()}{55}
-\indexentry {frameCount}{56}
-\indexentry {frameCount}{56}
-\indexentry {draw()}{56}
-\indexentry {frameCount}{56}
-\indexentry {millis()}{57}
-\indexentry {interakce}{57}
-\indexentry {interakce}{57}
-\indexentry {mouseX}{58}
-\indexentry {mouseY}{58}
-\indexentry {random()}{68}
-\indexentry {void}{69}
-\indexentry {void}{69}
-\indexentry {save()}{75}
-\indexentry {save()}{76}
-\indexentry {saveFrame()}{76}
-\indexentry {frameCount}{76}
-\indexentry {nf()}{76}
-\indexentry {saveFrame()}{76}
-\indexentry {saveFrame()}{77}
-\indexentry {save()}{77}
-\indexentry {vestavěné knihovny}{81}
-\indexentry {true}{89}
-\indexentry {false}{89}
-\indexentry {fill()}{89}
-\indexentry {stroke()}{89}
-\indexentry {sketch}{89}
-\indexentry {GNU / GPL}{90}
-\indexentry {save()}{92}
-\indexentry {frameCount()}{92}
+\indexentry {stroj}{26}
+\indexentry {stroj}{26}
+\indexentry {otevřený software}{33}
+\indexentry {MIT licence}{33}
+\indexentry {Built with Processing}{33}
+\indexentry {GNU / Linux}{37}
+\indexentry {GNU / GPL}{37}
+\indexentry {IDE}{40}
+\indexentry {DATA}{40}
+\indexentry {syntax highlighting}{41}
+\indexentry {indenting}{41}
+\indexentry {flow}{45}
+\indexentry {flow}{46}
+\indexentry {flow}{46}
+\indexentry {color()}{50}
+\indexentry {colorMode()}{51}
+\indexentry {setup()}{59}
+\indexentry {draw()}{59}
+\indexentry {setup()}{59}
+\indexentry {draw()}{59}
+\indexentry {draw()}{59}
+\indexentry {void}{59}
+\indexentry {rect()}{70}
+\indexentry {animace}{71}
+\indexentry {draw()}{71}
+\indexentry {draw()}{71}
+\indexentry {background()}{72}
+\indexentry {rect()}{72}
+\indexentry {frameCount}{72}
+\indexentry {frameCount}{72}
+\indexentry {draw()}{73}
+\indexentry {frameCount}{73}
+\indexentry {millis()}{74}
+\indexentry {interakce}{74}
+\indexentry {interakce}{74}
+\indexentry {mouseX}{75}
+\indexentry {mouseY}{75}
+\indexentry {random()}{79}
+\indexentry {void}{80}
+\indexentry {void}{80}
+\indexentry {save()}{86}
+\indexentry {save()}{87}
+\indexentry {saveFrame()}{87}
+\indexentry {frameCount}{88}
+\indexentry {nf()}{88}
+\indexentry {saveFrame()}{88}
+\indexentry {saveFrame()}{88}
+\indexentry {save()}{88}
+\indexentry {vestavěné knihovny}{91}
+\indexentry {true}{99}
+\indexentry {false}{99}
+\indexentry {fill()}{99}
+\indexentry {stroke()}{99}
+\indexentry {sketch}{99}
+\indexentry {GNU / GPL}{100}
+\indexentry {save()}{102}
+\indexentry {frameCount()}{102}
