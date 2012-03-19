@@ -2042,11 +2042,15 @@ class Propiska{
 
 \end{lstlisting}
 
-Tímto jsme si definovali naši propisku. Než si ukážeme jak ji použít vysvětleme si některé nejasnosti. Třída se definuje pomocí slova \vyraz{class}, za ním následuje název třídy, v našem případě \vyraz{Propiska}.
+Tímto jsme si definovali naši propisku. Než si ukážeme jak ji použít vysvětleme si některé nejasnosti. Třída se definuje pomocí slova \vyraz{class}, za ním následuje název třídy, v našem případě {\em Propiska}.
 
-Uvnitř složených závorek, které vymezují definici nyní můžeme nastavit potřebné vlastnosti, proměnné. Následuje takzvaný konstruktor. Konstruktor není povinný ale pro ilustraci jej zde uvádím. Konstruktor se nám bude hodit později, kdy budeme chtít vytvořit naší propisku připravenou k práci.
+Uvnitř složených závorek, které vymezují definici nyní můžeme nastavit potřebné vlastnosti, proměnné. Následuje takzvaný konstruktor. Konstruktor není v definici povinný, ale pro ilustraci jej zde uvádím. Konstruktor se nám bude hodit později, kdy budeme chtít vytvořit naší propisku připravenou k práci.
 
-Konstruktor je místo, kde můžeme do nově vznikajícího objektu zaslat počáteční informace. Budu-li například potřebovat dvě propisky, jednu červenou a druhou modrou. Mohu je vytvořit následujícím způsobem.
+Konstruktorů v definici jedné třídy může být i více. Rozlišujeme je počtem, pořadím a typem zasílaných argumentů. Tímto způsobem si můžeme popsat všechny způsoby vytváření objektu. Například podle stupně známých proměnných které jsme schopni v dané chvíli nově vznikajícímu objektu definovat.
+
+Konstruktor je zkrátka místo, kde můžeme do nově vznikajícího objektu zaslat počáteční informace. Budu-li například nyní potřebovat dvě propisky, jednu červenou a druhou modrou, mohu je vytvořit následujícím způsobem:
+
+
 
 
 \begin{lstlisting}
@@ -2089,10 +2093,107 @@ Jak je z příkladu patrné, modrá propiska je objekt, který má pojmenovanou 
 Příklad s propiskou je ryze abstraktní a jistě naleznete sami řadu lepších. Zkuste se zamyslet o objektu a vlastnostech, které může objekt mít.
 
 
+\pododdil{Práce s objekty}
+
+Nyní již víme jak definovat a vytvořit objekt. Tyto schopnosti nám nyní velmi ulehčují práci se složitějšími vztahy mezi objekty.
+
+Zkusme si pro ukázku naplnit nám známé pole jednotlivými objekty. Takové uvažování se může nyní jevi trochu abstraktně, zkusme ho proto nejdříve uvést nějakým příkladem.
+
+Namísto propisek si vytvoříme entitu která bude reagovat na náš podnět. Bude mít následující vlastnosti. Zaprvé každá z entit budé mít své vlastní číslo, dále bude mít údaje o své vlastní pozici a každá z entit bude následovat kurzor jinou rychlostí. Při přemýšlení nad interakcí objektů s uživatelem si můžeme vzpomenout na kapitolu o pohybu. \odkaz{Iterakce} a \odkaz{Dynamika pohybu}.
+
+Můžeme zde pro ukázku definovat více konstruktorů, tedy více možných způsobů vytvoření objektu.
+
+Nejprve se pusťme do obecné definice naší entity:
+
+\begin{lstlisting}
+class Entita {
+  int id;
+  // vice promennych na jednom radku
+  float x, y;
+  float rychlost;
+  color c;
+
+  // prvni konstruktor
+  Entita(int _id, int _x, int _y, int _rychlost, color _c) {
+    id = _id;
+    x = _x;
+    y = _y;
+    rychlost = _rychlost;
+    c = _c;
+  }
+
+  // druhy konstruktor
+  Entita(int _id) {
+    id = _id;
+    x = random(width);
+    y = random(height);
+    rychlost = random(0.01, 0.3);
+    c = color(random(255));
+  }
+
+  void kresli() {
+    noStroke();
+    fill(c);
+    ellipse(x, y, 10, 10);
+  }
+  
+  void posunSeKeKurzoru(){
+    x += (mouseX - x) * rychlost;
+    y += (mouseY - y) * rychlost;
+  }
+}
+
+\end{lstlisting}
+
+Definice je až na pár výjimek opakováním známého. První novinka je možnost definovat více proměnných stejného typu na jeden řádek. Je to pouze více úsporné.
+
+ Dále přicházá ony dva konstruktory. Oba se jmenují stejně, mají ovšem rozdílný počet vstupních argumentů, a tím se odlišují. Při vutváření naší nové entity jako živého objektu jej můžeme vytvořit oběma způsoby. V druhém konstruktoru jsem použil příkaz \vyraz{random()}, ten zatím neznáme, více se o něm můžete dočíst v další kapitole o náhodě. V podstatě nám tento příkaz umožňuje vytvořit náhodné číslo. To se nám nyní bude hodit, chceme, aby každá z entit, kterou vytvoříme měla vlastní způsob chování.
+ 
+Funkce kresli pouze zobrazí na konkrétních souřadnicích každé entity elipsu. Stejně tak bychom zde mohli kreslit jakoukoli jinou obrazovou reprezentaci naší entity. Tvar tvora ponechám na vaší fantazii.
+ 
+K funkci {\em posunSeKeKurzoru()} není třeba příliž dodávat, dělá přesně to co by jste od ni očekávali. Připomínáme si zde formuli z kapitoly o pohybu. \odkaz{Dynamika pohybu}
+
+Nyní nám nic nebrání zaplnit rozličnými entitami celé pole:
+
+
+\begin{lstlisting}
+int pocet = 300;
+Entita[] naseEntity;
+
+void setup() {
+  size(640, 480);
+
+  naseEntity = new Entita[pocet]; 
+
+  for (int i = 0 ; i < naseEntity.length; i++) {
+    naseEntity[i] = new Entita(i);
+  }
+}
+
+
+void draw() {
+  background(0);
+
+  for (int i = 0 ; i < naseEntity.length; i++) {
+    naseEntity[i].posunSeKeKurzoru();
+    naseEntity[i].kresli();
+  }
+}
+\end{lstlisting}
+
+Výsledkem kódu bude celý had tříseti entit různých odstínů šedi lačnících po vašem kurzoru.
+
+
+\begin{center}
+\includegraphics[width = 1\textwidth]{imgs/prace-s-objekty-1.png}
+\end{center}
+
 
 
 
 \oddil{Náhoda}
+
+V minulé kapitole jsme hovořili o výrazu \vyraz{random{}}, nyní se pokusíme poodhalit tajemství náhody v programování.
 
 Proč má smysl v případě strojů vůbec hovořit o náhodě. Náhoda je z pohledu výpočetní techniky třeba vnímat jako vnější vliv. V rámci počítačové logiky náhoda v podstatě neexistuje. Každý jev má svoji příčinu a může mít svůj následek. Počítačové jazyky znají jen pojem takzvané pseudonáhodnosti.
 
