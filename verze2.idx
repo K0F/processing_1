@@ -163,41 +163,47 @@
 \indexentry {Náhoda}{98}
 \indexentry {random()}{98}
 \indexentry {random()}{98}
-\indexentry {Ukládání informací}{99}
-\indexentry {CSV}{99}
-\indexentry {Ukládání obrazových dat}{100}
-\indexentry {save()}{100}
-\indexentry {save()}{101}
-\indexentry {saveFrame()}{101}
-\indexentry {frameCount}{101}
-\indexentry {nf()}{101}
-\indexentry {saveFrame()}{101}
-\indexentry {saveFrame()}{102}
+\indexentry {Šum}{99}
+\indexentry {random()}{99}
+\indexentry {noise()}{99}
+\indexentry {noise()}{100}
+\indexentry {noise()}{100}
+\indexentry {frameCount}{100}
+\indexentry {Ukládání informací}{101}
+\indexentry {CSV}{101}
+\indexentry {Ukládání obrazových dat}{102}
 \indexentry {save()}{102}
-\indexentry {Ukládání holých dat}{102}
-\indexentry {CSV}{102}
-\indexentry {float}{103}
-\indexentry {draw()}{103}
-\indexentry {frameCount()}{103}
-\indexentry {exit()}{103}
-\indexentry {saveStrings()}{104}
-\indexentry {Tisk do pdf, ukládání vektorů}{104}
-\indexentry {Načítání informací}{104}
-\indexentry {Načítání obrázků}{104}
-\indexentry {Načítání textových souborů}{104}
-\indexentry {Pokročilejší operace se String}{104}
-\indexentry {Parsing, získávání hodnot z externích dat}{104}
-\indexentry {Knihovny}{107}
-\indexentry {Vestavěné knihovny}{107}
-\indexentry {vestavěné knihovny}{107}
-\indexentry {Nástroje}{109}
-\indexentry {Komplexní program}{110}
-\indexentry {Experimenty}{111}
-\indexentry {true}{115}
-\indexentry {false}{115}
-\indexentry {fill()}{115}
-\indexentry {stroke()}{115}
-\indexentry {sketch}{115}
-\indexentry {GNU / GPL}{117}
-\indexentry {save()}{119}
-\indexentry {frameCount()}{119}
+\indexentry {save()}{103}
+\indexentry {saveFrame()}{103}
+\indexentry {frameCount}{103}
+\indexentry {nf()}{103}
+\indexentry {saveFrame()}{103}
+\indexentry {saveFrame()}{104}
+\indexentry {save()}{104}
+\indexentry {Ukládání holých dat}{104}
+\indexentry {CSV}{104}
+\indexentry {float}{105}
+\indexentry {draw()}{105}
+\indexentry {frameCount()}{105}
+\indexentry {exit()}{105}
+\indexentry {saveStrings()}{106}
+\indexentry {Tisk do pdf, ukládání vektorů}{106}
+\indexentry {Načítání informací}{106}
+\indexentry {Načítání obrázků}{106}
+\indexentry {Načítání textových souborů}{106}
+\indexentry {Pokročilejší operace se String}{106}
+\indexentry {Parsing, získávání hodnot z externích dat}{106}
+\indexentry {Knihovny}{109}
+\indexentry {Vestavěné knihovny}{109}
+\indexentry {vestavěné knihovny}{109}
+\indexentry {Nástroje}{111}
+\indexentry {Komplexní program}{112}
+\indexentry {Experimenty}{113}
+\indexentry {true}{117}
+\indexentry {false}{117}
+\indexentry {fill()}{117}
+\indexentry {stroke()}{117}
+\indexentry {sketch}{117}
+\indexentry {GNU / GPL}{119}
+\indexentry {save()}{121}
+\indexentry {frameCount()}{121}

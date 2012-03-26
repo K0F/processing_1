@@ -2426,6 +2426,50 @@ println(nahoda);
 
 Jak je zřejmě pochopitelné náhoda se nyní bude pohybovat v rozmezí čísla od deseti do dvaceti. To co se vám konkrétně objeví v konzoli nedokážu předpovědět, jedná se totiž o vaše náhodné číslo.
 
+Tisk do konzole je samozřejmě jeden z možných výstupů. Náhodné číslo můžeme zobrazit graficky. Můžeme například animovat pozici elipsy na ploše:
+
+\begin{lstlisting}
+void setup(){
+	size(640,480);
+}
+
+
+void draw(){
+	background(255);
+	fill(255);
+	ellipse(width/2 + random(-5,5), height/2 + random(-5,5), 20, 20);
+}
+\end{lstlisting}
+
+
+Spustíme-li tento program, uvidíme kmitající elipsu na středu kreslícího plátna. Kmitání probíhá v rozmezí od mínus pěti do plus pěti pixelů od středu v obou osách. Každé jednotlivé okénko se obměňuje nová pseudonáhodná hodnota, a tím dochází k animaci.
+
+
+\pododdil{Šum}
+
+Další možným strůjcem náhodně generované hodnoty je takzvaný Perlnův šum (Perlin noise). Perlinův šum je pojmenovaný po svém vynálezci Kenu Perlinovi a je velmi často využíván při generování přírodně vypadajícího náhodného pohybu. Oproti příkazu \vyraz{random()} se perlinův šum \vyraz{noise()} odvíjí plynule. Pro ilustraci si de můžeme ukázat rodíl mezi perlinovým šumem a holým pseudonáhodným číslem.
+
+\begin{lstlisting}
+void setup(){
+	size(640,480);
+}
+
+
+void draw(){
+	background(255);
+	fill(255);
+	ellipse(width/2 + noise( frameCount/30.0 ), height/2 + noise( frameCount/10.0 ), 20, 20);
+}
+\end{lstlisting}
+
+Pohyb obrazce bude nyní probíhat plynule v nepředpovídatelných směrech. Příkaz \vyraz{noise()} předpokládá vstup, který určuje pozici v šumu. Perlinův šum si můžeme představit jako neměnný graf kterým můžeme procházet tam i zpět, v závislosti na zaslané hodnotě. Jelikož do příkazy \vyraz{noise()} posíláme proměnnou hodnotu \vyraz{frameCount} procházíme variacemi perlinova šumu, výstupem bude vždy číslo v rozmezí nula až jedna. Budeme-li potřebovat rozmezí jiné můžeme šum vynásobit požadovaným rozsahem (jak je tomu v předchozím příkladě).
+
+
+
+
+
+
+
 
 \chapter{Práce s daty}
 
