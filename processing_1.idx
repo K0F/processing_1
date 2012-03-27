@@ -103,6 +103,7 @@
 \indexentry {if}{71}
 \indexentry {else}{71}
 \indexentry {if}{72}
+\indexentry {if}{72}
 \indexentry {true}{72}
 \indexentry {true}{72}
 \indexentry {false}{72}
@@ -130,7 +131,7 @@
 \indexentry {keyReleased()}{80}
 \indexentry {key}{80}
 \indexentry {keyCode}{80}
-\indexentry {CODED}{81}
+\indexentry {CODED}{80}
 \indexentry {keyCode}{81}
 \indexentry {println()}{81}
 \indexentry {Pole}{81}
@@ -203,7 +204,7 @@
 \indexentry {false}{117}
 \indexentry {fill()}{117}
 \indexentry {stroke()}{117}
-\indexentry {sketch}{117}
+\indexentry {sketch}{118}
 \indexentry {GNU / GPL}{119}
-\indexentry {save()}{121}
-\indexentry {frameCount()}{121}
+\indexentry {save()}{123}
+\indexentry {frameCount()}{123}
