@@ -96,7 +96,7 @@
 
 \newcommand{\vyraz}[1]{\textit{\gls{#1}}\index{#1}\label{#1}}
 
-\newcommand{\odkaz}[1]{\textit{(\nameref{#1} str. \pageref*{#1})}}
+\newcommand{\odkaz}[1]{\textit{(viz. \nameref{#1} str. \pageref*{#1})}}
 \newcommand{\console}[1]{\texttt{\footnotesize #1}}
 
 
@@ -545,7 +545,7 @@ Proces poznávání struktur jazyka při tvorbě obrazu prostřednictvím Proces
 \chapter{Processing jako prostředí}
 
 
-Processing představuje ucelené programovací prostředí tzv. IDE\footnote{Integrated Development Enviroment}. Jedná se o kompletní prostředí určené především k rychlému vývoji aplikací. Samotný program je jednak otevřeným softwarem\footnote{tj. s otevřeným veřejně dostupným zdrojovým kódem}, a také zdarma ke stažení pro všechny majoritní platformy. Processing je k dispozici pro \slovnik{GNU / Linux}, Mac OS i pro Microsoft Windows na stránkách projektu processing.org. Porcessing je teoreticky možné spustit v jakémkoli prostředí umožňujícím chod Javy. Celý jazyk i samotné IDE vychází pod licencí \slovnik{GNU / GPL} jedná se tedy o svobodný software. 
+Processing představuje ucelené programovací prostředí tzv. PDE\footnote{Processing Development Enviroment}. Jedná se o kompletní prostředí určené především k rychlému vývoji aplikací. Samotný program je jednak otevřeným softwarem\footnote{tj. s otevřeným veřejně dostupným zdrojovým kódem}, a také zdarma ke stažení pro všechny majoritní platformy. Processing je k dispozici pro \slovnik{GNU / Linux}, Mac OS i pro Microsoft Windows na stránkách projektu processing.org. Porcessing je teoreticky možné spustit v jakémkoli prostředí umožňujícím chod virtuálního stroje Javy. Celý jazyk i samotné PDE vychází pod licencí \slovnik{GNU / GPL}, jedná se tedy o svobodný software \odkaz{Otevřenost softwaru} . 
 
 \oddil{Základní prostředí}
 
@@ -1297,7 +1297,7 @@ if(y > height){
 
 Celá tato procedura jen ilustruje logiku programu. Hodnota y je zde přímo zobrazena, ale stejně tak se dá použít kdekoli jinde, tedy ne nezbytně na kresbu. Pro lepší představu jiného použití uvedu následující příklad.
 
-Pod hodnotou si lze například představit pevně stanovenou hodnotu, dejme tomu výšku domu. Zadání výšky nemusí nepostaví dům ale stanoví hodnotu se kterou můžeme dál počítat. Známe-li výšku plánované budovy, můžeme například přidávat patra dokud se této výšky nedosáhne. Tento postup již lze považovat za logickou konstrukci a jedním ze základních postupů jak takové logiky v programu docílit je podmínka. Rozvedeno v kapitole \odkaz{Podmínka}. \bublina{vyzkoušejte podmínku na konec programu přidat a pak ji odstranit, ujistěte se že rozumíte tomu co v animaci způsobuje, změňte číslo v podmínce za jiné}
+Pod hodnotou si lze například představit pevně stanovenou hodnotu, dejme tomu výšku domu. Zadání výšky nemusí nepostaví dům ale stanoví hodnotu se kterou můžeme dál počítat. Známe-li výšku plánované budovy, můžeme například přidávat patra dokud se této výšky nedosáhne. Tento postup již lze považovat za logickou konstrukci a jedním ze základních postupů jak takové logiky v programu docílit je podmínka. \odkaz{Podmínka} \bublina{vyzkoušejte podmínku na konec programu přidat a pak ji odstranit, ujistěte se že rozumíte tomu co v animaci způsobuje, změňte číslo v podmínce za jiné}
 
 \pododdil{Animace}
 
@@ -1325,7 +1325,7 @@ void draw(){
 }
 \end{lstlisting}
 
-Takový zápis již provádí animaci a kreslí na plátno. Animace ovšem v tomto případě nebude patrná jelikož zatím se v obraze nic neproměňuje. Veškeré hodnoty jsou statické tudíž se vykresluje jeden čtverec na bílém pozadí na stále stejném místě.
+Takový zápis již provádí animaci a kreslí na plátno. Animace ovšem v tomto případě nebude patrná jelikož zatím se v obraze nic neproměňuje. Veškeré hodnoty jsou statické, tudíž se vykresluje jeden čtverec na bílém pozadí na stále stejném místě.
 
 K rozhýbání objektů jednoduše potřebujeme proměnit jeden z parametrů v čase.\bublina{Animace je proměna obrazu v čase, jednotlivá okénka se v čase musí lišit. Přemýšlejte jakým způsobem k proměně může dojít.}  Abychom docílili animace zkusme například vložit namísto parametru pro kresbu čtverce v ose X počítadlo okének. Processing má již nastavenou proměnnou s údajem o počtu uběhlých okének pod názvem \vyraz{frameCount}.
 
@@ -1382,7 +1382,7 @@ Definicí této hodnoty lze například časovat animace. Další metodou je ani
 
 \pododdil{Dynamika pohybu}
 
-K docílení jednoduché interakce není zapotřebí mnoho. Animace je ovšem složitější problém který budeme řešit v Processingu nejvíce matematicky. Zdá se, že dosažení dynamického pohybu je jeden z průvodních jevů pokročilého programování.
+K docílení jednoduché interakce není zapotřebí mnoho. Animace je ovšem složitější problém, který budeme řešit v Processingu nejvíce matematicky. Zdá se, že dosažení dynamického pohybu je jeden z průvodních jevů pokročilého programování.
 
  Nyní si můžeme ukázat jak lze zkombinovat dosavadní znalosti k vytvoření nelineárního pohybu.
  
@@ -1420,7 +1420,7 @@ Druhá proměnná {\em rychlost} by se k docílení podobného efektu měla pohy
 
 \oddil{Podmínka}
 
-Uvedením do stavů programu se můžeme dostat k prvnímu opravdovému strukturování programu. Zkusme nyní nastínit jak taková struktura vypadá. Patrně nejpřímější řízení dějů v programu je podmínka. Podmínka říká, jestliže je něco pravda, spusť následné příkazy. Podmínka funguje v podstatě jako výhybka, která odklání program do jeho různých cest. Uvedu zde krátký příklad vytváření podobné struktury v programu:
+Uvedením do stavů programu se můžeme dostat k prvnímu opravdovému strukturování programu. Zkusme nyní nastínit, jak taková struktura vypadá. Patrně nejpřímější řízení dějů v programu je podmínka. Podmínka říká, jestliže je něco pravda, spusť následné příkazy. Podmínka funguje v podstatě jako výhybka, která odklání program do jeho různých cest. Uvedu zde krátký příklad vytváření podobné struktury v programu:
 
 \begin{lstlisting}
 boolean prepinac = false;
@@ -1436,10 +1436,11 @@ println(hodnota);
 
 \end{lstlisting}
 
-Velmi prostá struktura je v tomto příkladě vytvořená jednou podmínkou. Podmínka je v Processingu (a řadě jiných jazyků) značena slovem \vyraz{if}, "jestli". "Jestli" potřebuje dostat odpověd v kulatých závorkách, ta může být jen pravda nebo nepravda, k tomu se hodí nejlépe již zmíněný \vyraz{boolean}, nebo například porovnávání dvou čísel, znaků nebo řetězců znaků, tj. operace které nám vrátí \vyraz{true} nebo \vyraz{false}.
+Velmi prostá struktura je v tomto příkladě vytvořená jednou podmínkou. Podmínka je v Processingu (a řadě jiných jazyků) značena slovem \vyraz{if}, \uv{jestli}. \uv{Jestli} potřebuje dostat odpověd v kulatých závorkách, ta může být jen pravda nebo nepravda, k tomu se hodí nejlépe již zmíněný \vyraz{boolean}, nebo například porovnávání dvou čísel, znaků nebo řetězců znaků, tj. operace které nám vrátí \vyraz{true} nebo \vyraz{false}.
 
 Definujeme-li tedy náš \vyraz{boolean} na začátku jako nepravdu, podmínka se v tomto případě nenaplní a program spustí kód uvozený složenými závorkami následujícími až slovo \vyraz{else}.
-V našem příkladě se jedná o druhou větev podmínky, ta sice není povinná ale pro ukázku jsem ji zde rovnou zmínil. Tedy za ukončením \vyraz{if} a složených závorek můžeme dále slovem \vyraz{else}, tzn. "jestliže ne", řící co se stane v případě nenaplnění naší podmínky.
+
+V našem příkladě se jedná o druhou větev podmínky, ta sice není povinná, ale pro ukázku jsem ji zde rovnou zmínil. Tedy za ukončením \vyraz{if} a složených závorek můžeme dále slovem \vyraz{else}, tzn. \uv{jestliže ne}, řící co se stane v případě nenaplnění naší podmínky.
 
 V tomto konkrétním případě se k proměnné {\em hodnota} přiřadí číslo {\em 0}.
 
@@ -1448,7 +1449,7 @@ To program následně ověřuje tiskem do konzole, kde se objeví {\em 0}
 
 \pododdil{if}
 
-Podmínka je jeden ze základních stavebních kamenů programu. Podmínku lze použít ve všech případech, kdy předpokládáme odpověď ano nebo ne. Podmínka v Processingu stejně tak jako ve většině ostatních jazyků konstruována příkazem.
+Jak jsme si již uvedli, podmínka je jeden ze základních stavebních kamenů programu. Podmínku lze použít ve všech případech, kdy předpokládáme jednoznačnou odpověď {\em ano} nebo {\em ne}. Podmínka v Processingu, stejně tak jako ve většině ostatních jazyků, konstruována příkazem \vyraz{if}.
 
 Konstrukce podmínky vypadá pak následnovně:
 
@@ -1590,7 +1591,6 @@ boolean a = true;
 
 if(a)
 	//pouze tento jediný řádek bude spuštěn
-	
 	
 	
 if(a){
