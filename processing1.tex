@@ -160,9 +160,15 @@
 \usepackage{pdfpages}
 
 \begin{document}
-
 .
 \thispagestyle{empty}
+\newpage
+.
+\thispagestyle{empty}
+\newpage
+\oddil{Poděkování}
+\thispagestyle{empty}
+.
 \newpage
 .
 \thispagestyle{empty}
@@ -173,15 +179,18 @@
 
 \vfill
 
-Původní elektronický dokument
-\begin{verbatim}
-https://github.com/K0F/processing_1
-\end{verbatim}
-Nakladatelství AMU.
-
-ISBN 978-80-7331-224-4
-
+\begin{itemize}
+\item
+Původní elektronický dokument: \\
+{\em https://github.com/K0F/processing\_1}
+\item
+Nakladatelství AMU: \\
+{\em ISBN 978-80-7331-224-4}
+\item
 {\em Vysázeno s \XeLaTeX}
+
+\end{itemize}
+
 
 
 \thispagestyle{empty}
@@ -221,9 +230,7 @@ Proces tvůrčího programování obsahuje prvek intuice, která vychází podst
 
 K vystavění intuice je nejvíce nezbytná schopnost pozorování. Samotná intuice nezmůže v komunikaci se strojem nic. Stroj neví co počítá, ale dokáže spočítat i to, co nevíte sami.
 
-Stroj je rychlý nástroj pro ověření vaší intuice a je zapotřebí být pozorný. Můžeme to nazvat experimentální přístup, výsledky by měli být vámi vždy intuitivně a hlavně kriticky zkoumány. Zpětnou dekonstrukcí intuice, rozborem Vaší jistoty získáváte postupně dar rozumění věci. Dar je to danajský, rozumění je jen ustálená podoba, která musí být opět zpochybněna intuicí; nutno podotknout, že opakovaným prověřením se často jen více utvrzuje. Ale o tom později.
-
-...
+Stroj je rychlý nástroj pro ověření vaší intuice a je zapotřebí být pozorný. Můžeme to nazvat experimentální přístup, výsledky by měli být vámi vždy intuitivně a hlavně kriticky zkoumány. Zpětnou dekonstrukcí intuice, rozborem Vaší jistoty získáváte postupně dar rozumění věci. Dar je to danajský, rozumění je jen ustálená podoba, která musí být opět zpochybněna intuicí; nutno podotknout, že opakovaným prověřením se často jen více utvrzuje. 
 
 Není-li tento jazyk první, prosím Vás o shovívavost v podrobnostech, do kterých v úvodu této knihy zabíhám. Šíře znalostí, které se mohou vyskytovat u potenciálních čtenářů tohoto průvodce je pro autora první velikou neznámou.
 
@@ -354,7 +361,7 @@ Pozoruhodné algoritmy Johnatana McCaba vynikají svojí spektakulárností, kte
 \includegraphics[width = 1\textwidth]{imgs/mcCabe1.png}
 \end{center}
 
-I když se to zprvu nabízí, Mc Cabovi Obrazy se nedají posuzovat pouze výtvarně. Nejvíce pozoruhodné jsou pro jejich vznik. Obrazy se přímo odkazují na výzkum Alana Turinga, konkrétně na text vydaný v roce 1952 s názvem {/em The Chemical Basis of Morphogenesis}, který pojednává o vlivu chemických sloučenin na uspořádání růstu tkáně vícebuněčných organismů. Turing podobnou difuzi prvků v textu rozpracoval matematicky a po téměř padesáti letech na podobné bázi původních algoritmů vznikají podobné obrazy. Podobnost v uspořádání lze nalézt například ve snímcích tkáně pod elektronovým mikroskopem a i když se jedná o ryze výtvarnou interpretaci algoritmu, ten může vést k zamyšlení i vědecké kruhy.
+I když se to zprvu nabízí, Mc Cabovi Obrazy se nedají posuzovat pouze výtvarně. Nejvíce pozoruhodné jsou pro jejich vznik. Obrazy se přímo odkazují na výzkum Alana Turinga, konkrétně na text vydaný v roce 1952 s názvem {\em The Chemical Basis of Morphogenesis}, který pojednává o vlivu chemických sloučenin na uspořádání růstu tkáně vícebuněčných organismů. Turing podobnou difuzi prvků v textu rozpracoval matematicky a po téměř padesáti letech na podobné bázi původních algoritmů vznikají podobné obrazy. Podobnost v uspořádání lze nalézt například ve snímcích tkáně pod elektronovým mikroskopem a i když se jedná o ryze výtvarnou interpretaci algoritmu, ten může vést k zamyšlení i vědecké kruhy.
 
 
 \begin{center}
@@ -596,7 +603,7 @@ Ty operace jež něco zapisují či načítají z disku. Tyto operace zahrnují 
 
 Processingová sketch nemusí být nutně uložena aby jste ji mohli spustit. Nové úpravy, které v textovém poli napíšete budou dočasně uloženy v závislosti na vašem operačním systému jinde. Tímto způsobem můžete experimentovat s kódem aniž by jste přišli o předchozí verzi.
 
-Mezi základní operace patří vytvoření nové sketche (3), otevření předešlé (4), uložení (5) a export (6).
+Mezi základní operace patří vytvoření nové sketche {\em (3)}, otevření předešlé {\em (4)}, uložení {\em (5)} a export {\em (6)}.
 
 Tlačítka mají dále speciální vlastnosti s podržením tlačítka tlačítko s novou sketchí otevře také nové okno editoru. V kombinaci s načtením předchozí sketche (4) otevřete též sketch v novém editoru aniž by jste ztratili předchozí okno. U uložení se modifikace projevuje funkcí uložit jako. U exportu stisknutím klávesy \klavesy{SHIFT} přepínáte mezi exportem samostatné aplikace nebo tzv. appletu, aplikace schopné běžet v prohlížeči nebo obecně na webových stránkách.
 
@@ -874,29 +881,29 @@ Tímto jsme provedli základní matematickou operaci, sečetli jsme dvě čísla
 Další možné operace jsou:
 
 \begin{lstlisting}
-// aritmetické operace
+// aritemticke operace
 a + b;
 a - b;
 a * b;
 a / b;
 
-// přírůstky
+// prirustky
 a += b;
 a -= b;
 
-// přírůstek, úbytek o 1
+// prirustek, ubytek o 1
 a ++;
 a --;
 
-// modulo (přebytek po dělení)
+// modulo (prebytek po deleni)
 a % b;
 
-// a konečně logické porovnávání
-// větší, menší
+// a porovnavani
+// vetsi, mensi
 a < b;
 a > b;
 
-//větší nebo rovná se, menší nebo rovno
+//vetsi nebo rovna se, mensi nebo rovno
 a <= b;
 a >= b;
 
@@ -904,8 +911,8 @@ a >= b;
 a == b;
 a != b;
 
-// pozor výsledkem porovnávání již není číslo!
-// ale odpověď ANO nebo NE, TRUE nebo FALSE
+// pozor vysledkem porovnavani jiz neni cislo
+// ale odpoved ANO nebo NE, TRUE nebo FALSE
 // pravda nebo nepravda, datatyp boolean
 
 \end{lstlisting}
@@ -946,7 +953,7 @@ Pro další operace s čísly bych pro přesnost výsledků důrazně doporučil
 float a = 3;
 float b;
 
-// sq je funkce pro "square", číslo na druhou
+// sq je funkce pro "square", cislo na druhou
 b = sq(a);
 println(b);
 
@@ -954,7 +961,7 @@ println(b);
 b = sqrt(a);
 println(b);
 
-// pow je funkce pro "power", číslo na N-tou
+// pow je funkce pro "power", cislo na N-tou
 // mínusová čísla v N jsou odmocniny
 b = pow(a,3);
 println(b);
@@ -994,9 +1001,9 @@ int a = 1;
 int b = 2;
 String slova = "test";
 
-// "slova = slova + něco" lze také nahradit znaménkem "+="
-// stejným znaménkem které u čísel znamená přírůstek
-// tedy namísto:
+// "slova = slova + neco" lze take nahradit znamenkem "+="
+// stejnym znamenkem ktere u cisel znamena prirustek
+// tedy namisto:
 // slova = slova + " " + a + " " + b;
 // můžeme zkrátit na:
 
@@ -1027,8 +1034,8 @@ tretiTvrzeni = prvniTvrzeni && druheTvrzeni;
 
 println(tretiTvrzeni);
 
-// "||" dvě svislé čáry je OR, tj "nebo"
-// výsledek bude TRUE, pravda pokud
+// "||" dve svisle cary je OR, tj "nebo"
+// vysledek bude TRUE, pravda pokud
 // prvniTvrzeni nebo druheTvrzeni je pravda
 tretiTvrzeni = prvniTvrzeni || druheTvrzeni;
 
@@ -1177,10 +1184,10 @@ Již zmiňovaný \vyraz{rect()}, tedy rectangle - obdélník, vyžaduje ke svém
 
 \begin{lstlisting}
 
-// první způsob vykreslení obdéníku
+// prvni zpusob vykresleni obdeniku
 rect(10, 8, 40, 20);
 
-// druhý způsob vykreslení obdélníku
+// druhy zpusob vykresleni obdelniku
 int prvniCislo = 10;
 int druheCislo = 8;
 
@@ -1199,11 +1206,11 @@ Již nyní je nám zřejmé jak hodnoty mohou ovlivnit zobrazení. Namísto hodn
 V Processingu je předefinovaných jen několik základních tvarů, se kterými lze bohatě vystačit. Kromě již zmíněného \vyraz{rect()}, jsou zde také základní tvary:
 
 \begin{itemize}
-\item[\vyraz{point()}] - bod(x, y)
-\item[\vyraz{line()}] - čára(x1, y1, x2, y2)
-\item[\vyraz{ellipse()}] - elipsa(x, y, šířka, výška)
-\item[\vyraz{triangle()}] - trojúhelník(x1, y1, x2, y2, x3, y3)
-\item[\vyraz{quad()}] - čtyřúhelník(x1, y1, x2, y2, x3, y3, x4, y4) 
+\item[\vyraz{point()}] - bod($X$, $Y$)
+\item[\vyraz{line()}] - čára($X_1$, $Y_1$, $X_2$, $Y_2$)
+\item[\vyraz{ellipse()}] - elipsa($X$, $Y$, šířka, výška)
+\item[\vyraz{triangle()}] - trojúhelník($X_1$, $Y_1$, $X_2$, $Y_2$, $X_3$, $Y_3$)
+\item[\vyraz{quad()}] - čtyřúhelník($X_1$, $Y_1$, $X_2$, $Y_2$, $X_3$, $Y_3$, $X_4$, $Y_4$) 
 
 \end{itemize} \bublina{nakreslete jeden bod, čáru a elipsu tak aby se vzájemně nepřekrývali, zkuste změnit jejich pořadí sledujte změny po spuštění}
 
@@ -1363,7 +1370,6 @@ void setup(){
 	size(640,480);
 }
 
-
 void draw(){
 	background(255);
 	rect( frameCount % width , 10 , 30 , 30 );
@@ -1378,7 +1384,7 @@ Počet okének vykreslovaných za vteřinu můžeme ovlivnit pomocí funkce \vyr
 Tento pohyb je velmi názorný ukazuje, že hodnota počtu vykreslených okének lze použít například i jako hodnotu pro animaci. Stejně tak si můžeme založit i vlastní proměnnou, která bude mít identickou funkci.\footnote{v tomto konkrétním příkladě to sice nedává smysl, dá se použít stejně tak standartní proměnná \vyraz{frameCount}, příklad je zde jen pro ilustraci možností využití proměnných}
 
 \begin{lstlisting}
-// naše proměnná nazvaná příznačne: počítadlo
+// nase promenna nazvana priznacne: pocitadlo
 int pocitadlo = 0;
 
 
@@ -1391,12 +1397,12 @@ void draw(){
 	background(0);
 	rect( pocitadlo, 10 , 30 , 30 );
 
-	// zde již přičíáme hodnotu, lze napsat i zkrácným zápisem:
+	// zde jiz pricitame hodnotu, lze napsat i zkracenym zapisem:
 	// pocitadlo++;
 
 	pocitadlo += 1;
 
-	// zde můžeme použít modulo na omezení počítadla na šířku plátna
+	// zde muzeme pouzit modulo na omezeni pocitadla na sirku platna
 
 	pocitadlo = pocitadlo % width;
 
@@ -2472,9 +2478,13 @@ void draw(){
 Spustíme-li tento program, uvidíme kmitající elipsu na středu kreslícího plátna. Kmitání probíhá v rozmezí od mínus pěti do plus pěti pixelů od středu v obou osách. Každé jednotlivé okénko se obměňuje nová pseudonáhodná hodnota, a tím dochází k animaci.
 
 
+
+
 \pododdil{Šum}
 
 Další možným strůjcem náhodně generované hodnoty je takzvaný Perlnův šum (Perlin noise). Perlinův šum je pojmenovaný po svém vynálezci Kenu Perlinovi a je velmi často využíván při generování přírodně vypadajícího náhodného pohybu. Oproti příkazu \vyraz{random()} se perlinův šum \vyraz{noise()} odvíjí plynule. Pro ilustraci si de můžeme ukázat rodíl mezi perlinovým šumem a holým pseudonáhodným číslem.
+
+
 
 \begin{lstlisting}
 void setup(){
@@ -2490,6 +2500,8 @@ void draw(){
 \end{lstlisting}
 
 Pohyb obrazce bude nyní probíhat plynule v nepředpovídatelných směrech. Příkaz \vyraz{noise()} předpokládá vstup, který určuje pozici v šumu. Perlinův šum si můžeme představit jako neměnný graf kterým můžeme procházet tam i zpět, v závislosti na zaslané hodnotě. Jelikož do příkazy \vyraz{noise()} posíláme proměnnou hodnotu \vyraz{frameCount} procházíme variacemi perlinova šumu, výstupem bude vždy číslo v rozmezí nula až jedna. Budeme-li potřebovat rozmezí jiné můžeme šum vynásobit požadovaným rozsahem (jak je tomu v předchozím příkladě).
+
+\bublina{Vyzkoušejte použít náhodu a šum ke kresbě různých prvků v obraze, ovládejte rozsah pomocí myši.}
 
 
 
@@ -2577,6 +2589,8 @@ Kamera byla v předchozím příkladě nastavena ve funkci \vyraz{setup()}. Stej
 
 V kontextu 3D zobrazení jsme zatím hovořili o bodu, lince a v předchozím příkladě jsme si zobrazili krychli příkazem \vyraz{box()}. Stejným příkazem lze zkonstruovat i kvádr. Ten lze zkostruovat z pomoci tří paramatrů pro rozměry ve třech osách $X,Y,Z$.
 
+\bublina{Zkuste proměňovat hodnoty proměnné camera() pozorujte jak se objekt proměňuje, ujistěte se že rozumíte všem hodnotám zadávaným do funkce camera().}
+
 
 
 
@@ -2626,9 +2640,142 @@ Další možností k tvorbě modelů je využít jiných programů (jako napří
 
 
 
-\pododdil{Transformace}
+\oddil{Transformace}
 
-Vraťme se zpět ke dvěma rozměrům.
+Vraťme se zpět ke dvěma rozměrům. Processing disponuje příkazy, které usnadňují práci s prostorem souhrnně se takové funkce dají nazvat transformace.
+
+
+Uvedeme si zde základní koncepci práce s objekty v prostoru a metodou zobrazení. Nové funkce se jmenují \vyraz{translate()}, \vyraz{rotate()} a \vyraz{scale()}.
+
+Představme si situaci kdy potřebujeme pohybovat s jedním objektem. Jak jsme si ukázali již dříve \odkaz{Animace} můžeme objektem pohybovat zadáváním jeho pozice.
+
+Druhý způsob je v Processingu běžně využívaný a je více dynamický, dovoluje nám totiž s objekty nejen pohybovat, ale měnit jejich rotaci nebo velikost.
+
+Představme si nyní náš objekt čtverec na pozici {\em X = 20, Y = 20} o šířce a výšce dvaceti pixelů.
+
+\begin{center}
+\includegraphics[width = 0.7\textwidth]{imgs/trans1.png}
+\end{center}
+
+Jestliže budeme chtít přesunout čtverec o dvacet pixelů oprava a čtyřicet dolů. Můžeme přičíst ke koordinátům tyto hodnoty.
+
+\begin{lstlisting}
+rect(20 + 20, 20 + 40, 40, 40);
+\end{lstlisting}
+
+Nebo můžeme použít transformaci posunu. Ta nám posune jakoby celou čtvrtkou papíru na který kreslíme. Posun je vyjádřej funkcí \vyraz{translate()}.
+
+\begin{lstlisting}
+translate(20, 40);
+rect(20, 20, 40, 40);
+\end{lstlisting}
+
+Čtverec se tak zobrazí na stejném místě jako bychom docílili ručního posunu. Způsob je ale odlišný, ve skutečnosti jsme posunuli celým kreslícím plátnem.
+
+\begin{center}
+\includegraphics[width = 0.7\textwidth]{imgs/trans2.png}
+\end{center}
+
+Veškeré tvary, které nyní vykreslíme budou posunuty o náš posun, tedy nemusíme posouvat všemi jednotlivými tvary zvlášť. Další operací kterou můžeme provést je rotace, Rotace vždy probíhá kolem bodu {\em X=0, Y=0}. Pomocí transformace si můžeme přesunout objekt na požadované místo. K dalším operacím se nám budou hodit dva příkazy \vyraz{pushMatrix()}, funkce která započíná transformace a \vyraz{popMatrix()}, která navrací plátno na původní místo. Při vícenásobných transformacích se nám může běžně stát že budeme tyto bloky transformací vrstvit jednu do druhé. Exemplární rotaci si můžeme ukázat na podobném příkladě se čtvercem.
+
+\bublina{Proměňte hodnoty ve funkci translate(), můžete použít například pozici myší mouseX a mouseY a pozorujte změny v kresbě.}
+
+\begin{lstlisting}
+void setup() {
+  size(500, 500);
+  fill(0);
+  rectMode(CENTER);
+}
+
+void draw() {
+
+  background(255);
+  
+  pushMatrix();  
+  translate(150, 150);
+
+  rotate( radians(45) );
+  rect(20, 20, 100, 100);
+  popMatrix();
+}
+\end{lstlisting}
+
+Výsledkem bude čtverec otočený o $45°$. Příkaz \vyraz{rotate()} přijímá úhel v radiánech, cheme-li otáčet o $45°$ musíme nejprve provést konverzi mezi úhly a radiány. Můžeme to provést snadno pomocí příkazu \vyrazí{radians()}. Opačnou konverzi můžeme provádět za pomoci příkazu \vyraz{degrees()}.
+
+
+\begin{center}
+\includegraphics[width = 0.7\textwidth]{imgs/rot.png}
+\end{center}
+
+Naše rotace v diagramu bude vypadat asi takto:
+
+\begin{center}
+\includegraphics[width = 0.7\textwidth]{imgs/trans3.png}
+\end{center}
+
+První šipka znázorňuje posun a druhá šipka rotaci plátna. Osvojení si koncepce transformací je otázka zvyku, výhody toho co se nyní jeví jako nepraktické si uvědomíte možná později. Velikou výhodou transformací je například to, že si můžete definovat nový střed kresby ke kterému se můžete vztahovat v relativních vzdálenostech.
+
+Bez transformací se téměř vůbec neobejdete při kreslení ve třech rozměrech. Stejně jako u jiných příkazů, i příkazy pro transformace zůstávají stejné. Funkci \vyraz{translate()} přibude třetí rozměr a funkce \vyraz{rotate()} se obohatí o rotace ve tří osách  \vyraz{rotateX()}, \vyraz{rotateY()}, \vyraz{rotateZ()}.
+
+
+\pododdil{Použití transformací}
+
+Jako souhrn všeho co jsme nastínili v úvodu do transformací se nyní pokusme analyzovat jeden z příkladů ze stránek {\em openprocessing.org} vytvořený Keithem Petersem.
+
+\begin{lstlisting}
+float[] x = new float[20];
+float[] y = new float[20];
+float segLength = 9;
+
+void setup() {
+  size(500, 500);
+  smooth(); 
+  strokeWeight(5);
+  stroke(0, 100);
+}
+
+void draw() {
+  background(225);
+  dragSegment(0, mouseX, mouseY);
+  for(int i=0; i<x.length-1; i++) {
+    dragSegment(i+1, x[i], y[i]);
+  }
+}
+
+void dragSegment(int i, float xin, float yin) {
+  float dx = xin - x[i];
+  float dy = yin - y[i];
+  float angle = atan2(dy, dx);  
+  x[i] = xin - cos(angle) * segLength;
+  y[i] = yin - sin(angle) * segLength;
+  segment(x[i], y[i], angle);
+}
+
+void segment(float x, float y, float a) {
+  pushMatrix();
+  translate(x, y);
+  rotate(a);
+  line(0, 0, segLength, 0);
+  popMatrix();
+}
+\end{lstlisting}
+
+V úvodu se nám objevují dvě pole, které představují soupis souřadnic. Další proměnná je definice délky jednoho segmentu. Ve funkci \vyraz{setup()} si můžeme povšimnout nového výrazu \vyraz{smooth()}.
+
+Funkce \vyraz{smooth()} zajišťuje vyhlazení renderování tvarů, její protějšek je \vyraz{noSmooth()}. Zajišťuje jemnější obrazový výstup na úkor rychlosti.
+
+Další funkcí kterou jsme neuvedli je \vyraz{strokeWeight()}, ten definuje tloušťku čar a potažmo všech objektů. Šířka čáry je nastavena na $1.0$. Funkce funguje stejně jako vyraz \vyraz{stroke()}, nastavuje tloušťku čáry pro všchny objekty níže.
+
+Nakonec tu máme dvě funkce. První funkce dragSegment přijímá hodnotu i ze smyčky a provádí trignometrické matematické operace. Funkce začíná načtením minulé hodnoty souřadnic kterou porovná s hodnotami současnými a uloží výsledek. Zajímavá operace je \vyraz{atan2()}. Ta zjišťuje úhel v radiánech podle dvou hodnot v pořadí $Y a X$. Zde za vstupní hodnoty pro výpočet úhlu zadáváme rozdíl mezi současnými souřadnicemi segmentu pozicí minulého segmentu.
+
+Podle zjištěného úhlu se dále modifikuje současná pozice za pomocí zpětného převedení na souřadnice pomocí \vyraz{cos} a \vyraz{sin}. Trignonometrii zde příliš rozvádět nebudu. Sinusová křivka lze zkonstruovat lineárním přírůstkem ve funkci \vyraz(sin()). Další goniometrické funkce jsou v Processingu \vyraz{asin()} a \vyraz{acos()}, šikovné pro práci s funkcemi jsou předefinované hodnoty zlomku čísla $\pi$, \vyraz{PI}, \vyraz{HALFPI}, \vyraz{QUARTERPI}.
+
+A konečně přicházejí na řadu naše transformace. Ve funkci {\em segment} dochází ke kresbě jednotlivých segmentů hada. Funkce přijímá tři argumenty dva pro pozici $x$, $y$ a jeden pro úhel $a$.
+
+\bublina{Transformace mohou být náročné na prostorovou představivost nezoufejte při prvních nezdarech, po nějaké době a cviku s dvěma rozměry se můžete pokusit o transformace ve třetím rozměru.}
+
+Sled transformací pomocí posunu a rotace již známe.  
+
 
 
 
@@ -2709,6 +2856,8 @@ V příkladě tedy budeme ukládat obrázek jen po kliknutí myší.
 
 Nyní si představme, že z nějakého důvodu potřebujeme zachytit plnou sekvenci po sobě jdoucích obrázků. Problém příkazu save() je ten, že v případě natrvdo zadané cesty bude stále přepisovat obrazovými daty tentýž soubor. Abychom uložili vícero obrázků potřebujeme proměňovat cestu kam Processing obrázky ukládá. Můžeme k tomu využít počítadlo nebo zvláštní příkaz processingu \vyraz{saveFrame()};
 
+
+
 \begin{lstlisting} 
 void setup(){
 	size(640,480);
@@ -2740,6 +2889,7 @@ void draw(){
 
 Příkaz \vyraz{saveFrame()} vyžaduje stejně jako příkaz \vyraz{save()} cestu k ukládanému souboru. Příkaz má ovšem navíc tu vlastnost, vložíme-li do názvu souboru znaky křížku, Processing je rozpozná jako počet nul v počítadle okének.
 
+\bublina{Vygenerujte si jednoduchou animaci za použití metody saveFrame(), zkuste ukládat jen na stisktnutí tlačítka.}
 
 
 \pododdil{Ukládání holých dat}
@@ -2801,6 +2951,8 @@ Tato funkce za pomoci smyčky převede číselné informace do textové podoby. 
  \begin{center}
 \includegraphics[width = 1\textwidth]{imgs/csv.png}
 \end{center}
+
+\bublina{Vyzkoušejte si ukládání různých proměňujících se hodnot, ověřte si po uložení v textovém editoru jak výsledný text vypadá.}
 
 \pododdil{Tisk do pdf, ukládání vektorů}
 
@@ -2911,6 +3063,8 @@ void keyPressed() {
 
 Takovým postupem lze kreslit opakovaně do jednoho souboru. Kresbu a celý program ukončíme pomocí funkce \vyraz{keyPressed()}, tedy klávesy \klavesa{q}.
 
+\bublina{Můžete vytvářet neomezeně složité tvary zkuste jiné barvy výplně a obrysů, otevřete vždy výsledný soubor a ověřujete si výslednou podobu vektorové kresby. Zkuste kresbu načíst a upravit v jiném vektorovém editoru (například otevřený Inkscape)}
+
 \oddil{Načítání informací}
 
 Za vnější informace lze v Processingu považovat vše, co není zdrojovým kódem Processingu. Takové informace můžeme souhrně nazvat data. Processing umí nakládat s širokou škálou dat. Mezi ty nejčastěji používané bude patřit obrazovaá informace ať už v podobě rastrového nebo vektorového obrazu. Mezi další vektorové data patří 3D modely nebo například záznamy z databází ve formátu XML, CSV, naprosto holé textové soubory atp. 
@@ -2941,7 +3095,7 @@ PImage obrazek;
 
 void setup(){
   size(512,512);
-  obrazek = loadImage("lena.jpg");
+  obrazek = loadImage("lenna.jpg");
 }
 
 void draw(){
@@ -2957,7 +3111,7 @@ Zde stojí za povšimnutí funkce \vyraz{image()}, touto funkcí můžeme zobraz
 
 a nebo můžeme použít funkci \vyraz{imageMode()}. Funkce dokáže proměnit chování příkazu \vyraz{image()}, možné hodnoty jsou {\em CORNER, CORNERS a CENTER}. {\em CORNER}, je standartní chování příkazu \vyraz{image()}, namísto odčítání poloviny šířky a výšky obrázku můžme použít právě mód {CENTER}. Poslední mód {\em CORNERS} se nám může hodit potřebujeme-li definovat dva rohy namísto šířky a výšky vykreslovaného obrázku.
 
-
+\bublina{Dejte si pozor na velikost obrázků, pracujte vždy raději s menšími.}
 
 \pododdil{Načítání textových souborů}
 
@@ -2975,7 +3129,7 @@ String celyText[] = loadStrings("soubor.csv");
 
 Příkazem \vyraz{loadStrings()} načteme veškeré textové informaze ze souboru do obsahu naší proměnné. Proměnná musí být pole, pole typu \vyraz{String}.
 
-Co příkaz loadStrings přesně udělá je to že naplní celé pole hodnotami, jeden řádek do jedné přihrádky. Pro prosté ověření si nyní můžeme vytisknout obsah naší proměnné do konzole.
+Co příkaz \vyraz{loadStrings} přesně udělá, naplní celé pole hodnotami každý jeden řádek přiřadí jedné přihrádce. Pro prosté ověření si nyní můžeme vytisknout obsah naší proměnné do konzole.
 
 \begin{lstlisting}
 println(celyText);
@@ -2994,15 +3148,140 @@ println(celyText);
 //... atd.
 \end{lstlisting}
 
-
-
-
+Tisk do konzole pomocí \vyraz{println()} je nastaven tak, že jestliže tiskne pole, zobrazí také hodnoty o místech na kterých jsou informace v poli uložené.
 
 
 \oddil{Operace s textem}
+
+V minulé kapitole jsme úspěšně načetli hodnoty do paměti programu. Budeme-li je nyní potřebovat k něčemu použít musíme si rozmyslet v jakém tvaru se nacházejí.
+
+Navážeme-li na příklad z minulé kapitoly naše proměnná má v sobě stále ty samé hodnoty a je ve tvaru pole {\em String[]}.
+
+Kdyby se jednalo například o souvislý text -- báseň, patrně bychom ji chtěli zachovat v textové podobě. Jelikož jsou to ale čísla -- hodnoty, budou nám více platné pod datovým typem se kterým budeme moci zacházet jako s číslem. Potřebujeme je tedy převést do čísel.
+
+Převod z textových údajů do hodnot jiných typů se nazývá obecně \vyraz{parsing}. Je to velmi častá procedura ve styku s daty ze třetí strany, nebo i s daty které jsme sami uložili.
+
+
 \pododdil{Parsing, získávání hodnot z externích dat}
 
+K převodu textu do užitelných hodnot můžeme využít následující postup. Budeme potřebovat zkonstruovat smyčku \odkaz{Smyčky}, která projde veškerý obsah načteného textového souboru a řádek po řádku naplní pole číselných hodnot odpovídajících hodnotám textovým. Celou tuto funkci si můžeme uzavřít do funkce. Zopakujeme si načtení dat do pole. Program bude vypadat následovně:
+
+
+\begin{lstlisting}
+String celyText[];
+float hodnotyX[];
+float hodnotyY[];
+
+void setup(){
+
+	nactiTextDoHodnot();
+	
+	println(hodnotyX);
+}
+
+
+void nactiTextDoHodnot(String nazevSouboru){
+
+	celyText = loadStrings(nazevSouboru);
+	
+	hodnotyX = new float[celyText.length];
+	hodnotyY = new float[celyText.length];
+	
+	for(int i = 0 ; i < celyText.length ; i++){
+		String radek = celyText[i];
+		String[] hodnoty = splitTokens(radek,", ");
+		
+		hodnotyX[i] = parseFloat(hodnoty[0]);
+		hodnotyY[i] = parseFloat(hodnoty[1]);
+	}
+
+}
+
+//////////// vysledek:
+//[0] 0.0
+//[1] 0.0
+//[2] 0.0
+//[3] 0.0
+//[4] 0.0
+//[5] 0.0
+//[6] 0.0
+//[7] 39.0
+//[8] 46.0
+//[9] 50.0
+//... atd.
+\end{lstlisting}
+
+Pojděme si co se v programu stalo. Celá procedura zde spočívá v naší funkci nazvané {\em nactiTextDoHodnot()}. Jako argument do této funkce posíláme název souboru který chceme načíst.
+
+Jako první se ve funkci spustí funkce kterou již známe \vyraz{loadStrings()}, ta nám naplní naše textové pole textem. Nyní je zapotřebí nastavit velikost číselných polí, pro přehlednost jsme zde vytvořil dvě pro každou osu. Jsou nazvané {\em hodnotyX} a {\em hodnotyY}, jejich budoucí velikost známe, bude stejná jako textové pole. Přes příkaz {\em length} se můzeme dostat k délce jakéhokoli pole.
+
+Nyní začneme s procházením textového pole, smyčka bude mít opět stejnou délku jako textové pole. Dočasná proměnná {\em radek} je zde spíše pro ilustraci, přiřazuje se k ní text pokaždé nového řádku.
+
+Speciální textovou funkcí \vyraz{splitTokens()} rozdělíme řádek podle rozdělujících znaků. Zde víme že náš zápis v soboru odděluje jednotlivé hodnoty čárkou a mezerou. Funkce \vyraz{splitTokens()} očekává první argument text který rozělujeme a jako druhý výčet znaků které jej rozdělují, výsledně vrací nové pole rozděleného textu těmito znaky.
+
+Poslední nevídaná funkce je \vyraz{parseFloat()}, ačkoli se nejedná přímo o funkci Processingu ale přímo Javy poslouží nám zde velmi dobře. Funkce \vyraz{parseFloat()} očekává text a převádí jej do čísla s desetinou čárkou. Kdybychom měli čísla celá mohli by jsme použít také funkci \vyraz{parseFloat()}, která dělá naprosto to samé s celými čísly.
+
+Po načtení všech hodnot se program vrací do funkce \vyraz{setup()}, odkud byl spuštěn. Zde si můžeme pro ověření vytisknout hodnoty z číselného pole {\em hodnotyX}.
+
+\bublina{Ujistěte se že dobře rozumíte rozdílu mezi textovou informací a číselnou hodnotou v programu. Zkuste vytvořit jinou strukturu dat a poté ji sami přečíst pomocí funkce parseInt() nebo parseFloat().}
+
+
 \chapter{Vizualizace hodnot}
+
+Vyjdeme-li z předchozího příkladu, máme již hodnoty zpracované ve dvou číselných polích. Cesta k jejich následné vizualizaci je již prostá. Potřebujeme smyčku, která bude procházet celé pole a nakreslí podle hodnot patřičný tvar.
+
+\begin{lstlisting}
+String celyText[];
+float hodnotyX[];
+float hodnotyY[];
+
+void setup(){
+
+      size(640,480);
+  
+	nactiTextDoHodnot("soubor.csv");
+	
+}
+
+// kresba probehne zde
+void draw(){
+  background(0);
+  stroke(255, 127, 0);
+  
+  for(int i = 1 ; i < hodnotyY.length ; i++){
+  
+   line(hodnotyX[i], hodnotyY[i], hodnotyX[i-1], hodnotyY[i-1]); 
+  
+  }
+}
+
+void nactiTextDoHodnot(String nazevSouboru){
+
+	celyText = loadStrings(nazevSouboru);
+	
+	hodnotyX = new float[celyText.length];
+	hodnotyY = new float[celyText.length];
+	
+	for(int i = 0 ; i < celyText.length ; i++){
+		String radek = celyText[i];
+		String[] hodnoty = splitTokens(radek,", ");
+		
+		hodnotyX[i] = parseFloat(hodnoty[0]);
+		hodnotyY[i] = parseFloat(hodnoty[1]);
+	}
+
+}
+\end{lstlisting}
+
+Výsledkem bude záznam pohybu myši, který může vypadat následovně:
+\begin{center}
+\includegraphics[width = 0.75\textwidth]{imgs/viz.png}
+\end{center}
+
+Za povšimnutí zde stojí konstrukce linky \vyraz{line()}, která vždy spojuje koordináty z předchozího místa v našem poli s hodnotami současnými pomocí {\em [i-1]}.
+
+\bublina{Zkuste jiné hodnoty než pohyb myši, experimentujte s jinými způsoby zobrazení.}
+
 
 \chapter{Rozšíření Processingu}
 \oddil{Knihovny}
@@ -3010,15 +3289,15 @@ println(celyText);
 \pododdil{Vestavěné knihovny}
 \index{vestavěné knihovny}
 
-Ve skecthbooku se dále nacházejí\footnote{od verze 1.0} veškeré rozšíření za pomocí takzvaných knihoven neboli libraries. Ty jsou umístěny v adresáři sketchbooku ve složce {\em libraries}. Knihovny jsou silným rozšířením celého jazyka a pokrývají mnoho možností s nakládaáním s externími daty, zajišťují komunikaci zařízeními, práci s videem, zvukem, nebo s trojdimenzionálními daty či vektorovým obrazem.
+Ve sketchbooku se dále nacházejí\footnote{od verze 1.0} veškeré rozšíření za pomocí takzvaných knihoven neboli libraries. Ty jsou umístěny v adresáři sketchbooku ve složce {\em libraries}. Knihovny jsou silným rozšířením celého jazyka a pokrývají mnoho možností s nakládáním s externími daty, zajišťují komunikaci zařízeními, práci s videem, zvukem, nebo s trojrozměrnými daty či vektorovým obrazem.
 
 
-Knihovny jsou v podstatě moduly které se zaměřují většinou na jeden problém. Některé moduly umí například komunikovat s kamerou, jiné umí přenášet informace přes síť nebo komunikovat se zařízeními. Knihovna je sada příkazů, která rozšiřuje samotný jazyk o nové možnosti.
+Knihovny jsou v podstatě moduly, které se zaměřují většinou pouze na jednu problematiku. Některé moduly umí například komunikovat se zapojenou kamerou nebo videem, jiné umí přenášet informace přes síť nebo komunikovat se zařízeními napojenými přes sériový port. Knihovna je sada příkazů, která rozšiřuje samotný jazyk o nové možnosti.
 
 
 Knihovnami se také dá dobře ilustrovat k čemu uživatelé Processingu převážně programovací prostředí využívají. To sice nemusí být v žádném případě směrodatné pro vaší práci, může to být ovšem i velmi inspirativní. Knihovny Vám pomohou získat jistý přehled o kontextu užívání Processingu.
 
-Knihovny se  nejobecněji dělí na dvě základní skupiny. Jednu tvoří interní knihovny Processingu, které přichází již nainstalované se softwarem a knihovny vější, vytvořené komunitou uživatelů. Veškeré nainstalovaná knihovny, které má Processing k dispozici, lze nalézt pod tlačítkem sketch > Import Library.
+Knihovny se  nejobecněji dělí na dvě základní skupiny. Jednu tvoří interní knihovny Processingu, které přichází již nainstalované se softwarem a knihovny vnější, vytvořené komunitou uživatelů. Veškeré nainstalovaná knihovny, které má Processing k dispozici, lze nalézt pod tlačítkem sketch > Import Library.
 
 
 Výčet komunitnách knihoven je již poměrné obsáhlý, pro ilustraci zde budeme hovořit jen o knihovnách vestavěných. Věstavěných knihoven je nepoměrně méně, jejich výčet se proměňuje relativně pomalu, jejich dokumentace je kvalitně zpracovaná:
@@ -3073,15 +3352,127 @@ Podpora načítání XML tabulek.
 
 Neříkají-li vám tyto zkratky nic, nevadí, jedná se většinou o datové standarty a typy zařízení se kterými můžete s pomocí knihoven pracovat. Každá z těchto knihoven má svoji dobrou dokumentaci na stránkách projektu, nebo přímo v tzv. {\em Examples}, příkladech pro každou knihovnu, lze tímto způsobem zobrazit základní nápovědu.
 
+\bublina{Projděte si stránky processing.org a přečtěte si výčet knihoven, získáte lepší představu o možnostech rozšíření.}
 
-\oddil{Nástroje}
-.
-\newpage
-\oddil{Komplexní program}
-.
-\newpage
-\oddil{Experimenty}
 
+\pododdil{Komunitní knihovny}
+
+Instalace nových knihoven se zpravidla provádí umístěním adresáře s knihovou do adresáře v našem sketchbooku nazvaném {\em libraries}. Pro kompletní výčet a popis všech komunitních knihoven zde není místo, je jich opravdu mnoho a další stále přibývají. Na současný stav se vždy můžete podívat na stránkách projektu {\em processing.org}.
+
+\pododdil{Práce s knihovnou}
+
+Jako poslední příklad si zde uvedeme práci s jednou externí knihovnou. S jednou z interních jsme již pracovali dříve \odkaz{Tisk do pdf, ukládání vektorů}.
+
+Dobrým příkladem funkční a použitelné knihovny pro Processing je knihovna {\em ControlP5} od {\em Andrease Schlegela}. Tato knihovna nám dovoluje snadno vytvářet interaktivní prvky jako talčítka a různé typy táhel (sliderů) a vstupních kolonek.
+
+Knihovnu si nejprve musíme nainstalovat, nalezneme ji na adrese \\{\em http://www.sojamo.de/libraries/controlP5/}, nebo přímo na stránkách {\em processing.org}.
+
+\begin{center}
+\includegraphics[width = 1\textwidth]{imgs/controlp5.png}
+\end{center}
+
+Soubor rozbalíme do adresáře {\em libraries} v našem sketchbooku, tj. adresáře kam ukládáme naše sketche. Vnitřní struktura knihovny vypadá následovně:
+
+
+\begin{center}
+\includegraphics[width = 1\textwidth]{imgs/controlp52.png}
+\end{center}
+
+Nejdůležitější složkou je v každé knihovně adresář {\em library} zde se také nachází veškeré funkční prvky knihovny. Dále si můžeme všimnout dvou adresářů {\em examples} a {\em reference}, zde můžeme najít příklady použití i obsáhlou dokumentaci.
+
+Máme-li spuštěný Processing je nutné jej nyní restartovat.
+
+Po spuštění je knihovna připravena k použití, přidat potřebné komponenty do kódu nyní můžeme buď ručně, nebo pohodlněji vybráním z nabídky:
+
+{\em Sketch > Import Library... > controlP5}
+
+V kódu se nám zobrazí potřebný příkaz \vyraz{import} s náležitými komponenty z knihovny. Nyní si můžeme přečíst nápovědu nebo si projít jednotlivé příklady skrze nabídky:
+
+{\em File > Examples > Contributed Libraries > controlP5 > ControlP5controlEvent}
+
+Zobrazí se nám následující sketch:
+
+ 
+\begin{lstlisting}
+/**
+ * ControlP5 ControlEvent
+ * by andreas schlegel, 2009
+ */
+import controlP5.*;
+
+ControlP5 controlP5;
+
+int myColorRect = 200;
+int myColorBackground = 100;
+
+void setup() {
+  size(400,400);
+  frameRate(25);
+  controlP5 = new ControlP5(this);
+  controlP5.addNumberbox("n1",myColorRect,100,160,100,14).setId(1);
+  controlP5.addNumberbox("n2",myColorBackground,100,200,100,14).setId(2);
+  controlP5.addTextfield("n3",100,240,100,20).setId(3);
+}
+
+void draw() {
+  background(myColorBackground);
+  fill(myColorRect);
+  rect(0,0,width,100);
+}
+
+
+void controlEvent(ControlEvent theEvent) {
+  println("got a control event from controller with id "+theEvent.controller().id());
+  if(theEvent.controller().id() == 1) {
+    myColorRect = (int)(theEvent.controller().value());
+  }else if(theEvent.controller().id() == 2){
+    myColorBackground = (int)(theEvent.controller().value());
+  }else if(theEvent.controller().id() == 3){
+    println(theEvent.controller().stringValue());
+  }
+}
+\end{lstlisting}
+
+Veškeré příkazy by nám měly být vcelku povědomé, samozřejmě až na ty, které ovládají funkce knihovny {\em controlP5}.
+
+Všimněme si okamžitě na začátku objektu {\em ControlP5}, toto je ústřední objekt při komunikaci s knihovnou. Objekt je vlastně třída, kterou jsme již rozebírali dříve \odkaz{Třída a objekt}. Vytvořením instance objektu z knihovny příkazem \vyraz{new} provážeme funkce knihovny s naším programem. Slovo \vyraz{this} referuje k našemu programu a říká knihovně s čím bude své funkce propojovat, v podstatě ukazuje na super třídu Processingové aplikace.
+
+ Nyní již můžeme pomocí tečkové syntaxe vytvářet objekty z knihovny. V knihovně {\em ControlP5} je jich opravdu mnoho, zde si ukážeme pouze dva typy.  Příkazem {\em controlP5.addNumberbox} přidáváme objekt s hodnotou v číselném formátu.
+ 
+Objekt požaduje několik parametrů pro vytvoření vlastní jméno, jméno proměnné kterou bude ovládat, na konci definice proměnné také můžeme vidět speciální funkci  {\em setId(1)}, která nám bude identifikovat aktivitu daného prvku.
+
+Tu můžeme detekovat pomocí nové funkce z knihovny nazvané {\em void controlEvent(ControlEvent theEvent)}. Ta zachytává veškeré dění s prvky a posílá identifikační hodnotu kterou posléze můžeme přečíst a napsat podle ní podmínku.
+
+O kresbu prvků do smyčky \vyraz{draw()} se knihovna již postará sama.
+
+\begin{center}
+\includegraphics[width = 1\textwidth]{imgs/controlp53.png}
+\end{center}
+
+Výsledkem bude jednoduché {\em GUI}, grafické uživatelské rozhraní pomocí kterého můžeme ovládat hodnoty v našem programu.
+
+
+\bublina{Vyzkoušejte další příklady z knihovny a zkuste i knihovny další rozšíření je mnoho, možností aplikace i kombinace naprosto je neomezeně.}
+
+
+\chapter{Poznávejte, experimentujte!}
+
+Toto je konec úvodu do Processingu, tento skromný průvodce vám mohl pootevřít dveře do světa generované grafiky a programování jako takového, další cesta bude již na vás.
+
+Na závěr bych vám chtěl popřát hodně trpělivosti a odhodlání, obojího budete potřebovat nemálo. Výsledek vaší snahy ovšem můžete několikanásobně zúročit ve vaší další práci.
+
+Hlavně se nebojte experimentovat sami, pocity frustrace nad nefungujícím kódem určitě vyváží uspokojení z vlastnoručně vytvořeného fungujícího programu. Odložte veškeré průvodce a zkoušejte stále nové postupy, i po několika letech zjistíte, že stojíte stále na začátku a můžete se učit novému. Čtěte kódy ostatních lidí a sdílejte své programy, jejich zdroje -- vědomosti dále sdílejte s druhými lidmi.
+
+Učte se vždy novému, nic není krásnější než na věci přicházet. A když věcem rozumíte, nevlastněte je, předávejte vědomosti trpělivě dále.
+
+\vfill
+
+Aktualizovanou podobu tohoto průvodce můžete najít v elektronické podobě repozitáře GIT na serveru GitHub. Na adrese:\\
+{\em https://github.com/K0F/processing\_1}
+
+\begin{flushright}
+{\em Kryštof Pešek, 5. 12. 2012}
+\end{flushright}
 
 \chapter{Rejstřík pojmů}
 \printglossaries
