@@ -71,8 +71,8 @@
 \renewcommand\uv[1]{\quotedblbase #1\textquotedblleft}%
 
 \usepackage{marginnote}
-\usepackage[textsize=footnotesize,textwidth=1.8cm]{todonotes}
-\setlength{\marginparwidth}{1.8cm}
+\usepackage[textsize=footnotesize,textwidth=1.9cm]{todonotes}
+\setlength{\marginparwidth}{2.3cm}
 
 \newcommand{\oddil}[1]{\section{#1}\index{#1}\label{#1}}
 \newcommand{\pododdil}[1]{\subsection{#1}\index{#1}\label{#1}}
@@ -163,9 +163,6 @@
 .
 \thispagestyle{empty}
 \newpage
-.
-\thispagestyle{empty}
-\newpage
 \oddil{Poděkování}
 \thispagestyle{empty}
 .
@@ -220,23 +217,23 @@ Nakladatelství AMU: \\
 
 Vážený čtenáři,
 
-tato kniha by pro Vás měla být povzbuzením při osvojování si Vašeho prvního programovacího jazyka. Autor této knihy nepředpokládá žádnou Vaši předchozí zkušenost s programováním. V případě, že již určitou zkušenost máte, některé kapitoly pro Vás mohou být jednoduché. Kniha by Vás měla postupně provázet při získávání zkušeností s postupným ovládáním stroje od základních výpočetních operací k tvorbě pokročilejších nástrojů.
+tato kniha by pro vás měla být povzbuzením při osvojování si Vašeho prvního programovacího jazyka. Autor této knihy nepředpokládá žádnou vaši předchozí zkušenost s programováním. V případě, že již určitou zkušenost máte, některé kapitoly pro vás mohou být jednoduché. Kniha by vás měla postupně provázet při získávání zkušeností s programováním stroje od základních výpočetních operací k tvorbě pokročilejších nástrojů.
 
 Kniha je psána ve sledu, který bych uvítal, kdybych se sám měl učit programovat. Programování je bezesporu myšlenkově náročná operace. Mým záměrem je postupně tuto náročnost redukovat a proměnit psaní programu v lehkost.
 
-Cestu k této lehkosti Vám neumím jednoduše předat, pedagogický talent jsem nikdy nepocítil. Tato kniha by proto měla být odložena vždy, bude-li mít čtenář nutkání si něco sám vyzkoušet. To považuji za absolutně nejrychlejší a zároveň nejlepší způsob učení.
+Cestu k této lehkosti vám neumím jednoduše předat, pedagogický talent jsem nikdy nepocítil. Tato kniha by proto měla být odložena vždy, bude-li mít čtenář nutkání si něco sám vyzkoušet. To považuji za absolutně nejrychlejší a zároveň nejlepší způsob učení.
 
-Proces tvůrčího programování obsahuje prvek intuice, která vychází podstatnou měrou ze zkušenosti. Pro podporu Vaší intuice při psaní programu je nutné ovládnout základní jazyk natolik, aby jste měli určitou jistotu. Přestanete-li se zabývat funkčností programu a získáte-li v ní jistotu, přijmete jazyk za vlastní nástroj, a pak můžete nechat hovořit právě vaší intuici. Intuici sám považuji za avantgardu logiky, protože je před ní vždy minimálně o krok napřed.
+Proces tvůrčího programování obsahuje prvek intuice, která vychází podstatnou měrou ze zkušenosti. Pro podporu vaší intuice při psaní programu je nutné ovládnout základní jazyk natolik, aby jste měli určitou jistotu. Přestanete-li se zabývat funkčností programu a získáte-li v ní jistotu, přijmete jazyk za vlastní nástroj, a pak můžete nechat hovořit právě vaší intuici. Intuici sám považuji za avantgardu logiky, protože je před ní vždy minimálně o krok napřed.
 
-K vybudování intuice je nejvíce nezbytná schopnost pozorování. Samotná intuice nezmůže v komunikaci se strojem nic. Stroj neví, co počítá, ale dokáže spočítat i to, co sami nevíte.
+K vybudování intuice je především nezbytná schopnost pozorování. Samotná intuice nezmůže v komunikaci se strojem nic. Stroj neví, co počítá, ale dokáže spočítat i to, co sami nevíte.
 
 Stroj je rychlý nástroj pro ověření vaší intuice a je zapotřebí být pozorný. Můžeme to nazvat experimentální přístup, výsledky by měly být vždy intuitivně a hlavně kriticky zkoumány. Zpětnou dekonstrukcí intuice, rozborem vaší jistoty, získáváte postupně dar rozumění věci. Dar je to danajský, rozumění je jen ustálená podoba znalostí, která musí být opět zpochybněna intuicí; nutno podotknout, že opakovaným prověřením se často jen více utvrzuje. 
 
-Není-li tento jazyk první, prosím Vás o shovívavost v podrobnostech, do kterých v úvodu této knihy zabíhám. Šíře znalostí, které se mohou vyskytovat u potenciálních čtenářů tohoto průvodce, je pro autora první velikou neznámou.
+Není-li tento programovací jazyk vaším prvním, prosím vás o shovívavost v podrobnostech, do kterých v úvodu této knihy zabíhám. Šíře znalostí, které se mohou vyskytovat u potenciálních čtenářů tohoto průvodce, je pro autora první velikou neznámou.
 
-V obou případech prosím o shovívavost ve způsobu popisu programovacího jazyka a prostředí Processingu. Sám jako samouk a člověk zaměřený především výtvarným směrem nemohu zaručit absolutní, stoprocentní a všeobecnou platnost všech tvrzení. Tímto Vás tedy žádám o věcné podněty pro pozdější doplnění nebo přeformulování jednotlivých tvrzení.
+V obou případech prosím o shovívavost ve způsobu popisu programovacího jazyka a prostředí Processingu. Sám jako samouk a člověk zaměřený zejména výtvarným směrem nemohu zaručit absolutní, stoprocentní a všeobecnou platnost všech tvrzení. Tímto vás tedy žádám o věcné podněty pro pozdější doplnění nebo přeformulování jednotlivých tvrzení.
 
-Má snaha provést začínající i středně pokročilé uživatele programovacím jazykem bude vždy nedostatečná, berte tuto knihu prosím spíše jako průvodce nesnadnými začátky. Čtete-li knihu z jiných důvodů, než abyste se naučili se programovacímu jazyku, pokusím se text knihy proložit poznatky nabytými mojí několikaletou zkušeností se sdílením života se stroji. Dostala-li se Vám tato kniha do rukou jinou cestou nebo dokonce náhodou nebo omylem, tedy věru netuším, co v ní dále najdete, a proto bych i Vás rád pobídl alespoň k začtení se do světa skriptů a kódů.
+Má snaha provést začínající i středně pokročilé uživatele programovacím jazykem bude vždy nedostatečná, berte tuto knihu prosím spíše jako průvodce nesnadnými začátky. Čtete-li knihu z jiných důvodů, než abyste se naučili se programovacímu jazyku, pokusím se text knihy proložit poznatky nabytými mojí několikaletou zkušeností se sdílením života se stroji. Dostala-li se Vám tato kniha do rukou jinou cestou nebo dokonce náhodou nebo omylem, tedy věru netuším, co v ní dále najdete, a proto bych i vás rád pobídl alespoň k začtení se do světa skriptů a kódů.
 
 \oddil{Forma knihy}
 
@@ -244,7 +241,7 @@ Má snaha provést začínající i středně pokročilé uživatele programovac
 
 Text je řazen do jednotlivých  kapitol a dále stromově do dvou úrovní podkapitol. Pořadí kapitol by mělo odpovídat sledu informací nezbytných k plynulému učení se programovacímu jazyku Processing.
 
-Pořadí a obsah jednotlivých kapitol vychází z mé vlastní zkušenosti. Z veliké míry koresponduje s podobnými průvodci. Původce píší samotní tvůrci a širší komunita uživatelů kolem programovacího jazyka Processing.
+Pořadí a obsah jednotlivých kapitol vychází z mé vlastní zkušenosti. Z veliké míry koresponduje s podobnými průvodci. Průvodce píší samotní tvůrci a širší komunita uživatelů kolem programovacího jazyka Processing.
 
 Zvolená forma textu odpovídá ověřeným postupům. Následující text bude podléhat určitým zákonitostem. V knize se objeví několik typů textu, které budou vždy odlišeny vlastní formou zápisu.
 
@@ -305,7 +302,7 @@ Hogin pracuje s jazyky Processing a Cinder. V obou případech skrze tato prost�
 
 Ilustrace pochází z Hodginovi grafické práce, která byla vybrána jako jedna ze 42 prací do prvního vydání knihy {\em Written Images}.
 
-Kniha je kurátorským projektem a samostatným výtvarným počinem dánského tvůrce \textbf{Marcina Ignace}. První výtisk knihy byl vydán v roce 2011. Samotná kniha je v podstatě konceptuálním dílem, automatizací vychází každý výtisk s posunem o jedno okénko, a tím ilustruje ducha generativní tvorby. Kniha samotná je zpracována také softwarem Processing. \vfill
+Tato kniha je kurátorským projektem a samostatným výtvarným počinem dánského tvůrce \textbf{Marcina Ignace}. První výtisk knihy byl vydán v roce 2011. Samotná kniha je v podstatě konceptuálním dílem, automatizací vychází každý výtisk s posunem o jedno okénko, a tím ilustruje ducha generativní tvorby. Kniha samotná je také zpracována softwarem Processing. \vfill
 
 \begin{centering}
 \includegraphics[width = 1\textwidth]{imgs/writtenimages.png}
@@ -327,7 +324,7 @@ Kniha obsahuje generativní obrazy následujících umělců:
 \end{center}
 
 
-Karsten Schmidt působí v komunitě dlouhodobě a je více známý pod pseudonymem {\em Toxi}. Schmidt je autorem sady rozsáhlých knihoven nazvaných souhrnně {\em toxilibs}. Jeho tvorba je zaměřená technicky na vývoj samotných knihoven, které funkce Processingu rozšiřují. V případě knihovny {\em Toxilibs} například rozšířením o funkce pro tvorbu třídimenzionálních objektů.
+Karsten Schmidt působí v komunitě Processingu dlouhodobě a je více známý pod pseudonymem {\em Toxi}. Schmidt je autorem sady rozsáhlých knihoven nazvaných souhrnně {\em toxilibs}. Jeho tvorba je zaměřená technicky na vývoj samotných knihoven, tedy jednotlivých modulů rozšiřujících funkce Processingu. \odkaz{Knihovny} V případě knihovny {\em Toxilibs} například rozšířením o funkce pro konstrukci třídimenzionálních objektů.
 
 
 \begin{center}
@@ -347,21 +344,21 @@ Schmidtova práce vyniká zejména pro možnost recyklovatelnosti a další uži
 \end{center}
 
 
-Tvorba Karstena Schmidta se dá generalizovat jako užitná nebo aplikovaná. Za pomoci bohaté zásoby vlastního softwaru, veliké zdatnosti a technické inovativnosti Karsten Schmidt svým softwarem plynule navazuje na potřeby architektů a inženýrů.
+Tvorba Karstena Schmidta se dá generalizovat jako užitá nebo aplikovaná. Za pomoci bohaté zásoby vlastního softwaru, veliké zdatnosti a technické inovativnosti Karsten Schmidt svým softwarem plynule navazuje na potřeby architektů a inženýrů.
 
 
 
 \oddil{Local Bilateral Symmetry}
 
 
-Pozoruhodné algoritmy Johnatana McCaba vynikají svojí spektakulárností, která je založena na podrobné studii a rozkladu Turingových vzorců. Jednotlivé variace téhož algoritmu vytvářejí organické struktury, které se vzdáleně podobají strukturám kostí nebo jiným přírodním strukturám.
+Pozoruhodné algoritmy Johnatana McCaba vynikají svojí spektakulárností, která je založena na podrobné studii a rozkladu Turingových vzorců. Jednotlivé variace téhož algoritmu vytvářejí struktury, které se vzdáleně podobají uspořádání organických materiálů v kostech nebo jiným přírodním vzorům.
 
 
 \begin{center}
 \includegraphics[width = 1\textwidth]{imgs/mcCabe1.png}
 \end{center}
 
-I když se to zprvu nabízí, McCabovy Obrazy se nedají posuzovat pouze výtvarně. Nejvíce pozoruhodné jsou způsobem svého vzniku. Obrazy přímo odkazují na výzkum Alana Turinga, konkrétně na text vydaný v roce 1952 s názvem {\em The Chemical Basis of Morphogenesis}, který pojednává o vlivu chemických sloučenin na uspořádání růstu tkáně vícebuněčných organismů. Turing podobnou difuzi prvků v textu rozpracoval matematicky a po téměř padesáti letech na bázi původních algoritmů vznikají podobné obrazy. Podobnost v uspořádání lze nalézt například ve snímcích tkáně pod elektronovým mikroskopem, a i když se jedná o ryze výtvarnou interpretaci algoritmu, může vést k zamyšlení i vědecké kruhy.
+I když se to zprvu nabízí, McCabovy Obrazy se nedají posuzovat pouze výtvarně. Nejvíce pozoruhodné jsou způsobem svého vzniku. Obrazy přímo odkazují na výzkum Alana Turinga, konkrétně na text vydaný v roce 1952 s názvem {\em The Chemical Basis of Morphogenesis}, který pojednává o vlivu chemických sloučenin na uspořádání růstu tkáně vícebuněčných organismů. Turing podobnou difuzi prvků v textu rozpracoval matematicky a po téměř padesáti letech na bázi původních algoritmů vznikají tyto obrazy. Podobnost v uspořádání lze nalézt například ve snímcích tkáně pod elektronovým mikroskopem, a i když se jedná o ryze výtvarnou interpretaci algoritmu, může vést k zamyšlení i vědecké kruhy.
 
 
 \begin{center}
@@ -395,7 +392,7 @@ Na úvod je třeba říci, že vytyčení konkrétního cíle není vždy nezbyt
 
 \oddil{Síť}
 
-Autor knihy předpokládá, že má čtenář v roce 2012 přístup ke globální síti internet.
+Autor knihy předpokládá, že čtenář má v roce 2012 přístup ke globální síti internet.
 
 Nejlepší referencí pro práci s Processingem zůstává tato síť. Processing byl vyvinut síťovou komunitou a je také v síti nejlépe zdokumentován. Existuje několik dobrých obecných stránek s průvodci. Za všechny lze jmenovat domovskou stránku projektu {\em processing.org}. Zde naleznete téměř vše, co byste mohli potřebovat. Nacházejí se zde zdokumentované veškeré příkazy Processingu. Je zde i záložka {\em Learning} s jednotlivými průvodci různých oblastí. 
 
@@ -403,7 +400,7 @@ Nejadresněji se vám dostane pomoci prostřednictvím webových fór nebo IRC k
  
    Na síti je dále obrovské množství uživatelů volně sdílejících své programy včetně zdrojových kódů. Nejpočetnější komunita sídlí zřejmě na portálu {\em openprocessing.org} založeném a zpravovaném Sinanem Ascigolu.
    
-Veškerá dokumentace je v angličtině včetně webových fór i dalších knih o programování. Nemáte-li problém s jazykem, míst k zdokonalování se v Processingu bude vždy dostatek. \bublina{Doporučuji se nejprve seznámit s projekty na internetu, získáte tím představu o tom, k čemu se vlastně Processing využívá.}
+Veškerá dokumentace je v angličtině včetně webových fór i dalších knih o programování. Nemáte-li problém s anglickým jazykem, míst k zdokonalování se v Processingu bude vždy dostatek. \bublina{Doporučuji se nejprve seznámit s projekty na internetu, získáte tím představu o tom, k čemu se vlastně Processing využívá.}
 
 
 \oddil{Examples -- příklady přímo v Processingu}
@@ -416,11 +413,11 @@ Ke všem příkladům se dostanete z Processingu skrze nabídku {\em File > Exam
 
 \oddil{Knihy a průvodci}
 
-Ano, jednoho průvodce právě držíte v ruce (nebo čtete na obrazovce). V minulosti vyšla bezmála desítka podobných knih na toto téma. Jsou bezesporu obsáhlejší, než kdy měla tato kniha v úmyslu.
+Ano, jednoho průvodce právě držíte v ruce (nebo čtete na obrazovce). V minulosti vyšla bezmála desítka podobných knih na stejné téma. Jsou bezesporu obsáhlejší, než kdy měla tato kniha v úmyslu.
 
-Z nich bych vám nejvíce doporučil původní knihu od samotných tvůrců Processingu Caseyho Rease a Bena Frye nazvanou {\em Processing: A Programming Handbook for Visual Designers and Artists}. A rozhodně pak knihu Daniela Shiffmana {\em Learning Processing: A Beginner's Guide to Programming Images, Animation, and Interaction}. Je jednou z velmi podrobně napsaných knih o Processingu.
+Z nich bych vám nejvíce doporučil původní knihu od samotných tvůrců Processingu Caseyho Rease a Bena Frye nazvanou {\em Processing: A Pro-gramming Handbook for Visual Designers and Artists}. A rozhodně pak knihu Daniela Shiffmana {\em Learning Processing: A Beginner's Guide to Programming Images, Animation, and Interaction}. Je jednou z velmi podrobně napsaných knih o Processingu.
 
-Knihy jsou vcelku dostupné a dají se opatřit přes internet. Rozhodně bych to doporučoval všem, kteří  potřebují mít opravdu dobrou dokumentaci vždy při ruce. V neposlední řadě bych také upozornil na to, že koupí knihy podporujete tvůrce svobodného softwaru, a tím potažmo i svobodný software jako takový \odkaz{Otevřenost softwaru}.
+Knihy jsou cenově vcelku dostupné a dají se opatřit přes internet. Rozhodně bych to doporučoval všem, kteří  potřebují mít opravdu dobrou dokumentaci vždy při ruce. V neposlední řadě bych také upozornil na to, že koupí knihy podporujete tvůrce svobodného softwaru, a tím potažmo i svobodný software jako takový \odkaz{Otevřenost softwaru}.
 
 \oddil{Experiment}
 
@@ -2763,7 +2760,6 @@ void segment(float x, float y, float a) {
 \end{lstlisting}
 
 
-############################################### OPRAVA ^^^
 
 V úvodu se nám objevují dvě pole, která představují soupis souřadnic. Další proměnná je definice délky jednoho segmentu. Ve funkci \vyraz{setup()} si můžeme povšimnout nového výrazu \vyraz{smooth()}.
 
