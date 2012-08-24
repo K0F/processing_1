@@ -2536,7 +2536,7 @@ void draw(){
 
 V případě renderů, které operují ve třetí dimenzi, v Processingu funguje řada příkazů podobně, jako jsme byli zvyklí ve dvoudimenzionálním zobrazení. Největší změny se budou samozřejmě týkat zobrazení. V případě kresby primitivních obrazců v řadě případů přibude právě třetí rozměr.
 
-Velmi ilustrativně je vidět rozdíl na příkazech \vyraz{point()} a \vyraz{line()}, u těchto příkazů jsme byli zvyklí zadávat dva parametry pro každou, tedy $X, Y$ pro bod, popřípadě čtyři parametry $X_{1}, X_{2}, Y_{1}, Y_{2}$ pro linku. K těmto parametrům v případě trojdimenzionálních zobrazení přibývá ještě jeden parametr pro osu $Z$. 
+Velmi ilustrativně je vidět rozdíl na příkazech \vyraz{point()} a \vyraz{line()}. U těchto příkazů jsme byli zvyklí zadávat dva parametry pro každou osu, tedy $X, Y$ pro bod, popřípadě čtyři parametry $X_{1}, X_{2}, Y_{1}, Y_{2}$ pro linku. K těmto parametrům v případě trojdimenzionálních zobrazení přibývá pro každý bod logicky ještě jeden parametr pro osu $Z$. 
 
 
 
@@ -2572,7 +2572,7 @@ void draw() {
 }
 \end{lstlisting}
 
-Příkaz \vyraz{camera()} nám nastaví pohled v trojrozměrnoé scéně. Příkaz přijímá poměrně hodně parametrů, rozeberme si, co všechny tyto parametry znamenají.
+Příkaz \vyraz{camera()} nám nastaví pohled v trojrozměrné scéně. Příkaz přijímá poměrně hodně parametrů, rozeberme si, co všechny tyto parametry znamenají.
 
 První tři parametry značí pozici kamery {\em (nebo oka, chcete-li)} ve třech rozměrech. Další tři parametry určují pozici bodu v prostoru, na který se kamera soustředí. Zbylé tři parametry udávají pozici nahoru ve tvaru vektoru.
 
@@ -2582,11 +2582,11 @@ Chceme-li se orientovat v prostoru tak, jak jsme byli zvyklí doposud, poslední
 \includegraphics[width = 0.7\textwidth]{imgs/3dbox.png}
 \end{center}
 
-Kamera byla v předchozím příkladě nastavena ve funkci \vyraz{setup()}. Stejně tak lze nastavení obnovovat a měnit pro každé okénko. Stejně, jako jsme již animovali pohybující se objekt \odkaz{Animace} můžeme animovat i kameru, proměnou jednotlivých parametrů.
+Kamera byla v předchozím příkladě nastavena ve funkci \vyraz{setup()}. Stejně tak lze nastavení obnovovat a měnit pro každé okénko. Stejně, jako jsme již animovali pohybující se objekt \odkaz{Animace}, můžeme animovat i kameru proměnou jednotlivých parametrů.
 
 \pododdil{3D objekty}
 
-V kontextu 3D zobrazení jsme zatím hovořili o bodu, lince a v předchozím příkladě jsme si zobrazili krychli příkazem \vyraz{box()}. Stejným příkazem \vyraz{box()} lze zkonstruovat i kvádr. Ten lze zkostruovat pomoci tří parametrů pro rozměry ve třech osách $X,Y,Z$.
+V kontextu 3D zobrazení jsme zatím hovořili o bodu, lince a v předchozím příkladě jsme si zobrazili krychli příkazem \vyraz{box()}. Stejným příkazem \vyraz{box()} lze zkonstruovat i kvádr. Ten lze zkonstruovat pomoci tří parametrů pro rozměry ve třech osách $X,Y,Z$.
 
 \bublina{Zkuste proměňovat hodnoty proměnné camera(), pozorujte jak se objekt proměňuje, ujistěte se, že rozumíte všem hodnotám zadávaným do funkce camera().}
 
@@ -2626,14 +2626,14 @@ void draw() {
 
 Na veškeré objekty se vztahuje definice výplně a kontury \odkaz{Výplň a obrys}.
 
-Tím výčet třídimenzionálních objektů pomalu končí. Nic nám nebrání vytvářet kompozice za pomocí bodů krychlí a čar v prostoru. Složitější tvary lze stejně jako u dvoudimenzionálního zobrazení zkonstruovat pomocí vlastní definice tvaru, za použití takzvaných {\em vertexů}. Sadou příkazů \vyraz{vertex()} uzavřených do bloku \vyraz{beginShape()} a \vyraz{endShape()}.
+Tím výčet třídimenzionálních objektů pomalu končí. Nic nám nebrání vytvářet kompozice za pomocí bodů, krychlí a čar v prostoru. Složitější tvary lze stejně jako u dvoudimenzionálního zobrazení zkonstruovat pomocí vlastní definice tvaru, za použití takzvaných {\em vertexů}. Sadou příkazů \vyraz{vertex()} uzavřených do bloku \vyraz{beginShape()} a \vyraz{endShape()}.
 
 
 Zde si musíme uvědomit, že konstrukce objektu po nás bude vyžadovat veliké množství informací. Pro přirovnání si vezměme konstrukci koule, v případě vaší vlastní konstrukce byste museli každý z bodů definovat buď ručně, nebo lépe matematicky.
 
-Metod, jak konstruovat 3D objekt, je poměrně hodně a rozhodně by toto téma vystačilo na celého průvodce, nyní nám postačí vědět, že je možné konstruovat i složitější tvary.
+Metod, jak konstruovat 3D objekt, je mnoho a rozhodně by toto téma vystačilo na celého průvodce. Nyní nám postačí vědět, že je možné konstruovat i složitější tvary.
 
-Další možností k tvorbě modelů je využít jiných programů (jako například otevřený software Blender) a následně za pomoci rozšíření importovat externí modely přímo do Processingu \odkaz{Knihovny}. Jedná se vcelku o běžný postup.
+Další možností k tvorbě modelů je využít jiných programů (jako například otevřený software Blender) a následně za pomoci rozšíření importovat externí modely přímo do Processingu \odkaz{Knihovny}.
 
 
 
@@ -2644,13 +2644,13 @@ Další možností k tvorbě modelů je využít jiných programů (jako napří
 Vraťme se nyní zpět ke dvěma rozměrům. Processing disponuje příkazy, které usnadňují práci s prostorem. Souhrnně se takové funkce dají nazvat transformace.
 
 
-Uvedeme si zde základní koncepci práce s objekty v prostoru a metodou zobrazení. Nové funkce se jmenují \vyraz{translate()}, \vyraz{rotate()} a \vyraz{scale()}.
+Uvedeme si zde základní koncepci práce s objekty v prostoru a jejich zobrazením. Nové funkce se jmenují \vyraz{translate()}, \vyraz{rotate()} a \vyraz{scale()}.
 
-Představme si situaci, kdy potřebujeme pohybovat s jedním objektem. Jak jsme si ukázali již dříve \odkaz{Animace} můžeme objektem pohybovat zadáváním jeho pozice.
+Představme si situaci, kdy potřebujeme pohybovat s jedním objektem. Jak jsme si ukázali již dříve \odkaz{Animace}, můžeme objektem pohybovat zadáváním jeho pozice.
 
 Druhý způsob je v Processingu běžně využívaný a je více dynamický, dovoluje nám totiž s objekty nejen pohybovat, ale měnit jejich rotaci nebo velikost.
 
-Představme si nyní náš objekt čtverec na pozici {\em X = 20, Y = 20} o šířce a výšce dvaceti pixelů.
+Představme si nyní náš objekt jako čtverec na pozici {\em X = 20, Y = 20} o šířce a výšce dvaceti pixelů.
 
 \begin{center}
 \includegraphics[width = 0.7\textwidth]{imgs/trans1.png}
@@ -2669,13 +2669,13 @@ translate(20, 40);
 rect(20, 20, 40, 40);
 \end{lstlisting}
 
-Čtverec se tak zobrazí na stejném místě, jako bychom docílili ručního posunu. Způsob je ale odlišný, ve skutečnosti jsme posunuli celým kreslicím plátnem.
+Čtverec se tak zobrazí na stejném místě, jako bychom docílili ručním posunem. Způsob je ale odlišný, ve skutečnosti jsme posunuli celým kreslicím plátnem.
 
 \begin{center}
 \includegraphics[width = 0.7\textwidth]{imgs/trans2.png}
 \end{center}
 
-Veškeré tvary, které nyní vykreslíme, budou posunuty o náš posun, tedy nemusíme posouvat všemi jednotlivými tvary zvlášť. Další operací, kterou můžeme provést, je rotace. Rotace vždy probíhá kolem bodu {\em X=0, Y=0}. Pomocí transformace můžeme přesunout objekt na požadované místo. K dalším operacím se nám budou hodit dva příkazy: \vyraz{pushMatrix()}, funkce která započíná transformace, a \vyraz{popMatrix()}, která navrací plátno na původní místo. Při vícenásobných transformacích se nám může běžně stát, že budeme tyto bloky transformací vrstvit jednu do druhé. Exemplární rotaci si můžeme ukázat na podobném příkladě se čtvercem.
+Veškeré tvary, které nyní vykreslíme, budou posunuty o náš posun, tedy nemusíme posouvat všemi jednotlivými tvary zvlášť. Další operací, kterou můžeme provést, je rotace. Rotace vždy probíhá kolem bodu {\em X=0, Y=0}. Pomocí transformace můžeme přesunout objekt na požadované místo. K dalším operacím se nám budou hodit dva příkazy: \vyraz{pushMatrix()}, funkce, která započíná transformace, a \vyraz{popMatrix()}, která navrací plátno na původní místo. Při vícenásobných transformacích se nám může běžně stát, že budeme tyto bloky transformací vrstvit jednu do druhé. Exemplární rotaci si můžeme ukázat na podobném příkladě se čtvercem.
 
 \bublina{Proměňte hodnoty ve funkci translate(), můžete použít například pozici myši mouseX a mouseY a pozorovat změny v kresbě.}
 
@@ -2712,9 +2712,9 @@ Naše rotace v diagramu bude vypadat asi takto:
 \includegraphics[width = 0.7\textwidth]{imgs/trans3.png}
 \end{center}
 
-První šipka znázorňuje posun, druhá šipka rotaci plátna. Osvojení si koncepce transformací je otázka zvyku, výhody toho, co se nyní jeví jako nepraktické si uvědomíte možná později. Velikou výhodou transformací je například to, že si můžete definovat nový střed kresby, ke kterému se můžete vztahovat v relativních vzdálenostech.
+První šipka znázorňuje posun, druhá šipka rotaci plátna. Osvojení si koncepce transformací je otázka zvyku, výhody toho, co se nyní jeví jako nepraktické, si uvědomíte možná později. Velikou výhodou transformací je například to, že si můžete definovat nový střed kresby, ke kterému se můžete vztahovat v relativních vzdálenostech.
 
-Bez transformací se téměř vůbec neobejdete při kreslení ve třech rozměrech. Stejně jako u jiných příkazů, i příkazy pro transformace zůstávají stejné. K funkci \vyraz{translate()} přibude třetí rozměr a funkce \vyraz{rotate()} se obohatí o rotace ve třech osách  \vyraz{rotateX()}, \vyraz{rotateY()}, \vyraz{rotateZ()}.
+Bez transformací se téměř vůbec neobejdete při kreslení ve třech rozměrech. Stejně jako u jiných příkazů i příkazy pro transformace zůstávají stejné. K funkci \vyraz{translate()} přibude třetí rozměr a funkce \vyraz{rotate()} se obohatí o rotace ve třech osách  \vyraz{rotateX()}, \vyraz{rotateY()}, \vyraz{rotateZ()}.
 
 
 \pododdil{Použití transformací}
@@ -2767,9 +2767,9 @@ Funkce \vyraz{smooth()} zajišťuje vyhlazení renderování, její protějšek 
 
 Další funkcí, kterou jsme doposud neuvedli, je \vyraz{strokeWeight()}, ten definuje tloušťku čar a potažmo všech objektů. Šířka čáry je nastavena na $1.0$. Funkce funguje stejně jako vyraz \vyraz{stroke()}, nastavuje tloušťku čáry pro všechny objekty níže.
 
-Nakonec tu máme dvě definované funkce. První funkce {\em dragSegment()} přijímá hodnotu i ze smyčky a provádí trignometrické matematické operace. Funkce začíná načtením minulé hodnoty souřadnic, kterou porovná s hodnotami současnými a uloží výsledek. Zajímavá funkce je funkce Processingu \vyraz{atan2()}. Ta zjišťuje úhel v radiánech podle dvou hodnot v pořadí $Y$ a $X$. Zde jako vstupní hodnoty pro výpočet úhlu zadáváme rozdíl mezi současnými souřadnicemi segmentu pozicí minulého segmentu.
+Nakonec tu máme dvě definované funkce. První funkce {\em dragSegment()} přijímá hodnotu i ze smyčky a provádí trigonometrické matematické operace. Funkce začíná načtením minulé hodnoty souřadnic, kterou porovná s hodnotami současnými a uloží výsledek. Zajímavá funkce je funkce Processingu \vyraz{atan2()}. Ta zjišťuje úhel v radiánech podle dvou hodnot v pořadí $Y$ a $X$. Zde jako vstupní hodnoty pro výpočet úhlu zadáváme rozdíl mezi současnými souřadnicemi segmentu pozicí minulého segmentu.
 
-Podle zjištěného úhlu se dále modifikuje současná pozice za pomoci zpětného převedení na souřadnice pomoci \vyraz{cos()} a \vyraz{sin()}. Trignonometrii zde příliš rozvádět nebudu. Sinusovou křivku lze zkonstruovat lineárním přírůstkem ve funkci \vyraz(sin()). Další goniometrické funkce jsou v Processingu \vyraz{asin()} a \vyraz{acos()}, šikovné pro práci s funkcemi jsou předdefinované hodnoty zlomku čísla $\pi$, \vyraz{PI}, \vyraz{HALFPI}, \vyraz{QUARTERPI}.
+Podle zjištěného úhlu se dále modifikuje současná pozice za pomoci zpětného převedení na souřadnice pomoci \vyraz{cos()} a \vyraz{sin()}. Trigonometrii zde příliš rozvádět nebudu. Sinusovou křivku lze zkonstruovat lineárním přírůstkem ve funkci \vyraz(sin()). Další goniometrické funkce jsou v Processingu \vyraz{asin()} a \vyraz{acos()}, šikovné pro práci s funkcemi jsou předdefinované hodnoty zlomku čísla $\pi$, \vyraz{PI}, \vyraz{HALFPI}, \vyraz{QUARTERPI}.
 
 A konečně přicházejí na řadu naše transformace. Ve funkci {\em segment} dochází ke kresbě jednotlivých segmentů hada. Funkce přijímá tři argumenty, dva pro pozici $x$, $y$ a jeden pro úhel $a$.
 
@@ -2785,7 +2785,7 @@ Sled transformací pomocí posunu a rotace již známe.
 
 Jak jsme si v úvodu knihy \odkaz{Sketch} zmínili, adresář pro externí soubory se nazývá DATA. Tento adresář je umístěný přímo v adresáři projektu. Veškeré soubory, které do tohoto adresáře umístíme, budou programu dostupné.
 
-V případě ukládání bude Processing zapisovat relativně do adresáře projektu.
+V případě ukládání bude Processing zapisovat soubory do adresáře projektu. Všechny cesty k souborům budou tedy relativní.
 
 Ukažme si nyní, jakým způsobem můžeme uložit a načíst vnější data do našeho programu.
 
@@ -2825,7 +2825,7 @@ S některými formáty jste se již mohli setkat v minulosti. Jedná se o standa
 
 Uložení obrázku ze současného plátna se provádí příkazem \slovnik{save()}. Příkaz potřebuje znát cestu a koncovku souboru. Nenapíšeme-li plnou cestu, Processing data uloží přímo do naší sketche.
 
-Nevíte-li, kterou koncovku souboru zvolit, doporučil bych vám vřele formát PNG. Takzvaný Portable Network Graphics je standart, který vyniká relativně malou velikostí a bezztrátovou kompresí dat. Vaše data tak budou uložena jedna k jedné a můžete s nimi beze ztráty dále operovat. 
+Nevíte-li, kterou koncovku souboru zvolit, doporučil bych vám vřele formát PNG. Takzvaný Portable Network Graphics je standart, který vyniká relativně malou velikostí a bezztrátovou kompresí dat. Vaše data tak budou uložena jedna ku jedné a můžete s nimi beze ztráty dále operovat. 
 
 Samotné ukládání se provádí následujícím způsobem:
 
@@ -2852,10 +2852,7 @@ Příkaz \vyraz{save()} provede uložení obrazových dat okamžitě. Kdybychom 
 V příkladě tedy budeme ukládat obrázek jen po kliknutí myší.
 
 
-
-
-
-Nyní si představme, že z nějakého důvodu potřebujeme zachytit plnou sekvenci po sobě jdoucích obrázků. Problém příkazu save() je ten, že v případě pevně zadané cesty bude stále přepisovat obrazovými daty tentýž soubor. Abychom uložili vícero obrázků, potřebujeme proměňovat cestu kam Processing obrázky ukládá. Můžeme k tomu využít počítadlo nebo zvláštní příkaz processingu \vyraz{saveFrame()};
+Nyní si představme, že z nějakého důvodu potřebujeme zachytit plnou sekvenci po sobě jdoucích obrázků. Problém příkazu save() je ten, že v případě pevně zadané cesty bude stále přepisovat obrazovými daty tentýž soubor. Abychom uložili vícero obrázků, potřebujeme proměňovat cestu, kam Processing obrázky ukládá. Můžeme k tomu využít počítadlo nebo zvláštní příkaz processingu \vyraz{saveFrame()};
 
 
 
@@ -2872,7 +2869,7 @@ void draw(){
 
 \end{lstlisting}
 
-Využití počítadla je možné, ale trochu zdlouhavé. Všimněte si zde pouze způsobu, jakým číslujeme názvy souborů. Hodnota \vyraz{frameCount} se mění podle počtu vykreslených okének. Příkaz \vyraz{nf()} je zde z kosmetických důvodů, přidává pouze daný počet nul před naše počítadlo. Celý tento zápis se se dá ovšem elegantně zkrátit příkazem \vyraz{saveFrame()}.
+Využití počítadla je možné, ale trochu zdlouhavé. Všimněte si zde pouze způsobu, jakým číslujeme názvy souborů. Hodnota \vyraz{frameCount} se mění podle počtu vykreslených okének. Příkaz \vyraz{nf()} je zde z kosmetických důvodů, přidává pouze daný počet nul před naše počítadlo. Celý tento zápis se dá ovšem elegantně zkrátit příkazem \vyraz{saveFrame()}.
 
 
 \begin{lstlisting} 
@@ -2897,7 +2894,7 @@ Příkaz \vyraz{saveFrame()} vyžaduje stejně jako příkaz \vyraz{save()} cest
 
 Ukládání informací do obrazu je jen pouze jedna z možností. Někdy se nám může hodit uložit informace v jiném formátu. Řekněme, že potřebujeme uložit pozice myši pro pozdejší animaci. Jistě bychom mohli uložit tuto informaci do série obrázků, z hlediska programování by to ovšem nebylo prozřetelné.
 
-Konkrétní údaje o pohybu kurzoru známe. Můžeme je tedy zaznamenat například do nám již známého pole souřadnic. Pro tento účel si vytvoříme program, který bude umět zaznamenávat údaje o pohybu kurzoru do textového souboru. Předtím, než se pustíme do práce, je dobré si uvědomit že text neobsahuje číselné informace. Vzpomínáte na kapitolu o základních datatypech? \odkaz{Základní datatypy} S textem, tedy ani textovým souborem, nelze manipulovat jako s čísly.
+Konkrétní údaje o pohybu kurzoru známe. Můžeme je tedy zaznamenat například do nám již známého pole souřadnic. Pro tento účel si vytvoříme program, který bude umět zaznamenávat údaje o pohybu kurzoru do textového souboru. Předtím, než se pustíme do práce, je dobré si uvědomit, že text neobsahuje číselné informace. Vzpomínáte na kapitolu o základních datatypech? \odkaz{Základní datatypy} S textem, tedy ani textovým souborem, nelze manipulovat jako s čísly.
 
 Při ukládání dat do textové podoby tedy musíme mít již na mysli, jak je posléze budeme číst, a proto zvolíme vhodný formát pro ukládání. Vhodným formátem pro uchovávání informací v textové podobě je takzvaný \slovnik{CSV}, comma separated value. Jak z anglického názvu vyplývá, jedná se o hodnoty, které jsou oddělené čárkou. Pro naše potřeby budou stačit hodnoty dvě, pro osu X a osu Y našeho kurzoru.
 
@@ -2940,7 +2937,7 @@ void ulozDoSouboru(){
 
 Program je hotový. Rozeberme si doposud nevídané věci. Pole by nám měla být již srozumitelná, v tomto případě pouze používáme datatyp \vyraz{float}. Vytvořili jsme si dvě rozdílná pole pro dvě osy.
 
- Ve funkci \vyraz{draw()} nyní dochází k samotnému zápisu, a to pomocí již známé proměnné \vyraz{frameCount()}. Pokaždé je hodnota zapsána na novou pozici. Následuje podmínka, která dříve novým příkazem \vyraz{exit()} ukončuje program. Podmínka je spuštěna pouze tehdy, máme-li již dostatečný počet zaznamenaných hodnot.
+ Ve funkci \vyraz{draw()} nyní dochází k samotnému zápisu, a to pomocí již známé proměnné \vyraz{frameCount}. Hodnota je pokaždé zapsána na novou pozici. Následuje podmínka, která dříve novým příkazem \vyraz{exit()} ukončuje program. Podmínka je spuštěna pouze tehdy, máme-li již dostatečný počet zaznamenaných hodnot.
  
 Podmínka navíc, předtím než ukončí celý program, spustí námi definovanou funkci pro uložení nashromážděných dat.
 
@@ -2959,7 +2956,7 @@ Tato funkce za pomoci smyčky převede číselné informace do textové podoby. 
 
 Ukládat obrazové informace lze v rozmanitých formátech. Představme si, že jsme v Processingu navrhli grafiku, kterou bychom rádi tiskli v dobré kvalitě. Standardními postupy, tj. uložit obrazová data jako rastrový obrázek, docílíme kvality výsledného souboru jen v rozměrech zadaných v příkazu \vyraz{size()}. Sketch je primárně připravena pro zobrazení na obrazovce a rozměry výsledného obrazu tedy většinou nepřesahuje rozměry naší obrazovky.
 
-Nic nám sice nebrání nastavit velikost sketche na několikanásobně větší plochu, než jakou naše obrazovka fyzicky disponuje, důmyslnějším řešením ovšem je uložit obrazová data jako vektorová ve formátu {\em PDF}. {\em PDF} je standardní formát pro práci s grafikou a přetiskovou přípravou a kromě rasterizovaných obrazových dat může obsahovat i data vektorová.
+Nic nám sice nebrání nastavit velikost sketche na několikanásobně větší plochu, než jakou naše obrazovka fyzicky disponuje, důmyslnějším řešením ovšem je uložit obrazová data jako vektorová ve formátu {\em PDF}. {\em PDF} je standardní formát pro práci s grafikou a předtiskovou přípravou a kromě rasterizovaných obrazových dat může obsahovat i data vektorová.
 
  Největší výhodou vektorových dat je obecně škálovatelnost výstupních rozměrů. Jelikož jsou tvary vyjádřeny matematicky, celý obraz lze teoreticky tisknout v jakýchkoli rozměrech ve stejné kvalitě.
  
@@ -2974,7 +2971,7 @@ Nic nám sice nebrání nastavit velikost sketche na několikanásobně větší
 import processing.pdf.*;
 
 void setup() {
-  size(400, 400, PDF, "jemnoSouboru.pdf");
+  size(400, 400, PDF, "jmenoSouboru.pdf");
 }
 
 void draw() {
@@ -2995,7 +2992,7 @@ Pro náš tisk je nyní důležité, že za příkazem \vyraz{import} se nacház
 
 {\em Sketch > Import Library > PDF Export}
 
-V kódu je dále důležitá nová definice funkce \vyraz{size()}. Tato funkce je nám již známa definuje rozměry sketche, v našem případě bude ovšem již definovat rozměry výsledného {\em PDF} souboru. Za definicí rozměrů je dále nutné definovat vykreslovací prostředí PDF a jméno souboru do kterého chceme zapisovat. Cesta k souboru je relativní, to znamená že výsledný soubor se zobrazí přímo v adresáři naší sketche.
+V kódu je dále důležitá nová definice funkce \vyraz{size()}. Tato funkce je nám již známa definuje rozměry sketche, v našem případě bude ovšem již definovat rozměry výsledného {\em PDF} souboru. Za definicí rozměrů je dále nutné definovat vykreslovací prostředí PDF a jméno souboru, do kterého chceme zapisovat. Cesta k souboru je relativní, to znamená, že výsledný soubor se zobrazí přímo v adresáři naší sketche.
 
  Předchozí příklad vykreslil první okénko programu přímo do souboru, aniž by cokoli zobrazil a ukončil sám sebe. V dalším příkladě si ukážeme, jak vykreslovat v průběhu programu jinou fázi animace. K podobné manipulaci potřebujeme spustit a ukončit vykreslování do souboru na požádání.
  
@@ -3036,7 +3033,7 @@ void mousePressed() {
  
  Pomocí předchozího způsobu uvidíme animaci vykreslovanou na plochu, kterou lze v daný moment uložit do jednotlivých souborů pojmenovaných podle čísla okénka, kdy kresba proběhla.
  
- Podoboným způsobem, jakým lze zapsat vektorový obraz, je metoda postupné kresby na jedno plátno, tedy do jednoho souboru.
+ Podobným způsobem, jakým lze zapsat vektorový obraz, je metoda postupné kresby na jedno plátno, tedy do jednoho souboru.
  
 \begin{lstlisting}
 import processing.pdf.*;
@@ -3064,17 +3061,17 @@ void keyPressed() {
 
 Takovým postupem lze kreslit opakovaně do jednoho souboru. Kresbu a celý program ukončíme pomocí funkce \vyraz{keyPressed()}, tedy klávesy \klavesa{q}.
 
-\bublina{Můžete vytvářet neomezeně složité tvary zkuste jiné barvy výplně a obrysů, otevřete vždy výsledný soubor a ověřujete si výslednou podobu vektorové kresby. Zkuste kresbu načíst a upravit v jiném vektorovém editoru (například otevřený Inkscape).}
+\bublina{Můžete vytvářet neomezeně složité tvary, zkuste jiné barvy výplně a obrysů, otevřete vždy výsledný soubor a ověřujete si výslednou podobu vektorové kresby. Zkuste kresbu načíst a upravit v jiném vektorovém editoru (například otevřený Inkscape).}
 
 \oddil{Načítání informací}
 
-Za vnější informace lze v Processingu považovat vše, co není zdrojovým kódem Processingu. Takové informace můžeme souhrně nazvat data. Processing umí nakládat s širokou škálou dat. Mezi ty nejčastěji používané bude patřit obrazová informace, ať už v podobě rastrového nebo vektorového obrazu. Mezi další vektorové data patří 3D modely nebo například záznamy z databází ve formátu {\em XML}, {\em CSV}, naprosto holé textové soubory atp. 
+Za vnější informace lze v Processingu považovat vše, co není zdrojovým kódem Processingu. Takové informace můžeme souhrně nazvat data. Processing umí nakládat s širokou škálou dat. Mezi ty nejčastěji používané bude patřit obrazová informace, ať už v podobě rastrového nebo vektorového obrazu. Mezi další vektorová data patří 3D modely nebo například záznamy z databází ve formátu {\em XML}, {\em CSV}, naprosto holé textové soubory atp. 
 
 \pododdil{Načítání obrázků}
 
 Processing ukládá obrázky do vnitřní paměti. Využívá k tomu speciální datatyp nazvaný \vyraz{PImage}. Pomocí tohoto datatypu si můžeme do našeho programu načíst externí obrazová data, se kterými můžeme dále pracovat. Načíst obrázek můžeme pomocí příkazu \vyraz{loadImage()}. Příkaz bude očekávat jediný parametr, cestu k obrázku.
 
-Zde je na místě připomenout \odkaz{Sketch}, že budeme-li potřebovat externí data, je dobré si je umístit přímo do adresáře naší sketche do složky s názvem {\em DATA}. Veškeré cesty, které budeme v kódu psát budou k našim souborům relativní, to znamená, že přemístěním externích dat do našeho adresáře můžeme namísto:
+Zde je na místě připomenout \odkaz{Sketch}, že budeme-li potřebovat externí data, je dobré si je umístit přímo do adresáře naší sketche do složky s názvem {\em DATA}. Veškeré cesty, které budeme v kódu psát, budou k našim souborům relativní, to znamená, že přemístěním externích dat do našeho adresáře můžeme namísto:
 
 \begin{lstlisting}
 PImage obrazek = loadImage("/obrazek/kdesi/v/hlubinach/adresaru/obrazek.jpg");
@@ -3122,7 +3119,7 @@ Zkusme se tedy vrátit k předchozímu příkladu pro ukládání textových sou
 
 Na každém řádku jsou dvě hodnoty, které představují určitý záznam. Víme, že to je záznam pohybujícího se kurzoru, ale data mohou být opravdu cokoli. Co je pro nás důležité, je to, že jsme si uložili data v jednom tvaru, tzv. \vyraz{CSV}. Vždy se jedná o dvě hodnoty s desetinnou čárkou na jednom řádku, oddělené čárkou a mezerou.
 
-K samotnému načtení textových informací do paměti programu, tak abychom s textem mohli dále pracovat, použijeme stejně jako při ukládání pole řetězcových hodnot. To, co zní odpudivě, je ve skutečnosti docela prosté:
+K samotnému načtení textových informací do paměti programu tak, abychom s textem mohli dále pracovat, použijeme stejně jako při ukládání pole řetězcových hodnot. To, co zní odpudivě, je ve skutečnosti docela prosté:
 
 \begin{lstlisting}
 String celyText[] = loadStrings("soubor.csv");
@@ -3305,49 +3302,36 @@ Výčet komunitních knihoven je již poměrně obsáhlý, pro ilustraci zde bud
 
 
 \begin{itemize}
-\item
-Video
+\item[Video] Základní rozhraní mezi Apple Qucktime a Processingem. U platformy Linux tato knihovna dlouhodobě nefunguje kvůli závislosti na propietárním softwaru, musíme tedy využít alternativy. Například implementace nativní knihovny GStreamer.
 
-Základní rozhraní mezi Apple Qucktime a Processingem. U platformy Linux, tato knihovna dlouhodobě nefunguje kvůli závislosti na propietárním softwaru, musíme tedy využít alternativy. Například implementace nativní knihovny GStreamer.
-
-\item
-Network
+\item[Network]
 Zajišťuje základní síťovou + internetovou komunikaci. 
 
-\item
-Serial
+\item[Serial]
 Podpora pro komunikaci se sériovými porty, externí zařízeni typu (RS-232).
 
-\item
-PDF Export
+\item[PDF Export]
 Knihovna pro export do PDF.
 
-\item
-OpenGL
+\item[OpenGL]
 Technologie pro podporu Java implementace akcelerované grafiky JOGL.
 
-\item
-Minim
+\item[Minim]
 Využívá JavaSound API ke snadné obsluze zvukového výstupu.
 
-\item
-DXF Export
+\item[DXF Export]
 Knihovna pro exportování vektorových dat ve formátu DXF (Autocad, 3D).
 
-\item
-Arduino
+\item[Arduino]
 Knihovna určená pro komunikaci s Arduinem.
 
-\item
-Netscape.JavaScript
+\item[JavaScript]
 Nese metody pro komunikaci s Javascriptem a Processingovým appletem ve své webové podobě.
 
-\item
-Candy SVG Import
+\item[SVG Import]
 Knihovna pro načítání vektorové grafiky ve formátu SVG (Inkscape, Adobe Illustrator)
 
-\item
-XML Import
+\item[XML Import]
 Podpora načítání XML tabulek.
 \end{itemize}
 
@@ -3366,7 +3350,7 @@ Jako poslední příklad si zde uvedeme práci s jednou externí knihovnou. S je
 
 Dobrým příkladem funkční a použitelné knihovny pro Processing je knihovna {\em ControlP5} od {\em Andrease Schlegela}. Tato knihovna nám dovoluje snadno vytvářet interaktivní prvky jako tlačítka a různé typy táhel (sliderů) a vstupních kolonek.
 
-Knihovnu si nejprve musíme nainstalovat, najdeme ji na adrese \\{\em http://www.sojamo.de/libraries/controlP5}, nebo přímo na stránkách {\em processing.org}.
+Knihovnu si nejprve musíme nainstalovat. Najdeme ji na adrese \\{\em http://www.sojamo.de/libraries/controlP5}, nebo přímo na stránkách {\em processing.org}.
 
 \begin{center}
 \includegraphics[width = 1\textwidth]{imgs/controlp5.png}
@@ -3379,7 +3363,7 @@ Soubor rozbalíme do adresáře {\em libraries} v našem sketchbooku, tj. adres�
 \includegraphics[width = 1\textwidth]{imgs/controlp52.png}
 \end{center}
 
-Nejdůležitější složkou je v každé knihovně adresář {\em library}, zde se také nachází veškeré funkční prvky knihovny. Dále si můžeme všimnout dvou adresářů, {\em examples} a {\em reference}, zde můžeme najít příklady použití i obsáhlou dokumentaci.
+Nejdůležitější složkou je v každé knihovně adresář {\em library}, zde se také nachází veškeré funkční prvky knihovny. Dále si můžeme všimnout dvou adresářů, {\em examples} a {\em reference}. Zde můžeme najít příklady použití i obsáhlou dokumentaci.
 
 Máme-li spuštěný Processing, je nutné jej nyní restartovat.
 
@@ -3436,7 +3420,7 @@ void controlEvent(ControlEvent theEvent) {
 
 Veškeré příkazy by nám měly být vcelku povědomé, samozřejmě až na ty, které ovládají funkce knihovny {\em controlP5}.
 
-Všimněme si okamžitě objektu {\em ControlP5}, to je ústřední objekt při komunikaci s knihovnou. Objekt je vlastně třída, kterou jsme již rozebírali dříve \odkaz{Třída a objekt}. Vytvořením instance objektu z knihovny příkazem \vyraz{new} provážeme funkce knihovny s naším programem. Slovo \vyraz{this} referuje k našemu programu a říká knihovně, s čím bude své funkce propojovat, v podstatě ukazuje na nadřazenou (tzv. super) třídu Processingové aplikace.
+Všimněme si okamžitě objektu {\em ControlP5}, to je ústřední objekt při komunikaci s knihovnou. Objekt je vlastně třída, kterou jsme již rozebírali dříve \odkaz{Třída a objekt}. Vytvořením instance objektu z knihovny příkazem \vyraz{new} provážeme funkce knihovny s naším programem. Slovo \vyraz{this} referuje k našemu programu a říká knihovně, s čím bude své funkce propojovat. V podstatě ukazuje na nadřazenou (tzv. super) třídu Processingové aplikace.
 
  Nyní již můžeme pomocí tečkové syntaxe vytvářet objekty z knihovny. V knihovně {\em ControlP5} je jich opravdu mnoho, zde si ukážeme pouze dva typy.  Příkazem {\em controlP5.addNumberbox} přidáváme objekt s hodnotou v číselném formátu.
  
@@ -3453,12 +3437,12 @@ O kresbu prvků do smyčky \vyraz{draw()} se knihovna již postará sama.
 Výsledkem bude jednoduché {\em GUI}, grafické uživatelské rozhraní, pomocí kterého můžeme ovládat hodnoty v našem programu.
 
 
-\bublina{Vyzkoušejte další příklady z knihovny a zkuste i knihovny. Dalších rozšíření je mnoho, možností aplikace i kombinace je neomezeně.}
+\bublina{Vyzkoušejte další příklady z knihovny a zkuste i knihovny další. Všech rozšíření je nyní přes 100 kusů, možností aplikace a kombinací je neomezeně.}
 
 
 \section{Poznávejte, experimentujte!}
 
-Toto je konec úvodu do Processingu. Tento skromný průvodce vám chtěl pootevřít dveře do světa generované grafiky a programování jako takového a další cesta bude již na vás.
+Toto je konec úvodu do Processingu. Tento skromný průvodce vám chtěl pootevřít dveře do světa generované grafiky a programování jako takového. Další cesta bude již na vás.
 
 Na závěr bych vám chtěl popřát hodně trpělivosti a odhodlání, obojího budete potřebovat nemálo. Výsledek své snahy ovšem můžete několikanásobně zúročit v další práci.
 
@@ -3468,11 +3452,11 @@ Učte se vždy novému, nic není krásnějšího než na věci přicházet. A k
 
 \vfill
 
-Aktualizovanou podobu tohoto průvodce můžete najít v elektronické verzi repozitáře GIT na serveru GitHub na adrese:\\
+Aktualizovanou podobu tohoto průvodce můžete najít v elektronické verzi repozitáře GIT na serveru {\em GitHub} na adrese:\\
 {\em https://github.com/K0F/processing\_1}
 
 \begin{flushright}
-{\em Kryštof Pešek, 5. 12. 2012}
+{\em Kryštof Pešek, 12.5. 2012}
 \end{flushright}
 
 \chapter{Rejstřík pojmů}

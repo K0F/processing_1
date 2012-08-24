@@ -208,7 +208,7 @@
 \indexentry {scale()}{110}
 \indexentry {translate()}{111}
 \indexentry {pushMatrix()}{111}
-\indexentry {popMatrix()}{112}
+\indexentry {popMatrix()}{111}
 \indexentry {rotate()}{112}
 \indexentry {degrees()}{112}
 \indexentry {translate()}{114}
@@ -247,7 +247,7 @@
 \indexentry {CSV}{120}
 \indexentry {float}{121}
 \indexentry {draw()}{121}
-\indexentry {frameCount()}{121}
+\indexentry {frameCount}{121}
 \indexentry {exit()}{121}
 \indexentry {saveStrings()}{122}
 \indexentry {Tisk do pdf, ukládání vektorů}{122}
