@@ -19,20 +19,20 @@
 \indexentry {stroj}{29}
 \indexentry {Dokonalost jazyka}{30}
 \indexentry {Volba vhodného jazyka}{31}
-\indexentry {Proč zrovna Processing?}{32}
+\indexentry {Proč zrovna Processing?}{33}
 \indexentry {Tvorba softwaru}{34}
 \indexentry {Otevřenost softwaru}{35}
-\indexentry {otevřený software}{35}
-\indexentry {MIT licence}{35}
-\indexentry {Built with Processing}{35}
+\indexentry {otevřený software}{36}
+\indexentry {MIT licence}{36}
+\indexentry {Built with Processing}{36}
 \indexentry {Syntetický obraz}{36}
-\indexentry {Empirický přístup k programování}{36}
+\indexentry {Empirický přístup k programování}{37}
 \indexentry {GNU / Linux}{39}
 \indexentry {GNU / GPL}{39}
 \indexentry {Základní prostředí}{40}
 \indexentry {Základní diskové operace}{41}
 \indexentry {Sketch}{41}
-\indexentry {IDE}{42}
+\indexentry {IDE}{41}
 \indexentry {DATA}{42}
 \indexentry {Sketchbook}{42}
 \indexentry {Editor}{43}
@@ -133,6 +133,8 @@
 \indexentry {keyReleased()}{82}
 \indexentry {key}{82}
 \indexentry {keyCode}{82}
+\indexentry {key}{82}
+\indexentry {keyCode}{82}
 \indexentry {CODED}{82}
 \indexentry {keyCode}{83}
 \indexentry {println()}{83}
@@ -140,7 +142,7 @@
 \indexentry {new}{85}
 \indexentry {Smyčka}{85}
 \indexentry {for}{86}
-\indexentry {Uspořádání, struktura programu}{88}
+\indexentry {Uspořádání struktura programu}{88}
 \indexentry {void}{88}
 \indexentry {Funkce}{88}
 \indexentry {void}{88}
@@ -167,9 +169,9 @@
 \indexentry {new}{96}
 \indexentry {new}{96}
 \indexentry {new}{96}
-\indexentry {Práce s objekty}{96}
+\indexentry {Práce s objekty}{97}
 \indexentry {random()}{98}
-\indexentry {draw()}{99}
+\indexentry {draw()}{100}
 \indexentry {Náhoda}{100}
 \indexentry {random()}{100}
 \indexentry {random()}{100}
