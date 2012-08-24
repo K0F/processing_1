@@ -260,8 +260,8 @@
 \indexentry {mousePressed()}{124}
 \indexentry {keyPressed()}{125}
 \indexentry {Načítání informací}{125}
-\indexentry {Načítání obrázků}{125}
-\indexentry {PImage}{125}
+\indexentry {Načítání obrázků}{126}
+\indexentry {PImage}{126}
 \indexentry {loadImage()}{126}
 \indexentry {setup()}{126}
 \indexentry {image()}{126}
@@ -272,10 +272,10 @@
 \indexentry {CSV}{127}
 \indexentry {loadStrings()}{127}
 \indexentry {String}{127}
-\indexentry {loadStrings()}{127}
+\indexentry {loadStrings()}{128}
 \indexentry {println()}{128}
 \indexentry {Operace s textem}{128}
-\indexentry {Parsing, získávání hodnot z externích dat}{128}
+\indexentry {Parsing, získávání hodnot z externích dat}{129}
 \indexentry {loadStrings()}{130}
 \indexentry {splitTokens()}{130}
 \indexentry {splitTokens()}{130}

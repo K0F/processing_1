@@ -1,3 +1,43 @@
+\newglossaryentry{size()}{
+	name={size()},
+	description={Nastavuje rozměry okna programu. Hodnoty jsou udávané v pixelech. Tento příkaz by měl být spuštěn jako první ve funkci setup(). Jestliže není příkaz spuštěn, okno programu má výchozí velikost 100x100 pixelů. Ve funkci size() můžeme jako třetí parametr také zadat způsob vykreslování.}
+}
+\newglossaryentry{smooth()}{
+	name={smooth()},
+	description={Zapíná takzvaný anti-aliasing vyhlazování hran kresby. Funkce nastavuje vyhlazování pro celý program. Zapnutí vyhlazování má za následek poměrně výrazné zpomalení kresby a jemnější výstup obrazu.}
+}
+\newglossaryentry{noSmooth()}{
+	name={noSmooth()},
+	description={Vypíná vyhlazování hran.}
+}
+\newglossaryentry{sphereDetail()}{
+	name={sphereDetail()},
+	description={Funkce nastavuje úroveň detailu při vykreslování koule. Parametr zadaný ve formátu čísla float ovlivňuje vykreslovaný počet stran koule.}
+}
+\newglossaryentry{strokeWeight()}{
+	name={strokeWeight()},
+	description={Funkce nastavuje šířku vykreslovaných obrysů v pixelech.}
+}
+\newglossaryentry{String}{
+	name={String},
+	description={Datatyp pro řetězec textu. Jedná se o speciální datatyp schopný uchovat více znaků pod jednou proměnou. S tímto datatypem se pojí řada speciálních funkcí pro nakládání s textem.}
+}
+\newglossaryentry{println()}{
+	name={println()},
+	description={Funkce pro tisk do konzole. Funguje stejně jako příkaz \vyraz{print()}, s tím rozdílem že, každou tisknutou hodnotu zakončuje novým řádkem.}
+}
+\newglossaryentry{print()}{
+	name={print()},
+	description={Funkce pro tisk do konzole. Vstupní hodnotou může být jakákoli proměnná, holý text nebo kombinace obojího. Slouží jako základní nástroj ke sledování proměn v programu. Využívá se zejména pro ladění programu a kontrole výsledků.}
+}
+\newglossaryentry{parseFloat()}{
+	name={parseFloat()},
+	description={Funkce pro čtení textu (\vyraz{String}) a získávání číslené hodnoty s desetinnou čárkou. Výsledkem funkce je číslená hodnota ve tvaru float.}
+}
+\newglossaryentry{parseInt()}{
+	name={parseInt()},
+	description={Funkce pro čtení textu (\vyraz{String}) a získávání celých čísel. Výsledkem funkce je číslená hodnota ve tvaru int.}
+}
 \newglossaryentry{this}{
 	name={this},
 	description={Speciální výraz referující ke objektu ve kterém se zrovna pohybujeme. Slouží k identifikaci zejména pro knihovny nebo námi definovaných tříd.}
@@ -1591,14 +1631,7 @@
 	name={sin()},
 	description={Vypočítáva sínus z daného úhlu. Tato funkce očekáva údaj úhlu zadaný v radiánech, tedy hodnoty od 0 do 6.28.. Zpětně hodnota vrací hodnotu v rozmezí od -1 do 1.}
 }
-\newglossaryentry{size()}{
-	name={size()},
-	description={Defines the dimension of the display window in units of pixels. The {\textbf size()} function <em>must</em> be the first line in {\textbf setup()}. If {\textbf size()} is not called, the default size of the window is 100x100 pixels. The system variables {\textbf width} and {\textbf height} are set by the parameters passed to the {\textbf size()} function. <}
-}
-\newglossaryentry{smooth()}{
-	name={smooth()},
-	description={Draws all geometry with smooth (anti-aliased) edges. This will slow down the frame rate of the application, but will enhance the visual refinem}
-}
+
 \newglossaryentry{sort()}{
 	name={sort()},
 	description={Sorts an array of numbers from smallest to largest and puts an array of words in alphabetical order. The original array is not modified, a re-ordered array is returned. The {\textbf count} parameter states the number of elements to sort. For example if there are 12 elements in an array and if count is the value 5, only the first five elements on the array will be sorted. As of release 0126, the alphabetical ordering is case insensitive.}
