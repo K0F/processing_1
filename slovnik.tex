@@ -1,3 +1,100 @@
+\newglossaryentry{sin()}{
+	name={sin()},
+	description={Vypočítáva sínus z daného úhlu. Tato funkce očekáva údaj úhlu zadaný v radiánech, tedy hodnoty od 0 do 6.28.. Zpětně hodnota vrací hodnotu v rozmezí od -1 do 1.}
+}
+\newglossaryentry{vertex()}{
+	name={vertex()},
+	description={Veškeré tvary jsou složené ze série bodů, funkcí {\em vertex()} definujeme tyto body. Záleží na pořadí ve kterém jsme je definovali. Body mohou být dvourozměrné i trojrozměrné. {\em Vertex} tedy můžeme definovat pomocí souřadnic $X$, $Y$ nebo $X$, $Y$, $Z$.}
+}
+\newglossaryentry{noise()}{
+	name={noise()},
+	description={Udává hodnotu Perlinova šumu na specifické pozici. Perlinův šum je generátor pseudonáhodných čísel vytvářející plynule přecházející hodnotu šumu. Algoritmus byl vyvinut Kenem Perlinem v osmdesátých letech dvacátého století a je velmi často používán právě v grafických aplikacích na tvorbu textur, pohybu, tvarů atd. Rozsah perlinova šumu se pohybuje vždy v rozmezí hodnot $0.0$ a $1.0$. Funkce {\em noise()} přijímá jednu, dvě nebo tři hodnoty. Pohybuje se ve až ve trojrozměrném poli. Šum může být snadno animován přírůstkem v parametru, hodnoty budou plynule navazovat jednu na druhou ve všech rozměrech.}
+}
+\newglossaryentry{noFill()}{
+	name={noFill()},
+	description={Vypíná výplň šech následujících objektů. Jestliže je příkaz dohromady \vyraz{noStroke()} a \vyraz{noFill()} Processing nebude nic vykreslovat na plátno.}
+}
+\newglossaryentry{mouseButton}{
+	name={mouseButton},
+	description={Processing automaticky registruje které tlačítko myši bylo stisknuto. Jestliže levé tato systémová proměnná bude mít hodnotu {\em LEFT}, v případě pravého tlačítka bude mít hodnotu {\em RIGHT}, v případě prostředního pak hodnotu {\em CENTER}.}
+}
+\newglossaryentry{mouseClicked()}{
+	name={mouseClicked()},
+	description={Funkce spuštěná klikneme-li myší, celým klikem myši se rozumí stisk talčítka myši a jeho násldené uvolnění.}
+}
+\newglossaryentry{mouseDragged()}{
+	name={mouseDragged()},
+	description={Funkce táhneme-li myší v rámci běžícího programu, táhnutí znamená podržení myši a pohyb.}
+}
+\newglossaryentry{mouseMoved()}{
+	name={mouseMoved()},
+	description={Funkce spuštěná pohneme li myší v rámci běžícího programu}
+}
+\newglossaryentry{mousePressed()}{
+	name={mousePressed()},
+	description={Funkce spuštěna pokaždé je-li stisknuto tlačítko myši. K následné detekci tlačítka můžeme použít proměnnou \vyraz{mouseButton}}
+}
+\newglossaryentry{nf()}{
+	name={nf()},
+	description={Nástroj na formátování čísel do textu. Přijímá parametr celého čísla a přiřazuje před něj počet nul ze druhého parametru.}
+}
+\newglossaryentry{fill()}{
+	name={fill()},
+	description={Nasvauje barvu výplně tvarů. Například spustíme-li {\textbf fill(204, 102, 0)}, veškeré další výplně objektů budou mít oranžovou barvu.}
+}
+\newglossaryentry{stroke()}{
+	name={stroke()},
+	description={Nasvauje barvu obrysů tvarů. Například spustíme-li {\textbf stroke(204, 102, 0)}, veškeré další kontury objektů budou mít oranžovou barvu.}
+}
+\newglossaryentry{keyPressed()}{
+	name={keyPressed()},
+	description={Funkce spuštěna pokaždé je-li stisknuta jakákoli klávesa.}
+}
+\newglossaryentry{keyReleased()}{
+	name={keyReleased()},
+	description={Funkce spuštěná tehdy uvolníme-li jakoukoli stisknutou klávesu.}
+}
+\newglossaryentry{for}{
+	name={for},
+	description={Definuje smyčku, opakující se sekvence. Struktura {\em for} se zadává pomocí tří parametrů. Inicializace, pozice kde smyčka začíná. Ověření, konečná podmínka která smyčku ukončuje. Nakonec přírůstek, definuje změnu jednoho kroku opakování smyčky. Tyto části jsou oddělené středníkem ; Smyčka pokračuje dokud výsledek prostřední podmínky není \vyraz{false}.}
+}
+\newglossaryentry{frameRate()}{
+	name={frameRate()},
+	description={Nastavuje počet okének které mají být vykresleny za jednu vteřinu. Výchozí nastavení je šedesát okének za vteřinu. Pokud je údaj vyšší než Processing stihne vykreslovat, počet okének za vteřinu se sníží na maximální možnou hodnotu.}
+}
+\newglossaryentry{endRecord()}{
+	name={endRecord()},
+	description={Zastavuje nahrávání do souboru spuštěné pomocí funkce \vyraz{beginRecord()} a uzavírá soubor.}
+}
+\newglossaryentry{endShape()}{
+	name={endShape()},
+	description={Funkce doplňující funkci \vyraz{beginShape()}, uzavírá kreslení tvaru. Funkce může být doplněna o výraz {\em CLOSE}, který uzavře tvar a pokusí se vytvořit jeho výplň.}
+}
+\newglossaryentry{ellipse()}{
+	name={ellipse()},
+	description={Kreslí elipsu nebo kruh. elipsa se stejnou šířkou i výskou představuje kruh. První dva parametry udávají pozici, třetí parametr uvádí šířku, čtvrtý výšku elipsy. Nastavení lze provést pomocí funkce \vyraz{ellipseMode()}.}
+}
+\newglossaryentry{else}{
+	name={else},
+	description={Doplňuje podmínku \vyraz{if()}, znamená jestliže není podmínka  splněna. Struktura dovoluje spustit dva různé bloky kódu. Defunije co se stane není-li předchozí podmínka \vyraz{if()} splněna}
+}
+\newglossaryentry{image()}{
+	name={image()},
+	description={Zobrazuje obrázek ve tvaru \vyraz{PImage}, obrázky by měly být umístěny v adresáři {\em DATA}. Processing nyní podporuje formáty {\em PNG, GIF, JPEG a Targa} orázku. Barvu a průhlednost obrázku lze definovat pomocí funkce \vyraz{tint()}. Průhlednost funguje s formáty {\em GIF} nebo {\em PNG}. Funkce {image()} přijímá první parametr proměnnou obrázku který bude zobrazovat, zbylé dva parametry jsou pozice v ose $X$ a $Y$. Ve výchozím módu nastavení pozice určuje levý horní roh obrázku. Třetí a čtvrtý parametr dále může nastavit šířku a výšku zobrazovaného obrázku. Módy pro alternativní zobrazování lze přepínat pomocí funkce \vyraz{imageMode()}.}
+}
+\newglossaryentry{imageMode()}{
+	name={imageMode()},
+	description={Ovlivňuje způsob zobrazování obrázků. Dovoluje použít konstanty {\em CORNER, CORNERS a CENTER}. Ve výchozím nastavení {\em CORNER} bude obrázek umístěn levým horním rohem na definované souřadnice $X$ a $Y$. Mód {\em CORNERS} mění chování druhých dvou parametrů, které namísto relativní šířky a výšky nastavují absolutní hodnoty v osách $X$ a $Y$. Poslední mód {\em CENTER}, umístí obrázek na střed definovaných souřadnic, zbylé dva parametry opět udávají relativní šířku a výšku obrázku.}
+}
+\newglossaryentry{colorMode()}{
+	name={colorMode()},
+	description={mění způsob jakým Processing interpretuje barvu, možné argumenty jsou RGB a HSB, druhý argument určuje rozsah hodnot, výchozí nastavení je 255. Příkaz ovlivňuje nastavení barev pro kresbu, tj. například pro \vyraz{fill()} a \vyraz{stroke()}.}
+}
+\newglossaryentry{color()}{
+	name={color()},
+	description={Vytváří barvu ve speciálním datatypu {\em color}. Vstupní hodnoty jsou intepretovány jako  RGB (červená, zelená, modrá) nebo HSB (odstín, sytost, jas) hodnoty. Módy vytváření barev lze přepínat funkcí \vyraz{colorMode()}. Ve výchozím nastavení mají bavy rozmezí 256 odstínu šedi (0..255).}
+}
+
 \newglossaryentry{size()}{
 	name={size()},
 	description={Nastavuje rozměry okna programu. Hodnoty jsou udávané v pixelech. Tento příkaz by měl být spuštěn jako první ve funkci setup(). Jestliže není příkaz spuštěn, okno programu má výchozí velikost 100x100 pixelů. Ve funkci size() můžeme jako třetí parametr také zadat způsob vykreslování.}
@@ -176,39 +273,39 @@
 \newglossaryentry{background()}
 {
   name={background()},
-  description={funkce nastavuje barvu pozadí na plátně. Standartní barva je světle šedá. Zavoláním background s definicí barvy v kulatých závorkách bude vyplněna celá plocha jednolitou barvou}
+  description={Funkce nastavuje barvu pozadí na plátně. Standartní barva je světle šedá. Zavoláním background s definicí barvy v kulatých závorkách bude vyplněna celá plocha jednolitou barvou}
 }
 
 
 \newglossaryentry{void}
 {
   name={void},
-  description={neboli prázdná funkce, z anlgického \uv{prázdno} funkce která nevrací zpět žádný výsledek, funkce která spouští sérii zadaných příkazů uzavřenýc ve složených závorkách za svoji definicí}
+  description={Neboli prázdná funkce, z anlgického \uv{prázdno} funkce která nevrací zpět žádný výsledek, funkce která spouští sérii zadaných příkazů uzavřenýc ve složených závorkách za svoji definicí}
 }
 
 \newglossaryentry{indenting}
 {
   name={indenting},
-  description={zarovnávání kódu do úhledných paragrafů, slouží k lepší orientaci programátora v kódu}
+  description={Zarovnávání kódu do úhledných paragrafů, slouží k lepší orientaci programátora v kódu}
 }
 
 
 \newglossaryentry{syntax highlighting}
 {
   name={syntax highlighting},
-  description={barevné značky slouží k lepší orientaci programátora v kódu.}
+  description={Barevné značky slouží k lepší orientaci programátora v kódu.}
 }
 
 \newglossaryentry{flow}
 {
   name={flow},
-  description={nebo-li plynutí, tok, je zvláštním stavem mysli popisovaným programátory, jedná se o stav kdy je člověk plně zanořen do práce a jakékoli vyrušení z tohoto stavu si vyžaduje opětovné nastolování, podle zkušených progrmátorů nastolení takového stavu obvykle trvá 10-15 minut práce s kódem.}
+  description={Nebo--li plynutí, tok, je zvláštním stavem mysli popisovaným programátory, jedná se o stav kdy je člověk plně zanořen do práce a jakékoli vyrušení z tohoto stavu si vyžaduje opětovné nastolování, podle zkušených progrmátorů nastolení takového stavu obvykle trvá 10-15 minut práce s kódem.}
 }
 
 \newglossaryentry{setup()}
 {
   name={setup()},
-  description={základní funkce pro nastavení výchozích parametrů programu, tato funkce je spuštěna vždy na začátku běhu programu}
+  description={Základní funkce pro nastavení výchozích parametrů programu, tato funkce je spuštěna vždy na začátku běhu programu}
 }
 
 \newglossaryentry{draw()}
@@ -321,20 +418,56 @@
 	name={CODE},
 	description={adresář uvnitř \slovnikpl{sketch}, který obsahuje externí \slovnik{Java} \slovnik{binární kód} programy nebo knihovny třetí strany (obrázky,textové soubory, atd.)}
 }
-
+\newglossaryentry{class}{
+	name={class},
+	description={Slovo označující deklaraci nové třídy, definici objektu. Třída je soubor funkcí a proměnných a představuje šablonu pro objekt. Jména tříd jsou většinou označovány počátečním velkým písmenem, instance objektů pak písmenem malým. Třída je základní stavební kámen objektově orientovaného programování.}
+}
 \newglossaryentry{DATA}
 {
 	name={DATA},
 	description={adresář uvnitř \slovnikpl{sketch}, který obsahuje vaše externí soubory (obrázky,textové soubory, atd.)}
 }
+\newglossaryentry{acos()}{
+	name={acos()},
+	description={Inverzní funkce \vyraz{cos()}, arkuskosinus. Funkce převádí hodnoty rozmezí od $-1.0$ do $1.0$ na hodnoty v rozmezí od $0$ do $\pi$ {\em (3.1415927)}.}
+}
+\newglossaryentry{atan2()}{
+	name={atan2()},
+	description={Vypočítává úhel z jednoho bodu do bodu druhého. K výpočtu můžeme použít zápis {\em atan2(}$Y_2-Y_1$,$X_2-X_1${\em )} Výsledný úhel je udáván v radiánech, tedy v rozmezí od $-\pi$ do $\pi$. {\em Atan2()} je funkce, která se hojně využívá při určení směru od objektu ke kurzoru nebo jinému bodu. Pozor při zadávání parametrů si všimněte obráceného pořadí parametrů, oproti zvyklosti jsou zadavány v pořadí $Y$, $X$}
+}
+\newglossaryentry{ellipseMode()}{
+	name={ellipseMode()},
+	description={Ovlivňuje způsob jakým je vykreslována elipsa. Možné módy jsou {\em RADIUS, CENTER, CORNER, CORNERS}. Výchozí módem je {\em CENTER}. První dva parametry nastavují pozici elipsy druhé dva šířku a výšku elipsy. V případě módu {\em RADIUS} druhé dva parametry určují poloměry. Mód {\em CORNER} definuje pozici levého horního bodu, následuje šířka a výška, poslední mód {\em CORNERS} definuje dva body mezi které bude elipsa vepsána.}
+}
+\newglossaryentry{beginRecord()}{
+	name={beginRecord()},
+	description={Otevírá nový soubor pro zápis do {\em PDF} nebo {\em DXF}, kresba je tak zrcadlena na plátno a souběžně do souboru. Po ukončení kresby musíme spustit funkci \vyraz{endRecord()} před ukonením programu.}
+}
+\newglossaryentry{beginShape()}{
+	name={beginShape()},
+	description={Za pomoci funkcí {\em beginShape()} a \vyraz{endShape()} můžeme definovat složitější tvary. Funkce {\em beginShape()} otevírá definici tvaru, následuje funkce \vyraz{vertex()}, která určuje jednotlivé body tvaru. Tvar je nakonec uzavřen příkazem \vyraz{endShape()}. Kresba tvarů může probíhat ve dvou i třech rozměrech, v závislosti na renderu můžeme definovat \vyraz{vertex()} se dvěmi nebo třemi hodnotami. Doplňujícím argumentem {\em beginShape()} dále může být způsob jakým budou body spojovány, možnosti jsou  {POINTS, LINES, TRIANGLES, TRIANGLE\_FAN, TRIANGLE\_STRIP, QUADS, and QUAD\_STRIP}.}
+}
+\newglossaryentry{exit()}{
+	name={exit()},
+	description={Ukončí program. Program bez funkce \vyraz{draw()} function bude ukon4en automaticky poslední řádkou kǒdu, ale programy obsahující funkci \vyraz{draw()} dokud není program ukončen nebo není zavolán tento příkaz, {\textbf exit()}}
+}
+\newglossaryentry{camera()}{
+	name={camera()},
+	description={Nastavuje pozici kamery skrze pozici oka, střed zobrazení a osy označující směr nahoru. Funkce zavolaná bez jakýchkoli parametrů resetuje kameru na výchozí pozici, která lze vyjádřit takto: camera(width/2.0, height/2.0, (height/2.0) / tan(PI*60.0 / 360.0), width/2.0, height/2.0, 0, 0, 1, 0)}
+}
+\newglossaryentry{box()}{
+	name={box()},
+	description={Krychle nebo kvádr. Krychli můžeme definovat jedním parametrem který určuje šířku jedné stěny, kvádr pak pomocí definice šířky tři stěn $X$, $Y$, $Z$.}
+}
+\newglossaryentry{cos()}{
+	name={cos()},
+	description={Počítá hodnotu kosínu z úhlu. Tato funkce očekává parametr vyjadřující úhel, parametr může být v rozsahu od $0$ do $\pi*2$. Hodnoty se pak pohybují mezi $-1$ do $1$.}
+}
 \newglossaryentry{abs()}{
 	name={abs()},
 	description={Calculates the absolute value (magnitude) of a number. The absolute value of a number is always positive.}
 }
-\newglossaryentry{acos()}{
-	name={acos()},
-	description={Inverzní funkce \vyraz{cos()},  arkuskosinus. Funkce převádí hodnoty rozmezí od $-1.0$ do $1.0$ na hodnoty v rozmezí od $0$ do $\pi$ {\em (3.1415927)}.}
-}
+
 \newglossaryentry{+= (add assign)}{
 	name={+= (add assign)},
 	description={Combines addition with assignment. The expression {\textbf a += b} is equivalent to {\textbf a = a + b}.}
@@ -395,10 +528,7 @@
 	name={= (assign)},
 	description={Assigns a value to a variable. The "=" sign does not mean "equals", but is used to place data within a variable. The "=" operator is formally called the assignment operator. There are many different types of variables (int, floats, strings, etc.) and the assignment operator can only assign values which are the same type as the variable it is assigning. For example, if the variable is of type {\textbf int}, the value must also be an {\textbf int}.}
 }
-\newglossaryentry{atan2()}{
-	name={atan2()},
-	description={Vypočítává úhel z jednoho bodu do bodu druhého. K výpočtu můžeme použít zápis {\em atan2(}$Y_2-Y_1$,$X_2-X_1${\em )} Výsledný úhel je udáván v radiánech, tedy v rozmezí od $-\pi$ do $\pi$. {\em Atan2()} je funkce, která se hojně využívá při určení směru od objektu ke kurzoru nebo jinému bodu. Pozor při zadávání parametrů si všimněte obráceného pořadí parametrů, oproti zvyklosti jsou zadavány v pořadí $Y$, $X$}
-}
+
 \newglossaryentry{atan()}{
 	name={atan()},
 	description={The inverse of {\textbf tan()}, returns the arc tangent of a value. This function expects the values in the range of -Infinity to Infinity (exclusive) and values are returned in the range {\textbf -PI/2} to {\textbf PI/2 }.}
@@ -410,14 +540,6 @@
 \newglossaryentry{beginRaw()}{
 	name={beginRaw()},
 	description={To create vectors from 3D data, use the {\textbf beginRaw()} and {\textbf endRaw()} commands. These commands will grab the shape data just before it is rendered to the screen. At this stage, your entire scene is nothing but a long list of individual lines and triangles. This means that a shape created with {\textbf sphere()} method will be made up of hundreds of triangles, rather than a single object. Or that a multi-segment line shape (such as a curve) will be rendered as individual segm}
-}
-\newglossaryentry{beginRecord()}{
-	name={beginRecord()},
-	description={Otevírá nový soubor pro zápis do {\em PDF} nebo {\em DXF}, kresba je tak zrcadlena na plátno a souběžně do souboru. Po ukončení kresby musíme spustit funkci \vyraz{endRecord()} před ukonením programu.}
-}
-\newglossaryentry{beginShape()}{
-	name={beginShape()},
-	description={Za pomoci funkcí {\em beginShape()} a \vyraz{endShape()} můžeme definovat složitější tvary. Funkce {\em beginShape()} otevírá definici tvaru, následuje funkce \vyraz{vertex()}, která určuje jednotlivé body tvaru. Tvar je nakonec uzavřen příkazem \vyraz{endShape()}. Kresba tvarů může probíhat ve dvou i třech rozměrech, v závislosti na renderu můžeme definovat \vyraz{vertex()} se dvěmi nebo třemi hodnotami. Doplňujícím argumentem {\em beginShape()} dále může být způsob jakým budou body spojovány, možnosti jsou  {POINTS, LINES, TRIANGLES, TRIANGLE\_FAN, TRIANGLE\_STRIP, QUADS, and QUAD\_STRIP}.}
 }
 \newglossaryentry{bezierDetail()}{
 	name={bezierDetail()},
@@ -467,10 +589,7 @@
 	name={boolean()},
 	description={Converts an int, string, or array to its boolean representation. For int calues, the number 0 evaluates to false and all other numbers evaluate to true.}
 }
-\newglossaryentry{box()}{
-	name={box()},
-	description={Krychle nebo kvádr. Krychli můžeme definovat jedním parametrem který určuje šířku jedné stěny, kvádr pak pomocí definice šířky tři stěn $X$, $Y$, $Z$.}
-}
+
 \newglossaryentry{break}{
 	name={break},
 	description={Ends the execution of a structure such as switch(), for(), or while() and jumps to the next statement after.}
@@ -495,10 +614,6 @@
 	name={byte},
 	description={Datatype for bytes, 8 bits of information storing numerical values from 127 to -128. Bytes are a convenient datatype for sending information to and from the serial port and for representing letters in a simpler format than the {\textbf char} datatype. The first time a variable is written, it must be declared with a statement expressing its datatype. Subsequent uses of this variable must not reference the datatype because Processing will think the variable is being declared again.}
 }
-\newglossaryentry{camera()}{
-	name={camera()},
-	description={Nastavuje pozici kamery skrze pozici oka, střed zobrazení a osy označující směr nahoru. Funkce zavolaná bez jakýchkoli parametrů resetuje kameru na výchozí pozici, která lze vyjádřit takto: camera(width/2.0, height/2.0, (height/2.0) / tan(PI*60.0 / 360.0), width/2.0, height/2.0, 0, 0, 1, 0)}
-}
 \newglossaryentry{case}{
 	name={case},
 	description={Denotes the different labels to be evaluated with the parameter in the {\textbf switch()} structure.}
@@ -519,22 +634,11 @@
 	name={char},
 	description={Datatype for characters, typographic symbols such as A, d, and $. A {\textbf char} stores letters and symbols in the Unicode format, a coding system developed to support a variety of world languages. Each {\textbf char} is two bytes (16 bits) in length and is distinguished by surrounding it with single quotes. Character escapes may also stored as a {\textbf char}. For example, the representation for the "delete" key is '377'. The first time a variable is written, it must be declared with a statement expressing its datatype. Subsequent uses of this variable must not reference the datatype because Processing will think the variable is being declared again.}
 }
-\newglossaryentry{class}{
-	name={class},
-	description={Slovo označující deklaraci nové třídy, definici objektu. Třída je soubor funkcí a proměnných a představuje šablonu pro objekt. Jména tříd jsou většinou označovány počátečním velkým písmenem, instance objektů pak písmenem malým. Třída je základní stavební kámen objektově orientovaného programování.}
-}
 \newglossaryentry{color}{
 	name={color},
 	description={Datatype for storing color values. Colors may be assigned with {\textbf get()} and {\textbf color()} or they may be specified directly using hexadecimal notation such}
 }
-\newglossaryentry{color()}{
-	name={color()},
-	description={Creates colors for storing in variables of the {\textbf color} datatype. The parameters are interpreted as RGB or HSB values depending on the current {\textbf colorMode()}. The default mode is RGB values from 0 to 255 and therefore, the function call {\textbf color(255, 204, 0)} will return a bright yellow color. More about how colors are stored can be found in the reference for the color datatype.}
-}
-\newglossaryentry{colorMode()}{
-	name={colorMode()},
-	description={mění způsob jakým Processing interpretuje barvu, možné argumenty jsou RGB a HSB, druhý argument určuje rozsah hodnot, výchozí nastavení je 255. Příkaz ovlivňuje nastavení barev pro kresbu, tj. například pro \vyraz{fill()} a \vyraz{stroke()}.}
-}
+
 \newglossaryentry{, (comma)}{
 	name={, (comma)},
 	description={Separates parameters in function calls and elements during assignment.}
@@ -562,10 +666,6 @@
 \newglossaryentry{copy()}{
 	name={copy()},
 	description={Copies a region of pixels from the display window to another area of the display window and copies a region of pixels from an image used as the {\textbf srcImg} parameter into the display window. If the source and destination regions aren't the same size, it will automatically resize the source pixels to fit the specified target region. No alpha information is used in the process, however if the source image has an alpha channel set, it will be copied as }
-}
-\newglossaryentry{cos()}{
-	name={cos()},
-	description={Počítá hodnotu kosínu z úhlu. Tato funkce očekává parametr vyjadřující úhel, parametr může být v rozsahu od $0$ do $\pi*2$. Hodnoty se pak pohybují mezi $-1$ do $1$.}
 }
 \newglossaryentry{createFont()}{
 	name={createFont()},
@@ -675,18 +775,6 @@
 	name={double},
 	description={Datatype for floating-point numbers larger than those that can be stored in a {\textbf float}. A {\textbf float} is a 32-bit values that can be as large as 3.40282347E+38 and as low as -3.40282347E+38. A {\textbf double} can be used similarly to a float, but can have a greater magnitude because it's a 64-bit number. Processing functions don't use this datatype, so while they work in the language, you'll usually have to convert to a {\textbf float} using the {\textbf (float)} syntax before passing into a function.}
 }
-\newglossaryentry{ellipse()}{
-	name={ellipse()},
-	description={Kreslí elipsu nebo kruh. elipsa se stejnou šířkou i výskou představuje kruh. První dva parametry udávají pozici, třetí parametr uvádí šířku, čtvrtý výšku elipsy. Nastavení lze provést pomocí funkce \vyraz{ellipseMode()}.}
-}
-\newglossaryentry{ellipseMode()}{
-	name={ellipseMode()},
-	description={Ovlivňuje způsob jakým je vykreslována elipsa. Možné módy jsou {\em RADIUS, CENTER, CORNER, CORNERS}. Výchozí módem je {\em CENTER}. První dva parametry nastavují pozici elipsy druhé dva šířku a výšku elipsy. V případě módu {\em RADIUS} druhé dva parametry určují poloměry. Mód {\em CORNER} definuje pozici levého horního bodu, následuje šířka a výška, poslední mód {\em CORNERS} definuje dva body mezi které bude elipsa vepsána.}
-}
-\newglossaryentry{else}{
-	name={else},
-	description={Doplňuje podmínku \vyraz{if()}, znamená jestliže není podmínka  splněna. Struktura dovoluje spustit dva různé bloky kódu. Defunije co se stane není-li předchozí podmínka \vyraz{if()} splněna}
-}
 \newglossaryentry{emissive()}{
 	name={emissive()},
 	description={Sets the emissive color of the material used for drawing shapes drawn to the screen. Used in combination with {\textbf ambient()}, {\textbf specular()}, and {\textbf shininess()} in setting the material properties of shapes.}
@@ -699,21 +787,9 @@
 	name={endRaw()},
 	description={Complement to {\textbf beginRaw()}; they must always be used together. See the <a href="http://www.processing.org/reference/beginRaw_.html">{\textbf beginRaw()}</a> reference for details.}
 }
-\newglossaryentry{endRecord()}{
-	name={endRecord()},
-	description={Zastavuje nahrávání do souboru spuštěné pomocí funkce \vyraz{beginRecord()} a uzavírá soubor.}
-}
-\newglossaryentry{endShape()}{
-	name={endShape()},
-	description={Funkce doplňující funkci \vyraz{beginShape()}, uzavírá kreslení tvaru. Funkce může být doplněna o výraz {\em CLOSE}, který uzavře tvar a pokusí se vytvořit jeho výplň.}
-}
 \newglossaryentry{== (equality)}{
 	name={== (equality)},
 	description={Determines if two values are equivalent. The equality operator is different from the assignment oper}
-}
-\newglossaryentry{exit()}{
-	name={exit()},
-	description={Ukončí program. Program bez funkce \vyraz{draw()} function bude ukon4en automaticky poslední řádkou kǒdu, ale programy obsahující funkci \vyraz{draw()} dokud není program ukončen nebo není zavolán tento příkaz, {\textbf exit()}}
 }
 \newglossaryentry{expand()}{
 	name={expand()},
@@ -726,14 +802,6 @@
 \newglossaryentry{extends}{
 	name={extends},
 	description={Allows a new class to <i>inherit</i> the methods and fields (data members) from an existing class. In code, state the name of the new class, followed by the keyword {\textbf extends} and the name of the <i>base class</i>. The concept of inheritance is one of the fundamental principles of object oriented programming.}
-}
-\newglossaryentry{fill()}{
-	name={fill()},
-	description={Nasvauje barvu výplně tvarů. Například spustíme-li {\textbf fill(204, 102, 0)}, veškeré další výplně objektů budou mít oranžovou barvu.}
-}
-\newglossaryentry{stroke()}{
-	name={stroke()},
-	description={Nasvauje barvu obrysů tvarů. Například spustíme-li {\textbf stroke(204, 102, 0)}, veškeré další kontury objektů budou mít oranžovou barvu.}
 }
 \newglossaryentry{filter()}{
 	name={filter()},
@@ -758,14 +826,6 @@
 \newglossaryentry{focused}{
 	name={focused},
 	description={Confirms if a Processing program is "focused", meaning that it is active and will accept input from mouse or keyboard. This variable is "true" if it is focused and "false" if not. This variable is often used when you want to warn people they need to click on or roll over an applet before it will work.}
-}
-\newglossaryentry{for}{
-	name={for},
-	description={Definuje smyčku, opakující se sekvence. Struktura {\em for} se zadává pomocí tří parametrů. Inicializace, pozice kde smyčka začíná. Ověření, konečná podmínka která smyčku ukončuje. Nakonec přírůstek, definuje změnu jednoho kroku opakování smyčky. Tyto části jsou oddělené středníkem ; Smyčka pokračuje dokud výsledek prostřední podmínky není \vyraz{false}.}
-}
-\newglossaryentry{frameRate()}{
-	name={frameRate()},
-	description={Nastavuje počet okének které mají být vykresleny za jednu vteřinu. Výchozí nastavení je šedesát okének za vteřinu. Pokud je údaj vyšší než Processing stihne vykreslovat, počet okének za vteřinu se sníží na maximální možnou hodnotu.}
 }
 \newglossaryentry{frameRate}{
 	name={frameRate},
@@ -823,14 +883,6 @@
 	name={if},
 	description={Základní výhybka programu. Program se díky struktuře {\em if} může rozbočit do různých větví a spouštět bloky kódu. Blok uzavřen do složených závorek bude spuštěn jen tehdy splní-li se podmínka v kulatých závorkách za {\em if}.}
 }
-\newglossaryentry{image()}{
-	name={image()},
-	description={Zobrazuje obrázek ve tvaru \vyraz{PImage}, obrázky by měly být umístěny v adresáři {\em DATA}. Processing nyní podporuje formáty {\em PNG, GIF, JPEG a Targa} orázku. Barvu a průhlednost obrázku lze definovat pomocí funkce \vyraz{tint()}. Průhlednost funguje s formáty {\em GIF} nebo {\em PNG}. Funkce {image()} přijímá první parametr proměnnou obrázku který bude zobrazovat, zbylé dva parametry jsou pozice v ose $X$ a $Y$. Ve výchozím módu nastavení pozice určuje levý horní roh obrázku. Třetí a čtvrtý parametr dále může nastavit šířku a výšku zobrazovaného obrázku. Módy pro alternativní zobrazování lze přepínat pomocí funkce \vyraz{imageMode()}.}
-}
-\newglossaryentry{imageMode()}{
-	name={imageMode()},
-	description={Ovlivňuje způsob zobrazování obrázků. Dovoluje použít konstanty {\em CORNER, CORNERS a CENTER}. Ve výchozím nastavení {\em CORNER} bude obrázek umístěn levým horním rohem na definované souřadnice $X$ a $Y$. Mód {\em CORNERS} mění chování druhých dvou parametrů, které namísto relativní šířky a výšky nastavují absolutní hodnoty v osách $X$ a $Y$. Poslední mód {\em CENTER}, umístí obrázek na střed definovaných souřadnic, zbylé dva parametry opět udávají relativní šířku a výšku obrázku.}
-}
 \newglossaryentry{implements}{
 	name={implements},
 	description={Implements an <i>interface</i> or group of <i>interfaces</i>. Interfaces are used to establish a protocol between classes, they establish the form for a class (method names, return types, etc.) but no implementation. After implementation, an interface can be used and extended like any other class. Because Java doesn't allow extending more than one class at a time, interfaces are created, which means specific methods and fields can be found in the class which implements it. A Thread is an example; it implements the "Runnable" interface, which means the class has a method called "public void run()" inside it.}
@@ -871,17 +923,9 @@
 	name={key},
 	description={Systémová proměnná udává hodnotu naposledy stisknuté klávesy.}
 }
-\newglossaryentry{keyPressed()}{
-	name={keyPressed()},
-	description={Funkce spuštěna pokaždé je-li stisknuta jakákoli klávesa.}
-}
 \newglossaryentry{keyPressed}{
 	name={keyPressed},
 	description={The boolean system variable {\textbf keyPressed} is {\textbf true} if any key is pressed and {\textbf false} if no keys are pressed.}
-}
-\newglossaryentry{keyReleased()}{
-	name={keyReleased()},
-	description={Funkce spuštěná tehdy uvolníme-li jakoukoli stisknutou klávesu.}
 }
 \newglossaryentry{keyTyped()}{
 	name={keyTyped()},
@@ -1023,26 +1067,6 @@
 	name={month()},
 	description={Processing communicates with the clock on your computer. The {\textbf month()} function returns the current month as a value from 1 - 12.}
 }
-\newglossaryentry{mouseButton}{
-	name={mouseButton},
-	description={Processing automaticky registruje které tlačítko myši bylo stisknuto. Jestliže levé tato systémová proměnná bude mít hodnotu {\em LEFT}, v případě pravého tlačítka bude mít hodnotu {\em RIGHT}, v případě prostředního pak hodnotu {\em CENTER}.}
-}
-\newglossaryentry{mouseClicked()}{
-	name={mouseClicked()},
-	description={Funkce spuštěná klikneme-li myší, celým klikem myši se rozumí stisk talčítka myši a jeho násldené uvolnění.}
-}
-\newglossaryentry{mouseDragged()}{
-	name={mouseDragged()},
-	description={Funkce táhneme-li myší v rámci běžícího programu, táhnutí znamená podržení myši a pohyb.}
-}
-\newglossaryentry{mouseMoved()}{
-	name={mouseMoved()},
-	description={Funkce spuštěná pohneme li myší v rámci běžícího programu}
-}
-\newglossaryentry{mousePressed()}{
-	name={mousePressed()},
-	description={Funkce spuštěna pokaždé je-li stisknuto tlačítko myši. K následné detekci tlačítka můžeme použít proměnnou \vyraz{mouseButton}}
-}
 \newglossaryentry{mousePressed}{
 	name={mousePressed},
 	description={Variable storing if a mouse button is pressed. The value of the system variable {\textbf mousePressed} is true if a mouse button is pressed and false if a button is not pressed.}
@@ -1071,10 +1095,6 @@
 	name={nfc()},
 	description={Utility function for formatting numbers into strings and placing appropriate commas to mark units of 1000. There are two versions, one for formatting ints and one for formatting an array of ints. The value for the {\textbf digits} parameter should always be a positive int}
 }
-\newglossaryentry{nf()}{
-	name={nf()},
-	description={Nástroj na formátování čísel do textu. Přijímá parametr celého čísla a přiřazuje před něj počet nul ze druhého parametru.}
-}
 \newglossaryentry{nfp()}{
 	name={nfp()},
 	description={Utility function for formatting numbers into strings. Similar to {\textbf nf()} but puts a "+" in front of positive numbers and a "-" in front of negative numbers. There are two versions, one for formatting floats and one for formatting ints. The values for the {\textbf digits}, {\textbf left}, and {\textbf right} parameters should always be positive integers.}
@@ -1087,17 +1107,9 @@
 	name={noCursor()},
 	description={Hides the cursor from view. Will not work when running the program in a web browser or when running in full screen (Present) mode.}
 }
-\newglossaryentry{noFill()}{
-	name={noFill()},
-	description={Vypíná výplň šech následujících objektů. Jestliže je příkaz dohromady \vyraz{noStroke()} a \vyraz{noFill()} Processing nebude nic vykreslovat na plátno.}
-}
 \newglossaryentry{noiseDetail()}{
 	name={noiseDetail()},
 	description={Adjusts the character and level of detail produced by the Perlin noise function. Similar to harmonics in physics, noise is computed over several octaves. Lower octaves contribute more to the output signal and as such define the overal intensity of the noise, whereas higher octaves create finer grained details in the noise sequence. By default, noise is computed over 4 octaves with each octave contributing exactly half than its predecessor, starting at 50 strength for the 1st octave. This falloff amount can be changed by adding an additional function parameter. Eg. a falloff factor of 0.75 means each octave will now have 75 impact (25 less) of the previous lower octave. Any value between 0.0 and 1.0 is valid, however note that values greater than 0.5 might result in greater than 1.0 values returned by {\textbf noise()}.By changing these parameters, the signal created by the {\textbf noise()} function can be adapted to fit very specific needs and characteristics.}
-}
-\newglossaryentry{noise()}{
-	name={noise()},
-	description={Udává hodnotu Perlinova šumu na specifické pozici. Perlinův šum je generátor pseudonáhodných čísel vytvářející plynule přecházející hodnotu šumu. Algoritmus byl vyvinut Kenem Perlinem v osmdesátých letech dvacátého století a je velmi často používán právě v grafických aplikacích na tvorbu textur, pohybu, tvarů atd. Rozsah perlinova šumu se pohybuje vždy v rozmezí hodnot $0.0$ a $1.0$. Funkce {\em noise()} přijímá jednu, dvě nebo tři hodnoty. Pohybuje se ve až ve trojrozměrném poli. Šum může být snadno animován přírůstkem v parametru, hodnoty budou plynule navazovat jednu na druhou ve všech rozměrech.}
 }
 \newglossaryentry{noiseSeed()}{
 	name={noiseSeed()},
@@ -1627,11 +1639,6 @@
 	name={shorten()},
 	description={Decreases an array by one element and returns the shortened a}
 }
-\newglossaryentry{sin()}{
-	name={sin()},
-	description={Vypočítáva sínus z daného úhlu. Tato funkce očekáva údaj úhlu zadaný v radiánech, tedy hodnoty od 0 do 6.28.. Zpětně hodnota vrací hodnotu v rozmezí od -1 do 1.}
-}
-
 \newglossaryentry{sort()}{
 	name={sort()},
 	description={Sorts an array of numbers from smallest to largest and puts an array of words in alphabetical order. The original array is not modified, a re-ordered array is returned. The {\textbf count} parameter states the number of elements to sort. For example if there are 12 elements in an array and if count is the value 5, only the first five elements on the array will be sorted. As of release 0126, the alphabetical ordering is case insensitive.}
@@ -1839,10 +1846,6 @@
 \newglossaryentry{updatePixels()}{
 	name={updatePixels()},
 	description={Updates the display window with the data in the {\textbf pixels[]} array. Use in conjunction with {\textbf loadPixels()}. If you're only reading pixels from the array, there's no need to call {\textbf updatePixels()} unless there are cha}
-}
-\newglossaryentry{vertex()}{
-	name={vertex()},
-	description={Veškeré tvary jsou složené ze série bodů, funkcí {\em vertex()} definujeme tyto body. Záleží na pořadí ve kterém jsme je definovali. Body mohou být dvourozměrné i trojrozměrné. {\em Vertex} tedy můžeme definovat pomocí souřadnic $X$, $Y$ nebo $X$, $Y$, $Z$.}
 }
 \newglossaryentry{void}{
 	name={void},
