@@ -147,9 +147,14 @@
 
 \usepackage[xindy]{glossaries}
 
+
 %tvorba slovniku
 \input{slovnik.tex}
 \makeglossaries
+
+%Slovník název
+\renewcommand{\glossaryname}{Slovník pojmů}
+\renewcommand{\shortglossaryname}{Slovník}
 
 
 
@@ -164,6 +169,7 @@
 \thispagestyle{empty}
 \newpage
 \oddil{Poděkování}
+Zde bych rád poděkoval všem lidem, kteří se různou měrou podíleli na vzniku této publikace. Nejprve Tomáši Poszpysilovi vedoucímu této práce za neúnavný dohled nad podobou textu.
 \thispagestyle{empty}
 .
 \newpage
@@ -184,7 +190,7 @@ Původní elektronický dokument: \\
 Nakladatelství AMU: \\
 {\em ISBN 978-80-7331-224-4}
 \item
-{\em Vysázeno s \XeLaTeX}
+{\em Vysázeno textovým systémem \XeLaTeX.}
 
 \end{itemize}
 
@@ -2810,14 +2816,14 @@ Processing umí ukládat rastrová data do následujících formátů:
 
 
 \begin{itemize}
-\item
-TIFF – nekomprimovaný obraz s příponou *.tif, *.tiff
-\item
-TARGA – ztrátově komprimovaný obraz s příponou *.tga
-\item
-JPEG – ztrátově komprimovaný obraz s příponou *.jpg
-\item
-PNG – bezztrátově komprimovaný obraz s příponou *.png
+\item[TIFF]
+nekomprimovaný obraz s příponou *.tif, *.tiff
+\item[TARGA]
+ztrátově komprimovaný obraz s příponou *.tga
+\item[JPEG]
+ztrátově komprimovaný obraz s příponou *.jpg, *.jpeg
+\item[PNG]
+bezztrátově komprimovaný obraz s příponou *.png
 
 \end{itemize}
 
