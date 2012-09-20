@@ -1,86 +1,90 @@
 \newglossaryentry{sin()}{
 	name={sin()},
-	description={Vypočítáva sínus z daného úhlu. Tato funkce očekáva údaj úhlu zadaný v radiánech, tedy hodnoty od 0 do 6.28.. Zpětně hodnota vrací hodnotu v rozmezí od -1 do 1.}
+	description={Vypočítáva sinus z daného úhlu. Tato funkce očekává údaj úhlu zadaný ve stupních radiánu, tedy hodnoty od 0 do 6.28. Zpětně funkce vrací hodnotu v rozmezí od -1 do 1.}
 }
 \newglossaryentry{vertex()}{
 	name={vertex()},
-	description={Veškeré tvary jsou složené ze série bodů, funkcí {\em vertex()} definujeme tyto body. Záleží na pořadí ve kterém jsme je definovali. Body mohou být dvourozměrné i trojrozměrné. {\em Vertex} tedy můžeme definovat pomocí souřadnic $X$, $Y$ nebo $X$, $Y$, $Z$.}
+	description={Funkcí {\em vertex()} definujeme body pro tvorbu složitějších tvarů. Funkci musí předcházet příkaz \vyraz{beginShape()} a musí ji následovat příkaz \vyraz{endShape()}. Přičemž záleží na pořadí, ve kterém jsou jednotlivé body definovány. Body mohou být dvourozměrné i trojrozměrné. {\em Vertex} tedy můžeme definovat pomocí souřadnic $X$, $Y$ nebo $X$, $Y$, $Z$.}
 }
 \newglossaryentry{noise()}{
 	name={noise()},
-	description={Udává hodnotu Perlinova šumu na specifické pozici. Perlinův šum je generátor pseudonáhodných čísel vytvářející plynule přecházející hodnotu šumu. Algoritmus byl vyvinut Kenem Perlinem v osmdesátých letech dvacátého století a je velmi často používán právě v grafických aplikacích na tvorbu textur, pohybu, tvarů atd. Rozsah perlinova šumu se pohybuje vždy v rozmezí hodnot $0.0$ a $1.0$. Funkce {\em noise()} přijímá jednu, dvě nebo tři hodnoty. Pohybuje se ve až ve trojrozměrném poli. Šum může být snadno animován přírůstkem v parametru, hodnoty budou plynule navazovat jednu na druhou ve všech rozměrech.}
+	description={Udává hodnotu Perlinova šumu na specifické pozici. Perlinův šum je generátor pseudonáhodných čísel vytvářející plynule přecházející pseudonáhodnou hodnotu. Algoritmus byl vyvinut Kenem Perlinem v osmdesátých letech dvacátého století a je velmi často používán právě v grafických aplikacích. Využívá se například při tvorbě procedurálních textur, pohybu objektů nebo proměně geometrie v čase. Rozsah perlinova šumu se pohybuje vždy v rozmezí hodnot $0.0$ a $1.0$. Funkce {\em noise()} přijímá jednu, dvě nebo tři hodnoty. Výsledná hodnota se pohybuje ve jednorozměrném až ve trojrozměrném poli. Šum může být například snadno animován přírůstkem v parametru. Hodnoty mají tu vlastnost, že plynule přecházejí jedna ve druhou.}
 }
 \newglossaryentry{noFill()}{
 	name={noFill()},
-	description={Vypíná výplň šech následujících objektů. Jestliže je příkaz dohromady \vyraz{noStroke()} a \vyraz{noFill()} Processing nebude nic vykreslovat na plátno.}
+	description={Zakazuje výplň všech následujících objektů. Jestliže je příkaz použit dohromady s příkazem  \vyraz{noStroke()}, Processing teoreticky nebude nic vykreslovat na plátno.}
 }
 \newglossaryentry{mouseButton}{
 	name={mouseButton},
-	description={Processing automaticky registruje které tlačítko myši bylo stisknuto. Jestliže levé tato systémová proměnná bude mít hodnotu {\em LEFT}, v případě pravého tlačítka bude mít hodnotu {\em RIGHT}, v případě prostředního pak hodnotu {\em CENTER}.}
+	description={Processing automaticky registruje, které tlačítko myši bylo stisknuto. Jestliže bylo stisknuto levé tlačítko, tato systémová proměnná bude mít hodnotu {\em LEFT}. V případě pravého tlačítka, bude mít proměnná hodnotu {\em RIGHT}. V případě prostředního tlačítka pak hodnotu {\em CENTER}.}
 }
 \newglossaryentry{mouseClicked()}{
 	name={mouseClicked()},
-	description={Funkce spuštěná klikneme-li myší, celým klikem myši se rozumí stisk talčítka myši a jeho násldené uvolnění.}
+	description={Funkce spuštěná klikem myši. Celý jeden klik myši se skládá ze stisku tlačítka a jeho následného uvolnění.}
 }
 \newglossaryentry{mouseDragged()}{
 	name={mouseDragged()},
-	description={Funkce táhneme-li myší v rámci běžícího programu, táhnutí znamená podržení myši a pohyb.}
+	description={Funkce detekující potáhnutí myši po plátně. Táhnutím myší se rozumí, podržení tlačítka myši a pohyb kurzoru.}
 }
 \newglossaryentry{mouseMoved()}{
 	name={mouseMoved()},
-	description={Funkce spuštěná pohneme li myší v rámci běžícího programu}
+	description={Funkce detekující jakýkoli pohyb myši v rámci okna programu.}
 }
 \newglossaryentry{mousePressed()}{
 	name={mousePressed()},
-	description={Funkce spuštěna pokaždé je-li stisknuto tlačítko myši. K následné detekci tlačítka můžeme použít proměnnou \vyraz{mouseButton}}
+	description={Funkce je spuštěna pokaždé je-li stisknuto tlačítko myši. K následné detekci tlačítka můžeme použít proměnnou \vyraz{mouseButton}.}
 }
 \newglossaryentry{nf()}{
 	name={nf()},
-	description={Nástroj na formátování čísel do textu. Přijímá parametr celého čísla a přiřazuje před něj počet nul ze druhého parametru.}
+	description={Nástroj na formátování čísel do patřičného tvaru v textu. Přijímá parametr celého čísla a předřazuje před něj počet nul ze druhého parametru. Tato funkce se velmi často používá k zarovnávání řad čísel.}
 }
 \newglossaryentry{fill()}{
 	name={fill()},
-	description={Nasvauje barvu výplně tvarů. Například spustíme-li {\textbf fill(204, 102, 0)}, veškeré další výplně objektů budou mít oranžovou barvu.}
+	description={Funkce nastavující barvu výplně tvarů. Například spustíme-li {\textbf fill(204, 102, 0)}, veškeré objekty, kreslené níže v kódu, budou mít oranžovou barvu výplně.}
 }
 \newglossaryentry{stroke()}{
 	name={stroke()},
-	description={Nasvauje barvu obrysů tvarů. Například spustíme-li {\textbf stroke(204, 102, 0)}, veškeré další kontury objektů budou mít oranžovou barvu.}
+	description={Funkce nastavující barvu obrysů tvarů. Například spustíme-li {\textbf stroke(255, 0, 0)}, veškeré další kontury objektů budou mít červenou barvu.}
 }
 \newglossaryentry{keyPressed()}{
 	name={keyPressed()},
-	description={Funkce spuštěna pokaždé je-li stisknuta jakákoli klávesa.}
+	description={Funkce spuštěna pokaždé, je-li stisknuta libovolná klávesa na klávesnici.}
 }
 \newglossaryentry{keyReleased()}{
 	name={keyReleased()},
-	description={Funkce spuštěná tehdy uvolníme-li jakoukoli stisknutou klávesu.}
+	description={Funkce spuštěná tehdy, uvolníme-li libovolnou stisknutou klávesu.}
 }
 \newglossaryentry{for}{
 	name={for},
-	description={Definuje smyčku, opakující se sekvence. Struktura {\em for} se zadává pomocí tří parametrů. Inicializace, pozice kde smyčka začíná. Ověření, konečná podmínka která smyčku ukončuje. Nakonec přírůstek, definuje změnu jednoho kroku opakování smyčky. Tyto části jsou oddělené středníkem ; Smyčka pokračuje dokud výsledek prostřední podmínky není \vyraz{false}.}
+	description={Definuje smyčku, tedy opakující se sekvenci příkazů. Struktura {\em for} se zadává pomocí tří parametrů: inicializace pozice (kde smyčka začíná), ověření (konečná podmínka která smyčku ukončuje) a přírůstku (jeden krok rozdílu při opakování smyčky). Tyto části jsou vždy oddělené středníkem. Smyčka pokračuje dokud je naplněn výsledek prostřední podmínky, tedy \vyraz{true}.}
 }
 \newglossaryentry{frameRate()}{
 	name={frameRate()},
-	description={Nastavuje počet okének které mají být vykresleny za jednu vteřinu. Výchozí nastavení je šedesát okének za vteřinu. Pokud je údaj vyšší než Processing stihne vykreslovat, počet okének za vteřinu se sníží na maximální možnou hodnotu.}
+	description={Nastavuje počet okének, které mají být vykresleny za jednu vteřinu. Výchozí nastavení je šedesát okének za vteřinu. Pokud je údaj vyšší než Processing může v danou chvíli vykreslovat, počet okének za vteřinu se sníží na maximální možnou hodnotu.}
 }
 \newglossaryentry{endRecord()}{
 	name={endRecord()},
-	description={Zastavuje nahrávání do souboru spuštěné pomocí funkce \vyraz{beginRecord()} a uzavírá soubor.}
+	description={Zastavuje nahrávání do souboru spuštěné pomocí funkce \vyraz{beginRecord()}, dále uzavírá zápis do souboru (EOF).}
 }
 \newglossaryentry{endShape()}{
 	name={endShape()},
-	description={Funkce doplňující funkci \vyraz{beginShape()}, uzavírá kreslení tvaru. Funkce může být doplněna o výraz {\em CLOSE}, který uzavře tvar a pokusí se vytvořit jeho výplň.}
+	description={Párová funkce s \vyraz{beginShape()}, uzavírá kreslení tvaru. Funkce může být doplněna o výraz {\em CLOSE} (psáno dovnitř kulatých závorek), který uzavře tvar a pokusí se vytvořit jeho výplň.}
 }
 \newglossaryentry{ellipse()}{
 	name={ellipse()},
-	description={Kreslí elipsu nebo kruh. elipsa se stejnou šířkou i výskou představuje kruh. První dva parametry udávají pozici, třetí parametr uvádí šířku, čtvrtý výšku elipsy. Nastavení lze provést pomocí funkce \vyraz{ellipseMode()}.}
+	description={Kreslí elipsu nebo kruh. Elipsa se stejnou šířkou i výškou představuje kruh. První dva parametry udávají pozici, třetí parametr uvádí šířku elipsy a čtvrtý výšku elipsy. Nastavení způsobu vytváření elips lze provést pomocí funkce \vyraz{ellipseMode()}.}
 }
 \newglossaryentry{else}{
 	name={else},
-	description={Doplňuje podmínku \vyraz{if()}, znamená jestliže není podmínka  splněna. Struktura dovoluje spustit dva různé bloky kódu. Defunije co se stane není-li předchozí podmínka \vyraz{if()} splněna}
+	description={Doplňuje podmínku \vyraz{if()} -- \uv{jestliže} o \uv{jestliže ne}. Blok kódu za tímto příkazem je spuštěn jestliže není předchozí \vyraz{if()} podmínka splněna. Struktura kódu tím dovoluje spustit dva různé bloky kódu v případě naplnění podmínky anebo její nenaplnění.}
 }
 \newglossaryentry{image()}{
 	name={image()},
-	description={Zobrazuje obrázek ve tvaru \vyraz{PImage}, obrázky by měly být umístěny v adresáři {\em DATA}. Processing nyní podporuje formáty {\em PNG, GIF, JPEG a Targa} orázku. Barvu a průhlednost obrázku lze definovat pomocí funkce \vyraz{tint()}. Průhlednost funguje s formáty {\em GIF} nebo {\em PNG}. Funkce {image()} přijímá první parametr proměnnou obrázku který bude zobrazovat, zbylé dva parametry jsou pozice v ose $X$ a $Y$. Ve výchozím módu nastavení pozice určuje levý horní roh obrázku. Třetí a čtvrtý parametr dále může nastavit šířku a výšku zobrazovaného obrázku. Módy pro alternativní zobrazování lze přepínat pomocí funkce \vyraz{imageMode()}.}
+	description={Zobrazuje obrázek v datatypu \vyraz{PImage}. K jejich načtení pužíváme funkci \vyraz{loadImage()}. Barvu a průhlednost obrázku lze dále definovat pomocí funkce \vyraz{tint()}. Funkce {\em image()} jako první přijímá parametr s názvem proměnné obrázku, který bude zobrazovat. Zbylé dva parametry jsou pozice vykreslení obrázku v ose $X$ a $Y$. Ve výchozím módu souřadnice určují levý horní roh obrázku. Třetí a čtvrtý parametr je nepovinný, může dále nastavit šířku a výšku zobrazovaného obrázku. Módy pro alternativní zobrazování lze přepínat pomocí funkce \vyraz{imageMode()}.}
+}
+\newglossaryentry{loadImage()}{
+	name={loadImage()},
+	description={Načítá obrázek do proměnné ve formátu \vyraz{PImage}. V kulatých závorkách se definuje cesta a název obrázku (včetně přípony) ve formátu \vyraz{String}. Obrázky by měly být umístěny v adresáři {\em DATA}.  Processing podporuje grafické formáty {\em PNG, GIF, JPEG a TGA}. Průhlednost obrázků je podporována ve formátech {\em GIF} nebo {\em PNG}.}
 }
 \newglossaryentry{imageMode()}{
 	name={imageMode()},
@@ -88,28 +92,28 @@
 }
 \newglossaryentry{colorMode()}{
 	name={colorMode()},
-	description={mění způsob jakým Processing interpretuje barvu, možné argumenty jsou RGB a HSB, druhý argument určuje rozsah hodnot, výchozí nastavení je 255. Příkaz ovlivňuje nastavení barev pro kresbu, tj. například pro \vyraz{fill()} a \vyraz{stroke()}.}
+	description={Funkce měnící způsob, jakým Processing interpretuje barvu. Možné argumenty jsou RGB a HSB. Nepovinný je druhý argument, určující rozsah hodnot. Výchozí nastavení této hodnoty je 255. Příkaz ovlivňuje nastavení barev pro kresbu, tj. například pro funkce \vyraz{fill()} a \vyraz{stroke()}.}
 }
 \newglossaryentry{color()}{
 	name={color()},
-	description={Vytváří barvu ve speciálním datatypu {\em color}. Vstupní hodnoty jsou intepretovány jako  RGB (červená, zelená, modrá) nebo HSB (odstín, sytost, jas) hodnoty. Módy vytváření barev lze přepínat funkcí \vyraz{colorMode()}. Ve výchozím nastavení mají bavy rozmezí 256 odstínu šedi (0..255).}
+	description={Vytváří barvu ve speciálním datatypu {\em color}. Vstupní hodnoty jsou interpretovány buď jako hodnoty RGB (červená, zelená, modrá), nebo HSB (odstín, sytost, jas). Jendotlivé módy vytváření barev lze přepínat funkcí \vyraz{colorMode()}. Ve výchozím nastavení mají barvy rozmezí 256 odstínu šedi, tedy konkrétně $0..255$.}
 }
 
 \newglossaryentry{size()}{
 	name={size()},
-	description={Nastavuje rozměry okna programu. Hodnoty jsou udávané v pixelech. Tento příkaz by měl být spuštěn jako první ve funkci setup(). Jestliže není příkaz spuštěn, okno programu má výchozí velikost 100x100 pixelů. Ve funkci size() můžeme jako třetí parametr také zadat způsob vykreslování.}
+	description={Nastavuje rozměry okna programu. Hodnoty jsou udávané v pixelech pro osu $X$ a $Y$. Tento příkaz by měl být spuštěn jako první ve funkci {\em setup()}. Jestliže není příkaz spuštěn, okno programu má výchozí velikost $100x100$ pixelů. Ve funkci {\em size()} je dále přípustný třetí parametr, ten je vyjádřen slovy: JAVA2D (výchozí render), P2D (akcelerovaný 2D render), P3D (akcelerovaný 3D render), OPENGL (3D akcelerovaný render vyžadující načtení externí knihovny)}
 }
 \newglossaryentry{smooth()}{
 	name={smooth()},
-	description={Zapíná takzvaný anti-aliasing vyhlazování hran kresby. Funkce nastavuje vyhlazování pro celý program. Zapnutí vyhlazování má za následek poměrně výrazné zpomalení kresby a jemnější výstup obrazu.}
+	description={Zapíná takzvaný \uv{anti--aliasing}, tedy vyhlazování hran kresby. Funkce nastavuje vyhlazování pro celý program. Zapnutí vyhlazování, má za následek poměrně výrazné zpomalení kresby. Výstup kresby je ovšem o poznání hladší.}
 }
 \newglossaryentry{noSmooth()}{
 	name={noSmooth()},
-	description={Vypíná vyhlazování hran.}
+	description={Opak funkce \vyraz{smooth()}. Vypíná vyhlazování hran.}
 }
 \newglossaryentry{sphereDetail()}{
 	name={sphereDetail()},
-	description={Funkce nastavuje úroveň detailu při vykreslování koule. Parametr zadaný ve formátu čísla float ovlivňuje vykreslovaný počet stran koule.}
+	description={Funkce nastavuje úroveň detailu při vykreslování objektu koule. Parametr zadaný ve formátu čísla \uv{float} ovlivňuje vykreslovaný počet stran koule.}
 }
 \newglossaryentry{strokeWeight()}{
 	name={strokeWeight()},
@@ -117,201 +121,197 @@
 }
 \newglossaryentry{String}{
 	name={String},
-	description={Datatyp pro řetězec textu. Jedná se o speciální datatyp schopný uchovat více znaků pod jednou proměnou. S tímto datatypem se pojí řada speciálních funkcí pro nakládání s textem.}
+	description={Datatyp pro řetězec textu. Jedná se o speciální datatyp schopný uchovat více znaků pod jednou proměnnou. S tímto datatypem se pojí řada speciálních funkcí pro nakládání s textem. P5edstavit si jej můžeme jako jednorozměrné pole znaků.}
 }
 \newglossaryentry{println()}{
 	name={println()},
-	description={Funkce pro tisk do konzole. Funguje stejně jako příkaz \vyraz{print()}, s tím rozdílem že, každou tisknutou hodnotu zakončuje novým řádkem.}
+	description={Funkce pro tisk do konzole. Funguje stejně jako příkaz \vyraz{print()}, s tím rozdílem, že každou tisknutou hodnotu zakončuje novým řádkem.}
 }
 \newglossaryentry{print()}{
 	name={print()},
-	description={Funkce pro tisk do konzole. Vstupní hodnotou může být jakákoli proměnná, holý text nebo kombinace obojího. Slouží jako základní nástroj ke sledování proměn v programu. Využívá se zejména pro ladění programu a kontrole výsledků.}
+	description={Funkce pro tisk do konzole. Vstupní hodnotou může být jakákoli proměnná, holý text nebo kombinace obojího. Slouží jako základní nástroj ke sledování proměn v programu. Využívá se zejména pří vylaďování programu a při kontrole výsledků.}
 }
 \newglossaryentry{parseFloat()}{
 	name={parseFloat()},
-	description={Funkce pro čtení textu (\vyraz{String}) a získávání číslené hodnoty s desetinnou čárkou. Výsledkem funkce je číslená hodnota ve tvaru float.}
+	description={Funkce pro čtení čísel ve formátu (\vyraz{String}) a získávání číselné hodnoty s desetinnou čárkou ve tvaru {\em float}.}
 }
 \newglossaryentry{parseInt()}{
 	name={parseInt()},
-	description={Funkce pro čtení textu (\vyraz{String}) a získávání celých čísel. Výsledkem funkce je číslená hodnota ve tvaru int.}
+	description={Funkce pro čtení čísel ve formátu (\vyraz{String}) a získávání celých čísel ve tvaru {\em int}.}
 }
 \newglossaryentry{this}{
 	name={this},
-	description={Speciální výraz referující ke objektu ve kterém se zrovna pohybujeme. Slouží k identifikaci zejména pro knihovny nebo námi definovaných tříd.}
+	description={Speciální výraz vztahující se k objektu, ve kterém se zrovna pohybujeme. Slouží k identifikaci zejména pro práci knihovnami nebo námi definovanými třídami.}
 }
 \newglossaryentry{point()}{
 	name={point()},
-	description={Kreslí bod, ve dvourozměrném zobrazení vyžaduje parametry $X$, $Y$. Ve trojrozměrném zobrazení bodu vyžaduje tři parametry pro $X$, $Y$ a $Z$. Barvu bodu můžeme kontrolovat pomocí příkazu \vyraz{stroke()}.}
+	description={Kreslí bod ve dvourozměrném zobrazení. Funkce vyžaduje parametry $X$, $Y$. Při trojrozměrném zobrazení bodu funkce vyžaduje tři parametry pro $X$, $Y$ a $Z$. Barvu bodu můžeme kontrolovat pomocí příkazu \vyraz{stroke()}.}
 }
 \newglossaryentry{triangle()}{
 	name={point()},
-	description={Kreslí trojúhelník, vyžaduje parametry $X_1$, $Y_1$, $X_2$, $Y_2$. Barvu trojúhelníku můžeme kontrolovat pomocí příkazu \vyraz{stroke()}. Barvu výplně pak funkcí \vyraz{fill()}.}
+	description={Kreslí trojúhelník. Vyžaduje parametry $X_1$, $Y_1$, $X_2$, $Y_2$, $X_3$ a $Y_3$. Barvu trojúhelníku můžeme kontrolovat pomocí příkazu \vyraz{stroke()}. Barvu výplně zadáváme pomocí funkce \vyraz{fill()}.}
 }
 \newglossaryentry{quad()}{
 	name={quad()},
-	description={Kreslí jakýkoli čtyřúhelník, nejvíce je použitelný pro lichoběžníky vyžaduje parametry $X_1$, $Y_1$, $X_2$, $Y_2$, $X_3$, $Y_3$, $X_4$, $Y_4$. Barvu čtyřúhelníku můžeme kontrolovat pomocí příkazu \vyraz{stroke()}. Barvu výplně pak funkcí \vyraz{fill()}.}
+	description={Funkce kreslící čtyřúhelník. Nejvíce je použitelná pro lichoběžníky. Funkce vyžaduje parametry $X_1$, $Y_1$, $X_2$, $Y_2$, $X_3$, $Y_3$, $X_4$ a $Y_4$. Barvu čtyřúhelníku můžeme kontrolovat pomocí příkazu \vyraz{stroke()}. Barvu výplně definujeme funkcí \vyraz{fill()}.}
 }
 \newglossaryentry{radians()}{
 	name={radians()},
-	description={Převádí uhlové stupně do radiánů, tedy hodnotu $0$ až $360$ na $0$ až $2 * \pi$}
+	description={Převádí uhlové stupně do stupňů v radiánech. Tedy například hodnotu $0$ až $360$ převede na $0$ až $2 * \pi$}
 }
 \newglossaryentry{rotate()}{
 	name={rotate()},
-	description={Provádí rotaci plátna ve dvourozměrném zobrazení, střed rotace je vždy aktuální souřadnice $X = 0$ a $Y = 0$.}
+	description={Provádí rotaci plátna ve dvourozměrném zobrazení. Střed rotace je vždy aktuální souřadnice $X = 0$ a $Y = 0$.}
 }
 \newglossaryentry{translate()}{
 	name={translate()},
-	description={Provádí pohyb celého plátna na zadané souřadnice, v trojrozměrném módu vykreslování požaduje třetí rozměr pro osu $Z$}
+	description={Provádí pohyb celého plátna na zadané souřadnice. V trojrozměrném módu vykreslování požaduje třetí rozměr pro osu $Z$}
 }
 \newglossaryentry{scale()}{
 	name={scale()},
-	description={Mění velikost plátna, výchozí hodnota je $1.0$}
+	description={Mění velikost geometrie vůči vykreslovacímu plátnu. Výchozí hodnota je $1.0$}
 }
 \newglossaryentry{pushMatrix()}{
 	name={pushMatrix()},
-	description={Ukládá nastavení koordinačního systému, plátna. Funkce dovoluje členění transformačních operací vyžaduje ukočení příkazem \vyraz{popMatrix()}}
+	description={Ukládá nastavení koordinačního systému (neboli matrix). Funkce dovoluje vrstvení jednotlivých transformačních operací, jako je \vyraz{rotate()},\vyraz{translate()} nebo \vyraz{scale()}. Funkce vyžaduje následné ukončení transformace příkazem \vyraz{popMatrix()}}
 }
 \newglossaryentry{popMatrix()}{
 	name={popMatrix()},
-	description={Načtení uloženého koordinačního systému, uzavření bloku transformací. Vyžaduje předchozí příkaz \vyraz{pushMatrix()} }
+	description={Funkce načítá uloženého koordinačního systému a uzavírá blok transformací. Funkce vyžaduje uložení koordinátů, předchozím příkaz \vyraz{pushMatrix()}.}
 }
 \newglossaryentry{rotateX()}{
 	name={rotateX()},
-	description={Rotuje celý prostor kolem osy $X$, vyžaduje hodnotu udanou v radiánech. Hodnota se pohybuje v rozmezí $0$ až $2 * \pi$.}
+	description={Funkce provádí rotaci celým prostorem kolem osy $X$. Vyžaduje hodnotu udanou ve stupních -- radiánech. Hodnota se pohybuje v rozmezí $0$ až $2 * \pi$.}
 }
 \newglossaryentry{rotateY()}{
 	name={rotateY()},
-	description={Rotuje celý prostor kolem osy $Y$, vyžaduje hodnotu udanou v radiánech. Hodnota se pohybuje v rozmezí $0$ až $2 * \pi$.}
+	description={Funkce provádí rotaci celým prostorem kolem osy $Y$. Vyžaduje hodnotu udanou ve stupních -- radiánech. Hodnota se pohybuje v rozmezí $0$ až $2 * \pi$.}
 }
 \newglossaryentry{rotateZ()}{
 	name={rotateZ()},
-	description={Rotuje celý prostor kolem osy $Z$, vyžaduje hodnotu udanou v radiánech. Hodnota se pohybuje v rozmezí $0$ až $2 * \pi$.}
+	description={Funkce provádí rotaci celým prostorem kolem osy $Z$. Vyžaduje hodnotu udanou ve stupních -- radiánech. Hodnota se pohybuje v rozmezí $0$ až $2 * \pi$.}
 }
 \newglossaryentry{PI}{
 	name={PI},
-	description={Konstanta určující číslo $\pi$, 3,14159265.. }
+	description={Konstanta určující číslo $\pi$, 3,14159265\ldots .}
 }
 \newglossaryentry{HALFPI}{
 	name={HALFPI},
-	description={Konstanta určující polovinu čísla $\pi$, 3,14159265.. }
+	description={Konstanta určující polovinu čísla $\pi$, 3,14159265\ldots .}
 }
 \newglossaryentry{QUARTERPI}{
 	name={QUARTERPI},
-	description={Konstanta určující čtvrtinu číslo $\pi$, 3,14159265.. }
+	description={Konstanta určující čtvrtinu číslo $\pi$, 3,14159265\ldots .}
 }
 \newglossaryentry{CSV}{
 	name={CSV},
-	description={Comma Separated Value, jedná se o uznávaný standart v ukládání dat. Mnoho programů pracuje s tímto standartem. Jedná se v podstatě o textový soubor s informacemi oddělenými specifickým znakem, velmi často je tímto specifickým znakem čárka, může to ovšem být i středník nebo v podstatě jakýkoli jiný znak.}
+	description={Neboli \uv{Comma Separated Values}. Jedná se o uznávaný standart uložených dat.  S tímto standardem  zachází mnoho programů. Jedná se v podstatě o textový soubor s informacemi oddělenými specifickým znakem. Nejčastěji je tímto specifickým znakem čárka. Rozlišovacím znakem může ovšem být například středník nebo teoreticky jakýkoli jiný znak.}
 }
 \newglossaryentry{saveStrings()}{
 	name={saveStrings()},
-	description={pomocí příkazu saveStrings() ukládáme pole ve formátu String, tento příkaz přijme dva argumenty, jako první název souboru a jako druhý název našeho pole s textovou informací. Příkaz uloží textový soubor, každou hodnotu pole na nový řádek.}
+	description={Pomocí příkazu {\em saveStrings()} ukládáme pole ve formátu \vyraz{String}. Tento příkaz přijme dva parametry: název souboru a název našeho pole s textovou informací. Příkaz ukládá textový soubor naplněný hodnotami z pole. Jednu hodnotu zapisuje vždy na nový řádek.}
 }
 \newglossaryentry{save()}{
 	name={save()},
-	description={pomocí příkazu save() ukládáme plátno našho programu do obrázku. Příkaz vyžaduje cestu k souboru, tu lze zadat buď úuplnou nebo jen název souboru. Příkaz rozlišuje mezi příponami automaticky a obrázek uloží ve formátech TIF, JPG, PNG nebo TGA}
+	description={Pomocí příkazu save() ukládáme plátno programu do obrázku. Příkaz vyžaduje cestu k souboru. Cestu lze zadat buď úplnou (absolutní) nebo jen pouhý název souboru. Zadáním pouhého názvu se soubor uloží přímo do adresáře sketche. Příkaz dále rozlišuje mezi příponami automaticky. Obrázek tak uloží v patřičných formátech: TIF, JPG, PNG nebo TGA.}
 }
 \newglossaryentry{saveFrame()}{
 	name={saveFrame()},
-	description={příkaz ukládá sérii obrázků, stejně jako \slovnik{save()} vyžaduje cestu k souboru, specialitou příkazu je možnost vložit do názvu souboru \ \ \ \ křížky pro číslování sekvence okének podle proměnné \slovnik{frameCount()}}
+	description={Příkaz ukládá sérii obrázků. Stejně jako příkaz \slovnik{save()}, funkce vyžaduje cestu k souboru. Speciální vlastností příkazu je možnost vložit do názvu souboru symboly ($#$). Ty budou posléze detekovány a nahrazeny číslováním sekvence okének. Každé číslo bude označovat číslo okénka podle proměnné \slovnik{frameCount()}.}
 }
 \newglossaryentry{seed}{
 	name={seed},
-	description={seed je číslo které udává chování pseudonáhodných hodnot, pomocí seed hodnoty v programu můžeme nastavit opakovatelnost náhodných čísel pokaždé když program spustíme}
+	description={Seed je proměnná, která obecně udává chování pseudonáhodných hodnot. Pomocí hodnoty \em{seed} v programu můžeme nastavit opakovatelnost náhodných čísel pokaždé když program spustíme. Varianta pro generovanou funkci \vyraz{random()} je \vyraz{randomSeed()}.}
 }
-
 \newglossaryentry{randomSeed()}{
 	name={randomSeed()},
-	description={randomSeed udává tzv. \slovnik{seed} pro všechny následující random hodnoty, nezadáme-li hodnotu seed ,funkce \vyraz{random()} pokaždé příkaz vrátí jiné číslo}
+	description={Funkce udává takzvanou hodnotu \vyraz{seed} pro všechny následující funkce \vyraz{random()}. Nezadáme-li hodnotu \vyraz{seed}, funkce \vyraz{random()} bude pokaždé generovat neopakovatelné výsledky.}
 }
 
 \newglossaryentry{random()}{
 	name={random()},
-	description={funcke která vrací pseudonáhodné číslo, není-li údán žádný argument číslo se pohybuje mezi 1-0, je-li zadán jeden argument číslo se pohybuje mezi nuloa a tímto argumentem, jsou-li zadány dva argumenty číslo se pohybuje mezi nimi}
+	description={Funcke, která vrací pseudonáhodné číslo. Není-li zadána žádná hodnota do kulatých závorek, výsledek funkce se pohybuje v rozmezí mezi $1..0$. Je-li zadána jedna vstupní hodnota, číslo se pohybuje mezi nulou a zadanou hodnotou. Jsou-li zadány dvě hodnoty oddělené čárkou. Výsledek se bude pohybovat v rozmezí těchto dvou hodnot.}
 }
 
 \newglossaryentry{millis()}
 {
   name={millis()},
-  description={funkce udávající počet uplynutých mili-vteřin od startu programu, narozdíl od proměnné frameCount udává tato funkce reálný časový údaj od startu programu (tj. nezávisí na počtu kreslených okének za vteřirnu). Tato hodnota je hodnotná při přesném časování animace. V případě složiějších kreslících operací se pro časování nbo zvláště ukládání animací do videa je pro časování animace tařka nepoužitelná kvůli zdržení každého okénka.}
+  description={Funkce udávající počet uplynulých milivteřin od startu programu. Na rozdíl od proměnné \vyraz{frameCount}, tato funkce udává precizní časový údaj od startu programu. Výsledná hodnota nezávisí na počtu vykreslených okének za vteřinu. Výsledný údaj tak lze využít například pro přesné časování animace, a to bez ohledu na počet okének za vteřinu. V případě ukládání animací do videa je pro časování animace naopak téměř nepoužitelný, především kvůli zpomalení animace při ukládání okének.}
 }
 \newglossaryentry{frameCount}
 { 
   name={frameCount},
-  description={proměnná držící údaj o počtu vykreslených okének od startu programu}
+  description={Proměnná uchovávající údaj o počtu vykreslených okének od startu programu.}
 }
 \newglossaryentry{interakce}
 {
   name={interakce},
   description={{\em (lat. interactio od inter-agere, jednat mezi sebou)} znamená vzájemné působení, jednání, ovlivňování všude tam, kde se klade důraz na vzájemnost a oboustrannou aktivitu na rozdíl od jednostranného, například kauzálního působení.}
 }
-
 \newglossaryentry{mouseX}
 {
   name={mouseX},
-  description={proměnná záskávající pozici kurzoru na plátně Processingového programu v ose X}
+  description={Proměnná která udává pozici kurzoru na plátně Processingového okna v ose $X$.}
 }
-
 \newglossaryentry{mouseY}
 {
   name={mouseY},
-  description={proměnná záskávající pozici kurzoru na plátně Processingového programu v ose Y}
+  description={Proměnná která udává pozici kurzoru na plátně Processingového okna v ose $Y$.}
 }
-
 \newglossaryentry{rectMode()}
 {
   name={rectMode()},
-  description={funkce ovldající mód centrování obdélníku, možné parametry jsou pouze čtyři:  rectMode(CORNER) je základní chování funkce \vyraz{rect()} tedy prvními dvěma parametry umístíme nejdříve prní roh v ose x a y a poté definujeme relativní šírku a výšku odélníku (parametry pro šířku a výšku můou být i záporná čísla); rectMode(CORNERS) definuje dva rohy separátně tedy v asolutních koórdinátech na ploše; rectMode(CENTER) zavoláním funkce \vyraz{rect()} vycentruje obdélník kolem počátku x a y, pomocí dvou dalších parametrů opět funkce \vyraz{rect()} definuje šířku a výšku centrovaného obdélníku; funkce rectMode(RADIUS) definuje opět středové body x a y v prvních dvou parametrech, druhé dva parametry udávají polovinu šířky a polovinu výšky obdélníku}
+  description={Funkce ovládá mód vykreslování obdélníku. Možné vstupní parametry jsou pouze čtyři:  {\em CORNER} je základní chování funkce \vyraz{rect()}. Tedy prvními dvěma parametry při kresbě umístíme nejdříve prní roh v ose $X$ a $Y$. Poté definujeme relativní šířku a výšku obdélníku. Druhou možností je {\em CORNERS}. Tento mód definuje dva rohy zvlášť, tedy v absolutních číslech na ploše. Dalším módem je {\em CENTER}. V tomto módu jsou obdélníky vystředěny kolem body $X$ a $Y$. Pomocí dvou dalších parametrů opět funkce \vyraz{rect()} definuje šířku a výšku tohoto obdélníku. Posledním módem je {\em RADIUS}. Ten nastavuje opět středové body $X$ a $Y$ v prvních dvou parametrech. Druhé dva parametry udávají polovinu šířky a polovinu výšky obdélníku.}
 }
 
 \newglossaryentry{rect()}
 {
   name={rect()},
-  description={funkce pro kreslení obdélníku, přijímá čtyři parametry počátek x, počátek y, šířku a výšku. Centrování obdélníku se dá modifikovat funckí rectMode()}
+  description={Funkce vykresluje obdélník. Funkce přijímá čtyři parametry: počátek $X$, počátek $Y$, šířku a výšku. Možné způsoby vykreslování obdélníku se dají nastavit funkcí \vyraz{rectMode()}}
 }
 
 \newglossaryentry{background()}
 {
   name={background()},
-  description={Funkce nastavuje barvu pozadí na plátně. Standartní barva je světle šedá. Zavoláním background s definicí barvy v kulatých závorkách bude vyplněna celá plocha jednolitou barvou}
+  description={Funkce nastavuje barvu pozadí na plátně. Standardní barva je světle šedá. Spuštěním této funkce s definicí barvy v kulatých závorkách, bude vyplněna celá plocha jednolitou barvou.}
 }
 
 
 \newglossaryentry{void}
 {
   name={void},
-  description={Neboli prázdná funkce, z anlgického \uv{prázdno} funkce která nevrací zpět žádný výsledek, funkce která spouští sérii zadaných příkazů uzavřenýc ve složených závorkách za svoji definicí}
+  description={Neboli prázdná funkce. Z anlgického \uv{prázdno}. Funkce která zpět nevrací žádný výsledek, pouze spouští sérii zadaných příkazů. Ty jsou uvozeny složenými závorkami.}
 }
 
 \newglossaryentry{indenting}
 {
   name={indenting},
-  description={Zarovnávání kódu do úhledných paragrafů, slouží k lepší orientaci programátora v kódu}
+  description={Neboli zarovnávání kódu do úhledných paragrafů. Zarovnávání slouží k rychlejší orientaci programátora ve struktuře kódu.}
 }
 
 
 \newglossaryentry{syntax highlighting}
 {
   name={syntax highlighting},
-  description={Barevné značky slouží k lepší orientaci programátora v kódu.}
+  description={Barevné odlišování slov podle jejich významů. Odlišování slouží k lepší orientaci programátora v kódu.}
 }
 
 \newglossaryentry{flow}
 {
   name={flow},
-  description={Nebo--li plynutí, tok, je zvláštním stavem mysli popisovaným programátory, jedná se o stav kdy je člověk plně zanořen do práce a jakékoli vyrušení z tohoto stavu si vyžaduje opětovné nastolování, podle zkušených progrmátorů nastolení takového stavu obvykle trvá 10-15 minut práce s kódem.}
+  description={Nebo--li plynutí, tok, je zvláštním stavem mysli popisovaným programátory. Jedná se o stav, kdy je člověk plně zanořen do práce. Jakékoli vyrušení z tohoto stavu, si vyžaduje dlouhou koncentraci k opětovnému nastolení bdělosti. Podle zkušených programátorů vyvolání takového stavu trvá několik desítek minut práce s kódem.}
 }
 
 \newglossaryentry{setup()}
 {
   name={setup()},
-  description={Základní funkce pro nastavení výchozích parametrů programu, tato funkce je spuštěna vždy na začátku běhu programu}
+  description={Základní funkce pro nastavení výchozích parametrů programu. Tato funkce je spuštěna jednou, vždy na začátku běhu programu.}
 }
 
 \newglossaryentry{draw()}
 {
   name={draw()},
-  description={draw je kreslící funkcí Processingu, veškerý kód uzavřený v této funkci bude vykreslen jednou za okénko, v závislosti na náročnosti pak standartně šedesátkrát za vteřinu, tuto kreslící funkci je nezbytná pro animovaný výstup nebo interakci s uživatelem}
+  description={Hlavní smyčka Processingu. Veškerý kód uzavřený v této funkci bude vykreslen jednou za okénko. V závislosti na náročnosti operace, se smyčka opakuje šedesátkrát za vteřinu. V této funkci nejčastěji dochází ke kresbě nebo interakci s uživatelem.}
 }
 
 \newglossaryentry{stroj}
@@ -332,50 +332,50 @@
 \newglossaryentry{true}
 {
   name={true},
-  description={pravda, neboli 1}
+  description={Pravda, neboli 1.}
 }
 
 \newglossaryentry{false}
 {
   name={false},
-  description={nepravda, neboli 0}
+  description={Nepravda, neboli 0.}
 }
 
 \newglossaryentry{boolean}
 {
   name={boolean},
-  description={datatyp který může mít jen dva stavy \vyraz{true} a \vyraz{false}}
+  description={Datatyp který může mít jen dva stavy: \vyraz{true} a \vyraz{false}}
 }
 
 \newglossaryentry{Built with Processing}
 {
 	name={Built with Processing},
-	description={doslova znamená: \uv{Postaveno s Processingem}. Jedná se o zvláštní komunitní frázi, která se objevuje se u projektů využívajících Processing. Fráze vyjadřuje vděk všem participantům a tvůrcům Processingu za tvorbu tohoto nástroje.}
+	description={Doslova znamená: \uv{Postaveno s Processingem}. Jedná se o zvláštní komunitní frázi, která se objevuje u projektů využívajících Processing. Fráze vyjadřuje určitý vděk všem participantům a tvůrcům Processingu, za tvorbu tohoto nástroje.}
 }
 
 \newglossaryentry{otevřený software}
 {
   name={otevřený software},
-  description={software s veřejně dostupným zdrojovým kódem},
+  description={Také nazývaný \uv{svobodný}. Software s veřejně dostupným zdrojovým kódem.},
   plural={otevřeného softwaru}
 }
 
 \newglossaryentry{GNU / Linux}
 {
   name={GNU / Linux},
-  description={Gnu Is not Unix, GNU je projekt založený Richardem Stallmanem, jedná se o operační systém a rodinu programů s otevřeným zdrojovým kódem.}
+  description={Zkratka \uv{Gnu Is not Unix}. {\em GNU} je projekt původně založený Richardem Stallmanem, jedná se o operační systém a rodinu programů s otevřeným zdrojovým kódem.}
 }
 
 \newglossaryentry{GNU / GPL}
 {
   name={GNU / GPL},
-  description={jedna z licencí otevřeného softwaru zaručující otevřenost kódu, kterou v případě dalšího použití vyžaduje i u programů, které tento kód využívají}
+  description={Jedna z licencí otevřeného softwaru zaručující volně dostupný zdrojový kód. Základním konceptem licence je podmínečná volná dostupnost zdrojového kódu takto licencovaného programu. A dále nutnost použití stejné licence pro veškeré projekty takový kód využívající.}
 }
 
 \newglossaryentry{MIT licence}
 {
   name={indenting},
-  description={je licence kompatibilni s licencí \slovnik{GNU / GPL}, jedná se o speciální licenci Univerzity MIT --Massachusetts Institute of Technology},
+  description={Je licencí kompatibilní s licencí \vyraz{GNU / GPL}, jedná se o zvláštní licenci modifikovanou na půdě Univerzity MIT {\em --Massachusetts Institute of Technology}.},
   plural={MIT licencí}
 }
 
@@ -383,49 +383,49 @@
 \newglossaryentry{kompilace}
 {
 	name={kompilace},
-	description={proces překladu z čitelného textu do strojového kódu}
+	description={Proces překladu z čitelného textu do strojového kódu.}
 }
 
 \newglossaryentry{zdrojový kód}
 {
 	name={zdrojový kód},
-	description={kód čitelný pro člověka},
+	description={Kód který je čitelný pro člověka.},
 	plural={zdrojové kódy}
 }
 
 \newglossaryentry{binarní kód}
 {
 	name={binární kód},
-	description={též strojový kód, slovo vycházející z anglického slova {\em binary} dvojkové soustavy, v počítačové terminologii označuje strojový kód, tedy kód prošlý procesem \slovnik{kompilace}.},
+	description={Též strojový kód. Slovo vycházející z anglického slova {\em binary} -- dvojkové soustavy. V počítačové terminologii označuje kód srozumitelný pro procesor. Nejčastěji se s ním setkáme například v případě spustitelných aplikací.},
 	plural={binární kódy}
 }
 
 \newglossaryentry{Java}
 {
 	name={Java},
-	description={Java je objektově orientovaný programovací jazyk, který vyvinula firma Sun Microsystems a představila 23. května 1995.}
+	description={Java je objektově orientovaný programovací jazyk, který vyvinula firma Sun Microsystems a představila jej 23. května 1995.}
 }
 
 \newglossaryentry{sketch}
 {
 	name={sketch},
-	description={nebo-li {\em náčrt}, je koncept v prostředí Processing uchovávání jednotlivých projektů do adresářů, jedna {\em sketch} je adresář, kam Processing ukládá data uživatele (tj. především kód a externí soubory)},
+	description={Nebo-li {\em náčrt}, je koncept v prostředí Processing pro uchovávání jednotlivých projektů v adresářích. Jedna {\em sketch} je adresář, kam Processing ukládá data uživatele (tj. především kód a externí soubory).},
 	plural={sketche}
 }
 
 \newglossaryentry{CODE}
 {
 	name={CODE},
-	description={adresář uvnitř \slovnikpl{sketch}, který obsahuje externí \slovnik{Java} \slovnik{binární kód} programy nebo knihovny třetí strany (obrázky,textové soubory, atd.)}
+	description={Adresář uvnitř \slovnikpl{sketch}, který může obsahovat externí \slovnik{Java} a \slovnik{binární kód} programy nebo knihovny třetí strany.}
 }
 \newglossaryentry{class}{
 	name={class},
-	description={Slovo označující deklaraci nové třídy, definici objektu. Třída je soubor funkcí a proměnných a představuje šablonu pro objekt. Jména tříd jsou většinou označovány počátečním velkým písmenem, instance objektů pak písmenem malým. Třída je základní stavební kámen objektově orientovaného programování.}
+	description={Takzvaná třída. Slovo označující deklaraci nové třídy, definici objektu. Třída je souhrn funkcí a proměnných a představuje šablonu pro objekt. Jména tříd jsou většinou označovány počátečním velkým písmenem, instance objektů (produkt ze šablony) pak písmenem malým. Třída je základní stavební kámen objektově orientovaného programování.}
 }
 \newglossaryentry{DATA}
 {
 	name={DATA},
-	description={adresář uvnitř \slovnikpl{sketch}, který obsahuje vaše externí soubory (obrázky,textové soubory, atd.)}
+	description={Adresář uvnitř \slovnikpl{sketch}, který obsahuje další externí soubory (obrázky, textové soubory, atd.).}
 }
 \newglossaryentry{acos()}{
 	name={acos()},
@@ -433,1469 +433,33 @@
 }
 \newglossaryentry{atan2()}{
 	name={atan2()},
-	description={Vypočítává úhel z jednoho bodu do bodu druhého. K výpočtu můžeme použít zápis {\em atan2(}$Y_2-Y_1$,$X_2-X_1${\em )} Výsledný úhel je udáván v radiánech, tedy v rozmezí od $-\pi$ do $\pi$. {\em Atan2()} je funkce, která se hojně využívá při určení směru od objektu ke kurzoru nebo jinému bodu. Pozor při zadávání parametrů si všimněte obráceného pořadí parametrů, oproti zvyklosti jsou zadavány v pořadí $Y$, $X$}
+	description={Vypočítává úhel z jednoho bodu do bodu druhého. K výpočtu můžeme použít zápis {\em atan2(}$Y_2-Y_1$,$X_2-X_1${\em )}. Výsledný úhel je udáván v radiánech, tedy v rozmezí od $-\pi$ do $\pi$. {\em Atan2()} je funkce, která se hojně využívá při určení směru od objektu ke kurzoru nebo jinému bodu. Pozor při zadávání parametrů. Všimněte si obráceného pořadí parametrů. Oproti zvyklosti jsou zadávány v pořadí $Y$, $X$}
 }
 \newglossaryentry{ellipseMode()}{
 	name={ellipseMode()},
-	description={Ovlivňuje způsob jakým je vykreslována elipsa. Možné módy jsou {\em RADIUS, CENTER, CORNER, CORNERS}. Výchozí módem je {\em CENTER}. První dva parametry nastavují pozici elipsy druhé dva šířku a výšku elipsy. V případě módu {\em RADIUS} druhé dva parametry určují poloměry. Mód {\em CORNER} definuje pozici levého horního bodu, následuje šířka a výška, poslední mód {\em CORNERS} definuje dva body mezi které bude elipsa vepsána.}
+	description={Ovlivňuje způsob jakým je vykreslována elipsa. Možné módy jsou {\em RADIUS, CENTER, CORNER, CORNERS}. Výchozí módem je {\em CENTER}. První dva parametry nastavují pozici elipsy, druhé dva pak šířku a výšku elipsy. V případě módu {\em RADIUS} druhé dva parametry určují poloměry elipsy. Mód {\em CORNER} definuje pozici levého horního bodu, následně šířku a výšku. Poslední mód {\em CORNERS} definuje dva body mezi které bude elipsa vepsána.}
 }
 \newglossaryentry{beginRecord()}{
 	name={beginRecord()},
-	description={Otevírá nový soubor pro zápis do {\em PDF} nebo {\em DXF}, kresba je tak zrcadlena na plátno a souběžně do souboru. Po ukončení kresby musíme spustit funkci \vyraz{endRecord()} před ukonením programu.}
+	description={Otevírá nový soubor pro zápis do souboru ve formátu {\em PDF} nebo {\em DXF}. Kresba tak probíhá souběžně na plátno i do souboru. Pro ukončení kresby musíme spustit funkci \vyraz{endRecord()}.}
 }
 \newglossaryentry{beginShape()}{
 	name={beginShape()},
-	description={Za pomoci funkcí {\em beginShape()} a \vyraz{endShape()} můžeme definovat složitější tvary. Funkce {\em beginShape()} otevírá definici tvaru, následuje funkce \vyraz{vertex()}, která určuje jednotlivé body tvaru. Tvar je nakonec uzavřen příkazem \vyraz{endShape()}. Kresba tvarů může probíhat ve dvou i třech rozměrech, v závislosti na renderu můžeme definovat \vyraz{vertex()} se dvěmi nebo třemi hodnotami. Doplňujícím argumentem {\em beginShape()} dále může být způsob jakým budou body spojovány, možnosti jsou  {POINTS, LINES, TRIANGLES, TRIANGLE\_FAN, TRIANGLE\_STRIP, QUADS, and QUAD\_STRIP}.}
+	description={Za pomoci funkcí {\em beginShape()} a \vyraz{endShape()} můžeme definovat složitější tvary. Funkce {\em beginShape()} otevírá definici tvaru. Následuje funkce \vyraz{vertex()}, která určuje jednotlivé body tvaru. Tvar je nakonec uzavřen příkazem \vyraz{endShape()}. Kresba tvarů může probíhat ve dvou i třech rozměrech. V závislosti na renderu můžeme definovat \vyraz{vertex()} se dvěmi nebo třemi hodnotami. Doplňujícím parametrem v kulatých závokách funkce {\em beginShape()} dále může být uveden způsob, jakým budou body spojovány. Přípustné varianty jsou: {POINTS, LINES, TRIANGLES, TRIANGLE\_FAN, TRIANGLE\_STRIP, QUADS a QUAD\_STRIP}.}
 }
 \newglossaryentry{exit()}{
 	name={exit()},
-	description={Ukončí program. Program bez funkce \vyraz{draw()} function bude ukon4en automaticky poslední řádkou kǒdu, ale programy obsahující funkci \vyraz{draw()} dokud není program ukončen nebo není zavolán tento příkaz, {\textbf exit()}}
+	description={Ukončí program. Program bez funkce \vyraz{draw()} bude ukončen automaticky poslední řádkou kǒdu. Programy obsahující funkci \vyraz{draw()} běží dokud není program zvenčí ukončen nebo není zavolán příkaz {\textbf exit()}.}
 }
 \newglossaryentry{camera()}{
 	name={camera()},
-	description={Nastavuje pozici kamery skrze pozici oka, střed zobrazení a osy označující směr nahoru. Funkce zavolaná bez jakýchkoli parametrů resetuje kameru na výchozí pozici, která lze vyjádřit takto: camera(width/2.0, height/2.0, (height/2.0) / tan(PI*60.0 / 360.0), width/2.0, height/2.0, 0, 0, 1, 0)}
+	description={Nastavuje pozici kamery skrze parametry: pozice oka, střed zobrazení a osa označující směr nahoru. Funkce zavolaná bez jakýchkoli parametrů nastaví kameru na výchozí pozici. Výchozí pozice lze vyjádřit následovně: {\em camera(width/2.0, height/2.0, (height/2.0) / tan(PI*60.0 / 360.0), width/2.0, height/2.0, 0, 0, 1, 0)}.}
 }
 \newglossaryentry{box()}{
 	name={box()},
-	description={Krychle nebo kvádr. Krychli můžeme definovat jedním parametrem který určuje šířku jedné stěny, kvádr pak pomocí definice šířky tři stěn $X$, $Y$, $Z$.}
+	description={Krychle nebo kvádr. Krychli můžeme definovat jedním parametrem, který určuje délku jedné hrany. Kvádr můžeme definovat stejným příkazem zadáním délky tří hran: $X$, $Y$, $Z$.}
 }
 \newglossaryentry{cos()}{
 	name={cos()},
-	description={Počítá hodnotu kosínu z úhlu. Tato funkce očekává parametr vyjadřující úhel, parametr může být v rozsahu od $0$ do $\pi*2$. Hodnoty se pak pohybují mezi $-1$ do $1$.}
-}
-\newglossaryentry{abs()}{
-	name={abs()},
-	description={Calculates the absolute value (magnitude) of a number. The absolute value of a number is always positive.}
-}
-
-\newglossaryentry{+= (add assign)}{
-	name={+= (add assign)},
-	description={Combines addition with assignment. The expression {\textbf a += b} is equivalent to {\textbf a = a + b}.}
-}
-\newglossaryentry{+ (addition)}{
-	name={+ (addition)},
-	description={Adds two values or concatenates string values. As a mathematical operator, it calculates the sum of two values. As a string operator, it combines two strings into one and converts from primitive datatypes into the String datatype if necessary.}
-}
-\newglossaryentry{alpha()}{
-	name={alpha()},
-	description={Extracts the alpha value from a color.}
-}
-\newglossaryentry{Alphabetical Extended  Language (API)}{
-	name={Alphabetical Extended  Language (API)},
-	description={eas. It is a context for learning fundamentals of computer program}
-}
-\newglossaryentry{ambient()}{
-	name={ambient()},
-	description={Sets the ambient reflectance for shapes drawn to the screen. This is combined with the ambient light component of environment. The color components set through the parameters define the reflectance. For example in the default color mode, setting v1=255, v2=126, v3=0, would cause all the red light to reflect and half of the green light to reflect. Used in combination with {\textbf emissive()}, {\textbf specular()}, and {\textbf shininess()} in setting the material properties of shapes.}
-}
-\newglossaryentry{ambientLight()}{
-	name={ambientLight()},
-	description={Adds an ambient light. Ambient light doesn't come from a specific direction, the rays have light have bounced around so much that objects are evenly lit from all sides. Ambient lights are almost always used in combination with other types of lights. Lights need to be included in the {\textbf draw()} to remain persistent in a looping program. Placing them in the {\textbf setup()} of a looping program will cause them to only have an effect the first time through the loop. The effect of the parameters is determined by the current color mode.}
-}
-\newglossaryentry{append()}{
-	name={append()},
-	description={Expands an array by one element and adds data to the new position. The datatype of the {\textbf element} parameter must be the same as the datatype of the a}
-}
-\newglossaryentry{applyMatrix()}{
-	name={applyMatrix()},
-	description={Multiplies the current matrix by the one specified through the parameters. This is very slow because it will try to calculate the inverse of the transform, so avoid it whenever possible. The equivalent function in OpenGL is glMultMatrix().}
-}
-\newglossaryentry{arc()}{
-	name={arc()},
-	description={Draws an arc in the display window. Arcs are drawn along the outer edge of an ellipse defined by the {\textbf x}, {\textbf y}, {\textbf width} and {\textbf height} parameters. The origin or the arc's ellipse may be changed with the {\textbf ellipseMode()} function. The {\textbf start} and {\textbf stop} parameters specify the angles at which to draw the arc.}
-}
-\newglossaryentry{[] (array access)}{
-	name={[] (array access)},
-	description={The array access operator is used to specify a location within an array. The data at this location can be defined with the syntax {\textbf array[element] = value} or read with the syntax {\textbf value = array[element]}.}
-}
-\newglossaryentry{arrayCopy()}{
-	name={arrayCopy()},
-	description={Copies an array (or part of an array) to another array. The {\textbf src} array is copied to the {\textbf dst} array, beginning at the position specified by {\textbf srcPos} and into the position specified by {\textbf dstPos}. The number of elements to copy is determined by {\textbf length}. The simplified version with two arguments copies an entire array to another of the same size. It is equivalent to "arrayCopy(src, 0, dst, 0, src.length)". This function is far more efficient for copying array data than iterating through a {\textbf for} and copying each element.}
-}
-\newglossaryentry{Array}{
-	name={Array},
-	description={An array is a list of data. It is possible to have an array of any type of data. Each piece of data in an array is identified by an index number representing its position in the array. The first element in the array is {\textbf [0]}, the second element is {\textbf [1]}, and so on. Arrays are similar to objects, so they must be created with the keyword {\textbf new}. Every array has a variable {\textbf length} which is an integer value for the total number of elements in the array. (People are often confused by the use of {\textbf length()} to get the size of a String and {\textbf length} to get the size of an array. Notice the absence of the parentheses when working with arrays.)}
-}
-\newglossaryentry{ArrayList}{
-	name={ArrayList},
-	description={An {\textbf ArrayList} stores a variable number of objects. This is similar to making an array of objects, but with an {\textbf ArrayList}, items can be easily added and removed from the ArrayList and it is resized dynamically. This can be very convenient, but it's slower than making an array of objects when using many elem}
-}
-\newglossaryentry{asin()}{
-	name={asin()},
-	description={Inverzní funkce \vyraz{cos()}, arkusinus. Funkce převádí hodnoty rozmezí od $-1.0$ do $1.0$ na hodnoty v rozmezí od $-\pi / 2$ do $\pi / 2$.}
-}
-\newglossaryentry{= (assign)}{
-	name={= (assign)},
-	description={Assigns a value to a variable. The "=" sign does not mean "equals", but is used to place data within a variable. The "=" operator is formally called the assignment operator. There are many different types of variables (int, floats, strings, etc.) and the assignment operator can only assign values which are the same type as the variable it is assigning. For example, if the variable is of type {\textbf int}, the value must also be an {\textbf int}.}
-}
-
-\newglossaryentry{atan()}{
-	name={atan()},
-	description={The inverse of {\textbf tan()}, returns the arc tangent of a value. This function expects the values in the range of -Infinity to Infinity (exclusive) and values are returned in the range {\textbf -PI/2} to {\textbf PI/2 }.}
-}
-\newglossaryentry{beginCamera()}{
-	name={beginCamera()},
-	description={The {\textbf beginCamera()} and {\textbf endCamera()} functions enable advanced customization of the camera space. The functions are useful if you want to more control over camera movement, however for most users, the {\textbf camera()} function will be sufficient.The camera functions will replace any transformations (such as {\textbf rotate()} or {\textbf translate()}) that occur before them in {\textbf draw()}, but they will not automatically replace the camera transform itself. For this reason, camera functions should be placed at the beginning of {\textbf draw()} (so that transformations happen afterwards), and the {\textbf camera()} function can be used after {\textbf beginCamera()} if you want to reset the camera before applying transformations.This function sets the matrix mode to the camera matrix so calls such as {\textbf translate()}, {\textbf rotate()}, applyMatrix() and resetMatrix() affect the camera. {\textbf beginCamera()} should always be used with a following {\textbf endCamera()} and pairs of {\textbf beginCamera()} and {\textbf endCamera()} cannot be nested.}
-}
-\newglossaryentry{beginRaw()}{
-	name={beginRaw()},
-	description={To create vectors from 3D data, use the {\textbf beginRaw()} and {\textbf endRaw()} commands. These commands will grab the shape data just before it is rendered to the screen. At this stage, your entire scene is nothing but a long list of individual lines and triangles. This means that a shape created with {\textbf sphere()} method will be made up of hundreds of triangles, rather than a single object. Or that a multi-segment line shape (such as a curve) will be rendered as individual segm}
-}
-\newglossaryentry{bezierDetail()}{
-	name={bezierDetail()},
-	description={Sets the resolution at which Beziers display. The default value is 20. This function is only useful when using the P3D or OPENGL renderer as the default (JAVA2D) renderer does not use this information.}
-}
-\newglossaryentry{bezier()}{
-	name={bezier()},
-	description={Draws a Bezier curve on the screen. These curves are defined by a series of anchor and control points. The first two parameters specify the first anchor point and the last two parameters specify the other anchor point. The middle parameters specify the control points which define the shape of the curve. Bezier curves were developed by French engineer Pierre Bezier. Using the 3D version of requires rendering with P3D or OPENGL (see the Environment reference for more information).}
-}
-\newglossaryentry{bezierPoint()}{
-	name={bezierPoint()},
-	description={Evaluates the Bezier at point t for points a, b, c, d. The parameter t varies between 0 and 1, a and d are points on the curve, and b and c are the control points. This can be done once with the x coordinates and a second time with the y coordinates to get the location of a bezier curve at t.}
-}
-\newglossaryentry{bezierTangent()}{
-	name={bezierTangent()},
-	description={Calculates the tangent of a point on a Bezier curve. There is a good definition of "tangent" at Wikipedia: <a href="http://en.wikipedia.org/wiki/Tangent" target="new">http://en.wikipedia.org/wiki/Tangent</a>}
-}
-\newglossaryentry{bezierVertex()}{
-	name={bezierVertex()},
-	description={Specifies vertex coordinates for Bezier curves. Each call to {\textbf bezierVertex()} defines the position of two control points and one anchor point of a Bezier curve, adding a new segment to a line or shape. The first time {\textbf bezierVertex()} is used within a {\textbf beginShape()} call, it must be prefaced with a call to {\textbf vertex()} to set the first anchor point. This function must be used between {\textbf beginShape()} and {\textbf endShape()} and only when there is no MODE parameter specified to {\textbf beginShape()}. Using the 3D version of requires rendering with P3D or OPENGL (see the Environment reference for more information).}
-}
-\newglossaryentry{binary()}{
-	name={binary()},
-	description={Converts a byte, char, int, or color to a String containing the equivalent binary notation. For example color(0, 102, 153, 255) will convert to the String "11111111000000000110011010011001". This function can help make your geeky debugging sessions much hap}
-}
-\newglossaryentry{& (bitwise AND)}{
-	name={& (bitwise AND)},
-	description={Compares each corresponding bit in the binary representation of the values. For each comparison two 1's yeild 1, 1 and 0 yeild 0, and two 0's yeild 0. This is easy to see when we look at the binary representation of nu}
-}
-\newglossaryentry{| (bitwise OR)}{
-	name={| (bitwise OR)},
-	description={Compares each corresponding bit in the binary representation of the values. For each comparison two 1's yeild 1, 1 and 0 yeild 1, and two 0's yeild 0. This is easy to see when we look at the binary representation of numbers<pre>  11010110  // 214& 01011100  // 92  --------  11011110  // 222</pre>To see the binary representation of a number, use the {\textbf binary()} function with {\textbf println()}.}
-}
-\newglossaryentry{blendColor()}{
-	name={blendColor()},
-	description={Blends two color values together based on the blending mode given as the {\textbf MODE} parameter. The possible modes are described in the reference for the {\textbf blend()} function.}
-}
-\newglossaryentry{blend()}{
-	name={blend()},
-	description={Blends a region of pixels from one image into another (or in itself again) with full alpha channel support. There is a choice of the following modes to blend the source pixels (A) with the ones of pixels in the destination image (B):<}
-}
-\newglossaryentry{blue()}{
-	name={blue()},
-	description={Extracts the blue value from a color, scaled to match current {\textbf colorMode()}. This value is always returned as a  float so be careful not to assign it to an int value.The {\textbf blue()} function is easy to use and undestand, but is slower than another technique. To achieve the same results when working in {\textbf colorMode(RGB, 255)}, but with greater speed, use a bit mask to remove the other color components. For example, the following two lines of code are equivalent:<pre>float r1 = blue(myColor);float r2 = myColor & 0xFF;</pre>}
-}
-\newglossaryentry{boolean()}{
-	name={boolean()},
-	description={Converts an int, string, or array to its boolean representation. For int calues, the number 0 evaluates to false and all other numbers evaluate to true.}
-}
-
-\newglossaryentry{break}{
-	name={break},
-	description={Ends the execution of a structure such as switch(), for(), or while() and jumps to the next statement after.}
-}
-\newglossaryentry{brightness()}{
-	name={brightness()},
-	description={Extracts the brightness value from a color.}
-}
-\newglossaryentry{BufferedReader}{
-	name={BufferedReader},
-	description={A {\textbf BufferedReader} object is used to read files line-by-line as individual {\textbf String} obj}
-}
-\newglossaryentry{BufferedReader::readLine()}{
-	name={BufferedReader::readLine()},
-	description={Returns a String that is the current line in the BufferedReader.}
-}
-\newglossaryentry{byte()}{
-	name={byte()},
-	description={Converts a primitive datatype or array to its byte representation. A byte can only be a whole number between -128 and 127, therefore when a number outside this range is converted, its value wraps to the corresponding byte representation.}
-}
-\newglossaryentry{byte}{
-	name={byte},
-	description={Datatype for bytes, 8 bits of information storing numerical values from 127 to -128. Bytes are a convenient datatype for sending information to and from the serial port and for representing letters in a simpler format than the {\textbf char} datatype. The first time a variable is written, it must be declared with a statement expressing its datatype. Subsequent uses of this variable must not reference the datatype because Processing will think the variable is being declared again.}
-}
-\newglossaryentry{case}{
-	name={case},
-	description={Denotes the different labels to be evaluated with the parameter in the {\textbf switch()} structure.}
-}
-\newglossaryentry{catch}{
-	name={catch},
-	description={The {\textbf catch} keyword is used with {\textbf try} to handle exceptions. Sun's Java documentation defines an exception as "an event, which occurs during the execution of a program, that disrupts the normal flow of the program's instructions." This could be, for example, an error while a file is read.}
-}
-\newglossaryentry{ceil()}{
-	name={ceil()},
-	description={Calculates the closest int value that is greater than or equal to the value of the parameter. For example, {\textbf ceil(9.03)} returns the value 10.}
-}
-\newglossaryentry{char()}{
-	name={char()},
-	description={Converts a primitive datatype or array to a numeric character representation.}
-}
-\newglossaryentry{char}{
-	name={char},
-	description={Datatype for characters, typographic symbols such as A, d, and $. A {\textbf char} stores letters and symbols in the Unicode format, a coding system developed to support a variety of world languages. Each {\textbf char} is two bytes (16 bits) in length and is distinguished by surrounding it with single quotes. Character escapes may also stored as a {\textbf char}. For example, the representation for the "delete" key is '377'. The first time a variable is written, it must be declared with a statement expressing its datatype. Subsequent uses of this variable must not reference the datatype because Processing will think the variable is being declared again.}
-}
-\newglossaryentry{color}{
-	name={color},
-	description={Datatype for storing color values. Colors may be assigned with {\textbf get()} and {\textbf color()} or they may be specified directly using hexadecimal notation such}
-}
-
-\newglossaryentry{, (comma)}{
-	name={, (comma)},
-	description={Separates parameters in function calls and elements during assignment.}
-}
-\newglossaryentry{// (comment)}{
-	name={// (comment)},
-	description={Explanatory notes embedded within the code. Comments are used to remind yourself and to inform others about the details of the code. Single-line comments are signified with the two forward slash characters. Comments are ignored by the compiler.}
-}
-\newglossaryentry{concat()}{
-	name={concat()},
-	description={Concatenates two arrays. For example, concatenating the array { 1, 2, 3 } and the array { 4, 5, 6 } yields { 1, 2, 3, 4, 5, 6 }. Both parameters must be arrays of the same data}
-}
-\newglossaryentry{?: (conditional)}{
-	name={?: (conditional)},
-	description={A shortcut for writing an {\textbf if} and {\textbf else} structure. If the {\textbf condition} evaluates to {\textbf true}, {\textbf expression1} is evaluated and returned. If the {\textbf condition} evaluates to {\textbf false}, {\textbf expression2} is evaluated and retu}
-}
-\newglossaryentry{constrain()}{
-	name={constrain()},
-	description={Constrains a value to not exceed a maximum and minimum value.}
-}
-\newglossaryentry{continue}{
-	name={continue},
-	description={When run inside of a for() or while(), it skips the remainder of the block and starts the next iteration.}
-}
-\newglossaryentry{copy()}{
-	name={copy()},
-	description={Copies a region of pixels from the display window to another area of the display window and copies a region of pixels from an image used as the {\textbf srcImg} parameter into the display window. If the source and destination regions aren't the same size, it will automatically resize the source pixels to fit the specified target region. No alpha information is used in the process, however if the source image has an alpha channel set, it will be copied as }
-}
-\newglossaryentry{createFont()}{
-	name={createFont()},
-	description={Dynamically converts a font to the format used by Processing from either a font name that's installed on the computer, or from a .ttf or .otf file inside the sketches "data" folder. This function is an advanced feature for precise control. On most occasions you should create fonts through selecting "Create Font..." from the Tools }
-}
-\newglossaryentry{createGraphics()}{
-	name={createGraphics()},
-	description={Creates and returns a new {\textbf PGraphics} object of the types P2D, P3D, and JAVA2D. Use this class if you need to draw into an off-screen graphics buffer. It's not possible to use {\textbf createGraphics()} with OPENGL, because it doesn't allow offscreen use. The PDF renderer requires the filename parameter. The DXF renderer should not be used with createGraphics(), it's only built for use with beginRaw() and endR}
-}
-\newglossaryentry{createImage()}{
-	name={createImage()},
-	description={Creates a new PImage (the datatype for storing images). This provides a fresh buffer of pixels to play with. Set the size of the buffer with the {\textbf width} and {\textbf height} parameters. The {\textbf format} parameter defines how the pixels are stored. See the PImage reference for more informa}
-}
-\newglossaryentry{createInput()}{
-	name={createInput()},
-	description={This is a method for advanced programmers to open a Java InputStream. The method is useful if you want to use the facilities provided by PApplet to easily open files from the data folder or from a URL, but want an InputStream object so that you can use other Java methods to take more control of how the stream is }
-}
-\newglossaryentry{createOutput()}{
-	name={createOutput()},
-	description={Similar to {\textbf createInput()}, this creates a Java {\textbf OutputStream} for a given filename or path. The file will be created in the sketch folder, or in the same folder as an exported applica}
-}
-\newglossaryentry{createReader()}{
-	name={createReader()},
-	description={Creates a {\textbf BufferedReader} object that can be used to read files line-by-line as individual {\textbf String} objects. This is the complement to the {\textbf createWriter()} func}
-}
-\newglossaryentry{createWriter()}{
-	name={createWriter()},
-	description={Creates a new file in the sketch folder, and a {\textbf PrintWriter} object to write to it. For the file to be made correctly, it should be flushed and must be closed with its {\textbf flush()} and {\textbf close()} methods (see above examp}
-}
-\newglossaryentry{{} (curly braces)}{
-	name={{} (curly braces)},
-	description={Define the beginning and end of functions blocks and statement blocks such as the {\textbf for()} and {\textbf if()} structures. Curly braces are also used for defining inital values in array declarations.}
-}
-\newglossaryentry{cursor()}{
-	name={cursor()},
-	description={Sets the cursor to a predefined symbol, an image, or makes it visible if already hidden. If you are trying to set an image as the cursor, it is recommended to make the size 16x16 or 32x32 pixels. It is not possible to load an image as the cursor if you are exporting your program for the Web and not all MODES work with all Web browsers. The values for parameters {\textbf x} and {\textbf y} must be less than the dimensions of the i}
-}
-\newglossaryentry{curveDetail()}{
-	name={curveDetail()},
-	description={Sets the resolution at which curves display. The default value is 20. This function is only useful when using the P3D or OPENGL renderer as the default (JAVA2D) renderer does not use this information.}
-}
-\newglossaryentry{curve()}{
-	name={curve()},
-	description={Draws a curved line on the screen. The first and second parameters specify the beginning control point and the last two parameters specify the ending control point. The middle parameters specify the start and stop of the curve. Longer curves can be created by putting a series of {\textbf curve()} functions together or using {\textbf curveVertex()}. An additional function called {\textbf curveTightness()} provides control for the visual quality of the curve. The {\textbf curve()} function is an implementation of Catmull-Rom splines. Using the 3D version of requires rendering with P3D or OPENGL (see the Environment reference for more information).}
-}
-\newglossaryentry{curvePoint()}{
-	name={curvePoint()},
-	description={Evalutes the curve at point t for points a, b, c, d. The parameter t varies between 0 and 1, a and d are points on the curve, and b and c are the control points. This can be done once with the x coordinates and a second time with the y coordinates to get the location of a curve at t.}
-}
-\newglossaryentry{curveTangent()}{
-	name={curveTangent()},
-	description={Calculates the tangent of a point on a curve. There is a good definition of "tangent" at Wikipedia: <a href="http://en.wikipedia.org/wiki/Tangent" target="new">http://en.wikipedia.org/wiki/Tangent</a>}
-}
-\newglossaryentry{curveTightness()}{
-	name={curveTightness()},
-	description={Modifies the quality of forms created with {\textbf curve()} and {\textbf curveVertex()}. The parameter {\textbf squishy} determines how the curve fits to the vertex points. The value 0.0 is the default value for {\textbf squishy} (this value defines the curves to be Catmull-Rom splines) and the value 1.0 connects all the points with straight lines. Values within the range -5.0 and 5.0 will deform the curves but will leave them recognizable and as values increase in magnitude, they will continue to deform.}
-}
-\newglossaryentry{curveVertex()}{
-	name={curveVertex()},
-	description={Specifies vertex coordinates for curves. This function may only be used between {\textbf beginShape()} and {\textbf endShape()} and only when there is no MODE parameter specified to {\textbf beginShape()}. The first and last points in a series of {\textbf curveVertex()} lines will be used to guide the beginning and end of a the curve. A minimum of four points is required to draw a tiny curve between the second and third points. Adding a fifth point with {\textbf curveVertex()} will draw the curve between the second, third, and fourth points. The {\textbf curveVertex()} function is an implementation of Catmull-Rom splines. Using the 3D version of requires rendering with P3D or OPENGL (see the Environment reference for more information).}
-}
-\newglossaryentry{day()}{
-	name={day()},
-	description={Processing communicates with the clock on your computer. The {\textbf day()} function returns the current day as a value from 1 - 31.}
-}
-\newglossaryentry{-- (decrement)}{
-	name={-- (decrement)},
-	description={Substracts the value of an integer variable by 1. Equivalent to the operation {\textbf i = i - 1}. If the value of the variable {\textbf i} is five, then the expression {\textbf i--} decreases the value of {\textbf i} to 4.}
-}
-\newglossaryentry{default}{
-	name={default},
-	description={Keyword for defining the default condition of a {\textbf switch()}. If none of the case labels match the {\textbf switch()} parameter, the statement(s) after the {\textbf default} syntax are executed. Switch structures don't require a {\textbf default}.}
-}
-\newglossaryentry{degrees()}{
-	name={degrees()},
-	description={Převádí radiány na stupně. Radiány a stupně jsou dvě různé možnosti jak měřit úhel. V kruhu je 360 stupňů a $2*\pi$ radiánů. Například, $90° = \pi/2 = 1.5707964$. Veškeré trigonometrické funkce v processingu vyžadují parametry v radiánech.}
-}
-\newglossaryentry{delay()}{
-	name={delay()},
-	description={Forces the program to stop running for a specified time. Delay times are specified in thousandths of a second, therefore the function call {\textbf delay(3000)} will stop the program for three seconds. Because the screen is updated only at the end of {\textbf draw()}, the program may appear to "freeze", because the screen will not update when the {\textbf delay()} method is used. This function has no affect inside {\textbf setup()}.}
-}
-\newglossaryentry{directionalLight()}{
-	name={directionalLight()},
-	description={Adds a directional light. Directional light comes from one direction and is stronger when hitting a surface squarely and weaker if it hits at a a gentle angle. After hitting a surface, a directional lights scatters in all directions. Lights need to be included in the {\textbf draw()} to remain persistent in a looping program. Placing them in the {\textbf setup()} of a looping program will cause them to only have an effect the first time through the loop. The affect of the {\textbf v1}, {\textbf v2}, and {\textbf v3} parameters is determined by the current color mode. The {\textbf nx}, {\textbf ny}, and {\textbf nz} parameters specify the direction the light is facing. For example, setting {\textbf ny} to -1 will cause the geometry to be lit from below (the light is facing directly upward).}
-}
-\newglossaryentry{dist()}{
-	name={dist()},
-	description={Calculates the distance between two points.}
-}
-\newglossaryentry{/= (divide assign)}{
-	name={/= (divide assign)},
-	description={Combines division with assignment. The expression {\textbf a /= b} is equivalent to {\textbf a = a / b}.}
-}
-\newglossaryentry{/ (divide)}{
-	name={/ (divide)},
-	description={Divides the value of the second parameter by the value of the first parameter. The answer to the equation  20 / 4 is 5. The number 20 is the sum of 4 of the number 5. As an equation we see that 4 + 4 + 4 + 4 + 4 = 20.}
-}
-\newglossaryentry{/** */ (doc comment)}{
-	name={/** */ (doc comment)},
-	description={Explanatory notes embedded within the code and written to the "index.html" file created when the code is exported. Doc comments (documentation comments) are used for sharing a description of your sketch when the program is exported. Export the code by hitting the "Export" button on the Toolbar.}
-}
-\newglossaryentry{. (dot)}{
-	name={. (dot)},
-	description={Provides access to an object's methods and data. An object is an instance of a class and contains is a grouping of methods (object functions) and data (object variables and constants). The dot operator directs the program to the information encapsulated within an object.}
-}
-\newglossaryentry{double}{
-	name={double},
-	description={Datatype for floating-point numbers larger than those that can be stored in a {\textbf float}. A {\textbf float} is a 32-bit values that can be as large as 3.40282347E+38 and as low as -3.40282347E+38. A {\textbf double} can be used similarly to a float, but can have a greater magnitude because it's a 64-bit number. Processing functions don't use this datatype, so while they work in the language, you'll usually have to convert to a {\textbf float} using the {\textbf (float)} syntax before passing into a function.}
-}
-\newglossaryentry{emissive()}{
-	name={emissive()},
-	description={Sets the emissive color of the material used for drawing shapes drawn to the screen. Used in combination with {\textbf ambient()}, {\textbf specular()}, and {\textbf shininess()} in setting the material properties of shapes.}
-}
-\newglossaryentry{endCamera()}{
-	name={endCamera()},
-	description={The {\textbf beginCamera()} and {\textbf endCamera()} functions enable advanced customization of the camera space. Please see the reference for {\textbf beginCamera()} for a description of how the functions are used.}
-}
-\newglossaryentry{endRaw()}{
-	name={endRaw()},
-	description={Complement to {\textbf beginRaw()}; they must always be used together. See the <a href="http://www.processing.org/reference/beginRaw_.html">{\textbf beginRaw()}</a> reference for details.}
-}
-\newglossaryentry{== (equality)}{
-	name={== (equality)},
-	description={Determines if two values are equivalent. The equality operator is different from the assignment oper}
-}
-\newglossaryentry{expand()}{
-	name={expand()},
-	description={Increases the size of an array. By default, this function doubles the size of the array, but the optional {\textbf newSize} parameter provides precise control over the increase in s}
-}
-\newglossaryentry{exp()}{
-	name={exp()},
-	description={Returns Euler's number <i>e</i> (2.71828...) raised to the power of the {\textbf value} parameter.}
-}
-\newglossaryentry{extends}{
-	name={extends},
-	description={Allows a new class to <i>inherit</i> the methods and fields (data members) from an existing class. In code, state the name of the new class, followed by the keyword {\textbf extends} and the name of the <i>base class</i>. The concept of inheritance is one of the fundamental principles of object oriented programming.}
-}
-\newglossaryentry{filter()}{
-	name={filter()},
-	description={Filters the display window as defined by one of the following modes:THRESHOLD - converts the image to black and white pixels depending if they are above or below the threshold defined by the level parameter. The level must be between 0.0 (black) and 1.0 (white). If no level is specified, 0.5 is used.GRAY - converts any colors in the image to grayscale equivalentsINVERT - sets each pixel to its inverse valuePOSTERIZE - limits each channel of the image to the number of colors specified as the level parameter. The level parameterBLUR - executes a Guassian blur with the level parameter specifying the extent of the blurring. If no level parameter is used, the blur is equivalent to Guassian blur of radius 1.OPAQUE - sets the alpha channel to entirely opaque.ERODE - reduces the light areas with the amount defined by the level parameter.DILATE - increases the light areas with the amount defined by the level parameter.}
-}
-\newglossaryentry{final}{
-	name={final},
-	description={Keyword used to state that a value, class, or method can't be changed. If the {\textbf final} keyword is used to define a variable, the variable can't be changed within the program. When used to define a class, a {\textbf final} class cannot be subclassed. When used to define a method, a {\textbf final} method can't be overridden by subclasses.<}
-}
-\newglossaryentry{float()}{
-	name={float()},
-	description={Converts an int, string, or array to its floating point representation.}
-}
-\newglossaryentry{float}{
-	name={float},
-	description={Data type for floating-point numbers, a number that has a decimal po}
-}
-\newglossaryentry{floor()}{
-	name={floor()},
-	description={Calculates the closest int value that is less than or equal to the value of the parameter.}
-}
-\newglossaryentry{focused}{
-	name={focused},
-	description={Confirms if a Processing program is "focused", meaning that it is active and will accept input from mouse or keyboard. This variable is "true" if it is focused and "false" if not. This variable is often used when you want to warn people they need to click on or roll over an applet before it will work.}
-}
-\newglossaryentry{frameRate}{
-	name={frameRate},
-	description={The system variable {\textbf frameRate} contains the approximate frame rate of the software as it executes. The initial value is 10 fps and is updated with each frame. The value is averaged (integrated) over several frames. As such, this value won't be valid until after 5-10 frames.}
-}
-\newglossaryentry{frustum()}{
-	name={frustum()},
-	description={Sets a perspective matrix defined through the parameters. Works like glFrustum, except it wipes out the current perspective matrix rather than muliplying itself with it.}
-}
-\newglossaryentry{get()}{
-	name={get()},
-	description={Reads the color of any pixel or grabs a section of an image. If no parameters are specified, the entire image is returned. Get the value of one pixel by specifying an x,y coordinate. Get a section of the display window by specifying an additional {\textbf width} and {\textbf height} parameter. If the pixel requested is outside of the image window, black is returned. The numbers returned are scaled according to the current color ranges, but only RGB values are returned by this function. For example, even though you may have drawn a shape with {\textbf colorMode(HSB)}, the numbers returned will be in}
-}
-\newglossaryentry{> (greater than)}{
-	name={> (greater than)},
-	description={Tests if the value on the left is larger than the value on the right.}
-}
-\newglossaryentry{>= (greater than or equal to)}{
-	name={>= (greater than or equal to)},
-	description={Tests if the value on the left is larger than the value on the right or if the values are equivalent.}
-}
-\newglossaryentry{green()}{
-	name={green()},
-	description={Extracts the green value from a color, scaled to match current {\textbf colorMode()}. This value is always returned as a  float so be careful not to assign it to an int value.The {\textbf green()} function is easy to use and undestand, but is slower than another technique. To achieve the same results when working in {\textbf colorMode(RGB, 255)}, but with greater speed, use the >> (right shift) operator with a bit mask. For example, the following two lines of code are equivalent:<pre>float r1 = green(myColor);float r2 = myColor >> 8 & 0xFF;</pre>}
-}
-\newglossaryentry{HALF_PI (1.57079...)}{
-	name={HALF_PI (1.57079...)},
-	description={HALF_PI is a mathematical constant with the value 1.57079632679489661923. It is half the ratio of the circumference of a circle to its diameter. It is useful in combination with the trigonometric functions {\textbf sin()} and {\textbf cos()}.}
-}
-\newglossaryentry{HashMap}{
-	name={HashMap},
-	description={A {\textbf HashMap} stores a collection of objects, each referenced by a key. This is similar to an {\textbf Array}, only instead of accessing elements with a numeric index, a {\textbf String} is used. (If you are familiar with associative arrays from other languages, this is the same idea.) The above example covers basic use, but there's a more extensive example included with the Processing exam}
-}
-\newglossaryentry{height}{
-	name={height},
-	description={System variable which stores the height of the display window. This value is set by the second parameter of the {\textbf size()} function. For example, the function call {\textbf size(320, 240)} sets the {\textbf height} variable to the value 240. The value of {\textbf height} is zero until {\textbf size()} is called.}
-}
-\newglossaryentry{hex()}{
-	name={hex()},
-	description={Converts a byte, char, int, or color to a String containing the equivalent hexadecimal notation. For example color(0, 102, 153) will convert to the String "FF006699". This function can help make your geeky debugging sessions much hap}
-}
-\newglossaryentry{hint()}{
-	name={hint()},
-	description={Set various hints and hacks for the renderer. This is used to handle obscure rendering features that cannot be implemented in a consistent manner across renderers. Many options will often graduate to standard features instead of hints over }
-}
-\newglossaryentry{hour()}{
-	name={hour()},
-	description={Processing communicates with the clock on your computer. The {\textbf hour()} function returns the current hour as a value from 0 - 23.}
-}
-\newglossaryentry{hue()}{
-	name={hue()},
-	description={Extracts the hue value from a color.}
-}
-\newglossaryentry{if}{
-	name={if},
-	description={Základní výhybka programu. Program se díky struktuře {\em if} může rozbočit do různých větví a spouštět bloky kódu. Blok uzavřen do složených závorek bude spuštěn jen tehdy splní-li se podmínka v kulatých závorkách za {\em if}.}
-}
-\newglossaryentry{implements}{
-	name={implements},
-	description={Implements an <i>interface</i> or group of <i>interfaces</i>. Interfaces are used to establish a protocol between classes, they establish the form for a class (method names, return types, etc.) but no implementation. After implementation, an interface can be used and extended like any other class. Because Java doesn't allow extending more than one class at a time, interfaces are created, which means specific methods and fields can be found in the class which implements it. A Thread is an example; it implements the "Runnable" interface, which means the class has a method called "public void run()" inside it.}
-}
-\newglossaryentry{import}{
-	name={import},
-	description={Klíčové slovo při načítání interních a externích knihoven do sketche Processingu}
-}
-\newglossaryentry{++ (increment)}{
-	name={++ (increment)},
-	description={Increases the value of an integer variable by 1. Equivalent to the operation {\textbf i = i + 1}. If the value of the variable {\textbf i} is five, then the expression {\textbf i++} increases the value of {\textbf i} to 6.}
-}
-\newglossaryentry{Extended  Language (API)}{
-	name={Extended  Language (API)},
-	description={eas. It is a context for learning fundamentals of computer program}
-}
-\newglossaryentry{!= (inequality)}{
-	name={!= (inequality)},
-	description={Determines if one expression is not equivalent to another.}
-}
-\newglossaryentry{int()}{
-	name={int()},
-	description={Converts a primitive datatype, string, or array to its integer representation.}
-}
-\newglossaryentry{int}{
-	name={int},
-	description={Datatype for integers, numbers without a decimal point. Integers can be as large as 2,147,483,647 and as low as -2,147,483,648. They are stored as 32 bits of information. The first time a variable is written, it must be declared with a statement expressing its datatype. Subsequent uses of this variable must not reference the datatype because Processing will think the variable is being declared again.}
-}
-\newglossaryentry{join()}{
-	name={join()},
-	description={Combines an array of Strings into one String, each separated by the character(s) used for the {\textbf separator} parameter. To join arrays of ints or floats, it's necessary to first convert them to strings using {\textbf nf()} or {\textbf nfs()}.}
-}
-\newglossaryentry{keyCode}{
-	name={keyCode},
-	description={Proměnná {\em keyCode} detekuje speciální znaky klávesnice jako například {\em UP} - šipka nahoru, {\em DOWN} - šipka DOLU, {\em LEFT} - šipka doleva, {\em RIGHT} - šipka doprava, dále klávesy jako {\em ALT}, {\em CONTROL}, {\em SHIFT}, {\em ENTER}, {\em BACKSPACE} nebo {\em DELETE}. Detekci speciálně kovaných kláves můžeme ověřit pomocí podmínky. {\em if (key == CODED)} a následně porovnat zjistit hodnotu {\em keyCode}}
-}
-\newglossaryentry{key}{
-	name={key},
-	description={Systémová proměnná udává hodnotu naposledy stisknuté klávesy.}
-}
-\newglossaryentry{keyPressed}{
-	name={keyPressed},
-	description={The boolean system variable {\textbf keyPressed} is {\textbf true} if any key is pressed and {\textbf false} if no keys are pressed.}
-}
-\newglossaryentry{keyTyped()}{
-	name={keyTyped()},
-	description={The {\textbf keyTyped()} function is called once every time a key is pressed, but action keys such as Ctrl, Shift, and Alt are ignored. Because of how operating systems handle key repeats, holding down a key will cause multiple calls to {\textbf keyTyped()}, the rate is set by the operating system and how each computer is configured.}
-}
-\newglossaryentry{<< (left shift)}{
-	name={<< (left shift)},
-	description={Shifts bits to the left. The number to the left of the operator is shifted the number of places specified by the number to the right. Each shift to the left doubles the number, therefore each left shift multiplies the original number by 2. Use the left shift for fast multiplication or to pack a group of numbers together into one larger number. Left shifting only works with integers or numbers which automatically convert to an integer such at byte and char.}
-}
-\newglossaryentry{lerpColor()}{
-	name={lerpColor()},
-	description={Calculates a color or colors between two color at a specific increment. The {\textbf amt} parameter is the amount to interpolate between the two values where 0.0 equal to the first point, 0.1 is very near the first point, 0.5 is half-way in between, etc.}
-}
-\newglossaryentry{lerp()}{
-	name={lerp()},
-	description={Calculates a number between two numbers at a specific increment. The {\textbf amt} parameter is the amount to interpolate between the two values where 0.0 equal to the first point, 0.1 is very near the first point, 0.5 is half-way in between, etc. The lerp function is convenient for creating motion along a straight path and for drawing dotted lines.}
-}
-\newglossaryentry{< (less than)}{
-	name={< (less than)},
-	description={Tests if the value on the left is smaller than the value on the right.}
-}
-\newglossaryentry{&lt;= (less than or equal to)}{
-	name={&lt;= (less than or equal to)},
-	description={Tests if the value on the left is less than the value on the right or if the values are equivalent.}
-}
-\newglossaryentry{lightFalloff()}{
-	name={lightFalloff()},
-	description={Sets the falloff rates for point lights, spot lights, and ambient lights. The parameters are used to determine the falloff with the following equation:d = distance from light position to vertex positionfalloff = 1 / (CONSTANT + d * LINEAR + (d*d) * QUADRATIC)Like {\textbf fill()}, it affects only the elements which are created after it in the code. The default value if {\textbf LightFalloff(1.0, 0.0, 0.0)}. Thinking about an ambient light with a falloff can be tricky. It is used, for example, if you wanted a region of your scene to be lit ambiently one color and another region to be lit ambiently by another color, you would use an ambient light with location and falloff. You can think of it as a point light that doesn't care which direction a surface is facing.}
-}
-\newglossaryentry{lights()}{
-	name={lights()},
-	description={Sets the default ambient light, directional light, falloff, and specular values. The defaults are ambientLight(128, 128, 128) and directionalLight(128, 128, 128, 0, 0, -1), lightFalloff(1, 0, 0), and lightSpecular(0, 0, 0). Lights need to be included in the draw() to remain persistent in a looping program. Placing them in the setup() of a looping program will cause them to only have an effect the first time through the loop.}
-}
-\newglossaryentry{lightSpecular()}{
-	name={lightSpecular()},
-	description={Sets the specular color for lights. Like {\textbf fill()}, it affects only the elements which are created after it in the code. Specular refers to light which bounces off a surface in a perferred direction (rather than bouncing in all directions like a diffuse light) and is used for creating highlights. The specular quality of a light interacts with the specular material qualities set through the {\textbf specular()} and {\textbf shininess()} functions.}
-}
-\newglossaryentry{line()}{
-	name={line()},
-	description={Vykresluje čáru, linku. Přímou cestu mezi dvěma body na obrazovce. Verze pro dvourozměrné zobrazení přijímá čtyři parametry $X_{1},Y_{1},X_{2},Y_{2}$ jako pozice dvou bodů. Pro nastavení barvy vykreslované linky můžeme použít funkci \vyraz{stroke}. Ovlivnit tloušťku linky lze pomocí \vyraz{strokeWeight}. Trojrozměrné zobrazení v renderech {\em P3D} a {\em OpenGL} přidává dvěma bodům další rozměr, linka je tedy definována šesti rozměry $X_{1},Y_{1},Z_{1},X_{2},Y_{2},Z_{2}$.}
-}
-\newglossaryentry{link()}{
-	name={link()},
-	description={Links to a webpage either in the same window or in a new window. The complete URL must be specified.}
-}
-\newglossaryentry{loadBytes()}{
-	name={loadBytes()},
-	description={Reads the contents of a file or url and places it in a byte array. If a file is specified, it must be located in the sketch's "data" directory/fo}
-}
-\newglossaryentry{loadFont()}{
-	name={loadFont()},
-	description={Loads a font into a variable of type {\textbf PFont}. To load correctly, fonts must be located in the data directory of the current sketch. To create a font to use with Processing, select "Create Font..." from the Tools menu. This will create a font in the format Processing requires and also adds it to the current sketch's data direct}
-}
-\newglossaryentry{loadImage()}{
-	name={loadImage()},
-	description={Načítá obrázek z disku do formátu \vyraz{PImage}. Processing dokáže načítat čtyři běžné typy obrázků: ( {\em *.gif}, {\em *.jpg}, {\em *.tga}, {\em *.png}). Abychom obrázky načetli jednoduše měli by být umístěny v adrsáři {\em DATA} v naší sketchi.}
-}
-\newglossaryentry{loadShape()}{
-	name={loadShape()},
-	description={Loads vector shapes into a variable of type {\textbf PShape}. Currently, only SVG files may be loaded. To load correctly, the file must be located in the data directory of the current sketch. In most cases, {\textbf loadShape()} should be used inside {\textbf setup()} because loading shapes inside {draw()} will reduce the speed of a ske}
-}
-\newglossaryentry{loadStrings()}{
-	name={loadStrings()},
-	description={Přečte obsah textového souboru do textového pole. Textový soubor by měl být umístěn ve složce {\em DATA} uvnitř naší sketche.}
-}
-\newglossaryentry{log()}{
-	name={log()},
-	description={Calculates the natural logarithm (the base-<i>e</i> logarithm) of a number. This function expects the values greater than 0.0.}
-}
-\newglossaryentry{&& (logical AND)}{
-	name={&& (logical AND)},
-	description={Compares two expressions and returns {\textbf true} only if both evaluate to {\textbf true}. Returns {\textbf false} if one or both evaluate to {\textbf false}. The following list shows all possible combinations:<tt>true && false   // Evaluates false because the second is false false && true   // Evaluates false because the first is false true && true    // Evaluates true because both are true false && false  // Evaluates false because both are false</tt>}
-}
-\newglossaryentry{! (logical NOT)}{
-	name={! (logical NOT)},
-	description={Inverts the Boolean value of an expression. Returns {\textbf true} if the expression is {\textbf false} and returns {\textbf false} if the expression is {\textbf true}. If the expression {\textbf (a>b)} evaluates to true, then {\textbf !(a>b)} evaluates to false.}
-}
-\newglossaryentry{|| (logical OR)}{
-	name={|| (logical OR)},
-	description={Compares two expressions and returns {\textbf true} if one or both evaluate to {\textbf true}. Returns {\textbf false} only if both expressions are {\textbf false}. The following list shows all possible combinations:<tt>true || false   // Evaluates true because the first is true false || true   // Evaluates true because the second is true true || true    // Evaluates true because both are true false || false  // Evaluates false because both are false</tt>}
-}
-\newglossaryentry{long}{
-	name={long},
-	description={Datatype for large integers. While integers can be as large as 2,147,483,647 and as low as -2,147,483,648 (stored as 32 bits), a {\textbf long} integer has a minimum value of -9,223,372,036,854,775,808 and a maximum value of 9,223,372,036,854,775,807 (stored as 64 bits). Use this datatype when you need a number to have a greater magnitude than can be stored within an {\textbf int}. Processing functions don't use this datatype, so while they work in the language, you'll usually have to convert to a {\textbf int} using the {\textbf (int)} syntax before passing into a function.}
-}
-\newglossaryentry{loop()}{
-	name={loop()},
-	description={Causes Processing to continuously execute the code within {\textbf draw()}. If {\textbf noLoop()} is called, the code in {\textbf draw()} stops executing.}
-}
-\newglossaryentry{mag()}{
-	name={mag()},
-	description={Calculates the magnitude (or length) of a vector. A vector is a direction in space commonly used in computer graphics and linear algebra. Because it has no "start" position, the magnitude of a vector can be thought of as the distance from coordinate (0,0) to its (x,y) value. Therefore, mag() is a shortcut for writing "dist(0, 0, x, y)".}
-}
-\newglossaryentry{map()}{
-	name={map()},
-	description={Re-maps a number from one range to another. In the example ab}
-}
-\newglossaryentry{matchAll()}{
-	name={matchAll()},
-	description={The matchAll() function is used to apply a regular expression to a piece of text, and return a list of matching groups (elements found inside parentheses) as a two-dimensional String array. No matches will return null. If no groups are specified in the regexp, but the sequence matches, a two dimensional array is still returned, but the second dimension is only of length}
-}
-\newglossaryentry{match()}{
-	name={match()},
-	description={The match() function is used to apply a regular expression to a piece of text, and return matching groups (elements found inside parentheses) as a String array. No match will return null. If no groups are specified in the regexp, but the sequence matches, an array of length one (with the matched text as the first element of the array) will be retu}
-}
-\newglossaryentry{max()}{
-	name={max()},
-	description={Determines the largest value in a sequence of numbers.}
-}
-\newglossaryentry{min()}{
-	name={min()},
-	description={Determines the smallest value in a sequence of numbers.}
-}
-\newglossaryentry{- (minus)}{
-	name={- (minus)},
-	description={Subtracts one value from another and may also be used to negate a value. As a subtraction operator, the value of the second parameter is subtracted from the first. For example, 5 - 3 yields the number 2. As a negation operator, it is equivalent to multiplying a number by -1. For example, -5 is the same as 5 * -1.}
-}
-\newglossaryentry{minute()}{
-	name={minute()},
-	description={Processing communicates with the clock on your computer. The {\textbf minute()} function returns the current minute as a value from 0 - 59.}
-}
-\newglossaryentry{modelX()}{
-	name={modelX()},
-	description={Returns the three-dimensional X, Y, Z position in model space. This returns the X value for a given coordinate based on the current set of transformations (scale, rotate, translate, etc.) The X value can be used to place an object in space relative to the location of the original point once the transformations are no longer in }
-}
-\newglossaryentry{modelY()}{
-	name={modelY()},
-	description={Returns the three-dimensional X, Y, Z position in model space. This returns the Y value for a given coordinate based on the current set of transformations (scale, rotate, translate, etc.) The Y value can be used to place an object in space relative to the location of the original point once the transformations are no longer in }
-}
-\newglossaryentry{modelZ()}{
-	name={modelZ()},
-	description={Returns the three-dimensional X, Y, Z position in model space. This returns the Z value for a given coordinate based on the current set of transformations (scale, rotate, translate, etc.) The Z value can be used to place an object in space relative to the location of the original point once the transformations are no longer in }
-}
-\newglossaryentry{modulo}{
-	name={modulo},
-	description={Calculates the remainder when one number is divided by another. It is extremely useful for keeping numbers within a boundary such as keeping a shape on the screen.}
-}
-\newglossaryentry{month()}{
-	name={month()},
-	description={Processing communicates with the clock on your computer. The {\textbf month()} function returns the current month as a value from 1 - 12.}
-}
-\newglossaryentry{mousePressed}{
-	name={mousePressed},
-	description={Variable storing if a mouse button is pressed. The value of the system variable {\textbf mousePressed} is true if a mouse button is pressed and false if a button is not pressed.}
-}
-\newglossaryentry{mouseReleased()}{
-	name={mouseReleased()},
-	description={Funkce spuštěná uvolníme-li stisknuté tlačítko myši.}
-}
-\newglossaryentry{/* */ (multiline comment)}{
-	name={/* */ (multiline comment)},
-	description={Explanatory notes embedded within the code. Comments are used to remind yourself and to inform others about the function of your program. Multiline comments are used for large text descriptions of code or to comment out chunks of code while debugging applications. Comments are ignored by the compiler}
-}
-\newglossaryentry{*= (multiply assign)}{
-	name={*= (multiply assign)},
-	description={Combines multiplication with assignment. The expression {\textbf a *= b} is equivalent to {\textbf a = a * b}.}
-}
-\newglossaryentry{* (multiply)}{
-	name={* (multiply)},
-	description={Multiplies the values of the two parameters. Multiplication is equivalent to a sequence of addition. For example 5 * 4 is equivalent to 5 + 5 + 5 + 5.}
-}
-\newglossaryentry{new}{
-	name={new},
-	description={Vytváří novou pracovní instanci kteréhokoli objektu, definovaného dříve pod třídou \vyraz{class}. Třídy mohou být naše definice nebo dříve definované soubory funkci a proměnných.}
-}
-\newglossaryentry{nfc()}{
-	name={nfc()},
-	description={Utility function for formatting numbers into strings and placing appropriate commas to mark units of 1000. There are two versions, one for formatting ints and one for formatting an array of ints. The value for the {\textbf digits} parameter should always be a positive int}
-}
-\newglossaryentry{nfp()}{
-	name={nfp()},
-	description={Utility function for formatting numbers into strings. Similar to {\textbf nf()} but puts a "+" in front of positive numbers and a "-" in front of negative numbers. There are two versions, one for formatting floats and one for formatting ints. The values for the {\textbf digits}, {\textbf left}, and {\textbf right} parameters should always be positive integers.}
-}
-\newglossaryentry{nfs()}{
-	name={nfs()},
-	description={Utility function for formatting numbers into strings. Similar to {\textbf nf()} but leaves a blank space in front of positive numbers so they align with negative numbers in spite of the minus symbol. There are two versions, one for formatting floats and one for formatting ints. The values for the {\textbf digits}, {\textbf left}, and {\textbf right} parameters should always be positive integers.}
-}
-\newglossaryentry{noCursor()}{
-	name={noCursor()},
-	description={Hides the cursor from view. Will not work when running the program in a web browser or when running in full screen (Present) mode.}
-}
-\newglossaryentry{noiseDetail()}{
-	name={noiseDetail()},
-	description={Adjusts the character and level of detail produced by the Perlin noise function. Similar to harmonics in physics, noise is computed over several octaves. Lower octaves contribute more to the output signal and as such define the overal intensity of the noise, whereas higher octaves create finer grained details in the noise sequence. By default, noise is computed over 4 octaves with each octave contributing exactly half than its predecessor, starting at 50 strength for the 1st octave. This falloff amount can be changed by adding an additional function parameter. Eg. a falloff factor of 0.75 means each octave will now have 75 impact (25 less) of the previous lower octave. Any value between 0.0 and 1.0 is valid, however note that values greater than 0.5 might result in greater than 1.0 values returned by {\textbf noise()}.By changing these parameters, the signal created by the {\textbf noise()} function can be adapted to fit very specific needs and characteristics.}
-}
-\newglossaryentry{noiseSeed()}{
-	name={noiseSeed()},
-	description={Sets the seed value for {\textbf noise()}. By default, {\textbf noise()} produces different results each time the program is run. Set the {\textbf value} parameter to a constant to return the same pseudo-random numbers each time the software is run.}
-}
-\newglossaryentry{noLights()}{
-	name={noLights()},
-	description={Disable all lighting. Lighting is turned off by default and enabled with the lights() method. This function can be used to disable lighting so that 2D geometry (which does not require lighting) can be drawn after a set of lighted 3D geometry.}
-}
-\newglossaryentry{noLoop()}{
-	name={noLoop()},
-	description={Stops Processing from continuously executing the code within {\textbf draw()}. If {\textbf loop()} is called, the code in {\textbf draw()} begin to run continuously again. If using {\textbf noLoop()} in {\textbf setup()}, it should be the last line inside the b}
-}
-\newglossaryentry{normal()}{
-	name={normal()},
-	description={Sets the current normal vector. This is for drawing three dimensional shapes and surfaces and specifies a vector perpendicular to the surface of the shape which determines how lighting affects it. Processing attempts to automatically assign normals to shapes, but since that's imperfect, this is a better option when you want more control. This function is identical to glNormal3f() in OpenGL.}
-}
-\newglossaryentry{norm()}{
-	name={norm()},
-	description={Normalizes a number from another range into a value between 0 an}
-}
-\newglossaryentry{noSmooth()}{
-	name={noSmooth()},
-	description={Vypíná vyhlazování {\em (tzv. aliasing)} hran.}
-}
-\newglossaryentry{noStroke()}{
-	name={noStroke()},
-	description={Vypíná kresbu všech kontur, hran následujících objektů.}
-}
-\newglossaryentry{noTint()}{
-	name={noTint()},
-	description={Removes the current fill value for displaying images and reverts to displaying images with their original hues.}
-}
-\newglossaryentry{null}{
-	name={null},
-	description={Special value used to signify the target is not a valid data element. In Processing, you may run across the keyword {\textbf null} when trying to access data which is not there.}
-}
-\newglossaryentry{Object}{
-	name={Object},
-	description={Objects are instances of classes. A class is a grouping of related methods (functions) and fields (variables and constants).}
-}
-\newglossaryentry{online}{
-	name={online},
-	description={Confirms if a Processing program is running inside a web browser. This variable is "true" if the program is online and "false" if not.}
-}
-\newglossaryentry{open()}{
-	name={open()},
-	description={Attempts to open an application or file using your platform's launcher. The {\textbf file} parameter is a String specifying the file name and location. The location parameter must be a full path name, or the name of an executable in the system's PATH. In most cases, using a full path is the best option, rather than relying on the system PATH. Be sure to make the file executable before attempting to open it (chmod }
-}
-\newglossaryentry{ortho()}{
-	name={ortho()},
-	description={Sets an orthographic projection and defines a parallel clipping volume. All objects with the same dimension appear the same size, regardless of whether they are near or far from the camera. The parameters to this function specify the clipping volume where left and right are the minimum and maximum x values, top and bottom are the minimum and maximum y values, and near and far are the minimum and maximum z values. If no parameters are given, the default is used: ortho(0, width, 0, height, -10, 10).}
-}
-\newglossaryentry{param()}{
-	name={param()},
-	description={Reads the value of a param. Values are always read as a String so if you want them to be an integer or other datatype they must be converted. The {\textbf param()} function will only work in a web browser. The function should be called inside {\textbf setup()}, otherwise the applet may not yet be initialized and connected to its parent web browser.}
-}
-\newglossaryentry{() (parentheses)}{
-	name={() (parentheses)},
-	description={Grouping and containing expressions and parameters. Parentheses have multiple functions relating to functions and structures. They are used to contain a list of parameters passed to functions and control structures and they are used to group expressions to control the order of execution. Some functions have no parameters and in this case, the space between parentheses is blank.}
-}
-\newglossaryentry{perspective()}{
-	name={perspective()},
-	description={Sets a perspective projection applying foreshortening, making distant objects appear smaller than closer ones. The parameters define a viewing volume with the shape of truncated pyramid. Objects near to the front of the volume appear their actual size, while farther objects appear smaller. This projection simulates the perspective of the world more accurately than orthographic projection. The version of perspective without parameters sets the default perspective and the version with four parameters allows the programmer to set the area precisely. The default values are: perspective(PI/3.0, width/height, cameraZ/10.0, cameraZ*10.0) where cameraZ is ((height/2.0) / tan(PI*60.0/360.0));}
-}
-\newglossaryentry{PFont}{
-	name={PFont},
-	description={PFont is the font class for Processing. To create a font to use with Processing, select "Create Font..." from the Tools menu. This will create a font in the format Processing requires and also adds it to the current sketch's data directory. Processing displays fonts using the .vlw font format, which uses images for each letter, rather than defining them through vector data. The {\textbf loadFont()} function constructs a new font and {\textbf textFont()} makes a font active. The {\textbf list()} method creates a list of the fonts installed on the computer, which is useful information to use with the {\textbf createFont()} function for dynamically converting fonts into a format to use with Processing.}
-}
-\newglossaryentry{PFont::list()}{
-	name={PFont::list()},
-	description={Gets a list of the fonts installed on the system. The data is returned as a String array. This list provides the names of each font for input into {\textbf createFont()}, which allows Processing to dynamically format fonts. This function is meant as a tool for programming local applications and is not recommended for use in applets.}
-}
-\newglossaryentry{PGraphics::beginDraw()}{
-	name={PGraphics::beginDraw()},
-	description={Sets the default properties for a PGraphics object. It should be called before anything is drawn into the object.}
-}
-\newglossaryentry{PGraphics::endDraw()}{
-	name={PGraphics::endDraw()},
-	description={Finalizes the rendering of a PGraphics object so that it can be shown on screen.}
-}
-\newglossaryentry{PGraphics}{
-	name={PGraphics},
-	description={Main graphics and rendering context, as well as the base API implementation for processing "core". Use this class if you need to draw into an off-screen graphics buffer. A PGraphics object can be constructed with the {\textbf createGraphics()} function. The {\textbf beginDraw()} and {\textbf endDraw()} methods (see above example) are necessary to set up the buffer and to finalize it. The fields and methods for this class are extensive; for a complete list visit the developer's reference: http://dev.processing.org/reference/core/}
-}
-\newglossaryentry{PI (3.14159...)}{
-	name={PI (3.14159...)},
-	description={PI is a mathematical constant with the value 3.14159265358979323846. It is the ratio of the circumference of a circle to its diameter. It is useful in combination with the trigonometric functions {\textbf sin()} and {\textbf cos()}.}
-}
-\newglossaryentry{PImage::blend()}{
-	name={PImage::blend()},
-	description={Blends a region of pixels into the image specified by the {\textbf img} parameter. These copies utilize full alpha channel support and a choice of the following modes to blend the colors of source pixels (A) with the ones of pixels in the destination image (B):<}
-}
-\newglossaryentry{PImage::copy()}{
-	name={PImage::copy()},
-	description={Copies a region of pixels from one image into another. If the source and destination regions aren't the same size, it will automatically resize source pixels to fit the specified target region. No alpha information is used in the process, however if the source image has an alpha channel set, it will be copied as }
-}
-\newglossaryentry{PImage::filter()}{
-	name={PImage::filter()},
-	description={Filters an image as defined by one of the following modes:THRESHOLD - converts the image to black and white pixels depending if they are above or below the threshold defined by the level parameter. The level must be between 0.0 (black) and 1.0(white). If no level is specified, 0.5 is used.GRAY - converts any colors in the image to grayscale equivalentsINVERT - sets each pixel to its inverse valuePOSTERIZE - limits each channel of the image to the number of colors specified as the level parameterBLUR - executes a Guassian blur with the level parameter specifying the extent of the blurring. If no level parameter is used, the blur is equivalent to Guassian blur of radius 1.OPAQUE - sets the alpha channel to entirely opaque.ERODE - reduces the light areas with the amount defined by the level parameter.DILATE - increases the light areas with the amount defined by the level parameter}
-}
-\newglossaryentry{PImage::get()}{
-	name={PImage::get()},
-	description={Reads the color of any pixel or grabs a group of pixels. If no parameters are specified, the entire image is returned. Get the value of one pixel by specifying an x,y coordinate. Get a section of the display window by specifing an additional {\textbf width} and {\textbf height} parameter. If the pixel requested is outside of the image window, black is returned. The numbers returned are scaled according to the current color ranges, but only RGB values are returned by this function. Even though you may have drawn a shape with {\textbf colorMode(HSB)}, the numbers returned will be in}
-}
-\newglossaryentry{PImage::height}{
-	name={PImage::height},
-	description={The height of the image in units of pixels.}
-}
-\newglossaryentry{PImage}{
-	name={PImage},
-	description={Datatyp pro práci s obrázky v Processingu. Processing umí zobrazovat obrázek ve dvourozměrném i trojrozměrném prostoru. Vlastnosti obrázku můžeme získat pomocí tečkové syntaxe, základní vlastnosti má každý obrázek následující: {\em width} -- šířku a {\em height} -- výšku. Pomocí proměnné {\em pixels[]} se dále můžeme dostat k barevným hodnotám samotných pixelů obrázku, což se může hodit při jakékoli pokročilé manipulaci s obrazovými daty.}
-}
-\newglossaryentry{PImage::mask()}{
-	name={PImage::mask()},
-	description={Masks part of an image from displaying by loading another image and using it as an alpha channel. This mask image should only contain grayscale data, but only the blue color channel is used. The mask image needs to be the same size as the image to which it is applied.In addition to using a mask image, an integer array containing the alpha channel data can be specified directly. This method is useful for creating dynamically generated alpha masks. This array must be of the same length as the target image's pixels array and should contain only grayscale data of values between 0-255.}
-}
-\newglossaryentry{PImage::pixels[]}{
-	name={PImage::pixels[]},
-	description={Array containing the values for all the pixels in the image. These values are of the color datatype. This array is the size of the image, meaning if the image is 100x100 pixels, there will be 10000 values and if the window is 200x300 pixels, there will be 60000 values. The {\textbf index} value defines the position of a value within the array. For example, the statement {\textbf color b = img.pixels[230]} will set the variable {\textbf b} equal to the value at that location in the array. Before accessing this array, the data must loaded with the {\textbf loadPixels()} method. After the array data has been modified, the {\textbf updatePixels()} method must be run to update the changes. Without {\textbf loadPixels()}, running the code may (or will in future releases) result in a NullPointerException.}
-}
-\newglossaryentry{PImage::resize()}{
-	name={PImage::resize()},
-	description={Resize the image to a new width and height. To make the image scale proportionally, use 0 as the value for the {\textbf wide} or {\textbf high} parameter. For instance, to make the width of an image 150 pixels, and change the height using the same proportion, use resize(150}
-}
-\newglossaryentry{PImage::save()}{
-	name={PImage::save()},
-	description={Saves the image into a file. Images are saved in TIFF, TARGA, JPEG, and PNG format depending on the extension within the {\textbf filename} parameter. For example, "image.tif" will have a TIFF image and "image.png" will save a PNG image. If no extension is included in the filename, the image will save in TIFF format and {\textbf .tif} will be added to the name. These files are saved to the sketch's folder, which may be opened by selecting "Show sketch folder" from the "Sketch" menu. It is not possible to use {\textbf save()} while running the program in a web browser.To save an image created within the code, rather than through loading, it's necessary to make the image with the {\textbf createImage()} function so it is aware of the location of the program and can therefore save the file to the right place. See the {\textbf createImage()} reference for more information.}
-}
-\newglossaryentry{PImage::set()}{
-	name={PImage::set()},
-	description={Changes the color of any pixel or writes an image directly into the image. The {\textbf x} and {\textbf y} parameter specify the pixel or the upper-left corner of the image. The {\textbf color} parameter specifies the color value.Setting the color of a single pixel with {\textbf set(x, y)} is easy, but not as fast as putting the data directly into {\textbf pixels[]}. The equivalent statement to "set(x, y, #000000)" using {\textbf pixels[]} is "pixels[y*width+x] = #000000". Processing requires calling {\textbf loadPixels()} to load the display window data into the {\textbf pixels[]} array before getting the values and calling {\textbf updatePixels()} to update the wi}
-}
-\newglossaryentry{PImage::updatePixels()}{
-	name={PImage::updatePixels()},
-	description={Updates the image with the data in its {\textbf pixels[]} array. Use in conjunction with {\textbf loadPixels()}. If you're only reading pixels from the array, there's no need to call {\textbf updatePixels()}
-}
-\newglossaryentry{PImage::width}{
-	name={PImage::width},
-	description={The width of the image in units of pixels.}
-}
-\newglossaryentry{pixels[]}{
-	name={pixels[]},
-	description={Array containing the values for all the pixels in the display window. These values are of the color datatype. This array is the size of the display window. For example, if the image is 100x100 pixels, there will be 10000 values and if the window is 200x300 pixels, there will be 60000 values. The {\textbf index} value defines the position of a value within the array. For example, the statment {\textbf color b = pixels[230]} will set the variable {\textbf b} to be equal to the value at that location in the array.  Before accessing this array, the data must loaded with the {\textbf loadPixels()} function. After the array data has been modified, the {\textbf updatePixels()} function must be run to update the changes. Without {\textbf loadPixels()}, running the code may (or will in future releases) result in a NullPointerException.}
-}
-\newglossaryentry{pmouseX}{
-	name={pmouseX},
-	description={The system variable {\textbf pmouseX} always contains the horizontal position of the mouse in the frame previous to the current frame.<}
-}
-\newglossaryentry{pmouseY}{
-	name={pmouseY},
-	description={The system variable {\textbf pmouseY} always contains the vertical position of the mouse in the frame previous to the current frame. More detailed information about how {\textbf pmouseY} is updated inside of {\textbf draw()} and mouse events is explained in the reference for <a href="http://processing.org/reference/pmouseX.html">{\textbf pmouseX}</a>.}
-}
-\newglossaryentry{point()}{
-	name={point()},
-	description={Draws a point, a coordinate in space at the dimension of one pixel. The first parameter is the horizontal value for the point, the second value is the vertical value for the point, and the optional third value is the depth value. Drawing this shape in 3D using the {\textbf z} parameter requires the P3D or OPENGL parameter in combination with size as shown in the above exam}
-}
-\newglossaryentry{pointLight()}{
-	name={pointLight()},
-	description={Adds a point light. Lights need to be included in the {\textbf draw()} to remain persistent in a looping program. Placing them in the {\textbf setup()} of a looping program will cause them to only have an effect the first time through the loop. The affect of the {\textbf v1}, {\textbf v2}, and {\textbf v3} parameters is determined by the current color mode. The {\textbf x}, {\textbf y}, and {\textbf z} parameters set the position of the light.}
-}
-\newglossaryentry{popMatrix()}{
-	name={popMatrix()},
-	description={Pops the current transformation matrix off the matrix stack. Understanding pushing and popping requires understanding the concept of a matrix stack. The {\textbf pushMatrix()} function saves the current coordinate system to the stack and {\textbf popMatrix()} restores the prior coordinate system. {\textbf pushMatrix()} and {\textbf popMatrix()} are used in conjuction with the other transformation methods and may be embedded to control the scope of the transformations.}
-}
-\newglossaryentry{popStyle()}{
-	name={popStyle()},
-	description={The {\textbf pushStyle()} function saves the current style settings and {\textbf popStyle()} restores the prior settings; these functions are always used together. They allow you to change the style settings and later return to what you had. When a new style is started with {\textbf pushStyle()}, it builds on the current style information. The {\textbf pushStyle()} and {\textbf popStyle()} functions can be embedded to provide more control (see the second example above for a demonstration.)}
-}
-\newglossaryentry{pow()}{
-	name={pow()},
-	description={Facilitates exponential expressions. The {\textbf pow()} function is an efficient way of multiplying numbers by themselves (or their reciprocal) in large quantities. For example, {\textbf pow(3, 5)} is equivalent to the expression 3*3*3*3*3 and {\textbf pow(3, -5)} is equivalent to 1 / 3*3*3*3*3.}
-}
-\newglossaryentry{printCamera()}{
-	name={printCamera()},
-	description={Prints the current camera matrix to the text window.}
-}
-\newglossaryentry{print()}{
-	name={print()},
-	description={Writes to the console area of the Processing environment. This is often helpful for looking at the data a program is producing. The companion function {\textbf println()} works like {\textbf print()}, but creates a new line of text for each call to the function. Individual elements can be separated with quotes ("") and joined with the addition operator }
-}
-\newglossaryentry{println()}{
-	name={println()},
-	description={Writes to the text area of the Processing environment's console. This is often helpful for looking at the data a program is producing. Each call to this function creates a new line of output. Individual elements can be separated with quotes ("") and joined with the string concatenation operator (+). See {\textbf print()} for more about what to expect in the ou}
-}
-\newglossaryentry{printMatrix()}{
-	name={printMatrix()},
-	description={Prints the current matrix to the text window.}
-}
-\newglossaryentry{printProjection()}{
-	name={printProjection()},
-	description={Prints the current projection matrix to the text window.}
-}
-\newglossaryentry{PrintWriter::close()}{
-	name={PrintWriter::close()},
-	description={Closes the {\textbf PrintWriter} object.}
-}
-\newglossaryentry{PrintWriter::flush()}{
-	name={PrintWriter::flush()},
-	description={Flushes the {\textbf PrintWriter} object. This is necessary to ensure all remaining data is written to the file before it is closed.}
-}
-\newglossaryentry{PrintWriter}{
-	name={PrintWriter},
-	description={Allows characters to print to a text-output stream. A new PrintWriter object is created with the {\textbf createWriter()} function. For the file to be made correctly, it should be flushed and must be closed with its {\textbf flush()} and {\textbf close()} methods (see above example).}
-}
-\newglossaryentry{PrintWriter::print()}{
-	name={PrintWriter::print()},
-	description={Writes data to a {\textbf PrintWriter} object stream.}
-}
-\newglossaryentry{PrintWriter::println()}{
-	name={PrintWriter::println()},
-	description={Writes data to a {\textbf PrintWriter} object stream and then starts a new line.}
-}
-\newglossaryentry{private}{
-	name={private},
-	description={Keyword used to disallow other classes access the fields and methods within a class. The {\textbf private} keyword is used before a field or method that you want to be available only within the class. In Processing, all fields and methods are public unless otherwise specified by the {\textbf private} keyword.<}
-}
-\newglossaryentry{PShape::disableStyle()}{
-	name={PShape::disableStyle()},
-	description={Disables the shape's style data and uses Processing's current styles. Styles include attributes such as colors, stroke weight, and stroke joints.}
-}
-\newglossaryentry{PShape::enableStyle()}{
-	name={PShape::enableStyle()},
-	description={Enables the shape's style data and ignores Processing's current styles. Styles include attributes such as colors, stroke weight, and stroke joints.}
-}
-\newglossaryentry{PShape::getChild()}{
-	name={PShape::getChild()},
-	description={Extracts a child shape from a parent shape. Specify the name of the shape with the {\textbf target} parameter. The shape is returned as a {\textbf PShape} object, or {\textbf null} is returned if there is an error.}
-}
-\newglossaryentry{PShape::height}{
-	name={PShape::height},
-	description={The height of the PShape document.}
-}
-\newglossaryentry{PShape}{
-	name={PShape},
-	description={Datatype for storing shapes. Processing can currently load and display SVG (Scalable Vector Graphics) shapes. Before a shape is used, it must be loaded with the {\textbf loadShape()} function. The {\textbf shape()} function is used to draw the shape to the display window. The {\textbf PShape} object contain a group of methods, linked below, that can operate on the shape d}
-}
-\newglossaryentry{PShape::isVisible()}{
-	name={PShape::isVisible()},
-	description={Returns a boolean value "true" if the image is set to be visible, "false" if not. This is modified with the {\textbf setVisible()} param}
-}
-\newglossaryentry{PShape::rotate()}{
-	name={PShape::rotate()},
-	description={Rotates a shape the amount specified by the {\textbf angle} parameter. Angles should be specified in radians (values from 0 to TWO_PI) or converted to radians with the {\textbf radians()} me}
-}
-\newglossaryentry{PShape::rotateX()}{
-	name={PShape::rotateX()},
-	description={Rotates a shape around the x-axis the amount specified by the {\textbf angle} parameter. Angles should be specified in radians (values from 0 to TWO_PI) or converted to radians with the {\textbf radians()} me}
-}
-\newglossaryentry{PShape::rotateY()}{
-	name={PShape::rotateY()},
-	description={Rotates a shape around the y-axis the amount specified by the {\textbf angle} parameter. Angles should be specified in radians (values from 0 to TWO_PI) or converted to radians with the {\textbf radians()} me}
-}
-\newglossaryentry{PShape::rotateZ()}{
-	name={PShape::rotateZ()},
-	description={Rotates a shape around the z-axis the amount specified by the {\textbf angle} parameter. Angles should be specified in radians (values from 0 to TWO_PI) or converted to radians with the {\textbf radians()} me}
-}
-\newglossaryentry{PShape::scale()}{
-	name={PShape::scale()},
-	description={Increases or decreases the size of a shape by expanding and contracting vertices. Shapes always scale from the relative origin of their bounding box. Scale values are specified as decimal percentages. For example, the method call {\textbf scale(2.0)} increases the dimension of a shape by 200. Subsequent calls to the method multiply the effect. For example, calling {\textbf scale(2.0)} and then {\textbf scale(1.5)} is the same as {\textbf scale(3.0)}. This transformation is applied directly to the shape, it's not refreshed each time {\textbf draw()} is }
-}
-\newglossaryentry{PShape::setVisible()}{
-	name={PShape::setVisible()},
-	description={Sets the shape to be visible or invisible. This is determined by the value of the {\textbf visible} param}
-}
-\newglossaryentry{PShape::translate()}{
-	name={PShape::translate()},
-	description={Specifies an amount to displace the shape. The {\textbf x} parameter specifies left/right translation, the {\textbf y} parameter specifies up/down translation, and the {\textbf z} parameter specifies translations toward/away from the screen. Subsequent calls to the method accumulates the effect. For example, calling {\textbf translate(50, 0)} and then {\textbf translate(20, 0)} is the same as {\textbf translate(70, 0)}. This transformation is applied directly to the shape, it's not refreshed each time {\textbf draw()} is }
-}
-\newglossaryentry{PShape::width}{
-	name={PShape::width},
-	description={The width of the PShape document.}
-}
-\newglossaryentry{public}{
-	name={public},
-	description={Keyword used to provide other classes access the fields and methods within a class. The {\textbf public} keyword is used before a field or method that you want to make available. In Processing, all fields and methods are public unless otherwise specified by the {\textbf private} keyword.<}
-}
-\newglossaryentry{pushMatrix()}{
-	name={pushMatrix()},
-	description={Pushes the current transformation matrix onto the matrix stack. Understanding {\textbf pushMatrix()} and {\textbf popMatrix()} requires understanding the concept of a matrix stack. The {\textbf pushMatrix()} function saves the current coordinate system to the stack and {\textbf popMatrix()} restores the prior coordinate system. {\textbf pushMatrix()} and {\textbf popMatrix()} are used in conjuction with the other transformation methods and may be embedded to control the scope of the transformations.}
-}
-\newglossaryentry{pushStyle()}{
-	name={pushStyle()},
-	description={The {\textbf pushStyle()} function saves the current style settings and {\textbf popStyle()} restores the prior settings. Note that these functions are always used together. They allow you to change the style settings and later return to what you had. When a new style is started with {\textbf pushStyle()}, it builds on the current style information. The {\textbf pushStyle()} and {\textbf popStyle()} functions can be embedded to provide more control (see the second example above for a demonstrat}
-}
-\newglossaryentry{PVector::add()}{
-	name={PVector::add()},
-	description={Adds x, y, and z components to a vector, adds one vector to another, or adds two independent vectors together. The version of the method that adds two vectors together is a static method and returns a PVector, the others have no return value -- they act directly on the vector. See the examples for more context.}
-}
-\newglossaryentry{PVector::angleBetween()}{
-	name={PVector::angleBetween()},
-	description={Calculates and returns the angle (in radians) between two vectors.}
-}
-\newglossaryentry{PVector::array()}{
-	name={PVector::array()},
-	description={Return a representation of this vector as a float array. This is only for temporary use. If used in any other fashion, the contents should be copied by using the {\textbf PVector.get()} method to copy into your own array.}
-}
-\newglossaryentry{PVector::cross()}{
-	name={PVector::cross()},
-	description={Calculates and returns a vector composed of the cross product between two vectors.}
-}
-\newglossaryentry{PVector::dist()}{
-	name={PVector::dist()},
-	description={Calculates the Euclidean distance between two points (considering a point as a vector object).}
-}
-\newglossaryentry{PVector::div()}{
-	name={PVector::div()},
-	description={Divides a vector by a scalar or divides one vector by another.}
-}
-\newglossaryentry{PVector::dot()}{
-	name={PVector::dot()},
-	description={Calculates the dot product of two vectors.}
-}
-\newglossaryentry{PVector::get()}{
-	name={PVector::get()},
-	description={Gets a copy of the vector, returns a PVector object.}
-}
-\newglossaryentry{PVector}{
-	name={PVector},
-	description={A class to describe a two or three dimensional vector. This datatype stores two or three variables that are commonly used as a position, velocity, and/or acceleration. Technically, <em>position</em> is a point and <em>velocity</em> and <em>acceleration</em> are vectors, but this is often simplified to consider all three as vectors. For example, if you consider a rectangle moving across the screen, at any given instant it has a position (the object’s location, expressed as a point.), a velocity (the rate at which the object’s position changes per time unit, expressed as a vector), and acceleration (the rate at which the object’s velocity changes per time unit, expressed as a vector). Since vectors represent groupings of values, we cannot simply use traditional addition/multiplication/etc. Instead, we’ll need to do some "vector" math, which is made easy by the methods inside the PVector c}
-}
-\newglossaryentry{PVector::limit()}{
-	name={PVector::limit()},
-	description={Limit the magnitude of this vector to the value used for the {\textbf max} parameter.}
-}
-\newglossaryentry{PVector::mag()}{
-	name={PVector::mag()},
-	description={Calculates the magnitude (length) of the vector and returns the result as a float (this is simply the equation <em>sqrt(x*x + y*y + z*z)</em>.)}
-}
-\newglossaryentry{PVector::mult()}{
-	name={PVector::mult()},
-	description={Multiplies a vector by a scalar or multiplies one vector by another.}
-}
-\newglossaryentry{PVector::normalize()}{
-	name={PVector::normalize()},
-	description={Normalize the vector to length 1 (make it a unit vector).}
-}
-\newglossaryentry{PVector::set()}{
-	name={PVector::set()},
-	description={Sets the x, y, and z component of the vector using three separate variables, the data from a PVector, or the values from a float array.}
-}
-\newglossaryentry{PVector::sub()}{
-	name={PVector::sub()},
-	description={Subtracts x, y, and z components from a vector, subtracts one vector from another, or subtracts two independent vectors. The version of the method that substracts two vectors is a static method and returns a PVector, the others have no return value -- they act directly on the vector. See the examples for more context.}
-}
-\newglossaryentry{PVector::x}{
-	name={PVector::x},
-	description={The x component of the vector. This field (variable) can be used to both get and set the value (see above example.)}
-}
-\newglossaryentry{PVector::y}{
-	name={PVector::y},
-	description={The y component of the vector. This field (variable) can be used to both get and set the value (see above example.)}
-}
-\newglossaryentry{PVector::z}{
-	name={PVector::z},
-	description={The z component of the vector. This field (variable) can be used to both get and set the value (see above example.)}
-}
-\newglossaryentry{quad()}{
-	name={quad()},
-	description={A quad is a quadrilateral, a four sided polygon. It is similar to a rectangle, but the angles between its edges are not constrained to ninety degrees. The first pair of parameters (x1,y1) sets the first vertex and the subsequent pairs should proceed clockwise or counter-clockwise around the defined shape.}
-}
-\newglossaryentry{QUARTER_PI (0.78539...)}{
-	name={QUARTER_PI (0.78539...)},
-	description={QUARTER_PI is a mathematical constant with the value 0.7853982. It is one quarter the ratio of the circumference of a circle to its diameter. It is useful in combination with the trigonometric functions {\textbf sin()} and {\textbf cos()}.}
-}
-\newglossaryentry{radians()}{
-	name={radians()},
-	description={Converts a degree measurement to its corresponding value in radians. Radians and degrees are two ways of measuring the same thing. There are 360 degrees in a circle and 2*PI radians in a circle. For example, 90&deg; = PI/2 = 1.5707964. All trigonometric methods in Processing require their parameters to be specified in radians.}
-}
-\newglossaryentry{random()}{
-	name={random()},
-	description={Generates random numbers. Each time the {\textbf random()} function is called, it returns an unexpected value within the specified range. If one parameter is passed to the function it will return a {\textbf float} between zero and the value of the {\textbf high} parameter. The function call {\textbf random(5)} returns values between 0 and 5 (starting at zero, up to but not including 5). If two parameters are passed, it will return a {\textbf float} with a value between the the parameters. The function call {\textbf random(-5, 10.2)} returns values starting at -5 up to (but not including) 10.2. To convert a floating-point random number to an integer, use the {\textbf int()} function.}
-}
-\newglossaryentry{randomSeed()}{
-	name={randomSeed()},
-	description={Sets the seed value for {\textbf random()}. By default, {\textbf random()} produces different results each time the program is run. Set the {\textbf value} parameter to a constant to return the same pseudo-random numbers each time the software is run.}
-}
-\newglossaryentry{rect()}{
-	name={rect()},
-	description={Draws a rectangle to the screen. A rectangle is a four-sided shape with every angle at ninety degrees. By default, the first two parameters set the location of the upper-left corner, the third sets the width, and the fourth sets the height. These parameters may be changed with the {\textbf rectMode()} function.}
-}
-\newglossaryentry{rectMode()}{
-	name={rectMode()},
-	description={Modifies the location from which rectangles draw. The default mode is {\textbf rectMode(CORNER)}, which specifies the location to be the upper left corner of the shape and uses the third and fourth parameters of {\textbf rect()} to specify the width and height. The syntax {\textbf rectMode(CORNERS)} uses the first and second parameters of {\textbf rect()} to set the location of one corner and uses the third and fourth parameters to set the opposite corner. The syntax {\textbf rectMode(CENTER)} draws the image from its center point and uses the third and forth parameters of {\textbf rect()} to specify the image's width and height. The syntax {\textbf rectMode(RADIUS)} draws the image from its center point and uses the third and forth parameters of {\textbf rect()} to specify half of the image's width and height. The parameter must be written in ALL CAPS because Processing is a case sensitive language. Note: In version 125, the mode named CENTER_RADIUS was shortened to RADIUS.}
-}
-\newglossaryentry{red()}{
-	name={red()},
-	description={Extracts the red value from a color, scaled to match current {\textbf colorMode()}. This value is always returned as a  float so be careful not to assign it to an int value.The red() function is easy to use and undestand, but is slower than another technique. To achieve the same results when working in {\textbf colorMode(RGB, 255)}, but with greater speed, use the >> (right shift) operator with a bit mask. For example, the following two lines of code are equivalent:<pre>float r1 = red(myColor);float r2 = myColor >> 16 & 0xFF;</pre>}
-}
-\newglossaryentry{redraw()}{
-	name={redraw()},
-	description={Executes the code within {\textbf draw()} one time. This functions allows the program to update the display window only when necessary, for example when an event registered by {\textbf mousePressed()} or {\textbf keyPressed()} occ}
-}
-\newglossaryentry{requestImage()}{
-	name={requestImage()},
-	description={This function load images on a separate thread so that your sketch does not freeze while images load during {\textbf setup()}. While the image is loading, its width and height will be 0. If an error occurs while loading the image, its width and height will be set to -1. You'll know when the image has loaded properly because its width and height will be greater than 0. Asynchronous image loading (particularly when downloading from a server) can dramatically improve performance.<}
-}
-\newglossaryentry{resetMatrix()}{
-	name={resetMatrix()},
-	description={Replaces the current matrix with the identity matrix. The equivalent function in OpenGL is glLoadIdentity().}
-}
-\newglossaryentry{return}{
-	name={return},
-	description={Keyword used to indicate the value to return from a function. The value being returned must be the same datatype as defined in the function declaration. Functions declared with {\textbf void} can't return values and shouldn't include a return value. The keyword {\textbf return} may also be used to break out of a function thus not allowing the program to read the remaining statements (see the third example above).}
-}
-\newglossaryentry{reverse()}{
-	name={reverse()},
-	description={Reverses the order of an array.}
-}
-\newglossaryentry{>> (right shift)}{
-	name={>> (right shift)},
-	description={Shifts bits to the right. The number to the left of the operator is shifted the number of places specified by the number to the right. Each shift to the right halves the number, therefore each left shift divides the original number by 2. Use the right shift for fast divisions or to extract an individual number from a packed number. Right shifting only works with integers or numbers which automatically convert to an integer such at byte and }
-}
-\newglossaryentry{rotate()}{
-	name={rotate()},
-	description={Rotates a shape the amount specified by the {\textbf angle} parameter. Angles should be specified in radians (values from 0 to TWO_PI) or converted to radians with the {\textbf radians()} funct}
-}
-\newglossaryentry{rotateX()}{
-	name={rotateX()},
-	description={Rotates a shape around the x-axis the amount specified by the {\textbf angle} parameter. Angles should be specified in radians (values from 0 to PI*2) or converted to radians with the {\textbf radians()} function. Objects are always rotated around their relative position to the origin and positive numbers rotate objects in a counterclockwise direction. Transformations apply to everything that happens after and subsequent calls to the function accumulates the effect. For example, calling {\textbf rotateX(PI/2)} and then {\textbf rotateX(PI/2)} is the same as {\textbf rotateX(PI)}. If {\textbf rotateX()} is called within the {\textbf draw()}, the transformation is reset when the loop begins again. This function requires passing P3D or OPENGL into the size() parameter as shown in the example above.}
-}
-\newglossaryentry{rotateY()}{
-	name={rotateY()},
-	description={Rotates a shape around the y-axis the amount specified by the {\textbf angle} parameter. Angles should be specified in radians (values from 0 to PI*2) or converted to radians with the {\textbf radians()} function. Objects are always rotated around their relative position to the origin and positive numbers rotate objects in a counterclockwise direction. Transformations apply to everything that happens after and subsequent calls to the function accumulates the effect. For example, calling {\textbf rotateY(PI/2)} and then {\textbf rotateY(PI/2)} is the same as {\textbf rotateY(PI)}. If {\textbf rotateY()} is called within the {\textbf draw()}, the transformation is reset when the loop begins again. This function requires passing P3D or OPENGL into the size() parameter as shown in the example above.}
-}
-\newglossaryentry{rotateZ()}{
-	name={rotateZ()},
-	description={Rotates a shape around the z-axis the amount specified by the {\textbf angle} parameter. Angles should be specified in radians (values from 0 to PI*2) or converted to radians with the {\textbf radians()} function. Objects are always rotated around their relative position to the origin and positive numbers rotate objects in a counterclockwise direction. Transformations apply to everything that happens after and subsequent calls to the function accumulates the effect. For example, calling {\textbf rotateZ(PI/2)} and then {\textbf rotateZ(PI/2)} is the same as {\textbf rotateZ(PI)}. If {\textbf rotateZ()} is called within the {\textbf draw()}, the transformation is reset when the loop begins again. This function requires passing P3D or OPENGL into the size() parameter as shown in the example above.}
-}
-\newglossaryentry{round()}{
-	name={round()},
-	description={Calculates the integer closest to the {\textbf value} parameter. For example, {\textbf round(9.2)} returns the value 9.}
-}
-\newglossaryentry{saturation()}{
-	name={saturation()},
-	description={Extracts the saturation value from a color.}
-}
-\newglossaryentry{saveBytes()}{
-	name={saveBytes()},
-	description={Opposite of {\textbf loadBytes()}, will write an entire array of bytes to a file. The data is saved in binary format. This file is saved to the sketch's folder, which is opened by selecting "Show sketch folder" from the "Sketch" }
-}
-\newglossaryentry{saveFrame()}{
-	name={saveFrame()},
-	description={Saves a numbered sequence of images, one image each time the function is run. To save an image that is identical to the display window, run the function at the end of {\textbf draw()} or within mouse and key events such as {\textbf mousePressed()} and {\textbf keyPressed()}. If {\textbf saveFrame()} is called without parameters, it will save the files as screen-0000.tif, screen-0001.tif, etc. It is possible to specify the name of the sequence with the {\textbf filename} parameter and make the choice of saving TIFF, TARGA, PNG, or JPEG files with the {\textbf ext} parameter. These image sequences can be loaded into programs such as Apple's QuickTime software and made into movies. These files are saved to the sketch's folder, which may be opened by selecting "Show sketch folder" from the "Sketch" m}
-}
-\newglossaryentry{save()}{
-	name={save()},
-	description={Saves an image from the display window. Images are saved in TIFF, TARGA, JPEG, and PNG format depending on the extension within the {\textbf filename} parameter. For example, "image.tif" will have a TIFF image and "image.png" will save a PNG image. If no extension is included in the filename, the image will save in TIFF format and {\textbf .tif} will be added to the name. These files are saved to the sketch's folder, which may be opened by selecting "Show sketch folder" from the "Sketch" menu. It is not possible to use {\textbf save()} while running the program in a web bro}
-}
-\newglossaryentry{saveStream()}{
-	name={saveStream()},
-	description={Save the contents of a stream to a file in the sketch folder. This is basically {\textbf saveBytes(blah, loadBytes())}, but done more efficiently (and with less confusing syn}
-}
-\newglossaryentry{saveStrings()}{
-	name={saveStrings()},
-	description={Writes an array of strings to a file, one line per string. This file is saved to the sketch's folder, which is opened by selecting "Show sketch folder" from the "Sketch" }
-}
-\newglossaryentry{scale()}{
-	name={scale()},
-	description={Increases or decreases the size of a shape by expanding and contracting vertices. Objects always scale from their relative origin to the coordinate system. Scale values are specified as decimal percentages. For example, the function call {\textbf scale(2.0)} increases the dimension of a shape by 200. Transformations apply to everything that happens after and subsequent calls to the function multiply the effect. For example, calling {\textbf scale(2.0)} and then {\textbf scale(1.5)} is the same as {\textbf scale(3.0)}. If {\textbf scale()} is called within {\textbf draw()}, the transformation is reset when the loop begins again. Using this fuction with the {\textbf z} parameter requires passing P3D or OPENGL into the size() parameter as shown in the example above. This function can be further controlled by {\textbf pushMatrix()} and {\textbf popMatrix()}.}
-}
-\newglossaryentry{screen}{
-	name={screen},
-	description={System variable which stores the dimensions of the computer screen. For example, if the current screen resolution is 1024x768, {\textbf screen.width} is 1024 and {\textbf screen.height} is 768. These dimensions are useful when exporting full-screen applicati}
-}
-\newglossaryentry{screenX()}{
-	name={screenX()},
-	description={Takes a three-dimensional X, Y, Z position and returns the X value for where it will appear on a (two-dimensional) screen.}
-}
-\newglossaryentry{screenY()}{
-	name={screenY()},
-	description={Takes a three-dimensional X, Y, Z position and returns the Y value for where it will appear on a (two-dimensional) screen.}
-}
-\newglossaryentry{screenZ()}{
-	name={screenZ()},
-	description={Takes a three-dimensional X, Y, Z position and returns the Z value for where it will appear on a (two-dimensional) screen.}
-}
-\newglossaryentry{second()}{
-	name={second()},
-	description={Processing communicates with the clock on your computer. The {\textbf second()} function returns the current second as a value from 0 - 59.}
-}
-\newglossaryentry{selectFolder()}{
-	name={selectFolder()},
-	description={Opens a platform-specific file chooser dialog to select a folder for input. This function returns the full path to the selected folder as a {\textbf String}, or {\textbf null} if no selection.}
-}
-\newglossaryentry{selectInput()}{
-	name={selectInput()},
-	description={Opens a platform-specific file chooser dialog to select a file for input. This function returns the full path to the selected file as a {\textbf String}, or {\textbf null} if no selection.}
-}
-\newglossaryentry{selectOutput()}{
-	name={selectOutput()},
-	description={Open a platform-specific file save dialog to create of select a file for output. This function returns the full path to the selected file as a {\textbf String}, or {\textbf null} if no selection. If you select an existing file, that file will be replaced. Alternatively, you can navigate to a folder and create a new file to write to.}
-}
-\newglossaryentry{; (semicolon)}{
-	name={; (semicolon)},
-	description={A statement terminator which separates elements of the program. A statement is a complete instruction to the computer and the semicolon is used to separate instructions (this is similar to the period "." in written English). Semicolons are also used to separate the different elements of a {\textbf for} structure.}
-}
-\newglossaryentry{set()}{
-	name={set()},
-	description={Changes the color of any pixel or writes an image directly into the display window. The {\textbf x} and {\textbf y} parameters specify the pixel to change and the {\textbf color} parameter specifies the color value. The color parameter is affected by the current color mode (the default is RGB values from 0 to 255). When setting an image, the x and y parameters define the coordinates for the upper-left corner of the i}
-}
-\newglossaryentry{setup()}{
-	name={setup()},
-	description={Called once when the program is started. Used to define initial enviroment properties such as screen size, background color, loading images, etc. before the {\textbf draw()} begins executing. Variables declared within {\textbf setup()} are not accessible within other functions, including{\textbf draw()}. There can only be one {\textbf setup()} function for each program and it should not be called again after it's initial execution.}
-}
-\newglossaryentry{shape()}{
-	name={shape()},
-	description={Displays shapes to the screen. The shapes must be in the sketch's "data" directory to load correctly. Select "Add file..." from the "Sketch" menu to add the shape. Processing currently works with SVG shapes only. The {\textbf sh} parameter specifies the shape to display and the {\textbf x} and {\textbf y} parameters define the location of the shape from its upper-left corner. The shape is displayed at its original size unless the {\textbf width} and {\textbf height} parameters specify a different size. The {\textbf shapeMode()} function changes the way the parameters work. A call to {\textbf shapeMode(CORNERS)}, for example, will change the width and height parameters to define the x and y values of the opposite corner of the s}
-}
-\newglossaryentry{shapeMode()}{
-	name={shapeMode()},
-	description={Modifies the location from which shapes draw. The default mode is {\textbf shapeMode(CORNER)}, which specifies the location to be the upper left corner of the shape and uses the third and fourth parameters of {\textbf shape()} to specify the width and height. The syntax {\textbf shapeMode(CORNERS)} uses the first and second parameters of {\textbf shape()} to set the location of one corner and uses the third and fourth parameters to set the opposite corner. The syntax {\textbf shapeMode(CENTER)} draws the shape from its center point and uses the third and forth parameters of {\textbf shape()} to specify the width and height. The parameter must be written in "ALL CAPS" because Processing is a case sensitive language.}
-}
-\newglossaryentry{shearX()}{
-	name={shearX()},
-	description={Shears a shape around the x-axis the amount specified by the {\textbf angle} parameter. Angles should be specified in radians (values from 0 to PI*2) or converted to radians with the {\textbf radians()} function. Objects are always sheared around their relative position to the origin and positive numbers shear objects in a clockwise direction. Transformations apply to everything that happens after and subsequent calls to the function accumulates the effect. For example, calling {\textbf shearX(PI/2)} and then {\textbf shearX(PI/2)} is the same as {\textbf shearX(PI)}. If {\textbf shearX()} is called within the {\textbf draw()}, the transformation is reset when the loop begins again. This function works in P2D or JAVA2D mode as shown in the example a}
-}
-\newglossaryentry{shearY()}{
-	name={shearY()},
-	description={Shears a shape around the y-axis the amount specified by the {\textbf angle} parameter. Angles should be specified in radians (values from 0 to PI*2) or converted to radians with the {\textbf radians()} function. Objects are always sheared around their relative position to the origin and positive numbers shear objects in a clockwise direction. Transformations apply to everything that happens after and subsequent calls to the function accumulates the effect. For example, calling {\textbf shearY(PI/2)} and then {\textbf shearY(PI/2)} is the same as {\textbf shearY(PI)}. If {\textbf shearY()} is called within the {\textbf draw()}, the transformation is reset when the loop begins again. This function works in P2D or JAVA2D mode as shown in the example a}
-}
-\newglossaryentry{shininess()}{
-	name={shininess()},
-	description={Sets the amount of gloss in the surface of shapes. Used in combination with {\textbf ambient()}, {\textbf specular()}, and {\textbf emissive()} in setting the material properties of shapes.}
-}
-\newglossaryentry{shorten()}{
-	name={shorten()},
-	description={Decreases an array by one element and returns the shortened a}
-}
-\newglossaryentry{sort()}{
-	name={sort()},
-	description={Sorts an array of numbers from smallest to largest and puts an array of words in alphabetical order. The original array is not modified, a re-ordered array is returned. The {\textbf count} parameter states the number of elements to sort. For example if there are 12 elements in an array and if count is the value 5, only the first five elements on the array will be sorted. As of release 0126, the alphabetical ordering is case insensitive.}
-}
-\newglossaryentry{specular()}{
-	name={specular()},
-	description={Sets the specular color of the materials used for shapes drawn to the screen, which sets the color of hightlights. Specular refers to light which bounces off a surface in a perferred direction (rather than bouncing in all directions like a diffuse light). Used in combination with {\textbf emissive()}, {\textbf ambient()}, and {\textbf shininess()} in setting the material properties of shapes.}
-}
-\newglossaryentry{sphereDetail()}{
-	name={sphereDetail()},
-	description={Controls the detail used to render a sphere by adjusting the number of vertices of the sphere mesh. The default resolution is 30, which creates a fairly detailed sphere definition with vertices every 360/30 = 12 degrees. If you're going to render a great number of spheres per frame, it is advised to reduce the level of detail using this function. The setting stays active until {\textbf sphereDetail()} is called again with a new parameter and so should <i>not</i> be called prior to every {\textbf sphere()} statement, unless you wish to render spheres with different settings, e.g. using less detail for smaller spheres or ones further away from the camera. To control the detail of the horizontal and vertical resolution independently, use the version of the functions with two parameters.}
-}
-\newglossaryentry{sphere()}{
-	name={sphere()},
-	description={A sphere is a hollow ball made from tessellated triangles.}
-}
-\newglossaryentry{splice()}{
-	name={splice()},
-	description={Inserts a value or array of values into an existing array. The first two parameters must be of the same datatype. The {\textbf array} parameter defines the array which will be modified and the second parameter defines the data which will be inse}
-}
-\newglossaryentry{split()}{
-	name={split()},
-	description={The split() function breaks a string into pieces using a character or string as the divider. The {\textbf delim} parameter specifies the character or characters that mark the boundaries between each piece. A String[] array is returned that contains each of the pi}
-}
-\newglossaryentry{splitTokens()}{
-	name={splitTokens()},
-	description={The splitTokens() function splits a String at one or many character "tokens." The {\textbf tokens} parameter specifies the character or characters to be used as a boun}
-}
-\newglossaryentry{spotLight()}{
-	name={spotLight()},
-	description={Adds a spot light. Lights need to be included in the {\textbf draw()} to remain persistent in a looping program. Placing them in the {\textbf setup()} of a looping program will cause them to only have an effect the first time through the loop. The affect of the {\textbf v1}, {\textbf v2}, and {\textbf v3} parameters is determined by the current color mode. The {\textbf x}, {\textbf y}, and {\textbf z} parameters specify the position of the light and {\textbf nx}, {\textbf ny}, {\textbf nz} specify the direction or light. The {\textbf angle} parameter affects angle of the spotlight cone.}
-}
-\newglossaryentry{sq()}{
-	name={sq()},
-	description={Squares a number (multiplies a number by itself). The result is always a positive number, as multiplying two negative numbers always yields a positive result. For example, -1 * -1 = 1.}
-}
-\newglossaryentry{sqrt()}{
-	name={sqrt()},
-	description={Calculates the square root of a number. The square root of a number is always positive, even though there may be a valid negative root. The square root {\textbf s} of number {\textbf a} is such that {\textbf s*s = a}. It is the opposite of squaring.}
-}
-\newglossaryentry{static}{
-	name={static},
-	description={Keyword used to define a variable as a "class variable" and a method as a "class method." When a variable is declared with the {\textbf static} keyword, all instances of that class share the same variable. When a class is defined with the {\textbf static} keyword, it's methods can be used without making an instance of the class. The above examples demonstrate each of these uses.<}
-}
-\newglossaryentry{status()}{
-	name={status()},
-	description={Displays message in the browser's status area. This is the text area in the lower left corner of the browser. The {\textbf status()} function will only work when the Processing program is running in a web browser.}
-}
-\newglossaryentry{str()}{
-	name={str()},
-	description={Returns the string representation of primitive datatypes and arrays. For example the integer 3 will return the string "3", the float -12.6 will return the string "-12.6", and a boolean value true will return the string "true".}
-}
-\newglossaryentry{String::charAt()}{
-	name={String::charAt()},
-	description={Returns the character at the specified index. An index ranges from 0 to the length of the string minus 1. The first character of the sequence is at index 0, the next at index 1, etc.}
-}
-\newglossaryentry{String::equals()}{
-	name={String::equals()},
-	description={Compares two strings to see if they are the same. This method is necessary because it's not possible to compare strings using the equality operator (==). Returns {\textbf true} if the strings are the same and {\textbf false} if they are not.}
-}
-\newglossaryentry{String}{
-	name={String},
-	description={A string is a sequence of characters. The class {\textbf String} includes methods for examining individual characters, comparing strings, searching strings, extracting parts of strings, and for converting an entire string uppercase and lowercase. Strings are always defined inside double quotes ("Abc") and characters are always defined inside single quotes('}
-}
-\newglossaryentry{String::indexOf()}{
-	name={String::indexOf()},
-	description={Tests to see if a substring is embedded in a string and returns the index position of the first occurance of the substring defined in the {\textbf str} parameter. If the {\textbf str} parameter is not found in the string, -1 is returned.}
-}
-\newglossaryentry{String::length()}{
-	name={String::length()},
-	description={Returns the total number of characters included in the {\textbf String} as an integer nu}
-}
-\newglossaryentry{String::substring()}{
-	name={String::substring()},
-	description={Returns a new string that is a part of the original string. When using the {\textbf endIndex} parameter, the string between {\textbf beginIndex} and {\textbf endIndex}-1 is returned.}
-}
-\newglossaryentry{String::toLowerCase()}{
-	name={String::toLowerCase()},
-	description={Converts all of the characters in the string to lowercase. For example, "ABC" will convert to "abc".}
-}
-\newglossaryentry{String::toUpperCase()}{
-	name={String::toUpperCase()},
-	description={Converts all of the characters in the string to uppercase. For example, "abc" will convert to "ABC".}
-}
-\newglossaryentry{strokeCap()}{
-	name={strokeCap()},
-	description={Sets the style for rendering line endings. These ends are either squared, extended, or rounded and specified with the corresponding parameters SQUARE, PROJECT, and ROUND. The default cap is RO}
-}
-\newglossaryentry{stroke()}{
-	name={stroke()},
-	description={Sets the color used to draw lines and borders around shapes. This color is either specified in terms of the RGB or HSB color depending on the current {\textbf colorMode()} (the default color space is RGB, with each value in the range from 0 to 2}
-}
-\newglossaryentry{strokeJoin()}{
-	name={strokeJoin()},
-	description={Sets the style of the joints which connect line segments. These joints are either mitered, beveled, or rounded and specified with the corresponding parameters MITER, BEVEL, and ROUND. The default joint is MI}
-}
-\newglossaryentry{strokeWeight()}{
-	name={strokeWeight()},
-	description={Sets the width of the stroke used for lines, points, and the border around shapes. All widths are set in units of pix}
-}
-\newglossaryentry{subset()}{
-	name={subset()},
-	description={Extracts an array of elements from an existing array. The {\textbf array} parameter defines the array from which the elements will be copied and the {\textbf offset} and {\textbf length} parameters determine which elements to extract. If no {\textbf length} is given, elements will be extracted from the {\textbf offset} to the end of the array. When specifying the {\textbf offset} remember the first array element is 0. This function does not change the source a}
-}
-\newglossaryentry{-= (subtract assign)}{
-	name={-= (subtract assign)},
-	description={Combines subtraction with assignment. The expression {\textbf a -= b} is equivalent to {\textbf a = a - b}.}
-}
-\newglossaryentry{super}{
-	name={super},
-	description={Keyword used to reference the superclass of a subclass.}
-}
-\newglossaryentry{switch()}{
-	name={switch()},
-	description={Works like an {\textbf if else} structure, but {\textbf switch()} is more convenient when you need to select between three or more alternatives. Program controls jumps to the case with the same value as the expression. All remaining statements in the switch are executed unless redirected by a {\textbf break}. Only primitive datatypes which can convert to an integer (byte, char, and int) may be used as the {\textbf expression} parameter. The default is optional.}
-}
-\newglossaryentry{tan()}{
-	name={tan()},
-	description={Calculates the ratio of the sine and cosine of an angle. This function expects the values of the {\textbf angle} parameter to be provided in radians (values from 0 to PI*2). Values are returned in the range {\textbf infinity} to {\textbf -infinity}.}
-}
-\newglossaryentry{textAlign()}{
-	name={textAlign()},
-	description={Sets the current alignment for drawing text. The parameters LEFT, CENTER, and RIGHT set the display characteristics of the letters in relation to the values for the {\textbf x} and {\textbf y} parameters of the {\textbf text()} func}
-}
-\newglossaryentry{textAscent()}{
-	name={textAscent()},
-	description={Returns ascent of the current font at its current size. This information is useful for determining the height of the font above the baseline. For example, adding the {\textbf textAscent()} and {\textbf textDescent()} values will give you the total height of the line.}
-}
-\newglossaryentry{textDescent()}{
-	name={textDescent()},
-	description={Returns descent of the current font at its current size. This information is useful for determining the height of the font below the baseline. For example, adding the {\textbf textAscent()} and {\textbf textDescent()} values will give you the total height of the line.}
-}
-\newglossaryentry{textFont()}{
-	name={textFont()},
-	description={Sets the current font that will be drawn with the {\textbf text()} function. Fonts must be loaded with {\textbf loadFont()} before it can be used. This font will be used in all subsequent calls to the {\textbf text()} function. If no {\textbf size} parameter is input, the font will appear at its original size (the size it was created at with the "Create Font..." tool) until it is changed with {\textbf textSize()}.  Because fonts are usually bitmaped, you should create fonts at the sizes that will be used most commonly. Using {\textbf textFont()} without the size parameter will result in the cleanest-looking text.  With the default (JAVA2D) and PDF renderers, it's also possible to enable the use of native fonts via the command {\textbf hint(ENABLE_NATIVE_FONTS)}. This will produce vector text in JAVA2D sketches and PDF output in cases where the vector data is available: when the font is still installed, or the font is created via the {\textbf createFont()} function (rather than the Create Font tool).}
-}
-\newglossaryentry{text()}{
-	name={text()},
-	description={Draws text to the screen. Displays the information specified in the {\textbf data} or {\textbf stringdata} parameters on the screen in the position specified by the {\textbf x} and {\textbf y} parameters and the optional {\textbf z} parameter. A default font will be used unless a font is set with the {\textbf textFont()} function. Change the color of the text with the {\textbf fill()} function. The text displays in relation to the {\textbf textAlign()} function, which gives the option to draw to the left, right, and center of the coordina}
-}
-\newglossaryentry{textLeading()}{
-	name={textLeading()},
-	description={Sets the spacing between lines of text in units of pixels. This setting will be used in all subsequent calls to the {\textbf text()} function.}
-}
-\newglossaryentry{textMode()}{
-	name={textMode()},
-	description={Sets the way text draws to the screen. In the default configuration (the MODEL mode), it's possible to rotate, scale, and place letters in two and three dimensional sp}
-}
-\newglossaryentry{textSize()}{
-	name={textSize()},
-	description={Sets the current font size. This size will be used in all subsequent calls to the {\textbf text()} function. Font size is measured in units of pixels.}
-}
-\newglossaryentry{texture()}{
-	name={texture()},
-	description={Sets a texture to be applied to vertex points. The {\textbf texture()} function must be called between {\textbf beginShape()} and {\textbf endShape()} and before any calls to {\textbf vertex()}
-}
-\newglossaryentry{textureMode()}{
-	name={textureMode()},
-	description={Sets the coordinate space for texture mapping. There are two options, IMAGE, which refers to the actual coordinates of the image, and NORMALIZED, which refers to a normalized space of values ranging from 0 to 1. The default mode is IMAGE. In IMAGE, if an image is 100 x 200 pixels, mapping the image onto the entire size of a quad would require the points (0,0) (0,100) (100,200) (0,200). The same mapping in NORMAL_SPACE is (0,0) (0,1) (1,1) (0,1).}
-}
-\newglossaryentry{textWidth()}{
-	name={textWidth()},
-	description={Calculates and returns the width of any character or text string.}
-}
-\newglossaryentry{this}{
-	name={this},
-	description={Refers to the current object (i.e. "this object"). In Processing, it's most common to use {\textbf this} to pass a reference from the current object into one of the libraries. The keyword {\textbf this} can also be used in another way, but it is often not necessay. For example, if you are calling the {\textbf filter()} method of a {\textbf PImage} object named {\textbf tree} from another object, you would write {\textbf tree.filter()}. To call this method inside PImage itself one could simply write {\textbf filter()} or could more explicity write {\textbf this.filter()}. It's not incorrect to say {\textbf this.filter()} but it is not necessary as this is always implied.}
-}
-\newglossaryentry{tint()}{
-	name={tint()},
-	description={Sets the fill value for displaying images. Images can be tinted to specified colors or made transparent by setting the al}
-}
-\newglossaryentry{translate()}{
-	name={translate()},
-	description={Specifies an amount to displace objects within the display window. The {\textbf x} parameter specifies left/right translation, the {\textbf y} parameter specifies up/down translation, and the {\textbf z} parameter specifies translations toward/away from the screen. Using this function with the {\textbf z} parameter requires using the P3D or OPENGL parameter in combination with size as shown in the above example. Transformations apply to everything that happens after and subsequent calls to the function accumulates the effect. For example, calling {\textbf translate(50, 0)} and then {\textbf translate(20, 0)} is the same as {\textbf translate(70, 0)}. If {\textbf translate()} is called within {\textbf draw()}, the transformation is reset when the loop begins again. This function can be further controlled by the {\textbf pushMatrix()} and {\textbf popMatrix()}.}
-}
-\newglossaryentry{triangle()}{
-	name={triangle()},
-	description={A triangle is a plane created by connecting three points. The first two arguments specify the first point, the middle two arguments specify the second point, and the last two arguments specify the third point.}
-}
-\newglossaryentry{trim()}{
-	name={trim()},
-	description={Removes whitespace characters from the beginning and end of a String. In addition to standard whitespace characters such as space, carriage return, and tab, this function also removes the Unicode "nbsp" character.}
-}
-\newglossaryentry{true}{
-	name={true},
-	description={Reserved word representing the logical value "true". Only variables of type {\textbf boolean} may be assigned the value {\textbf true}.}
-}
-\newglossaryentry{try}{
-	name={try},
-	description={The {\textbf try} keyword is used with {\textbf catch} to handle exceptions. Sun's Java documentation defines an exception as "an event, which occurs during the execution of a program, that disrupts the normal flow of the program's instructions." This could be, for example, an error while a file is read.}
-}
-\newglossaryentry{TWO_PI (6.28318...)}{
-	name={TWO_PI (6.28318...)},
-	description={TWO_PI is a mathematical constant with the value 6.28318530717958647693. It is twice the ratio of the circumference of a circle to its diameter. It is useful in combination with the trigonometric functions {\textbf sin()} and {\textbf cos()}.}
-}
-\newglossaryentry{unbinary()}{
-	name={unbinary()},
-	description={Converts a String representation of a binary number to its equivalent integer value. For example, unbinary("00001000") will return 8.}
-}
-\newglossaryentry{unhex()}{
-	name={unhex()},
-	description={Converts a String representation of a hexadecimal number to its equivalent integer value.}
-}
-\newglossaryentry{updatePixels()}{
-	name={updatePixels()},
-	description={Updates the display window with the data in the {\textbf pixels[]} array. Use in conjunction with {\textbf loadPixels()}. If you're only reading pixels from the array, there's no need to call {\textbf updatePixels()} unless there are cha}
-}
-\newglossaryentry{void}{
-	name={void},
-	description={Keyword used indicate a function returns no value. Each function must either return a value of a specific datatype or use the keyword {\textbf void} to specify it returns nothing.}
-}
-\newglossaryentry{while}{
-	name={while},
-	description={Controls a sequence of repetitions. The {\textbf while} structure executes a series of statements continuously while the {\textbf expression} is {\textbf true}. The expression must be updated during the repetitions or the program will never "break out" of {\textbf while}
-}
-\newglossaryentry{width}{
-	name={width},
-	description={System variable which stores the width of the display window. This value is set by the first parameter of the {\textbf size()} function. For example, the function call {\textbf size(320, 240)} sets the {\textbf width} variable to the value 320. The value of {\textbf width} is zero until {\textbf size()} is called.}
-}
-\newglossaryentry{XMLElement::getChildCount()}{
-	name={XMLElement::getChildCount()},
-	description={Returns the number of children for the element.}
-}
-\newglossaryentry{XMLElement::getChild()}{
-	name={XMLElement::getChild()},
-	description={Returns the child XMLElement as specified by the {\textbf index} parameter. The value of the {\textbf index} parameter must be less than the total number of children to avoid going out of the array storing the child elem}
-}
-\newglossaryentry{XMLElement::getChildren()}{
-	name={XMLElement::getChildren()},
-	description={Returns all of the children as an XMLElement a}
-}
-\newglossaryentry{XMLElement::getContent()}{
-	name={XMLElement::getContent()},
-	description={Returns the content of an element. If there is no such content, {\textbf null} is returned.}
-}
-\newglossaryentry{XMLElement::getFloat()}{
-	name={XMLElement::getFloat()},
-	description={Returns a float attribute of the element. If the {\textbf default} parameter is used and the attribute doesn't exist, the {\textbf default} value is returned. When using the version of the method without the {\textbf default} parameter, if the attribute doesn't exist, the value 0 is returned.}
-}
-\newglossaryentry{XMLElement::getInt()}{
-	name={XMLElement::getInt()},
-	description={Returns an integer attribute of the element. If the {\textbf default} parameter is used and the attribute doesn't exist, the {\textbf default} value is returned. When using the version of the method without the {\textbf default} parameter, if the attribute doesn't exist, the value 0 is returned.}
-}
-\newglossaryentry{XMLElement::getName()}{
-	name={XMLElement::getName()},
-	description={Returns the name of the element.}
-}
-\newglossaryentry{XMLElement::getString()}{
-	name={XMLElement::getString()},
-	description={Returns a String attribute of the element. If the {\textbf default} parameter is used and the attribute doesn't exist, the {\textbf default} value is returned. When using the version of the method without the {\textbf default} parameter, if the attribute doesn't exist, the value 0 is returned.}
-}
-\newglossaryentry{XMLElement}{
-	name={XMLElement},
-	description={XMLElement is a representation of an XML object. The object is able to parse XML code. The methods described here are the most basic. More are documented in the Developer's Refer}
-}
-\newglossaryentry{year()}{
-	name={year()},
-	description={Processing communicates with the clock on your computer. The {\textbf year()} function returns the current year as an integer (2003, 2004, 2005, etc).}
+	description={Počítá hodnotu kosinu z úhlu. Tato funkce očekává parametr vyjadřující úhel, parametr může být v rozsahu od $0$ do $\pi*2$. Hodnoty se pak pohybují mezi $-1$ do $1$.}
 }
