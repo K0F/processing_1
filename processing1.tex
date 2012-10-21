@@ -31,7 +31,7 @@
 \frenchspacing
 
 \definecolor{bublina1}{rgb}{0.95,0.95,0.95} % for strings
-\definecolor{odkaz}{rgb}{0.03,0.25,0.77} % comments
+\definecolor{odkaz}{rgb}{0.5,0.5,0.5} % comments
 \usepackage[dvips]{hyperref}
 
 \hypersetup{
@@ -72,7 +72,7 @@
 
 \usepackage{marginnote}
 \usepackage[textsize=footnotesize,textwidth=1.6cm]{todonotes}
-\setlength{\marginparwidth}{1.6cm}
+\setlength{\marginparwidth}{1.9cm}
 
 \newcommand{\oddil}[1]{\section{#1}\index{#1}\label{#1}}
 \newcommand{\pododdil}[1]{\subsection{#1}\index{#1}\label{#1}}
@@ -120,7 +120,7 @@
 \setmainfont{Liberation Sans}%Liberation Serif}
 %\setmainfont{Liberation Serif} %URW Gothic L,DejaVu Sans,Georgia,Jumpcrew Cologne,Libertinage,LMSans12, Nimbus Sans L
 \setmainfont[Mapping=tex-text,Ligatures={Common},BoldFont={* Bold}, ItalicFont={* Italic},Numbers={OldStyle}]{Liberation Serif}
-\setsansfont[Scale=1,Mapping=tex-text,Ligatures={Common,Rare},Numbers={OldStyle}]{Teuton Weiss}
+\setsansfont[Scale=1,Mapping=tex-text,Ligatures={Common,Rare},Numbers={OldStyle}]{Casper}
 \setmonofont{Monaco}
 
 
@@ -173,7 +173,6 @@
 
 
 \thispagestyle{empty}
-\newpage
 \oddil{Poděkování}
 Zde bych rád poděkoval všem lidem, kteří se různou měrou podíleli na vzniku této publikace. Nejprve Tomáši Pospiszylovi, vedoucímu této práce, za neúnavný dohled nad podobou následujícího textu.
 
@@ -313,7 +312,7 @@ Pomocí Cvičení a otázek si můžete kontrolovat v průběhu textu nabyté in
 
 \chapter{Vytvořeno Processingem}
 
-\oddil{Vizualizace}
+\oddil{Krajiny a světy}
 
 \textbf{Robert Hogin}, také známý pod pseudonymem {\em flight 404}, zůstává jednou z oslavovaných ikon processingové komunity. Jeho práce s vizualizacemi je vždy velmi dynamická a technicky obdivuhodná.
 
@@ -329,7 +328,9 @@ Ilustrace pochází z Hodginovi grafické práce, která byla vybrána jako jedn
 Tato kniha je kurátorským projektem a samostatným výtvarným počinem dánského tvůrce \textbf{Marcina Ignace}. První výtisk knihy byl vydán v roce 2011. Samotná kniha je v podstatě konceptuálním dílem, automatizací vychází každý výtisk s posunem o jedno okénko, a tím ilustruje ducha generativní tvorby. Kniha samotná je také zpracována softwarem Processing. \vfill
 
 \begin{centering}
-\includegraphics[width = 1\textwidth]{imgs/writtenimages.png}
+%\includegraphics[width = 1\textwidth]{imgs/writtenimages.png}
+\includegraphics[width = 1\textwidth]{imgs/neznamy.png}
+
 \end{centering}
 
 Kniha obsahuje generativní obrazy následujících umělců:
@@ -344,7 +345,9 @@ Kniha obsahuje generativní obrazy následujících umělců:
 
 
 \begin{center}
-\includegraphics[width = 1\textwidth]{imgs/facade-1.png}
+%\includegraphics[width = 1\textwidth]{imgs/facade-1.png}
+\includegraphics[width = 1\textwidth]{imgs/neznamy.png}
+
 \end{center}
 
 
@@ -352,7 +355,9 @@ Karsten Schmidt působí v komunitě Processingu dlouhodobě a je více známý 
 
 
 \begin{center}
-\includegraphics[width = 0.5\textwidth]{imgs/facade-3.png}\includegraphics[width = 0.5\textwidth]{imgs/facade-5.png}
+%\includegraphics[width = 0.5\textwidth]{imgs/facade-3.png}\includegraphics[width = 0.5\textwidth]{imgs/facade-5.png}
+\includegraphics[width = 0.5\textwidth]{imgs/neznamy.png}\includegraphics[width = 0.5\textwidth]{imgs/neznamy.png}
+
 
 \end{center}
 
@@ -364,7 +369,9 @@ Schmidtova práce vyniká zejména pro možnost recyklovatelnosti a další uži
 
 
 \begin{center}
-\includegraphics[width = 1\textwidth]{imgs/facade-7.png}
+%\includegraphics[width = 1\textwidth]{imgs/facade-7.png}
+\includegraphics[width = 1\textwidth]{imgs/neznamy.png}
+
 \end{center}
 
 
@@ -446,6 +453,8 @@ Knihy jsou cenově vcelku dostupné a dají se opatřit přes internet. Rozhodn�
 \oddil{Experiment}
 
 Nejdůležitějším zdrojem vašich vlastních zkušeností bude vždy samotné experimentování s programováním. Na tuto část kladu největší důraz a v průběhu této knihy to i několikrát zopakuji, je vždy dobré odložit knihy a reference a pustit se do neznámých vod. Zkušenost, kterou takto naberete, bude vždy ta nejhodnotnější. Nebojte se proto sami experimentovat \odkaz{Empirický přístup k programování}. \bublina{Příštích několik kapitol se věnuje obecnějším úvahám o programovacích jazycích, již nyní si můžete Processing nainstalovat.}
+
+%\part{Programovací jazyky}
 
 \chapter{K čemu slouží programovací jazyk?}
 
@@ -691,7 +700,6 @@ Naopak v případě názvu proměnných nebo jakýchkoli funkčních definic je 
 * značí klávesu \klavesy{CTRL} PC a \klavesy{APPLE} na Mac.
 
 
-\part{Processing jako jazyk}
 
 \oddil{Soustředěná činnost}
 
@@ -709,6 +717,9 @@ Pokaždé, když si programátor takový stav přivodí, vše v kódu\footnote{p
 
 V programování obecně platí jisté zákonitosti. Není tomu jinak ani u pravidel, které nejsou důležité pro čtení kódu strojem, ale spíše pro člověka. Speciální zákonitosti formátování kódu mají ryze praktickou funkci. Jedná se o standard dodržovaný programátory, tak aby byli schopni sdílet své úsilí. \bublina{Otevřte některý z příkladů z lišty file > examples, a letmo se seznamte s kódem. I když mu nebudete rozumět, podívejte se jaké znaménka a barvy se v kódu opakují atd.}
   
+
+\chapter{Stavba programu a syntax}
+
   
 \oddil{Logika programování}
 Pro začátek je dobré si představit program jako sadu instrukcí. Každá instrukce má svůj význam a své místo. Instrukce se píší v programovacím jazyku a jejich interpretace je vždy pro stroj jednoznačná. Stroje podle svého návrhu nedělají nic, kromě toho, co mají takto instruováno.
@@ -719,8 +730,8 @@ Počítač je pouhý stroj. Umí opravdu rychle vykonávat sled banálních oper
 
 O kompilaci toho nemusíme naštěstí vědět mnoho, vše bylo již tvůrci Processingu a jazyku Java shrnuto pod tlačítko spustit.\bublina{Budete-li mít otevřený nějaký kód z examples, zkuste ho nyní spustit, uvidíte, jak se program chová. Vyzkoušejte několik příkladů.}
 
-\newpage
-\part{Stavba programu a syntax}
+
+%\part{Stavba programu a syntax}
 
 
 
@@ -3302,10 +3313,9 @@ Výsledkem bude záznam pohybu myši, který může vypadat následovně:
 \includegraphics[width = 0.75\textwidth]{imgs/viz.png}
 \end{center}
 
-Za povšimnutí zde stojí konstrukce linky \vyraz{line()}, která vždy spojuje koordináty z předchozího místa v našem poli s hodnotami současnými pomocí {\em [i-1]}.
-
 \bublina{Zkuste jiné hodnoty než pohyb myši, experimentujte s jinými způsoby zobrazení.}
 
+Za povšimnutí zde stojí konstrukce linky \vyraz{line()}, která vždy spojuje koordináty z předchozího místa v našem poli s hodnotami současnými pomocí šikovného posunu o jednu pozici vzad {\em [i-1]}.
 
 \chapter{Rozšíření Processingu}
 \oddil{Knihovny}

@@ -6,7 +6,7 @@
 \indexentry {Pravidla formátování v knize}{11}
 \indexentry {slovník}{11}
 \indexentry {boolean}{11}
-\indexentry {Vizualizace}{13}
+\indexentry {Krajiny a světy}{13}
 \indexentry {Toxilibs}{16}
 \indexentry {Toxilibs}{16}
 \indexentry {Karsten Schmidt}{17}
@@ -51,318 +51,318 @@
 \indexentry {syntax highlighting}{43}
 \indexentry {indenting}{43}
 \indexentry {Klávesové zkratky}{44}
-\indexentry {Soustředěná činnost}{47}
-\indexentry {flow}{47}
-\indexentry {Základní pravidla a zvyklosti}{47}
-\indexentry {Logika programování}{48}
-\indexentry {Kometář}{51}
-\indexentry {komentáře v kódu}{51}
-\indexentry {Základní datatypy}{51}
-\indexentry {Seznam základních datatypů}{52}
-\indexentry {Datatypy}{52}
-\indexentry {Barva}{53}
-\indexentry {color()}{53}
-\indexentry {colorMode()}{53}
-\indexentry {Tisk do konzole}{53}
-\indexentry {Konzole}{53}
-\indexentry {print()}{54}
-\indexentry {Chybové hlášení}{55}
-\indexentry {Základní operace s datatypy}{55}
-\indexentry {Práce s textem}{58}
-\indexentry {boolean}{59}
-\indexentry {Základní struktura programu}{60}
-\indexentry {funkce setup() a draw()}{60}
-\indexentry {setup()}{60}
-\indexentry {draw()}{60}
-\indexentry {setup()}{60}
-\indexentry {draw()}{60}
-\indexentry {draw()}{60}
-\indexentry {void}{60}
-\indexentry {Zobrazení}{61}
-\indexentry {Orientace v prostoru}{61}
-\indexentry {Prostor}{61}
-\indexentry {Hodnota a její zobrazení}{64}
-\indexentry {Kresba}{65}
-\indexentry {rect()}{65}
-\indexentry {Tvary 2D}{66}
-\indexentry {rect()}{66}
-\indexentry {point()}{66}
-\indexentry {line()}{66}
-\indexentry {ellipse()}{66}
-\indexentry {triangle()}{66}
-\indexentry {quad()}{66}
-\indexentry {Výplň a obrys}{66}
-\indexentry {point()}{66}
-\indexentry {line()}{66}
-\indexentry {fill()}{66}
-\indexentry {fill()}{67}
-\indexentry {noFill()}{67}
-\indexentry {noFill()}{67}
-\indexentry {stroke()}{67}
-\indexentry {noStroke()}{67}
-\indexentry {Pohyb}{68}
-\indexentry {Proměnlivost}{68}
-\indexentry {Animace}{70}
-\indexentry {draw()}{70}
-\indexentry {draw()}{70}
-\indexentry {draw()}{70}
-\indexentry {background()}{70}
-\indexentry {rect()}{70}
-\indexentry {frameCount}{71}
-\indexentry {frameCount}{71}
-\indexentry {draw()}{71}
-\indexentry {frameRate()}{71}
-\indexentry {setup()}{71}
-\indexentry {frameCount}{71}
-\indexentry {millis()}{72}
-\indexentry {Časování}{72}
-\indexentry {Dynamika pohybu}{72}
-\indexentry {Nelineární pohyb}{73}
-\indexentry {Podmínka}{73}
-\indexentry {if}{74}
+\indexentry {Soustředěná činnost}{44}
+\indexentry {flow}{45}
+\indexentry {Základní pravidla a zvyklosti}{45}
+\indexentry {Logika programování}{47}
+\indexentry {Kometář}{48}
+\indexentry {komentáře v kódu}{48}
+\indexentry {Základní datatypy}{48}
+\indexentry {Seznam základních datatypů}{49}
+\indexentry {Datatypy}{49}
+\indexentry {Barva}{50}
+\indexentry {color()}{50}
+\indexentry {colorMode()}{50}
+\indexentry {Tisk do konzole}{50}
+\indexentry {Konzole}{50}
+\indexentry {print()}{51}
+\indexentry {Chybové hlášení}{52}
+\indexentry {Základní operace s datatypy}{52}
+\indexentry {Práce s textem}{55}
+\indexentry {boolean}{56}
+\indexentry {Základní struktura programu}{57}
+\indexentry {funkce setup() a draw()}{57}
+\indexentry {setup()}{57}
+\indexentry {draw()}{57}
+\indexentry {setup()}{57}
+\indexentry {draw()}{57}
+\indexentry {draw()}{57}
+\indexentry {void}{57}
+\indexentry {Zobrazení}{58}
+\indexentry {Orientace v prostoru}{58}
+\indexentry {Prostor}{58}
+\indexentry {Hodnota a její zobrazení}{61}
+\indexentry {Kresba}{62}
+\indexentry {rect()}{62}
+\indexentry {Tvary 2D}{63}
+\indexentry {rect()}{63}
+\indexentry {point()}{63}
+\indexentry {line()}{63}
+\indexentry {ellipse()}{63}
+\indexentry {triangle()}{63}
+\indexentry {quad()}{63}
+\indexentry {Výplň a obrys}{63}
+\indexentry {point()}{63}
+\indexentry {line()}{63}
+\indexentry {fill()}{63}
+\indexentry {fill()}{64}
+\indexentry {noFill()}{64}
+\indexentry {noFill()}{64}
+\indexentry {stroke()}{64}
+\indexentry {noStroke()}{64}
+\indexentry {Pohyb}{65}
+\indexentry {Proměnlivost}{65}
+\indexentry {Animace}{67}
+\indexentry {draw()}{67}
+\indexentry {draw()}{67}
+\indexentry {draw()}{67}
+\indexentry {background()}{67}
+\indexentry {rect()}{67}
+\indexentry {frameCount}{68}
+\indexentry {frameCount}{68}
+\indexentry {draw()}{68}
+\indexentry {frameRate()}{68}
+\indexentry {setup()}{68}
+\indexentry {frameCount}{68}
+\indexentry {millis()}{69}
+\indexentry {Časování}{69}
+\indexentry {Dynamika pohybu}{69}
+\indexentry {Nelineární pohyb}{70}
+\indexentry {Podmínka}{70}
+\indexentry {if}{71}
+\indexentry {boolean}{71}
+\indexentry {true}{71}
+\indexentry {false}{71}
+\indexentry {boolean}{71}
+\indexentry {else}{71}
+\indexentry {if}{71}
+\indexentry {else}{71}
+\indexentry {if}{71}
+\indexentry {if}{71}
+\indexentry {true}{71}
+\indexentry {true}{72}
+\indexentry {false}{72}
 \indexentry {boolean}{74}
-\indexentry {true}{74}
 \indexentry {false}{74}
-\indexentry {boolean}{74}
-\indexentry {else}{74}
-\indexentry {if}{74}
-\indexentry {else}{74}
-\indexentry {if}{74}
-\indexentry {if}{74}
 \indexentry {true}{74}
-\indexentry {true}{75}
-\indexentry {false}{75}
-\indexentry {boolean}{77}
-\indexentry {false}{77}
-\indexentry {true}{77}
-\indexentry {boolean}{77}
-\indexentry {if}{78}
-\indexentry {else}{78}
-\indexentry {else}{78}
-\indexentry { ? : }{78}
-\indexentry {Interakce}{79}
-\indexentry {interakce}{79}
-\indexentry {interakce}{79}
-\indexentry {mouseX}{80}
-\indexentry {mouseY}{80}
-\indexentry {mousePressed()}{80}
-\indexentry {mousePressed()}{81}
-\indexentry {setup()}{82}
-\indexentry {draw()}{82}
-\indexentry {mouseButton}{82}
-\indexentry {key}{82}
-\indexentry {keyCode}{82}
-\indexentry {keyPressed()}{82}
-\indexentry {keyReleased()}{82}
-\indexentry {key}{82}
-\indexentry {keyCode}{82}
-\indexentry {key}{82}
-\indexentry {keyCode}{82}
-\indexentry {CODED}{83}
-\indexentry {keyCode}{83}
-\indexentry {println()}{83}
-\indexentry {Pole}{83}
-\indexentry {new}{85}
-\indexentry {Smyčka}{85}
-\indexentry {for}{86}
-\indexentry {Uspořádání struktura programu}{88}
-\indexentry {void}{88}
-\indexentry {Funkce}{88}
-\indexentry {void}{88}
-\indexentry {setup()}{88}
-\indexentry {draw()}{88}
-\indexentry {draw()}{89}
-\indexentry {rect()}{89}
-\indexentry {rect()}{89}
-\indexentry {boolean}{90}
-\indexentry {return}{90}
-\indexentry {true}{90}
-\indexentry {false}{90}
-\indexentry {Funkce a jejich datatypy}{92}
-\indexentry {void}{92}
-\indexentry {void}{92}
-\indexentry {return}{92}
-\indexentry {return}{92}
-\indexentry {void}{92}
-\indexentry {float}{92}
-\indexentry {draw()}{93}
-\indexentry {Třída a objekt}{93}
-\indexentry {class}{95}
-\indexentry {class}{96}
-\indexentry {new}{96}
-\indexentry {new}{96}
-\indexentry {new}{96}
-\indexentry {Práce s objekty}{96}
+\indexentry {boolean}{74}
+\indexentry {if}{75}
+\indexentry {else}{75}
+\indexentry {else}{75}
+\indexentry { ? : }{75}
+\indexentry {Interakce}{76}
+\indexentry {interakce}{76}
+\indexentry {interakce}{76}
+\indexentry {mouseX}{77}
+\indexentry {mouseY}{77}
+\indexentry {mousePressed()}{77}
+\indexentry {mousePressed()}{78}
+\indexentry {setup()}{79}
+\indexentry {draw()}{79}
+\indexentry {mouseButton}{79}
+\indexentry {key}{79}
+\indexentry {keyCode}{79}
+\indexentry {keyPressed()}{79}
+\indexentry {keyReleased()}{79}
+\indexentry {key}{79}
+\indexentry {keyCode}{79}
+\indexentry {key}{79}
+\indexentry {keyCode}{79}
+\indexentry {CODED}{80}
+\indexentry {keyCode}{80}
+\indexentry {println()}{80}
+\indexentry {Pole}{80}
+\indexentry {new}{82}
+\indexentry {Smyčka}{82}
+\indexentry {for}{83}
+\indexentry {Uspořádání struktura programu}{85}
+\indexentry {void}{85}
+\indexentry {Funkce}{85}
+\indexentry {void}{85}
+\indexentry {setup()}{85}
+\indexentry {draw()}{85}
+\indexentry {draw()}{86}
+\indexentry {rect()}{86}
+\indexentry {rect()}{86}
+\indexentry {boolean}{87}
+\indexentry {return}{87}
+\indexentry {true}{87}
+\indexentry {false}{87}
+\indexentry {Funkce a jejich datatypy}{89}
+\indexentry {void}{89}
+\indexentry {void}{89}
+\indexentry {return}{89}
+\indexentry {return}{89}
+\indexentry {void}{89}
+\indexentry {float}{89}
+\indexentry {draw()}{90}
+\indexentry {Třída a objekt}{90}
+\indexentry {class}{92}
+\indexentry {class}{93}
+\indexentry {new}{93}
+\indexentry {new}{93}
+\indexentry {new}{93}
+\indexentry {Práce s objekty}{93}
+\indexentry {random()}{95}
+\indexentry {draw()}{96}
+\indexentry {Náhoda}{97}
+\indexentry {random()}{97}
+\indexentry {random()}{97}
+\indexentry {Šum}{98}
 \indexentry {random()}{98}
-\indexentry {draw()}{99}
-\indexentry {Náhoda}{100}
-\indexentry {random()}{100}
-\indexentry {random()}{100}
-\indexentry {Šum}{101}
-\indexentry {random()}{101}
-\indexentry {noise()}{101}
-\indexentry {noise()}{102}
-\indexentry {noise()}{102}
-\indexentry {frameCount}{102}
-\indexentry {Renderovací módy}{103}
-\indexentry {import}{104}
-\indexentry {setup()}{104}
-\indexentry {size()}{104}
-\indexentry {3D zobrazení}{104}
-\indexentry {point()}{104}
-\indexentry {line()}{104}
-\indexentry {Kamera}{105}
-\indexentry {camera()}{105}
-\indexentry {camera()}{106}
-\indexentry {setup()}{107}
-\indexentry {3D objekty}{107}
-\indexentry {box()}{107}
-\indexentry {box()}{107}
-\indexentry {sphere()}{107}
-\indexentry {line()}{107}
-\indexentry {sphereDetail()}{107}
-\indexentry {sphereDetail()}{107}
-\indexentry {vertex()}{108}
-\indexentry {beginShape()}{108}
-\indexentry {endShape()}{108}
-\indexentry {Transformace}{109}
-\indexentry {translate()}{109}
+\indexentry {noise()}{98}
+\indexentry {noise()}{99}
+\indexentry {noise()}{99}
+\indexentry {frameCount}{99}
+\indexentry {Renderovací módy}{101}
+\indexentry {import}{102}
+\indexentry {setup()}{102}
+\indexentry {size()}{102}
+\indexentry {3D zobrazení}{102}
+\indexentry {point()}{102}
+\indexentry {line()}{102}
+\indexentry {Kamera}{103}
+\indexentry {camera()}{103}
+\indexentry {camera()}{104}
+\indexentry {setup()}{105}
+\indexentry {3D objekty}{105}
+\indexentry {box()}{105}
+\indexentry {box()}{105}
+\indexentry {sphere()}{105}
+\indexentry {line()}{105}
+\indexentry {sphereDetail()}{105}
+\indexentry {sphereDetail()}{105}
+\indexentry {vertex()}{106}
+\indexentry {beginShape()}{106}
+\indexentry {endShape()}{106}
+\indexentry {Transformace}{107}
+\indexentry {translate()}{107}
+\indexentry {rotate()}{107}
+\indexentry {scale()}{107}
+\indexentry {translate()}{108}
+\indexentry {pushMatrix()}{108}
+\indexentry {popMatrix()}{108}
 \indexentry {rotate()}{109}
-\indexentry {scale()}{109}
-\indexentry {translate()}{110}
-\indexentry {pushMatrix()}{110}
-\indexentry {popMatrix()}{110}
+\indexentry {degrees()}{109}
+\indexentry {translate()}{111}
 \indexentry {rotate()}{111}
-\indexentry {degrees()}{111}
-\indexentry {translate()}{113}
-\indexentry {rotate()}{113}
-\indexentry {rotateX()}{113}
-\indexentry {rotateY()}{113}
-\indexentry {rotateZ()}{113}
-\indexentry {Použití transformací}{113}
-\indexentry {setup()}{114}
-\indexentry {smooth()}{114}
-\indexentry {smooth()}{114}
-\indexentry {noSmooth()}{114}
-\indexentry {strokeWeight()}{114}
-\indexentry {stroke()}{114}
-\indexentry {atan2()}{115}
-\indexentry {cos()}{115}
-\indexentry {sin()}{115}
-\indexentry {sin()}{115}
-\indexentry {asin()}{115}
-\indexentry {acos()}{115}
-\indexentry {PI}{115}
-\indexentry {HALFPI}{115}
-\indexentry {QUARTERPI}{115}
-\indexentry {Ukládání informací}{117}
-\indexentry {CSV}{117}
-\indexentry {Ukládání obrazových dat}{118}
+\indexentry {rotateX()}{111}
+\indexentry {rotateY()}{111}
+\indexentry {rotateZ()}{111}
+\indexentry {Použití transformací}{111}
+\indexentry {setup()}{112}
+\indexentry {smooth()}{112}
+\indexentry {smooth()}{112}
+\indexentry {noSmooth()}{112}
+\indexentry {strokeWeight()}{112}
+\indexentry {stroke()}{112}
+\indexentry {atan2()}{113}
+\indexentry {cos()}{113}
+\indexentry {sin()}{113}
+\indexentry {sin()}{113}
+\indexentry {asin()}{113}
+\indexentry {acos()}{113}
+\indexentry {PI}{113}
+\indexentry {HALFPI}{113}
+\indexentry {QUARTERPI}{113}
+\indexentry {Ukládání informací}{115}
+\indexentry {CSV}{115}
+\indexentry {Ukládání obrazových dat}{116}
+\indexentry {save()}{116}
+\indexentry {save()}{117}
+\indexentry {saveFrame()}{117}
+\indexentry {frameCount}{117}
+\indexentry {nf()}{117}
+\indexentry {saveFrame()}{117}
+\indexentry {saveFrame()}{118}
 \indexentry {save()}{118}
-\indexentry {save()}{119}
-\indexentry {saveFrame()}{119}
+\indexentry {Ukládání holých dat}{118}
+\indexentry {CSV}{118}
+\indexentry {float}{119}
+\indexentry {draw()}{119}
 \indexentry {frameCount}{119}
-\indexentry {nf()}{119}
-\indexentry {saveFrame()}{119}
-\indexentry {saveFrame()}{120}
-\indexentry {save()}{120}
-\indexentry {Ukládání holých dat}{120}
-\indexentry {CSV}{120}
-\indexentry {float}{121}
-\indexentry {draw()}{121}
-\indexentry {frameCount}{121}
-\indexentry {exit()}{121}
-\indexentry {saveStrings()}{121}
-\indexentry {Tisk do pdf, ukládání vektorů}{122}
-\indexentry {size()}{122}
-\indexentry {import}{123}
-\indexentry {import}{123}
-\indexentry {size()}{123}
-\indexentry {beginRecord()}{124}
-\indexentry {endRecord()}{124}
-\indexentry {mousePressed()}{124}
-\indexentry {keyPressed()}{125}
-\indexentry {Načítání informací}{125}
-\indexentry {Načítání obrázků}{125}
-\indexentry {PImage}{125}
-\indexentry {loadImage()}{125}
-\indexentry {setup()}{126}
-\indexentry {image()}{126}
-\indexentry {imageMode()}{126}
-\indexentry {image()}{126}
-\indexentry {image()}{126}
-\indexentry {Načítání textových souborů}{127}
-\indexentry {CSV}{127}
+\indexentry {exit()}{119}
+\indexentry {saveStrings()}{119}
+\indexentry {Tisk do pdf, ukládání vektorů}{120}
+\indexentry {size()}{120}
+\indexentry {import}{121}
+\indexentry {import}{121}
+\indexentry {size()}{121}
+\indexentry {beginRecord()}{122}
+\indexentry {endRecord()}{122}
+\indexentry {mousePressed()}{122}
+\indexentry {keyPressed()}{123}
+\indexentry {Načítání informací}{123}
+\indexentry {Načítání obrázků}{123}
+\indexentry {PImage}{123}
+\indexentry {loadImage()}{123}
+\indexentry {setup()}{124}
+\indexentry {image()}{124}
+\indexentry {imageMode()}{124}
+\indexentry {image()}{124}
+\indexentry {image()}{124}
+\indexentry {Načítání textových souborů}{125}
+\indexentry {CSV}{125}
+\indexentry {loadStrings()}{125}
+\indexentry {String}{125}
+\indexentry {loadStrings()}{125}
+\indexentry {println()}{126}
+\indexentry {Operace s textem}{126}
+\indexentry {Parsing, získávání hodnot z externích dat}{126}
 \indexentry {loadStrings()}{127}
-\indexentry {String}{127}
-\indexentry {loadStrings()}{127}
-\indexentry {println()}{128}
-\indexentry {Operace s textem}{128}
-\indexentry {Parsing, získávání hodnot z externích dat}{128}
-\indexentry {loadStrings()}{129}
-\indexentry {splitTokens()}{130}
-\indexentry {splitTokens()}{130}
-\indexentry {parseFloat()}{130}
-\indexentry {parseFloat()}{130}
-\indexentry {parseInt()}{130}
-\indexentry {setup()}{130}
-\indexentry {line()}{132}
-\indexentry {Knihovny}{135}
-\indexentry {Vestavěné knihovny}{135}
-\indexentry {vestavěné knihovny}{135}
-\indexentry {Komunitní knihovny}{137}
-\indexentry {Práce s knihovnou}{137}
-\indexentry {import}{139}
-\indexentry {new}{140}
-\indexentry {this}{140}
-\indexentry {draw()}{140}
-\indexentry {cos()}{145}
-\indexentry {endRecord()}{145}
-\indexentry {endShape()}{145}
-\indexentry {vertex()}{145}
-\indexentry {endShape()}{145}
-\indexentry {vertex()}{145}
+\indexentry {splitTokens()}{128}
+\indexentry {splitTokens()}{128}
+\indexentry {parseFloat()}{128}
+\indexentry {parseFloat()}{128}
+\indexentry {parseInt()}{128}
+\indexentry {setup()}{128}
+\indexentry {line()}{130}
+\indexentry {Knihovny}{133}
+\indexentry {Vestavěné knihovny}{133}
+\indexentry {vestavěné knihovny}{133}
+\indexentry {Komunitní knihovny}{135}
+\indexentry {Práce s knihovnou}{135}
+\indexentry {import}{137}
+\indexentry {new}{138}
+\indexentry {this}{138}
+\indexentry {draw()}{138}
+\indexentry {cos()}{143}
+\indexentry {endRecord()}{143}
+\indexentry {endShape()}{143}
+\indexentry {vertex()}{143}
+\indexentry {endShape()}{143}
+\indexentry {vertex()}{143}
+\indexentry {true}{144}
+\indexentry {false}{144}
+\indexentry {colorMode()}{144}
+\indexentry {fill()}{145}
+\indexentry {stroke()}{145}
+\indexentry {sketch}{145}
+\indexentry {ellipseMode()}{145}
+\indexentry {if()}{146}
+\indexentry {if()}{146}
+\indexentry {beginRecord()}{146}
+\indexentry {beginShape()}{146}
+\indexentry {draw()}{146}
+\indexentry {draw()}{146}
 \indexentry {true}{146}
-\indexentry {false}{146}
-\indexentry {colorMode()}{146}
-\indexentry {fill()}{147}
-\indexentry {stroke()}{147}
-\indexentry {sketch}{147}
-\indexentry {ellipseMode()}{147}
-\indexentry {if()}{148}
-\indexentry {if()}{148}
-\indexentry {beginRecord()}{148}
-\indexentry {beginShape()}{148}
-\indexentry {draw()}{148}
-\indexentry {draw()}{148}
-\indexentry {true}{148}
-\indexentry {PImage}{149}
-\indexentry {loadImage()}{149}
-\indexentry {tint()}{149}
-\indexentry {imageMode()}{149}
-\indexentry {GNU / GPL}{150}
-\indexentry {PImage}{150}
+\indexentry {PImage}{147}
+\indexentry {loadImage()}{147}
+\indexentry {tint()}{147}
+\indexentry {imageMode()}{147}
+\indexentry {GNU / GPL}{148}
+\indexentry {PImage}{148}
+\indexentry {String}{148}
+\indexentry {frameCount}{148}
+\indexentry {mouseButton}{149}
+\indexentry {noStroke()}{149}
+\indexentry {smooth()}{149}
 \indexentry {String}{150}
-\indexentry {frameCount}{150}
-\indexentry {mouseButton}{151}
-\indexentry {noStroke()}{151}
-\indexentry {smooth()}{151}
+\indexentry {String}{150}
+\indexentry {stroke()}{150}
+\indexentry {pushMatrix()}{150}
+\indexentry {print()}{150}
+\indexentry {rotate()}{150}
+\indexentry {translate()}{150}
+\indexentry {scale()}{150}
+\indexentry {popMatrix()}{150}
+\indexentry {stroke()}{150}
+\indexentry {fill()}{150}
+\indexentry {rectMode()}{151}
+\indexentry {rect()}{151}
+\indexentry {rect()}{151}
+\indexentry {save()}{152}
+\indexentry {frameCount()}{152}
 \indexentry {String}{152}
-\indexentry {String}{152}
-\indexentry {stroke()}{152}
-\indexentry {pushMatrix()}{152}
-\indexentry {print()}{152}
-\indexentry {rotate()}{152}
-\indexentry {translate()}{152}
-\indexentry {scale()}{152}
-\indexentry {popMatrix()}{152}
-\indexentry {stroke()}{152}
-\indexentry {fill()}{152}
-\indexentry {rectMode()}{153}
-\indexentry {rect()}{153}
-\indexentry {rect()}{153}
-\indexentry {save()}{154}
-\indexentry {frameCount()}{154}
-\indexentry {String}{154}
-\indexentry {beginShape()}{156}
-\indexentry {endShape()}{156}
+\indexentry {beginShape()}{154}
+\indexentry {endShape()}{154}
