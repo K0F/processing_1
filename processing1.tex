@@ -12,8 +12,44 @@
 \usepackage{fontenc}
 \usepackage{xltxtra,fontspec,xunicode}
 
-% syntax highlight
 
+
+
+
+\usepackage[pdftex]{hyperref}
+
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=true,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={Processing 1.0},    % title
+    pdfauthor={Kryštof Pešek},     % author
+    pdfsubject={Processing 1.0},   % subject of the document
+    pdfcreator={Kryštof Pešek},   % creator of the document
+    pdfproducer={AMU}, % producer of the document
+    pdfkeywords={processing} {příručka} {kof}, % list of keywords
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=odkaz,          % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=red           % color of external links
+}
+
+\usepackage[all]{hypcap}
+
+% syntax highlight
+% 
+% 
+% 
+
+% nadpisy fix
+\XeTeXtracingfonts=1
+\pdfpagewidth=\paperwidth
+\pdfpageheight=\paperheight
 
 \usepackage{listingsutf8}
 \usepackage{xcolor}
@@ -32,33 +68,11 @@
 
 \definecolor{bublina1}{rgb}{0.95,0.95,0.95} % for strings
 \definecolor{odkaz}{rgb}{0.5,0.5,0.5} % comments
-\usepackage[dvips]{hyperref}
-
-\hypersetup{
-    bookmarks=true,         % show bookmarks bar?
-    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
-    pdftoolbar=true,        % show Acrobat’s toolbar?
-    pdfmenubar=true,        % show Acrobat’s menu?
-    pdffitwindow=false,     % window fit to page when opened
-    pdfstartview={FitH},    % fits the width of the page to the window
-    pdftitle={Processing 1.0},    % title
-    pdfauthor={Kryštof Pešek},     % author
-    pdfsubject={Processing 1.0},   % subject of the document
-    pdfcreator={Kryštof Pešek},   % creator of the document
-    pdfproducer={AMU}, % producer of the document
-    pdfkeywords={processing} {příručka} {kof}, % list of keywords
-    pdfnewwindow=true,      % links in new window
-    colorlinks=true,       % false: boxed links; true: colored links
-    linkcolor=odkaz,          % color of internal links
-    citecolor=green,        % color of links to bibliography
-    filecolor=magenta,      % color of file links
-    urlcolor=red           % color of external links
-}
 
 
 \usepackage{makeidx}
 \usepackage{index}     % balík pro indexování
-\usepackage[all]{hypcap}
+
 
 
 \usepackage{graphicx} % support the \includegraphics command and options
@@ -165,6 +179,8 @@
 
 \usepackage{pdfpages}
 
+
+
 \begin{document}
 
 \input{slovnik.tex}
@@ -208,6 +224,10 @@ Nakladatelství AMU: \\
 {\em ISBN 978-80-7331-224-4}
 \item
 {\em Vysázeno textovým systémem \XeLaTeX.}
+
+\begin{center}
+\includegraphics[width=0.25\textwidth]{imgs/barcode.png}
+\end{center}
 
 \end{itemize}
 
@@ -434,7 +454,7 @@ Nejadresněji se vám dostane pomoci prostřednictvím webových fór nebo IRC k
 Veškerá dokumentace je v angličtině včetně webových fór i dalších knih o programování. Nemáte-li problém s anglickým jazykem, míst k zdokonalování se v Processingu bude vždy dostatek. \bublina{Doporučuji se nejprve seznámit s projekty na internetu, získáte tím představu o tom, k čemu se vlastně Processing využívá.}
 
 
-\oddil{Examples -- příklady přímo v Processingu}
+\oddil{Examples, příklady přímo v Processingu}
 
 Tato pomoc je vždy po ruce. Processing je navržený k výuce a je připraven poskytovat pomoc ze své podstaty. Přímo do aplikace Processingu jsou naimplementovány základní postupy programování. Témata jsou pokrytá od základních operací až po pohyb v třídimenzionálním prostoru nebo manipulaci s pixely. \index{Processing Examples}
 
@@ -2848,13 +2868,13 @@ Processing umí ukládat rastrová data do následujících formátů:
 
 \begin{itemize}
 \item[TIFF]
-nekomprimovaný obraz s příponou *.tif, *.tiff
+nekomprimovaný obraz s příponou {\em *.tif, *.tiff}
 \item[TARGA]
-ztrátově komprimovaný obraz s příponou *.tga
+ztrátově komprimovaný obraz s příponou {\em *.tga}
 \item[JPEG]
-ztrátově komprimovaný obraz s příponou *.jpg, *.jpeg
+ztrátově komprimovaný obraz s příponou {\em *.jpg, *.jpeg}
 \item[PNG]
-bezztrátově komprimovaný obraz s příponou *.png
+bezztrátově komprimovaný obraz s příponou {\em *.png}
 
 \end{itemize}
 
@@ -3489,7 +3509,7 @@ Učte se vždy novému, nic není krásnějšího než na věci přicházet. A k
 \vfill
 
 Aktualizovanou podobu tohoto průvodce můžete najít v elektronické verzi repozitáře GIT na serveru {\em GitHub} na adrese:\\
-{\em https://github.com/K0F/processing\_1}
+\url{https://github.com/K0F/processing\_1}
 
 \begin{flushright}
 {\em Kryštof Pešek, 12.5. 2012}
