@@ -16,28 +16,18 @@
 
 
 
-\usepackage[pdftex]{hyperref}
+%BIBLIOGRAPHY
+%
+%
+%
 
-\hypersetup{
-    bookmarks=true,         % show bookmarks bar?
-    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
-    pdftoolbar=true,        % show Acrobat’s toolbar?
-    pdfmenubar=true,        % show Acrobat’s menu?
-    pdffitwindow=true,     % window fit to page when opened
-    pdfstartview={FitH},    % fits the width of the page to the window
-    pdftitle={Processing 1.0},    % title
-    pdfauthor={Kryštof Pešek},     % author
-    pdfsubject={Processing 1.0},   % subject of the document
-    pdfcreator={Kryštof Pešek},   % creator of the document
-    pdfproducer={AMU}, % producer of the document
-    pdfkeywords={processing} {příručka} {kof}, % list of keywords
-    pdfnewwindow=true,      % links in new window
-    colorlinks=true,       % false: boxed links; true: colored links
-    linkcolor=odkaz,          % color of internal links
-    citecolor=green,        % color of links to bibliography
-    filecolor=magenta,      % color of file links
-    urlcolor=red           % color of external links
-}
+\usepackage[style=authortitle,citestyle=alphabetic]{biblatex} 
+\bibliography{processing1.bib}
+%\bibliographystyle{unsrtnat}
+
+\nonstopmode
+
+\usepackage[pdftex]{hyperref}
 
 \usepackage[all]{hypcap}
 
@@ -134,7 +124,7 @@
 \setmainfont{Liberation Sans}%Liberation Serif}
 %\setmainfont{Liberation Serif} %URW Gothic L,DejaVu Sans,Georgia,Jumpcrew Cologne,Libertinage,LMSans12, Nimbus Sans L
 \setmainfont[Mapping=tex-text,Ligatures={Common},BoldFont={* Bold}, ItalicFont={* Italic},Numbers={OldStyle}]{Liberation Serif}
-\setsansfont[Scale=1,Mapping=tex-text,Ligatures={Common,Rare},Numbers={OldStyle}]{Casper}
+\setsansfont[Scale=1,Mapping=tex-text,Ligatures={Common,Rare}]{Anivers}
 \setmonofont{Monaco}
 
 
@@ -173,43 +163,51 @@
 
 
 
-%bibliografie
-%\bibliography{ProcessingBib}
-
-
 \usepackage{pdfpages}
+
+%\addbibresource{processing1.bib}
+
+
+
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=true,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=true,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={Processing 1.0},    % title
+    pdfauthor={Kryštof Pešek},     % author
+    pdfsubject={Processing 1.0},   % subject of the document
+    pdfcreator={Kryštof Pešek},   % creator of the document
+    pdfproducer={AMU}, % producer of the document
+    pdfkeywords={processing} {příručka} {kof}, % list of keywords
+    pdfnewwindow=true,      % links in new window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=odkaz,          % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=red           % color of external links
+}
 
 
 
 \begin{document}
 
+
 \input{slovnik.tex}
 \makeglossaries
 
-
-
-\thispagestyle{empty}
-\oddil{Poděkování}
-Zde bych rád poděkoval všem lidem, kteří se různou měrou podíleli na vzniku této publikace. Nejprve Tomáši Pospiszylovi, vedoucímu této práce, za neúnavný dohled nad podobou následujícího textu.
-
-Rád bych též poděkoval Miloši Vojtěchovskému za oponenturu práce, Zdeňku Holému za konzultace a pomoc při vydávání knihy a Olině Stehlíkové za korektury v textu.
-
-
-\vfill
-
-\begin{flushright}
-{\em \footnotesize{--Kryštof Pešek}}
-\end{flushright}
-
-
-
-\thispagestyle{empty}
-.
 \newpage
-.
+
+$$0$$
+
 \thispagestyle{empty}
+
+
 \newpage
-.
+$$\infty$$
+
 \thispagestyle{empty}
 
 
@@ -225,15 +223,42 @@ Nakladatelství AMU: \\
 \item
 {\em Vysázeno textovým systémem \XeLaTeX.}
 
-\begin{center}
-\includegraphics[width=0.25\textwidth]{imgs/barcode.png}
-\end{center}
+
+%\begin{center}
+%\includegraphics[width=0.25\textwidth]{imgs/barcode.png}
+%\end{center}
 
 \end{itemize}
 
+\newpage
+
+\oddil{Poděkování}
+Zde bych rád poděkoval všem lidem, kteří se podíleli na vzniku této publikace. Nejprve Tomáši Pospiszylovi, vedoucímu této práce, za neúnavný dohled nad podobou následujícího textu.
+
+Rád bych též poděkoval Miloši Vojtěchovskému za oponenturu práce, Zdeňku Holému a Andree Slovákové za konzultace a pomoc při vydávání knihy a Olině Stehlíkové za korektury v textu.
 
 
-\thispagestyle{empty}
+\vfill
+
+\begin{flushright}
+{\em \footnotesize{--Kryštof Pešek}}
+\end{flushright}
+
+
+\oddil{Abstrakt}
+
+Příručka Processing 1.0 je základním úvodem do jazyka Processing. Tento jazyk byl navržen v akademických dílnách {\em Massachutches Institute of Technology} ke snazšímu a co možná nejsvobodnějšímu přístupu tvůrců -- obecně vzato všech netechnických oborů, k pokročilým technologiím. Základ pro tuto příručku vznikl při sérii otevřených dílen o programování vedený Kryštofem Pešek na pražské FAMU.
+
+Podobné příručky v posledních letech vznikly pouze v anglickém jazyce: {/em Casey Reas and Ben Fry, A programming handbook for designers and artist (2007)}, {\em Ira Greenberg: Processing Creative coding and Computational Art (2007)}, {\em Daniel Shiffman: Learning Processing: A Beginner's Guide to Programming Images, Animation, and Interaction (2008)}, {\em Tom Igoe: Making Thinks Talk: Practical Methods for Connecting Physical Objects (2007)}. V českém jazyce žádná podobná kniha doposud nevyšla. Příručka by měla přiblížit, ve shodě s původním smyslem Processingu, technologie i netechnicky zaměřeným oborům, především pak studentům z výtvarných škol bez předešlé nebo jen malé zkušenosti s programováním.
+
+
+Kniha byla zpracována jako diplomová práce studijního oboru Centra audiovizuálních studií na pražské FAMU a vznikla za podpory grantu SGS AMU 2011-12. 
+
+
+
+
+
+
 
 
 \index{obsah}
@@ -254,7 +279,6 @@ Nakladatelství AMU: \\
 
 
 \oddil{Úvodem}
-
 
 
 
@@ -348,8 +372,8 @@ Ilustrace pochází z Hodginovi grafické práce, která byla vybrána jako jedn
 Tato kniha je kurátorským projektem a samostatným výtvarným počinem dánského tvůrce \textbf{Marcina Ignace}. První výtisk knihy byl vydán v roce 2011. Samotná kniha je v podstatě konceptuálním dílem, automatizací vychází každý výtisk s posunem o jedno okénko, a tím ilustruje ducha generativní tvorby. Kniha samotná je také zpracována softwarem Processing. \vfill
 
 \begin{centering}
-%\includegraphics[width = 1\textwidth]{imgs/writtenimages.png}
-\includegraphics[width = 1\textwidth]{imgs/neznamy.png}
+\includegraphics[width = 1\textwidth]{imgs/writtenimages.png}
+%\includegraphics[width = 1\textwidth]{imgs/neznamy.png}
 
 \end{centering}
 
@@ -366,7 +390,7 @@ Kniha obsahuje generativní obrazy následujících umělců:
 
 \begin{center}
 %\includegraphics[width = 1\textwidth]{imgs/facade-1.png}
-\includegraphics[width = 1\textwidth]{imgs/neznamy.png}
+\includegraphics[width = 1\textwidth]{imgs/moebius.png}
 
 \end{center}
 
@@ -376,7 +400,7 @@ Karsten Schmidt působí v komunitě Processingu dlouhodobě a je více známý 
 
 \begin{center}
 %\includegraphics[width = 0.5\textwidth]{imgs/facade-3.png}\includegraphics[width = 0.5\textwidth]{imgs/facade-5.png}
-\includegraphics[width = 0.5\textwidth]{imgs/neznamy.png}\includegraphics[width = 0.5\textwidth]{imgs/neznamy.png}
+\includegraphics[width = 0.5\textwidth]{imgs/laplacian.png}\includegraphics[width = 0.5\textwidth]{imgs/smooth.png}
 
 
 \end{center}
@@ -389,8 +413,8 @@ Schmidtova práce vyniká zejména pro možnost recyklovatelnosti a další uži
 
 
 \begin{center}
-%\includegraphics[width = 1\textwidth]{imgs/facade-7.png}
-\includegraphics[width = 1\textwidth]{imgs/neznamy.png}
+\includegraphics[width = 1\textwidth]{imgs/facade-7.png}
+%\includegraphics[width = 1\textwidth]{imgs/neznamy.png}
 
 \end{center}
 
@@ -3523,6 +3547,9 @@ Aktualizovanou podobu tohoto průvodce můžete najít v elektronické verzi rep
 
 
 %\printindex
+%
+\nocite{*}
+\printbibliography[title=Bibliografie]
 
 
 
