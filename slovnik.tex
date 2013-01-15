@@ -1,106 +1,158 @@
+\newglossaryentry{draw()}{
+	name={draw()},
+	description={Základní kreslicí smyčka programu. Kód uvozený ve složených závorkách za touto funkci bude spouštěn několikrát ve vteřině. Využívá se k animaci a interakci s programem.}
+}
+\newglossaryentry{sphere()}{
+	name={sphere()},
+	description={Funkce kreslící kouli. Požaduje jediný argument: poloměr koule. Rozlišení koule je možné kontrolovat funkcí \vyraz{sphereDetail()}}
+}
+\newglossaryentry{float}{
+	name={float},
+	description={Datatyp schopný udržet proměnnou ve tvaru čísla s desetinnou čárkou.}
+}
+\newglossaryentry{CODED}{
+	name={CODED},
+	description={Používá se v porovnání se systémovou proměnnou \vyraz{key} k zjištění zda-li poslední stisknutá klávesa byla speciálním znakem. Ten se posléze detekuje proměnnou \vyraz{keyCode}}
+}
+\newglossaryentry{return}{
+	name={return},
+	description={Speciální příkaz značící návrat hodnoty z funkce. Příkaz zároveň ukončuje spuštěnou funkci.}
+}
+\newglossaryentry{keyCode}{
+	name={keyCode},
+	description={Systémová proměnná {\em Processingu}, podobně jako \vyraz{key} zančí, která z netextových kláves byla stisknuta jako poslední ({\em ENTER, BACKSPACE, LEFT, atp.}), velmi často se používá v kombinaci s další systémovou funkcí \vyraz{keyPressed()} k detekci stisknuté klávesy}
+}
+\newglossaryentry{key}{
+	name={key},
+	description={Systémová proměnná {\em Processingu} obsahující hodnotu naposledy stisknuté klávesy, velmi často se používá v kombinaci s další systémovou funkcí \vyraz{keyPressed()} k detekci stisknuté klávesy}
+}
+\newglossaryentry{if}{
+	name={if},
+	description={Příkaz značící podmínku. Vyžaduje následovné uvedení dotazu v kulatých závorkách, pokud je podmínka naplněna spouští následující kód uzavřený ve složených závorkách. Komplementárním příkazem je \vyraz{else}, který spouští jiný blok kódu, není-li předchozí podmínka naplněna.}
+}
+\newglossaryentry{if()}{
+	name={if()},
+	description={viz \vyraz{if}}
+}
+\newglossaryentry{PImage}{
+	name={PImage},
+	description={Proměnná schopná v sobě udržet obrazová data a obrázky obecně. Pro načtení dat do {\em Processingu} použijte \vyraz{loadImage()}}
+}
+\newglossaryentry{noStroke()}{
+	name={noStroke()},
+	description={Funkce zabraňující vykreslování kontur, protějšek \vyraz{stroke()}}
+}
 \newglossaryentry{line()}{
 	name={line()},
-	description={Funkce pro kresbu úsečky. Ve 2D funkce přijímá čtyři parametry: $X_1$, $Y_1$,$X_2$, $Y_2$. Ve 3D zobrazení funkce přijímá šest parametrů pro určení koórdinátů každého bodu ve třech dimenzích, tedy: $X_1$, $Y_1$,$X_2$, $Y_2$, $X_3$, $Y_3$. Barvu čáry je možné změnit předchozím nastavením bavy obrysů funkcí \vyraz{stroke()}.}
+	description={Funkce pro kresbu úsečky. Ve 2D funkce přijímá čtyři parametry: $X_1$, $Y_1$,$X_2$, $Y_2$. Ve 3D zobrazení funkce přijímá šest parametrů pro určení koórdinátů každého bodu ve třech dimenzích, tedy: $X_1$, $Y_1$,$X_2$, $Y_2$, $X_3$, $Y_3$. Barvu čáry je možné změnit předchozím nastavením bavy obrysů funkcí \vyraz{stroke()}}
 }
 \newglossaryentry{sin()}{
 	name={sin()},
-	description={Vypočítáva sinus z daného úhlu. Tato funkce očekává údaj úhlu zadaný ve stupních radiánu, tedy hodnoty od 0 do 6.28. Zpětně funkce vrací hodnotu v rozmezí od -1 do 1.}
+	description={Vypočítáva sinus z daného úhlu. Tato funkce očekává údaj úhlu zadaný ve stupních radiánu, tedy hodnoty od 0 do 6.28. Zpětně funkce vrací hodnotu v rozmezí od -1 do 1}
 }
 \newglossaryentry{vertex()}{
 	name={vertex()},
-	description={Funkcí {\em vertex()} definujeme body pro tvorbu složitějších tvarů. Funkci musí předcházet příkaz \vyraz{beginShape()} a musí ji následovat příkaz \vyraz{endShape()}. Přičemž záleží na pořadí, ve kterém jsou jednotlivé body definovány. Body mohou být dvourozměrné i trojrozměrné. {\em Vertex} tedy můžeme definovat pomocí souřadnic $X$, $Y$ nebo $X$, $Y$, $Z$.}
+	description={Funkcí {\em vertex()} definujeme body pro tvorbu složitějších tvarů. Funkci musí předcházet příkaz \vyraz{beginShape()} a musí ji následovat příkaz \vyraz{endShape()}. Přičemž záleží na pořadí, ve kterém jsou jednotlivé body definovány. Body mohou být dvourozměrné i trojrozměrné. {\em Vertex} tedy můžeme definovat pomocí souřadnic $X$, $Y$ nebo $X$, $Y$, $Z$}
 }
 \newglossaryentry{noise()}{
 	name={noise()},
-	description={Udává hodnotu Perlinova šumu na specifické pozici. Perlinův šum je generátor pseudonáhodných čísel vytvářející plynule přecházející pseudonáhodnou hodnotu. Algoritmus byl vyvinut Kenem Perlinem v osmdesátých letech dvacátého století a je velmi často používán právě v grafických aplikacích. Využívá se například při tvorbě procedurálních textur, pohybu objektů nebo proměně geometrie v čase. Rozsah perlinova šumu se pohybuje vždy v rozmezí hodnot $0.0$ a $1.0$. Funkce {\em noise()} přijímá jednu, dvě nebo tři hodnoty. Výsledná hodnota se pohybuje ve jednorozměrném až ve trojrozměrném poli. Šum může být například snadno animován přírůstkem v parametru. Hodnoty mají tu vlastnost, že plynule přecházejí jedna ve druhou.}
+	description={Udává hodnotu {\em Perlinova šumu} na specifické pozici. {\em Perlinův} šum je generátor pseudonáhodných čísel vytvářející plynule přecházející pseudonáhodnou hodnotu. Algoritmus byl vyvinut Kenem Perlinem v osmdesátých letech dvacátého století a je velmi často používán právě v grafických aplikacích. Využívá se například při tvorbě procedurálních textur, pohybu objektů nebo proměně geometrie v čase. Rozsah {\em Perlinova šumu} se pohybuje vždy v rozmezí hodnot $0.0$ a $1.0$. Funkce {\em noise()} přijímá jednu, dvě nebo tři hodnoty. Výsledná hodnota se pohybuje ve jednorozměrném až ve trojrozměrném poli. Šum může být například snadno animován přírůstkem v parametru. Hodnoty mají tu vlastnost, že plynule přecházejí jedna ve druhou}
 }
 \newglossaryentry{noFill()}{
 	name={noFill()},
-	description={Zakazuje výplň všech následujících objektů. Jestliže je příkaz použit dohromady s příkazem  \vyraz{noStroke()}, Processing teoreticky nebude nic vykreslovat na plátno.}
+	description={Zakazuje výplň všech následujících objektů. Jestliže je příkaz použit dohromady s příkazem  \vyraz{noStroke()}, Processing teoreticky nebude nic vykreslovat na plátno}
 }
 \newglossaryentry{mouseButton}{
 	name={mouseButton},
-	description={Processing automaticky registruje, které tlačítko myši bylo stisknuto. Jestliže bylo stisknuto levé tlačítko, tato systémová proměnná bude mít hodnotu {\em LEFT}. V případě pravého tlačítka, bude mít proměnná hodnotu {\em RIGHT}. V případě prostředního tlačítka pak hodnotu {\em CENTER}.}
+	description={Processing automaticky registruje, které tlačítko myši bylo stisknuto. Jestliže bylo stisknuto levé tlačítko, tato systémová proměnná bude mít hodnotu {\em LEFT}. V případě pravého tlačítka, bude mít proměnná hodnotu {\em RIGHT}. V případě prostředního tlačítka pak hodnotu {\em CENTER}}
 }
 \newglossaryentry{mouseClicked()}{
 	name={mouseClicked()},
-	description={Funkce spuštěná klikem myši. Celý jeden klik myši se skládá ze stisku tlačítka a jeho následného uvolnění.}
+	description={Funkce spuštěná klikem myši. Celý jeden klik myši se skládá ze stisku tlačítka a jeho následného uvolnění}
 }
 \newglossaryentry{mouseDragged()}{
 	name={mouseDragged()},
-	description={Funkce detekující potáhnutí myši po plátně. Táhnutím myší se rozumí, podržení tlačítka myši a pohyb kurzoru.}
+	description={Funkce detekující potáhnutí myši po plátně. Táhnutím myší se rozumí, podržení tlačítka myši a pohyb kurzoru}
 }
 \newglossaryentry{mouseMoved()}{
 	name={mouseMoved()},
-	description={Funkce detekující jakýkoli pohyb myši v rámci okna programu.}
+	description={Funkce detekující jakýkoli pohyb myši v rámci okna programu}
 }
 \newglossaryentry{mousePressed()}{
 	name={mousePressed()},
-	description={Funkce je spuštěna pokaždé je-li stisknuto tlačítko myši. K následné detekci tlačítka můžeme použít proměnnou \vyraz{mouseButton}.}
+	description={Funkce je spuštěna pokaždé je-li stisknuto tlačítko myši. K následné detekci tlačítka můžeme použít proměnnou \vyraz{mouseButton}}
 }
 \newglossaryentry{nf()}{
 	name={nf()},
-	description={Nástroj na formátování čísel do patřičného tvaru v textu. Přijímá parametr celého čísla a předřazuje před něj počet nul ze druhého parametru. Tato funkce se velmi často používá k zarovnávání řad čísel.}
+	description={Nástroj na formátování čísel do patřičného tvaru v textu. Přijímá parametr celého čísla a předřazuje před něj počet nul ze druhého parametru. Tato funkce se velmi často používá k zarovnávání řad čísel}
 }
 \newglossaryentry{fill()}{
 	name={fill()},
-	description={Funkce nastavující barvu výplně tvarů. Například spustíme-li {\textbf fill(204, 102, 0)}, veškeré objekty, kreslené níže v kódu, budou mít oranžovou barvu výplně.}
+	description={Funkce nastavující barvu výplně tvarů. Například spustíme-li {\textbf fill(204, 102, 0)}, veškeré objekty, kreslené níže v kódu, budou mít oranžovou barvu výplně}
 }
 \newglossaryentry{stroke()}{
 	name={stroke()},
-	description={Funkce nastavující barvu obrysů tvarů. Například spustíme-li {\textbf stroke(255, 0, 0)}, veškeré další kontury objektů budou mít červenou barvu.}
+	description={Funkce nastavující barvu obrysů tvarů. Například spustíme-li {\textbf stroke(255, 0, 0)}, veškeré další kontury objektů budou mít červenou barvu}
 }
 \newglossaryentry{keyPressed()}{
 	name={keyPressed()},
-	description={Funkce spuštěna pokaždé, je-li stisknuta libovolná klávesa na klávesnici.}
+	description={Funkce spuštěna pokaždé, je-li stisknuta libovolná klávesa na klávesnici}
 }
 \newglossaryentry{keyReleased()}{
 	name={keyReleased()},
-	description={Funkce spuštěná tehdy, uvolníme-li libovolnou stisknutou klávesu.}
+	description={Funkce spuštěná tehdy, uvolníme-li libovolnou stisknutou klávesu}
 }
 \newglossaryentry{for}{
 	name={for},
-	description={Definuje smyčku, tedy opakující se sekvenci příkazů. Struktura {\em for} se zadává pomocí tří parametrů: inicializace pozice (kde smyčka začíná), ověření (konečná podmínka která smyčku ukončuje) a přírůstku (jeden krok rozdílu při opakování smyčky). Tyto části jsou vždy oddělené středníkem. Smyčka pokračuje dokud je naplněn výsledek prostřední podmínky, tedy \vyraz{true}.}
+	description={Definuje smyčku, tedy opakující se sekvenci příkazů. Struktura {\em for} se zadává pomocí tří parametrů: inicializace pozice (kde smyčka začíná), ověření (konečná podmínka která smyčku ukončuje) a přírůstku (jeden krok rozdílu při opakování smyčky). Tyto části jsou vždy oddělené středníkem. Smyčka pokračuje dokud je naplněn výsledek prostřední podmínky, tedy \vyraz{true}}
 }
 \newglossaryentry{frameRate()}{
 	name={frameRate()},
-	description={Nastavuje počet okének, které mají být vykresleny za jednu vteřinu. Výchozí nastavení je šedesát okének za vteřinu. Pokud je údaj vyšší než Processing může v danou chvíli vykreslovat, počet okének za vteřinu se sníží na maximální možnou hodnotu.}
+	description={Nastavuje počet okének, které mají být vykresleny za jednu vteřinu. Výchozí nastavení je šedesát okének za vteřinu. Pokud je údaj vyšší než Processing může v danou chvíli vykreslovat, počet okének za vteřinu se sníží na maximální možnou hodnotu}
 }
 \newglossaryentry{endRecord()}{
 	name={endRecord()},
-	description={Zastavuje nahrávání do souboru spuštěné pomocí funkce \vyraz{beginRecord()}, dále uzavírá zápis do souboru (EOF).}
+	description={Zastavuje nahrávání do souboru spuštěné pomocí funkce \vyraz{beginRecord()}, dále uzavírá zápis do souboru (EOF)}
 }
 \newglossaryentry{endShape()}{
 	name={endShape()},
-	description={Párová funkce s \vyraz{beginShape()}, uzavírá kreslení tvaru. Funkce může být doplněna o výraz {\em CLOSE} (psáno dovnitř kulatých závorek), který uzavře tvar a pokusí se vytvořit jeho výplň.}
+	description={Párová funkce s \vyraz{beginShape()}, uzavírá kreslení tvaru. Funkce může být doplněna o výraz {\em CLOSE} (psáno dovnitř kulatých závorek), který uzavře tvar a pokusí se vytvořit jeho výplň}
 }
 \newglossaryentry{ellipse()}{
 	name={ellipse()},
-	description={Kreslí elipsu nebo kruh. Elipsa se stejnou šířkou i výškou představuje kruh. První dva parametry udávají pozici, třetí parametr uvádí šířku elipsy a čtvrtý výšku elipsy. Nastavení způsobu vytváření elips lze provést pomocí funkce \vyraz{ellipseMode()}.}
+	description={Kreslí elipsu nebo kruh. Elipsa se stejnou šířkou i výškou představuje kruh. První dva parametry udávají pozici, třetí parametr uvádí šířku elipsy a čtvrtý výšku elipsy. Nastavení způsobu vytváření elips lze provést pomocí funkce \vyraz{ellipseMode()}}
 }
 \newglossaryentry{else}{
 	name={else},
-	description={Doplňuje podmínku \vyraz{if()} -- \uv{jestliže} o \uv{jestliže ne}. Blok kódu za tímto příkazem je spuštěn jestliže není předchozí \vyraz{if()} podmínka splněna. Struktura kódu tím dovoluje spustit dva různé bloky kódu v případě naplnění podmínky anebo její nenaplnění.}
+	description={Doplňuje podmínku \vyraz{if()} -- \uv{jestliže} o \uv{jestliže ne}. Blok kódu za tímto příkazem je spuštěn jestliže není předchozí \vyraz{if()} podmínka splněna. Struktura kódu tím dovoluje spustit dva různé bloky kódu v případě naplnění podmínky anebo její nenaplnění}
+}
+\newglossaryentry{noTint()}{
+	name={noTint()},
+	description={Resetuje barvu a průhlednost vykreslených obrázků}
+}
+\newglossaryentry{tint()}{
+	name={tint()},
+	description={Ovlivňuje barvu a průhlednost vykreslených obrázků. Protějškem je vyraz \vyraz{noTint()}}
 }
 \newglossaryentry{image()}{
 	name={image()},
-	description={Zobrazuje obrázek v datatypu \vyraz{PImage}. K jejich načtení pužíváme funkci \vyraz{loadImage()}. Barvu a průhlednost obrázku lze dále definovat pomocí funkce \vyraz{tint()}. Funkce {\em image()} jako první přijímá parametr s názvem proměnné obrázku, který bude zobrazovat. Zbylé dva parametry jsou pozice vykreslení obrázku v ose $X$ a $Y$. Ve výchozím módu souřadnice určují levý horní roh obrázku. Třetí a čtvrtý parametr je nepovinný, může dále nastavit šířku a výšku zobrazovaného obrázku. Módy pro alternativní zobrazování lze přepínat pomocí funkce \vyraz{imageMode()}.}
+	description={Zobrazuje obrázek v datatypu \vyraz{PImage}. K jejich načtení pužíváme funkci \vyraz{loadImage()}. Barvu a průhlednost obrázku lze dále definovat pomocí funkce \vyraz{tint()}. Funkce {\em image()} jako první přijímá parametr s názvem proměnné obrázku, který bude zobrazovat. Zbylé dva parametry jsou pozice vykreslení obrázku v ose $X$ a $Y$. Ve výchozím módu souřadnice určují levý horní roh obrázku. Třetí a čtvrtý parametr je nepovinný, může dále nastavit šířku a výšku zobrazovaného obrázku. Módy pro alternativní zobrazování lze přepínat pomocí funkce \vyraz{imageMode()}}
 }
 \newglossaryentry{loadImage()}{
 	name={loadImage()},
-	description={Načítá obrázek do proměnné ve formátu \vyraz{PImage}. V kulatých závorkách se definuje cesta a název obrázku (včetně přípony) ve formátu \vyraz{String}. Obrázky by měly být umístěny v adresáři {\em DATA}.  Processing podporuje grafické formáty {\em PNG, GIF, JPEG a TGA}. Průhlednost obrázků je podporována ve formátech {\em GIF} nebo {\em PNG}.}
+	description={Načítá obrázek do proměnné ve formátu \vyraz{PImage}. V kulatých závorkách se definuje cesta a název obrázku (včetně přípony) ve formátu \vyraz{String}. Obrázky by měly být umístěny v adresáři {\em DATA}.  Processing podporuje grafické formáty {\em PNG, GIF, JPEG a TGA}. Průhlednost obrázků je podporována ve formátech {\em GIF} nebo {\em PNG}}
 }
 \newglossaryentry{imageMode()}{
 	name={imageMode()},
-	description={Ovlivňuje způsob zobrazování obrázků. Dovoluje použít konstanty {\em CORNER, CORNERS a CENTER}. Ve výchozím nastavení {\em CORNER} bude obrázek umístěn levým horním rohem na definované souřadnice $X$ a $Y$. Mód {\em CORNERS} mění chování druhých dvou parametrů, které namísto relativní šířky a výšky nastavují absolutní hodnoty v osách $X$ a $Y$. Poslední mód {\em CENTER}, umístí obrázek na střed definovaných souřadnic, zbylé dva parametry opět udávají relativní šířku a výšku obrázku.}
+	description={Ovlivňuje způsob zobrazování obrázků. Dovoluje použít konstanty {\em CORNER, CORNERS a CENTER}. Ve výchozím nastavení {\em CORNER} bude obrázek umístěn levým horním rohem na definované souřadnice $X$ a $Y$. Mód {\em CORNERS} mění chování druhých dvou parametrů, které namísto relativní šířky a výšky nastavují absolutní hodnoty v osách $X$ a $Y$. Poslední mód {\em CENTER}, umístí obrázek na střed definovaných souřadnic, zbylé dva parametry opět udávají relativní šířku a výšku obrázku}
 }
 \newglossaryentry{colorMode()}{
 	name={colorMode()},
-	description={Funkce měnící způsob, jakým Processing interpretuje barvu. Možné argumenty jsou RGB a HSB. Nepovinný je druhý argument, určující rozsah hodnot. Výchozí nastavení této hodnoty je 255. Příkaz ovlivňuje nastavení barev pro kresbu, tj. například pro funkce \vyraz{fill()} a \vyraz{stroke()}.}
+	description={Funkce měnící způsob, jakým Processing interpretuje barvu. Možné argumenty jsou RGB a HSB. Nepovinný je druhý argument, určující rozsah hodnot. Výchozí nastavení této hodnoty je 255. Příkaz ovlivňuje nastavení barev pro kresbu, tj. například pro funkce \vyraz{fill()} a \vyraz{stroke()}}
 }
 \newglossaryentry{color()}{
 	name={color()},
-	description={Vytváří barvu ve speciálním datatypu {\em color}. Vstupní hodnoty jsou interpretovány buď jako hodnoty RGB (červená, zelená, modrá), nebo HSB (odstín, sytost, jas). Jendotlivé módy vytváření barev lze přepínat funkcí \vyraz{colorMode()}. Ve výchozím nastavení mají barvy rozmezí 256 odstínu šedi, tedy konkrétně $0..255$.}
+	description={Vytváří barvu ve speciálním datatypu {\em color}. Vstupní hodnoty jsou interpretovány buď jako hodnoty RGB (červená, zelená, modrá), nebo HSB (odstín, sytost, jas). Jendotlivé módy vytváření barev lze přepínat funkcí \vyraz{colorMode()}. Ve výchozím nastavení mají barvy rozmezí 256 odstínu šedi, tedy konkrétně $0..255$}
 }
 
 \newglossaryentry{size()}{
@@ -109,63 +161,67 @@
 }
 \newglossaryentry{smooth()}{
 	name={smooth()},
-	description={Zapíná takzvaný \uv{anti--aliasing}, tedy vyhlazování hran kresby. Funkce nastavuje vyhlazování pro celý program. Zapnutí vyhlazování, má za následek poměrně výrazné zpomalení kresby. Výstup kresby je ovšem o poznání hladší.}
+	description={Zapíná takzvaný \uv{anti--aliasing}, tedy vyhlazování hran kresby. Funkce nastavuje vyhlazování pro celý program. Zapnutí vyhlazování, má za následek poměrně výrazné zpomalení kresby. Výstup kresby je ovšem o poznání hladší}
 }
 \newglossaryentry{noSmooth()}{
 	name={noSmooth()},
-	description={Opak funkce \vyraz{smooth()}. Vypíná vyhlazování hran.}
+	description={Opak funkce \vyraz{smooth()}. Vypíná vyhlazování hran}
 }
 \newglossaryentry{sphereDetail()}{
 	name={sphereDetail()},
-	description={Funkce nastavuje úroveň detailu při vykreslování objektu koule. Parametr zadaný ve formátu čísla \uv{float} ovlivňuje vykreslovaný počet stran koule.}
+	description={Funkce nastavuje úroveň detailu při vykreslování objektu koule. Parametr zadaný ve formátu čísla \uv{float} ovlivňuje vykreslovaný počet stran koule}
 }
 \newglossaryentry{strokeWeight()}{
 	name={strokeWeight()},
-	description={Funkce nastavuje šířku vykreslovaných obrysů v pixelech.}
+	description={Funkce nastavuje šířku vykreslovaných obrysů v pixelech}
 }
 \newglossaryentry{String}{
 	name={String},
-	description={Datatyp pro řetězec textu. Jedná se o speciální datatyp schopný uchovat více znaků pod jednou proměnnou. S tímto datatypem se pojí řada speciálních funkcí pro nakládání s textem. P5edstavit si jej můžeme jako jednorozměrné pole znaků.}
+	description={Datatyp pro řetězec textu. Jedná se o speciální datatyp schopný uchovat více znaků pod jednou proměnnou. S tímto datatypem se pojí řada speciálních funkcí pro nakládání s textem. P5edstavit si jej můžeme jako jednorozměrné pole znaků}
 }
 \newglossaryentry{println()}{
 	name={println()},
-	description={Funkce pro tisk do konzole. Funguje stejně jako příkaz \vyraz{print()}, s tím rozdílem, že každou tisknutou hodnotu zakončuje novým řádkem.}
+	description={Funkce pro tisk do konzole. Funguje stejně jako příkaz \vyraz{print()}, s tím rozdílem, že každou tisknutou hodnotu zakončuje novým řádkem}
 }
 \newglossaryentry{print()}{
 	name={print()},
-	description={Funkce pro tisk do konzole. Vstupní hodnotou může být jakákoli proměnná, holý text nebo kombinace obojího. Slouží jako základní nástroj ke sledování proměn v programu. Využívá se zejména pří vylaďování programu a při kontrole výsledků.}
+	description={Funkce pro tisk do konzole. Vstupní hodnotou může být jakákoli proměnná, holý text nebo kombinace obojího. Slouží jako základní nástroj ke sledování proměn v programu. Využívá se zejména pří vylaďování programu a při kontrole výsledků}
 }
 \newglossaryentry{parseFloat()}{
 	name={parseFloat()},
-	description={Funkce pro čtení čísel ve formátu (\vyraz{String}) a získávání číselné hodnoty s desetinnou čárkou ve tvaru {\em float}.}
+	description={Funkce pro čtení čísel ve formátu (\vyraz{String}) a získávání číselné hodnoty s desetinnou čárkou ve tvaru {\em float}}
 }
 \newglossaryentry{parseInt()}{
 	name={parseInt()},
-	description={Funkce pro čtení čísel ve formátu (\vyraz{String}) a získávání celých čísel ve tvaru {\em int}.}
+	description={Funkce pro čtení čísel ve formátu (\vyraz{String}) a získávání celých čísel ve tvaru {\em int}}
 }
 \newglossaryentry{this}{
 	name={this},
-	description={Speciální výraz vztahující se k objektu, ve kterém se zrovna pohybujeme. Slouží k identifikaci zejména pro práci knihovnami nebo námi definovanými třídami.}
+	description={Speciální výraz vztahující se k objektu, ve kterém se zrovna pohybujeme. Slouží k identifikaci zejména pro práci knihovnami nebo námi definovanými třídami}
 }
 \newglossaryentry{point()}{
 	name={point()},
-	description={Kreslí bod ve dvourozměrném zobrazení. Funkce vyžaduje parametry $X$, $Y$. Při trojrozměrném zobrazení bodu funkce vyžaduje tři parametry pro $X$, $Y$ a $Z$. Barvu bodu můžeme kontrolovat pomocí příkazu \vyraz{stroke()}.}
+	description={Kreslí bod ve dvourozměrném zobrazení. Funkce vyžaduje parametry $X$, $Y$. Při trojrozměrném zobrazení bodu funkce vyžaduje tři parametry pro $X$, $Y$ a $Z$. Barvu bodu můžeme kontrolovat pomocí příkazu \vyraz{stroke()}}
 }
 \newglossaryentry{triangle()}{
 	name={point()},
-	description={Kreslí trojúhelník. Vyžaduje parametry $X_1$, $Y_1$, $X_2$, $Y_2$, $X_3$ a $Y_3$. Barvu trojúhelníku můžeme kontrolovat pomocí příkazu \vyraz{stroke()}. Barvu výplně zadáváme pomocí funkce \vyraz{fill()}.}
+	description={Kreslí trojúhelník. Vyžaduje parametry $X_1$, $Y_1$, $X_2$, $Y_2$, $X_3$ a $Y_3$. Barvu trojúhelníku můžeme kontrolovat pomocí příkazu \vyraz{stroke()}. Barvu výplně zadáváme pomocí funkce \vyraz{fill()}}
 }
 \newglossaryentry{quad()}{
 	name={quad()},
-	description={Funkce kreslící čtyřúhelník. Nejvíce je použitelná pro lichoběžníky. Funkce vyžaduje parametry $X_1$, $Y_1$, $X_2$, $Y_2$, $X_3$, $Y_3$, $X_4$ a $Y_4$. Barvu čtyřúhelníku můžeme kontrolovat pomocí příkazu \vyraz{stroke()}. Barvu výplně definujeme funkcí \vyraz{fill()}.}
+	description={Funkce kreslící čtyřúhelník. Nejvíce je použitelná pro lichoběžníky. Funkce vyžaduje parametry $X_1$, $Y_1$, $X_2$, $Y_2$, $X_3$, $Y_3$, $X_4$ a $Y_4$. Barvu čtyřúhelníku můžeme kontrolovat pomocí příkazu \vyraz{stroke()}. Barvu výplně definujeme funkcí \vyraz{fill()}}
 }
 \newglossaryentry{radians()}{
 	name={radians()},
 	description={Převádí uhlové stupně do stupňů v radiánech. Tedy například hodnotu $0$ až $360$ převede na $0$ až $2 * \pi$}
 }
+\newglossaryentry{degrees()}{
+	name={degrees()},
+	description={Obrácená funkce \vyraz{radians()}. Převádí stupně v radiánech do uhlových stupňů.}
+}
 \newglossaryentry{rotate()}{
 	name={rotate()},
-	description={Provádí rotaci plátna ve dvourozměrném zobrazení. Střed rotace je vždy aktuální souřadnice $X = 0$ a $Y = 0$.}
+	description={Provádí rotaci plátna ve dvourozměrném zobrazení. Střed rotace je vždy aktuální souřadnice $X = 0$ a $Y = 0$}
 }
 \newglossaryentry{translate()}{
 	name={translate()},
@@ -181,91 +237,91 @@
 }
 \newglossaryentry{popMatrix()}{
 	name={popMatrix()},
-	description={Funkce načítá uloženého koordinačního systému a uzavírá blok transformací. Funkce vyžaduje uložení koordinátů, předchozím příkaz \vyraz{pushMatrix()}.}
+	description={Funkce načítá uloženého koordinačního systému a uzavírá blok transformací. Funkce vyžaduje uložení koordinátů, předchozím příkaz \vyraz{pushMatrix()}}
 }
 \newglossaryentry{rotateX()}{
 	name={rotateX()},
-	description={Funkce provádí rotaci celým prostorem kolem osy $X$. Vyžaduje hodnotu udanou ve stupních -- radiánech. Hodnota se pohybuje v rozmezí $0$ až $2 * \pi$.}
+	description={Funkce provádí rotaci celým prostorem kolem osy $X$. Vyžaduje hodnotu udanou ve stupních -- radiánech. Hodnota se pohybuje v rozmezí $0$ až $2 * \pi$}
 }
 \newglossaryentry{rotateY()}{
 	name={rotateY()},
-	description={Funkce provádí rotaci celým prostorem kolem osy $Y$. Vyžaduje hodnotu udanou ve stupních -- radiánech. Hodnota se pohybuje v rozmezí $0$ až $2 * \pi$.}
+	description={Funkce provádí rotaci celým prostorem kolem osy $Y$. Vyžaduje hodnotu udanou ve stupních -- radiánech. Hodnota se pohybuje v rozmezí $0$ až $2 * \pi$}
 }
 \newglossaryentry{rotateZ()}{
 	name={rotateZ()},
-	description={Funkce provádí rotaci celým prostorem kolem osy $Z$. Vyžaduje hodnotu udanou ve stupních -- radiánech. Hodnota se pohybuje v rozmezí $0$ až $2 * \pi$.}
+	description={Funkce provádí rotaci celým prostorem kolem osy $Z$. Vyžaduje hodnotu udanou ve stupních -- radiánech. Hodnota se pohybuje v rozmezí $0$ až $2 * \pi$}
 }
 \newglossaryentry{PI}{
 	name={PI},
-	description={Konstanta určující číslo $\pi$, 3,14159265\ldots .}
+	description={Konstanta určující číslo $\pi$, 3,14159265\ldots }
 }
 \newglossaryentry{HALFPI}{
 	name={HALFPI},
-	description={Konstanta určující polovinu čísla $\pi$, 3,14159265\ldots .}
+	description={Konstanta určující polovinu čísla $\pi$, 3,14159265\ldots }
 }
 \newglossaryentry{QUARTERPI}{
 	name={QUARTERPI},
-	description={Konstanta určující čtvrtinu číslo $\pi$, 3,14159265\ldots .}
+	description={Konstanta určující čtvrtinu číslo $\pi$, 3,14159265\ldots }
 }
 \newglossaryentry{CSV}{
 	name={CSV},
-	description={Neboli \uv{Comma Separated Values}. Jedná se o uznávaný standart uložených dat.  S tímto standardem  zachází mnoho programů. Jedná se v podstatě o textový soubor s informacemi oddělenými specifickým znakem. Nejčastěji je tímto specifickým znakem čárka. Rozlišovacím znakem může ovšem být například středník nebo teoreticky jakýkoli jiný znak.}
+	description={Neboli \uv{Comma Separated Values}. Jedná se o uznávaný standart uložených dat.  S tímto standardem  zachází mnoho programů. Jedná se v podstatě o textový soubor s informacemi oddělenými specifickým znakem. Nejčastěji je tímto specifickým znakem čárka. Rozlišovacím znakem může ovšem být například středník nebo teoreticky jakýkoli jiný znak}
 }
 \newglossaryentry{saveStrings()}{
 	name={saveStrings()},
-	description={Pomocí příkazu {\em saveStrings()} ukládáme pole ve formátu \vyraz{String}. Tento příkaz přijme dva parametry: název souboru a název našeho pole s textovou informací. Příkaz ukládá textový soubor naplněný hodnotami z pole. Jednu hodnotu zapisuje vždy na nový řádek.}
+	description={Pomocí příkazu {\em saveStrings()} ukládáme pole ve formátu \vyraz{String}. Tento příkaz přijme dva parametry: název souboru a název našeho pole s textovou informací. Příkaz ukládá textový soubor naplněný hodnotami z pole. Jednu hodnotu zapisuje vždy na nový řádek}
 }
 \newglossaryentry{save()}{
 	name={save()},
-	description={Pomocí příkazu save() ukládáme plátno programu do obrázku. Příkaz vyžaduje cestu k souboru. Cestu lze zadat buď úplnou (absolutní) nebo jen pouhý název souboru. Zadáním pouhého názvu se soubor uloží přímo do adresáře sketche. Příkaz dále rozlišuje mezi příponami automaticky. Obrázek tak uloží v patřičných formátech: TIF, JPG, PNG nebo TGA.}
+	description={Pomocí příkazu save() ukládáme plátno programu do obrázku. Příkaz vyžaduje cestu k souboru. Cestu lze zadat buď úplnou (absolutní) nebo jen pouhý název souboru. Zadáním pouhého názvu se soubor uloží přímo do adresáře sketche. Příkaz dále rozlišuje mezi příponami automaticky. Obrázek tak uloží v patřičných formátech: TIF, JPG, PNG nebo TGA}
 }
 \newglossaryentry{saveFrame()}{
 	name={saveFrame()},
-	description={Příkaz ukládá sérii obrázků. Stejně jako příkaz \slovnik{save()}, funkce vyžaduje cestu k souboru. Speciální vlastností příkazu je možnost vložit do názvu souboru symboly ($#$). Ty budou posléze detekovány a nahrazeny číslováním sekvence okének. Každé číslo bude označovat číslo okénka podle proměnné \slovnik{frameCount()}.}
+	description={Příkaz ukládá sérii obrázků. Stejně jako příkaz \slovnik{save()}, funkce vyžaduje cestu k souboru. Speciální vlastností příkazu je možnost vložit do názvu souboru symboly ($#$). Ty budou posléze detekovány a nahrazeny číslováním sekvence okének. Každé číslo bude označovat číslo okénka podle proměnné \slovnik{frameCount}}
 }
 \newglossaryentry{seed}{
 	name={seed},
-	description={Seed je proměnná, která obecně udává chování pseudonáhodných hodnot. Pomocí hodnoty \em{seed} v programu můžeme nastavit opakovatelnost náhodných čísel pokaždé když program spustíme. Varianta pro generovanou funkci \vyraz{random()} je \vyraz{randomSeed()}.}
+	description={Seed je proměnná, která obecně udává chování pseudonáhodných hodnot. Pomocí hodnoty \em{seed} v programu můžeme nastavit opakovatelnost náhodných čísel pokaždé když program spustíme. Varianta pro generovanou funkci \vyraz{random()} je \vyraz{randomSeed()}}
 }
 \newglossaryentry{randomSeed()}{
 	name={randomSeed()},
-	description={Funkce udává takzvanou hodnotu \vyraz{seed} pro všechny následující funkce \vyraz{random()}. Nezadáme-li hodnotu \vyraz{seed}, funkce \vyraz{random()} bude pokaždé generovat neopakovatelné výsledky.}
+	description={Funkce udává takzvanou hodnotu \vyraz{seed} pro všechny následující funkce \vyraz{random()}. Nezadáme-li hodnotu \vyraz{seed}, funkce \vyraz{random()} bude pokaždé generovat neopakovatelné výsledky}
 }
 
 \newglossaryentry{random()}{
 	name={random()},
-	description={Funcke, která vrací pseudonáhodné číslo. Není-li zadána žádná hodnota do kulatých závorek, výsledek funkce se pohybuje v rozmezí mezi $1..0$. Je-li zadána jedna vstupní hodnota, číslo se pohybuje mezi nulou a zadanou hodnotou. Jsou-li zadány dvě hodnoty oddělené čárkou. Výsledek se bude pohybovat v rozmezí těchto dvou hodnot.}
+	description={Funcke, která vrací pseudonáhodné číslo. Není-li zadána žádná hodnota do kulatých závorek, výsledek funkce se pohybuje v rozmezí mezi $1..0$. Je-li zadána jedna vstupní hodnota, číslo se pohybuje mezi nulou a zadanou hodnotou. Jsou-li zadány dvě hodnoty oddělené čárkou. Výsledek se bude pohybovat v rozmezí těchto dvou hodnot}
 }
 
 \newglossaryentry{millis()}
 {
   name={millis()},
-  description={Funkce udávající počet uplynulých milivteřin od startu programu. Na rozdíl od proměnné \vyraz{frameCount}, tato funkce udává precizní časový údaj od startu programu. Výsledná hodnota nezávisí na počtu vykreslených okének za vteřinu. Výsledný údaj tak lze využít například pro přesné časování animace, a to bez ohledu na počet okének za vteřinu. V případě ukládání animací do videa je pro časování animace naopak téměř nepoužitelný, především kvůli zpomalení animace při ukládání okének.}
+  description={Funkce udávající počet uplynulých milivteřin od startu programu. Na rozdíl od proměnné \vyraz{frameCount}, tato funkce udává precizní časový údaj od startu programu. Výsledná hodnota nezávisí na počtu vykreslených okének za vteřinu. Výsledný údaj tak lze využít například pro přesné časování animace, a to bez ohledu na počet okének za vteřinu. V případě ukládání animací do videa je pro časování animace naopak téměř nepoužitelný, především kvůli zpomalení animace při ukládání okének}
 }
 \newglossaryentry{frameCount}
 { 
   name={frameCount},
-  description={Proměnná uchovávající údaj o počtu vykreslených okének od startu programu.}
+  description={Proměnná uchovávající údaj o počtu vykreslených okének od startu programu}
 }
 \newglossaryentry{interakce}
 {
   name={interakce},
-  description={{\em (lat. interactio od inter-agere, jednat mezi sebou)} znamená vzájemné působení, jednání, ovlivňování všude tam, kde se klade důraz na vzájemnost a oboustrannou aktivitu na rozdíl od jednostranného, například kauzálního působení.}
+  description={{\em (lat. interactio od inter-agere, jednat mezi sebou)} znamená vzájemné působení, jednání, ovlivňování všude tam, kde se klade důraz na vzájemnost a oboustrannou aktivitu na rozdíl od jednostranného, například kauzálního působení}
 }
 \newglossaryentry{mouseX}
 {
   name={mouseX},
-  description={Proměnná která udává pozici kurzoru na plátně Processingového okna v ose $X$.}
+  description={Proměnná která udává pozici kurzoru na plátně Processingového okna v ose $X$}
 }
 \newglossaryentry{mouseY}
 {
   name={mouseY},
-  description={Proměnná která udává pozici kurzoru na plátně Processingového okna v ose $Y$.}
+  description={Proměnná která udává pozici kurzoru na plátně Processingového okna v ose $Y$}
 }
 \newglossaryentry{rectMode()}
 {
   name={rectMode()},
-  description={Funkce ovládá mód vykreslování obdélníku. Možné vstupní parametry jsou pouze čtyři:  {\em CORNER} je základní chování funkce \vyraz{rect()}. Tedy prvními dvěma parametry při kresbě umístíme nejdříve prní roh v ose $X$ a $Y$. Poté definujeme relativní šířku a výšku obdélníku. Druhou možností je {\em CORNERS}. Tento mód definuje dva rohy zvlášť, tedy v absolutních číslech na ploše. Dalším módem je {\em CENTER}. V tomto módu jsou obdélníky vystředěny kolem body $X$ a $Y$. Pomocí dvou dalších parametrů opět funkce \vyraz{rect()} definuje šířku a výšku tohoto obdélníku. Posledním módem je {\em RADIUS}. Ten nastavuje opět středové body $X$ a $Y$ v prvních dvou parametrech. Druhé dva parametry udávají polovinu šířky a polovinu výšky obdélníku.}
+  description={Funkce ovládá mód vykreslování obdélníku. Možné vstupní parametry jsou pouze čtyři:  {\em CORNER} je základní chování funkce \vyraz{rect()}. Tedy prvními dvěma parametry při kresbě umístíme nejdříve prní roh v ose $X$ a $Y$. Poté definujeme relativní šířku a výšku obdélníku. Druhou možností je {\em CORNERS}. Tento mód definuje dva rohy zvlášť, tedy v absolutních číslech na ploše. Dalším módem je {\em CENTER}. V tomto módu jsou obdélníky vystředěny kolem body $X$ a $Y$. Pomocí dvou dalších parametrů opět funkce \vyraz{rect()} definuje šířku a výšku tohoto obdélníku. Posledním módem je {\em RADIUS}. Ten nastavuje opět středové body $X$ a $Y$ v prvních dvou parametrech. Druhé dva parametry udávají polovinu šířky a polovinu výšky obdélníku}
 }
 
 \newglossaryentry{rect()}
@@ -277,163 +333,137 @@
 \newglossaryentry{background()}
 {
   name={background()},
-  description={Funkce nastavuje barvu pozadí na plátně. Standardní barva je světle šedá. Spuštěním této funkce s definicí barvy v kulatých závorkách, bude vyplněna celá plocha jednolitou barvou.}
+  description={Funkce nastavuje barvu pozadí na plátně. Standardní barva je světle šedá. Spuštěním této funkce s definicí barvy v kulatých závorkách, bude vyplněna celá plocha jednolitou barvou}
 }
 
 
 \newglossaryentry{void}
 {
   name={void},
-  description={Neboli prázdná funkce. Z anlgického \uv{prázdno}. Funkce která zpět nevrací žádný výsledek, pouze spouští sérii zadaných příkazů. Ty jsou uvozeny složenými závorkami.}
+  description={Neboli prázdná funkce. Z anlgického \uv{prázdno}. Funkce která zpět nevrací žádný výsledek, pouze spouští sérii zadaných příkazů. Ty jsou uvozeny složenými závorkami}
 }
 
 \newglossaryentry{indenting}
 {
   name={indenting},
-  description={Neboli zarovnávání kódu do úhledných paragrafů. Zarovnávání slouží k rychlejší orientaci programátora ve struktuře kódu.}
+  description={Neboli zarovnávání kódu do úhledných paragrafů. Zarovnávání slouží k rychlejší orientaci programátora ve struktuře kódu}
 }
 
 
 \newglossaryentry{syntax highlighting}
 {
   name={syntax highlighting},
-  description={Barevné odlišování slov podle jejich významů. Odlišování slouží k lepší orientaci programátora v kódu.}
+  description={Barevné odlišování slov podle jejich významů. Odlišování slouží k lepší orientaci programátora v kódu}
 }
 
 \newglossaryentry{flow}
 {
   name={flow},
-  description={Nebo--li plynutí, tok, je zvláštním stavem mysli popisovaným programátory. Jedná se o stav, kdy je člověk plně zanořen do práce. Jakékoli vyrušení z tohoto stavu, si vyžaduje dlouhou koncentraci k opětovnému nastolení bdělosti. Podle zkušených programátorů vyvolání takového stavu trvá několik desítek minut práce s kódem.}
+  description={Nebo--li plynutí, tok, je zvláštním stavem mysli popisovaným programátory. Jedná se o stav, kdy je člověk plně zanořen do práce. Jakékoli vyrušení z tohoto stavu, si vyžaduje dlouhou koncentraci k opětovnému nastolení bdělosti. Podle zkušených programátorů vyvolání takového stavu trvá několik desítek minut práce s kódem}
 }
 
 \newglossaryentry{setup()}
 {
   name={setup()},
-  description={Základní funkce pro nastavení výchozích parametrů programu. Tato funkce je spuštěna jednou, vždy na začátku běhu programu.}
+  description={Základní funkce pro nastavení výchozích parametrů programu. Tato funkce je spuštěna jednou, vždy na začátku běhu programu}
 }
-
-\newglossaryentry{draw()}
-{
-  name={draw()},
-  description={Hlavní smyčka Processingu. Veškerý kód uzavřený v této funkci bude vykreslen jednou za okénko. V závislosti na náročnosti operace, se smyčka opakuje šedesátkrát za vteřinu. V této funkci nejčastěji dochází ke kresbě nebo interakci s uživatelem.}
-}
-
-\newglossaryentry{stroj}
-{
-  name={stroj},
-  description={Stroj je technické zařízení, které přeměňuje jeden druh energie nebo síly v jiný - ať už kvalitativně nebo kvantitativně. Původně byly stroje jen mechanické, ale dnes se tak označují i zařízení pracující na jiných fyzikálních či technických principech - například elektrický transformátor. Strojem je v této knize téměř výhradně myšlen počítač. Počítač je programovatelný typ stroje který přijímá vstup, ukládá a zpracovává data a umožňuje výstup v požadovaném formátu.},
-  plural={stroje}
-}
-
 \newglossaryentry{slovník}
 {
   name={slovník},
   description={právě se zde nacházíte},
   plural={slovníky}
 }
-
-
 \newglossaryentry{true}
 {
   name={true},
-  description={Pravda, neboli 1.}
+  description={Pravda, neboli 1}
 }
-
 \newglossaryentry{false}
 {
   name={false},
-  description={Nepravda, neboli 0.}
+  description={Nepravda, neboli 0}
 }
-
 \newglossaryentry{boolean}
 {
   name={boolean},
   description={Datatyp který může mít jen dva stavy: \vyraz{true} a \vyraz{false}}
 }
-
 \newglossaryentry{Built with Processing}
 {
 	name={Built with Processing},
-	description={Doslova znamená: \uv{Postaveno s Processingem}. Jedná se o zvláštní komunitní frázi, která se objevuje u projektů využívajících Processing. Fráze vyjadřuje určitý vděk všem participantům a tvůrcům Processingu, za tvorbu tohoto nástroje.}
+	description={Doslova znamená: \uv{Postaveno s Processingem}. Jedná se o zvláštní komunitní frázi, která se objevuje u projektů využívajících Processing. Fráze vyjadřuje určitý vděk všem participantům a tvůrcům Processingu, za tvorbu tohoto nástroje}
 }
-
 \newglossaryentry{otevřený software}
 {
   name={otevřený software},
-  description={Také nazývaný \uv{svobodný}. Software s veřejně dostupným zdrojovým kódem.},
+  description={Také nazývaný \uv{svobodný}. Software s veřejně dostupným zdrojovým kódem},
   plural={otevřeného softwaru}
 }
-
 \newglossaryentry{GNU / Linux}
 {
   name={GNU / Linux},
-  description={Zkratka \uv{Gnu Is not Unix}. {\em GNU} je projekt původně založený Richardem Stallmanem, jedná se o operační systém a rodinu programů s otevřeným zdrojovým kódem.}
+  description={Zkratka \uv{Gnu Is not Unix}. {\em GNU} je projekt původně založený Richardem Stallmanem, jedná se o operační systém a rodinu programů s otevřeným zdrojovým kódem}
 }
-
 \newglossaryentry{GNU / GPL}
 {
   name={GNU / GPL},
-  description={Jedna z licencí otevřeného softwaru zaručující volně dostupný zdrojový kód. Základním konceptem licence je podmínečná volná dostupnost zdrojového kódu takto licencovaného programu. A dále nutnost použití stejné licence pro veškeré projekty takový kód využívající.}
+  description={Jedna z licencí otevřeného softwaru zaručující volně dostupný zdrojový kód. Základním konceptem licence je podmínečná volná dostupnost zdrojového kódu takto licencovaného programu. A dále nutnost použití stejné licence pro veškeré projekty takový kód využívající}
 }
-
 \newglossaryentry{MIT licence}
 {
   name={indenting},
-  description={Je licencí kompatibilní s licencí \vyraz{GNU / GPL}, jedná se o zvláštní licenci modifikovanou na půdě Univerzity MIT {\em --Massachusetts Institute of Technology}.},
+  description={Je licencí kompatibilní s licencí \vyraz{GNU / GPL}, jedná se o zvláštní licenci modifikovanou na půdě Univerzity MIT {\em --Massachusetts Institute of Technology}},
   plural={MIT licencí}
 }
-
-
 \newglossaryentry{kompilace}
 {
 	name={kompilace},
-	description={Proces překladu z čitelného textu do strojového kódu.}
+	description={Proces překladu z čitelného textu do strojového kódu}
 }
-
 \newglossaryentry{zdrojový kód}
 {
 	name={zdrojový kód},
-	description={Kód který je čitelný pro člověka.},
+	description={Kód který je čitelný pro člověka},
 	plural={zdrojové kódy}
 }
-
 \newglossaryentry{binarní kód}
 {
 	name={binární kód},
-	description={Též strojový kód. Slovo vycházející z anglického slova {\em binary} -- dvojkové soustavy. V počítačové terminologii označuje kód srozumitelný pro procesor. Nejčastěji se s ním setkáme například v případě spustitelných aplikací.},
+	description={Též strojový kód. Slovo vycházející z anglického slova {\em binary} -- dvojkové soustavy. V počítačové terminologii označuje kód srozumitelný pro procesor. Nejčastěji se s ním setkáme například v případě spustitelných aplikací},
 	plural={binární kódy}
 }
-
 \newglossaryentry{Java}
 {
 	name={Java},
-	description={Java je objektově orientovaný programovací jazyk, který vyvinula firma Sun Microsystems a představila jej 23. května 1995.}
+	description={Java je objektově orientovaný programovací jazyk, který vyvinula firma Sun Microsystems a představila jej 23. května 1995}
 }
-
 \newglossaryentry{sketch}
 {
 	name={sketch},
-	description={Nebo-li {\em náčrt}, je koncept v prostředí Processing pro uchovávání jednotlivých projektů v adresářích. Jedna {\em sketch} je adresář, kam Processing ukládá data uživatele (tj. především kód a externí soubory).},
+	description={Nebo-li {\em náčrt}, je koncept v prostředí Processing pro uchovávání jednotlivých projektů v adresářích. Jedna {\em sketch} je adresář, kam Processing ukládá data uživatele (tj. především kód a externí soubory)},
 	plural={sketche}
 }
-
 \newglossaryentry{CODE}
 {
 	name={CODE},
-	description={Adresář uvnitř \slovnikpl{sketch}, který může obsahovat externí \slovnik{Java} a \slovnik{binární kód} programy nebo knihovny třetí strany.}
+	description={Adresář uvnitř \slovnikpl{sketch}, který může obsahovat externí \slovnik{Java} a \slovnik{binární kód} programy nebo knihovny třetí strany}
 }
 \newglossaryentry{class}{
 	name={class},
-	description={Takzvaná třída. Slovo označující deklaraci nové třídy, definici objektu. Třída je souhrn funkcí a proměnných a představuje šablonu pro objekt. Jména tříd jsou většinou označovány počátečním velkým písmenem, instance objektů (produkt ze šablony) pak písmenem malým. Třída je základní stavební kámen objektově orientovaného programování.}
+	description={Takzvaná třída. Slovo označující deklaraci nové třídy, definici objektu. Třída je souhrn funkcí a proměnných a představuje šablonu pro objekt. Jména tříd jsou většinou označovány počátečním velkým písmenem, instance objektů (produkt ze šablony) pak písmenem malým. Třída je základní stavební kámen objektově orientovaného programování}
 }
 \newglossaryentry{DATA}
 {
 	name={DATA},
-	description={Adresář uvnitř \slovnikpl{sketch}, který obsahuje další externí soubory (obrázky, textové soubory, atd.).}
+	description={Adresář uvnitř \slovnikpl{sketch}, který obsahuje další externí soubory (obrázky, textové soubory, atd.)}
 }
 \newglossaryentry{acos()}{
 	name={acos()},
-	description={Inverzní funkce \vyraz{cos()}, arkuskosinus. Funkce převádí hodnoty rozmezí od $-1.0$ do $1.0$ na hodnoty v rozmezí od $0$ do $\pi$ {\em (3.1415927)}.}
+	description={Inverzní funkce \vyraz{cos()}, arkuskosinus. Funkce převádí hodnoty rozmezí od $-1.0$ do $1.0$ na hodnoty v rozmezí od $0$ do $\pi$ {\em (3.1415927)}}
+}
+\newglossaryentry{asin()}{
+	name={asin()},
+	description={Inverzní funkce \vyraz{sin()}, arkussinus. Funkce převádí hodnoty rozmezí od $1.0$ do $-1.0$ na hodnoty v rozmezí od $0$ do $\pi$ {\em (3.1415927)}}
 }
 \newglossaryentry{atan2()}{
 	name={atan2()},
@@ -441,29 +471,54 @@
 }
 \newglossaryentry{ellipseMode()}{
 	name={ellipseMode()},
-	description={Ovlivňuje způsob jakým je vykreslována elipsa. Možné módy jsou {\em RADIUS, CENTER, CORNER, CORNERS}. Výchozí módem je {\em CENTER}. První dva parametry nastavují pozici elipsy, druhé dva pak šířku a výšku elipsy. V případě módu {\em RADIUS} druhé dva parametry určují poloměry elipsy. Mód {\em CORNER} definuje pozici levého horního bodu, následně šířku a výšku. Poslední mód {\em CORNERS} definuje dva body mezi které bude elipsa vepsána.}
+	description={Ovlivňuje způsob jakým je vykreslována elipsa. Možné módy jsou {\em RADIUS, CENTER, CORNER, CORNERS}. Výchozí módem je {\em CENTER}. První dva parametry nastavují pozici elipsy, druhé dva pak šířku a výšku elipsy. V případě módu {\em RADIUS} druhé dva parametry určují poloměry elipsy. Mód {\em CORNER} definuje pozici levého horního bodu, následně šířku a výšku. Poslední mód {\em CORNERS} definuje dva body mezi které bude elipsa vepsána}
 }
 \newglossaryentry{beginRecord()}{
 	name={beginRecord()},
-	description={Otevírá nový soubor pro zápis do souboru ve formátu {\em PDF} nebo {\em DXF}. Kresba tak probíhá souběžně na plátno i do souboru. Pro ukončení kresby musíme spustit funkci \vyraz{endRecord()}.}
+	description={Otevírá nový soubor pro zápis do souboru ve formátu {\em PDF} nebo {\em DXF}. Kresba tak probíhá souběžně na plátno i do souboru. Pro ukončení kresby musíme spustit funkci \vyraz{endRecord()}}
 }
 \newglossaryentry{beginShape()}{
 	name={beginShape()},
-	description={Za pomoci funkcí {\em beginShape()} a \vyraz{endShape()} můžeme definovat složitější tvary. Funkce {\em beginShape()} otevírá definici tvaru. Následuje funkce \vyraz{vertex()}, která určuje jednotlivé body tvaru. Tvar je nakonec uzavřen příkazem \vyraz{endShape()}. Kresba tvarů může probíhat ve dvou i třech rozměrech. V závislosti na renderu můžeme definovat \vyraz{vertex()} se dvěmi nebo třemi hodnotami. Doplňujícím parametrem v kulatých závokách funkce {\em beginShape()} dále může být uveden způsob, jakým budou body spojovány. Přípustné varianty jsou: {POINTS, LINES, TRIANGLES, TRIANGLE\_FAN, TRIANGLE\_STRIP, QUADS a QUAD\_STRIP}.}
+	description={Pomocí funkcí {\em beginShape()} a \vyraz{endShape()} můžeme definovat složitější tvary. Funkce {\em beginShape()} otevírá definici tvaru. Následuje funkce \vyraz{vertex()}, která určuje jednotlivé body tvaru. Tvar je nakonec uzavřen příkazem \vyraz{endShape()}. Kresba tvarů může probíhat ve dvou i třech rozměrech. V závislosti na renderu můžeme definovat \vyraz{vertex()} se dvěmi nebo třemi hodnotami. Doplňujícím parametrem v kulatých závokách funkce {\em beginShape()} dále může být uveden způsob, jakým budou body spojovány. Přípustné varianty jsou: {POINTS, LINES, TRIANGLES, TRIANGLE\_FAN, TRIANGLE\_STRIP, QUADS a QUAD\_STRIP}}
 }
 \newglossaryentry{exit()}{
 	name={exit()},
-	description={Ukončí program. Program bez funkce \vyraz{draw()} bude ukončen automaticky poslední řádkou kǒdu. Programy obsahující funkci \vyraz{draw()} běží dokud není program zvenčí ukončen nebo není zavolán příkaz {\textbf exit()}.}
+	description={Ukončí program. Program bez funkce \vyraz{draw()} bude ukončen automaticky poslední řádkou kǒdu. Programy obsahující funkci \vyraz{draw()} běží dokud není program zvenčí ukončen nebo není zavolán příkaz {\textbf exit()}}
 }
 \newglossaryentry{camera()}{
 	name={camera()},
-	description={Nastavuje pozici kamery skrze parametry: pozice oka, střed zobrazení a osa označující směr nahoru. Funkce zavolaná bez jakýchkoli parametrů nastaví kameru na výchozí pozici. Výchozí pozice lze vyjádřit následovně: {\em camera(width/2.0, height/2.0, (height/2.0) / tan(PI*60.0 / 360.0), width/2.0, height/2.0, 0, 0, 1, 0)}.}
+	description={Nastavuje pozici kamery skrze parametry: pozice oka, střed zobrazení a osa označující směr nahoru. Funkce zavolaná bez jakýchkoli parametrů nastaví kameru na výchozí pozici. Výchozí pozice lze vyjádřit následovně: {\em camera(width/2.0, height/2.0, (height/2.0) / tan(PI*60.0 / 360.0), width/2.0, height/2.0, 0, 0, 1, 0)}}
 }
 \newglossaryentry{box()}{
 	name={box()},
-	description={Krychle nebo kvádr. Krychli můžeme definovat jedním parametrem, který určuje délku jedné hrany. Kvádr můžeme definovat stejným příkazem zadáním délky tří hran: $X$, $Y$, $Z$.}
+	description={Krychle nebo kvádr. Krychli můžeme definovat jedním parametrem, který určuje délku jedné hrany. Kvádr můžeme definovat stejným příkazem zadáním délky tří hran: $X$, $Y$, $Z$}
 }
 \newglossaryentry{cos()}{
 	name={cos()},
-	description={Počítá hodnotu kosinu z úhlu. Tato funkce očekává parametr vyjadřující úhel, parametr může být v rozsahu od $0$ do $\pi*2$. Hodnoty se pak pohybují mezi $-1$ do $1$.}
+	description={Počítá hodnotu kosinu z úhlu. Tato funkce očekává parametr vyjadřující úhel, parametr může být v rozsahu od $0$ do $\pi*2$. Hodnoty se pak pohybují mezi $-1$ do $1$}
+}
+\newglossaryentry{new}{
+	name={new},
+	description={Výraz uvozující vytvoření instance z objektu}
+}
+\newglossaryentry{strokeWeight()}{
+	name={strokeWeight()},
+	description={Nastavuje tloušťku čáry u kresby kontur objektů. Základní nastavení je 1.0}
+}
+\newglossaryentry{loadStrings()}{
+	name={loadStrings()},
+	description={Funkce načítající externí textová data do formátu pole řetězců: {\em String[]}. V takto vytvořeném poli každý slot obashuje jeden řádek textu.}
+}
+\newglossaryentry{splitTokens()}{
+	name={splitTokens()},
+	description={Funkce pro práci s textem, přijímající dva parametry: samotný řetězec a dále takzvaný delimiter -- znak kterým řetězec chceme rozdělit. Funkce vrací pole řetězců, {\em String[]}}
+}
+\newglossaryentry{stroj}
+{
+  name={stroj},
+  description={Stroj je technické zařízení, které přeměňuje jeden druh energie nebo síly v jiný - ať už kvalitativně nebo kvantitativně. Původně byly stroje jen mechanické, ale dnes se tak označují i zařízení pracující na jiných fyzikálních či technických principech - například elektrický transformátor. Strojem je v této knize téměř výhradně myšlen počítač. Počítač je programovatelný typ stroje který přijímá vstup, ukládá a zpracovává data a umožňuje výstup v požadovaném formátu}
+}
+\newglossaryentry{import}{
+	name={import},
+	description={Výraz načítá externí součásti do {\em Processingu}. Využívá se zejména při práci s knihovnami}
 }

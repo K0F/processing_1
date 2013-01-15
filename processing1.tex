@@ -175,13 +175,15 @@
 \usepackage[xindy]{glossaries}
 
 
+
+
 %tvorba slovniku
 
 
 
 
 %Slovník název
-\renewcommand{\glossaryname}{Slovník pojmů}
+\renewcommand{\glossaryname}{Slovník}
 %\renewcommand{\shortglossaryname}{Slovník}
 
 
@@ -196,9 +198,10 @@
 
 \begin{document}
 
-
 \input{slovnik.tex}
+\makeglossary
 \makeglossaries
+
 
 \newpage
 
@@ -1887,7 +1890,7 @@ Jestli je klávesa kódovaná, zjistíme dále pomocí proměnné \vyraz{CODED}.
 \begin{lstlisting}
 void keyPressed(){
 
-	if(CODED){
+	if(key == CODED){
 		if(keyCode==ENTER){
 			// detekce klavesy ENTER
 		}
@@ -3559,7 +3562,6 @@ Aktualizovanou podobu tohoto průvodce můžete najít v elektronické verzi rep
 {\em Kryštof Pešek, 12. května 2012}
 \end{flushright}
 
-\chapter{Rejstřík pojmů}
 \printglossaries
 
 %\printglossaries
