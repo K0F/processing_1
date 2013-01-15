@@ -5,13 +5,40 @@
 % with the fontspec package to easily select fonts.
 
  % use larger type; default would be 10pt
-\documentclass[10pt]{book}
+\documentclass[10pt,twoside=true,open=right,cleardoublepage=empty,chapterprefix=true]{scrbook}
+% other LaTeX packages.....
+\usepackage[lmargin=2.2cm,rmargin=2.2cm,tmargin=3cm,bmargin=3cm]{geometry} % See geometry.pdf to learn the layout options. There are lots.
+\geometry{a5paper} % or letterpaper (US) or a5paper or....
+%\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+
+%\usepackage{etoolbox}
+%\makeatletter
+%\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+%\makeatother
+
 \usepackage[czech]{babel}
 \usepackage{ucs}
 % Unicode support for LaTeX character names (accents, European chars, etc)
 \usepackage{fontenc}
 \usepackage{xltxtra,fontspec,xunicode}
 \usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+
+% headers FANCY ))
+\renewcommand{\subsubsectionmark}[1]{\markright{\thesubsubsection\ #1}}
+
+\lhead[\thepage]{\rightmark}
+\rhead[]{\thepage}
+\cfoot{}
+
+  
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\usepackage{makeidx}
+\makeindex
 
 
 \hypersetup{
@@ -82,8 +109,8 @@
 \definecolor{odkaz}{rgb}{0.5,0.5,0.5} % comments
 
 
-\usepackage{makeidx}
-\usepackage{index}     % balík pro indexování
+%\usepackage{makeidx}
+%\usepackage{index}     % balík pro indexování
 
 
 
@@ -98,7 +125,7 @@
 
 \usepackage{marginnote}
 \usepackage[textsize=footnotesize,textwidth=1.6cm]{todonotes}
-\setlength{\marginparwidth}{1.9cm}
+\setlength{\marginparwidth}{1.7cm}
 
 \newcommand{\oddilN}[1]{\section*{#1}\index{#1}\label{#1}}
 \newcommand{\oddil}[1]{\section{#1}\index{#1}\label{#1}}
@@ -155,10 +182,6 @@
 \usepackage{sectsty}
 \allsectionsfont{\sffamily}
 
-% other LaTeX packages.....
-\usepackage[lmargin=2.2cm,rmargin=2.2cm,tmargin=3cm,bmargin=3cm]{geometry} % See geometry.pdf to learn the layout options. There are lots.
-\geometry{a5paper} % or letterpaper (US) or a5paper or....
-%\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
 
 
 
@@ -184,7 +207,9 @@
 
 %Slovník název
 \renewcommand{\glossaryname}{Slovník}
-%\renewcommand{\shortglossaryname}{Slovník}
+\renewcommand*{\glspostdescription}{. \ldots}
+
+%%\renewcommand{\shortglossaryname}{Slovník}
 
 
 
@@ -204,28 +229,26 @@
 
 
 \newpage
+\ 
 
-$$0$$
-
-\thispagestyle{empty}
+\pagestyle{empty}
 
 
 \newpage
-$$\infty$$
-
-\thispagestyle{empty}
+\ 
 
 
 \vfill
 
 \begin{itemize}
-\item
+\item[] Copyleft: Kryštof Pešek (2013)
+\item[]
 Původní elektronický dokument: \\
 {\em https://github.com/K0F/processing\_1}
-\item
-Nakladatelství AMU: \\
+\item[]
+Vydalo Nakladatelství AMU: \\
 {\em ISBN 978-80-7331-224-4}
-\item
+\item[]
 {\em Vysázeno textovým systémem \XeLaTeX.}
 
 
@@ -237,27 +260,31 @@ Nakladatelství AMU: \\
 
 \newpage
 
+
 \oddilN{Poděkování}
-Zde bych rád poděkoval všem lidem, kteří se podíleli na vzniku této publikace. Nejprve Tomáši Pospiszylovi, vedoucímu této práce, za neúnavný dohled nad podobou následujícího textu.
+Zde bych rád poděkoval všem lidem, kteří se podíleli na vzniku této publikace.
 
-Rád bych též poděkoval Miloši Vojtěchovskému za oponenturu práce, Zdeňku Holému a Andree Slovákové za konzultace a pomoc při vydávání knihy, Olině Stehlíkové a Janě Křížové za korektury v textu.
+Nejprve děkuji Tomáši Pospiszylovi, vedoucímu této práce, za neúnavný dohled nad podobou následujícího textu.  Velmi rád bych poděkoval Miloši Vojtěchovskému za oponenturu práce, Andree Slovákové a Zdeňku \\Holému za konzultace a pomoc při vydávání publikace. Rovněž bych rád také poděkoval Janě Křížové a Olze Stehlíkové za jejich korektorskou práci a usměrnění příručky do mezí čitelnosti.
 
+
+\vspace{5em}
+
+\begin{flushright}
+{\em \footnotesize{-- Kryštof Pešek}}
+\end{flushright}
 
 \vfill
 
-\begin{flushright}
-{\em \footnotesize{--Kryštof Pešek}}
-\end{flushright}
-
+\newpage
 
 \oddilN{Abstrakt}
 
-Příručka Processing 1.0 je základním úvodem do jazyka Processing. Tento jazyk byl navržen v akademických dílnách {\em Massachutches Institute of Technology} ke snazšímu a co možná nejsvobodnějšímu přístupu tvůrců -- obecně vzato všech netechnických oborů, k pokročilým technologiím. Základ pro tuto příručku vznikl při sérii otevřených dílen o programování vedený Kryštofem Pešek na pražské FAMU.
+Tato příručka je základním úvodem do jazyka {\em Processing}, ten byl navržen v akademických dílnách {\em Massachusetts Institute of Technology} k snazšímu a co možná nejsvobodnějšímu přístupu tvůrců -- obecně vzato -- všech netechnických oborů k pokročilým technologiím. Základ pro tuto příručku vznikl při sérii otevřených dílen o programování vedených Kryštofem \\Peškem na pražské FAMU.
 
-Podobné příručky v posledních letech vznikly pouze v anglickém jazyce: {/em Casey Reas and Ben Fry, A programming handbook for designers and artist (2007)}, {\em Ira Greenberg: Processing Creative coding and Computational Art (2007)}, {\em Daniel Shiffman: Learning Processing: A Beginner's Guide to Programming Images, Animation, and Interaction (2008)}, {\em Tom Igoe: Making Thinks Talk: Practical Methods for Connecting Physical Objects (2007)}. V českém jazyce žádná podobná kniha doposud nevyšla. Příručka by měla přiblížit, ve shodě s původním smyslem Processingu, technologie i netechnicky zaměřeným oborům, především pak studentům z výtvarných škol bez předešlé nebo jen malé zkušenosti s programováním.
+Podobné příručky v posledních letech vznikly pouze v anglickém jazyce např. Casey Reas a Ben Fry: {\em A programming handbook for designers and artist} (2007), Ira Greenberg: {\em Processing Creative Coding and Computational Art}  (2007), Daniel Shiffman: {\em Learning Processing: A Beginner's Guide to Programming Images, Animation, and Interaction}  (2008), Tom Igoe: {\em Making Thinks Talk: Practical Methods for Connecting Physical Objects} (2007). V českém jazyce žádná podobná kniha doposud nevyšla. Příručka by měla přiblížit, ve shodě s původním smyslem {\em Processingu}, technologie i netechnicky zaměřeným oborům, hlavně pak studentům výtvarných škol bez předešlé zkušenosti -- nebo jen s malou praxí s programováním.
 
 
-Kniha byla zpracována jako diplomová práce studijního oboru Centra audiovizuálních studií na pražské FAMU a vznikla za podpory grantu SGS AMU 2011-12. 
+Publikace byla zpracována jako diplomová práce studijního oboru \\Centra audiovizuálních studií na pražské FAMU a vznikla za podpory \\grantu {\em SGS AMU} (2011 - 2012). 
 
 
 
@@ -270,7 +297,7 @@ Kniha byla zpracována jako diplomová práce studijního oboru Centra audiovizu
 
 \tableofcontents
 
-
+\vfill
 \chapter{O knize}
 
 
@@ -286,6 +313,7 @@ Kniha byla zpracována jako diplomová práce studijního oboru Centra audiovizu
 \oddil{Úvodem}
 
 
+\pagestyle{fancyplain}
 
 Vážení čtenáři,
 
@@ -307,7 +335,22 @@ V obou případech prosím o shovívavost ve způsobu popisu programovacího jaz
 
 Má snaha provést začínající i středně pokročilé uživatele programovacím jazykem bude vždy nedostatečná, berte tuto knihu, prosím, spíše jako průvodce nesnadnými začátky. Čtete-li knihu z jiných důvodů, než abyste se naučili programovacímu jazyku, pokusím se text proložit poznatky nabytými moji několikaletou zkušeností se sdílením života se stroji. Dostala-li se vám tato publikace do rukou jinou cestou, nebo dokonce náhodou či omylem, tedy věru netuším, co v ní dále najdete, a proto bych i vás rád pobídl alespoň k začtení se do světa skriptů a kódů.
 
-\oddil{Forma knihy}
+
+
+
+\pododdil{Cíle příručky}
+
+Cílem této knihy je provést uživatele--začátečníka sérií příkladů, které budou ilustrovat znalosti nezbytné k naprogramování jednotlivých stadií programu.
+
+Prvním cílem této příručky je popsat základní terminologii používanou v jazyce {\em Processing}, tato pasáž je nezbytná pro další pokračování. Jestliže se cítíte v tento okamžik připraveni, můžete si rovnou nalistovat začátek průvodce \odkaz{Základní prostředí}.
+
+Následující krok je pochopení datatypů a operací s nimi. Proměnné představují základní stavební jednotku {\em Processingu}, orientujete-li se například v jazyce {\em Java}, směle tento krok rovnou přeskočte, všem ostatním čtenářům ovšem stěžejní pasáž příručky důrazně doporučuji přečíst \odkaz{Logika programování}.
+
+Dalším cílem publikace je uživatele {\em Processingu} uvést do zábavnější části programování: experimenty s obrazovým výstupem. Kapitoly týkající se základních kreslících funkcí \odkaz{Zobrazení} jsou dobré pro naprosté začátečníky. Těm lehce pokročilým bych doporučil sekci věnovanou pohybu \odkaz{Pohyb} a \odkaz{interakce}.
+
+Všechny kapitoly postupně čtenáře vedou k osvojení si objektově orientovaného jazyka. Zde se {\em Processing} stává opravdu mocným nástrojem. Pasáže v příručce věnující se podrobněji práci s objekty najdete zejména v pokročilejších kapitolách \odkaz{Uspořádání struktury programu}.
+
+Všem čtenářům ovšem doporučuji alespoň si pročíst úvod, a tím získat základní představu o kontextu programovacího jazyka {\em Processing}.
 
 \pododdil{Uspořádání informací}
 
@@ -343,7 +386,7 @@ boolean pravda = true;
 \item[\klavesy{CONTROL + T}:]
 klávesové zkratky které jsou psány \uv{verzálkami}
 
-\item[\slovnik{slovník}:]
+\item[\slovnik{GNU / GPL}:]
 výrazy a pojmy, jejichž definici můžete nalézt ve slovníku na konci knihy
 
 \item[\vyraz{boolean}:]
@@ -354,16 +397,20 @@ proměnné a názvy použité v kódu, které bude potřeba dovysvětlit v textu
 
 
 \item[cvičení:]
-Pomocí cvičení a otázek si můžete kontrolovat v průběhu textu nabyté znalosti. Bublina bude vždy značit důležité informace, například ty, které si musíte zapamatovat, abyste se mohli orientovat v následujícím textu.\bublina{Zapamatujte si, prosím, jak budou znázorněna cvičení.} 
+Pomocí cvičení a otázek si můžete kontrolovat v průběhu textu nabyté znalosti. Bublina bude vždy značit důležité informace, například ty, které si musíte zapamatovat, abyste se mohli orientovat \\v následujícím textu.\bublina{Zapamatujte si, prosím, jak budou znázorněna cvičení.} 
 
 \end{itemize}
 
 
-\chapter{Vytvořeno {\em Processingem}}
+
+
+
+\newpage
+\chapter{Vytvořeno Processingem}
 
 \oddil{Krajiny a světy}
 
-Robert Hodgin, také známý pod pseudonymem {\em flight 404,} zůstává jednou z oslavovaných ikon processingové komunity. Jeho práce s vizualizacemi je vždy velmi dynamická a technicky obdivuhodná.
+Robert Hodgin, také známý pod pseudonymem {\em flight 404}, zůstává jednou z oslavovaných ikon processingové komunity. Jeho práce s vizualizacemi je vždy velmi dynamická a technicky obdivuhodná.
 
 Hodgin pracuje s jazyky {\em Processing} a {\em Cinder}. V obou případech skrze tato prostředí ovšem programuje přímo aplikaci {\em OpenGL}, která zprostředkovává pokyny samotnému grafickému jádru.
 
@@ -372,9 +419,9 @@ Hodgin pracuje s jazyky {\em Processing} a {\em Cinder}. V obou případech skrz
 \includegraphics[width = 1\textwidth]{imgs/hogin.png}
 \end{centering}
 
-Ilustrace pochází z Hodginovy grafické práce, která byla vybrána jako jedna ze 42 prací do prvního vydání knihy {\em Written Images}.
+Ilustrace pochází z Hodginovy \index{Hodgin, Robert} \index{flight404} grafické práce, která byla vybrána jako jedna ze 42 prací do prvního vydání knihy {\em Written Images}.
 
-Publikace je kurátorským projektem a samostatným výtvarným počinem dánského tvůrce \textbf{Marcina Ignace}. První výtisk knihy byl vydán v roce 2011, kniha byla zpacována softwarem {\em Processing}. Jde v podstatě o konceptuální dílo, automatizací vychází každý výtisk s posunem o jedno okénko, a tím ilustruje ducha generativní tvorby. \vfill
+Publikace je kurátorským projektem a samostatným výtvarným počinem dánského tvůrce \textbf{Marcina Ignace} \index{Ingac, Marcin}. První výtisk knihy byl vydán v roce 2011, kniha byla zpacována softwarem {\em Processing}. Jde v podstatě o konceptuální dílo, automatizací vychází každý výtisk s posunem o jedno okénko, a tím ilustruje ducha generativní tvorby. \vfill
 
 \begin{centering}
 \includegraphics[width = 1\textwidth]{imgs/writtenimages.png}
@@ -400,7 +447,7 @@ Kniha obsahuje generativní obrazy následujících umělců:
 \end{center}
 
 
-Karsten Schmidt působí v processingové komunitě dlouhodobě a je více znám pod pseudonymem {\em Toxi}. Schmidt je autorem sady rozsáhlých knihoven nazvaných souhrnně {\em Toxilibs}. Jeho tvorba je zaměřena technicky na vývoj samotných knihoven, tedy jednotlivých modulů rozšiřujících funkce {\em Processingu} \odkaz{Knihovny}. V případě knihovny {\em Toxilibs} například rozšířením o funkce pro konstrukci trojdimenzionálních objektů. \index{Toxilibs}
+Karsten Schmidt působí v processingové komunitě dlouhodobě a je více znám pod pseudonymem {\em Toxi}. Schmidt je autorem sady rozsáhlých knihoven nazvaných souhrnně {\em Toxilibs} \index{toxilibs}. Jeho tvorba je zaměřena technicky na vývoj samotných knihoven, tedy jednotlivých modulů rozšiřujících funkce {\em Processingu} \odkaz{Knihovny}. V případě knihovny {\em Toxilibs} například rozšířením o funkce pro konstrukci trojdimenzionálních objektů.
 
 
 \begin{center}
@@ -410,7 +457,7 @@ Karsten Schmidt působí v processingové komunitě dlouhodobě a je více znám
 
 \end{center}
 
-Schmidtova práce vyniká zejména pro možnost recyklovatelnosti a další užitné hodnoty samotného kódu. Schmidtovy algoritmy jsou propracované a matematicky pokročilé. Práce Karstena Schmidta dobře ilustruje podstatu komunitní práce ve formě knihoven, které volně cirkulují mezi uživateli \\a jsou volně využívány v duchu svobodného softwaru. \index{Karsten Schmidt}
+Schmidtova práce vyniká zejména pro možnost recyklovatelnosti a další užitné hodnoty samotného kódu. Schmidtovy algoritmy jsou propracované a matematicky pokročilé. Práce Karstena Schmidta dobře ilustruje podstatu komunitní práce ve formě knihoven, které volně cirkulují mezi uživateli \\a jsou volně využívány v duchu svobodného softwaru. \index{Schmidt, Karsten}
 
 
 
@@ -424,27 +471,28 @@ Schmidtova práce vyniká zejména pro možnost recyklovatelnosti a další uži
 \end{center}
 
 
-Tvorba Karstena Schmidta se dá generalizovat jako užitá nebo aplikovaná. Pomocí bohaté zásoby vlastního softwaru, veliké zdatnosti a technické inovativnosti Karsten Schmidt svým softwarem plynule navazuje na potřeby architektů a inženýrů.
+Tvorba Karstena Schmidta \index{Schimdt, Karsten} se dá generalizovat jako užitá nebo aplikovaná. Pomocí bohaté zásoby vlastního softwaru, veliké zdatnosti a technické inovativnosti Karsten Schmidt svým softwarem plynule navazuje na potřeby architektů a inženýrů.
 
 
 
 \oddil{Local Bilateral Symmetry}
 
 
-Pozoruhodné algoritmy Jonathana McCaba vynikají svou spektakulárností, která je založena na podrobné studii a rozkladu Turingových vzorců. Jednotlivé variace téhož algoritmu vytvářejí struktury, které se vzdáleně podobají uspořádání organických materiálů v kostech nebo jiným přírodním vzorům.\index{Johnatan McCabe}
+Pozoruhodné algoritmy Jonathana McCaba vynikají svou spektakulárností, která je založena na podrobné studii a rozkladu Turingových vzorců. Jednotlivé variace téhož algoritmu vytvářejí struktury, které se vzdáleně podobají uspořádání organických materiálů v kostech nebo jiným přírodním vzorům.\index{McCabe, Johnatan}
 
 
 \begin{center}
 \includegraphics[width = 1\textwidth]{imgs/mcCabe1.png}
 \end{center}
 
-I když se to zprvu nabízí, McCabovy obrazy se nedají posuzovat pouze výtvarně. Nejvíce pozoruhodné jsou způsobem svého vzniku. Obrazy přímo odkazují na výzkum Alana Turinga, konkrétně na text vydaný v roce 1952 s názvem {\em The Chemical Basis of Morphogenesis}, který pojednává o vlivu chemických sloučenin na uspořádání růstu tkáně vícebuněčných organismů. Turing podobnou difuzi prvků v textu rozpracoval matematicky a po téměř padesáti letech na bázi původních algoritmů vznikají tyto obrazy. Podobnost v uspořádání lze nalézt například ve snímcích tkáně pod elektronovým mikroskopem, a i když se jedná o ryze výtvarnou interpretaci algoritmu, může vést k zamyšlení i vědecké kruhy.
+I když se to zprvu nabízí, \index{McCabe, Johnatan} McCabovy obrazy se nedají posuzovat pouze výtvarně. Nejvíce pozoruhodné jsou způsobem svého vzniku. Obrazy přímo odkazují na výzkum Alana Turinga\index{Turing, Alan}, konkrétně na text vydaný v roce 1952 s názvem {\em The Chemical Basis of Morphogenesis}, který pojednává o vlivu chemických sloučenin na uspořádání růstu tkáně vícebuněčných organismů. Turing podobnou difuzi prvků v textu rozpracoval matematicky a po téměř padesáti letech na bázi původních algoritmů vznikají tyto obrazy. Podobnost v uspořádání lze nalézt například ve snímcích tkáně pod elektronovým mikroskopem, a i když se jedná o ryze výtvarnou interpretaci algoritmu, může vést k zamyšlení i vědecké kruhy.
 
 
 \begin{center}
-\includegraphics[width = 1\textwidth]{imgs/turingpattern.jpg}
+\includegraphics[width = 0.95\textwidth]{imgs/turingpattern.jpg}
 \end{center}
 
+\ 
 
 
 
@@ -459,13 +507,6 @@ I když se to zprvu nabízí, McCabovy obrazy se nedají posuzovat pouze výtvar
 %\end{comment}
 
 
-\chapter{Cíle knihy}
-
-\oddil{Konkrétní zadání}
-
-Cílem této knihy je provést uživatele-začátečníka sérií příkladů, které budou ilustrovat znalosti nezbytné k naprogramování jednotlivých stadií programu. Jako první cíl si vytyčíme jednoduchý interaktivní program. Interaktivní program je takový, který dokáže určitým způsobem reagovat na uživatele. Tento program by ve výsledku měl přečíst polohu myši a na tomto základě provést proměnu v obraze.
-
-Na úvod je třeba říci, že vytyčení konkrétního cíle není vždy nutné. {\em Processing} již počítá s možností, že uživatel nebude od počátku znát konkrétní zadání a bude jen volně experimentovat s funkcemi jazyka. Proto {\em Processing} automaticky pojmenovává nové projekty, v žargonu {\em Processingu} sketche, podle data jejich vytvoření \odkaz{Sketch}.
 
 
 \chapter{Dobré zdroje v začátcích}
@@ -476,9 +517,9 @@ Autor knihy předpokládá, že čtenář má v přístup ke globální síti in
 
 Nejlepší referencí pro práci s {\em Processingem} zůstává tato síť. {\em Processing} byl vyvinut síťovou komunitou a je také v síti nejlépe zdokumentován. Existuje několik dobrých obecných stránek s průvodci. Za všechny lze jmenovat domovskou stránku projektu {\em processing.org}. Zde naleznete téměř vše, co byste mohli potřebovat. Nacházejí se zde zdokumentované veškeré příkazy {\em Processingu}. Je zde i záložka {\em Learning} s jednotlivými průvodci různých oblastí.
 
-Nejadresněji se vám dostane pomoci prostřednictvím webových fór nebo IRC--kanálů. Na fórech se již řešil téměř jakýkoli problém, stačí proto vyhledávat klíčová slova konkrétního dotazu a velmi rychle byste měli nalézt řešení.
+Nejadresněji se vám dostane pomoci prostřednictvím webových fór nebo \index{IRC} IRC--kanálů. Na fórech se již řešil téměř jakýkoli problém, stačí proto vyhledávat klíčová slova konkrétního dotazu a velmi rychle byste měli nalézt řešení.
  
-   Na síti je dále obrovské množství uživatelů volně sdílejících své programy včetně zdrojových kódů. Nejpočetnější komunita sídlí zřejmě na portálu {\em openprocessing.org} založeném a spravovaném Sinanem Aşçıoğluem.
+   Na síti je dále obrovské množství uživatelů volně sdílejících své programy včetně zdrojových kódů. Nejpočetnější komunita sídlí zřejmě na portálu {\em openprocessing.org} založeném a spravovaném \index{Aşçıoğlu, Sinan} Sinanem \\Aşçıoğluem.
    
 Veškerá dokumentace je v angličtině včetně webových fór i dalších knih o programování. Nemáte-li problém s anglickým jazykem, míst \\ k zdokonalování se v {\em Processingu} bude vždy dostatek. \bublina{Doporučuji se nejprve seznámit s projekty na internetu, získáte tím představu o tom, k čemu se vlastně Processing využívá.}
 
@@ -489,13 +530,13 @@ Tato pomoc je vždy po ruce. {\em Processing} je navržen k výuce a je připrav
 
 Příkladů je na webu dostatek a jsou přehledně uspořádány. Vřele doporučuji si je čas od času projít.
 
-Ke všem příkladům se dostanete z {\em Processingu} skrze nabídku {\em File > Examples} \odkaz{Základní prostředí}.
+Ke všem příkladům se dostanete z {\em Processingu} skrze nabídku {\em File $\rightarrow$ Examples} \odkaz{Základní prostředí}.
 
 \oddil{Knihy a průvodci}
 
 Ano, jednoho průvodce právě držíte v ruce (nebo čtete na obrazovce). \\V minulosti vyšla bezmála desítka podobných knih na stejné téma. Jsou bezesporu obsáhlejší, než kdy měla tato příručka v úmyslu.
 
-Z nich bych vám nejvíce doporučil základní příručku od samotných tvůrců Processingu Caseyho Rease a Bena Frye nazvanou {\em Processing: A Pro-gramming Handbook for Visual Designers and Artists (2007)}. A rozhodně pak knihu Daniela Shiffmana {\em Learning Processing: A Beginner's Guide to Programming Images, Animation, and Interaction (2008)}. Je jednou z velmi podrobně napsaných knih o {\em Processingu}.
+Z nich bych vám nejvíce doporučil základní příručku od samotných tvůrců Processingu Caseyho Rease a Bena Frye \index{Reas, Casey} \index{Fry, Ben} nazvanou {\em Processing: A Pro-gramming Handbook for Visual Designers and Artists (2007)}. A rozhodně pak knihu Daniela Shiffmana \index{Shiffman, Daniel} {\em Learning Processing: A Beginner's Guide to Programming Images, Animation, and Interaction (2008)}. Je jednou z velmi podrobně napsaných knih o {\em Processingu}.
 
 Knihy jsou cenově vcelku dostupné a dají se opatřit přes internet. Rozhodně bych to doporučoval všem, kteří  potřebují mít opravdu dobrou dokumentaci vždy při ruce. V neposlední řadě bych také upozornil na to, že koupí knihy podporujete tvůrce svobodného softwaru, a tím potažmo i svobodný software jako takový \odkaz{Otevřenost softwaru}.
 
@@ -505,6 +546,7 @@ Nejdůležitějším zdrojem vašich vlastních zkušeností bude vždy samotné
 
 %\part{Programovací jazyky}
 
+\newpage
 \chapter{K čemu slouží programovací jazyk?}
 
 \oddil{Počátky programovacího jazyka}
@@ -517,7 +559,7 @@ Na počátku programování ale nebyl lidský jazyk. Se stroji se v jejich raný
 
 Počítačový jazyk není jeden, počítačových jazyků jsou celé rozvětvené rodiny. Konceptů, jak lépe hovořit srozumitelně pro člověka a zároveň ke stroji, je celá řada, žádný z nich nedokáže plně kopírovat lidský jazyk v jeho přirozené struktuře. Důvodů je několik, jeden z nejpodstatnějších je fakt, že lidská řeč neodpovídá organizaci ve struktuře stroje, prostě proto, že člověk své řeči sám nerozumí natolik, aby popsal všechny její zákonitosti logickou cestou.
 
-Jednoduše řečeno, lidský jazyk není popsán tak dokonale, abychom ho byli schopni vysvětlit stroji. Pokusy o průnik lidské řeči \\a logického obvodu sahají do absolutních počátků interakce člověka se strojem a představují pro tvůrce strojů závažný problém. Tento problém v padesátých letech minulého století definoval Alan Turing, jeden ze zakladatelů dnešní výpočetní techniky. Alan Turing spolu s Gordonem Wechmanem stáli v době druhé světové války u vývoje stroje k rozkrývání německých šifer nazvaného Bomba (The Bomb). Alan Turing v poválečné éře definoval formální rámec počítače, jak jej známe dnes. Koncepce později nazvaná Turingův stroj vycházela zejména z matematických potřeb a jednalo se o snahu vytvořit kompletní výpočetní jednotku schopnou řešit veškeré známé matematické operace. \index{Alan Turing} \index{The Bomb}
+Jednoduše řečeno, lidský jazyk není popsán tak dokonale, abychom ho byli schopni vysvětlit stroji. Pokusy o průnik lidské řeči \\a logického obvodu sahají do absolutních počátků interakce člověka se strojem a představují pro tvůrce strojů závažný problém. Tento problém v padesátých letech minulého století definoval Alan Turing, jeden ze zakladatelů dnešní výpočetní techniky. Alan Turing spolu s Gordonem Wechmanem stáli v době druhé světové války u vývoje stroje k rozkrývání německých šifer nazvaného Bomba (The Bomb). Alan Turing v poválečné éře definoval formální rámec počítače, jak jej známe dnes. Koncepce později nazvaná Turingův stroj vycházela zejména z matematických potřeb a jednalo se o snahu vytvořit kompletní výpočetní jednotku schopnou řešit veškeré známé matematické operace. \index{Turing, Alan} \index{The Bomb}
 
 
 Je pozoruhodné, že Alan Turing se již v raných stadiích vývoje počítačů zabýval takzvanou umělou inteligencí. Z toho je zřejmé, že stroje podobné počítačům se od počátku svého vzniku připodobňují struktuře lidského uvažování. Alan Turing sestavil pro stroje známý experiment nazvaný Turingův test, jenž měl prověřit schopnosti stroje replikovat lidské chování. Není náhodou, že prostředkem pro komunikaci v testu byla zvolena právě řeč. Test spočíval v modelové situaci stroje schopného napodobit lidskou komunikaci tak dokonale, aby člověk nebyl schopen rozeznat, že komunikuje se strojem. Zajímavá na této definici lidské inteligence je zejména její vágnost, která v podstatě ilustruje míru porozumění logického uvažování lidské mysli jako takové.
@@ -569,14 +611,14 @@ Vtip spočívá v tom, že ovládneme-li formálně jazyk určený stroji, můž
 
 Ve výpočetní technice se nachází celá škála programovacích jazyků i prostředí. Tyto jazyky mají svoji genezi a byly historicky vyvíjeny především počítačovými odborníky. Jejich dokonalost lze těžko ocenit z vnějšího pohledu, a to právě z důvodu jejich konstrukce, která odpovídá a částečně podléhá určitým účelům, ke kterým byly tyto jazyky původně navrženy. Celistvý pohled na vývoj programovacích jazyků zde není možné obsáhnout. Programovací jazyk dle historického vývoje můžeme rozdělit na dvě skupiny, jazyky imperativní a objektově orientované. Toto základní rozdělení programovacích jazyků popisuje dva rozdílné přístupy v popisu událostí. 
 
-{\em Processing} se svojí stavbou na základech {\em Javy} řadí k objektově \\orientovaným jazykům. Programovací jazyk {\em Java} je relativně mladým jazykem. Historie tohoto jazyka sahá přibližně do roku 1995. Mezi jeho hlavní výhody, ze kterých i {\em Processing} velmi těží, jsou zejména důraz na multiplatformnost a relativní jednoduchost syntaxe. Příbuznými jazyka {\em Java} jsou další objektově orientované programovací jazyky jako {\em  C++}, {\em  Perl}, {\em Object Pascal}, {\em Visual Basic}, {\em C\#}, {\em PHP}, {\em Python}, {\em Ruby}, {\em Smalltalk} nebo dokonce {\em Lisp}. \index{Programovací jazyky}
+{\em Processing} se svojí stavbou na základech {\em Javy} řadí k objektově \\orientovaným jazykům. Programovací jazyk {\em Java} je relativně mladým jazykem. Historie tohoto jazyka sahá přibližně do roku 1995. Mezi jeho hlavní výhody, ze kterých i {\em Processing} velmi těží, jsou zejména důraz na multiplatformnost a relativní jednoduchost syntaxe. Příbuznými jazyka {\em Java} jsou další objektově orientované programovací jazyky jako {\em  C++}, {\em  Perl}, {\em Object Pascal}, {\em Visual Basic}, {\em C\#}, {\em PHP}, {\em Python}, {\em Ruby}, {\em Smalltalk} nebo dokonce {\em Lisp}. \index{programovací jazyky}
 
 Rozdíl mezi imperativním pojetím programování a objektově orientovaným pojetím spočívá především v logice kódu a jeho následném uspořádání. Imperativní jazyk se dá považovat za předchůdce objektově orientovaného pojetí. Nedá se obecně říci, který přístup je výhodnější, jedná se \\o dvě rozdílná paradigmata. Dnes mezi nejpoužívanějšími programovacími jazyky masivně převládá objektově orientované paradigma.
 
 Rozdílné pohledy lze ilustrovat na popisu nějakého jevu. Jev se dá popsat různými způsoby. Jedna perspektiva bude více hovořit o aktérech jevu, ty rozdělí do objektů, jejich vlastností a možností. Druhá perspektiva popíše celistvou situaci jako sérii událostí, které je možné v tomto pořadí kdykoli zopakovat.
 
 
-V posledních přibližně dvaceti letech se mezi programovacími jazyky postupně objevuje tendence po větší srozumitelnosti a potažmo zjednodušení programování jako takového. Programování v této koncepci již není jazykem odborníků, ale je demokraticky přístupné širší veřejnosti z rozmanitých -- prioritně netechnických oborů. \index{Objektově orientované jazyky}
+V posledních přibližně dvaceti letech se mezi programovacími jazyky postupně objevuje tendence po větší srozumitelnosti a potažmo zjednodušení programování jako takového. Programování v této koncepci již není jazykem odborníků, ale je demokraticky přístupné širší veřejnosti z rozmanitých -- prioritně netechnických oborů. \index{objektově orientované jazyky}
 
 Tato tendence postupně dala vzniknout celé rodině programovacích jazyků, které se snaží přiblížit potenciál výpočetní techniky netechnickým oborům, v neposlední řadě i oborům výtvarným. V technických kruzích je ovšem již sama disciplína psaní programů považována za tvůrčí činnost. \\V pojetí výtvarného umění dnes převažuje pohled na programování jako na velmi technickou zdatnost, rigidní a notně limitovanou.
 
@@ -589,7 +631,7 @@ Jazyk, který je nutně limitován svou nezbytnou formální dokonalostí, ovše
 
 Prvním důvodem je jednoduchost pro uživatele, Processing se snaží začátečníky co nejméně zatížit zbytečnými informacemi. {\em Processing} prezentuje programování jako přístupnou a zvladatelnou schopnost. Dosahuje toho především rychlou odezvou vizuálního prostředí. Jednoduše řečeno, v momentu, kdy spustíme kód, vidíme okamžitě jeho výsledek. Taková ilustrativnost je v začátcích podle mého názoru téměř nezbytná.
 
-V {\em Processingu} lze velmi krátkým kódem programovat sofistikované programy. Pro příklad zde uvedu soutěž nazvanou {\em Tiny Sketch} pořádanou portály {\em rhizome.org} a {\em openprocessing.org}. \bublina{Máte-li počítač u sebe a jste-li připojeni k internetu, vřele doporučuji si nyní projít aktuální podobu stránky {\em openprocessing.org}} {\em Processing} dokáže být natolik úsporný, že pomocí maximálně dvou set znaků byli tvůrci schopni naprogramovat svébytné programy.
+V {\em Processingu} lze velmi krátkým kódem programovat sofistikované programy. Pro příklad zde uvedu soutěž nazvanou {\em Tiny Sketch} pořádanou portály {\em rhizome.org} a {\em openprocessing.org}. \bublina{Máte-li počítač u sebe a jste-li připojeni k internetu, vřele doporučuji si nyní projít aktuální podobu stránky {\em openprocessing.org}} {\em Processing} dokáže být natolik \\úsporný, že pomocí maximálně dvou set znaků byli tvůrci schopni naprogramovat svébytné programy.
 
 \vfill
 
@@ -625,7 +667,7 @@ Dnes je {\em Processing} využíván hlavně grafickými designéry, designéry 
 
 Z pohledu vývojáře je velmi důležité, že jazyk i programovací prostředí {\em Processing} je v současnosti \slovnik{otevřený software} což znamená, že prostředí i samotný zdrojový kód jsou volně k dispozici. {\em Processing} je dále šiřitelný pod \slovnikpl{MIT licence}. Pro vývojáře otevřenost zdrojového kódu znamená zásadní věc pro dosažitelnost celého zdroje, který se dá následně kupříkladu implementovat do různých prostředí. Další možnost vývojáře je rozšířit jazyk o vlastní funkce, a tím participovat na projektu, například tvorbou takzvaných knihoven \odkaz{Knihovny}. Otevřenost kódu teoreticky navyšuje počet možných participantů a de facto celý projekt \\udržuje v dlouhodobém horizontu naživu.
 
-Z hlediska uživatele je velmi příjemné, že software je k dostání zdarma na stránkách projektu. Za jeho užívání není nutné platit žádné poplatky, a to ani v případě komerčních užití. V případě potřeby vyjádření vděku za práci autorů je možné zmínit kdekoli ve vašem produktu \slovnik{Built with Processing}. \bublina{v začátcích nemusíte věnovat velikou pozornost této zvyklosti, dostane-li se vám po čase dobré pomoci z komunity, nebo budete-li jednoduše Processing využívat ke své práci, můžete jej někde zmínit, a tím vlastně projekt podpořit} \index{Svobodný software}
+Z hlediska uživatele je velmi příjemné, že software je k dostání zdarma na stránkách projektu. Za jeho užívání není nutné platit žádné poplatky, a to ani v případě komerčních užití. V případě potřeby vyjádření vděku za práci autorů je možné zmínit kdekoli ve vašem produktu \slovnik{Built with Processing}. \bublina{v začátcích nemusíte věnovat velikou pozornost této zvyklosti, dostane-li se vám po čase dobré pomoci z komunity, nebo budete-li jednoduše Processing využívat ke své práci, můžete jej někde zmínit, a tím vlastně projekt podpořit} \index{svobodný software}
 
 
 Programovací jazyk {\em Processing} není na první pohled zvláštní. V podstatě by se dalo říci, že se jedná pouze o rozsáhlou knihovnu původního jazyku {\em Java}.
@@ -678,7 +720,7 @@ Processingová sketch nemusí být nutně uložena, abyste ji mohli spustit. Nov
 
 Mezi základní operace patří vytvoření nové sketche {\em (3)}, otevření předešlé {\em (4)}, uložení {\em (5)} a export programu do webového appletu {\em (6)}.
 
-Tlačítka mají dále speciální vlastnosti s podržením tlačítka: tlačítko s novou sketchí otevře také nové okno editoru. V kombinaci s načtením předchozí sketche {\em (4)} otevřete též sketch v novém editoru, aniž byste ztratili předchozí okno. U uložení se modifikace projevuje funkcí {\em uložit jako}. Při exportu přepínáte stisknutím klávesy \klavesy{SHIFT} mezi exportem samostatné aplikace nebo appletu\footnote{Pouze ve verzi 1.x, Processing 2.0 již export do appletu nepodporuje.}, aplikace schopné běžet v prohlížeči nebo obecně na webových stránkách. \index{Ovládání}
+Tlačítka mají dále speciální vlastnosti s podržením tlačítka: tlačítko s novou sketchí otevře také nové okno editoru. V kombinaci s načtením předchozí sketche {\em (4)} otevřete též sketch v novém editoru, aniž byste ztratili předchozí okno. U uložení se modifikace projevuje funkcí {\em uložit jako}. Při exportu přepínáte stisknutím klávesy \klavesy{SHIFT} mezi exportem samostatné aplikace nebo appletu\footnote{Pouze ve verzi 1.x, Processing 2.0 již export do appletu nepodporuje.}, aplikace schopné běžet v prohlížeči nebo obecně na webových stránkách. \index{ovládání}
 
 
 \pododdil{Sketch}
@@ -712,7 +754,7 @@ Ve {\em sketchbooku} se dále nachází jeden speciální adresář nazvaný {\e
 
 \pododdil{Editor}
 
-Editor je textové pole a je vaším hlavním nástrojem komunikace s {\em Processingem}. Veškeré informace, které zadáte do tohoto pole, budou interpretovány samotným {\em Processingem}. Textový editor není nijak dokonalý, pro začátek si s ním ovšem vystačíme. Formát, který tento editor produkuje, je ve své podstatě textový soubor s příponou {\em *.pde}. \index{Textový editor}
+Editor je textové pole a je vaším hlavním nástrojem komunikace s {\em Processingem}. Veškeré informace, které zadáte do tohoto pole, budou interpretovány samotným {\em Processingem}. Textový editor není nijak dokonalý, pro začátek si s ním ovšem vystačíme. Formát, který tento editor produkuje, je ve své podstatě textový soubor s příponou {\em *.pde}. \index{textový editor}
 
 
 
@@ -769,7 +811,7 @@ Pokaždé, když si programátor takový stav přivodí, vše v kódu\footnote{P
 
 \oddil{Základní pravidla a zvyklosti}
 
-V programování obecně platí jisté zákonitosti. Není tomu jinak ani u pravidel, která nejsou důležitá pro čtení kódu strojem, ale spíše pro člověka. Speciální zákonitosti formátování kódu mají ryze praktickou funkci. Jedná se o standard dodržovaný programátory, aby byli schopni sdílet své úsilí. \bublina{Otevřete některý \\ z příkladů \\z lišty FILE > EXAMPLES, a letmo se seznamte s kódem. I když mu nebudete rozumět, podívejte se, jaké znaménka a barvy se v kódu opakují.}
+V programování obecně platí jisté zákonitosti. Není tomu jinak ani u pravidel, která nejsou důležitá pro čtení kódu strojem, ale spíše pro člověka. Speciální zákonitosti formátování kódu mají ryze praktickou funkci. Jedná se o standard dodržovaný programátory, aby byli schopni sdílet své úsilí. \bublina{Otevřete některý \\ z příkladů \\z lišty {\em File $\rightarrow$ Examples}, a letmo se seznamte s kódem. I když mu nebudete rozumět, podívejte se, jaké znaménka a barvy se v kódu opakují.}
   
 
 \chapter{Stavba programu a syntax}
@@ -836,7 +878,7 @@ K datatypu je možné si představit různé paralely, má oblíbená je podobno
 
 
 \pododdil{Seznam základních datatypů}
-\index{Datatypy}
+\index{datatypy}
 Datatypů je jen několik, dají se vcelku snadno zapamatovat:
 
 \begin{lstlisting}
@@ -884,15 +926,15 @@ color mojeBarvaOranzova2 = color(255,127,0,127);
 color mojeBarvaOranzova3 = color(#FFCC00);
 \end{lstlisting}
 
-Pro výběr oblíbené barvy lze využít nástroj z lišty \klavesy{TOOLS > COLOR \\SELECTOR}.
+Pro výběr oblíbené barvy lze využít nástroj z lišty {\em Tools $\rightarrow$ Color \\SSelector}.
 
 Základní barevné nastavení je 24--bitové RGB, to znamená, že každá barvená hloubka jednoho kanálu je 8 bitů, což značí 256 možných stupňů. Nejvyšší stupeň je ovšem 255, jelikož ten nejnižší není 1, nýbrž 0.
 
-Kolorimetrické prostory a jejich rozmezí se dají volně definovat pomocí příkazu \vyraz{colorMode()}.\bublina{otevřte si lištu tools > Color Selector, zkuste vybrat několik barev a přepsat je do správného tvaru}
+Kolorimetrické prostory a jejich rozmezí se dají volně definovat pomocí příkazu \vyraz{colorMode()}.\bublina{otevřte si lištu Tools $\rightarrow$ Color Selector, zkuste vybrat několik barev a přepsat je do správného tvaru}
 
 
 \pododdil{Tisk do konzole}
-\index{Konzole}
+\index{konzole}
 Tento jednoduchý program zatím jen definoval několik proměnných do správných datových typů a nedělá nic zajímavého. Celá alokace probíhá uvnitř programu. {\em Processing} provádí většinu svých operací skrytě. Program kreslí nebo jinak interaguje s uživatelem, jen je-li o to požádán.
 
 Nejjednodušší výstup z programu je tisk do tzv. konzole. Konzoli jsme si již krátce uvedli v kapitole {\em Základní prostředí}. V {\em Processingu} se konzole nachází pod textovým editorem. Toto černé pole má pouze textový výstup a slouží k doladění programu.
@@ -933,7 +975,7 @@ Programovací jazyk, bohužel (naštěstí?), neodpouští překlepy. Tedy bude 
 
 Bohužel chybové hlášení se nedá označit za dokonalé a pro začátečníky bude velmi složité dobrat se pomocí chybových hlášení původu chyby. Na zlepšení chybových hlášek se pracuje již dlouhou dobu a některé základní chyby {\em Processing} v angličtině umí dobře popsat. Většinou ale {\em Processing} tiskne řetězec svých chyb, které byly nastartovány chybou vaší, a chybová hlášení čítající několik desítek řádků vám toho nakonec o původní chybě moc nesdělí.
 
-V případě chyby se vás Processing bude snažit přesměrovat na řádek, kde chyba pravděpodobně vznikla. V případě takto jednoduchých programů, jaké si zde ukazujeme, chybu identifikuje zcela bezchybně, bohužel tomu tak nebude ve všech případech.\bublina{Vyzkoušejte si vytisknout různé proměnné, ověřte, zdali tisknou hodnoty, které jste jim zadali.}\index{Chybové hlášení}
+V případě chyby se vás Processing bude snažit přesměrovat na řádek, kde chyba pravděpodobně vznikla. V případě takto jednoduchých programů, jaké si zde ukazujeme, chybu identifikuje zcela bezchybně, bohužel tomu tak nebude ve všech případech.\bublina{Vyzkoušejte si vytisknout různé proměnné, ověřte, zdali tisknou hodnoty, které jste jim zadali.}\index{chybové hlášení}
 
 
 \pododdil{Základní operace s datatypy}
@@ -1064,7 +1106,7 @@ println(b);
 \item{{\em char} a {\em String}}, znak a řetězec znaků, text}
 
 S textem nelze operovat stejně jako s čísly, je logické, že nemůžeme násobit texty mezi sebou. {\em String} je speciální datatyp pro uchovávání textů v paměti a nakládá se s ním speciálními funkcemi. Prozatím nám bude stačit, když si ukážeme velmi jednoduchou operaci s textem, spojení dvou řetězců dohromady.
-\index{Práce s textem}
+\index{práce s textem}
 
 Pro označení hodnoty řetězce se používají dvojité uvozovky. S textem se pracuje následovně:
 
@@ -1209,7 +1251,7 @@ tisk z funkce draw() 4
 \oddil{Zobrazení}
 
 \pododdil{Orientace v prostoru}
-\index{Prostor}
+\index{prostor}
 Okno programu by se dalo přirovnat k listu papíru, popřípadě k malířskému plátnu. Ve standardním dvoudimenzionálním modu má dva základní parametry, $X$ a $Y$, označující souřadnice, ve kterých se veškeré kreslicí operace pohybují. Důležité je zmínit, že oproti jisté konvenci v matematických grafech nese levý horní roh hodnotu $X = 0$, $Y = 0$. Směrem dolů hodnota $Y$ přibývá, stejně tak jako hodnota $X$ přibývá směrem doprava.\\
 
 \begin{center}
@@ -1291,7 +1333,7 @@ rect(prvniCislo, druheCislo, 40, 20);
 \end{center}
 
 Nyní je nám zřejmé, jak hodnoty mohou ovlivnit zobrazení. Místo hodnot zadaných číselně se zde v druhém způsobu vykreslení obdélníku objevují naše proměnné, které již mají zadaný obsah. Výsledek zobrazení bude v obou případech stejný, ovšem z hlediska struktury programu je druhý způsob daleko flexibilnější.
-\index{Tvary 2D}
+\index{tvary 2D}
 
 V {\em Processingu} je předdefinovaných jen několik základních tvarů, se kterými lze bohatě vystačit. Kromě již zmíněného \vyraz{rect()} jsou zde také základní tvary:
 
@@ -1499,7 +1541,7 @@ void draw(){
 
 \end{lstlisting}
 
-Definicí této hodnoty lze například časovat animace. Další metodou je animaci časovat pomocí funkce \vyraz{millis()}. Tato funkce je nezávislá na počtu vykreslených okének za vteřinu, měří počet uběhnutých milisekund od startu programu. Může se nám také hodit pro precizní časování událostí \\v programu. \index{Časování}
+Definicí této hodnoty lze například časovat animace. Další metodou je animaci časovat pomocí funkce \vyraz{millis()}. Tato funkce je nezávislá na počtu vykreslených okének za vteřinu, měří počet uběhnutých milisekund od startu programu. Může se nám také hodit pro precizní časování událostí \\v programu. \index{časování}
 
 
 \pododdil{Dynamika pohybu}
@@ -1536,7 +1578,7 @@ y += (mouseY - y) * rychlost;
 K proměnným {\em x} a {\em y} přiřazujeme zlomek rozdílu mezi pozicí kurzoru a proměnnou v obou osách. Tuto formuli lze využít téměř kdekoli, například při jemném přechodu barev a vyhlazování hodnot obecně.
 
 Druhá proměnná {\em rychlost} by se k docílení podobného efektu měla pohybovat v rozmezí od $0$ do $1$.
-\index{Nelineární pohyb}
+\index{nelineární pohyb}
 
 
 
@@ -2930,7 +2972,7 @@ bezztrátově komprimovaný obraz s příponou {\em *.png}
 
 S některými formáty jste se již mohli setkat v minulosti. Jedná se \\o standardní a rozšířené formáty pro uchovávání obrazových dat.
 
-Uložení obrázku ze současného plátna se provádí příkazem \slovnik{save()}. Příkaz potřebuje znát cestu a koncovku souboru. Nenapíšeme-li plnou cestu, {\em Processing} data uloží přímo do adresáře naší sketche.
+Uložení obrázku ze současného plátna se provádí příkazem \vyraz{save()}. Příkaz potřebuje znát cestu a koncovku souboru. Nenapíšeme-li plnou cestu, {\em Processing} data uloží přímo do adresáře naší sketche.
 
 Nevíte-li, jakou koncovku souboru zvolit, doporučil bych vám vřele formát PNG. Takzvaný Portable Network Graphics je standard, který vyniká relativně malou velikostí a bezztrátovou kompresí dat. Vaše data tak budou uložena jedna ku jedné a můžete s nimi beze ztráty dále operovat. 
 
@@ -3095,7 +3137,7 @@ void draw() {
 
 V úvodu se objevil neznámý příkaz. Takzvaný \vyraz{import} značí načtení některých zvláštních funkcí rozšiřující funkce {\em Processingu}. Takové rozšíření se provádí pomocí takzvaných knihoven, o kterých se dočtete níže \odkaz{Knihovny}. 
 
-Pro náš tisk je nyní důležité, že za příkazem \vyraz{import} se nachází právě cesta ke knihovně s PDF manipulacemi. Tuto cestu si nemusíme pamatovat, stejného výsledku docílíme i pomocí rozhraní {\em Processingu}. {\em Sketch > Import Library > PDF Export}.
+Pro náš tisk je nyní důležité, že za příkazem \vyraz{import} se nachází právě cesta ke knihovně s PDF manipulacemi. Tuto cestu si nemusíme pamatovat, stejného výsledku docílíme i pomocí rozhraní {\em Processingu}. {\em Sketch $\rightarrow$ Import Library $\rightarrow$ PDF Export}.
 
 V kódu je dále důležitá nová definice funkce \vyraz{size()}. Víme už, že tato funkce definuje rozměry sketche, v našem případě bude ovšem definovat rozměry výsledného {\em PDF} souboru. Za rozměry je dále nutné definovati vykreslovací prostředí {\em PDF} a jméno souboru, do kterého chceme zapisovat. Cesta k souboru je relativní, to znamená, že výsledný soubor se zobrazí přímo v adresáři naší sketche.
 
@@ -3267,7 +3309,10 @@ Převod z textových údajů do hodnot jiných typů se nazývá obecně {\em pa
 
 \pododdil{Parsing, získávání hodnot z externích dat}
 
-K převodu textu do užitelných hodnot můžeme využít následující postup. Budeme potřebovat zkonstruovat smyčku \odkaz{Smyčka}, která projde veškerý obsah načteného textového souboru a řádek po řádku naplní pole číselných hodnot odpovídajících hodnotám textovým. Celou tuto proceduru si můžeme uzavřít do jedné funkce. Zopakujeme si načtení dat do pole. Program bude vypadat následovně:
+K převodu textu do užitelných hodnot můžeme využít následující postup. Budeme potřebovat zkonstruovat smyčku \odkaz{Smyčka}, která projde veškerý obsah načteného textového souboru a řádek po řádku naplní pole číselných hodnot odpovídajících hodnotám textovým. Celou tuto proceduru si můžeme uzavřít do jedné funkce.
+
+\newpage
+Zopakujeme si načtení dat do pole. Program bude vypadat následovně:
 
 
 \begin{lstlisting}
@@ -3314,7 +3359,7 @@ void nactiTextDoHodnot(String nazevSouboru){
 //... atd.
 \end{lstlisting}
 
-Projděme si, co se v programu stalo. Celá procedura zde spočívá ve funkci nazvané {\em nactiTextDoHodnot()}. Jako argument do této funkce posíláme název souboru, který chceme načíst.
+Projděme si, co se v programu stalo. Celá procedura zde spočívá \\ve funkci nazvané {\em nactiTextDoHodnot()}. Jako argument do této funkce posíláme název souboru, který chceme načíst.
 
 Jako první se spustí funkce, kterou již známe \vyraz{loadStrings()}, ta naplní naše textové pole textem. Nyní je zapotřebí nastavit velikost číselných polí, pro přehlednost jsem zde vytvořil dvě pro každou osu. Jsou nakzvané {\em hodnotyX} \\a {\em hodnotyY}. Jejich budoucí velikost známe, bude stejná jako textové pole. Přes příkaz {\em length} se můžeme dostat k délce jakéhokoli pole.
 
@@ -3378,20 +3423,22 @@ void nactiTextDoHodnot(String nazevSouboru){
 
 Výsledkem bude záznam pohybu myši, který může vypadat následovně:
 \begin{center}
-\includegraphics[width = 0.75\textwidth]{imgs/viz.png}
+\includegraphics[width = 0.7\textwidth]{imgs/viz.png}
 \end{center}
 
 \bublina{Zkuste jiné hodnoty než pohyb myši, experimentujte s jinými způsoby zobrazení.}
 
 Za povšimnutí zde stojí konstrukce linky \vyraz{line()}, která vždy spojuje koordináty z předchozího místa v našem poli s hodnotami současnými pomocí šikovného posunu o jednu pozici vzad {\em [i-1]}.
 
+
+\vfill
 \chapter{Rozšíření Processingu}
 \oddil{Knihovny}
 
 \pododdil{Vestavěné knihovny}
 \index{vestavěné knihovny}
 
-Ve {\em sketchbooku} se dále nacházejí\footnote{Od verze 1.0.} veškerá rozšíření pomocí takzvaných knihoven neboli libraries. Ty jsou umístěny v adresáři {\em sketchbooku} ve složce {\em libraries}. Knihovny jsou silným rozšířením celého jazyka a pokrývají mnoho možností nakládání s externími daty, zajišťují komunikaci se zařízeními, práci s videem, zvukem nebo s trojrozměrnými daty či vektorovým obrazem.
+Ve {\em sketchbooku} se dále nacházejí\footnote{Od verze 1.0.} veškerá rozšíření pomocí takzvaných knihoven neboli libraries. Ty jsou umístěny v adresáři {\em sketchbooku} \\ve složce {\em libraries}. Knihovny jsou silným rozšířením celého jazyka a pokrývají mnoho možností nakládání s externími daty, zajišťují komunikaci se zařízeními, práci s videem, zvukem nebo s trojrozměrnými daty či vektorovým obrazem.
 
 
 Knihovny jsou v podstatě moduly, které se zaměřují většinou pouze na jednu problematiku. Některé moduly umí například komunikovat se zapojenou kamerou nebo videem, jiné dovedou přenášet informace přes síť anebo komunikovat se zařízeními napojenými přes sériový port. Knihovna je sada příkazů, jež rozšiřuje samotný jazyk o nové možnosti.
@@ -3399,7 +3446,7 @@ Knihovny jsou v podstatě moduly, které se zaměřují většinou pouze na jedn
 
 Knihovnami se také dá dobře ilustrovat, k čemu uživatelé {\em Processingu} převážně programovací prostředí využívají. To sice nemusí být v žádném případě směrodatné pro vaši práci, může to být ovšem velmi inspirativní. Knihovny vám pomohou získat jistý přehled o kontextu užívání {\em Processingu}.
 
-Knihovny se  nejobecněji dělí na dvě základní skupiny. Jednu tvoří \\interní knihovny {\em Processingu}, které přichází již nainstalované se softwarem, a knihovny vnější, vytvořené komunitou uživatelů. Veškeré nainstalované knihovny, které má Processing k dispozici, lze nalézt pod tlačítkem {\em Sketch > Import Library}.
+Knihovny se  nejobecněji dělí na dvě základní skupiny. Jednu tvoří \\interní knihovny {\em Processingu}, které přichází již nainstalované se softwarem, a knihovny vnější, vytvořené komunitou uživatelů. Veškeré nainstalované knihovny, které má Processing k dispozici, lze nalézt pod tlačítkem {\em Sketch $\rightarrow$ Import Library}.
 
 
 Výčet komunitních knihoven je již poměrně obsáhlý, pro ilustraci zde budeme hovořit jen o knihovnách vestavěných. Vestavěných knihoven je nepoměrně méně, jejich výčet se proměňuje relativně pomalu a jejich dokumentace je kvalitně zpracovaná:
@@ -3473,9 +3520,9 @@ Nejdůležitější složkou je v každé knihovně adresář {\em library}, zde
 
 Máme-li spuštěný {\em Processing}, je nutné jej nyní restartovat.
 
-Po spuštění je knihovna připravena k použití, přidat potřebné komponenty do kódu nyní můžeme buď ručně, nebo pohodlněji vybráním z nabídky: {\em Sketch > Import Library... > controlP5}
+Po spuštění je knihovna připravena k použití, přidat potřebné komponenty do kódu nyní můžeme buď ručně, nebo pohodlněji vybráním z nabídky: {\em Sketch $\rightarrow$ Import Library $\rightarrow$ controlP5}
 
-V kódu se nám zobrazí potřebný příkaz \vyraz{import} s náležitými komponenty z knihovny. Nyní si můžeme přečíst nápovědu nebo si projít jednotlivé příklady skrze nabídky: {\em File > Examples > Contributed Libraries > controlP5 > ControlP5controlEvent}
+V kódu se nám zobrazí potřebný příkaz \vyraz{import} s náležitými komponenty z knihovny. Nyní si můžeme přečíst nápovědu nebo si projít jednotlivé příklady skrze nabídky: {\em File $\rightarrow$ Examples $\rightarrow$ Contributed Libraries $\rightarrow$ controlP5 $\rightarrow$ ControlP5controlEvent}
 
 Zobrazí se nám sketch:
 
