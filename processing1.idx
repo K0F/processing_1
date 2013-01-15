@@ -15,7 +15,7 @@
 \indexentry{Toxilibs|hyperpage}{16}
 \indexentry{toxilibs|hyperpage}{16}
 \indexentry{Schmidt, Karsten|hyperpage}{16}
-\indexentry{Schimdt, Karsten|hyperpage}{17}
+\indexentry{Schmidt, Karsten|hyperpage}{17}
 \indexentry{Local Bilateral Symmetry|hyperpage}{17}
 \indexentry{McCabe, Johnatan|hyperpage}{17}
 \indexentry{McCabe, Johnatan|hyperpage}{18}
@@ -347,7 +347,7 @@
 \indexentry{sketch|hyperpage}{137}
 \indexentry{radians()|hyperpage}{137}
 \indexentry{ellipseMode()|hyperpage}{137}
-\indexentry{if()|hyperpage}{138}
+\indexentry{if|hyperpage}{138}
 \indexentry{if()|hyperpage}{138}
 \indexentry{beginRecord()|hyperpage}{138}
 \indexentry{beginShape()|hyperpage}{138}
@@ -356,41 +356,43 @@
 \indexentry{true|hyperpage}{139}
 \indexentry{else|hyperpage}{139}
 \indexentry{if|hyperpage}{139}
-\indexentry{PImage|hyperpage}{139}
-\indexentry{loadImage()|hyperpage}{139}
+\indexentry{PImage|hyperpage}{140}
+\indexentry{loadImage()|hyperpage}{140}
 \indexentry{tint()|hyperpage}{140}
 \indexentry{imageMode()|hyperpage}{140}
 \indexentry{GNU / GPL|hyperpage}{140}
 \indexentry{keyPressed()|hyperpage}{140}
 \indexentry{key|hyperpage}{140}
-\indexentry{keyPressed()|hyperpage}{140}
+\indexentry{keyPressed()|hyperpage}{141}
 \indexentry{stroke()|hyperpage}{141}
 \indexentry{PImage|hyperpage}{141}
 \indexentry{String|hyperpage}{141}
 \indexentry{frameCount|hyperpage}{141}
 \indexentry{mouseButton|hyperpage}{142}
 \indexentry{noStroke()|hyperpage}{142}
-\indexentry{smooth()|hyperpage}{142}
-\indexentry{stroke()|hyperpage}{142}
+\indexentry{smooth()|hyperpage}{143}
+\indexentry{stroke()|hyperpage}{143}
+\indexentry{GNU / Linux|hyperpage}{143}
 \indexentry{String|hyperpage}{143}
 \indexentry{String|hyperpage}{143}
 \indexentry{loadImage()|hyperpage}{143}
 \indexentry{stroke()|hyperpage}{143}
 \indexentry{pushMatrix()|hyperpage}{143}
 \indexentry{print()|hyperpage}{143}
-\indexentry{rotate()|hyperpage}{143}
-\indexentry{translate()|hyperpage}{143}
-\indexentry{scale()|hyperpage}{143}
-\indexentry{popMatrix()|hyperpage}{143}
+\indexentry{rotate()|hyperpage}{144}
+\indexentry{translate()|hyperpage}{144}
+\indexentry{scale()|hyperpage}{144}
+\indexentry{popMatrix()|hyperpage}{144}
 \indexentry{stroke()|hyperpage}{144}
 \indexentry{fill()|hyperpage}{144}
 \indexentry{rectMode()|hyperpage}{144}
 \indexentry{rect()|hyperpage}{144}
 \indexentry{rect()|hyperpage}{144}
 \indexentry{save()|hyperpage}{145}
-\indexentry{frameCount|hyperpage}{145}
+\indexentry{String|hyperpage}{145}
 \indexentry{String|hyperpage}{145}
 \indexentry{sphereDetail()|hyperpage}{146}
+\indexentry{float|hyperpage}{147}
 \indexentry{noTint()|hyperpage}{147}
-\indexentry{beginShape()|hyperpage}{147}
-\indexentry{endShape()|hyperpage}{147}
+\indexentry{beginShape()|hyperpage}{148}
+\indexentry{endShape()|hyperpage}{148}
