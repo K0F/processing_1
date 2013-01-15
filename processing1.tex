@@ -1200,11 +1200,11 @@ println(tretiTvrzeni);
 \index{funkce setup() a draw()}
 {\em Processing} rozlišuje mezi jednotlivými programovacími přístupy. Textový editor se automaticky přizpůsobí způsobu programování. Tímto přístupem se {\em Processing} snaží co nejvíce přiblížit začátečníkovi. Základní prostředí nám dovoluje pouze nakreslit tvary a ukončit program. K pohybu v čase musíme {\em Processingu} definovat základní strukturu programu.
 
-Dvě nejzákladnější funkce, se kterými se budeme při programování setkávat, jsou \vyraz{setup()} a \vyraz{draw()}.
+Dvě nejzákladnější funkce, se kterými se budeme při programování \\setkávat, jsou \vyraz{setup()} a \vyraz{draw()}.
 
 \begin{itemize}
 \item
-\vyraz{setup()} je funkcí, která bude spuštěna jednou, na začátku programu -- zde se nejčastěji nastavují počáteční parametry, které si potřebujeme připravit, než se spustí kreslicí funkce
+\vyraz{setup()} je funkcí, která bude spuštěna jednou, na začátku programu \\-- zde se nejčastěji nastavují počáteční parametry, které si potřebujeme připravit, než se spustí kreslicí funkce
 
 \item
 \vyraz{draw()} je funkce pro opakované kreslení, bude spouštěna stále po dobu chodu programu -- tady budeme nejčastěji kreslit tvary a provádět proměnlivé výpočty pro animaci
@@ -1925,7 +1925,7 @@ Tímto výčtem jsme v podstatě vyčerpali možnosti interakce se standardními
 
 Proměnná \vyraz{mouseButton} nám říká údaj o naposledy stisknutém tlačítku myši, stejně tak funguje proměnná \vyraz{key} a \vyraz{keyCode} ve funkci \vyraz{keyPressed()} a \vyraz{keyReleased()}.
 
-Obě proměnné \vyraz{key} a \vyraz{keyCode} jsou buď vyjádřeny číslem, které lze vyhledat například v mapě znaků, nebo znakem ve tvaru {\em char}. Hodnota \vyraz{key} lze také porovnávat přímo se znakem uvozeným apostrofy (například {\em 'k'}). V případě \vyraz{keyCode} lze porovnávat hodnotu se speciálními označeními kódovaných kláves.
+Obě proměnné \vyraz{key} a \vyraz{keyCode} jsou buď vyjádřeny číslem, které lze vyhledat například v mapě znaků, nebo znakem ve tvaru {\em char}. Hodnota \vyraz{key} lze také porovnávat přímo se znakem uvozeným apostrofy (například {\em 'k'}). V případě \vyraz{keyCode} lze porovnávat hodnotu kódovaných kláves.
 
 Jestli je klávesa kódovaná, zjistíme dále pomocí proměnné \vyraz{CODED}. Asi takto:
 
@@ -2214,7 +2214,7 @@ void nakresliObdelnik( int _x, int _y ){
 Podtržítka nemají žádný faktický význam, jsou jen součástí názvu proměnné a programátoři je používají pro lepší organizaci.
 
 V {\em Processingu} lze dále definovat funkce, které se jmenují stejně, ty pak ale musí mít jinou skladbu vstupních hodnot. Představme si, že budeme potřebovat dvě funkce {\em nakresliObdelnik()}, jednu můžeme nechat bez vstupních parametrů a druhou budeme definovat s parametry {\em x} a {\em y}. Tak můžeme odlišit dvě různé funkce pouze způsobem spuštění.
-
+\newpage
 
 \begin{lstlisting}
 
@@ -2328,7 +2328,7 @@ println(a);
 \end{lstlisting}
 
 Jak můžeme vidět, definice funkce zůstala stejná a výsledky se liší podle zaslaných argumentů, vstupních hodnot do funkce. Naše vlastní definice funkcí mohou mít dále jakékoli datatypy, které již známe.
-
+\newpage
 \begin{lstlisting}
 
 String pozdrav(){
@@ -2683,6 +2683,8 @@ V případě renderů, které operují ve třetí dimenzi, v {\em Processingu} f
 
 Velmi ilustrativně je vidět rozdíl na příkazech \vyraz{point()} a \vyraz{line()}. U těchto příkazů jsme byli zvyklí zadávat dva parametry pro každou osu, tedy $X, Y$ pro bod, popřípadě čtyři parametry $X_{1}, X_{2}, Y_{1}, Y_{2}$ pro linku. K těmto parametrům v případě trojdimenzionálních zobrazení přibývá pro každý bod logicky ještě jeden parametr pro osu $Z$. 
 
+\vfill
+
 
 
 \begin{center}
@@ -2846,12 +2848,12 @@ void draw() {
 
 Výsledkem bude čtverec otočený o $45°$. Příkaz \vyraz{rotate()} přijímá úhel v radiánech, chceme-li otáčet o $45°$, musíme nejprve provést konverzi mezi úhly a radiány. Můžeme to provést snadno pomocí příkazu \vyraz{radians()}. Opačnou konverzi můžeme provádět pomocí příkazu \vyraz{degrees()}.
 
-\vfill
 
 
-\begin{center}
-\includegraphics[width = 0.7\textwidth]{imgs/rot.png}
-\end{center}
+
+%\begin{center}
+%\includegraphics[width = 0.7\textwidth]{imgs/rot.png}
+%\end{center}
 
 
 \newpage
@@ -2920,11 +2922,10 @@ Nakonec tu máme dvě definované funkce. První funkce {\em dragSegment()} při
 
 Podle zjištěného úhlu se dále modifikuje současná pozice za pomoci zpětného převedení na souřadnice pomocí \vyraz{cos()} a \vyraz{sin()}. Trigonometrii zde příliš rozvádět nebudu. Sinusovou křivku lze zkonstruovat lineárním přírůstkem ve funkci \vyraz{sin()}. Další goniometrické funkce jsou v {\em Processingu} \vyraz{asin()} a \vyraz{acos()}, šikovné pro práci s funkcemi jsou předdefinované hodnoty zlomku čísla $\pi$, \vyraz{PI}, \vyraz{HALFPI}, \vyraz{QUARTERPI}.
 
-A konečně přicházejí na řadu naše transformace. Ve funkci {\em segment} dochází ke kresbě jednotlivých segmentů hada. Funkce přijímá tři argumenty, dva pro pozici $X$, $Y$ a jeden pro úhel $\alpha$.
+A konečně přicházejí na řadu naše transformace. Ve funkci {\em segment} dochází ke kresbě jednotlivých segmentů hada. Funkce přijímá tři argumenty, dva pro pozici $X$, $Y$ a jeden pro úhel $\alpha$. Sled transformací pomocí posunu a rotace již známe. 
 
 \bublina{Transforma-ce mohou být náročné na prostorovou představivost, nezoufejte při prvních nezdarech, po nějaké době \\a cviku \\s dvěma rozměry se můžete pokusit o transformace ve třetím rozměru.}
-
-Sled transformací pomocí posunu a rotace již známe.  
+ 
 
 
 
@@ -3216,7 +3217,7 @@ Za vnější informace lze v {\em Processingu} považovat vše, co není zdrojov
 
 \pododdil{Načítání obrázků}
 
-{\em Processing} ukládá obrázky do vnitřní paměti. Využívá k tomu speciální datatyp nazvaný \vyraz{PImage}. Pomocí tohoto datatypu si můžeme do našeho programu načíst externí obrazová data, se kterými můžeme dále pracovat. Načíst \\obrázek můžeme pomocí příkazu \vyraz{loadImage()}. Příkaz bude očekávat jediný parametr, cestu k obrázku.
+{\em Processing} ukládá obrázky do vnitřní paměti. Využívá k tomu speciální datatyp nazvaný \vyraz{PImage}. Pomocí tohoto datatypu si můžeme do našeho programu načíst externí obrazová data, se kterými můžeme dále pracovat. Načíst obrázek můžeme pomocí příkazu \vyraz{loadImage()}. Příkaz bude očekávat jediný parametr, cestu k obrázku.
 
 Zde je namístě připomenout \odkaz{Sketch}, že budeme-li potřebovat externí data, je dobré si je umístit přímo do adresáře naší sketche do složky s názvem {\em DATA}. Veškeré cesty, které budeme v kódu psát, budou k našim souborům relativní, to znamená, že přemístěním externích dat do našeho adresáře můžeme místo:
 
@@ -3230,7 +3231,7 @@ nyní napsat jednoduše:
 PImage obrazek = loadImage("obrazek.jpg");
 \end{lstlisting}
 
-Načítání obrázků provádíme zpravidla ve funkci \vyraz{setup()}. Tedy obrázek potřebujeme načíst pouze jednou za celý běh programu, a jelikož se jedná o poměrně náročnou operaci, je dobré ji v průběhu neopakovat příliš často.\footnote{Jako například každé okénko animace, což je velmi obvyklá začátečnická chyba.}
+Načítání obrázků provádíme zpravidla ve funkci \vyraz{setup()}. Tedy obrázek potřebujeme načíst pouze jednou za celý běh programu, a jelikož se jedná \\o poměrně náročnou operaci, je dobré ji v průběhu neopakovat příliš často.\footnote{Jako například každé okénko animace, což je velmi obvyklá začátečnická chyba.}
 
 Správné načítání obrázku do paměti a následné vykreslení bude vypadat takto:
 
@@ -3254,7 +3255,7 @@ Zde stojí za povšimnutí funkce \vyraz{image()} -- touto funkcí můžeme zobr
   image(obrazek, -obrazek.width/2, -obrazek.height/2);  
 \end{lstlisting}
 
-anebo použít funkci \vyraz{imageMode()}. Funkce dokáže proměnit chování příkazu \vyraz{image()}, možné hodnoty jsou {\em CORNER}, {\em CORNERS} a {\em CENTER}. {\em CORNER} je standardní chování příkazu \vyraz{image()}, místo odčítání poloviny šířky a výšky obrázku můžeme použít právě mod {\em CENTER}. Mod {\em CORNERS} se nám může hodit, potřebujeme-li definovat dva rohy místo šířky a výšky vykreslovaného obrázku.
+anebo použít funkci \vyraz{imageMode()}. Funkce dokáže proměnit chování příkazu \vyraz{image()}, možné hodnoty jsou {\em CORNER}, {\em CORNERS} a {\em CENTER}. {\em CORNER} je standardní chování příkazu \vyraz{image()}, místo odčítání poloviny šířky a výšky obrázku můžeme použít právě mod {\em CENTER}. Mod {\em CORNERS} \\se nám může hodit, potřebujeme-li definovat dva rohy místo šířky a výšky vykreslovaného obrázku.
 
 \bublina{Dejte si pozor na velikost obrázků, pracujte vždy raději s menšími.}
 
@@ -3266,7 +3267,7 @@ Zkusme se tedy vrátit k předchozímu příkladu pro ukládání textových sou
 
 Na každém řádku jsou dvě hodnoty, které představují určitý záznam. Víme, že to je záznam pohybujícího se kurzoru, ale data mohou být opravdu cokoli. Co je pro nás důležité, je to, že jsme si uložili data v jednom tvaru, tzv. \vyraz{CSV}. Vždy se jedná o dvě hodnoty s desetinnou čárkou na jednom řádku oddělené čárkou a mezerou.
 
-K samotnému načtení textových informací do paměti programu tak, abychom s textem mohli dále pracovat, použijeme stejně jako při ukládání pole řetězcových hodnot. To, co zní odpudivě, je ve skutečnosti docela prosté:
+K samotnému načtení textových informací do paměti programu tak, \\abychom s textem mohli dále pracovat, použijeme stejně jako při ukládání pole řetězcových hodnot. To, co zní odpudivě, je ve skutečnosti docela prosté:
 
 \begin{lstlisting}
 String celyText[] = loadStrings("soubor.csv");
@@ -3486,6 +3487,8 @@ Knihovna pro načítání vektorové grafiky ve formátu {\em SVG} ({\em Inkscap
 Podpora načítání dat v {\em XML} formátu.
 \end{itemize}
 
+\newpage
+
 Neříkají-li vám tyto zkratky nic, nevadí, jedná se většinou o datové standardy a typy zařízení, se kterými můžete pomocí knihoven pracovat. Každá z těchto knihoven má svoji dobrou dokumentaci: na stránkách projektu nebo přímo v tzv. {\em Examples}, příkladech pro každou knihovnu, lze tímto způsobem zobrazit základní nápovědu.
 
 \bublina{Projděte si stránky processing.org a přečtěte si výčet knihoven, získáte lepší představu o možnostech rozšíření.}
@@ -3502,6 +3505,8 @@ Jako poslední příklad si zde uvedeme práci s jednou externí knihovnou. \\S 
 Dobrým příkladem funkční a použitelné knihovny pro {\em Processing} je knihovna {\em ControlP5} od Andrease Schlegela. Tato knihovna nám dovoluje snadno vytvářet interaktivní prvky jako tlačítka a různé typy táhel (sliderů) a vstupních kolonek.
 
 Knihovnu si nejprve musíme nainstalovat. Najdeme ji na webové adrese: {\em http://www.sojamo.de/libraries/controlP5}, nebo přímo na stránkách {\em processing.org}.
+
+\vfill
 
 \begin{center}
 \includegraphics[width = 1\textwidth]{imgs/controlp5.png}
