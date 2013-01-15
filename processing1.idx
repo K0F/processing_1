@@ -18,7 +18,7 @@
 \indexentry {Examples, příklady přímo v Processingu}{24}
 \indexentry {Processing Examples}{24}
 \indexentry {Knihy a průvodci}{24}
-\indexentry {Experiment}{25}
+\indexentry {Experiment}{24}
 \indexentry {Počátky programovacího jazyka}{27}
 \indexentry {Alan Turing}{28}
 \indexentry {The Bomb}{28}
@@ -45,7 +45,7 @@
 \indexentry {Ovládání}{41}
 \indexentry {Sketch}{41}
 \indexentry {PDE}{41}
-\indexentry {DATA}{41}
+\indexentry {DATA}{42}
 \indexentry {Sketchbook}{42}
 \indexentry {Editor}{43}
 \indexentry {Textový editor}{43}
@@ -56,7 +56,7 @@
 \indexentry {flow}{45}
 \indexentry {Základní pravidla a zvyklosti}{45}
 \indexentry {Logika programování}{47}
-\indexentry {Kometář}{48}
+\indexentry {Komentář}{48}
 \indexentry {komentáře v kódu}{48}
 \indexentry {Základní datatypy}{48}
 \indexentry {Seznam základních datatypů}{49}
@@ -77,8 +77,8 @@
 \indexentry {draw()}{57}
 \indexentry {setup()}{57}
 \indexentry {draw()}{57}
-\indexentry {draw()}{57}
-\indexentry {void}{57}
+\indexentry {draw()}{58}
+\indexentry {void}{58}
 \indexentry {Zobrazení}{58}
 \indexentry {Orientace v prostoru}{58}
 \indexentry {Prostor}{58}
@@ -131,8 +131,8 @@
 \indexentry {if}{71}
 \indexentry {if}{71}
 \indexentry {true}{71}
-\indexentry {true}{72}
-\indexentry {false}{72}
+\indexentry {true}{71}
+\indexentry {false}{71}
 \indexentry {boolean}{74}
 \indexentry {false}{74}
 \indexentry {true}{74}
@@ -166,12 +166,12 @@
 \indexentry {new}{82}
 \indexentry {Smyčka}{82}
 \indexentry {for}{83}
-\indexentry {Uspořádání struktura programu}{85}
+\indexentry {Uspořádání struktury programu}{85}
 \indexentry {void}{85}
 \indexentry {Funkce}{85}
 \indexentry {void}{85}
-\indexentry {setup()}{85}
-\indexentry {draw()}{85}
+\indexentry {setup()}{86}
+\indexentry {draw()}{86}
 \indexentry {draw()}{86}
 \indexentry {rect()}{86}
 \indexentry {rect()}{86}
@@ -205,7 +205,7 @@
 \indexentry {noise()}{99}
 \indexentry {noise()}{99}
 \indexentry {frameCount}{99}
-\indexentry {Renderovací módy}{101}
+\indexentry {Renderovací mody}{101}
 \indexentry {import}{102}
 \indexentry {setup()}{102}
 \indexentry {size()}{102}
@@ -234,6 +234,7 @@
 \indexentry {pushMatrix()}{108}
 \indexentry {popMatrix()}{108}
 \indexentry {rotate()}{109}
+\indexentry {radians()}{109}
 \indexentry {degrees()}{109}
 \indexentry {translate()}{111}
 \indexentry {rotate()}{111}
@@ -246,7 +247,7 @@
 \indexentry {smooth()}{112}
 \indexentry {noSmooth()}{112}
 \indexentry {strokeWeight()}{112}
-\indexentry {stroke()}{112}
+\indexentry {stroke()}{113}
 \indexentry {atan2()}{113}
 \indexentry {cos()}{113}
 \indexentry {sin()}{113}
@@ -261,6 +262,7 @@
 \indexentry {Ukládání obrazových dat}{116}
 \indexentry {save()}{116}
 \indexentry {save()}{117}
+\indexentry {save()}{117}
 \indexentry {saveFrame()}{117}
 \indexentry {frameCount}{117}
 \indexentry {nf()}{117}
@@ -274,7 +276,7 @@
 \indexentry {frameCount}{119}
 \indexentry {exit()}{119}
 \indexentry {saveStrings()}{119}
-\indexentry {Tisk do pdf, ukládání vektorů}{120}
+\indexentry {Tisk do PDF, ukládání vektorů}{120}
 \indexentry {size()}{120}
 \indexentry {import}{121}
 \indexentry {import}{121}
@@ -300,7 +302,7 @@
 \indexentry {println()}{126}
 \indexentry {Operace s textem}{126}
 \indexentry {Parsing, získávání hodnot z externích dat}{126}
-\indexentry {loadStrings()}{127}
+\indexentry {loadStrings()}{128}
 \indexentry {splitTokens()}{128}
 \indexentry {splitTokens()}{128}
 \indexentry {parseFloat()}{128}
