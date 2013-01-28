@@ -18,12 +18,16 @@
 %\makeatother
 
 \usepackage[czech]{babel}
+%\usepackage{czech}
 \usepackage{ucs}
 % Unicode support for LaTeX character names (accents, European chars, etc)
 \usepackage{fontenc}
 \usepackage{xltxtra,fontspec,xunicode}
 \usepackage[pdftex]{hyperref}
 \usepackage{fancyhdr}
+
+\widowpenalty10000
+\clubpenalty10000
 
 
 % headers FANCY ))
@@ -287,7 +291,7 @@ Příručka {\em Processing Beta} je základním úvodem do jazyka {\em Processi
 
 Publikace vychází v tištěné podobě v době, kdy vývoj programovacího prostředí {\em Processing} opouští vývojovou fázi 1.0 a přibližuje se k fázi 2.0. Problematika, které se tento průvodce dotýká, je natolik základní, že se \lnb vztahuje na obě verze {\em Processingu}. Název příručky {\em Beta} by tedy měl co nejobecněji shrnovat základy všech dostupných verzí do dnešních dnů. 
 
-Podobné příručky v posledních letech vznikly pouze v anglickém jazyce, např. Casey Reas a Ben Fry: {\em A Programming Handbook for Designers and Visual Artists} (2007), Ira Greenberg: {\em Processing Creative Coding and \lnb Computational Art}  (2007), Daniel Shiffman: {\em Learning Processing: A Begin\-ner's Guide to Programming Images, Animation, and Interaction}  (2008), Tom Igoe: {\em Making Thinks Talk: Practical Methods for Connecting Physical Objects} (2007). V českém jazyce žádná podobná kniha doposud nevyšla.
+Podobné příručky v posledních letech vznikly pouze v anglickém jazyce, např. Casey Reas a Ben Fry: {\em A Programming Handbook for Visual Designers and Artists} (2007), Ira Greenberg: {\em Processing Creative Coding and \lnb Computational Art}  (2007), Daniel Shiffman: {\em Learning Processing: A Begin\-ner's Guide to Programming Images, Animation, and Interaction}  (2008), Tom Igoe: {\em Making Thinks Talk: Practical Methods for Connecting Physical Objects} (2007). V českém jazyce žádná podobná kniha doposud nevyšla.
 
 Příručka by měla přiblížit, ve shodě s původním smyslem {\em Processingu}, technologie i netechnicky zaměřeným oborům, hlavně pak studentům výtvarných škol bez předešlé zkušenosti -- nebo jen s malou praxí s programováním.
 
@@ -305,6 +309,8 @@ Publikace byla zpracována jako diplomová práce studijního oboru \lnb Centra 
 
 \tableofcontents
 
+\pagestyle{empty}
+
 \vfill
 \chapter{O knize}
 
@@ -320,7 +326,6 @@ Publikace byla zpracována jako diplomová práce studijního oboru \lnb Centra 
 
 \oddil{Úvodem}
 
-
 \pagestyle{fancyplain}
 
 Vážení čtenáři,
@@ -331,32 +336,32 @@ Příručka je psána ve sledu, který bych uvítal, kdybych se sám měl učit 
 
 Cestu k této zručnosti vám neumím jednoduše předat, pedagogický talent jsem nikdy nepocítil. Tato kniha by proto měla být odložena vždy, bude-li mít čtenář nutkání si něco sám vyzkoušet. To považuji za absolutně nejrychlejší a zároveň nejlepší způsob učení.
 
-Proces tvůrčího programování obsahuje prvek intuice, která vychází podstatnou měrou ze zkušenosti. Pro podporu vaší intuice při psaní programu je nutné ovládnout základní jazyk natolik, abyste měli určitou jistotu. Přestanete-li se zabývat funkčností programu a získáte-li v ní jistotu, přijmete jazyk za vlastní nástroj, a pak můžete nechat hovořit právě vaši intuici. Intuici považuji za avantgardu logiky, protože je před ní vždy minimálně o krok napřed.
+Proces tvůrčího programování obsahuje prvek intuice, která vychází podstatnou měrou ze zkušenosti. Pro podporu vaší intuice při psaní programu je nutné ovládnout základní jazyk natolik, abyste měli určitou jistotu. Přestane\-te-li se zabývat funkčností programu a získáte-li v ní jistotu, přijmete jazyk za vlastní nástroj, a pak můžete nechat hovořit právě vaši intuici. Intuici považuji za avantgardu logiky, protože je před ní vždy minimálně o krok napřed.
 
 K vybudování intuice je především nezbytná schopnost pozorování. Samotná intuice nezmůže v komunikaci se strojem nic. Stroj neví, co počítá, ale dokáže spočítat i to, co sami nevíte.
 
-Stroj je rychlý nástroj pro ověření vaší intuice a je zapotřebí být pozorný. Můžeme to nazvat experimentální přístup, výsledky by měly být vždy intuitivně a hlavně kriticky zkoumány. Zpětnou dekonstrukcí intuice, rozborem vaší jistoty, získáváte postupně dar rozumění věci. Dar je to danajský, rozumění je jen ustálená podoba znalostí, která musí být opět zpochybněna intuicí; nutno podotknout, že opakovaným prověřením se často jen více utvrzuje. 
+Stroj je rychlý nástroj pro ověření vaší intuice a je zapotřebí být pozorný. Můžeme to nazvat experimentální přístup, výsledky by měly být vždy intui\-tivně a hlavně kriticky zkoumány. Zpětnou dekonstrukcí intuice, rozborem vaší jistoty, získáváte postupně dar rozumění věci. Dar je to danajský, rozumění je jen ustálená podoba znalostí, která musí být opět zpochybněna intuicí; nutno podotknout, že opakovaným prověřením se často jen více utvrzuje. 
 
 Není-li tento programovací jazyk vaším prvním, prosím vás o trpělivost ohledně podrobností, do kterých v úvodu této knihy zabíhám. Šíře znalostí, které se mohou vyskytovat u potenciálních čtenářů tohoto průvodce, je pro autora první velkou neznámou.
 
 V obou případech prosím o shovívavost ve způsobu popisu programovacího jazyka a prostředí {\em Processingu}. Sám jako samouk a člověk zaměřený zejména výtvarným směrem nemohu zaručit absolutní, stoprocentní \lnb a všeobecnou platnost všech tvrzení. Tímto vás tedy žádám o věcné podněty pro pozdější doplnění nebo přeformulování jednotlivých tezí.
 
-Má snaha provést začínající i středně pokročilé uživatele programovacím jazykem bude vždy nedostatečná, berte tuto knihu, prosím, spíše jako průvodce nesnadnými začátky. Čtete-li knihu z jiných důvodů, než abyste se naučili programovacímu jazyku, pokusím se text proložit poznatky nabytými moji několikaletou zkušeností se sdílením života se stroji. Dostala-li se vám tato publikace do rukou jinou cestou, nebo dokonce náhodou či omylem, tedy věru netuším, co v ní dále najdete, a proto bych i vás rád pobídl alespoň k začtení se do světa skriptů a kódů.
+Má snaha provést začínající i středně pokročilé uživatele programovacím jazykem bude vždy nedostatečná, berte tuto knihu, prosím, spíše jako průvodce nesnadnými začátky. Čtete-li knihu z jiných důvodů, než abyste se naučili programovacímu jazyku, pokusím se text proložit poznatky nabytými mojí několikaletou zkušeností se sdílením života se stroji. Dosta\-la-li se vám tato publikace do rukou jinou cestou, nebo dokonce náhodou či omylem, tedy věru netuším, co v ní dále najdete, a proto bych i vás rád pobídl alespoň k začtení se do světa skriptů a kódů.
 
 
 
 
 \pododdil{Cíle příručky}
 
-Cílem této knihy je provést uživatele--začátečníka sérií příkladů, které budou ilustrovat znalosti nezbytné k naprogramování jednotlivých stadií programu.
+Cílem této knihy je provést uživatele-začátečníka sérií příkladů, které budou ilustrovat znalosti nezbytné k naprogramování jednotlivých stadií programu.
 
 Prvním cílem této příručky je popsat základní terminologii používanou v jazyce {\em Processing}, tato pasáž je nezbytná pro další pokračování. Jestliže se cítíte v tento okamžik připraveni, můžete si rovnou nalistovat začátek průvodce \odkaz{Základní prostředí}.
 
 Následující krok je pochopení datatypů a operací s nimi. Proměnné představují základní stavební jednotku {\em Processingu}, orientujete-li se například v jazyce {\em Java}, směle tento krok rovnou přeskočte, všem ostatním čtenářům ovšem stěžejní pasáž příručky důrazně doporučuji přečíst \odkaz{Logika programování}.
 
-Dalším cílem publikace je uživatele {\em Processingu} uvést do zábavnější části programování: experimenty s obrazovým výstupem. Kapitoly týkající se základních kreslících funkcí \odkaz{Zobrazení} jsou dobré pro naprosté začátečníky. Těm lehce pokročilým bych doporučil sekci věnovanou pohybu \odkaz{Pohyb} a \odkaz{interakce}.
+Dalším cílem publikace je uživatele {\em Processingu} uvést do zábavnější části programování: experimenty s obrazovým výstupem. Kapitoly týkající se základních kreslicích funkcí \odkaz{Zobrazení} jsou dobré pro naprosté začátečníky. Těm lehce pokročilým bych doporučil sekci věnovanou pohybu \odkaz{Pohyb} a kapitolu věnovanou interakci \odkaz{interakce}.
 
-Všechny kapitoly postupně čtenáře vedou k osvojení si objektově orientovaného jazyka. Zde se {\em Processing} stává opravdu mocným nástrojem. Pasáže v příručce věnující se podrobněji práci s objekty najdete zejména v pokročilejších kapitolách \odkaz{Uspořádání struktury programu}.
+Všechny kapitoly postupně čtenáře vedou k osvojení si objektově orien\-tovaného jazyka. Zde se {\em Processing} stává opravdu mocným nástrojem. Pasáže v příručce věnující se podrobněji práci s objekty najdete zejména \lnb v pokročilejších kapitolách \odkaz{Uspořádání struktury programu}.
 
 Všem čtenářům ovšem doporučuji alespoň si pročíst úvod, a tím získat základní představu o kontextu programovacího jazyka {\em Processing}.
 
@@ -364,9 +369,9 @@ Všem čtenářům ovšem doporučuji alespoň si pročíst úvod, a tím získa
 
 Text je členěn do jednotlivých  kapitol a dále strukturován do dvou úrovní podkapitol. Pořadí kapitol by mělo odpovídat sledu informací nezbytných \\ k plynulému učení se programovacímu jazyku {\em Processing}.
 
-Řazení a obsah jednotlivých kapitol vychází z mé vlastní zkušenosti. Z veliké míry koresponduje s podobnými průvodci, jež píší samotní tvůrci a širší komunita uživatelů kolem programovacího jazyka {\em Processing}.
+Řazení a obsah jednotlivých kapitol vychází z mé vlastní zkušenosti. \lnb Z veliké míry koresponduje s podobnými průvodci, jež píšou samotní tvůrci a širší komunita uživatelů kolem programovacího jazyka {\em Processing}.
 
-Zvolená forma textu odpovídá ověřeným postupům. Následující text bude podléhat určitým zákonitostem. V knize se objeví několik typů textu, které budou vždy odlišeny formou zápisu.
+Zvolená forma textu odpovídá ověřeným postupům. Následující text \lnb bude podléhat určitým zákonitostem. V knize se objeví několik typů textu, které budou vždy odlišeny formou zápisu.
 
 \newpage
 \pododdil{Pravidla formátování v knize}
@@ -393,7 +398,7 @@ boolean pravda = true;
 
 
 \item[\klavesy{CONTROL + T}:]
-klávesové zkratky které jsou psány \uv{verzálkami}
+klávesové zkratky, které jsou psány \uv{verzálkami}
 
 \item[\slovnik{GNU / GPL}:]
 výrazy a pojmy, jejichž definici můžete nalézt ve slovníku na konci knihy
@@ -402,11 +407,11 @@ výrazy a pojmy, jejichž definici můžete nalézt ve slovníku na konci knihy
 jednotlivé příkazy a oficiální příkazy {\em Processingu}, které jsou zároveň zařazeny do slovníku
 
 \item[{\em promenna}:]
-proměnné a názvy použité v kódu, které bude potřeba dovysvětlit v textu
+proměnné a názvy použité v kódu, které bude potřeba dovysvětlit \lnb v textu
 
 
 \item[cvičení:]
-Pomocí cvičení a otázek si můžete kontrolovat v průběhu textu nabyté znalosti. Bublina bude vždy značit důležité informace, například ty, které si musíte zapamatovat, abyste se mohli orientovat \\v následujícím textu.\bublina{Zapamatujte si, prosím, jak budou znázorněna cvičení.} 
+Pomocí cvičení a otázek si můžete kontrolovat v průběhu textu nabyté znalosti. Bublina bude vždy značit důležité informace, například ty, které si musíte zapamatovat, abyste se mohli orientovat \lnb v následujícím textu.\bublina{Zapamatujte si, prosím, jak budou znázorněna cvičení.} 
 
 \end{itemize}
 
@@ -424,24 +429,28 @@ Robert Hodgin, také známý pod pseudonymem {\em flight 404}, zůstává jednou
 Hodgin pracuje s jazyky {\em Processing} a {\em Cinder}\index{Cinder}. V obou případech skrze tato prostředí ovšem programuje přímo aplikaci {\em OpenGL}, která zprostředkovává pokyny samotnému grafickému jádru.
 
 \vfill
+\newpage
 
 \begin{centering}
 \includegraphics[width = 1\textwidth]{imgs/hogin.png}
 \end{centering}
 
-Ilustrace pochází z Hodginovy \index{Hodgin, Robert} \index{flight404} grafické práce, která byla vybrána jako jedna ze 42 prací do prvního vydání knihy {\em Written Images}.
+Ilustrace pochází z Hodginovy \index{Hodgin, Robert} \index{flight404} grafické práce, která byla vybrána jako jedna ze 42 výtvorů do prvního vydání knihy {\em Written Images}.
 
-Publikace je kurátorským projektem a samostatným výtvarným počinem dánského tvůrce \textbf{Marcina Ignace} \index{Ingac, Marcin}. První výtisk knihy byl vydán v roce 2011, kniha byla zpacována softwarem {\em Processing}. Jde v podstatě o konceptuální dílo, automatizací vychází každý výtisk s posunem o jedno okénko, a tím ilustruje ducha generativní tvorby. \vfill
+Publikace je kurátorským projektem a samostatným výtvarným počinem dánského tvůrce Marcina Ignace. \index{Ingac, Marcin}
+
+První výtisk knihy byl vydán v roce 2011, kniha byla zpacována softwarem {\em Processing}. Jde v podstatě o konceptuální dílo, automatizací vychází každý výtisk s posunem o jedno okénko, a tím ilustruje ducha generativní tvorby.
+
+\vfill
 
 \begin{centering}
 \includegraphics[width = 1\textwidth]{imgs/writtenimages.png}
 %\includegraphics[width = 1\textwidth]{imgs/neznamy.png}
-
 \end{centering}
 
 Kniha obsahuje generativní obrazy následujících umělců:
 {\em 
-386dx25, \\Antoni Kaniowski, Ariel Malka, Carl-Johan Rosén, Casey Reas, clone, \\David Bollinger, David Bouchard, e m o c, flight404, Golan Levin, \\Jonathan McCabe, Jörg Piringer, Julien Deswaef, Kim Asendorf, kraftner, Leonardo Solaas, Lia, Luke Sturgeon, Marcin Ignac, Marius Watz, Michael Zick Doherty, Mitchell Whitelaw, Moka, Nervous System, Oliver Smith, \\paolon, Perceptor, rhymeandreason, Ricard Marxer, Roberto Christen, Rui Madeira, Ryan Alexander, Ryland Wharton, Sansumbrella, sojamo, \\Stefano Maccarelli, Szymon Kaliski, Victor Martins, W:Blut, \\William Lindmeier, zenbullets.} 
+386dx25, \lnb Antoni Kaniowski, Ariel Malka, Carl-Johan Rosén, Casey Reas, clone, \lnb David Bollinger, David Bouchard, e m o c, flight404, Golan Levin, \lnb Jonathan McCabe, Jörg Piringer, Julien Deswaef, Kim Asendorf, kraftner, Leonardo Solaas, Lia, Luke Sturgeon, Marcin Ignac, Marius Watz, Michael Zick Doherty, Mitchell Whitelaw, Moka, Nervous System, Oliver Smith, \lnb paolon, Perceptor, rhymeandreason, Ricard Marxer, Roberto Christen, Rui Madeira, Ryan Alexander, Ryland Wharton, Sansumbrella, sojamo, \lnb Stefano Maccarelli, Szymon Kaliski, Victor Martins, W:Blut, \lnb William Lindmeier, zenbullets.} 
 
 
 
@@ -457,7 +466,7 @@ Kniha obsahuje generativní obrazy následujících umělců:
 \end{center}
 
 
-Karsten Schmidt působí v processingové komunitě dlouhodobě a je více znám pod pseudonymem {\em Toxi}. Schmidt je autorem sady rozsáhlých knihoven nazvaných souhrnně {\em Toxilibs} \index{toxilibs}. Jeho tvorba je zaměřena technicky na vývoj samotných knihoven, tedy jednotlivých modulů rozšiřujících funkce {\em Processingu} \odkaz{Knihovny}. V případě knihovny {\em Toxilibs} například rozšířením o funkce pro konstrukci trojdimenzionálních objektů.
+Karsten Schmidt působí v processingové komunitě dlouhodobě a je více znám pod pseudonymem {\em Toxi}. Schmidt je autorem sady rozsáhlých knihoven nazvaných souhrnně {\em Toxilibs}. \index{toxilibs} Jeho tvorba je zaměřena technicky na vývoj samotných knihoven, tedy jednotlivých modulů rozšiřujících funkce {\em Processingu} \odkaz{Knihovny}. V případě knihovny {\em Toxilibs} například rozšířením o funkce pro konstrukci trojdimenzionálních objektů.
 
 
 \begin{center}
@@ -467,7 +476,7 @@ Karsten Schmidt působí v processingové komunitě dlouhodobě a je více znám
 
 \end{center}
 
-Schmidtova práce vyniká zejména pro možnost recyklovatelnosti a další užitné hodnoty samotného kódu. Schmidtovy algoritmy jsou propracované a matematicky pokročilé. Práce Karstena Schmidta dobře ilustruje podstatu komunitní práce ve formě knihoven, které volně cirkulují mezi uživateli \\a jsou volně využívány v duchu svobodného softwaru. \index{Schmidt, Karsten}
+Schmidtova práce vyniká zejména pro možnost recyklovatelnosti a další užitné hodnoty samotného kódu. Schmidtovy algoritmy jsou propracované a matematicky pokročilé. Práce Karstena Schmidta dobře ilustruje podstatu komunitní práce ve formě knihoven, které volně cirkulují mezi uživateli \lnb a jsou volně využívány v duchu svobodného softwaru. \index{Schmidt, Karsten}
 
 
 
@@ -495,7 +504,7 @@ Pozoruhodné algoritmy Jonathana McCaba vynikají svou spektakulárností, kter�
 \includegraphics[width = 1\textwidth]{imgs/mcCabe1.png}
 \end{center}
 
-I když se to zprvu nabízí, \index{McCabe, Johnatan} McCabovy obrazy se nedají posuzovat pouze výtvarně. Nejvíce pozoruhodné jsou způsobem svého vzniku. Obrazy přímo odkazují na výzkum Alana Turinga\index{Turing, Alan}, konkrétně na text vydaný v roce 1952 s názvem {\em The Chemical Basis of Morphogenesis}, který pojednává o vlivu chemických sloučenin na uspořádání růstu tkáně vícebuněčných organismů. Turing podobnou difuzi prvků v textu rozpracoval matematicky a po téměř padesáti letech na bázi původních algoritmů vznikají tyto obrazy. Podobnost v uspořádání lze nalézt například ve snímcích tkáně pod elektronovým mikroskopem, a i když se jedná o ryze výtvarnou interpretaci algoritmu, může vést k zamyšlení i vědecké kruhy.
+I když se to zprvu nabízí, \index{McCabe, Johnatan} McCabovy obrazy se nedají posuzovat pouze výtvarně. Nejvíce pozoruhodné jsou způsobem svého vzniku. Obrazy přímo odkazují na výzkum Alana Turinga\index{Turing, Alan}, konkrétně na text vydaný v roce 1952 s názvem {\em The Chemical Basis of Morphogenesis}, který pojednává o vlivu chemických sloučenin na uspořádání růstu tkáně vícebuněčných organismů. Turing podobnou difuzi prvků v textu rozpracoval matematicky a po téměř padesáti letech na bázi původních algoritmů vznikají tyto obrazy. Podobnost v uspořádání lze nalézt například ve snímcích tkáně pod elektronovým mikroskopem, a i když se jedná o ryze výtvarnou interpretaci algoritmu, může dovést k zamyšlení i vědecké kruhy.
 
 
 \begin{center}
@@ -523,20 +532,20 @@ I když se to zprvu nabízí, \index{McCabe, Johnatan} McCabovy obrazy se nedaj�
 
 \oddil{Síť}
 
-Autor knihy předpokládá, že čtenář má v přístup ke globální síti internet.
+Autor knihy předpokládá, že čtenář má přístup ke globální síti internet.
 
 Nejlepší referencí pro práci s {\em Processingem} zůstává tato síť. {\em Processing} byl vyvinut síťovou komunitou a je také v síti nejlépe zdokumentován. Existuje několik dobrých obecných stránek s průvodci. Za všechny lze jmenovat domovskou stránku projektu {\em processing.org}. Zde naleznete téměř vše, co byste mohli potřebovat. Nacházejí se zde zdokumentované veškeré příkazy {\em Processingu}. Je zde i záložka {\em Learning} s jednotlivými průvodci různých oblastí.
 
-Nejadresněji se vám dostane pomoci prostřednictvím webových fór nebo \index{IRC} IRC--kanálů. Na fórech se již řešil téměř jakýkoli problém, stačí proto vyhledávat klíčová slova konkrétního dotazu a velmi rychle byste měli nalézt řešení.
+Nejadresněji se vám dostane pomoci prostřednictvím webových fór nebo \index{IRC} IRC-kanálů. Na fórech se již řešil téměř jakýkoli problém, stačí proto vyhledávat klíčová slova konkrétního dotazu a velmi rychle byste měli nalézt řešení.
  
-   Na síti je dále obrovské množství uživatelů volně sdílejících své programy včetně zdrojových kódů. Nejpočetnější komunita sídlí zřejmě na portálu {\em openprocessing.org} založeném a spravovaném \index{Aşçıoğlu, Sinan} Sinanem \\Aşçıoğluem.
+   Na síti je dále obrovské množství uživatelů volně sdílejících své programy včetně zdrojových kódů. Nejpočetnější komunita sídlí zřejmě na portálu {\em openprocessing.org} založeném a spravovaném \index{Aşçıoğlu, Sinan} Sinanem \lnb Aşçıoğluem.
    
-Veškerá dokumentace je v angličtině včetně webových fór i dalších knih o programování. Nemáte-li problém s anglickým jazykem, míst \\ k zdokonalování se v {\em Processingu} bude vždy dostatek. \bublina{Doporučuji se nejprve seznámit s projekty na internetu, získáte tím představu o tom, k čemu se vlastně Processing využívá.}
+Veškerá dokumentace je v angličtině včetně webových fór i dalších knih o programování. Nemáte-li problém s anglickým jazykem, míst \lnb k zdokonalování se v {\em Processingu} bude vždy dostatek. \bublina{Doporučuji se nejprve seznámit s projekty na inter\-netu, získáte tím představu o tom, \lnb k čemu se vlastně Processing využívá.}
 
 
 \oddil{Examples, příklady přímo v Processingu}
 
-Tato pomoc je vždy po ruce. {\em Processing} je navržen k výuce a je připraven poskytovat pomoc ze své podstaty. Přímo do aplikace {\em Processingu} jsou naimplementovány základní postupy programování. Témata jsou pokrytá od základních operací až po pohyb v třídimenzionálním prostoru nebo manipulaci s pixely. \index{Processing Examples}
+Tato pomoc je vždy po ruce. {\em Processing} je navržen k výuce a je připraven poskytovat pomoc ze své podstaty. Přímo do aplikace {\em Processingu} jsou naimplementovány základní postupy programování. Témata jsou pokryta od základních operací až po pohyb v trojdimenzionálním prostoru nebo manipulaci s pixely. \index{Processing Examples}
 
 Příkladů je na webu dostatek a jsou přehledně uspořádány. Vřele doporučuji si je čas od času projít.
 
@@ -544,15 +553,15 @@ Ke všem příkladům se dostanete z {\em Processingu} skrze nabídku {\em File 
 
 \oddil{Knihy a průvodci}
 
-Ano, jednoho průvodce právě držíte v ruce (nebo čtete na obrazovce). \\V minulosti vyšla bezmála desítka podobných knih na stejné téma. Jsou bezesporu obsáhlejší, než kdy měla tato příručka v úmyslu.
+Ano, jednoho průvodce právě držíte v rukou (nebo čtete na obrazovce). \lnb V minulosti vyšla bezmála desítka podobných knih na stejné téma. Jsou bezesporu obsáhlejší, než kdy měla tato příručka v úmyslu.
 
-Z nich bych vám nejvíce doporučil základní příručku od samotných tvůrců Processingu Caseyho Rease a Bena Frye \index{Reas, Casey} \index{Fry, Ben} nazvanou {\em Processing: A Pro-gramming Handbook for Visual Designers and Artists (2007)}. A rozhodně pak knihu Daniela Shiffmana \index{Shiffman, Daniel} {\em Learning Processing: A Beginner's Guide to Programming Images, Animation, and Interaction (2008)}. Je jednou z velmi podrobně napsaných knih o {\em Processingu}.
+Z nich bych vám nejvíce doporučil základní příručku od samotných tvůrců {\em Processingu} Caseyho Rease a Bena Frye \index{Reas, Casey}\index{Fry, Ben}nazvanou {\em Processing: A Pro-gramming Handbook for Visual Designers and Artists} (2007). A rozhodně pak knihu Daniela Shiffmana\index{Shiffman, Daniel} {\em Learning Processing: A Beginner's Guide to Programming Images, Animation, and Interaction} (2008). Je jednou \lnb z velmi podrobně napsaných knih o {\em Processingu}.
 
 Knihy jsou cenově vcelku dostupné a dají se opatřit přes internet. Rozhodně bych to doporučoval všem, kteří  potřebují mít opravdu dobrou dokumentaci vždy při ruce. V neposlední řadě bych také upozornil na to, že koupí knihy podporujete tvůrce svobodného softwaru, a tím potažmo i svobodný software jako takový \odkaz{Otevřenost softwaru}.
 
 \oddil{Experiment}
 
-Nejdůležitějším zdrojem vašich vlastních zkušeností bude vždy samotné experimentování s programováním. Na tuto část kladu největší důraz \\a v průběhu této knihy to i několikrát zopakuji: je vždy dobré odložit knihy a reference a odvážit se do neznámých vod. Zkušenost, kterou takto naberete, bude vždy ta nejhodnotnější. Nebojte se proto sami experimentovat \odkaz{Empirický přístup k programování}. \bublina{Příštích několik kapitol se věnuje obecnějším úvahám o programovacích jazycích, již nyní si můžete Processing nainstalovat.}
+Nejdůležitějším zdrojem vašich vlastních zkušeností bude vždy samotné experimentování s programováním. Na tuto část kladu největší důraz \lnb a v průběhu této knihy to i několikrát zopakuji: je vždy dobré odložit knihy a reference a odvážit se do neznámých vod. Zkušenost, kterou takto naberete, bude vždy ta nejhodnotnější. Nebojte se proto sami experimentovat \odkaz{Empirický přístup k programování}. \bublina{Příštích několik kapitol se věnuje obecnějším úvahám o programovacích jazycích, již nyní si můžete Processing nainsta\-lovat.}
 
 %\part{Programovací jazyky}
 
@@ -567,16 +576,18 @@ Na počátku programování ale nebyl lidský jazyk. Se stroji se v jejich raný
 
 Řeč se v počátcích tvorby struktur pro program jevila jako člověku nejpřirozenější řešení. Velmi brzy tvůrci zjistili, že pomocí jazyka lze sice definovat složitý problém pro člověka, vyvstává tím ovšem problém definovat význam takového jazyka pro stroj.
 
-Počítačový jazyk není jeden, počítačových jazyků jsou celé rozvětvené rodiny. Konceptů, jak lépe hovořit srozumitelně pro člověka a zároveň ke stroji, je celá řada, žádný z nich nedokáže plně kopírovat lidský jazyk v jeho přirozené struktuře. Důvodů je několik, jeden z nejpodstatnějších je fakt, že lidská řeč neodpovídá organizaci ve struktuře stroje, prostě proto, že člověk své řeči sám nerozumí natolik, aby popsal všechny její zákonitosti logickou cestou.
+Počítačový jazyk není jeden, počítačových jazyků jsou celé rozvětvené rodiny. Konceptů, jak lépe hovořit srozumitelně pro člověka a zároveň ke stroji, je celá řada, žádný z nich nedokáže plně kopírovat lidský jazyk v jeho přirozené struktuře. Důvodů je několik, jeden z nejpodstatnějších je fakt, že lidská řeč neodpovídá organizaci ve struktuře stroje prostě proto, že člověk své řeči sám nerozumí natolik, aby popsal všechny její zákonitosti logickou cestou.
 
-Jednoduše řečeno, lidský jazyk není popsán tak dokonale, abychom ho byli schopni vysvětlit stroji. Pokusy o průnik lidské řeči \\a logického obvodu sahají do absolutních počátků interakce člověka se strojem a představují pro tvůrce strojů závažný problém. Tento problém v padesátých letech minulého století definoval Alan Turing, jeden ze zakladatelů dnešní výpočetní techniky. Alan Turing spolu s Gordonem Wechmanem stáli v době druhé světové války u vývoje stroje k rozkrývání německých šifer nazvaného Bomba (The Bomb). Alan Turing v poválečné éře definoval formální rámec počítače, jak jej známe dnes. Koncepce později nazvaná Turingův stroj vycházela zejména z matematických potřeb a jednalo se o snahu vytvořit kompletní výpočetní jednotku schopnou řešit veškeré známé matematické operace. \index{Turing, Alan} \index{The Bomb}
+\pagebreak
+
+Jednoduše řečeno, lidský jazyk není popsán tak dokonale, abychom ho byli schopni vysvětlit stroji. Pokusy o průnik lidské řeči a logického \lnb obvodu sahají do absolutních počátků interakce člověka se strojem a představují pro tvůrce strojů závažný problém. Tento problém v padesátých letech minulého století definoval Alan Turing, jeden ze zakladatelů dnešní výpočetní techniky. Alan Turing spolu s Gordonem Wechmanem stáli v době druhé světové války u vývoje stroje k rozkrývání německých šifer nazvaného {\em Bomba (The Bomb)}. Alan Turing v poválečné éře definoval formální rámec počítače, jak jej známe dnes. Koncepce později nazvaná Turingův stroj vycházela zejména z matematických potřeb a jednalo se o snahu vytvořit kompletní výpočetní jednotku schopnou řešit veškeré známé matematické operace. \index{Turing, Alan} \index{The Bomb}
 
 
 Je pozoruhodné, že Alan Turing se již v raných stadiích vývoje počítačů zabýval takzvanou umělou inteligencí. Z toho je zřejmé, že stroje podobné počítačům se od počátku svého vzniku připodobňují struktuře lidského uvažování. Alan Turing sestavil pro stroje známý experiment nazvaný Turingův test, jenž měl prověřit schopnosti stroje replikovat lidské chování. Není náhodou, že prostředkem pro komunikaci v testu byla zvolena právě řeč. Test spočíval v modelové situaci stroje schopného napodobit lidskou komunikaci tak dokonale, aby člověk nebyl schopen rozeznat, že komunikuje se strojem. Zajímavá na této definici lidské inteligence je zejména její vágnost, která v podstatě ilustruje míru porozumění logického uvažování lidské mysli jako takové.
 
 K tomu, abychom sdělili informaci, používáme jazyk. Jazyk musíme umět přizpůsobit tomu, aby informoval, sdělil jistou skutečnost -- myšlenku sdělovanému subjektu. Jazyk má nutně několik úrovní, zdaleka ne všechny jsme schopni reflektovat. Logicky popsaným jazykem a vnitřně uceleným systémem jsme schopni vysvětlit pouhý fragment skutečnosti.
 
-Programovací jazyk je prostředek pro zápis algoritmů, jež mohou být provedeny na počítači. Zápis algoritmu ve zvoleném programovacím \\jazyce se nazývá program.
+Programovací jazyk je prostředek pro zápis algoritmů, jež mohou být provedeny na počítači. Zápis algoritmu ve zvoleném programovacím \lnb jazyce se nazývá program.
 
 
 
@@ -584,13 +595,13 @@ Programovací jazyk je prostředek pro zápis algoritmů, jež mohou být proved
 
 \oddil{Jednoduchý programovací jazyk}
 
-Snaha o zpřístupnění programování širší veřejnosti dala již na konci 20. století vzniknout rodině jazyků, které jsou patřičně zjednodušeny tak, aby je mohli obsluhovat i laici.
+Snaha o zpřístupnění programování širší veřejnosti dala již na konci \lnb 20. století vzniknout rodině jazyků, které jsou patřičně zjednodušeny tak, aby je mohli obsluhovat i laici.
 
-Zjednodušit programování je odpověď na situaci, kdy programovací jazyky vytvářeli především lidé se zvláštním nadáním pro ryze technické uvažování. Pro technické uvažování nemá každý člověk správné predispozice. Programování v současnosti znamená zejména určitý stupeň svobody při komunikaci se strojem.
+Zjednodušit programování je odpověď na situaci, kdy programovací jazyky vytvářeli především lidé se zvláštním nadáním pro ryze technické uvažování. Pro technické myšlení nemá každý člověk správné predispozice. Programování v současnosti znamená zejména určitý stupeň svobody při komunikaci se strojem.
 
 K míře svobody, která má své silné kritiky\footnote{Včetně mne samotného}, se nyní nechci vyjadřovat, ale zjednodušeně z pohledu pouhého uživatele, který používá daný nástroj, schopnost programovat činí z uživatele již potenciálního tvůrce vlastních nástrojů.
 
-Hovořím-li o stroji, mám na mysli spotřební počítač. Termín \slovnik{stroj} používám záměrně pro zdůraznění jisté formy strojového přemýšlení v historickém kontextu.
+Hovořím-li o stroji, mám na mysli spotřební počítač. Termín \slovnik{stroj} po\-užívám záměrně pro zdůraznění jisté formy strojového přemýšlení v historickém kontextu.
 
 Nástroje jsou pak programy zkonstruované pro jistou činnost. Nástroj je obvykle vyvíjen za jedním účelem, který plní uživatelsky co nejpřívětivější cestou. Tato cesta je pro uživatele schůdná a nabízí mu standardní škálu dovedností nástroje.
 
@@ -598,20 +609,20 @@ Aniž bychom si to často uvědomovali, současná vizuální kultura je ovlivn�
 
 Tato kniha je spíše nežli jednomu nástroji věnována programu pro tvorbu takových nástrojů. Jak již vyplývá z této definice, použití {\em Processingu} není limitováno jen úhlem pohledu autora tohoto textu. Návod by se měl stát spíše pobídkou k co nejrozmanitější tvorbě vlastních nástrojů sloužících opět k co možná nejširší škále možných účelů.
 
-{\em Processing} vychází z koncepce snadného přístupu k programování. Za běžných okolností by se vnímavý člověk měl být schopen naučit jednoduché struktuře programu a vytvořit vlastní program v průběhu několika dní. Na druhou stranu, právě predispozice našeho uvažování jsou natolik rozmanité, že takovou prognózu nelze brát jinak než jen jako orientační.
+{\em Processing} vychází z koncepce snadného přístupu k programování. \lnb Za běžných okolností by se vnímavý člověk měl být schopen naučit jednoduché struktuře programu a vytvořit vlastní program v průběhu několika dní. Na druhou stranu, právě predispozice našeho uvažování jsou natolik rozmanité, že takovou prognózu nelze brát jinak než jen jako orientační.
 
 
 
 
 \oddil{Dokonalost jazyka}
 
-Co je to dokonalý jazyk? Obecně je zapotřebí říci, že absolutně dokonalý jazyk neexistuje. Jazyk si můžeme představit jako systém vzájemných vztahů, který je schopen popsat jednotlivé symboly nebo objekty. Symboly můžeme nazvat předměty, tyto předměty dále mají své vlastní hodnoty a vlastnosti. Jazyk kromě definic takových vlastností operuje a popisuje jednotlivé jevy \\a vztahy mezi těmito předměty. Jednodušší popis jazyka je \\v pojetí výpočetní techniky určitý ucelený systém schopný popsat rozmanité problémy řešitelné strojem.
+Co je to dokonalý jazyk? Obecně je zapotřebí říci, že absolutně dokonalý jazyk neexistuje. Jazyk si můžeme představit jako systém vzájemných vztahů, který je schopen popsat jednotlivé symboly nebo objekty. Symboly můžeme nazvat předměty, tyto předměty dále mají své vlastní hodnoty \lnb a vlastnosti. Jazyk kromě definic takových vlastností operuje a popisuje jednotlivé jevy a vztahy mezi těmito předměty. Jednodušší popis jazyka je \lnb v pojetí výpočetní techniky určitý ucelený systém schopný popsat rozmanité problémy řešitelné strojem.
 
 Co předem činí jakýkoli jazyk absolutně nedokonalým, je fakt, že jakýmkoli jazykem nedokážeme vyjádřit původ jazyka, tj. jeho strůjce, člověka. Jazyk použitý pro instruktáž stroje je vnitřně konzistentní a funguje logicky hermeticky, tedy nepřipouští jiný než jeden výklad konkrétního textu. Pojetí dokonalosti jazyka ve smyslu vnitřní logické konzistence je naprostou nezbytností v pojetí interpretace strojem, na druhou stranu téměř nepřekonatelnou překážkou v případě abstraktnějších úvah o programování jako takovém.
 
-Použiji zde pro názornost rozdíl programovacího jazyka a jazyka českého. Český jazyk, je jazykem organicky ustáleným po staletích užívání. Jazyk, jak ho známe, slouží ke komunikaci mezi lidmi, lze jej tedy použít například pro popis krajiny. Přestože k dokonalému popisu krajiny můžeme stěží dojít, slovy, která se opírají o určitou sdílenou zkušenost, lze poměrně dobře přiblížit určitý obraz věcí.
+Použiji zde pro názornost rozdíl programovacího jazyka a jazyka českého. Český jazyk je jazykem organicky ustáleným po staletích užívání. Jazyk, jak ho známe, slouží ke komunikaci mezi lidmi, lze jej tedy použít například pro popis krajiny. Přestože k dokonalému popisu krajiny můžeme stěží dojít, slovy, která se opírají o určitou sdílenou zkušenost, lze poměrně dobře přiblížit určitý obraz věcí.
 
-Kdybychom se pokusili pro popis krajiny použít jazyk programovací, dostaneme se velmi rychle do nesnází. Programovací jazyk není jazykem určeným pro předávání informací mezi lidmi, ale pro komunikaci člověka se strojem. Jeho vnitřní logická konzistence, tvrdá logická struktura, která nedovoluje v jeden okamžik jinou než jednu interpretaci, je jeho velikou předností při definici exaktních parametrů. Podobnost s řečí spočívá ve vazbě slov, která reprezentují jednotlivé hodnoty a operace. Hlavní odlišnost je v jeho syntetickém původu, jedná se o jazyk umělý. Programovací jazyk je přednostně zkonstruován pro definici známého a pochopeného. V případě neznámých nebo nepoznaných veličin je programovací jazyk víceméně k ničemu. 
+Kdybychom se pokusili pro popis krajiny použít jazyk programovací, dostaneme se velmi rychle do nesnází. Programovací jazyk není jazykem určeným pro předávání informací mezi lidmi, ale pro komunikaci člověka se strojem. Jeho vnitřní logická konzistence, tvrdá logická struktura, která nedovoluje v jeden okamžik jinou než jednu interpretaci, je jeho velikou předností při definici exaktních parametrů. Podobnost s řečí spočívá ve vazbě slov, která reprezentují jednotlivé hodnoty a operace. Hlavní odlišnost je v jeho syntetickém původu, jedná se o jazyk umělý. Programovací jazyk je přednostně zkonstruován pro definici známého a pochopeného. \lnb V případě neznámých nebo nepoznaných veličin je programovací jazyk víceméně k ničemu. 
 
 Chceme-li komunikovat se strojem, musíme tedy svůj způsob vyjadřování přizpůsobit logicky dokonalému jazyku -- vnitřní logice fungování stroje. Počítač není navržen k tomu, aby něčemu rozuměl. Počítač je na-vržen k řešení jasně definovaných otázek. Tato příručka se pokusí srozumitelnou formou popsat jeden z možných způsobů, jak si takový jazyk osvojit a potažmo způsob uvažování, který vede k jasné definici problému. Hovoříme--li o programování, máme na mysli proces tvorby jisté logické struktury. Osvojení si programování spočívá ve schopnosti definovat problém nebo jasně formulovat otázku tak, aby na ni stroj mohl odpovědět.
 
@@ -621,27 +632,27 @@ Vtip spočívá v tom, že ovládneme-li formálně jazyk určený stroji, můž
 
 Ve výpočetní technice se nachází celá škála programovacích jazyků i prostředí. Tyto jazyky mají svoji genezi a byly historicky vyvíjeny především počítačovými odborníky. Jejich dokonalost lze těžko ocenit z vnějšího pohledu, a to právě z důvodu jejich konstrukce, která odpovídá a částečně podléhá určitým účelům, ke kterým byly tyto jazyky původně navrženy. Celistvý pohled na vývoj programovacích jazyků zde není možné obsáhnout. Programovací jazyk dle historického vývoje můžeme rozdělit na dvě skupiny, jazyky imperativní a objektově orientované. Toto základní rozdělení programovacích jazyků popisuje dva rozdílné přístupy v popisu událostí. 
 
-{\em Processing} se svojí stavbou na základech {\em Javy} řadí k objektově \\orientovaným jazykům. Programovací jazyk {\em Java} je relativně mladým jazykem. Historie tohoto jazyka sahá přibližně do roku 1995. Mezi jeho hlavní výhody, ze kterých i {\em Processing} velmi těží, jsou zejména důraz na multiplatformnost a relativní jednoduchost syntaxe. Příbuznými jazyka {\em Java} jsou další objektově orientované programovací jazyky jako {\em  C++}, {\em  Perl}, {\em Object Pascal}, {\em Visual Basic}, {\em C\#}, {\em PHP}, {\em Python}, {\em Ruby}, {\em Smalltalk} nebo dokonce {\em Lisp}. \index{programovací jazyky}
+{\em Processing} se svou stavbou na základech {\em Javy} řadí k objektově \lnb orientovaným jazykům. Programovací jazyk {\em Java} je relativně mladým jazykem. Historie tohoto jazyka sahá přibližně do roku 1995. Mezi jeho hlavní výhody, ze kterých i {\em Processing} velmi těží, jsou zejména důraz na multiplatformnost a relativní jednoduchost syntaxe. Příbuznými jazyka {\em Java} jsou další objektově orientované programovací jazyky jako {\em  C++}, {\em  Perl}, {\em Object Pascal}, {\em Visual Basic}, {\em C\#}, {\em PHP}, {\em Python}, {\em Ruby}, {\em Smalltalk}, nebo {\em Lisp}. \index{programovací jazyky}
 
-Rozdíl mezi imperativním pojetím programování a objektově orientovaným pojetím spočívá především v logice kódu a jeho následném uspořádání. Imperativní jazyk se dá považovat za předchůdce objektově orientovaného pojetí. Nedá se obecně říci, který přístup je výhodnější, jedná se \\o dvě rozdílná paradigmata. Dnes mezi nejpoužívanějšími programovacími jazyky masivně převládá objektově orientované paradigma.
+Rozdíl mezi imperativním pojetím programování a objektově orientovaným pojetím spočívá především v logice kódu a jeho následném uspořádání. Imperativní jazyk se dá považovat za předchůdce objektově orientovaného pojetí. Nedá se obecně říci, který přístup je výhodnější, jedná se \lnb o dvě rozdílná paradigmata. Dnes mezi nejpoužívanějšími programovacími jazyky masivně převládá objektově orientované paradigma.
 
 Rozdílné pohledy lze ilustrovat na popisu nějakého jevu. Jev se dá popsat různými způsoby. Jedna perspektiva bude více hovořit o aktérech jevu, ty rozdělí do objektů, jejich vlastností a možností. Druhá perspektiva popíše celistvou situaci jako sérii událostí, které je možné v tomto pořadí kdykoli zopakovat.
 
 
 V posledních přibližně dvaceti letech se mezi programovacími jazyky postupně objevuje tendence po větší srozumitelnosti a potažmo zjednodušení programování jako takového. Programování v této koncepci již není jazykem odborníků, ale je demokraticky přístupné širší veřejnosti z rozmanitých -- prioritně netechnických oborů. \index{objektově orientované jazyky}
 
-Tato tendence postupně dala vzniknout celé rodině programovacích jazyků, které se snaží přiblížit potenciál výpočetní techniky netechnickým oborům, v neposlední řadě i oborům výtvarným. V technických kruzích je ovšem již sama disciplína psaní programů považována za tvůrčí činnost. \\V pojetí výtvarného umění dnes převažuje pohled na programování jako na velmi technickou zdatnost, rigidní a notně limitovanou.
+Tato tendence postupně dala vzniknout celé rodině programovacích jazyků, které se snaží přiblížit potenciál výpočetní techniky netechnickým oborům, v neposlední řadě i oborům výtvarným. V technických kruzích je ovšem již sama disciplína psaní programů považována za tvůrčí činnost. \lnb V pojetí výtvarného umění dnes převažuje pohled na programování jako na velmi technickou zdatnost, rigidní a notně limitovanou.
 
 Jazyk, který je nutně limitován svou nezbytnou formální dokonalostí, ovšem nemusí nutně limitovat svého uživatele ve sdělení. Uživatel se musí  k uskutečnění takové zdárné komunikace přizpůsobit stroji.
 
 
 \oddil{Proč zrovna Processing?}
 
-{\em Processing} je vhodný nástroj pro první experimenty s programováním \\z několika důvodů.
+{\em Processing} je vhodný nástroj pro první experimenty s programováním \lnb z několika důvodů.
 
-Prvním důvodem je jednoduchost pro uživatele, Processing se snaží začátečníky co nejméně zatížit zbytečnými informacemi. {\em Processing} prezentuje programování jako přístupnou a zvladatelnou schopnost. Dosahuje toho především rychlou odezvou vizuálního prostředí. Jednoduše řečeno, v momentu, kdy spustíme kód, vidíme okamžitě jeho výsledek. Taková ilustrativnost je v začátcích podle mého názoru téměř nezbytná.
+Prvním důvodem je jednoduchost pro uživatele, {\em Processing} se snaží začátečníky co nejméně zatížit zbytečnými informacemi. {\em Processing} prezentuje programování jako přístupnou a zvladatelnou schopnost. Dosahuje \lnb toho především rychlou odezvou vizuálního prostředí. Jednoduše řečeno, \lnb v momentu, kdy spustíme kód, vidíme okamžitě jeho výsledek. Taková ilus\-trativnost je v začátcích podle mého názoru téměř nezbytná.
 
-V {\em Processingu} lze velmi krátkým kódem programovat sofistikované programy. Pro příklad zde uvedu soutěž nazvanou {\em Tiny Sketch} pořádanou portály {\em rhizome.org} a {\em openprocessing.org}. \bublina{Máte-li počítač u sebe a jste-li připojeni k internetu, vřele doporučuji si nyní projít aktuální podobu stránky {\em openprocessing.org}} {\em Processing} dokáže být natolik \\úsporný, že pomocí maximálně dvou set znaků byli tvůrci schopni naprogramovat svébytné programy.
+V {\em Processingu} lze velmi krátkým kódem programovat sofistikované programy. Pro příklad zde uvedu soutěž nazvanou {\em Tiny Sketch} pořádanou portály {\em rhizome.org} a {\em openprocessing.org}. \bublina{Máte-li počítač u sebe a jste-li připojeni k internetu, vřele doporučuji si nyní projít aktuální podobu stránky {\em openprocessing.org}} {\em Processing} dokáže být natolik \lnb úsporný, že pomocí maximálně dvou set znaků byli tvůrci schopni naprogramovat svébytné programy.
 
 \vfill
 
@@ -658,24 +669,24 @@ Snad největší předností pro začínající programátory je výtečná doku
 
 Programy jsme v současnosti zvyklí spíše využívat než sami vytvářet. Tvoření programu je náročný proces a tvorba uživatelsky přátelského prostředí je velmi složitá.
 
-{\em Processing} se svým způsobem neliší od žádného jiného programu, který běžně využíváme. Jedná se o sadu příkazů a programovací prostředí, které nám dovoluje určitou formou vytvářet svébytný program. \\ I když se jedná již o programování, nelze jej běžně zaměňovat s klasickou tvorbou vyspělého nástroje.
+{\em Processing} se svým způsobem neliší od žádného jiného programu, který běžně využíváme. Jde o sadu příkazů a programovací prostředí, které nám dovoluje určitou formou vytvářet svébytný program. I když se již jedná o programování, nelze jej běžně zaměňovat s klasickou tvorbou vyspělého nástroje.
 
-Zde si musíme uvědomit, že náš potenciální produkt - program bude vždy spíše banální v porovnání například se samotným prostředím {\em Processingu}. Processingový kód je výčet všech možností, které můžeme při tvorbě našeho programu využít. Obecně se dá říci, že Processing je nástroj pro tvorbu speciálních nástrojů. Výsledek našeho programování bude vždy pravděpodobně obsahovat poměrně větší část {\em Processingu} samotného.
+Zde si musíme uvědomit, že náš potenciální výsledek -- program bude vždy spíše banální v porovnání například se samotným prostředím {\em Processingu}. Processingový kód je výčet všech možností, které můžeme při tvorbě našeho programu využít. Obecně se dá říci, že {\em Processing} je nástroj pro tvorbu speciálních nástrojů. Výsledek našeho programování bude vždy pravděpodobně obsahovat poměrně větší část {\em Processingu} samotného.
 
 Je dobré od začátku pochopit, k čemu lze {\em Processing} využít a k čemu jej opravdu využívat chceme. {\em Processing} se především hodí k rychlé tvorbě programu, ověření teze nebo spontánního nápadu. Pro podobné programování se také vžil pojem \uv{rapid engineering}. Tvorba dospělejších nástrojů není sice nemožná, obecně ale platí, že {\em Processing} bude svými zkrácenými zápisy a jednoduchostí prostředí velmi nápomocný v začátcích. 
 
-{\em Processing} se svou konstrukcí zejména hodí pro práci s obrazem, \\ a tedy obrazu bude také věnována nejrozsáhlejší část této knihy. Výstupy \\ z {\em Processingu} lze nadále zpracovávat, {\em Processing} tak může sloužit například jako mezičlánek ve výrobním procesu.
+{\em Processing} se svou konstrukcí zejména hodí pro práci s obrazem, \lnb a tedy obrazu bude také věnována nejrozsáhlejší část této knihy. Výstupy \lnb z {\em Processingu} lze nadále zpracovávat, {\em Processing} tak může sloužit například jako mezičlánek ve výrobním procesu.
 
-Dnes je {\em Processing} využíván hlavně grafickými designéry, designéry užitého umění, tvůrci webových aplikací, softwarovými návrháři, vizuálními umělci a umělci, kteří se věnují instalacím v prostoru nebo živé projekci. K {\em Processingu} si ovšem nacházejí cestu i více technické obory, zejména architekti, badatelé v oboru přírodních věd, statistici a všeobecně tvůrci softwaru. Software nachází využití i v oborech zabývajících se humanitními vědami, jako například v sociologii nebo jazykovědě.
+Dnes je {\em Processing} využíván hlavně grafickými designéry, designéry užitého umění, tvůrci webových aplikací, softwarovými návrháři, \lnb vizuálními umělci a umělci, kteří se věnují instalacím v prostoru nebo živé projekci. K {\em Processingu} si ovšem nacházejí cestu i více technické obory, zejména architekti, badatelé v oboru přírodních věd, statistici a všeobecně tvůrci softwaru. Software nachází využití i v oborech zabývajících se humanitními vědami, jako například v sociologii nebo jazykovědě.
 
 {\em Processing} se neomezuje na jeden obor, svou koncepcí spíše nabízí společnou platformu pro mezioborovou komunikaci.
 
 
 \pododdil{Otevřenost softwaru}
 
-{\em Processing} je jedním z jazyků, které byly vytvořeny v diskurzu zjednodušování programování. Jako každý jiný programovací jazyk je i {\em Processing} navržen pro jisté účely. V případě tohoto programovacího jazyka se nejvíce jedná o důraz na rychlý vývoj a zjednodušené nakládání s obrazem \\i prostorem. Z více technického pohledu pak {\em Processing} vyniká otevřeností zdrojového kódu a důrazem na multiplatformovost.
+{\em Processing} je jedním z jazyků, které byly vytvořeny v diskurzu zjednodušování programování. Jako každý jiný programovací jazyk je i {\em Processing} navržen pro jisté účely. V případě tohoto programovacího jazyka se nejvíce jedná o důraz na rychlý vývoj a zjednodušené nakládání s obrazem \lnb i prostorem. Z více technického pohledu pak {\em Processing} vyniká otevřeností zdrojového kódu a důrazem na multiplatformovost.
 
-Z pohledu vývojáře je velmi důležité, že jazyk i programovací prostředí {\em Processing} je v současnosti \slovnik{otevřený software} což znamená, že prostředí i samotný zdrojový kód jsou volně k dispozici. {\em Processing} je dále šiřitelný pod \slovnikpl{MIT licence}. Pro vývojáře otevřenost zdrojového kódu znamená zásadní věc pro dosažitelnost celého zdroje, který se dá následně kupříkladu implementovat do různých prostředí. Další možnost vývojáře je rozšířit jazyk o vlastní funkce, a tím participovat na projektu, například tvorbou takzvaných knihoven \odkaz{Knihovny}. Otevřenost kódu teoreticky navyšuje počet možných participantů a de facto celý projekt \\udržuje v dlouhodobém horizontu naživu.
+Z pohledu vývojáře je velmi důležité, že jazyk i programovací prostředí {\em Processing} jsou v současnosti \slovnik{otevřený software}, což znamená, že prostředí včetně samotného zdrojového kódu jsou volně k dispozici. {\em Processing} je dále šiřitelný pod \slovnikpl{MIT licence}. Pro vývojáře otevřenost zdrojového kódu znamená zásadní věc pro dosažitelnost celého zdroje, který se dá následně kupříkladu implementovat do různých prostředí. Další možnost vývojáře je rozšířit jazyk o vlastní funkce, a tím participovat na projektu, například tvorbou takzvaných knihoven \odkaz{Knihovny}. Otevřenost kódu teoreticky navyšuje počet možných participantů a de facto celý projekt udržuje v dlouhodobém horizontu naživu.
 
 Z hlediska uživatele je velmi příjemné, že software je k dostání zdarma na stránkách projektu. Za jeho užívání není nutné platit žádné poplatky, a to ani v případě komerčních užití. V případě potřeby vyjádření vděku za práci autorů je možné zmínit kdekoli ve vašem produktu \slovnik{Built with Processing}. \bublina{v začátcích nemusíte věnovat velikou pozornost této zvyklosti, dostane-li se vám po čase dobré pomoci z komunity, nebo budete-li jednoduše Processing využívat ke své práci, můžete jej někde zmínit, a tím vlastně projekt podpořit} \index{svobodný software}
 
@@ -683,20 +694,20 @@ Z hlediska uživatele je velmi příjemné, že software je k dostání zdarma n
 Programovací jazyk {\em Processing} není na první pohled zvláštní. V podstatě by se dalo říci, že se jedná pouze o rozsáhlou knihovnu původního jazyku {\em Java}.
 
 
-To, co {\em Processing} řadí mezi oblíbené softwary pro tvorbu, je přívětivá komunita uživatelů s velmi odlišnými stupni znalostí a úhly pohledu. Zvláštní důraz je v komunitě kladen na poskytnutí co největší podpory právě začínajícím uživatelům. Tomu odpovídá i počet rozmanitých průvodců a rozsáhlá, velmi dobře a stručně napsaná dokumentace ke každému z příkazů v {\em Processingu}.
+To, co {\em Processing} řadí mezi oblíbené softwary pro tvorbu, je přívětivá komunita uživatelů s velmi odlišnými stupni znalostí a úhly pohledu. \lnb Zvláštní důraz je v komunitě kladen na poskytnutí co největší podpory právě začínajícím uživatelům. Tomu odpovídá i počet rozmanitých průvodců a rozsáhlá, velmi dobře a stručně napsaná dokumentace ke každému z příkazů v {\em Processingu}.
 
 K otevřenosti kódu v neposlední řadě přistupuje i celá řada velmi zkušených tvůrců. Tím se uživatel na jakémkoli stupni znalostí může kdykoli naučit nové postupy nebo může svobodně recyklovat algoritmy ostatních uživatelů. Čím dál více uživatelů {\em Processingu} ctí filozofii otevřeného softwaru, která (mimo jiné) hlásá: \uv{Vědomosti nesmí být privatizovány!}
 
 \pododdil{Syntetický obraz}
 
-Hlavní doménou {\em Processingu} je schopnost vytvářet \uv{živé} programy, \\ tj. programy běžící v reálném čase. Již název programovacího jazyka {\em Processing} napovídá akcent v čase se odvíjejících událostí.
+Hlavní doménou {\em Processingu} je schopnost vytvářet \uv{živé} programy, \lnb tj. programy běžící v reálném čase. Již název programovacího jazyka {\em Processing} napovídá akcent v čase se odvíjejících událostí.
 
 Obraz vytvořený tímto způsobem, na první pohled zaměnitelný s videem, nemusí například podléhat časové omezenosti nebo může určitým způsobem reagovat na své okolí. Obecně jev běžícího programu v čase můžeme pojmenovat {\em Generovaný obraz} (nebo {\em zvuk}). Rozdělení je zde trochu problematické, v případě digitálního obrazu se již dnes nejedná o nic jiného než generovaný obraz. Sám proto raději používám výraz {\em syntetický obraz}. Syntetický obraz je takový obraz, který byl vytvořen uměle, tedy skladbou logických prvků, za účelem je vizuálně reprezentovat. 
 
 
 \pododdil{Empirický přístup k programování}
 
-	I když bychom zásadní odlišnost od jiných programovacích jazyků hledali stěží, {\em Processing} proslul zejména snadností použití. Kompilovat program není otázkou nastavování kompileru a veškerých jeho parametrů, program jednoduše po stisku tlačítka {\em RUN} běží (je-li správně napsán). Samozřejmě tento redukcionistický přístup má své nevýhody, speciálně při rozsáhlejších projektech tato jednoduchost může dokonce omezovat. {\em Processing} ovšem lze jako svobodný software naimplementovat do řady jiných prostředí, \\a potřebujete-li si kompilační proces nastavit sami, nic vám nebrání použít {\em Processing} jen jako knihovnu do {\em Javy}.
+	I když bychom zásadní odlišnost od jiných programovacích jazyků hledali stěží, {\em Processing} proslul zejména snadností použití. Kompilovat program není otázkou nastavování kompileru a veškerých jeho parametrů, program jednoduše po stisku tlačítka {\em RUN} běží (je-li správně napsán). Samozřejmě tento redukcionistický přístup má své nevýhody, speciálně při rozsáhlejších projektech tato jednoduchost může dokonce omezovat. {\em Processing} ovšem lze jako svobodný software naimplementovat do řady jiných prostředí, a potřebujete-li si kompilační proces nastavit sami, nic vám nebrání použít {\em Processing} jen jako knihovnu do {\em Javy}.
 
 Tato jednoduchost na druhou stranu nezdržuje uživatele od myšlenkového toku psaní programu. Častou kontrolou výsledku kódu může uživatel lépe sledovat postupné změny v programu.
 

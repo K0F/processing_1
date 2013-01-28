@@ -33,7 +33,7 @@
 \indexentry{Počátky programovacího jazyka|hyperpage}{25}
 \indexentry{Turing, Alan|hyperpage}{26}
 \indexentry{The Bomb|hyperpage}{26}
-\indexentry{Jednoduchý programovací jazyk|hyperpage}{26}
+\indexentry{Jednoduchý programovací jazyk|hyperpage}{27}
 \indexentry{stroj|hyperpage}{27}
 \indexentry{Dokonalost jazyka|hyperpage}{28}
 \indexentry{Volba vhodného jazyka|hyperpage}{29}
@@ -142,8 +142,8 @@
 \indexentry{if|hyperpage}{69}
 \indexentry{if|hyperpage}{69}
 \indexentry{true|hyperpage}{69}
-\indexentry{true|hyperpage}{69}
-\indexentry{false|hyperpage}{69}
+\indexentry{true|hyperpage}{70}
+\indexentry{false|hyperpage}{70}
 \indexentry{boolean|hyperpage}{72}
 \indexentry{false|hyperpage}{72}
 \indexentry{true|hyperpage}{72}
@@ -242,157 +242,157 @@
 \indexentry{rotate()|hyperpage}{105}
 \indexentry{scale()|hyperpage}{105}
 \indexentry{translate()|hyperpage}{106}
-\indexentry{pushMatrix()|hyperpage}{106}
-\indexentry{popMatrix()|hyperpage}{106}
-\indexentry{rotate()|hyperpage}{107}
-\indexentry{radians()|hyperpage}{107}
-\indexentry{degrees()|hyperpage}{107}
-\indexentry{translate()|hyperpage}{108}
+\indexentry{pushMatrix()|hyperpage}{107}
+\indexentry{popMatrix()|hyperpage}{107}
 \indexentry{rotate()|hyperpage}{108}
-\indexentry{rotateX()|hyperpage}{108}
-\indexentry{rotateY()|hyperpage}{108}
-\indexentry{rotateZ()|hyperpage}{108}
-\indexentry{Použití transformací|hyperpage}{108}
-\indexentry{setup()|hyperpage}{109}
-\indexentry{smooth()|hyperpage}{109}
-\indexentry{smooth()|hyperpage}{109}
-\indexentry{noSmooth()|hyperpage}{109}
-\indexentry{strokeWeight()|hyperpage}{109}
-\indexentry{stroke()|hyperpage}{110}
-\indexentry{atan2()|hyperpage}{110}
-\indexentry{cos()|hyperpage}{110}
-\indexentry{sin()|hyperpage}{110}
-\indexentry{sin()|hyperpage}{110}
-\indexentry{asin()|hyperpage}{110}
-\indexentry{acos()|hyperpage}{110}
-\indexentry{PI|hyperpage}{110}
-\indexentry{HALFPI|hyperpage}{110}
-\indexentry{QUARTERPI|hyperpage}{110}
-\indexentry{Ukládání informací|hyperpage}{111}
-\indexentry{CSV|hyperpage}{111}
-\indexentry{Ukládání obrazových dat|hyperpage}{112}
-\indexentry{save()|hyperpage}{112}
-\indexentry{save()|hyperpage}{113}
-\indexentry{save()|hyperpage}{113}
-\indexentry{saveFrame()|hyperpage}{113}
-\indexentry{frameCount|hyperpage}{113}
-\indexentry{nf()|hyperpage}{113}
-\indexentry{saveFrame()|hyperpage}{113}
-\indexentry{saveFrame()|hyperpage}{114}
+\indexentry{radians()|hyperpage}{108}
+\indexentry{degrees()|hyperpage}{108}
+\indexentry{translate()|hyperpage}{109}
+\indexentry{rotate()|hyperpage}{109}
+\indexentry{rotateX()|hyperpage}{109}
+\indexentry{rotateY()|hyperpage}{109}
+\indexentry{rotateZ()|hyperpage}{109}
+\indexentry{Použití transformací|hyperpage}{109}
+\indexentry{setup()|hyperpage}{110}
+\indexentry{smooth()|hyperpage}{110}
+\indexentry{smooth()|hyperpage}{110}
+\indexentry{noSmooth()|hyperpage}{110}
+\indexentry{strokeWeight()|hyperpage}{110}
+\indexentry{stroke()|hyperpage}{111}
+\indexentry{atan2()|hyperpage}{111}
+\indexentry{cos()|hyperpage}{111}
+\indexentry{sin()|hyperpage}{111}
+\indexentry{sin()|hyperpage}{111}
+\indexentry{asin()|hyperpage}{111}
+\indexentry{acos()|hyperpage}{111}
+\indexentry{PI|hyperpage}{111}
+\indexentry{HALFPI|hyperpage}{111}
+\indexentry{QUARTERPI|hyperpage}{111}
+\indexentry{Ukládání informací|hyperpage}{113}
+\indexentry{CSV|hyperpage}{113}
+\indexentry{Ukládání obrazových dat|hyperpage}{114}
 \indexentry{save()|hyperpage}{114}
-\indexentry{Ukládání holých dat|hyperpage}{114}
-\indexentry{CSV|hyperpage}{114}
-\indexentry{float|hyperpage}{115}
-\indexentry{draw()|hyperpage}{115}
+\indexentry{save()|hyperpage}{115}
+\indexentry{save()|hyperpage}{115}
+\indexentry{saveFrame()|hyperpage}{115}
 \indexentry{frameCount|hyperpage}{115}
-\indexentry{exit()|hyperpage}{115}
-\indexentry{saveStrings()|hyperpage}{115}
-\indexentry{Tisk do PDF, ukládání vektorů|hyperpage}{116}
-\indexentry{size()|hyperpage}{116}
-\indexentry{import|hyperpage}{117}
-\indexentry{import|hyperpage}{117}
-\indexentry{size()|hyperpage}{117}
-\indexentry{beginRecord()|hyperpage}{118}
-\indexentry{endRecord()|hyperpage}{118}
-\indexentry{mousePressed()|hyperpage}{118}
-\indexentry{keyPressed()|hyperpage}{119}
-\indexentry{Načítání informací|hyperpage}{119}
-\indexentry{Načítání obrázků|hyperpage}{119}
-\indexentry{PImage|hyperpage}{119}
-\indexentry{loadImage()|hyperpage}{119}
-\indexentry{setup()|hyperpage}{120}
-\indexentry{image()|hyperpage}{120}
-\indexentry{imageMode()|hyperpage}{120}
-\indexentry{image()|hyperpage}{120}
-\indexentry{image()|hyperpage}{120}
-\indexentry{Načítání textových souborů|hyperpage}{121}
-\indexentry{CSV|hyperpage}{121}
-\indexentry{loadStrings()|hyperpage}{121}
-\indexentry{String|hyperpage}{121}
-\indexentry{loadStrings()|hyperpage}{121}
-\indexentry{println()|hyperpage}{122}
-\indexentry{Operace s textem|hyperpage}{122}
-\indexentry{Parsing, získávání hodnot z externích dat|hyperpage}{122}
-\indexentry{loadStrings()|hyperpage}{124}
-\indexentry{splitTokens()|hyperpage}{124}
-\indexentry{splitTokens()|hyperpage}{124}
-\indexentry{parseFloat()|hyperpage}{124}
-\indexentry{parseFloat()|hyperpage}{124}
-\indexentry{parseInt()|hyperpage}{124}
-\indexentry{setup()|hyperpage}{124}
-\indexentry{line()|hyperpage}{126}
-\indexentry{Knihovny|hyperpage}{127}
-\indexentry{Vestavěné knihovny|hyperpage}{127}
-\indexentry{vestavěné knihovny|hyperpage}{127}
-\indexentry{Komunitní knihovny|hyperpage}{129}
-\indexentry{Práce s knihovnou|hyperpage}{129}
-\indexentry{import|hyperpage}{131}
-\indexentry{new|hyperpage}{132}
-\indexentry{this|hyperpage}{132}
-\indexentry{draw()|hyperpage}{132}
-\indexentry{cos()|hyperpage}{135}
-\indexentry{sin()|hyperpage}{135}
-\indexentry{endRecord()|hyperpage}{135}
-\indexentry{endShape()|hyperpage}{135}
-\indexentry{vertex()|hyperpage}{135}
-\indexentry{endShape()|hyperpage}{135}
-\indexentry{vertex()|hyperpage}{135}
-\indexentry{true|hyperpage}{136}
-\indexentry{false|hyperpage}{136}
-\indexentry{key|hyperpage}{136}
-\indexentry{keyCode|hyperpage}{136}
-\indexentry{colorMode()|hyperpage}{136}
-\indexentry{fill()|hyperpage}{137}
-\indexentry{stroke()|hyperpage}{137}
-\indexentry{sketch|hyperpage}{137}
-\indexentry{radians()|hyperpage}{137}
-\indexentry{ellipseMode()|hyperpage}{137}
-\indexentry{if|hyperpage}{138}
-\indexentry{if()|hyperpage}{138}
-\indexentry{beginRecord()|hyperpage}{138}
-\indexentry{beginShape()|hyperpage}{138}
-\indexentry{draw()|hyperpage}{138}
-\indexentry{draw()|hyperpage}{138}
-\indexentry{true|hyperpage}{139}
-\indexentry{else|hyperpage}{139}
-\indexentry{if|hyperpage}{139}
-\indexentry{PImage|hyperpage}{140}
-\indexentry{loadImage()|hyperpage}{140}
-\indexentry{tint()|hyperpage}{140}
-\indexentry{imageMode()|hyperpage}{140}
-\indexentry{GNU / GPL|hyperpage}{140}
-\indexentry{keyPressed()|hyperpage}{140}
-\indexentry{key|hyperpage}{140}
-\indexentry{keyPressed()|hyperpage}{141}
-\indexentry{stroke()|hyperpage}{141}
-\indexentry{PImage|hyperpage}{141}
-\indexentry{String|hyperpage}{141}
-\indexentry{frameCount|hyperpage}{141}
-\indexentry{mouseButton|hyperpage}{142}
-\indexentry{noStroke()|hyperpage}{142}
-\indexentry{smooth()|hyperpage}{143}
+\indexentry{nf()|hyperpage}{115}
+\indexentry{saveFrame()|hyperpage}{115}
+\indexentry{saveFrame()|hyperpage}{116}
+\indexentry{save()|hyperpage}{116}
+\indexentry{Ukládání holých dat|hyperpage}{116}
+\indexentry{CSV|hyperpage}{116}
+\indexentry{float|hyperpage}{117}
+\indexentry{draw()|hyperpage}{117}
+\indexentry{frameCount|hyperpage}{117}
+\indexentry{exit()|hyperpage}{117}
+\indexentry{saveStrings()|hyperpage}{117}
+\indexentry{Tisk do PDF, ukládání vektorů|hyperpage}{118}
+\indexentry{size()|hyperpage}{118}
+\indexentry{import|hyperpage}{119}
+\indexentry{import|hyperpage}{119}
+\indexentry{size()|hyperpage}{119}
+\indexentry{beginRecord()|hyperpage}{120}
+\indexentry{endRecord()|hyperpage}{120}
+\indexentry{mousePressed()|hyperpage}{120}
+\indexentry{keyPressed()|hyperpage}{121}
+\indexentry{Načítání informací|hyperpage}{121}
+\indexentry{Načítání obrázků|hyperpage}{121}
+\indexentry{PImage|hyperpage}{121}
+\indexentry{loadImage()|hyperpage}{121}
+\indexentry{setup()|hyperpage}{122}
+\indexentry{image()|hyperpage}{122}
+\indexentry{imageMode()|hyperpage}{122}
+\indexentry{image()|hyperpage}{122}
+\indexentry{image()|hyperpage}{122}
+\indexentry{Načítání textových souborů|hyperpage}{123}
+\indexentry{CSV|hyperpage}{123}
+\indexentry{loadStrings()|hyperpage}{123}
+\indexentry{String|hyperpage}{123}
+\indexentry{loadStrings()|hyperpage}{123}
+\indexentry{println()|hyperpage}{124}
+\indexentry{Operace s textem|hyperpage}{124}
+\indexentry{Parsing, získávání hodnot z externích dat|hyperpage}{124}
+\indexentry{loadStrings()|hyperpage}{126}
+\indexentry{splitTokens()|hyperpage}{126}
+\indexentry{splitTokens()|hyperpage}{126}
+\indexentry{parseFloat()|hyperpage}{126}
+\indexentry{parseFloat()|hyperpage}{126}
+\indexentry{parseInt()|hyperpage}{126}
+\indexentry{setup()|hyperpage}{126}
+\indexentry{line()|hyperpage}{128}
+\indexentry{Knihovny|hyperpage}{129}
+\indexentry{Vestavěné knihovny|hyperpage}{129}
+\indexentry{vestavěné knihovny|hyperpage}{129}
+\indexentry{Komunitní knihovny|hyperpage}{131}
+\indexentry{Práce s knihovnou|hyperpage}{131}
+\indexentry{import|hyperpage}{133}
+\indexentry{new|hyperpage}{134}
+\indexentry{this|hyperpage}{134}
+\indexentry{draw()|hyperpage}{134}
+\indexentry{cos()|hyperpage}{137}
+\indexentry{sin()|hyperpage}{137}
+\indexentry{endRecord()|hyperpage}{137}
+\indexentry{endShape()|hyperpage}{137}
+\indexentry{vertex()|hyperpage}{137}
+\indexentry{endShape()|hyperpage}{137}
+\indexentry{vertex()|hyperpage}{137}
+\indexentry{true|hyperpage}{138}
+\indexentry{false|hyperpage}{138}
+\indexentry{key|hyperpage}{138}
+\indexentry{keyCode|hyperpage}{138}
+\indexentry{colorMode()|hyperpage}{138}
+\indexentry{fill()|hyperpage}{139}
+\indexentry{stroke()|hyperpage}{139}
+\indexentry{sketch|hyperpage}{139}
+\indexentry{radians()|hyperpage}{139}
+\indexentry{ellipseMode()|hyperpage}{139}
+\indexentry{if|hyperpage}{140}
+\indexentry{if()|hyperpage}{140}
+\indexentry{beginRecord()|hyperpage}{140}
+\indexentry{beginShape()|hyperpage}{140}
+\indexentry{draw()|hyperpage}{140}
+\indexentry{draw()|hyperpage}{140}
+\indexentry{true|hyperpage}{141}
+\indexentry{else|hyperpage}{141}
+\indexentry{if|hyperpage}{141}
+\indexentry{PImage|hyperpage}{142}
+\indexentry{loadImage()|hyperpage}{142}
+\indexentry{tint()|hyperpage}{142}
+\indexentry{imageMode()|hyperpage}{142}
+\indexentry{GNU / GPL|hyperpage}{142}
+\indexentry{keyPressed()|hyperpage}{142}
+\indexentry{key|hyperpage}{142}
+\indexentry{keyPressed()|hyperpage}{143}
 \indexentry{stroke()|hyperpage}{143}
-\indexentry{GNU / Linux|hyperpage}{143}
+\indexentry{PImage|hyperpage}{143}
 \indexentry{String|hyperpage}{143}
-\indexentry{String|hyperpage}{143}
-\indexentry{loadImage()|hyperpage}{143}
-\indexentry{stroke()|hyperpage}{143}
-\indexentry{pushMatrix()|hyperpage}{143}
-\indexentry{print()|hyperpage}{143}
-\indexentry{rotate()|hyperpage}{144}
-\indexentry{translate()|hyperpage}{144}
-\indexentry{scale()|hyperpage}{144}
-\indexentry{popMatrix()|hyperpage}{144}
-\indexentry{stroke()|hyperpage}{144}
-\indexentry{fill()|hyperpage}{144}
-\indexentry{rectMode()|hyperpage}{144}
-\indexentry{rect()|hyperpage}{144}
-\indexentry{rect()|hyperpage}{144}
-\indexentry{save()|hyperpage}{145}
+\indexentry{frameCount|hyperpage}{143}
+\indexentry{mouseButton|hyperpage}{144}
+\indexentry{noStroke()|hyperpage}{144}
+\indexentry{smooth()|hyperpage}{145}
+\indexentry{stroke()|hyperpage}{145}
+\indexentry{GNU / Linux|hyperpage}{145}
 \indexentry{String|hyperpage}{145}
 \indexentry{String|hyperpage}{145}
-\indexentry{sphereDetail()|hyperpage}{146}
-\indexentry{float|hyperpage}{147}
-\indexentry{noTint()|hyperpage}{147}
-\indexentry{beginShape()|hyperpage}{148}
-\indexentry{endShape()|hyperpage}{148}
+\indexentry{loadImage()|hyperpage}{145}
+\indexentry{stroke()|hyperpage}{145}
+\indexentry{pushMatrix()|hyperpage}{145}
+\indexentry{print()|hyperpage}{145}
+\indexentry{rotate()|hyperpage}{146}
+\indexentry{translate()|hyperpage}{146}
+\indexentry{scale()|hyperpage}{146}
+\indexentry{popMatrix()|hyperpage}{146}
+\indexentry{stroke()|hyperpage}{146}
+\indexentry{fill()|hyperpage}{146}
+\indexentry{rectMode()|hyperpage}{146}
+\indexentry{rect()|hyperpage}{146}
+\indexentry{rect()|hyperpage}{146}
+\indexentry{save()|hyperpage}{147}
+\indexentry{String|hyperpage}{147}
+\indexentry{String|hyperpage}{147}
+\indexentry{sphereDetail()|hyperpage}{148}
+\indexentry{float|hyperpage}{149}
+\indexentry{noTint()|hyperpage}{149}
+\indexentry{beginShape()|hyperpage}{150}
+\indexentry{endShape()|hyperpage}{150}
