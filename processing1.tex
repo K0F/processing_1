@@ -249,7 +249,7 @@
 \vfill
 
 \begin{itemize}
-\item[] Copyleft: Kryštof Pešek (2013)
+\item[] Copyleft: Kryštof Pešek (2012)
 \item[]
 Původní elektronický dokument: \\
 {\em https://github.com/K0F/processing\_1}
@@ -835,17 +835,17 @@ Pokaždé, když si programátor takový stav přivodí, vše v kódu\footnote{P
 V programování obecně platí jisté zákonitosti. Není tomu jinak ani u pravidel, která nejsou důležitá pro čtení kódu strojem, ale spíše pro člověka. Speciální zákonitosti formátování kódu mají ryze praktickou funkci. Jedná se o standard dodržovaný programátory, aby byli schopni sdílet své úsilí. \bublina{Otevřete některý \lnb z příkladů \lnb z lišty {\em File $\rightarrow$ Examples}, a letmo se seznamte s kódem. I když mu nebudete rozumět, podívejte se, jaká znaménka a barvy se v kódu opakují.}
   
 
-\chapter{Stavba programu a syntax}
+\chapter{Stavba programu a~syntax}
 
   
 \oddil{Logika programování}
-Pro začátek je dobré si představit program jako sadu instrukcí. Každá \\instrukce má svůj význam a své místo. Instrukce se píšou v programovacím jazyku a jejich interpretace je vždy pro stroj jednoznačná. Stroje podle svého návrhu nedělají nic, kromě toho, co mají instruováno.
+Pro začátek je dobré si představit program jako sadu instrukcí. Každá \lnb instrukce má svůj význam a své místo. Instrukce se píšou v programovacím jazyku a jejich interpretace je vždy pro stroj jednoznačná. Stroje podle svého návrhu neudělají nic, kromě toho, co mají instruováno.
 
-Veškeré programy, které používáte, dokonce i programy, o nichž nevíte, že používáte, byly někdy naprogramovány lidmi pomocí programovacích jazyků. Programovací jazyk je pouze plánovací forma zápisu programu. \\K tomu, aby byl program spuštěn, musí být v případě jazyka {\em Processing} převeden do strojového kódu. Strojový kód se liší od toho zdrojového, našeho čitelného plánovacího jazyka tím, že není čitelný pro člověka, je čitelný pro stroj.
+Veškeré programy, které používáte, dokonce i programy, o nichž nevíte, že používáte, byly někdy naprogramovány lidmi pomocí programovacích jazyků. Programovací jazyk je pouze plánovací forma zápisu programu. \lnb K tomu, aby byl program spuštěn, musí být v případě jazyka {\em Processing} převeden do strojového kódu. Strojový kód se liší od toho zdrojového, našeho čitelného plánovacího jazyka tím, že není čitelný pro člověka, je čitelný pro stroj.
 
 Počítač je pouhý stroj. Umí opravdu rychle vykonávat sled banálních operací. Programovací jazyk slouží k vytvoření smyslu v těchto operacích. Proces převodu ze zdrojového kódu do strojového se nazývá kompilace.
 
-O kompilaci toho nemusíme naštěstí mnoho vědět, vše bylo již tvůrci {\em Processingu} a jazyku {\em Java} shrnuto pod tlačítko \klvaesy{RUN}.\bublina{Budete--li mít otevřený nějaký kód z Examples, zkuste ho nyní spustit, uvidíte, jak se program chová. Vyzkoušejte několik příkladů.}
+O kompilaci toho nemusíme naštěstí mnoho vědět, vše bylo již tvůrci {\em Processingu} a jazyku {\em Java} shrnuto pod tlačítko \klavesy{RUN}.\bublina{Budete-li \nlb mít otevřený nějaký kód z~Examples, zkuste ho nyní spustit, uvidíte, jak se program chová. Vyzkoušejte několik příkladů.}
 
 
 %\part{Stavba programu a syntax}
@@ -867,7 +867,7 @@ Následuje zápis tak, jak jej již můžete vepsat do editoru {\em Processingu}
 
 Spustíte-li nyní program tlačítkem \klavesy{RUN}, objeví se šedé okénko prvního processingového programu. Jelikož jste zatím nedefinovali nic funkčního, program také nic nedělá. \index{komentáře v kódu}
 
-V praxi je pak často využíván i druhý způsob komentáře, takzvaný víceřádkový komentář. Ten začíná dopředným lomítkem a hvězdičkou \\a končí těmito znaky v obráceném pořadí.
+V praxi je pak často využíván i druhý způsob komentáře, takzvaný víceřádkový komentář. Ten začíná dopředným lomítkem a hvězdičkou a~končí těmito znaky v obráceném pořadí.
 
 \begin{lstlisting}
 /* viceradkovy komentar je uvozen
@@ -885,13 +885,13 @@ toto je viceradkovy KOMENTAR
 
 \end{lstlisting}
 
-Komentáře v {\em Processingu} poznáte vždy nejrychleji tak, že je bude editor obarvovat šedou barvou. \bublina{vyzkoušejte si napsat nějaký text do textového editoru, spusťe program, následně před něj vložte dvě dopředná lomítka, pozorujte rozdíl}
+Komentáře v {\em Processingu} poznáte vždy nejrychleji tak, že je bude editor obarvovat šedou barvou. \bublina{Vyzkoušejte si napsat nějaký text do textového editoru, spusťte program, následně před něj vložte dvě dopředná lomítka, pozorujte rozdíl.}
 
 \pododdil{Základní datatypy}
 
 K stavbě programu potřebujeme stavební materiál. Pro základní pochopení fungování programu je nezbytné nejdříve pochopit základní datatypy. Datatyp si lze obecně představit jako obálku na informaci.
 
-Processing rozlišuje mezi jednotlivými datatypy. Informace, které se nacházejí v paměti, se musejí nacházet pod správným datatypem, aby program věděl, jak s nimi operovat.
+{\em Processing} rozlišuje mezi jednotlivými datatypy. Informace, které se nacházejí v paměti, se musejí nacházet pod správným datatypem, aby program věděl, jak s nimi operovat.
 
 K datatypu je možné si představit různé paralely, má oblíbená je podobnost s obálkami nebo nádobami. Různé datatypy si můžeme představit jako tvary nádob. Do rozličných nádob lišících se tvarem se směstná rozmanitý obsah. Typy obsahů se dají názorně představit na rozdílu mezi textovou informací a informací číselnou.
 
@@ -915,13 +915,13 @@ char mujJednotlivyZnak = 'A';
 
 \end{lstlisting}
 
-Takovému zápisu bude již {\em Processing} rozumět. Vepsáním těchto řádků do processingového editoru již dochází k alokaci vašich informací ve správných datatypech v paměti. Vysvětleme si nyní několik nejasností.
+Takovému zápisu již bude {\em Processing} rozumět. Vepsáním těchto řádků do processingového editoru již dochází k alokaci vašich informací ve správných datatypech v paměti. Vysvětleme si nyní několik nejasností.
 
-První slovo na každém řádku označuje odlišný datatyp (náš tvar \\nádoby), následuje jméno proměnné (název pro naší nádobu), poté může \\následovat rovnítko, které již přiřazuje obsah -- hodnotu do proměnné \\(nádoba je naplněna).
+První slovo na každém řádku označuje odlišný datatyp (náš tvar nádoby), následuje jméno proměnné (název pro naší nádobu), poté může následovat rovnítko, které již přiřazuje obsah -- hodnotu do proměnné (nádoba je naplněna).
 
-Každý příkaz je ukončen středníkem \uv{;} .
+Každý příkaz je ukončen středníkem \uv{;}.
 
-Podivné názvy takzvaných proměnných, jako například {\em mojeCeleCislo}, jen ukazují, že název pro svoji proměnnou můžete zvolit téměř podle libosti. Proměnná ale nesmí mít v názvu mezeru, tedy prázdný znak. Podle zvyklostí by dále proměnná měla začínat malým písmenem, a potřebujete--li nutně použít víceslovný název, napište velké písmeno namísto mezery.
+Podivné názvy takzvaných proměnných, jako například {\em mojeCeleCislo}, jen ukazují, že název pro svoji proměnnou můžete zvolit téměř podle libosti. Proměnná ale nesmí mít v názvu mezeru, tedy prázdný znak. Podle zvyklostí by dále proměnná měla začínat malým písmenem, a potřebujete-li nutně použít víceslovný název, napište velké písmeno namísto mezery.
 
 Proměnná nesmí být číslo, ale slovní název. Programátorské konvence při pojmenovávání proměnných jsou ryze praktické. Proměnná by měla mít co možná nejkratší a nejvýstižnější název.  Toto je spíše dobré doporučení nežli pravidlo. Správným pojmenováním proměnných docílíte větší přehlednosti v kódu, kratší délkou si ušetříte zbytečné psaní. \bublina{Bedlivě si prostudujte jednotlivé datatypy, přepište je do Processingu a zkuste pojmenovat po svém. Podle toho, co mohou reprezentovat, přiřaďte patřičné hodnoty.}
 
@@ -947,11 +947,11 @@ color mojeBarvaOranzova2 = color(255,127,0,127);
 color mojeBarvaOranzova3 = color(#FFCC00);
 \end{lstlisting}
 
-Pro výběr oblíbené barvy lze využít nástroj z lišty {\em Tools $\rightarrow$ Color \\SSelector}.
+Pro výběr oblíbené barvy lze využít nástroj z lišty {\em Tools $\rightarrow$ Color \lnb Selector}.
 
-Základní barevné nastavení je 24--bitové RGB, to znamená, že každá barvená hloubka jednoho kanálu je 8 bitů, což značí 256 možných stupňů. Nejvyšší stupeň je ovšem 255, jelikož ten nejnižší není 1, nýbrž 0.
+Základní barevné nastavení je 24bitové RGB, to znamená, že každá barevná hloubka jednoho kanálu je 8 bitů, což značí 256 možných stupňů. Nejvyšší stupeň je ovšem 255, jelikož ten nejnižší není 1, nýbrž 0.
 
-Kolorimetrické prostory a jejich rozmezí se dají volně definovat pomocí příkazu \vyraz{colorMode()}.\bublina{otevřte si lištu Tools $\rightarrow$ Color Selector, zkuste vybrat několik barev a přepsat je do správného tvaru}
+Kolorimetrické prostory a jejich rozmezí se dají volně definovat pomocí příkazu \vyraz{colorMode()}.\bublina{Otevřete si lištu Tools $\rightarrow$ Color Selector, zkuste vybrat několik barev a přepsat je do správného tvaru}
 
 
 \pododdil{Tisk do konzole}
@@ -990,27 +990,27 @@ Zde je názorně vidět, že tisk pomocí pouhého příkazu \vyraz{print()} nep
 
 Tisk do konzole se hojně používá při ladění programu. Kdykoli se na něco potřebujete kódu zeptat, můžete tak učinit tímto prostým příkazem.
 
-V konzoli se tisk projevuje bílou barvou. Další možný obsah konzole jsou chyby. Ty jsou označeny barvou červenou. Processing vám chybou naznačuje, že něco není v pořádku s vaším kódem. V případě takto jednoduchého programu se v drtivé většině případů bude jednat o překlep či zapomenutý znak.
+V konzoli se tisk projevuje bílou barvou. Další možný obsah konzole jsou chyby. Ty jsou označeny barvou červenou. {\em Processing} vám chybou naznačuje, že něco není v pořádku s vaším kódem. V případě takto jednoduchého programu se v drtivé většině případů bude jednat o překlep či zapomenutý znak.
 
 Programovací jazyk, bohužel (naštěstí?), neodpouští překlepy. Tedy bude stačit jeden chybný znak v programu, aby celý program nebyl spustitelný.
 
 Bohužel chybové hlášení se nedá označit za dokonalé a pro začátečníky bude velmi složité dobrat se pomocí chybových hlášení původu chyby. Na zlepšení chybových hlášek se pracuje již dlouhou dobu a některé základní chyby {\em Processing} v angličtině umí dobře popsat. Většinou ale {\em Processing} tiskne řetězec svých chyb, které byly nastartovány chybou vaší, a chybová hlášení čítající několik desítek řádků vám toho nakonec o původní chybě moc nesdělí.
 
-V případě chyby se vás Processing bude snažit přesměrovat na řádek, kde chyba pravděpodobně vznikla. V případě takto jednoduchých programů, jaké si zde ukazujeme, chybu identifikuje zcela bezchybně, bohužel tomu tak nebude ve všech případech.\bublina{Vyzkoušejte si vytisknout různé proměnné, ověřte, zdali tisknou hodnoty, které jste jim zadali.}\index{chybové hlášení}
+V případě chyby se vás {\em Processing} bude snažit přesměrovat na řádek, kde chyba pravděpodobně vznikla. V případě takto jednoduchých programů, jaké si zde ukazujeme, chybu identifikuje zcela bezchybně, bohužel tomu tak nebude ve všech případech.\bublina{Vyzkoušejte si vytisknout různé proměnné, ověřte, zdali tisknou hodnoty, které jste jim zadali.}\index{chybové hlášení}
 
 
 \pododdil{Základní operace s datatypy}
 
-Náš program nyní neprovádí nic světoborného. Definuje pár proměnných \\a následně některé z nich tiskne do konzole. Operujeme zde stále s \uv{abstraktními} hodnotami, které se zapisují do paměti programu a pak je z paměti zpětně získáváme.
+Náš program nyní neprovádí nic světoborného. Definuje několik proměn\-ných a následně některé z nich tiskne do konzole. Operujeme zde stále s~\uv{abstraktními} hodnotami, které se zapisují do paměti programu a pak je z paměti zpětně získáváme.
 
 Nyní si ukážeme, co s již definovanými proměnnými můžeme dělat. Jednotlivé datatypy mají různé přípustné operace. Zkusme si letmo projít možnosti našich proměnných.
 
 \begin{itemize}
 
 
-\item{{\em Integer} a {\em float}, neboli čísla: {\em int} a {\em float}}
+\item{{\em Integer} a {\em float} neboli čísla: {\em int} a {\em float}}
 
-První proměnná {\em mojeCeleCislo}, které byla přiřazena hodnota {\em 1}, je takzvaný {\em Integer}, tedy celé číslo. Tento typ může mít hodnotu\footnote{Na 32-bitových strojích.} v rozsahu $–2147483648$ až $2147483647$. V rozmezí těchto hodnot můžeme provádět různé matematické operace s čísly:
+První proměnná {\em mojeCeleCislo}, které byla přiřazena hodnota {\em 1}, je takzvaný {\em Integer}, tedy celé číslo. Tento typ může mít hodnotu\footnote{Na 32bitových strojích.} v~rozsahu -$2147483648$ až $2147483647$. V rozmezí těchto hodnot můžeme provádět různé matematické operace s čísly:
 
 \begin{lstlisting}
 int prvniCislo = 1;
@@ -1023,6 +1023,8 @@ println(tretiCislo);
 \end{lstlisting}
 
 Tímto jsme provedli základní matematickou operaci, sečetli jsme dvě čísla a následně jsme výsledek vytiskli do konzole.
+
+\pagebreak
 
 Další možné operace jsou:
 
@@ -1063,8 +1065,9 @@ a != b;
 
 \end{lstlisting}
 
-S celými čísly neboli {\em int} nebude problém se sčítáním, odčítáním \\a násobením. V případě dělení může nastat logicky problém, výsledek nemusí být celé číslo. Budeme-li chtít výsledek takové operace uchovat v paměti, tj. zapsat pod naši proměnnou, musíme použít datatyp operující s desetinnou čárkou nebo výsledek zaokrouhlit.
+S celými čísly neboli {\em int} nebude problém se sčítáním, odčítáním \lnb a násobením. V případě dělení může nastat logicky problém, výsledek nemusí být celé číslo. Budeme-li chtít výsledek takové operace uchovat v paměti, tj. zapsat pod naši proměnnou, musíme použít datatyp operující s desetinnou čárkou nebo výsledek zaokrouhlit.
 
+\pagebreak
 Například:
 
 \begin{lstlisting}
@@ -1146,7 +1149,7 @@ Všimněte si, prosím, mezery vložené mezi slova. Uvozená mezera je také ř
 \console{Dve spojena slova: Ahoj svete!}
 
 
-Zde jsme provedli jednu ze základních operací s textem, spojování řetězců. {\em String} lze také spojit s jednotlivými znaky nebo také s čísly, výsledkem bude ovšem vždy další {\em String}.
+Zde jsme provedli jednu ze základních operací s textem, spojování řetězců. {\em String} lze také spojit s jednotlivými znaky nebo i s čísly, výsledkem bude ovšem vždy další {\em String}.
 
 \begin{lstlisting}
 int a = 1;
@@ -1166,7 +1169,7 @@ println(slova);
 
 Výsledkem bude: 
 
-\console{test 1 2}\bublina{Pospojujte vlastní větu z jednotlivých slov, vyzkoušejte do věty spojit \\i čísla.}
+\console{test 1 2}\bublina{Pospojujte vlastní větu z~jednotlivých slov, vyzkoušejte do věty spojit i~čísla.}
 
 Řetězce se dají dále porovnávat, seřazovat, lze v nich vyhledávat znak či slovo a tak podobně. Pro naše účely zatím postačí si uvědomit rozdílné operace mezi textem a číslem.
 
@@ -1174,7 +1177,7 @@ Výsledkem bude:
 \item{{\em boolean} neboli pravda nebo nepravda}
 \index{boolean}
 
-{\em Boolean} je nejjednodušším datatypem v {\em Processingu}, může vyjadřovat pouze dva stavy. Pravdu {\em (true)} nebo nepravdu {\em (false)}. Žádnou jinou hodnotu {\em boolean} nepřijímá, a je proto , co se týče paměti, velmi úsporným datatypem. Operace s {\em booleany} se nazývají logické operace a vypadají následovně:
+{\em Boolean} je nejjednodušším datatypem v {\em Processingu}, může vyjadřovat pouze dva stavy. Pravdu {\em (true)} nebo nepravdu {\em (false)}. Žádnou jinou hodnotu {\em boolean} nepřijímá, a proto je, co se týče paměti, velmi úsporným datatypem. Operace s {\em booleany} se nazývají logické operace a vypadají následovně:
 
 
 \begin{lstlisting}
@@ -1221,11 +1224,11 @@ println(tretiTvrzeni);
 \index{funkce setup() a draw()}
 {\em Processing} rozlišuje mezi jednotlivými programovacími přístupy. Textový editor se automaticky přizpůsobí způsobu programování. Tímto přístupem se {\em Processing} snaží co nejvíce přiblížit začátečníkovi. Základní prostředí nám dovoluje pouze nakreslit tvary a ukončit program. K pohybu v čase musíme {\em Processingu} definovat základní strukturu programu.
 
-Dvě nejzákladnější funkce, se kterými se budeme při programování \\setkávat, jsou \vyraz{setup()} a \vyraz{draw()}.
+Dvě nejzákladnější funkce, se kterými se budeme při programování \lnb setkávat, jsou \vyraz{setup()} a \vyraz{draw()}.
 
 \begin{itemize}
 \item
-\vyraz{setup()} je funkcí, která bude spuštěna jednou, na začátku programu \\-- zde se nejčastěji nastavují počáteční parametry, které si potřebujeme připravit, než se spustí kreslicí funkce
+\vyraz{setup()} je funkcí, která bude spuštěna jednou, na začátku programu \lnb -- zde se nejčastěji nastavují počáteční parametry, které si potřebujeme připravit, než se spustí kreslicí funkce
 
 \item
 \vyraz{draw()} je funkce pro opakované kreslení, bude spouštěna stále po dobu chodu programu -- tady budeme nejčastěji kreslit tvary a provádět proměnlivé výpočty pro animaci
@@ -1267,13 +1270,13 @@ tisk z funkce draw() 3
 tisk z funkce draw() 4
 
 \end{lstlisting}
-\bublina{Velmi pozorně si pročtěte předchozí dva příklady. Ujistěte se, zda rozumíte dobře rozdílu mezi setup() \\a draw(), pro další pokračování bude rozumění klíčové.}
+\bublina{Velmi pozorně si pročtěte předchozí dva příklady. Ujistěte se, zda rozumíte dobře rozdílu mezi setup() a~draw(), pro další pokračování bude pochopení klíčové.}
 
 \oddil{Zobrazení}
 
 \pododdil{Orientace v prostoru}
 \index{prostor}
-Okno programu by se dalo přirovnat k listu papíru, popřípadě k malířskému plátnu. Ve standardním dvoudimenzionálním modu má dva základní parametry, $X$ a $Y$, označující souřadnice, ve kterých se veškeré kreslicí operace pohybují. Důležité je zmínit, že oproti jisté konvenci v matematických grafech nese levý horní roh hodnotu $X = 0$, $Y = 0$. Směrem dolů hodnota $Y$ přibývá, stejně tak jako hodnota $X$ přibývá směrem doprava.\\
+Okno programu by se dalo přirovnat k listu papíru, popřípadě k malířskému plátnu. Ve standardním dvoudimenzionálním modu má dva základní parametry, $X$ a $Y$, označující souřadnice, ve kterých se veškeré kreslicí operace pohybují. Důležité je zmínit, že oproti jisté konvenci v matematických grafech nese levý horní roh hodnotu $X = 0$, $Y = 0$. Směrem dolů hodnota $Y$ přibývá, stejně tak jako hodnota $X$ přibývá směrem doprava:
 
 \begin{center}
 \includegraphics[width = 0.65\textwidth]{imgs/grid2d.png}
@@ -1281,7 +1284,7 @@ Okno programu by se dalo přirovnat k listu papíru, popřípadě k malířském
 
 Tato konvence je převzata ze standardu počítačové grafiky, kdy první pixel v levém horním rohu nese souřadnicovou hodnotu právě $X = 0$, $Y = 0$. Obrácená osa $Y$ se může ze začátku jevit matoucí. Důvody pro zdánlivé převrácení os pochopíme později, například právě při operacích se samotnými obrazovými body, pixely, které jsou standardně uspořádány od levého horního rohu doprava a níže.
 
-Plochu je možné si představit jako prázdný prostor, na kterém je možné zobrazovat grafiku. Tvary nebo kupříkladu text se zobrazují právě prostřednictvím zdrojového kódu, tj. instrukcemi psanými v editoru.
+Plochu je možné si představit jako prázdný prostor, na kterém lze zobrazovat grafiku. Tvary nebo kupříkladu text se zobrazují právě prostřednictvím zdrojového kódu, tj. instrukcemi psanými v editoru.
 
 Na první pohled by se mohlo zdát, že je například při zobrazení obdélníka příkazem:
 
@@ -1289,7 +1292,7 @@ Na první pohled by se mohlo zdát, že je například při zobrazení obdélní
 rect(x,y,sirka,vyska);
 \end{lstlisting}
 
-jehož výsledkem je kresba pouhého obdélníka, zbytečně komplikovaný oproti jiným zobrazovacím metodám. Důležité je si zde uvědomit koncepci {\em Processingu}, který tímto zobrazením primitivních objektů sestavuje celý obraz. To, co se zpočátku může zdát jako nadbytečná práce, tedy psaní \\koordinátů každého ze zobrazovaných objektů, se posléze ukáže jako sofistikovaný a velmi ulehčující způsob přemýšlení o obraze. Veškeré parametry oddělené čárkou v kulatých závorkách příkazu {\em rect} náleží samotným vstupním hodnotám. Příkaz {\em rect} očekává čtyři parametry. Parametry mohou být celá čísla nebo čísla s desetinnou čárkou. Pro názornost, zadáme-li do parametrů \uv{natvrdo} hodnoty:
+jehož výsledkem je kresba pouhého obdélníka, zbytečně komplikovaný oproti jiným zobrazovacím metodám. Důležité je si zde uvědomit koncepci {\em Processingu}, který tímto zobrazením primitivních objektů sestavuje celý obraz. To, co se zpočátku může zdát jako nadbytečná práce, tedy psaní \lnb koordinátů každého ze zobrazovaných objektů, se posléze ukáže jako sofistikovaný a velmi ulehčující způsob přemýšlení o obraze. Veškeré parametry oddělené čárkou v kulatých závorkách příkazu {\em rect} náleží samotným vstupním hodnotám. Příkaz {\em rect} očekává čtyři parametry. Parametry mohou být celá čísla nebo čísla s desetinnou čárkou. Pro názornost, zadáme-li do parametrů \uv{natvrdo} hodnoty:
 
 \begin{lstlisting}
 rect(8,6,7,5);
@@ -1304,7 +1307,7 @@ výsledné zobrazení na naší pomyslné ploše bude zhruba následující:
 
 Zamyslíme-li se kupříkladu nad tím, že bychom v jakémkoli jiném nástroji chtěli zobrazit vícero, například tisíc obdélníků, na první pohled jednodušší GUI \footnote{Zkratka pro Guided User Interface klasické grafické editory jako Gimp nebo Photoshop.} grafické editory nám nedovolí tuto operaci učinit jinak, než že musíme všech tisíc obdélníků nakreslit. V případě {\em Processingu} nám bude stačit vytvořit rutinu pro kreslení libovolného počtu obdélníků a pak tuto rutinu spustit.
 
-Zde se již dostáváme k samotnému jádru processingového přemýšlení. Programování obecně dokáže velmi ulehčit operace, jejichž pravidelnost dokážeme popsat. Veškeré umění psaní programu tedy spočívá v definicích těchto chování a redukci složitých jevů na jednoduché rovnice.
+Zde se již dostáváme k samotnému jádru processingového přemýšlení. Programování obecně dokáže velmi ulehčit operace, jejichž pravidelnost dovedeme popsat. Veškeré umění psaní programu tedy spočívá v definicích těchto chování a redukci složitých jevů na jednoduché rovnice.
 
 Celé řemeslné umění psaní kódu v podstatě záleží na eleganci zápisu složitějších vztahů mezi různými parametry. Dovednosti se člověk učí postupně, osvojení si gramatické korektnosti a logické posloupnosti se mohou zpočátku jevit zbytečně komplikované, ovšem už po ovládnutí pouhých pár jednoduchých pravidel lze {\em Processing} využít kreativním způsobem. \bublina{Zkuste si na kus papíru, nejlépe čtverečkovaného, nakreslit jednotlivé objekty. Uvědomte si, v jakých dimenzích se pohybují.}
 
@@ -1317,21 +1320,21 @@ Po celou dobu sčítání a odčítání hodnot jsme nevyvolali žádnou funkci,
 
 Nyní je na čase ukázat si, jakým způsobem {\em Processing} rozumí kresbě. Tytéž hodnoty, které máme nyní v paměti, mohou být použity pro jakýkoli kreslený výstup. Řekněme, že chceme z těchto hodnot zobrazit například elipsu. K tomu potřebujeme vyvolat funkci pro tvorbu elipsy, pokud ji nechceme zrovna z nějakých důvodů popisovat matematicky (to je samozřejmě dobře možné).
 
-{\em Processing} nemá předdefinované žádné složité tvary. Pracuje sám \\o sobě pouze s tvary primitivními, jako je bod, linka, trojúhelník, obdélník \\a elipsa. Pomocí těchto tvarů lze zkonstruovat nepřeberné množství obrazů. Představíme-li si nyní digitálně zpracovanou fotografii, můžeme kupříkladu říci, že je zkonstruována z bodů. Jednotlivé body, tj. pixely, mají jinou barevnou hodnotu a takto poskládaný obraz se ve výsledku jeví jako fotografie.
+{\em Processing} nemá předdefinované žádné složité tvary. Pracuje sám o~sobě pouze s tvary primitivními, jako je bod, linka, trojúhelník, obdélník a~elipsa. Pomocí těchto tvarů lze zkonstruovat nepřeberné množství obrazů. Před\-stavíme-li si nyní digitálně zpracovanou fotografii, můžeme kupříkladu říci, že je zkonstruována z bodů. Jednotlivé body, tj. pixely, mají jinou barevnou hodnotu a takto poskládaný obraz se ve výsledku jeví jako fotografie.
 
-Problém v případě konstrukce syntetické fotografie nespočívá v geometrii; to je známá mřížka bodů s počtem šířky krát výšky obrazových bodů digitální fotografie. Problém je v barevných hodnotách, které neznáme a synteticky je jakoukoli matematickou funkcí velmi těžko obsáhneme.
+Problém v případě konstrukce syntetické fotografie nespočívá v geomet\-rii; to je známá mřížka bodů s počtem šířky krát výšky obrazových bodů digitální fotografie. Problém je v barevných hodnotách, které neznáme a~synteticky je jakoukoli matematickou funkcí velmi těžko obsáhneme.
 
 Dat pro výpočet fotorealistického obrazu potřebujeme opravdu hodně, nástroje, které dokážou simulovat fotorealistický obraz, existují a není jich málo. Dokonce i v {\em Processingu} existují podobná rozšíření, která přímo zpracovávají a zajišťují obrazový výstup.
 
-Tento příklad je trochu extrémní, ale naprosto pravdivý. Věc, kterou se snažím ilustrovat, je, že i s minimálním počtem primitivních geometrických tvarů lze docílit téměř nekonečného (spočitatelně obrovského) množství obrazů, což by nám mělo nadlouho stačit.
+Tento příklad je trochu extrémní, ale naprosto pravdivý. Věc, kterou se snažím ilustrovat, je, že i s minimálním počtem primitivních geometrických tvarů lze docílit téměř nekonečného (spočitatelně obrovského) množství obrazů, což by nám mělo dlouho stačit.
 
-Nyní zpět k hodnotám. Máme-li již jakékoli hodnoty v paměti programu, můžeme kterékoli z nich použít na jakoukoli kreslicí funkci. Zde začíná naše experimentální část, často se totiž stává, že výsledek kreslení neumíme plně předpovědět a teprve zobrazením nám kresba vzhledem \\k hodnotě začne dávat smysl.
+Nyní zpět k hodnotám. Máme-li již jakékoli hodnoty v paměti programu, můžeme kterékoli z nich použít na jakoukoli kreslicí funkci. Zde začíná naše experimentální část, často se totiž stává, že výsledek kreslení neumíme plně předpovědět a teprve zobrazením nám kresba vzhledem k~hodnotě začne dávat smysl.
 
 \oddil{Kresba}
 
 Jak zobrazit hodnoty, které uchovává program v paměti? Jakoukoli hodnotu lze použít například jako jeden z vstupů (tzv. argumentů) v kreslicích funkcích.
 
-Již zmiňovaný \vyraz{rect()}, tedy rectangle -- obdélník, vyžaduje k svému úspěšnému vykreslení čtyři parametry, čtyři číselné hodnoty\footnote{Zde nezáleží, jestli se jedná o celé číslo (int) nebo číslo s desetinnou čárkou (float).}. Tyto parametry, hodnoty, můžeme buď zadat jako přímé číselné hodnoty, nebo do těchto parametrů můžeme zadat naši proměnnou, která obsahuje číslo.
+Již zmiňovaný \vyraz{rect()}, tedy rectangle -- obdélník, vyžaduje k svému úspěšnému vykreslení čtyři parametry, čtyři číselné hodnoty\footnote{Zde nezáleží, jestli se jedná o celé číslo {\em (int)} nebo číslo s desetinnou čárkou {\em (float)}.}. Tyto parametry, hodnoty, můžeme buď zadat jako přímé číselné hodnoty, nebo do těchto parametrů můžeme zadat naši proměnnou, která obsahuje číslo.
 
 Názorně:
 
@@ -1365,7 +1368,7 @@ V {\em Processingu} je předdefinovaných jen několik základních tvarů, se k
 \item[\vyraz{triangle()}] trojúhelník ($X_1$, $Y_1$, $X_2$, $Y_2$, $X_3$, $Y_3$)
 \item[\vyraz{quad()}] čtyřúhelník ($X_1$, $Y_1$, $X_2$, $Y_2$, $X_3$, $Y_3$, $X_4$, $Y_4$) 
 
-\end{itemize} \bublina{Nakreslete jeden bod, čáru a elipsu tak, aby se vzájemně nepřekrývaly. Zkuste změnit jejich pořadí sledujte změny po spuštění.}
+\end{itemize} \bublina{Nakreslete jeden bod, čáru a~elipsu tak, aby se vzájemně nepřekrývaly. Zkuste změnit jejich pořadí, sledujte změny po spuštění.}
 
 \pododdil{Výplň a obrys}
 
@@ -1387,7 +1390,7 @@ rect(10, 40, 40, 20);
 \includegraphics[width = 0.2\textwidth]{imgs/vypln-1.png}
 \end{center}
 
-Opak příkazu \vyraz{fill()} je \vyraz{noFill()}. Potřebujeme-li vykreslovat u objektů \\s výplní pouze jejich konturu, můžeme použít právě příkaz \vyraz{noFill()}.
+Opak příkazu \vyraz{fill()} je \vyraz{noFill()}. Potřebujeme-li vykreslovat u objektů s~výplní pouze jejich konturu, můžeme použít právě příkaz \vyraz{noFill()}.
 
 K ovládání barvy kontury použijeme příkaz \vyraz{stroke()}, ten opět přijímá hodnotu barvy. Jeho opakem je \vyraz{noStroke()}.
 
@@ -1447,13 +1450,13 @@ Změny v chodu programu se dá docílit několika způsoby. Základní změna v 
 
 Vraťme se ovšem k proměnlivosti. Proměnlivost je nezbytnou součástí animace. Pohyb je proměna stavu v čase. Měli bychom mít vždy na paměti, že program nerozumí tomu, co zrovna zobrazuje, program rozumí pouze hodnotám. Rozpohybovat lze tyto hodnoty, a tím posléze například jevy, které se v programu zobrazují a člověku dávají nějaký smysl. 
 
-Pro příklad si můžeme ukázat, jak proměna jedné hodnoty ovlivňuje obraz. K tomu, abychom mohli hodnotu proměňovat, ji musíme nejdříve pojmenovat.
+Pro příklad si můžeme ukázat, jak proměna jedné hodnoty ovlivňuje \lnb obraz. K tomu, abychom mohli hodnotu proměňovat, ji musíme nejdříve pojmenovat.
 
 \begin{lstlisting}
 int y = 0;
 \end{lstlisting}
 
-Tímto jsme pojmenovali svoji proměnnou. Jednou z možných variant zápisu je okamžité přiřazení hodnoty, tedy {\em y} je nyní nula. Pro animaci hodnoty použijeme přírůstek, tedy při kresbě jednotlivého okénka přičteme \\k hodnotě $1$. Abychom viděli nějaký výsledek, můžeme opět kreslit objekt, který bude využívat proměňující se hodnotu v čase.
+Tímto jsme pojmenovali svoji proměnnou. Jednou z možných variant zápisu je okamžité přiřazení hodnoty, tedy {\em y} je nyní nula. Pro animaci hodnoty použijeme přírůstek, tedy při kresbě jednotlivého okénka přičteme k~hodnotě $1$. Abychom viděli nějaký výsledek, můžeme opět kreslit objekt, který bude využívat proměňující se hodnotu v čase.
 
 \begin{lstlisting}
 void setup(){
@@ -1473,7 +1476,7 @@ void draw(){
 }
 \end{lstlisting}
 
-Po spuštění tohoto programu uvidíte animaci trvající $480$ okének. Animace bude pokračovat i nadále, hodnota {\em y} se bude stále proměňovat. Kresba bude teoreticky probíhat mimo plátno. K tomu, abychom kresbu udrželi v mezích plátna, můžeme použít jednoduchou podmínku, která bude vracet hodnotu {\em y} zpět na nulu.
+Po spuštění tohoto programu uvidíte animaci trvající $480$ okének. Animace bude pokračovat i nadále, hodnota {\em y} se bude stále proměňovat. Kresba bude teoreticky probíhat mimo plátno. K tomu, abychom kresbu udrželi v~mezích plátna, můžeme použít jednoduchou podmínku, která bude vracet hodnotu {\em y} zpět na nulu.
 
 
 \begin{lstlisting}
@@ -1484,13 +1487,13 @@ if(y > height){
 
 Celá tato procedura jen ilustruje logiku programu. Hodnota {\em y} je zde přímo zobrazena, ale stejně tak se dá použít kdekoli jinde, tedy ne nezbytně na kresbu. Pro lepší představu jiného použití uvedu následující příklad.
 
-Pod hodnotou si lze například představit pevně stanovenou hodnotu, dejme tomu výšku domu. Zadání výšky nepostaví dům, ale stanoví hodnotu, se kterou můžeme dál počítat. Známe-li výšku plánované budovy, můžeme kupříkladu přidávat patra, dokud se této výšky nedosáhne. Tuto proceduru již lze považovat za logickou konstrukci a jedním ze základních postupů jak takové logiky v programu docílit, je podmínka \odkaz{Podmínka}. \bublina{Vyzkoušejte přidat podmínku na konec programu nebo ji vynechat, ujistěte se, že rozumíte tomu, co v animaci způsobuje, zaměňte číslo \\v podmínce za jiné, s nižší hodnotou \\a pozorujte výsledek.}
+Pod hodnotou si lze například představit pevně stanovenou hodnotu, dejme tomu výšku domu. Zadání výšky nepostaví dům, ale stanoví hodnotu, se kterou můžeme dál počítat. Známe-li výšku plánované budovy, můžeme kupříkladu přidávat patra, dokud se této výšky nedosáhne. Tuto proceduru již lze považovat za logickou konstrukci a jedním ze základních postupů, jak takové logiky v programu docílit, je podmínka \odkaz{Podmínka}. \bublina{Vyzkoušejte přidat podmínku na konec programu nebo ji vynechat, ujistěte se, že rozumíte tomu, co v animaci způsobuje, zaměňte číslo v~podmínce za jiné, s nižší hodnotou a~pozorujte výsledek.}
 
 \pododdil{Animace}
 
-Statická kresba na plátno je jen jeden z možných výstupů. Animace v {\em Processingu} znamená, jak jsme si ukázali v předchozím příkladě, překreslovat plátno pokaždé jinými obrazy. Nyní si ukážeme základní pojetí tvorby \\pohyblivého obrazu.
+Statická kresba na plátno je jen jeden z možných výstupů. Animace v {\em Processingu} znamená, jak jsme si ukázali v předchozím příkladě, překreslovat plátno pokaždé jinými obrazy. Nyní si ukážeme základní pojetí tvorby \lnb pohyblivého obrazu.
 
-Jak jsme si již uvedli dříve \odkaz{Základní struktura programu} funkce \vyraz{draw()} je pouze prostředek pro změnu, nepřináší změnu sama \\o sobě. Funkce \vyraz{draw()} zajišťuje sousledné vyvolání příkazů v neustálém \\trvání\footnote{Po dobu běhu programu.}. V Processingu si v podstatě uvědomíme, že psaním příkazů do smyčky píšeme pravidla jakoby pro jedno okénko filmu. Pohyb je vždy zajištěn proměnou našich datatypů \odkaz{Základní datatypy}, které \\v tomto okénku figurují.
+Jak jsme si již uvedli dříve \odkaz{Základní struktura programu} funkce \vyraz{draw()} je pouze prostředek pro změnu, nepřináší změnu sama o~sobě. Funkce \vyraz{draw()} zajišťuje sousledné vyvolání příkazů v neustálém  trvání\footnote{Po dobu běhu programu.}. V {\em Processingu} si v podstatě uvědomíme, že psaním příkazů do smyčky píšeme pravidla jakoby pro jedno okénko filmu. Pohyb je vždy zajištěn proměnou našich datatypů \odkaz{Základní datatypy}, které, v~tomto okénku figurují.
 
 Tedy například napíšeme-li takto samotnou smyčku:
 
@@ -1500,9 +1503,12 @@ void draw(){
 }
 \end{lstlisting}
 
-vše uzavřeno do složených závorek bude spuštěno šedesátkrát za vteřinu. Bude-li obsah základní funkce \vyraz{draw()} neměnný, tj. budeme-li vyvolávat šedesátkrát za vteřinu totéž, animace tím bude v případě vizuálního výstupu jen abstraktním pojmem.
+vše uzavřené do složených závorek bude spuštěno šedesátkrát za vteřinu. Bude-li obsah základní funkce \vyraz{draw()} neměnný, tj. budeme-li vyvolávat šedesátkrát za vteřinu totéž, animace tím bude v případě vizuálního výstupu jen abstraktním pojmem.
 
-V tomto příkladu již dochází k spuštění smyčky. Výsledkem bude pouze šedivá plocha o rozměrech sto krát sto pixelů, jelikož na plátno nebylo zatím nic vykresleno. Následujícími příkazy \vyraz{background()} a \vyraz{rect()} nakreslíme nejprve plné pozadí a následovně obdélník. Zápis bude vypadat takto:
+V tomto příkladu již dochází k spuštění smyčky. Výsledkem bude pouze šedivá plocha o rozměrech sto krát sto pixelů, jelikož na plátno nebylo zatím nic vykresleno. Následujícími příkazy \vyraz{background()} a \vyraz{rect()} nakreslíme nejprve plné pozadí a následně obdélník.
+
+\pagebreak
+Zápis bude vypadat takto:
 
 \begin{lstlisting}
 void draw(){
@@ -1511,9 +1517,9 @@ void draw(){
 }
 \end{lstlisting}
 
-Takový zápis již provádí animaci a kreslí na plátno. Animace ovšem \\v tomto případě nebude patrná, jelikož zatím se v obraze nic neproměňuje. Veškeré hodnoty jsou statické, tudíž se vykresluje jeden čtverec na bílém pozadí na stále stejném místě.
+Takový zápis již provádí animaci a kreslí na plátno. Animace ovšem v~tomto případě nebude patrná, jelikož zatím se v obraze nic neproměňuje. Veškeré hodnoty jsou statické, tudíž se vykresluje jeden čtverec na bílém pozadí na stále stejném místě.
 
-K rozhýbání objektů jednoduše potřebujeme proměnit jeden z \\parametrů v čase. \bublina{Animace je proměna obrazu v čase, jednotlivá okénka se v čase musí lišit. Přemýšlejte, jakým způsobem \\k proměně může dojít.}  Abychom docílili animace, zkusme například vložit místo parametru pro kresbu čtverce v ose $X$ počítadlo okének. {\em Processing} má již nastavenou proměnnou s údajem o počtu uběhlých okének pod názvem \vyraz{frameCount}.
+K rozhýbání objektů jednoduše potřebujeme proměnit jeden z~paramet\-rů v čase. \bublina{Animace je proměna obrazu v čase, jednotlivá okénka se v čase musí lišit. Přemýšlejte, jakým způsobem k~proměně může dojít.}  Abychom docílili animace, zkusme například vložit místo parametru pro kresbu čtverce v ose $X$ počitadlo okének. {\em Processing} má již nastavenou proměnnou s údajem o počtu uběhlých okének pod názvem \vyraz{frameCount}.
 
 Proměnnou \vyraz{frameCount} lze využít následovně:
 
@@ -1529,11 +1535,13 @@ void draw(){
 
 \end{lstlisting}
 
-Výsledkem tohoto zápisu bude opět animace. Čtverec se bude pohybovat rychlostí šedesáti pixelů za vteřinu zleva doprava. Tato hodnota \\v podstatě udává počet vykreslených cyklů funkce \vyraz{draw()}, ta je v tomto případě pouze využita k pohybu vykreslovaného čtverce.
+Výsledkem tohoto zápisu bude opět animace. Čtverec se bude pohybovat rychlostí šedesáti pixelů za vteřinu zleva doprava. Tato hodnota v~podstatě udává počet vykreslených cyklů funkce \vyraz{draw()}, ta je v tomto případě pouze využita k pohybu vykreslovaného čtverce.
 
-Počet okének vykreslovaných za vteřinu můžeme ovlivnit pomocí \\funkce \vyraz{frameRate()} vložené do funkce \vyraz{setup()}.
+Počet okének vykreslovaných za vteřinu můžeme ovlivnit pomocí \lnb funkce \vyraz{frameRate()} vložené do funkce \vyraz{setup()}.
 
-Tento pohyb je velmi názorný, ukazuje, že hodnotu počtu vykreslených okének lze použít například i jako hodnotu pro animaci. Stejně tak si můžeme založit i vlastní proměnnou, která bude mít identickou funkci.\footnote{V tomto konkrétním příkladu to sice nedává smysl, dá se použít stejně tak standardní proměnná \vyraz{frameCount}, příklad je zde jen pro ilustraci možností využití proměnných.}
+Tento pohyb je velmi názorný, ukazuje, že hodnotu počtu vykreslených okének lze použít například i jako hodnotu pro animaci. Stejně tak si můžeme založit i vlastní proměnnou, která bude mít identickou funkci.\footnote{V tomto konkrétním příkladu to sice nedává smysl, dá se použít stejně tak standardní proměnná \vyraz{frameCount}, ukázka je zde jen pro ilustraci možností využití proměnných.}
+
+\pagebreak
 
 \begin{lstlisting}
 // nase promenna nazvana priznacne: pocitadlo
@@ -1562,12 +1570,14 @@ void draw(){
 
 \end{lstlisting}
 
-Definicí této hodnoty lze například časovat animace. Další metodou je animaci časovat pomocí funkce \vyraz{millis()}. Tato funkce je nezávislá na počtu vykreslených okének za vteřinu, měří počet uběhnutých milisekund od startu programu. Může se nám také hodit pro precizní časování událostí \\v programu. \index{časování}
+Definicí této hodnoty lze například časovat animace. Další metodou je animaci časovat pomocí funkce \vyraz{millis()}. Tato funkce je nezávislá na počtu vykreslených okének za vteřinu, měří počet uběhnutých milisekund od startu programu. Může se nám také hodit pro precizní časování událostí v~programu. \index{časování}
 
 
 \pododdil{Dynamika pohybu}
 
-K docílení jednoduché interakce není zapotřebí mnoho. Animace je ovšem složitější problém, který budeme řešit v Processingu nejvíce matematicky. Zdá se, že dosažení dynamického pohybu je jeden z průvodních jevů pokročilého programování.
+K docílení jednoduché interakce není zapotřebí mnoho. Animace je ovšem složitější problém, který budeme řešit v {\em Processingu} nejvíce matematicky. Zdá se, že dosažení dynamického pohybu je jeden z průvodních jevů pokročilého programování.
+
+\pagebreak
 
  Nyní si můžeme ukázat, jak lze zkombinovat dosavadní znalosti k vytvoření nelineárního pohybu:
  
@@ -1595,10 +1605,10 @@ void draw(){
 \begin{lstlisting}
 x += (mouseX - x) * rychlost;
 y += (mouseY - y) * rychlost; 
-\end{lstlisting}\bublina{Opište formuli a zkuste změnit rychlost, pozorujte změny, změňte hodnoty tak, aby se objekt pohyboval po křivce.}
+\end{lstlisting}\bublina{Opište formuli a zkuste změnit rychlost, pozorujte změny, pozměníte hodnoty tak, aby se objekt pohyboval po křivce.}
 K proměnným {\em x} a {\em y} přiřazujeme zlomek rozdílu mezi pozicí kurzoru a proměnnou v obou osách. Tuto formuli lze využít téměř kdekoli, například při jemném přechodu barev a vyhlazování hodnot obecně.
 
-Druhá proměnná {\em rychlost} by se k docílení podobného efektu měla pohybovat v rozmezí od $0$ do $1$.
+Druhá proměnná, {\em rychlost}, by se k docílení podobného efektu měla pohybovat v rozmezí od $0$ do $1$.
 \index{nelineární pohyb}
 
 
@@ -1621,21 +1631,23 @@ println(hodnota);
 
 \end{lstlisting}
 
-Velmi prostá struktura je v tomto příkladu vytvořena jednou podmínkou. Podmínka je v {\em Processingu} (a řadě jiných jazyků) značena slovem \vyraz{if}, \uv{jestli}. \uv{Jestli} potřebuje dostat odpověď na otázku v kulatých závorkách (ta může být jen pravda nebo nepravda) k tomu se hodí nejlépe již zmíněný \vyraz{boolean}. Výsledkem {\em booleanu} může být porovnávání dvou čísel, znaků nebo řetězců znaků, tj. operace, které nám vrátí \vyraz{true} nebo \vyraz{false}.
+Velmi prostá struktura je v tomto příkladu vytvořena jednou podmínkou. Podmínka je v {\em Processingu} (a řadě jiných jazyků) značena slovem \vyraz{if}, \uv{jestli}. \uv{Jestli} potřebuje dostat odpověď na otázku v kulatých závorkách (ta může být jen pravda nebo nepravda), k tomu se hodí nejlépe již zmíněný \vyraz{boolean}. Výsledkem {\em booleanu} může být porovnávání dvou čísel, znaků nebo řetězců znaků, tj. operace, které nám vrátí \vyraz{true} nebo \vyraz{false}.
 
 Definujeme-li tedy náš \vyraz{boolean} na začátku jako nepravdu, podmínka se v tomto případě nenaplní a program spustí kód uvozený složenými závorkami následujícími až slovo \vyraz{else}.
 
-V našem příkladu se jedná o druhou větev podmínky; ta sice není povinná, ale pro ukázku jsem ji zde rovnou zmínil. Tedy za ukončením \vyraz{if} \\a vložením složených závorek můžeme dále za slovem \vyraz{else}, \uv{jestliže ne}, říci, co se stane v případě nenaplnění naší podmínky.
+V našem příkladu se jedná o druhou větev podmínky; ta sice není povinná, ale pro ukázku jsem ji zde rovnou zmínil. Tedy za ukončením \vyraz{if} a~vložením složených závorek můžeme dále za slovem \vyraz{else}, \uv{jestliže ne}, říci, co se stane v případě nenaplnění naší podmínky.
 
 V tomto konkrétním případě se k proměnné {\em hodnota} přiřadí číslo $0$.
 
 To program následně ověřuje tiskem do konzole, kde se objeví $0$.
 
 
-\pododdil{if}
+\pododdil{If}
 
 Jak jsme si již uvedli, podmínka je jedním ze základních stavebních kamenů programu. Podmínku lze použít ve všech případech, kdy předpokládáme jednoznačnou odpověď {\em ano} nebo {\em ne}. Podmínka v {\em Processingu}, stejně jako v řadě ostatních jazyků, je vytvořena příkazem \vyraz{if}.
 
+
+\pagebreak
 Konstrukce podmínky vypadá pak následovně:
 
 
@@ -1651,7 +1663,7 @@ if(pravda == true){
 
 \end{lstlisting}
 
-Za povšimnutí zde stojí dvojité rovnítko. Tento speciální symbol se používá při již zmíněném porovnávání dvou stran. Proměnná nazvaná {\em pravda} získala hodnotu \vyraz{true}. V případě podmínky nezáleží na počtu proměnných v kulatých závorkách, otázka může být i více kombinována. Záleží na výsledku, který vždy musí být pravda nebo nepravda, tedy \vyraz{true} anebo \vyraz{false}. Pro zkonstruování takové věty lze použít následující znaménka: \bublina{Vyzkoušejte i jiné logické operace, ujistěte se, že správně rozumíte, jak fungují, použijte vykřičník jako zápor, změňte logické operace.}
+Za povšimnutí zde stojí dvojité rovnítko. Tento speciální symbol se po\-užívá při již zmíněném porovnávání dvou stran. Proměnná nazvaná {\em pravda} získala hodnotu \vyraz{true}. V případě podmínky nezáleží na počtu proměnných v kulatých závorkách, otázka může být i více kombinována. Záleží na výsledku, který vždy musí být pravda nebo nepravda, tedy \vyraz{true} anebo \vyraz{false}. Pro zkonstruování takové věty lze použít následující znaménka: \bublina{Vyzkoušejte i jiné logické operace, ujistěte se, že správně rozumíte, jak fungují, použijte vykřičník jako zápor, změňte logické operace.}
 
 \begin{lstlisting}
 boolean pravda = true;
@@ -1689,7 +1701,7 @@ if(text.equals("Lorem ipsum dolor et amet")){
 
 \end{lstlisting}
 
-Takovým výčtem operací jsme si pokryli základní konstrukci podmínky. Další znaménka slouží k skládání jednotlivých otázek. Znaménko pro logické \uv{A} je {\em \&\&}. Používá se následovně:
+Takovým výčtem operací jsme si pokryli základní konstrukci podmínky. Další znaménka slouží k skládání jednotlivých otázek. Znaménko pro logické \uv{A} je \uv{\&\&}. Používá se následovně:
 
 \begin{lstlisting}
 boolean a = true;
@@ -1706,7 +1718,7 @@ if(a == true && b == true){
 \end{lstlisting}
 
 
-\uv{Ampersand} se na české klávesnici nevyskytuje, na anglické klávesnici jej naleznete většinou pod \klavesy {SHIFT - 7}, pro logické \uv{nebo} se používá dvojitá svislá čára, tzv. \uv{pipe}:
+\uv{Ampersand} se na české klávesnici nevyskytuje, na anglické klávesnici jej naleznete většinou pod \klavesy {SHIFT - 7}, pro logické \uv{nebo} se používá dvojitá svislá čára \uv{||}, tzv. pipe:
 
 \begin{lstlisting}
 boolean a = true;
@@ -1734,7 +1746,7 @@ if(a == false || b == true){
 
 \end{lstlisting}
 
-Pomocí skládání otázek můžeme zkonstruovat celé věty a složitější podmínky. V kombinaci s kulatými závorkami si vystačíme pouze s \\logickým {\em AND} a {\em OR}. Zkusme si ilustrovat situaci následovně:
+Pomocí skládání otázek můžeme zkonstruovat celé věty a složitější podmínky. V kombinaci s~kulatými závorkami si vystačíme pouze s~logickým {\em AND} a~{\em OR}. Pokusme se ilustrovat situaci následovně:
 
 
 \begin{lstlisting}
@@ -1775,7 +1787,7 @@ Dále si všimněte, že v podmínce chybí jakékoli porovnávací znaménko. V
 boolean a = true;
 
 if(a)
-	//pouze tento jediny radek bude spusten
+	;//pouze tento jediny radek bude spusten
 	
 	
 if(a){
@@ -1784,11 +1796,11 @@ if(a){
 }
 \end{lstlisting}
 
-K úplnému zkrácení se dají vypustit i složené závorky, to vede opět \\k rychlejšímu zápisu. Rozdílem takového zápisu je fakt, že taková podmínka spouští pouze jeden následující řádek. Přestože je to naprosto správný způsob programování, někteří programátoři takový zápis neradi používají kvůli zhoršení přehlednosti v kódu. Opět se s takovým zápisem často setkáte, člověk je jednoduše líný živočišný druh a \vyraz{if} se v programování používá opravdu často.
+K úplnému zkrácení se dají vypustit i složené závorky, to vede opět k~rychlejšímu zápisu. Rozdílem takového zápisu je fakt, že taková podmínka spouští pouze jeden následující řádek. Přestože je to naprosto správný způsob programování, někteří programátoři takový zápis neradi používají kvůli zhoršení přehlednosti v kódu. Opět se s takovým zápisem často setkáte, člověk je jednoduše líný živočišný druh a \vyraz{if} se v programování po\-užívá opravdu často.
 
-\pododdil{else}
+\pododdil{Else}
 
-K dalšímu rozšíření podmínek slouží již zmíněný příkaz \vyraz{else} a dá se přeložit takto: jestliže je něco pravda, udělej toto, jestliže ne, udělej něco jiného. Zápis vypadá následovně:
+K dalšímu rozšíření podmínek slouží již zmíněný příkaz \vyraz{else} a dá se přeložit takto: jestliže je něco pravda, udělej toto, jestliže ne, proveď něco jiného. Zápis vypadá následovně:
 
 \begin{lstlisting}
 boolean a = false;
@@ -1809,7 +1821,7 @@ if(a){
 
 \pododdil{ ? : }
 
-Abychom podmínky vyčerpali nadobro, ukážeme si poslední možný zápis, který je ještě úspornější. \bublina{Vyzkoušejte si zkrácené zápisy, ověřujte jejich funkčnost tiskem do konzole nebo například proměnou barev objektů.}
+Abychom podmínky vyčerpali nadobro, ukážeme si poslední možný zápis, který může být ještě úspornější. \bublina{Vyzkoušejte si zkrácené zápisy, ověřujte jejich funkčnost tiskem do konzole nebo například proměnou barev objektů.}
   
   
 \begin{lstlisting}
@@ -1830,15 +1842,17 @@ background( a ? 0 : 255 );
 
 \oddil{Interakce}
 
-\Slovnik{interakce} se dá obecně definovat jako vzájemné působení. V počítačové terminologii se má nejčastěji na mysli vzájemné působení člověka a stroje. Přímá interakce, která znamená vzájemné působení dvou prvků předpokládá rozměr času\footnote{Tedy program trvající v čase.}. Takový rozměr trvání programu v čase umožňuje uživateli přímý vstup do proměnných, tedy do obsahu našich hodnot.
+\Slovnik{interakce} se dá obecně definovat jako vzájemné působení. V počítačové terminologii se má nejčastěji na mysli vzájemné působení člověka a stroje. Přímá interakce, která znamená vzájemné působení dvou prvků, předpokládá rozměr času\footnote{Tedy program trvající v čase.}. Takový rozměr trvání programu v čase umožňuje uživateli přímý vstup do proměnných, tedy do obsahu našich hodnot.
 
 Je dobré si uvědomit, že \slovnik{interakce} je do jisté míry při práci s počítačem pozorovatelná neustále. Pouhý pohyb myši lze považovat za interakci člověka se strojem. Pohyb uživatele přímo proměňuje hodnoty vykreslující pozici kurzoru, stiskem klávesy v textovém editoru píšeme text atp.
 
 Při interakci je nutné do určité míry předvídat chování uživatele. Interakce primárně vychází z fyzické zkušenosti s předměty kolem nás, je jí myšleno vše, co může uživatel přímo ovlivnit.
 
-Interakce se dá rozdělit do dvou základních oblastí -- na interakci přímou a nepřímou, nebo chcete-li, na interakci vědomou a nevědomou. Mezi těmito kategoriemi neexistuje jednoznačná hranice.
+Interakce se dá rozdělit do dvou základních oblastí -- na interakci přímou a nepřímou nebo, chcete-li, na interakci vědomou a nevědomou. Mezi těmito kategoriemi neexistuje jednoznačná hranice.
 
-Obecně je toto rozlišení spíše stupnicí od jednoduchých, přímo a okamžitě viditelných jevů po uživatelově vstupu ke komplikovanějším procedurám spouštěným jen s částečným vědomím uživatele.
+Obecně je toto rozlišení spíše stupnicí od jednoduchých, přímo a okamžitě viditelných jevů po uživatelově vstupu ke komplikovanějším procedurám spouštěným jen s částečným (nebo žádným) vědomím uživatele.
+
+\pagebreak
 
 Základní, tedy přímou interakci si můžeme ukázat v následujícím příkladu:
 
@@ -1855,7 +1869,6 @@ void draw(){
 \end{lstlisting}
 
 
-\vfill
 \begin{center}
 \includegraphics[width = 0.8\textwidth]{imgs/interakce-1.png}
 \end{center}
@@ -1864,6 +1877,7 @@ Toto je jedna z nejzákladnějších možných interakcí. Vstupem pro pozici kr
 
 Čtení pozice myši je jedním z nejsnazších možných způsobů interakce stroje s člověkem. Nyní si ukážeme, jak lze detekovat stisknutí tlačítka myši. Pro tento účel můžeme využít předdefinovaných metod {\em Processingu}. K detekci kliku lze použít funkci \vyraz{mousePressed()}.
 
+\pagebreak
 
 \begin{lstlisting}
 boolean stisknuto = false;
@@ -1895,7 +1909,7 @@ void mousePressed(){
 \includegraphics[width = 0.8\textwidth]{imgs/interakce-2.png}
 \end{center}
 
-Všimněte si poslední funkce. Více o funkcích obecně \odkaz{Funkce}. Ta je programem spuštěna jen tehdy, stiskne-li uživatel tlačítko myši. Abychom uchovali informaci o stisku, přepneme jím stav jedné \\z našich proměnných nazvané {\em stisknuto}. Jednořádkový zápis s vykřičníkem je zkrácení pro přepnutí stavu \odkaz{Podmínka}.
+Všimněte si poslední funkce. \odkaz{Funkce} Ta je programem spuštěna jen tehdy, stiskne-li uživatel tlačítko myši. Abychom uchovali in\-formaci o stisku, přepneme jím stav jedné z~našich proměnných nazvané {\em stisknuto}. Jednořádkový zápis s vykřičníkem je zkrácení pro přepnutí stavu \odkaz{Podmínka}.
 
 K tomu, abychom detekovali stisk tlačítka myši, použijeme funkci \vyraz{mousePressed()}. Další možností interakce je detekovat, které tlačítko myši jsme stiskli, popřípadě detekovat stisk klávesy. Výčet dalších možností je následující:
 
@@ -1935,18 +1949,19 @@ void keyPressed(){
 	}
 }
 
-// opet detekce uvolneni klavesy
+
+// detekce uvolneni klavesy
 void keyReleased(){
 
 }
 
 \end{lstlisting}
 
-Tímto výčtem jsme v podstatě vyčerpali možnosti interakce se standardními vstupy uživatele v Processingu. Veškeré tyto definice musí stát mimo základní funkce {\em Processingu}, tedy mimo \vyraz{setup()} a \vyraz{draw()}.
+Tímto výčtem jsme v podstatě vyčerpali možnosti interakce se standardními vstupy uživatele v {\em Processingu}. Veškeré tyto definice musí stát mimo základní funkce {\em Processingu}, tedy mimo \vyraz{setup()} a \vyraz{draw()}.
 
-Proměnná \vyraz{mouseButton} nám říká údaj o naposledy stisknutém tlačítku myši, stejně tak funguje proměnná \vyraz{key} a \vyraz{keyCode} ve funkci \vyraz{keyPressed()} a \vyraz{keyReleased()}.
+Proměnná \vyraz{mouseButton} nám říká údaj o naposledy stisknutém tlačítku myši, stejně tak funguje proměnná \vyraz{key} a \vyraz{keyCode} ve funkci \vyraz{keyPressed()} a~\vyraz{keyReleased()}.
 
-Obě proměnné \vyraz{key} a \vyraz{keyCode} jsou buď vyjádřeny číslem, které lze vyhledat například v mapě znaků, nebo znakem ve tvaru {\em char}. Hodnota \vyraz{key} lze také porovnávat přímo se znakem uvozeným apostrofy (například {\em 'k'}). V případě \vyraz{keyCode} lze porovnávat hodnotu kódovaných kláves.
+Obě proměnné \vyraz{key} a \vyraz{keyCode} jsou buď vyjádřeny číslem, které lze vyhledat například v mapě znaků, nebo znakem ve tvaru {\em char}. Hodnotu \vyraz{key} lze také porovnávat přímo se znakem uvozeným apostrofy (například {\em 'k'}). V případě \vyraz{keyCode} lze porovnávat hodnotu kódovaných kláves.
 
 Jestli je klávesa kódovaná, zjistíme dále pomocí proměnné \vyraz{CODED}. Asi takto:
 
@@ -2040,7 +2055,7 @@ println(mojePoleHodnot[5]);
 \end{lstlisting}
 
 
-Další způsob zápisu je ovšem obvyklejší, a jak se dozvíme v příští kapitole, bude pro nás nejvýhodnější.
+Další způsob zápisu je ovšem obvyklejší, a jak se dozvíme v příští kapitole \odkaz{Smyčka}, bude pro nás nejvýhodnější.
 
 
 \begin{lstlisting}
@@ -2056,7 +2071,7 @@ void setup(){
 }
 \end{lstlisting}
 
-Všimněte si, že  se v zápisu objevilo slovo \vyraz{new}. Toto slovo jsme zatím nepoužili a jeho význam rozvedeme později \odkaz{Třída a objekt}. \\K tomu, abychom přiřadili hodnotu jednotlivých míst v poli, musíme nejdříve uvést do hranatých závorek, kam budeme hodnotu zapisovat. Stejně tak se později k číslu, které jsme uložili, můžeme dostat. 
+Všimněte si, že  se v zápisu objevilo slovo \vyraz{new}. Toto slovo jsme zatím nepoužili a jeho význam rozvedeme později \odkaz{Třída a objekt}. \lnb K~tomu, abychom přiřadili hodnotu jednotlivých míst v poli, musíme nejdří\-ve uvést do hranatých závorek, kam budeme hodnotu zapisovat. Stejně tak se později k číslu, které jsme uložili, můžeme dostat. 
 
 Tímto způsobem jsme si definovali pole o rozměru deseti hodnot. Stále je ovšem patrné, že v kódu se zbytečně opakujeme rozepisováním názvu jedné proměnné.\bublina{Pole jsou abstraktní koncepce. Ujistěte se, že dobře rozumíte, jakým způsobem pracují. Najděte si pro pole vhodnou paralelu, například číslované zásuvky pro představu fungují dobře, pročtěte si kapitolu klidně vícekrát, abyste polím dobře rozuměli.}
 
@@ -2083,7 +2098,7 @@ void setup(){
 
 A první smyčka je na světě. Zápis, který na první pohled vypadá trochu odpudivě, může být váš dobrý přítel. Trochu si jej rozebereme. 
 
-Formule začíná slovem \vyraz{for}. Následují kulaté závorky. V nich je v podstatě rozsah, který potřebujeme zopakovat. Hodnoty jsou odděleny středníkem. \bublina{Vyzkoušejte si rozdílné smyčky \\s různým rozsahem, opakujte si složitější zápis\\ for dokud jej nebudete umět sami bezchybně zkonstruovat, zkuste smyčku využít \\s měnící se proměnnou uvnitř, kreslete ze smyčky objekt.}
+Formule začíná slovem \vyraz{for}. Následují kulaté závorky. V nich je v podstatě rozsah, který potřebujeme zopakovat. Hodnoty jsou odděleny středníkem. \bublina{Vyzkoušejte si rozdílné smyčky s~různým rozsahem, opakujte si složitější zápis \uv{for}, dokud jej nebudete umět sami bezchybně zkonstruovat, zkuste smyčku využít s~měnící se proměnnou uvnitř, kreslete ze smyčky objekt.}
 
 \begin{itemize}
 \item[počátek] int i = 0
@@ -2099,7 +2114,7 @@ Hodnota, se kterou pracujeme, se jmenuje {\em i}, ale může se jmenovat dle va�
 	}
 \end{lstlisting}
 
-Podle potřeby lze také definovat rozsah smyčky. Kupříkladu počítání \\v opačném pořadí:
+Podle potřeby lze také definovat rozsah smyčky. Kupříkladu počítání v~opačném pořadí:
 
 
 \begin{lstlisting}
@@ -2108,13 +2123,13 @@ Podle potřeby lze také definovat rozsah smyčky. Kupříkladu počítání \\v
 	}
 \end{lstlisting}
 
-Název pro jednoduchou smyčku {\em i} se používá velmi často, může například značit slovo {\em index}. Smyčky vykonávají v programu tvrdou práci, používají se na hromadné operace, z nichž se často stávají náročné výpočty.
+Název pro jednoduchou smyčku {\em i} se používá velmi často, může například značit slovo {\em index}. Smyčky vykonávají v programu tvrdou práci, využívají se pro hromadné operace, z nichž se často stávají náročné výpočty.
 
 Vraťme se ovšem k definici Fibonacciho řady z předchozí kapitoly \odkaz{Pole}. Pokusíme se nyní skloubit to, co jsme se naučili o smyčkách a polích. Zkusíme si napsat jednoduchý program, který nám vygeneruje tolik čísel z Fibonacciho řady, kolik budeme potřebovat.
 
 
 \begin{lstlisting}
-int delka = 20;
+int delka = 18;
 int fibonacci[];
 
 void setup(){
@@ -2153,11 +2168,9 @@ V konzoli se nám objeví:
 [15] 610
 [16] 987
 [17] 1597
-[18] 2584
-[19] 4181
 \end{lstlisting}
 
-Čísel samozřejmě může být nepočitatelně. Smyčky mají tu výhodu, že dokážou opakovat jednu operaci. Můžeme využít jazyka k definici operace a zapojením dalších proměnných ji povýšit na princip. Máme-li takto zpracovaný princip, můžeme jej například zobrazit nebo s ním dále pracovat. K dalšímu uspořádání se dostaneme v další kapitole \odkaz{Funkce}.
+Čísel samozřejmě může být nepočitatelně. Smyčky mají tu výhodu, že dokážou opakovat jednu operaci. Můžeme využít jazyka k definici operace a zapojením dalších proměnných ji povýšit na princip. Máme-li takto zpracovaný princip, můžeme jej například zobrazit nebo s ním dále pracovat. K lepšímu uspořádání se dostaneme v další kapitole \odkaz{Funkce}.
 
 Pro ilustraci Fibonacciho řady můžeme využít druhou smyčku ke kresbě:
 
@@ -2167,9 +2180,7 @@ for(int i = 0; i < delka; i += 1){
 }
 \end{lstlisting}
 
-\newpage
-
-a výsledkem bude:
+a výsledkem kresby bude:
 
 \begin{center}
 \includegraphics[width = 0.8\textwidth]{imgs/smycka-1.png}
@@ -2186,7 +2197,7 @@ Jednotlivé bloky kódu lze dále strukturovat. Strukturování v kódu se prov�
 
 Nejjednodušším řešením problému je jeho rozdělení na menší části. Problém, jak dojít k jednomu výsledku, se dá rozložit na jednotlivé po sobě jdoucí události a ty postupně popsat.
 
-Dílčí operace si pro přehlednost můžeme definovat do bloku takzvané funkce. Základní funkcí je takzvaný \vyraz{void}. {\em Void} v podstatě tvoří blok kódu, který uceluje nějakou proceduru, ta může být posléze jednoduše spuštěna jedním příkazem. Jestliže jednotlivé proměnné by ve větě mohly označovat podstatná jména, funkce se dají například chápat jako slovesa. S funkcemi jsme se setkali již dříve při definici základních smyček programu.
+Dílčí operace si pro přehlednost můžeme definovat do bloku takzvané funkce. Základní funkcí je \vyraz{void}. {\em Void} v podstatě tvoří blok kódu, který uceluje nějakou proceduru, ta může být posléze jednoduše spuštěna jedním příkazem. Jestliže by mohly jednotlivé proměnné ve větě označovat podstatná jména, funkce se dají například chápat jako slovesa. S funkcemi jsme se setkali již dříve při definici základních smyček programu.
 
 \begin{lstlisting}
 
@@ -2208,7 +2219,7 @@ Vedle standardních funkcí {\em Processingu} \vyraz{setup()} a \vyraz{draw()} j
 
 V tomto konkrétním případě samotná funkce nedává mnoho smyslu. Příkaz \vyraz{rect()} v podstatě není nic jiného nežli funkce {\em Processingu} \uv{nakresli obdélník}. Všimněme si ovšem, že tato funkce \vyraz{rect()} má v kulatých závorkách parametry, které označují, kde má být obdélník vykreslen a jaké má mít rozměry. Tyto parametry se v programování obecně nazývají {\em arguments} nebo také vstupní hodnoty funkce.
 
-Chceme-li vytvořit funkci a potřebujeme-li do ní poslat vstupní parametry, musíme při její definici vepsat do kulatých závorek, jaké parametry bude funkce očekávat.
+Chceme-li vytvořit funkci a potřebujeme-li do ní poslat vstupní paramet\-ry, musíme při její definici vepsat do kulatých závorek, jaké paramet\-ry bude funkce očekávat.
 
 
 \begin{lstlisting}
@@ -2219,9 +2230,11 @@ void nakresliObdelnik(int x, int y){
 
 \end{lstlisting}
 
-Jednotlivé parametry se v kulatých závorkách oddělují čárkou a může jich být teoreticky neomezené množství. Parametry vždy musí dodržovat dané datatypy v opačném případě, {\em Processing} funkci nedokáže najít.
+Jednotlivé parametry se v kulatých závorkách oddělují čárkou a může jich být teoreticky neomezené množství. Parametry vždy musí dodržovat dané datatypy, v opačném případě {\em Processing} funkci nedokáže najít.
 
-Důležité je upozornit, že vstupní hodnoty jsou vytvořeny pokaždé, \\spustíme-li funkci, a zanikají, je-li funkce ukončena. Takovým proměnným se říká dočasné nebo lokální. V programátorské praxi se můžeme setkat s jejich uvozováním podtržítkem.
+Důležité je upozornit, že vstupní hodnoty jsou vytvořeny pokaždé, \lnb spustíme-li funkci, a zanikají, je-li funkce ukončena. Takovým proměnným se říká dočasné nebo lokální. V programátorské praxi se můžeme setkat s~jejich uvozováním podtržítkem.
+
+\pagebreak
 
 
 \begin{lstlisting}
@@ -2234,8 +2247,7 @@ void nakresliObdelnik( int _x, int _y ){
 
 Podtržítka nemají žádný faktický význam, jsou jen součástí názvu proměnné a programátoři je používají pro lepší organizaci.
 
-V {\em Processingu} lze dále definovat funkce, které se jmenují stejně, ty pak ale musí mít jinou skladbu vstupních hodnot. Představme si, že budeme potřebovat dvě funkce {\em nakresliObdelnik()}, jednu můžeme nechat bez vstupních parametrů a druhou budeme definovat s parametry {\em x} a {\em y}. Tak můžeme odlišit dvě různé funkce pouze způsobem spuštění.
-\newpage
+V {\em Processingu} lze dále definovat funkce, které se jmenují stejně, ty pak ale musí mít jinou skladbu vstupních hodnot. Představme si, že budeme potřebovat dvě funkce {\em nakresliObdelnik()}, jednu můžeme nechat bez vstupních parametrů a druhou budeme definovat parametry {\em x} a {\em y}. Tak můžeme odlišit dvě různé funkce pouze způsobem spuštění.
 
 \begin{lstlisting}
 
@@ -2254,10 +2266,12 @@ void draw(){
 
 \end{lstlisting}
 
-Tento příklad je správně a vykreslí dva různé obdélníky. Máme nyní na výběr potřebujeme-li zadat parametry, nebo ne, v druhém případě se nakreslí obdélník v předem nadefinované pozici.
+Tento příklad je správně a vykreslí dva různé obdélníky. Máme nyní na výběr, potřebujeme-li zadat parametry, nebo ne, v druhém případě se nakreslí obdélník v předem nadefinované pozici.
 
 
-{\em Void} je pouze jedna z možností definic funkcí. Další možné funkce můžeme definovat podle datatypů, které budeme očekávat jako výsledek funkce. Tedy můžeme si definovat funkci, která nám zjistí, zdali se kurzor nachází v daném obdélníku. Místo prázdné funkce {\em void} budeme očekávat odpověď ve tvaru \vyraz{boolean} pravda nebo nepravda. Funkce uvozená datatypem bude vždy očekávat odpověď ve stejném tvaru takového datatypu. Pomocí slova \vyraz{return} můžeme funkci přiřknout výsledek, v tomto případě \vyraz{true} nebo \vyraz{false}.
+{\em Void} je pouze jedna z možností definic funkcí. Další možné funkce můžeme definovat podle datatypů, které budeme očekávat jako výsledek funk\-ce. Tedy můžeme si definovat funkci, která nám zjistí, zdali se kurzor nachází v daném obdélníku. Místo prázdné funkce \vyraz{void} budeme očekávat odpověď ve tvaru \vyraz{boolean} pravda nebo nepravda. Funkce uvozená datatypem bude vždy očekávat odpověď ve stejném tvaru takového datatypu. Pomocí slova \vyraz{return} můžeme funkci přiřknout výsledek, v tomto případě \vyraz{true} nebo \vyraz{false}.
+
+\pagebreak
 
 \begin{lstlisting}
 
@@ -2316,10 +2330,10 @@ Co se délky funkcí týče, dobré pravidlo zní: Přesáhne-li počet vnitřn�
 
 Funkce \vyraz{void} je jen jednou možností z celé škály definic funkcí. Prázdná funkce \vyraz{void} nic nevrací zpět, jednoduše řečeno, nemá žádný výsledek. Funk-ci s výsledkem můžeme definovat pomocí příkazu \vyraz{return} zevnitř funkce.
 
-Příkaz \vyraz{return} musí navracet hodnotu stejného datatypu, jako je naše funkce. Pro pochopení budu lépe ilustrovat zápis plodné funkce. Řekněme, že potřebujeme funkci, která k vstupní proměnné přičte polovinu její původní hodnoty. Taková funkce by mohla vypadat následovně:
+Příkaz \vyraz{return} musí navracet hodnotu stejného datatypu, jako je naše funk\-ce. Pro pochopení budu lépe ilustrovat zápis plodné funkce. Řekněme, že potřebujeme funkci, která k vstupní proměnné přičte polovinu její původní hodnoty. Taková funkce by mohla vypadat následovně:
 
 \begin{lstlisting}
-float prictipolovinuHodnoty(float _vstup){
+float prictiPolovinuHodnoty(float _vstup){
 
 	_vstup += _vstup / 2.0;
 	return _vstup;
@@ -2335,7 +2349,7 @@ float a = 5;
 println(a);
 // vytiskne 5 do konzole
 
-a = prictipolovinuHodnoty(a);
+a = prictiPolovinuHodnoty(a);
 
 println(a);
 // vytiskne 7.5
@@ -2349,7 +2363,8 @@ println(a);
 \end{lstlisting}
 
 Jak můžeme vidět, definice funkce zůstala stejná a výsledky se liší podle zaslaných argumentů, vstupních hodnot do funkce. Naše vlastní definice funkcí mohou mít dále jakékoli datatypy, které již známe.
-\newpage
+
+
 \begin{lstlisting}
 
 String pozdrav(){
@@ -2388,7 +2403,7 @@ V další kapitole se přesuneme de facto již k definici vlastních datatypů, 
 
 Funkce jsou jedním ze způsobů, jak strukturovat program. Veškerý kód, který jsme doposud psali, je vlastněn takzvanou třídou. Třída vlastní veškeré funkce i proměnné, které v {\em Processingu} běžně píšeme. Můžeme to nazvat mateřským objektem. V rámci tohoto objektu můžeme definovat své vlastní objekty, které mohou mít různé vlastnosti.
 
-V úvodu jsme se dozvěděli, že {\em Processing} je objektově orientovaný jazyk. Nad tím je na čase se pozastavit. Co to vlastně znamená objekt? Ilus-trace koncepce programování je prostá, stačí se rozhlédnout kolem sebe \\a zaměřit se na jeden konkrétní objekt (hrnek, propiska, kniha). Tento objekt má nějaké vlastnosti. Tak například psací pero má svoji hmotnost, rozměry ve třech osách, barvu inkoustu, obsah inkoustu a vlastní barvu pera, pravděpodobně také nějaké logo jako potisk. Propiska dále může být \uv{otevřená} nebo \uv{zavřená}, mohli bychom takto pokračovat dále. Všechny tyto vlastnosti si můžeme představit jako naše proměnné. Třída pak bude to, co mají psací pera společného, jednotlivými parametry budeme odlišovat jedno pero od druhého.
+V úvodu jsme se dozvěděli, že {\em Processing} je objektově orientovaný jazyk. Nad tím je na čase se pozastavit. Co to vlastně znamená objekt? Ilus\-trace koncepce programování je prostá, stačí se rozhlédnout kolem sebe a~zaměřit se na jeden konkrétní objekt (hrnek, propiska, kniha). Tento \lnb objekt má nějaké vlastnosti. Tak třeba psací pero má svoji hmotnost, rozměry ve třech osách, barvu inkoustu, obsah inkoustu a vlastní barvu pera, pravděpodobně také nějaké logo jako potisk. Propiska dále může být \lnb \uv{otevřená} nebo \uv{zavřená}, mohli bychom takto pokračovat dále. Všechny tyto vlastnosti si můžeme představit jako naše proměnné. Třída pak bude to, co mají psací pera společného, jednotlivými parametry budeme odlišovat jedno pero od druhého.
 
 To, co s psacím perem můžeme dělat, si představme jako funkci. Tak například uzávěr pera lze \uv{otevřít} a \uv{zavřít}. Perem pak můžeme psát atp. Tyto činnosti ovlivňují naše parametry konkrétního objektu.
 
@@ -2443,7 +2458,7 @@ Uvnitř složených závorek, které vymezují definici, nyní můžeme nastavit
 
 Konstruktorů v definici jedné třídy může být i více. Rozlišujeme je počtem, pořadím a typem zasílaných argumentů. Tímto způsobem si můžeme popsat všechny způsoby vytváření objektu. Například podle stupně známých proměnných, které jsme schopni v dané chvíli nově vznikajícímu objektu definovat.
 
-Konstruktor je zkrátka místo, kde můžeme do nově vznikajícího \\objektu zaslat počáteční informace. Budu-li například nyní potřebovat dvě propisky, jednu červenou a druhou modrou, mohu je vytvořit následujícím způsobem:
+Konstruktor je zkrátka místo, kde můžeme do nově vznikajícího objektu \lnb zaslat počáteční informace. Budu-li například nyní potřebovat dvě propisky, jednu červenou a druhou modrou, mohu je vytvořit následujícím způsobem:
 
 
 
@@ -2489,7 +2504,7 @@ modrePero.barvaNaplne = color(0);
 
 Jak je z příkladu patrné, modrá propiska je objekt, který má pojmenovanou hodnotu {\em barvaNaplne}. K němu se dostaneme pomocí tečkové syntaxe a {\em Processing} nám jej dovolí změnit.
 
-Příklad s propiskou je ryze abstraktní a jistě naleznete sami řadu \\lepších. \bublina{Rozhlédněte se kolem sebe  \\a zkuste se zamyslet \\o objektech a jejich možných vlastnostech.}
+Příklad s propiskou je ryze abstraktní a jistě naleznete sami řadu \lnb lepších. \bublina{Rozhlédněte se kolem sebe  a~zkuste se zamyslet o~objektech a jejich možných vlastnostech.}
 
 
 \pododdil{Práce s objekty}
@@ -2498,11 +2513,11 @@ Nyní již víme, jak definovat a vytvořit objekt. Tyto schopnosti nám nyní v
 
 Zkusme si pro ukázku naplnit nám známé pole jednotlivými objekty. Takové uvažování se nyní může jevit trochu abstraktně, zkusme ho proto nejdříve uvést nějakým příkladem.
 
-Místo propisek si vytvoříme entitu, která bude reagovat na náš podnět. Bude mít následující vlastnosti. Zaprvé každá z {\em entit} bude mít své vlastní číslo, dále bude mít údaje o své pozici a každá z {\em entit} bude následovat kurzor jinou rychlostí. Při přemýšlení nad interakcí objektů s uživatelem si můžeme vzpomenout na kapitolu o pohybu \odkaz{Interakce} a \odkaz{Dynamika pohybu}.
+Místo propisek si vytvoříme {\em entitu}, která bude reagovat na náš podnět. Bude mít následující vlastnosti. Za prvé každá z {\em entit} bude mít své vlastní číslo, dále bude mít údaje o své pozici a každá z {\em entit} bude následovat kurzor jinou rychlostí, naposledy se jednotlivé {\em entity} budou odlišovat barvou. Při přemýšlení nad interakcí objektů s uživatelem si můžeme vzpomenout na kapitoly o pohybu \odkaz{Interakce} a jeho dynamice \odkaz{Dynamika pohybu}.
 
 Můžeme zde pro ukázku definovat více konstruktorů, tedy více možných způsobů vytvoření objektu.
 
-Nejprve se pusťme do obecné definice naší entity:
+Nejprve se pusťme do obecné definice naší {\em entity}:
 
 \begin{lstlisting}
 class Entita {
@@ -2546,13 +2561,13 @@ class Entita {
 
 Definice je až na pár výjimek opakováním známého. První novinka je možnost definovat více proměnných stejného typu na jeden řádek. Je to pouze úspornější.
 
- Dále přichází ony dva konstruktory. Oba se jmenují stejně, mají ovšem rozdílný počet vstupních argumentů, a tím se odlišují. Při tvorbě naší nové entity jako živého objektu ji můžeme vytvořit oběma způsoby. \\V druhém konstruktoru jsem použil příkaz \vyraz{random()}, ten zatím neznáme, více se o něm můžete dočíst v další kapitole o náhodě. V podstatě nám tento příkaz umožňuje vygenerovat náhodné číslo\footnote{Správně tedy pseudonáhodné číslo.}. To se nám nyní bude hodit: chceme, aby každá z entit, kterou vytvoříme, měla vlastní způsob chování.
+ Dále přichází ony dva konstruktory. Oba se jmenují stejně, mají ovšem rozdílný počet vstupních argumentů, a tím se odlišují. Při tvorbě naší nové {\em entity} jako živého objektu ji můžeme vytvořit oběma způsoby. V~druhém konstruktoru jsem použil příkaz \vyraz{random()}, ten zatím neznáme, více se o něm můžete dočíst v další kapitole o náhodě. V podstatě nám tento příkaz umožňuje vygenerovat náhodné číslo\footnote{Správně tedy pseudonáhodné číslo.}. To se nám nyní bude hodit: chceme, aby každá z entit, kterou vytvoříme, měla vlastní způsob chování.
  
-Funkce {\em kresli()} pouze zobrazí na konkrétních souřadnicích každé \\entity elipsu. Stejně tak bychom zde mohli kreslit jakoukoli jinou obrazovou reprezentaci naší entity. Tvar ponechám na vaší fantazii.
+Funkce {\em kresli()} pouze zobrazí na konkrétních souřadnicích každé {\em entity} elipsu. Stejně tak bychom zde mohli kreslit jakoukoli jinou obrazovou reprezentaci našeho objektu. Tvar ponechám na vaší fantazii.
  
-K funkci {\em posunSeKeKurzoru()} není třeba příliš dodávat, dělá přesně to, co byste od ní očekávali. Připomínáme si zde formuli z kapitoly o pohybu \odkaz{Dynamika pohybu}.
+K funkci {\em posunSeKeKurzoru()} není třeba příliš dodávat, dělá přesně to, co byste od ní očekávali. Připomínáme si zde formuli z kapitoly \lnb o~pohy\-bu \odkaz{Dynamika pohybu}.
 
-Nyní nám nic nebrání zaplnit rozličnými entitami celé pole:
+Nyní nám nic nebrání zaplnit rozličnými instancemi objektu celé pole:
 
 
 \begin{lstlisting}
@@ -2583,10 +2598,10 @@ Výsledkem kódu bude celý had tří set entit různých odstínů šedi lačn�
 
 
 \begin{center}
-\includegraphics[width = 1\textwidth]{imgs/prace-s-objekty-1.png}
+\includegraphics[width = 0.8\textwidth]{imgs/prace-s-objekty-1.png}
 \end{center}
 
-Rozeberme si jen letmo, k čemu vlastně došlo. Nejprve jsme definovali prázdné pole určené pro naše entity. Posléze jsme mu stanovili velikost \\a celé pole jsme naplnili novými objekty entit  (odborněji {\em instancemi}). V poli se tedy nachází na každém místě jedna entita. Každou entitu poté ve funkci \vyraz{draw()} probouzíme k životu prostřednictvím spuštění příkazu přes {\em tečkovou syntax} k posunu směrem ke kurzoru (funkcí {\em posunSeKeKurzoru()}) \\a následnému vykreslení tvaru na plochu (funkcí {\em kresli()}).
+Rozeberme si jen letmo, k čemu vlastně došlo. Nejprve jsme definovali prázdné pole určené pro naše {\em entity}. Posléze jsme mu stanovili velikost a~celé pole jsme naplnili novými objekty {\em entit} (odborněji {\em instancemi}). V~poli se tedy nachází na každém místě jedna {\em entita}. Každou {\em entitu} poté ve funkci \vyraz{draw()} probouzíme každé okénko animace k životu prostřednictvím spuštění příkazu přes {\em tečkovou syntaxi} k drobnému posunu směrem ke kurzoru funkcí {\em posunSeKeKurzoru()} a~následnému vykreslení tvaru na plochu funkcí {\em kresli()}.
 
 
 
@@ -2594,15 +2609,15 @@ Rozeberme si jen letmo, k čemu vlastně došlo. Nejprve jsme definovali prázdn
 
 V minulé kapitole jsme hovořili o výrazu \vyraz{random()}, nyní se pokusíme poodhalit tajemství náhody v programování.
 
-Proč má smysl v případě strojů vůbec hovořit o náhodě? Náhodu je z pohledu výpočetní techniky třeba vnímat jako vnější vliv. V rámci počítačové logiky náhoda v podstatě neexistuje. Každý jev má svoji příčinu \\a může mít svůj následek. Počítačové jazyky znají jen pojem takzvané pseudonáhodnosti.
+Proč má smysl v případě strojů vůbec hovořit o náhodě? Náhodu je z~pohledu výpočetní techniky třeba důsledně vnímat jako vnější vliv. V rámci počítačové logiky náhoda v podstatě neexistuje (není přípustná). Každý jev má svoji příčinu a~může mít svůj následek. Počítačové jazyky znají jen pojem takzvané pseudonáhodnosti.
 
 Předložka pseudo- již nastiňuje určitou náhražku. Pseudonáhodnost je ve své podstatě strojová simulace náhody v čistě logickém prostředí. Náhodou pojmenováváme zpravidla jev, který nedokážeme pro jeho složitost předpovědět. Reálný svět vnímaný člověkem obsahuje takzvanou pravou náhodu, tedy to, co skutečně nelze vypozorovat.
 
-Situace přenesení náhody do světa logického uvažování je velmi problematická proto, že člověk velmi těžko stroji popisuje fakt srozumitelnosti. Některá jednoduchá pravidla srozumitelná jsou, jiná z pohledu výpočtu již ne.
+Situace přenesení náhody do světa logického uvažování je velmi problematická proto, že člověk velmi těžko stroji popisuje fakt srozumitelnosti. Některá jednoduchá pravidla srozumitelná jsou, a jiná, z pohledu stroje obdobně jednoduchá, se lidskou optikou již jeví jako nesrozumitelné.
 
-Pseudonáhodou člověk definuje takový výpočet, který samozřejmě vychází z logického výpočtu, člověk už ale nedokáže předpovědět jeho \\výsledek.
+Pseudonáhodou člověk definuje takový výpočet, který samozřejmě vychází z logického výpočtu, člověk už ale nedokáže předpovědět jeho \lnb výsledek.
 
-Konkrétní příklad, jak lze v Processingu vygenerovat pseudonáhodné pomocí příkazu \vyraz{random()}, je:
+Konkrétní příklad, jak lze v {\em Processingu} vygenerovat pseudonáhodné číslo pomocí příkazu \vyraz{random()}, je:
 
 \begin{lstlisting}
 float nahodna = random(10);
@@ -2613,11 +2628,11 @@ Proměnná nazvaná {\em nahoda} nyní přijímá pseudonáhodnou hodnotu v rozm
 
 
 \begin{lstlisting}
-float nahodna = random(10,20);
+float nahodna = random(-10,20);
 println(nahoda);
 \end{lstlisting}
 
-Jak je zřejmě pochopitelné, náhoda se nyní bude pohybovat v rozmezí čísla od deseti do dvaceti. To, co se vám konkrétně objeví v konzoli, nedokážu předpovědět, jedná se totiž o vaše náhodné číslo.
+Jak je zřejmě pochopitelné, náhoda se nyní bude pohybovat v rozmezí čísla od minus deseti do dvaceti. To, co se vám konkrétně objeví v konzoli, nedokážu předpovědět, jedná se totiž o vaše pseudonáhodné číslo.
 
 Tisk do konzole je samozřejmě jeden z možných výstupů. Náhodné číslo můžeme zobrazit graficky. Můžeme například animovat pozici elipsy na ploše:
 
@@ -2637,14 +2652,14 @@ void draw(){
 
 Spustíme-li tento program, uvidíme kmitající elipsu ve středu kreslicího plátna. Kmitání probíhá v rozmezí od minus pěti do plus pěti pixelů od středu v obou osách. Pro každé jednotlivé okénko se obměňuje nová pseudonáhodná hodnota, a tím dochází k animaci.
 
-Příkazy {\em width} a {\em height} ozačují šířku a výšku plátna.
+Příkazy {\em width} a {\em height} označují šířku a výšku plátna.
 
 
 
 
 \pododdil{Šum}
 
-Dalším možným strůjcem náhodně generované hodnoty je takzvaný {\em Perlinův šum} ({\em Perlin noise}). {\em Perlinův šum} je pojmenovaný po svém vynálezci Kenu Perlinovi a je velmi často využíván při generování přirozeně vypadajícího náhodného pohybu. Oproti příkazu \vyraz{random()} se {\em Perlinův šum} \vyraz{noise()} odvíjí plynule. Pro ilustraci si zde můžeme ukázat rozdíl mezi {\em Perlinovým šumem} a holým pseudonáhodným číslem.
+Dalším možným strůjcem pseudonáhodně generované hodnoty je takzvaný {\em Perlinův šum} ({\em Perlin noise}). {\em Perlinův šum} je pojmenovaný po svém vynálezci Kenu Perlinovi a je velmi často využíván při generování přirozeně vypadajícího náhodného pohybu. Oproti příkazu \vyraz{random()} se {\em Perlinův šum} \vyraz{noise()} odvíjí plynule. Pro ilustraci si zde můžeme ukázat rozdíl mezi {\em Perlinovým šumem} a holým pseudonáhodným číslem.
 
 
 
@@ -2661,9 +2676,9 @@ void draw(){
 }
 \end{lstlisting}
 
-Pohyb obrazce bude nyní probíhat plynule ve zdánlivě nepředpovídatelných směrech. Příkaz \vyraz{noise()} předpokládá vstup, který určuje pozici v šumu. {\em Perlinův šum} si můžeme představit jako neměnný graf, kterým můžeme procházet tam i zpět v závislosti na zaslané hodnotě. Jelikož do příkazu \vyraz{noise()} posíláme proměnnou hodnotu \vyraz{frameCount}, procházíme variacemi {\em Perlinova šumu}, výstupem bude vždy číslo v rozmezí nula až jedna. Budeme-li potřebovat rozmezí jiné, můžeme šum vynásobit požadovaným rozsahem (jak je tomu v předchozím příkladu).
+Pohyb obrazce bude nyní probíhat plynule ve zdánlivě nepředpovídatelných směrech. Příkaz \vyraz{noise()} předpokládá vstup, který určuje pozici v~šumu. {\em Perlinův šum} si můžeme představit jako neměnný graf, kterým můžeme procházet tam i zpět v závislosti na zaslané hodnotě. Jelikož do příkazu \vyraz{noise()} posíláme proměnnou hodnotu \vyraz{frameCount}, procházíme variacemi {\em Perlinova šumu}, výstupem bude vždy číslo v rozmezí nula až jedna.  \nlb Budeme-li potřebovat rozmezí jiné, můžeme šum vynásobit požadovaným rozsahem (jak je tomu v předchozím příkladu).
 
-\bublina{Vyzkoušejte použití náhody a šumu ke kresbě různých prvků \\v obraze, ovládejte rozsah pomocí myši.}
+\bublina{Vyzkoušejte použití náhody a šumu ke kresbě různých prvků v~obraze, ovládejte rozsah pomocí myši.}
 
 
 
@@ -2671,16 +2686,16 @@ Pohyb obrazce bude nyní probíhat plynule ve zdánlivě nepředpovídatelných 
 
 \oddil{Renderovací mody}
 
-Doposud jsme pracovali pouze s jednou metodou zobrazení. Standardně je {\em Processing} nastaven do dvourozměrného modu vykreslování, který se nazývá {\em JAVA2D}. Tento mod bude nastaven vždy, nezvolíte-li jiný mód. Další varianty jsou následující:
+Doposud jsme pracovali pouze s jednou metodou zobrazení. Standardně je {\em Processing} nastaven do dvourozměrného modu vykreslování, který se nazývá {\em JAVA2D}. Tento mod bude nastaven vždy, nezvolíte-li jiný mód. Další varianty jsou následující\footnote{{\em Processing 2.0} přichází se značně pozměněným renderovacím enginem, varianty renderů {\em P2D} a {\em P3D} vzhledem ke zpětné kompatibilitě fungují, vnitřně je ovšem kompletně nahrazuje render {\em OPENGL}.}:
 
 \begin{itemize}
-\item[JAVA2D] Základní renderovací engine, který jsme používali doposud. Tento render podporuje dvoudimenzionální kresbu  a vyznačuje se dobrou kvalitou a precizností obrazu. Je obecně pomalejší než akcelerované rendery.
+\item[{\em JAVA2D}] Základní renderovací engine, který jsme používali doposud. Tento render podporuje dvoudimenzionální kresbu  a vyznačuje se dobrou kvalitou a precizností obrazu. Je obecně pomalejší než akcelerované rendery.
 
-\item[P2D]  (Processing 2D) -- Akcelerovaný 2D render pro dvoudimenzionální kresbu, velmi výkonný pro operaci s jednotlivými pixely, postrádá ovšem přesnost JAVA2D. 
+\item[{\em P2D}]  ({\em Processing 2D}) -- Akcelerovaný 2D render pro dvoudimenzionální kresbu, velmi výkonný pro operaci s jednotlivými pixely, postrádá ovšem přesnost {\em JAVA2D}. 
 
-\item[P3D](Processing 3D) -- Akcelerovaný 3D render, používaný zejména pro webové aplikace. Přesnost je opět menší než u standardního renderu, dominuje rychlost.
+\item[{\em P3D}]({\em Processing 3D}) -- Akcelerovaný 3D render, používaný zejména pro webové aplikace. Přesnost je opět menší než u standardního renderu, dominuje rychlost.
 
-\item[OPENGL] Rychlý 3D render využívající systém {\em OpenGL} pro grafické karty. {\em OpenGL} se hodí k vykreslování velkého množství objektů v relativně dobré kvalitě. Kvalita a hlavně rychlost velmi závisí na hardwaru. Vyžaduje \vyraz{import} knihovny \odkaz{Knihovny}.
+\item[{\em OPENGL}] Rychlý 3D render využívající systém {\em OpenGL} pro grafické karty. {\em OpenGL} se hodí k vykreslování velkého množství objektů v relativně dobré kvalitě. Kvalita a hlavně rychlost velmi závisí na hardwaru.\footnote{Ve verzi 1.0 render vyžaduje \vyraz{import} knihovny \odkaz{Knihovny}.}
 \end{itemize}
 
 Použití jednotlivých vykreslovacích prostředí lze provést ve funkci \vyraz{setup()} pomocí příkazu \vyraz{size()}:
@@ -2750,11 +2765,11 @@ Chceme-li se orientovat v prostoru tak, jak jsme byli zvyklí doposud, poslední
 \includegraphics[width = 0.7\textwidth]{imgs/3dbox.png}
 \end{center}
 
-Kamera byla v předchozím příkladu nastavena ve funkci \vyraz{setup()}. Stejně tak lze nastavení obnovovat a měnit pro každé okénko. Stejně, jako jsme již animovali pohybující se objekt \odkaz{Animace}, můžeme animovat i kameru proměnou jednotlivých parametrů.
+Kamera byla v předchozím příkladu nastavena ve funkci \vyraz{setup()}. Stejně tak lze nastavení obnovovat a měnit pro každé okénko. Shodně, jako jsme již animovali pohybující se objekt \odkaz{Animace}, můžeme animovat i kameru proměnou jednotlivých parametrů.
 
 \pododdil{3D objekty}
 
-V kontextu 3D zobrazení jsme zatím hovořili o bodu, lince a v předchozím příkladu jsme si zobrazili krychli příkazem \vyraz{box()}. Stejným příkazem \vyraz{box()} lze zkonstruovat i kvádr. Ten lze zkonstruovat pomocí tří parametrů pro rozměry ve třech osách $X,Y,Z$.
+V kontextu 3D zobrazení jsme zatím hovořili o bodu, lince a v předchozím příkladu jsme si zobrazili krychli příkazem \vyraz{box()}. Stejným příkazem \vyraz{box()} lze zkonstruovat i kvádr. Ten lze vytvořit pomocí tří parametrů pro rozměry ve třech osách $X,Y,Z$.
 
 \bublina{Zkuste proměňovat hodnoty proměnné camera(), pozorujte jak se objekt proměňuje, ujistěte se, že rozumíte všem hodnotám zadávaným do funkce camera().}
 
@@ -2792,16 +2807,16 @@ void draw() {
 \end{center}
 
 
-Na veškeré objekty se vztahuje definice výplně a kontury \\ \odkaz{Výplň a obrys}.
+Na veškeré objekty se vztahuje definice výplně a~kontury \odkaz{Výplň a obrys}.
 
-Tím výčet trojdimenzionálních objektů pomalu končí. Nic nám nebrání vytvářet kompozice pomocí bodů, krychlí a čar v prostoru. Složitější tvary lze stejně jako u dvoudimenzionálního zobrazení zkonstruovat pomocí vlastní definice tvaru, za použití takzvaných {\em vertexů} -- sadou příkazů \vyraz{vertex()} uzavřených do bloku \vyraz{beginShape()} a \vyraz{endShape()}.
+Tím výčet trojdimenzionálních objektů pomalu končí. Nic nám nebrání vytvářet kompozice pomocí bodů, krychlí a čar v prostoru. Složitější tvary lze stejně jako u dvoudimenzionálního zobrazení zkonstruovat pomocí vlast\-ní definice tvaru, za použití takzvaných {\em vertexů} -- sadou příkazů \vyraz{vertex()} uzavřených do bloku \vyraz{beginShape()} a \vyraz{endShape()}.
 
 
-Zde si musíme uvědomit, že konstrukce objektu po nás bude vyžadovat veliké množství informací. Pro přirovnání si vezměme konstrukci koule, \\v případě vaší vlastní konstrukce byste museli každý z bodů definovat buď ručně, nebo lépe matematicky.
+Zde si musíme uvědomit, že konstrukce objektu po nás bude vyžadovat veliké množství informací. Pro přirovnání si vezměme konstrukci koule, v~případě vaší vlastní konstrukce byste museli každý z bodů definovat buď ručně, nebo lépe matematicky.
 
 Metod, jak konstruovat 3D objekt, je mnoho a rozhodně by toto téma vystačilo na celého průvodce. Nyní nám postačí vědět, že je možné konstruovat i složitější tvary.
 
-Další možností k tvorbě modelů je využít jiných programů (jako například otevřený software {\em Blender}) a následně pomocí rozšíření importovat externí modely přímo do {\em Processingu}\footnote{K tomu lze použít externí knihovnu {\em ObjLoader} v {\em Processingu 1} anebo vestavěnou proměnnou {\em PShape} v {\em Processingu 2}} \odkaz{Knihovny}.
+Další možností k tvorbě modelů je využít jiných programů (jako například otevřený software {\em Blender}) a následně pomocí rozšíření importovat externí modely přímo do {\em Processingu}\footnote{K tomu lze použít externí knihovnu {\em ObjLoader} v {\em Processingu 1.x} anebo vestavěnou proměnnou {\em PShape} v {\em Processingu 2.x}.} \odkaz{Knihovny}.
 
 
 
@@ -2845,7 +2860,7 @@ rect(20, 20, 40, 40);
 
 Veškeré tvary, které nyní vykreslíme, budou posunuty o náš posun, tedy nemusíme posouvat všemi jednotlivými tvary zvlášť. Další operací, kterou můžeme provést, je rotace. Rotace vždy probíhá kolem bodu $X=0$, $Y=0$. Pomocí transformace můžeme přesunout objekt na požadované místo. K dalším operacím se nám budou hodit dva příkazy: \vyraz{pushMatrix()}, funkce, která započíná transformace, a \vyraz{popMatrix()}, která navrací plátno na původní místo. Při vícenásobných transformacích se nám může běžně stát, že budeme tyto bloky transformací vrstvit jednu do druhé. Exemplární rotaci si můžeme ukázat u podobného příkladu se čtvercem.
 
-\bublina{Proměňte hodnoty ve funkci translate(), můžete použít například pozici myši mouseX \\a mouseY \\a pozorovat změny v kresbě.}
+\bublina{Proměňte hodnoty ve funkci translate(), můžete použít například pozici myši mouseX a~mouseY a~pozorovat změny v kresbě.}
 
 \begin{lstlisting}
 void setup() {
@@ -2867,7 +2882,7 @@ void draw() {
 }
 \end{lstlisting}
 
-Výsledkem bude čtverec otočený o $45°$. Příkaz \vyraz{rotate()} přijímá úhel v radiánech, chceme-li otáčet o $45°$, musíme nejprve provést konverzi mezi úhly a radiány. Můžeme to provést snadno pomocí příkazu \vyraz{radians()}. Opačnou konverzi můžeme provádět pomocí příkazu \vyraz{degrees()}.
+Výsledkem bude čtverec otočený o $45°$. Příkaz \vyraz{rotate()} přijímá úhel \lnb v~radiánech, chceme-li otáčet o $45°$, musíme nejprve provést konverzi mezi úhly a radiány. Můžeme to provést snadno pomocí příkazu \vyraz{radians()}. Opačnou konverzi lze provádět pomocí příkazu \vyraz{degrees()}.
 
 
 
@@ -2876,8 +2891,6 @@ Výsledkem bude čtverec otočený o $45°$. Příkaz \vyraz{rotate()} přijím�
 %\includegraphics[width = 0.7\textwidth]{imgs/rot.png}
 %\end{center}
 
-
-\newpage
 Naše rotace v diagramu bude vypadat asi takto:
 
 \begin{center}
@@ -2886,7 +2899,7 @@ Naše rotace v diagramu bude vypadat asi takto:
 
 První šipka znázorňuje posun, druhá šipka rotaci plátna. Osvojení si koncepce transformací je otázka zvyku, výhody toho, co se nyní jeví jako nepraktické, si uvědomíte možná později. Velikou výhodou transformací je například to, že si můžete definovat nový střed kresby, ke kterému se můžete vztahovat v relativních vzdálenostech.
 
-Bez transformací se téměř vůbec neobejdete při kreslení ve třech rozměrech. Stejně jako u jiných příkazů i příkazy pro transformace zůstávají stejné. K funkci \vyraz{translate()} přibude třetí rozměr a funkce \vyraz{rotate()} se obohatí o rotace ve třech osách  \vyraz{rotateX()}, \vyraz{rotateY()}, \vyraz{rotateZ()}.
+Bez transformací se téměř vůbec neobejdete při kreslení ve třech rozměrech. Podobně jako u jiných příkazů i příkazy pro transformace zůstávají stejné. K funkci \vyraz{translate()} přibude třetí rozměr a funkce \vyraz{rotate()} se obohatí o rotace ve třech osách  \vyraz{rotateX()}, \vyraz{rotateY()}, \vyraz{rotateZ()}.
 
 
 \pododdil{Použití transformací}
@@ -2935,17 +2948,17 @@ void segment(float x, float y, float a) {
 
 V úvodu se nám objevují dvě pole, která představují soupis souřadnic. Další proměnná je definice délky jednoho segmentu. Ve funkci \vyraz{setup()} si můžeme povšimnout nového výrazu \vyraz{smooth()}.
 
-Funkce \vyraz{smooth()} zajišťuje vyhlazení renderování, její protějšek je \\ \vyraz{noSmooth()}. Zajišťuje jemnější obrazový výstup na úkor rychlosti.
+Funkce \vyraz{smooth()} zajišťuje vyhlazení renderování, její protějšek je \lnb \vyraz{noSmooth()}. Vykonává jemnější obrazový výstup na úkor rychlosti.
 
-Další funkcí, kterou jsme doposud neuvedli, je \vyraz{strokeWeight()}, ten definuje tloušťku čar a potažmo všech objektů. Šířka čáry je nastavena \\na $1.0$. Funkce pracuje stejně jako výraz \vyraz{stroke()}, nastavuje tloušťku čáry pro všechny objekty níže.
+Další funkcí, kterou jsme doposud neuvedli, je \vyraz{strokeWeight()}, ten definuje tloušťku čar a potažmo všech objektů. Šířka čáry je nastavena na~$1.0$. Funkce pracuje stejně jako výraz \vyraz{stroke()}, nastavuje tloušťku čáry pro \lnb všechny objekty níže.
 
-Nakonec tu máme dvě definované funkce. První funkce {\em dragSegment()} přijímá hodnotu i ze smyčky a provádí trigonometrické matematické operace. Funkce začíná načtením minulé hodnoty souřadnic, kterou porovná \\s hodnotami současnými a uloží výsledek. Zajímavá funkce je funkce {\em Processingu} \vyraz{atan2()}. Ta zjišťuje úhel v radiánech podle dvou hodnot v pořadí $Y$ a $X$. Zde jako vstupní hodnoty pro výpočet úhlu zadáváme rozdíl mezi současnými souřadnicemi segmentu pozicí minulého segmentu.
+Nakonec tu máme dvě definované funkce. První funkce {\em dragSegment()} přijímá hodnotu i ze smyčky a provádí trigonometrické matematické operace. Funkce začíná načtením minulé hodnoty souřadnic, kterou porovná \\s hodnotami současnými a uloží výsledek. Zajímavá je funkce \vyraz{atan2()}. Ta~zjišťuje úhel v radiánech podle dvou hodnot v pořadí $Y$ a $X$. Zde jako vstupní hodnoty pro výpočet úhlu zadáváme rozdíl mezi současnými souřadnicemi segmentu pozicí minulého segmentu.
 
-Podle zjištěného úhlu se dále modifikuje současná pozice za pomoci zpětného převedení na souřadnice pomocí \vyraz{cos()} a \vyraz{sin()}. Trigonometrii zde příliš rozvádět nebudu. Sinusovou křivku lze zkonstruovat lineárním přírůstkem ve funkci \vyraz{sin()}. Další goniometrické funkce jsou v {\em Processingu} \vyraz{asin()} a \vyraz{acos()}, šikovné pro práci s funkcemi jsou předdefinované hodnoty zlomku čísla $\pi$, \vyraz{PI}, \vyraz{HALFPI}, \vyraz{QUARTERPI}.
+Podle zjištěného úhlu se dále modifikuje současná pozice za pomoci zpětného převedení na souřadnice přes \vyraz{cos()} a \vyraz{sin()}. Trigonometrii zde příliš rozvádět nebudu. Sinusovou křivku lze zkonstruovat lineárním přírůstkem ve funkci \vyraz{sin()}. Další goniometrické funkce jsou v {\em Processingu} \vyraz{asin()} a \vyraz{acos()}, šikovné pro práci s funkcemi jsou předdefinované hodnoty zlomku čísla $\pi$, \vyraz{PI}, \vyraz{HALFPI}, \vyraz{QUARTERPI}.
 
 A konečně přicházejí na řadu naše transformace. Ve funkci {\em segment} dochází ke kresbě jednotlivých segmentů hada. Funkce přijímá tři argumenty, dva pro pozici $X$, $Y$ a jeden pro úhel $\alpha$. Sled transformací pomocí posunu a rotace již známe. 
 
-\bublina{Transforma-ce mohou být náročné na prostorovou představivost, nezoufejte při prvních nezdarech, po nějaké době \\a cviku \\s dvěma rozměry se můžete pokusit o transformace ve třetím rozměru.}
+\bublina{Transforma\-ce mohou být náročné na prostorovou představivost, nezoufejte při prvních nezdarech, po nějaké době a~cviku s~dvěma rozměry se můžete pokusit o transformace ve třetím rozměru.}
  
 
 
@@ -2968,7 +2981,7 @@ Ukažme si nyní, jakým způsobem můžeme uložit a načíst vnější data do
 
 Kresba do okna programu je jen jeden způsob výstupu programu. V určitém momentu budeme potřebovat zaznamenat obraz nebo jiná data pro další práci nebo archivaci. {\em Processing} umí ukládat data do rozmanitých formátů, při práci s obrazem se jedná o základní druhy bitmap a vektorového výstupu ve standardizovaném formátu {\em PDF}.
 
-Při ukládání holých dat můžeme například využít prosté textové soubory, které se hodí při dalším zpracování pomocí {\em Processingu}. Velmi častý formát takového zápisu je takzvaný \slovnik{CSV}, což je v podstatě textový soubor obsahující data oddělená čárkou. Jeho velikost závisí na objemu dat. \\V případě strukturovaných dat je možné použít k uložení kupříkladu formát {\em XML}.
+Při ukládání holých dat můžeme například využít prosté textové soubory, které se hodí při dalším zpracování pomocí {\em Processingu}. Velmi častý formát takového zápisu je takzvaný \slovnik{CSV}, což je v podstatě textový soubor obsahující data oddělená čárkou. Jeho velikost závisí na objemu dat. V~případě hieraticky strukturovaných dat je možné použít k uložení kupříkladu formát {\em XML}.
 
 
 \pododdil{Ukládání obrazových dat}
@@ -2983,16 +2996,16 @@ Doposud jsme pracovali s obrazem, který je dočasný. Po zavření okna {\em Pr
 \begin{itemize}
 \item[TIFF]
 nekomprimovaný obraz s příponou {\em *.tif, *.tiff}
-\item[TARGA]
-ztrátově komprimovaný obraz s příponou {\em *.tga}
 \item[JPEG]
 ztrátově komprimovaný obraz s příponou {\em *.jpg, *.jpeg}
+\item[TARGA]
+bezztrátově komprimovaný obraz (RLE) s příponou {\em *.tga}
 \item[PNG]
-bezztrátově komprimovaný obraz s příponou {\em *.png}
+bezztrátově komprimovaný obraz (DEFLATE) s příponou {\em *.png}
 
 \end{itemize}
 
-S některými formáty jste se již mohli setkat v minulosti. Jedná se \\o standardní a rozšířené formáty pro uchovávání obrazových dat.
+S některými formáty jste se již mohli setkat v minulosti. Jedná se \lnb o~standardní a rozšířené formáty pro uchovávání obrazových dat.
 
 Uložení obrázku ze současného plátna se provádí příkazem \vyraz{save()}. Příkaz potřebuje znát cestu a koncovku souboru. Nenapíšeme-li plnou cestu, {\em Processing} data uloží přímo do adresáře naší sketche.
 
@@ -3011,6 +3024,7 @@ void draw(){
 
 }
 
+
 void mousePressed(){
 	save("obrazek.png");
 }
@@ -3018,12 +3032,12 @@ void mousePressed(){
 \end{lstlisting}
 
 
-Příkaz \vyraz{save()} provede uložení obrazových dat okamžitě. Kdybychom vložili příkaz do kreslicí smyčky, {\em Processing} by se pokusil ukládat obrázek šedesátkrát za vteřinu, což by se mu z důvodu relativní náročnosti operace zřejmě nepodařilo a byli bychom svědky zpomalení rychlosti ve vykreslování.
+Příkaz \vyraz{save()} provede uložení obrazových dat okamžitě. Kdybychom vložili příkaz do kreslicí smyčky, {\em Processing} by se pokusil ukládat obrá\-zek šedesátkrát za vteřinu, což by se mu z důvodu relativní náročnosti operace zřejmě nepodařilo a byli bychom svědky zpomalení rychlosti ve vykreslování.
 
 V příkladu tedy budeme ukládat obrázek jen po kliknutí myší.
 
 
-Nyní si představme, že z nějakého důvodu potřebujeme zachytit plnou sekvenci po sobě jdoucích obrázků. Problém příkazu \vyraz{save()} je ten, že \\v případě pevně zadané cesty bude stále přepisovat obrazovými daty tentýž soubor. Abychom uložili vícero obrázků, potřebujeme proměňovat cestu, kam {\em Processing} obrázky ukládá. Můžeme k tomu využít počitadlo nebo zvláštní příkaz  {\em Processingu} \vyraz{saveFrame()}:
+Nyní si představme, že z nějakého důvodu potřebujeme zachytit plnou sekvenci po sobě jdoucích obrázků. Problém příkazu \vyraz{save()} je ten, že v~případě pevně zadané cesty bude stále přepisovat obrazovými daty tentýž soubor. Abychom uložili vícero obrázků, potřebujeme proměňovat cestu, kam {\em Processing} obrázky ukládá. Můžeme k tomu využít počitadlo nebo zvláštní příkaz  {\em Processingu} \vyraz{saveFrame()}:
 
 
 
@@ -3067,7 +3081,7 @@ Ukládání informací do obrazu je jedna z možností. Někdy se nám může ho
 
 Konkrétní údaje o pohybu kurzoru známe. Můžeme je tedy zaznamenat například do nám již známého pole souřadnic. Pro tento účel si vytvoříme program, který bude umět zaznamenávat údaje o pohybu kurzoru do textového souboru. Předtím, než se pustíme do práce, je dobré si uvědomit, že text neobsahuje číselné informace. Vzpomínáte na kapitolu o základních datatypech \odkaz{Základní datatypy}? S textem, tedy ani textovým souborem, nelze manipulovat jako s čísly.
 
-Při ukládání dat do textové podoby tedy musíme mít již na mysli, jak je posléze budeme číst, a proto zvolíme vhodný formát pro ukládání. Vhodným formátem pro uchovávání informací v textové podobě je \slovnik{CSV}, Comma Separated Values. Jak z anglického názvu vyplývá, jedná se o hodnoty, které jsou odděleny čárkou. Pro naše potřeby budou stačit hodnoty dvě, pro osu X a osu Y našeho kurzoru.
+Při ukládání dat do textové podoby tudíž musíme mít již na mysli, jak je posléze budeme číst, a proto zvolíme vhodný formát pro ukládání. Vhodným formátem pro uchovávání informací v textové podobě je \slovnik{CSV}, Comma Separated Values. Jak z anglického názvu vyplývá, jedná se o hodnoty, které jsou odděleny čárkou. Pro naše potřeby budou stačit hodnoty dvě, pro osu X a osu Y našeho kurzoru.
 
 Program si můžeme navrhnout následovně:
 
@@ -3112,7 +3126,7 @@ Program je hotový. Rozeberme si doposud nevídané věci. Pole by nám měla b�
  
 Podmínka navíc, dříve než ukončí celý program, spustí námi definovanou funkci pro uložení nashromážděných dat.
 
-Tato funkce prostřednictvím smyčky převede číselné informace do textové podoby. Proměnné {\em osaX} a {\em osaY} funkce spojí dohromady pomocí znaménka plus spolu s čárkou a mezerou. Dále již následuje funkce {\em Processingu} \\ \vyraz{saveStrings()}, která zajištuje zápis pole textu do souboru. Koncovku jsem zde zvolil {\em *.csv}, ale je možné použít jakoukoli jinou, například {\em *.txt}.
+Tato funkce prostřednictvím smyčky převede číselné informace do textové podoby. Proměnné {\em osaX} a {\em osaY} funkce spojí dohromady pomocí znaménka plus spolu s čárkou a mezerou. Dále již následuje funkce {\em Processingu} \vyraz{saveStrings()}, která zajišťuje zápis pole textu do souboru. Koncovku jsem zde zvolil {\em *.csv}, ale je možné použít jakoukoli jinou, například {\em *.txt}.
 
  Podívejme se nyní do adresáře projektu (pomocí klávesy \klavesy{CTRL + k}). Soubor s názvem {\em soubor.csv} by měl být plný zaznamenaných hodnot.
  
@@ -3125,7 +3139,7 @@ Tato funkce prostřednictvím smyčky převede číselné informace do textové 
 
 \pododdil{Tisk do PDF, ukládání vektorů}
 
-Ukládat obrazové informace lze v rozmanitých formátech. Představme si, že jsme v {\em Processingu} navrhli grafiku, kterou bychom rádi tiskli v dobré kvalitě. Standardními postupy, tj. uložit obrazová data jako rastrový \\obrázek, docílíme kvality výsledného souboru jen v rozměrech zadaných v příkazu \vyraz{size()}. Sketch je primárně připravena pro zobrazení na obrazovce a rozměry výsledného obrazu tedy většinou nepřesahuje rozměry naší obrazovky.
+Ukládat obrazové informace lze v rozmanitých formátech. Představme si, že jsme v {\em Processingu} navrhli grafiku, kterou bychom rádi tiskli v dobré kvalitě. Standardními postupy, tj. uložit obrazová data jako rastrový \nlb obrázek, docílíme kvality výsledného souboru jen v~rozměrech zadaných v~příkazu \vyraz{size()}. Sketch je primárně připravena pro zobrazení na obraz\-ovce, a rozměry výsledného obrazu tedy většinou nepřesahuje rozměry naší obraz\-ovky.
 
 Nic nám sice nebrání nastavit velikost sketche na několikanásobně větší plochu, než jakou naše obrazovka fyzicky disponuje, důmyslnějším řešením ovšem je uložit obrazová data jako vektorová ve formátu {\em PDF}. {\em PDF} je standardní formát pro práci s grafikou a předtiskovou přípravou a kromě rastrových obrazových dat může obsahovat i data vektorová.
 
@@ -3157,13 +3171,15 @@ void draw() {
 
 \end{lstlisting}
 
-V úvodu se objevil neznámý příkaz. Takzvaný \vyraz{import} značí načtení některých zvláštních funkcí rozšiřující funkce {\em Processingu}. Takové rozšíření se provádí pomocí takzvaných knihoven, o kterých se dočtete níže \odkaz{Knihovny}. 
+V úvodu se objevil neznámý příkaz. Takzvaný \vyraz{import} značí načtení některých zvláštních funkcí rozšiřující funkce {\em Processingu}. Takové rozšíření se provádí pomocí takzvaných knihoven, o kterých se dočtete dále \odkaz{Knihovny}. 
 
-Pro náš tisk je nyní důležité, že za příkazem \vyraz{import} se nachází právě cesta ke knihovně s PDF manipulacemi. Tuto cestu si nemusíme pamatovat, stejného výsledku docílíme i pomocí rozhraní {\em Processingu}. {\em Sketch $\rightarrow$ Import Library $\rightarrow$ PDF Export}.
+Pro náš tisk je nyní důležité, že za příkazem \vyraz{import} se nachází právě cesta ke knihovně s {\em PDF} manipulacemi. Tuto cestu si nemusíme pamatovat, stejného výsledku docílíme i pomocí rozhraní {\em Processingu}. V~liště {\em Sketch $\rightarrow$ Import Library $\rightarrow$ PDF Export}.
 
-V kódu je dále důležitá nová definice funkce \vyraz{size()}. Víme už, že tato funkce definuje rozměry sketche, v našem případě bude ovšem definovat rozměry výsledného {\em PDF} souboru. Za rozměry je dále nutné definovati vykreslovací prostředí {\em PDF} a jméno souboru, do kterého chceme zapisovat. Cesta k souboru je relativní, to znamená, že výsledný soubor se zobrazí přímo v adresáři naší sketche.
+V kódu je dále důležitá nová definice funkce \vyraz{size()}. Víme už, že tato funkce definuje rozměry sketche, v našem případě bude ovšem definovat rozměry výsledného {\em PDF} souboru. Za rozměry je dále nutné definovat vykreslovací prostředí {\em PDF} a jméno souboru, do kterého chceme zapisovat. Cesta k souboru je relativní, to znamená, že výsledný soubor se zobrazí přímo v adresáři naší sketche.
 
- Předchozí příklad vykreslil první okénko programu přímo do souboru, aniž by cokoli zobrazil a ukončil sám sebe. V dalším příkladu si ukážeme, jak vykreslovat v průběhu programu jinou fázi animace. K podobné manipulaci potřebujeme spustit a ukončit vykreslování do souboru na požádání.
+ Předchozí příklad vykreslil první okénko programu přímo do souboru, aniž by cokoli zobrazil a ukončil sám sebe. V dalším příkladu si ukážeme, jak vykreslovat v průběhu programu jinou fázi animace. K podobné manipulaci potřebujeme spustit a ukončit vykreslování do souboru na vyžádání.
+ 
+\pagebreak
  
  \begin{lstlisting}
 import processing.pdf.*;
@@ -3204,6 +3220,8 @@ void mousePressed() {
  
  Podobným způsobem, jakým lze zapsat vektorový obraz, je i metoda postupné kresby na jedno plátno, tedy do jednoho souboru.
  
+\pagebreak
+ 
 \begin{lstlisting}
 import processing.pdf.*;
 
@@ -3230,15 +3248,15 @@ void keyPressed() {
 
 Takovým postupem lze kreslit opakovaně do jednoho souboru. Kresbu a celý program ukončíme pomocí funkce \vyraz{keyPressed()}, tedy klávesy \klavesy{Q}.
 
-\bublina{Můžete vytvářet neomezeně složité tvary, zkuste jiné barvy výplně a obrysů, otevřete vždy výsledný soubor a ověřujete si výslednou podobu vektorové kresby. Zkuste kresbu načíst a upravit v jiném vektorovém editoru (například otevřený Inkscape).}
+\bublina{Můžete vytvářet neomezeně složité tvary, zkuste jiné barvy výplně a~obrysů, otevřete vždy výsledný soubor a~ověřujete si výslednou podobu vektorové kresby. Zkuste kresbu načíst a~upravit v jiném vektorovém editoru (například otevřený Inkscape).}
 
 \oddil{Načítání informací}
 
-Za vnější informace lze v {\em Processingu} považovat vše, co není zdrojovým kódem {\em Processingu}. Takové informace můžeme souhrnně nazvat data. {\em Processing} umí nakládat s širokou škálou dat. Mezi ty nejčastěji používané bude patřit obrazová informace, ať už v podobě rastrového nebo vektorového obrazu. Mezi další vektorová data patří 3D modely nebo například záznamy z databází ve formátu {\em XML}, {\em CSV}, naprosto holé textové soubo-\\ry atp. 
+Za vnější informace lze v {\em Processingu} považovat vše, co není zdrojovým kódem {\em Processingu}. Takové informace můžeme souhrnně nazvat data. {\em Processing} umí nakládat s širokou škálou dat. Mezi ty nejčastěji používané bude patřit obrazová informace -- ať už v podobě rastrového, nebo vektorového obrazu. Mezi další vektorová data patří 3D modely nebo například záznamy z databází ve formátu {\em XML}, {\em CSV}, naprosto holé textové \lnb soubory atp. 
 
 \pododdil{Načítání obrázků}
 
-{\em Processing} ukládá obrázky do vnitřní paměti. Využívá k tomu speciální datatyp nazvaný \vyraz{PImage}. Pomocí tohoto datatypu si můžeme do našeho programu načíst externí obrazová data, se kterými můžeme dále pracovat. Načíst obrázek můžeme pomocí příkazu \vyraz{loadImage()}. Příkaz bude očekávat jediný parametr, cestu k obrázku.
+{\em Processing} ukládá obrázky do vnitřní paměti. Využívá k tomu speciální datatyp nazvaný \vyraz{PImage}. Pomocí tohoto datatypu si můžeme do našeho programu načíst externí obrazová data, se kterými můžeme dále pracovat. Načíst obrázek můžeme prostřednictvím příkazu \vyraz{loadImage()}. Příkaz bude očekávat jediný parametr, cestu k obrázku.
 
 Zde je namístě připomenout \odkaz{Sketch}, že budeme-li potřebovat externí data, je dobré si je umístit přímo do adresáře naší sketche do složky s názvem {\em DATA}. Veškeré cesty, které budeme v kódu psát, budou k našim souborům relativní, to znamená, že přemístěním externích dat do našeho adresáře můžeme místo:
 
@@ -3276,19 +3294,19 @@ Zde stojí za povšimnutí funkce \vyraz{image()} -- touto funkcí můžeme zobr
   image(obrazek, -obrazek.width/2, -obrazek.height/2);  
 \end{lstlisting}
 
-anebo použít funkci \vyraz{imageMode()}. Funkce dokáže proměnit chování příkazu \vyraz{image()}, možné hodnoty jsou {\em CORNER}, {\em CORNERS} a {\em CENTER}. {\em CORNER} je standardní chování příkazu \vyraz{image()}, místo odčítání poloviny šířky a výšky obrázku můžeme použít právě mod {\em CENTER}. Mod {\em CORNERS} \\se nám může hodit, potřebujeme-li definovat dva rohy místo šířky a výšky vykreslovaného obrázku.
+anebo použít funkci \vyraz{imageMode()}. Funkce dokáže proměnit chování příkazu \vyraz{image()}, možné hodnoty jsou {\em CORNER}, {\em CORNERS} a {\em CENTER}. \lnb {\em CORNER} je standardní chování příkazu \vyraz{image()}, místo odčítání poloviny šířky a výšky obrázku můžeme použít právě mod {\em CENTER}. Modus {\em CORNERS} se nám může hodit, potřebujeme-li definovat dva rohy místo šířky a výšky vykreslovaného obrázku.
 
 \bublina{Dejte si pozor na velikost obrázků, pracujte vždy raději s menšími.}
 
 \pododdil{Načítání textových souborů}
 
-Textové soubory jsou jednou z nejjednodušších cest jak ukládat textové informace. To, že potřebujeme textový soubor, poznáme, jakmile budeme chtít pracovat s větším objemem textu, který se bude hromadit u definic proměnných.
+Textové soubory jsou jednou z nejjednodušších cest, jak ukládat textové informace. To, že potřebujeme textový soubor, poznáme, jakmile budeme chtít pracovat s větším objemem textu, který se bude hromadit u definic proměnných.
 
-Zkusme se tedy vrátit k předchozímu příkladu pro ukládání textových souborů \odkaz{Ukládání holých dat}. Zde jsem názorně ukázal, jak si uložit data generovaná {\em Processingem} pro další použití. Zkusme je nyní načíst. Pro připomínku, data vypadají následovně:
+Pokusme se nyní vrátit k předchozímu příkladu pro ukládání textových souborů \odkaz{Ukládání holých dat}. Zde jsem názorně ukázal, jak si uložit data generovaná {\em Processingem} pro další použití. Zkusme je tedy načíst. Pro připomínku, data vypadají následovně:
 
 Na každém řádku jsou dvě hodnoty, které představují určitý záznam. Víme, že to je záznam pohybujícího se kurzoru, ale data mohou být opravdu cokoli. Co je pro nás důležité, je to, že jsme si uložili data v jednom tvaru, tzv. \vyraz{CSV}. Vždy se jedná o dvě hodnoty s desetinnou čárkou na jednom řádku oddělené čárkou a mezerou.
 
-K samotnému načtení textových informací do paměti programu tak, \\abychom s textem mohli dále pracovat, použijeme stejně jako při ukládání pole řetězcových hodnot. To, co zní odpudivě, je ve skutečnosti docela prosté:
+K samotnému načtení textových informací do paměti programu tak, \lnb abychom s textem mohli dále pracovat, použijeme stejně jako při ukládání pole řetězcových hodnot. To, co zní odpudivě, je ve skutečnosti docela prosté:
 
 \begin{lstlisting}
 String celyText[] = loadStrings("soubor.csv");
@@ -3296,7 +3314,7 @@ String celyText[] = loadStrings("soubor.csv");
 
 Příkazem \vyraz{loadStrings()} načteme veškeré textové informace ze souboru do obsahu naší proměnné. Proměnná musí být pole, pole typu \vyraz{String}.
 
-Co příkaz \vyraz{loadStrings()} přesně udělá. Naplní celé pole hodnotami, každý jeden řádek přiřadí jedné přihrádce. Pro prosté ověření si nyní můžeme vytisknout obsah naší proměnné do konzole.
+Co příkaz \vyraz{loadStrings()} přesně udělá? Naplní celé pole hodnotami, každý jeden řádek přiřadí jedné přihrádce. Pro prosté ověření si nyní můžeme \lnb vytisknout obsah naší proměnné do konzole.
 
 \begin{lstlisting}
 println(celyText);
@@ -3326,14 +3344,13 @@ Navážeme-li na příklad z minulé kapitoly, naše proměnná má v sobě stá
 
 Kdyby se jednalo například o souvislý text -- báseň, patrně bychom ji chtěli zachovat v textové podobě. Jelikož jsou to ale čísla -- hodnoty, budou nám více platné pod datovým typem, se kterým budeme moci zacházet jako s číslem. Potřebujeme je tedy převést do čísel.
 
-Převod z textových údajů do hodnot jiných typů se nazývá obecně {\em parsing}. Je to velmi častá procedura ve styku s daty ze třetí strany nebo \\i s daty, která jsme sami uložili.
+Převod z textových údajů do hodnot jiných typů se nazývá obecně {\em parsing}. Je to velmi častá procedura ve styku s daty třetí strany nebo i~s~daty, která jsme sami uložili.
 
 
 \pododdil{Parsing, získávání hodnot z externích dat}
 
 K převodu textu do užitelných hodnot můžeme využít následující postup. Budeme potřebovat zkonstruovat smyčku \odkaz{Smyčka}, která projde veškerý obsah načteného textového souboru a řádek po řádku naplní pole číselných hodnot odpovídajících hodnotám textovým. Celou tuto proceduru si můžeme uzavřít do jedné funkce.
 
-\newpage
 Zopakujeme si načtení dat do pole. Program bude vypadat následovně:
 
 
@@ -3377,23 +3394,22 @@ void nactiTextDoHodnot(String nazevSouboru){
 //[6] 0.0
 //[7] 39.0
 //[8] 46.0
-//[9] 50.0
 //... atd.
 \end{lstlisting}
 
-Projděme si, co se v programu stalo. Celá procedura zde spočívá \\ve funkci nazvané {\em nactiTextDoHodnot()}. Jako argument do této funkce posíláme název souboru, který chceme načíst.
+Projděme si, co se v programu stalo. Celá procedura zde spočívá ve~funkci nazvané {\em nactiTextDoHodnot()}. Jako argument do této funkce posíláme název souboru, který chceme načíst.
 
-Jako první se spustí funkce, kterou již známe \vyraz{loadStrings()}, ta naplní naše textové pole textem. Nyní je zapotřebí nastavit velikost číselných polí, pro přehlednost jsem zde vytvořil dvě pro každou osu. Jsou nakzvané {\em hodnotyX} \\a {\em hodnotyY}. Jejich budoucí velikost známe, bude stejná jako textové pole. Přes příkaz {\em length} se můžeme dostat k délce jakéhokoli pole.
+Jako první se spustí funkce, kterou již známe, \vyraz{loadStrings()}, ta naplní naše textové pole textem. Nyní je zapotřebí nastavit velikost číselných polí, pro přehlednost jsem zde vytvořil dvě pro každou osu. Jsou nazvány {\em hodnotyX} a~{\em hodnotyY}. Jejich budoucí velikost můžeme zjistit, bude stejná jako velikost textového pole. Přes příkaz {\em length} se můžeme dostat k délce jakéhokoli pole.
 
-Nyní začneme s procházením textového pole, smyčka bude mít opět stejnou délku jako textové pole. Dočasná proměnná {\em radek} je zde spíše pro ilustraci, přiřazuje se k ní text pokaždé nového řádku.
+Nyní začneme s procházením textového pole, smyčka bude mít opět stejnou délku jako textové pole. Dočasná proměnná {\em radek} je zde spíše pro ilus\-traci, přiřazuje se k ní text pokaždé nového řádku.
 
 Speciální textovou funkcí \vyraz{splitTokens()} rozdělíme řádek podle rozdělujících znaků. Víme, že náš zápis v souboru odděluje jednotlivé hodnoty čárkou a mezerou. Funkce \vyraz{splitTokens()} očekává první argument, text, který rozdělujeme, a jako druhý -- výčet znaků, které jej rozdělují, výsledně vrací nové pole rozděleného textu těmito znaky.
 
-Poslední nevídaná funkce je \vyraz{parseFloat()}, ačkoli se nejedná přímo \\o funkci Processingu, ale přímo {\em Javy}, poslouží nám zde velmi dobře. Funkce \vyraz{parseFloat()} očekává text a převádí jej do čísla s desetinnou čárkou. Kdybychom měli čísla celá, mohli bychom použít také funkci \vyraz{parseInt()}, která dělá naprosto totéž s celými čísly.
+Poslední nevídaná funkce je \vyraz{parseFloat()}, ačkoli se nejedná přímo o~funk\-ci {\em Processingu}, ale přímo {\em Javy}, poslouží nám zde velmi dobře. Funkce \vyraz{parseFloat()} očekává text a převádí jej do čísla s desetinnou čárkou. Kdybychom měli čísla celá, mohli bychom použít také funkci \vyraz{parseInt()}, která dělá naprosto totéž s celými čísly.
 
 Po načtení všech hodnot se program vrací do funkce \vyraz{setup()}, odkud byl spuštěn. Zde si můžeme pro ověření vytisknout hodnoty z číselného pole {\em hodnotyX}.
 
-\bublina{Ujistěte se, že dobře rozumíte rozdílu mezi textovou informací a číselnou hodnotou v programu. Zkuste vytvořit jinou strukturu dat a poté ji sami přečíst pomocí funkce parseInt() nebo parseFloat().}
+\bublina{Ujistěte se, že dobře rozumíte rozdílu mezi textovou informací a číselnou hodnotou v~programu. Zkuste vytvořit jinou strukturu dat a poté ji sami přečíst pomocí funkce parseInt() nebo parseFloat().}
 
 
 \chapter{Vizualizace hodnot}
@@ -3420,7 +3436,8 @@ void draw(){
   
   for(int i = 1 ; i < hodnotyY.length ; i++){
   
-   line(hodnotyX[i], hodnotyY[i], hodnotyX[i-1], hodnotyY[i-1]); 
+   line(hodnotyX[i], hodnotyY[i],
+        hodnotyX[i-1], hodnotyY[i-1]); 
   
   }
 }
@@ -3460,7 +3477,7 @@ Za povšimnutí zde stojí konstrukce linky \vyraz{line()}, která vždy spojuje
 \pododdil{Vestavěné knihovny}
 \index{vestavěné knihovny}
 
-Ve {\em sketchbooku} se dále nacházejí\footnote{Od verze 1.0.} veškerá rozšíření pomocí takzvaných knihoven neboli libraries. Ty jsou umístěny v adresáři {\em sketchbooku} \\ve složce {\em libraries}. Knihovny jsou silným rozšířením celého jazyka a pokrývají mnoho možností nakládání s externími daty, zajišťují komunikaci se zařízeními, práci s videem, zvukem nebo s trojrozměrnými daty či vektorovým obrazem.
+Ve {\em sketchbooku} se dále nacházejí\footnote{Od verze 1.0.} veškerá rozšíření pomocí takzvaných knihoven neboli libraries. Ty jsou umístěny v adresáři {\em sketchbooku} ve~složce {\em libraries}. Knihovny jsou silným rozšířením celého jazyka a pokrývají \lnb mnoho možností nakládání s externími daty, zajišťují komunikaci se zařízeními, práci s videem, zvukem nebo s trojrozměrnými daty či vektorovým obrazem.
 
 
 Knihovny jsou v podstatě moduly, které se zaměřují většinou pouze na jednu problematiku. Některé moduly umí například komunikovat se zapojenou kamerou nebo videem, jiné dovedou přenášet informace přes síť anebo komunikovat se zařízeními napojenými přes sériový port. Knihovna je sada příkazů, jež rozšiřuje samotný jazyk o nové možnosti.
@@ -3468,7 +3485,7 @@ Knihovny jsou v podstatě moduly, které se zaměřují většinou pouze na jedn
 
 Knihovnami se také dá dobře ilustrovat, k čemu uživatelé {\em Processingu} převážně programovací prostředí využívají. To sice nemusí být v žádném případě směrodatné pro vaši práci, může to být ovšem velmi inspirativní. Knihovny vám pomohou získat jistý přehled o kontextu užívání {\em Processingu}.
 
-Knihovny se  nejobecněji dělí na dvě základní skupiny. Jednu tvoří \\interní knihovny {\em Processingu}, které přichází již nainstalované se softwarem, a knihovny vnější, vytvořené komunitou uživatelů. Veškeré nainstalované knihovny, které má Processing k dispozici, lze nalézt pod tlačítkem {\em Sketch $\rightarrow$ Import Library}.
+Knihovny se  nejobecněji dělí na dvě základní skupiny. Jednu tvoří inter\-ní knihovny {\em Processingu}, které přichází již nainstalované se softwarem, a knihovny vnější, vytvořené komunitou uživatelů. Veškeré nainstalované knihovny, které má Processing k dispozici, lze nalézt v liště pod tlačítkem {\em Sketch $\rightarrow$ Import Library}.
 
 
 Výčet komunitních knihoven je již poměrně obsáhlý, pro ilustraci zde budeme hovořit jen o knihovnách vestavěných. Vestavěných knihoven je nepoměrně méně, jejich výčet se proměňuje relativně pomalu a jejich dokumentace je kvalitně zpracovaná:
@@ -3481,7 +3498,7 @@ Výčet komunitních knihoven je již poměrně obsáhlý, pro ilustraci zde bud
 Zajišťuje základní síťovou + internetovou komunikaci. 
 
 \item[Serial]
-Podpora pro komunikaci se sériovými porty, externí zařízení ty-\\pu {{\em (RS-232)}.
+Podpora pro komunikaci se sériovými porty, externí zařízení \lnb typu {{\em (RS-232)}.
 
 \item[PDF Export]
 Knihovna pro export do {\em PDF}.
@@ -3490,10 +3507,10 @@ Knihovna pro export do {\em PDF}.
 Technologie pro podporu {\em Java} implementace akcelerované grafiky prostřednictvím {\em JOGL}.
 
 \item[Minim]
-Využívá {\em JavaSound API} ke snadné obsluze zvukového výstupu.
+Využívá {\em JavaSound API} k snadné obsluze zvukového výstupu.
 
 \item[DXF Export]
-Knihovna pro exportování vektorových dat ve formátu DXF (Autocad, 3D).
+Knihovna pro exportování vektorových dat ve formátu {\em DXF} (Blender, Autocad, 3D).
 
 \item[Arduino]
 Knihovna určená pro komunikaci s {\em Arduinem}.
@@ -3517,13 +3534,13 @@ Neříkají-li vám tyto zkratky nic, nevadí, jedná se většinou o datové st
 
 \pododdil{Komunitní knihovny}
 
-Instalace nových knihoven se zpravidla provádí umístěním adresáře s knihovnou do adresáře v našem {\em sketchbooku} nazvaném {\em libraries}. Pro kompletní výčet a popis všech komunitních knihoven zde není místo, je jich opravdu mnoho a další stále přibývají. Na současný stav se vždy můžete podívat na stránkách projektu {\em processing.org}.
+Instalace nových knihoven se zpravidla provádí umístěním adresáře s knihovnou do adresáře v našem {\em sketchbooku} nazvaném {\em libraries}. Pro kompletní výčet a popis všech komunitních knihoven zde není místo, je jich opravdu mnoho a další stále přibývají. Na aktuální stav se vždy můžete podívat na stránkách projektu {\em processing.org}.
 
 \pododdil{Práce s knihovnou}
 
-Jako poslední příklad si zde uvedeme práci s jednou externí knihovnou. \\S jednou z interních jsme již pracovali dříve \odkaz{Tisk do PDF, ukládání vektorů}.
+Jako poslední příklad si zde uvedeme práci s jednou externí knihovnou. S~jednou z interních jsme již pracovali dříve \odkaz{Tisk do PDF, ukládání vektorů}.
 
-Dobrým příkladem funkční a použitelné knihovny pro {\em Processing} je knihovna {\em ControlP5} od Andrease Schlegela. Tato knihovna nám dovoluje snadno vytvářet interaktivní prvky jako tlačítka a různé typy táhel (sliderů) a vstupních kolonek.
+Dobrým příkladem funkční a použitelné knihovny pro {\em Processing} je \lnb knihovna {\em ControlP5} od Andrease Schlegela. Tato knihovna nám dovoluje snadno vytvářet interaktivní prvky jako tlačítka a různé typy táhel (sliderů) i~vstupních kolonek.
 
 Knihovnu si nejprve musíme nainstalovat. Najdeme ji na webové adrese: {\em http://www.sojamo.de/libraries/controlP5}, nebo přímo na stránkách {\em processing.org}.
 
@@ -3533,7 +3550,7 @@ Knihovnu si nejprve musíme nainstalovat. Najdeme ji na webové adrese: {\em htt
 \includegraphics[width = 1\textwidth]{imgs/controlp5.png}
 \end{center}
 
-Soubor rozbalíme do adresáře {\em libraries} v našem sketchbooku, tj. adresář, kam ukládáme naše sketche. Vnitřní struktura knihovny vypadá následovně:
+Soubor rozbalíme do adresáře {\em libraries} v našem {\em sketchbooku}, tj. adresář, kam ukládáme naše sketche. Vnitřní struktura knihovny vypadá následovně:
 
 
 \begin{center}
@@ -3546,10 +3563,9 @@ Nejdůležitější složkou je v každé knihovně adresář {\em library}, zde
 
 Máme-li spuštěný {\em Processing}, je nutné jej nyní restartovat.
 
-Po spuštění je knihovna připravena k použití, přidat potřebné komponenty do kódu nyní můžeme buď ručně, nebo pohodlněji vybráním z nabídky: {\em Sketch $\rightarrow$ Import Library $\rightarrow$ controlP5}
+Po spuštění je knihovna připravena k použití, přidat potřebné komponenty do kódu nyní můžeme buď ručně, nebo pohodlněji vybráním z nabídky: {\em Sketch $\rightarrow$ Import Library $\rightarrow$ controlP5}.
 
-V kódu se nám zobrazí potřebný příkaz \vyraz{import} s náležitými komponenty z knihovny. Nyní si můžeme přečíst nápovědu nebo si projít jednotlivé příklady skrze nabídky: {\em File $\rightarrow$ Examples $\rightarrow$ Contributed Libraries $\rightarrow$ controlP5 $\rightarrow$ ControlP5controlEvent}
-
+V kódu se nám zobrazí potřebný příkaz \vyraz{import} s náležitými komponenty z knihovny. Nyní si můžeme přečíst nápovědu nebo si projít jednotlivé příklady skrze nabídky: {\em File $\rightarrow$ Examples $\rightarrow$ Contributed Libraries $\rightarrow$ controlP5 $\rightarrow$ ControlP5controlEvent}.
 Zobrazí se nám sketch:
 
  
@@ -3595,13 +3611,13 @@ void controlEvent(ControlEvent theEvent) {
 
 Veškeré příkazy by nám měly být vcelku povědomé, samozřejmě až na ty, které ovládají funkce knihovny {\em ControlP5}.
 
-Všimněme si okamžitě objektu {\em ControlP5}, to je ústřední objekt při komunikaci s knihovnou. Objekt je vlastně třída, kterou jsme již rozebírali dříve \odkaz{Třída a objekt}. Vytvořením instance objektu z knihovny příkazem \vyraz{new} provážeme funkce knihovny s naším programem. Slovo \vyraz{this} referuje k našemu programu a říká knihovně, s čím bude své funkce propojovat. V podstatě ukazuje na nadřazenou (tzv. super) třídu processingové aplikace.
+Všimněme si okamžitě objektu {\em ControlP5}, to je ústřední objekt při komunikaci s knihovnou. Objekt je vlastně třída, kterou jsme již rozebírali dříve \odkaz{Třída a objekt}. Vytvořením instance objektu z knihovny příkazem \vyraz{new} provážeme funkce knihovny s naším programem. Slovo \vyraz{this} referuje k našemu programu a říká knihovně, s čím bude své funkce propojovat. V podstatě ukazuje na nadřazenou (tzv. {\em super}) třídu samotné processingové aplikace (typu PApplet).
 
  Nyní již můžeme pomocí tečkové syntaxe vytvářet objekty z knihovny. V knihovně {\em ControlP5} je jich opravdu mnoho, zde si ukážeme pouze dva typy.  Příkazem {\em controlP5.addNumberbox} přidáváme objekt s hodnotou \\ v číselném formátu.
  
 Objekt požaduje několik parametrů pro vytvoření: vlastní jméno, jméno proměnné, kterou bude ovládat, na konci definice proměnné také můžeme vidět speciální funkci  {\em setId(1)}, která nám bude identifikovat aktivitu daného prvku.
 
-Tu můžeme detekovat pomocí nové funkce z knihovny nazvané {\em void controlEvent(ControlEvent theEvent)}. Ta zachytává veškeré dění s prvky \\a posílá identifikační hodnotu, kterou posléze můžeme přečíst a napsat podle ní podmínku.
+Tu můžeme detekovat pomocí nové funkce z knihovny nazvané {\em void controlEvent(ControlEvent theEvent)}. Ta zachytává veškeré dění s prvky a~posílá identifikační hodnotu, kterou posléze můžeme přečíst a napsat podle ní podmínku.
 
 O kresbu prvků do smyčky \vyraz{draw()} se knihovna již postará sama.
 
@@ -3612,7 +3628,7 @@ O kresbu prvků do smyčky \vyraz{draw()} se knihovna již postará sama.
 Výsledkem bude jednoduché {\em GUI}, grafické uživatelské rozhraní, pomocí kterého můžeme ovládat hodnoty v našem programu.
 
 
-\bublina{Vyzkoušejte další příklady \\z knihovny a zkuste \\i knihovny další. Všech rozšíření je nyní přes 100 kusů, možností aplikace a kombinací je neomezeně.}
+\bublina{Vyzkoušejte další příklady z~knihovny a zkuste i~knihovny další. Všech rozšíření je nyní přes 100 kusů, možností aplikace a kombinací je neomezeně.}
 
 
 \newpage
@@ -3622,9 +3638,9 @@ Toto je konec úvodu do {\em Processingu}. Tento skromný průvodce vám chtěl 
 
 Na závěr bych vám chtěl popřát hodně trpělivosti a odhodlání, obojího budete potřebovat nemálo. Výsledek své snahy ovšem můžete několikanásobně zúročit v další práci.
 
-Hlavně se nebojte experimentovat sami, pocity frustrace nad nefungujícím kódem určitě vyváží uspokojení z vlastnoručně vytvořeného fungujícího programu. Odložte veškeré průvodce a zkoušejte stále nové postupy, i po několika letech zjistíte, že stojíte stále na začátku a můžete se učit novému. Čtěte kódy ostatních lidí a vyměňujte si programy, jejich zdroje \\-- vědomosti dále sdílejte s druhými lidmi.
+Hlavně se nebojte experimentovat, pocity frustrace nad nefungujícím kódem určitě vyváží uspokojení z vlastnoručně vytvořeného fungujícího programu. Odložte veškeré průvodce a zkoušejte stále nové postupy, i po několika letech zjistíte, že stojíte stále na začátku a můžete se učit novému. Čtěte kódy ostatních lidí a vyměňujte si programy, jejich zdroje \lnb -- vědomosti dále sdílejte s druhými lidmi.
 
-Učte se vždy novému, nic není krásnějšího než na věci přicházet. \\A když věcem rozumíte, nevlastněte je, předávejte vědomosti trpělivě dále.
+Učte se vždy novému, nic není krásnějšího než na věci přicházet. A~když věcem rozumíte, nevlastněte je, předávejte vědomosti trpělivě dále.
 
 \vfill
 
