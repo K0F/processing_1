@@ -156,6 +156,8 @@
 
 
 
+
+
 \newcounter{todocounter}
 \newcommand{\bokem}[2][]
 {\stepcounter{todocounter}\todo[#1]{\thetodocounter: #2}}
@@ -211,6 +213,8 @@
 
 %%\renewcommand{\shortglossaryname}{Slovník}
 
+\newcommand{\lnb}{\linebreak}
+\newcommand{\nlb}{\linebreak}
 
 
 \usepackage{pdfpages}
@@ -262,9 +266,9 @@ Vydalo Nakladatelství AMU: \\
 
 
 \oddilN{Poděkování}
-Zde bych rád poděkoval všem lidem, kteří se podíleli na vzniku této publikace.
+Rád bych poděkoval všem lidem, kteří se podíleli na vzniku této publikace.
 
-Nejprve děkuji Tomáši Pospiszylovi, vedoucímu této práce, za neúnavný dohled nad podobou následujícího textu.  Velmi rád bych poděkoval Miloši Vojtěchovskému za oponenturu práce, Andree Slovákové a Zdeňku \\Holému za konzultace a pomoc při vydávání publikace. Rovněž bych rád také poděkoval Janě Křížové a Olze Stehlíkové za jejich korektorskou práci a usměrnění příručky do mezí čitelnosti.
+Nejprve děkuji Tomáši Pospiszylovi, vedoucímu této práce, za neúnavný dohled nad podobou následujícího textu.  Velmi rád bych poděkoval Miloši Vojtěchovskému za oponenturu práce, Andree Slovákové a Zdeňku \\Holému za konzultace a pomoc při vydávání publikace. Rovněž bych rád poděkoval Janě Křížové a Olze Stehlíkové za jejich korektorskou práci a usměrnění příručky do mezí čitelnosti.
 
 
 \vspace{5em}
@@ -279,14 +283,16 @@ Nejprve děkuji Tomáši Pospiszylovi, vedoucímu této práce, za neúnavný do
 
 \oddilN{Abstrakt}
 
-Příručka {\em Processing Beta} je základním úvodem do jazyka {\em Processing}, ten byl navržen v akademických dílnách {\em Massachusetts Institute of Technology} k snazšímu a co možná nejsvobodnějšímu přístupu tvůrců -- obecně vzato -- všech netechnických oborů k pokročilým technologiím. Základ pro tuto příručku vznikl při sérii otevřených dílen o programování vedených \\Kryštofem Peškem na pražské FAMU.
+Příručka {\em Processing Beta} je základním úvodem do jazyka {\em Processing}, ten byl navržen v akademických dílnách {\em Massachusetts Institute of Technology} k snazšímu a co možná nejsvobodnějšímu přístupu tvůrců -- obecně \lnb vza\-to -- všech netechnických oborů k pokročilým technologiím. Základ pro tuto příručku vznikl při sérii otevřených dílen o programování vedených Kryštofem Peškem na pražské FAMU.
 
-Publikace vychází v tištěné podobě v době, kdy vývoj programovacího prostředí {\em Processing} opouští vývojovou fázi 1.0 a přibližuje se k fázi 2.0. Problematika, kterou se tento průvodce dotýká je natolik základní, že se vztahuje na obě verze {\em Processingu}. Název příručky {\em Beta} by tedy měl co nejobecněji shrnovat základy všech dostupných verzí do dnešních dnů. 
+Publikace vychází v tištěné podobě v době, kdy vývoj programovacího prostředí {\em Processing} opouští vývojovou fázi 1.0 a přibližuje se k fázi 2.0. Problematika, které se tento průvodce dotýká, je natolik základní, že se \lnb vztahuje na obě verze {\em Processingu}. Název příručky {\em Beta} by tedy měl co nejobecněji shrnovat základy všech dostupných verzí do dnešních dnů. 
 
-Podobné příručky v posledních letech vznikly pouze v anglickém jazyce např. Casey Reas a Ben Fry: {\em A programming handbook for designers and artist} (2007), Ira Greenberg: {\em Processing Creative Coding and Computational Art}  (2007), Daniel Shiffman: {\em Learning Processing: A Beginner's Guide to Programming Images, Animation, and Interaction}  (2008), Tom Igoe: {\em Making Thinks Talk: Practical Methods for Connecting Physical Objects} (2007). V českém jazyce žádná podobná kniha doposud nevyšla. Příručka by měla přiblížit, ve shodě s původním smyslem {\em Processingu}, technologie i netechnicky zaměřeným oborům, hlavně pak studentům výtvarných škol bez předešlé zkušenosti -- nebo jen s malou praxí s programováním.
+Podobné příručky v posledních letech vznikly pouze v anglickém jazyce, např. Casey Reas a Ben Fry: {\em A Programming Handbook for Designers and Visual Artists} (2007), Ira Greenberg: {\em Processing Creative Coding and \lnb Computational Art}  (2007), Daniel Shiffman: {\em Learning Processing: A Begin\-ner's Guide to Programming Images, Animation, and Interaction}  (2008), Tom Igoe: {\em Making Thinks Talk: Practical Methods for Connecting Physical Objects} (2007). V českém jazyce žádná podobná kniha doposud nevyšla.
+
+Příručka by měla přiblížit, ve shodě s původním smyslem {\em Processingu}, technologie i netechnicky zaměřeným oborům, hlavně pak studentům výtvarných škol bez předešlé zkušenosti -- nebo jen s malou praxí s programováním.
 
 
-Publikace byla zpracována jako diplomová práce studijního oboru \\Centra audiovizuálních studií na pražské FAMU a vznikla za podpory \\grantu {\em SGS AMU} (2011 - 2012). 
+Publikace byla zpracována jako diplomová práce studijního oboru \lnb Centra audiovizuálních studií na pražské FAMU a vznikla za podpory \lnb grantu {\em SGS AMU} (2011 - 2012). 
 
 
 
@@ -333,7 +339,7 @@ Stroj je rychlý nástroj pro ověření vaší intuice a je zapotřebí být po
 
 Není-li tento programovací jazyk vaším prvním, prosím vás o trpělivost ohledně podrobností, do kterých v úvodu této knihy zabíhám. Šíře znalostí, které se mohou vyskytovat u potenciálních čtenářů tohoto průvodce, je pro autora první velkou neznámou.
 
-V obou případech prosím o shovívavost ve způsobu popisu programovacího jazyka a prostředí {\em Processingu}. Sám jako samouk a člověk zaměřený zejména výtvarným směrem nemohu zaručit absolutní, stoprocentní \\ a všeobecnou platnost všech tvrzení. Tímto vás tedy žádám o věcné podněty pro pozdější doplnění nebo přeformulování jednotlivých tezí.
+V obou případech prosím o shovívavost ve způsobu popisu programovacího jazyka a prostředí {\em Processingu}. Sám jako samouk a člověk zaměřený zejména výtvarným směrem nemohu zaručit absolutní, stoprocentní \lnb a všeobecnou platnost všech tvrzení. Tímto vás tedy žádám o věcné podněty pro pozdější doplnění nebo přeformulování jednotlivých tezí.
 
 Má snaha provést začínající i středně pokročilé uživatele programovacím jazykem bude vždy nedostatečná, berte tuto knihu, prosím, spíše jako průvodce nesnadnými začátky. Čtete-li knihu z jiných důvodů, než abyste se naučili programovacímu jazyku, pokusím se text proložit poznatky nabytými moji několikaletou zkušeností se sdílením života se stroji. Dostala-li se vám tato publikace do rukou jinou cestou, nebo dokonce náhodou či omylem, tedy věru netuším, co v ní dále najdete, a proto bych i vás rád pobídl alespoň k začtení se do světa skriptů a kódů.
 
