@@ -33,7 +33,7 @@
 % headers FANCY ))
 \renewcommand{\subsubsectionmark}[1]{\markright{\thesubsubsection\ #1}}
 
-\lhead[\thepage]{\rightmark}
+\lhead[\thepage]{}
 \rhead[]{\thepage}
 \cfoot{}
 
@@ -233,8 +233,8 @@
 
 \pagestyle{empty}
 \input{slovnik.tex}
-\makeglossary
-\makeglossaries
+\makeglossary\thispagestyle{empty}
+\makeglossaries\thispagestyle{empty}
 
 
 \newpage
@@ -307,9 +307,10 @@ Publikace byla zpracována jako diplomová práce studijního oboru \lnb Centra 
 
 \index{obsah}
 
-\tableofcontents
+\tableofcontents\thispagestyle{empty}
 
 \pagestyle{empty}
+
 
 \vfill
 \chapter{O knize}
@@ -3653,10 +3654,10 @@ Aktualizovanou podobu tohoto průvodce můžete najít v elektronické verzi rep
 {\em Kryštof Pešek, 12. května 2012}
 \end{flushright}
 
-\printglossaries
+\printglossaries\thispagestyle{empty}
 
 %\printglossaries
-\printindex
+\printindex\thispagestyle{empty}
 
 
 %\printindex
