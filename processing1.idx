@@ -361,7 +361,6 @@
 \indexentry{loadImage()|hyperpage}{140}
 \indexentry{tint()|hyperpage}{140}
 \indexentry{imageMode()|hyperpage}{140}
-\indexentry{GNU / GPL|hyperpage}{140}
 \indexentry{keyPressed()|hyperpage}{140}
 \indexentry{key|hyperpage}{140}
 \indexentry{keyPressed()|hyperpage}{141}
@@ -369,6 +368,7 @@
 \indexentry{PImage|hyperpage}{141}
 \indexentry{String|hyperpage}{141}
 \indexentry{frameCount|hyperpage}{141}
+\indexentry{GNU / GPL|hyperpage}{142}
 \indexentry{mouseButton|hyperpage}{142}
 \indexentry{noStroke()|hyperpage}{142}
 \indexentry{smooth()|hyperpage}{143}
@@ -379,7 +379,7 @@
 \indexentry{loadImage()|hyperpage}{143}
 \indexentry{stroke()|hyperpage}{143}
 \indexentry{pushMatrix()|hyperpage}{143}
-\indexentry{print()|hyperpage}{143}
+\indexentry{print()|hyperpage}{144}
 \indexentry{rotate()|hyperpage}{144}
 \indexentry{translate()|hyperpage}{144}
 \indexentry{scale()|hyperpage}{144}
@@ -387,13 +387,13 @@
 \indexentry{stroke()|hyperpage}{144}
 \indexentry{fill()|hyperpage}{144}
 \indexentry{rectMode()|hyperpage}{144}
-\indexentry{rect()|hyperpage}{144}
-\indexentry{rect()|hyperpage}{144}
+\indexentry{rect()|hyperpage}{145}
+\indexentry{rect()|hyperpage}{145}
 \indexentry{save()|hyperpage}{145}
-\indexentry{String|hyperpage}{145}
-\indexentry{String|hyperpage}{145}
-\indexentry{sphereDetail()|hyperpage}{146}
+\indexentry{String|hyperpage}{146}
+\indexentry{String|hyperpage}{146}
+\indexentry{sphereDetail()|hyperpage}{147}
 \indexentry{float|hyperpage}{147}
-\indexentry{noTint()|hyperpage}{147}
+\indexentry{noTint()|hyperpage}{148}
 \indexentry{beginShape()|hyperpage}{148}
 \indexentry{endShape()|hyperpage}{148}
