@@ -33,6 +33,9 @@
 % headers FANCY ))
 \renewcommand{\subsubsectionmark}[1]{\markright{\thesubsubsection\ #1}}
 
+\newcommand{\poznamka}[1]{\footnote{\/ #1}}
+
+
 \lhead[\thepage]{}
 \rhead[]{\thepage}
 \cfoot{}
@@ -235,6 +238,11 @@
 \input{slovnik.tex}
 \makeglossary\thispagestyle{empty}
 \makeglossaries\thispagestyle{empty}
+
+% footnote formatting
+%\setlength{\skip\footins}{1cm}
+
+
 
 
 \newpage
@@ -600,7 +608,7 @@ Snaha o zpřístupnění programování širší veřejnosti dala již na konci 
 
 Zjednodušit programování je odpověď na situaci, kdy programovací jazyky vytvářeli především lidé se zvláštním nadáním pro ryze technické uvažování. Pro technické myšlení nemá každý člověk správné predispozice. Programování v současnosti znamená zejména určitý stupeň svobody při komunikaci se strojem.
 
-K míře svobody, která má své silné kritiky\footnote{Včetně mne samotného}, se nyní nechci vyjadřovat, ale zjednodušeně z pohledu pouhého uživatele, který používá daný nástroj, schopnost programovat činí z uživatele již potenciálního tvůrce vlastních nástrojů.
+K míře svobody, která má své silné kritiky\poznamka{Včetně mne samotného}, se nyní nechci vyjadřovat, ale zjednodušeně z pohledu pouhého uživatele, který používá daný nástroj, schopnost programovat činí z uživatele již potenciálního tvůrce vlastních nástrojů.
 
 Hovořím-li o stroji, mám na mysli spotřební počítač. Termín \slovnik{stroj} po\-užívám záměrně pro zdůraznění jisté formy strojového přemýšlení v historickém kontextu.
 
@@ -720,7 +728,7 @@ Proces poznávání struktur jazyka při tvorbě obrazu prostřednictvím {\em P
 \chapter{Processing jako prostředí}
 
 
-{\em Processing} představuje ucelené programovací prostředí, tzv. PDE\footnote{Processing Development Enviroment.}. Jedná se o kompletní prostředí určené především k rychlému vývoji aplikací. Samotný program je jednak otevřeným softwarem\footnote{Tedy s otevřeným veřejně dostupným zdrojovým kódem.}, jednak je zdarma ke stažení pro všechny majoritní platformy. {\em Processing} je k dispozici pro \slovnik{GNU / Linux}, Mac OS i pro Microsoft Windows na stránkách projektu {\em processing.org}. {\em Processing} je teoreticky možné spustit v jakémkoli prostředí umožňujícím chod virtuálního stroje {\em Javy}. Celý jazyk i samotné PDE vychází pod licencí \slovnik{GNU / GPL}, jedná se tedy o svobodný software \odkaz{Otevřenost softwaru}. 
+{\em Processing} představuje ucelené programovací prostředí, tzv. PDE\poznamka{Processing Development Enviroment.}. Jedná se o kompletní prostředí určené především k rychlému vývoji aplikací. Samotný program je jednak otevřeným softwarem\poznamka{Tedy s otevřeným veřejně dostupným zdrojovým kódem.}, jednak je zdarma ke stažení pro všechny majoritní platformy. {\em Processing} je k dispozici pro \slovnik{GNU / Linux}, Mac OS i pro Microsoft Windows na stránkách projektu {\em processing.org}. {\em Processing} je teoreticky možné spustit v jakémkoli prostředí umožňujícím chod virtuálního stroje {\em Javy}. Celý jazyk i samotné PDE vychází pod licencí \slovnik{GNU / GPL}, jedná se tedy o svobodný software \odkaz{Otevřenost softwaru}. 
 
 \oddil{Základní prostředí}
 
@@ -742,7 +750,7 @@ Processingová sketch nemusí být nutně uložena, abyste ji mohli spustit. Nov
 
 Mezi základní operace patří vytvoření nové sketche {\em (3)}, otevření předešlé {\em (4)}, uložení {\em (5)} a export programu do webového appletu {\em (6)}.
 
-Tlačítka mají dále speciální vlastnosti s podržením tlačítka: tlačítko s novou sketchí otevře také nové okno editoru. V kombinaci s načtením předchozí sketche {\em (4)} otevřete též sketch v novém editoru, aniž byste ztratili předchozí okno. U uložení se modifikace projevuje funkcí {\em uložit jako}. Při exportu přepínáte stisknutím klávesy \klavesy{SHIFT} mezi exportem samostatné aplikace nebo appletu\footnote{Pouze ve verzi 1.x, {\em Processing 2.0} již export do appletu nepodporuje.}, aplikace schopné běžet v prohlížeči nebo obecně na webových stránkách. \index{ovládání}
+Tlačítka mají dále speciální vlastnosti s podržením tlačítka: tlačítko s novou sketchí otevře také nové okno editoru. V kombinaci s načtením předchozí sketche {\em (4)} otevřete též sketch v novém editoru, aniž byste ztratili předchozí okno. U uložení se modifikace projevuje funkcí {\em uložit jako}. Při exportu přepínáte stisknutím klávesy \klavesy{SHIFT} mezi exportem samostatné aplikace nebo appletu\poznamka{Pouze ve verzi 1.x, {\em Processing 2.0} již export do appletu nepodporuje.}, aplikace schopné běžet v prohlížeči nebo obecně na webových stránkách. \index{ovládání}
 
 
 \pododdil{Sketch}
@@ -795,7 +803,7 @@ Horní lišta editoru označuje záložky, kliknutím na šipku na pravé stran�
 
 Jak můžete vidět na obrázku, editor operuje i s českými znaky, ačkoli bych je z důvodů internacionalizace neradil používat. V komentářích, \lnb tj. textem uvozeným dvěma dopřednými lomítky \uv{//}, což je text, který kompiler ignoruje, jsou diakritická znaménka přípustná.
 
-Naopak v případě názvu proměnných nebo jakýchkoli funkčních definic je použití diakritiky nepřípustné.\footnote{Standardní jazykové kódování, ve kterém {\em Processing} operuje, je {\em UTF-8}.}
+Naopak v případě názvu proměnných nebo jakýchkoli funkčních definic je použití diakritiky nepřípustné.\poznamka{Standardní jazykové kódování, ve kterém {\em Processing} operuje, je {\em UTF-8}.}
 
 
 \oddil{Klávesové zkratky}
@@ -810,7 +818,7 @@ Naopak v případě názvu proměnných nebo jakýchkoli funkčních definic je 
 \item[\klavesy{CTRL + s}] uloží projekt na disk
 \item[\klavesy{CTRL + SHIFT + s}] uložit jako
 
-\item[\klavesy{CTRL + e}] export jako webový applet\footnote{Pouze v {\em Processingu 1.0}.}, otevře exportovaný projekt
+\item[\klavesy{CTRL + e}] export jako webový applet\poznamka{Pouze v {\em Processingu 1.0}.}, otevře exportovaný projekt
 \item[\klavesy{CTRL + SHIFT + e}] export jako aplikace, zobrazí okno s výběrem platforem pro export
 
 \end{itemize}
@@ -827,9 +835,9 @@ Koncentrace při psaní programu je specifická dovednost, kterou se začátečn
 
 
 
-V problematice programování obecně platí, že není nic složitějšího než číst cizí kód, nebo dokonce kód vlastní s odstupem času. Při programování se lidská mysl dostává do stavu mimořádné bdělosti a koncentrace. Tento stav je často popisován programátory jako tzv. \slovnik{flow}. Jedná se o stav, ve kterém mysl vědomě udržuje celý program\footnote{Nebo větší části programu.} v paměti.
+V problematice programování obecně platí, že není nic složitějšího než číst cizí kód, nebo dokonce kód vlastní s odstupem času. Při programování se lidská mysl dostává do stavu mimořádné bdělosti a koncentrace. Tento stav je často popisován programátory jako tzv. \slovnik{flow}. Jedná se o stav, ve kterém mysl vědomě udržuje celý program\poznamka{Nebo větší části programu.} v paměti.
 
-Pokaždé, když si programátor takový stav přivodí, vše v kódu\footnote{Podle míry ovládnutí programovacího jazyka.} se pro něj jeví srozumitelné. Formátování a standardy velmi napomáhají k rychlému navození bdělého stavu, protože samy o sobě jsou jistou formou jazyka.
+Pokaždé, když si programátor takový stav přivodí, vše v kódu\poznamka{Podle míry ovládnutí programovacího jazyka.} se pro něj jeví srozumitelné. Formátování a standardy velmi napomáhají k rychlému navození bdělého stavu, protože samy o sobě jsou jistou formou jazyka.
 
 \oddil{Základní pravidla a zvyklosti}
 
@@ -1011,7 +1019,7 @@ Nyní si ukážeme, co s již definovanými proměnnými můžeme dělat. Jednot
 
 \item{{\em Integer} a {\em float} neboli čísla: {\em int} a {\em float}}
 
-První proměnná {\em mojeCeleCislo}, které byla přiřazena hodnota {\em 1}, je takzvaný {\em Integer}, tedy celé číslo. Tento typ může mít hodnotu\footnote{Na 32bitových strojích.} v~rozsahu -$2147483648$ až $2147483647$. V rozmezí těchto hodnot můžeme provádět různé matematické operace s čísly:
+První proměnná {\em mojeCeleCislo}, které byla přiřazena hodnota {\em 1}, je takzvaný {\em Integer}, tedy celé číslo. Tento typ může mít hodnotu\poznamka{Na 32bitových strojích.} v~rozsahu -$2147483648$ až $2147483647$. V rozmezí těchto hodnot můžeme provádět různé matematické operace s čísly:
 
 \begin{lstlisting}
 int prvniCislo = 1;
@@ -1306,7 +1314,7 @@ výsledné zobrazení na naší pomyslné ploše bude zhruba následující:
 \end{center}
 
 
-Zamyslíme-li se kupříkladu nad tím, že bychom v jakémkoli jiném nástroji chtěli zobrazit vícero, například tisíc obdélníků, na první pohled jednodušší GUI \footnote{Zkratka pro Guided User Interface klasické grafické editory jako Gimp nebo Photoshop.} grafické editory nám nedovolí tuto operaci učinit jinak, než že musíme všech tisíc obdélníků nakreslit. V případě {\em Processingu} nám bude stačit vytvořit rutinu pro kreslení libovolného počtu obdélníků a pak tuto rutinu spustit.
+Zamyslíme-li se kupříkladu nad tím, že bychom v jakémkoli jiném nástroji chtěli zobrazit vícero, například tisíc obdélníků, na první pohled jednodušší GUI \poznamka{Zkratka pro Guided User Interface klasické grafické editory jako Gimp nebo Photoshop.} grafické editory nám nedovolí tuto operaci učinit jinak, než že musíme všech tisíc obdélníků nakreslit. V případě {\em Processingu} nám bude stačit vytvořit rutinu pro kreslení libovolného počtu obdélníků a pak tuto rutinu spustit.
 
 Zde se již dostáváme k samotnému jádru processingového přemýšlení. Programování obecně dokáže velmi ulehčit operace, jejichž pravidelnost dovedeme popsat. Veškeré umění psaní programu tedy spočívá v definicích těchto chování a redukci složitých jevů na jednoduché rovnice.
 
@@ -1335,7 +1343,7 @@ Nyní zpět k hodnotám. Máme-li již jakékoli hodnoty v paměti programu, mů
 
 Jak zobrazit hodnoty, které uchovává program v paměti? Jakoukoli hodnotu lze použít například jako jeden z vstupů (tzv. argumentů) v kreslicích funkcích.
 
-Již zmiňovaný \vyraz{rect()}, tedy rectangle -- obdélník, vyžaduje k svému úspěšnému vykreslení čtyři parametry, čtyři číselné hodnoty\footnote{Zde nezáleží, jestli se jedná o celé číslo {\em (int)} nebo číslo s desetinnou čárkou {\em (float)}.}. Tyto parametry, hodnoty, můžeme buď zadat jako přímé číselné hodnoty, nebo do těchto parametrů můžeme zadat naši proměnnou, která obsahuje číslo.
+Již zmiňovaný \vyraz{rect()}, tedy rectangle -- obdélník, vyžaduje k svému úspěšnému vykreslení čtyři parametry, čtyři číselné hodnoty\poznamka{Zde nezáleží, jestli se jedná o celé číslo {\em (int)} nebo číslo s desetinnou čárkou {\em (float)}.}. Tyto parametry, hodnoty, můžeme buď zadat jako přímé číselné hodnoty, nebo do těchto parametrů můžeme zadat naši proměnnou, která obsahuje číslo.
 
 Názorně:
 
@@ -1494,7 +1502,7 @@ Pod hodnotou si lze například představit pevně stanovenou hodnotu, dejme tom
 
 Statická kresba na plátno je jen jeden z možných výstupů. Animace v {\em Processingu} znamená, jak jsme si ukázali v předchozím příkladě, překreslovat plátno pokaždé jinými obrazy. Nyní si ukážeme základní pojetí tvorby \lnb pohyblivého obrazu.
 
-Jak jsme si již uvedli dříve \odkaz{Základní struktura programu} funkce \vyraz{draw()} je pouze prostředek pro změnu, nepřináší změnu sama o~sobě. Funkce \vyraz{draw()} zajišťuje sousledné vyvolání příkazů v neustálém  trvání\footnote{Po dobu běhu programu.}. V {\em Processingu} si v podstatě uvědomíme, že psaním příkazů do smyčky píšeme pravidla jakoby pro jedno okénko filmu. Pohyb je vždy zajištěn proměnou našich datatypů \odkaz{Základní datatypy}, které, v~tomto okénku figurují.
+Jak jsme si již uvedli dříve \odkaz{Základní struktura programu} funkce \vyraz{draw()} je pouze prostředek pro změnu, nepřináší změnu sama o~sobě. Funkce \vyraz{draw()} zajišťuje sousledné vyvolání příkazů v neustálém  trvání\poznamka{Po dobu běhu programu.}. V {\em Processingu} si v podstatě uvědomíme, že psaním příkazů do smyčky píšeme pravidla jakoby pro jedno okénko filmu. Pohyb je vždy zajištěn proměnou našich datatypů \odkaz{Základní datatypy}, které, v~tomto okénku figurují.
 
 Tedy například napíšeme-li takto samotnou smyčku:
 
@@ -1540,7 +1548,7 @@ Výsledkem tohoto zápisu bude opět animace. Čtverec se bude pohybovat rychlos
 
 Počet okének vykreslovaných za vteřinu můžeme ovlivnit pomocí \lnb funkce \vyraz{frameRate()} vložené do funkce \vyraz{setup()}.
 
-Tento pohyb je velmi názorný, ukazuje, že hodnotu počtu vykreslených okének lze použít například i jako hodnotu pro animaci. Stejně tak si můžeme založit i vlastní proměnnou, která bude mít identickou funkci.\footnote{V tomto konkrétním příkladu to sice nedává smysl, dá se použít stejně tak standardní proměnná \vyraz{frameCount}, ukázka je zde jen pro ilustraci možností využití proměnných.}
+Tento pohyb je velmi názorný, ukazuje, že hodnotu počtu vykreslených okének lze použít například i jako hodnotu pro animaci. Stejně tak si můžeme založit i vlastní proměnnou, která bude mít identickou funkci.\poznamka{V tomto konkrétním příkladu to sice nedává smysl, dá se použít stejně tak standardní proměnná \vyraz{frameCount}, ukázka je zde jen pro ilustraci možností využití proměnných.}
 
 \pagebreak
 
@@ -1843,7 +1851,7 @@ background( a ? 0 : 255 );
 
 \oddil{Interakce}
 
-\Slovnik{interakce} se dá obecně definovat jako vzájemné působení. V počítačové terminologii se má nejčastěji na mysli vzájemné působení člověka a stroje. Přímá interakce, která znamená vzájemné působení dvou prvků, předpokládá rozměr času\footnote{Tedy program trvající v čase.}. Takový rozměr trvání programu v čase umožňuje uživateli přímý vstup do proměnných, tedy do obsahu našich hodnot.
+\Slovnik{interakce} se dá obecně definovat jako vzájemné působení. V počítačové terminologii se má nejčastěji na mysli vzájemné působení člověka a stroje. Přímá interakce, která znamená vzájemné působení dvou prvků, předpokládá rozměr času\poznamka{Tedy program trvající v čase.}. Takový rozměr trvání programu v čase umožňuje uživateli přímý vstup do proměnných, tedy do obsahu našich hodnot.
 
 Je dobré si uvědomit, že \slovnik{interakce} je do jisté míry při práci s počítačem pozorovatelná neustále. Pouhý pohyb myši lze považovat za interakci člověka se strojem. Pohyb uživatele přímo proměňuje hodnoty vykreslující pozici kurzoru, stiskem klávesy v textovém editoru píšeme text atp.
 
@@ -2562,7 +2570,7 @@ class Entita {
 
 Definice je až na pár výjimek opakováním známého. První novinka je možnost definovat více proměnných stejného typu na jeden řádek. Je to pouze úspornější.
 
- Dále přichází ony dva konstruktory. Oba se jmenují stejně, mají ovšem rozdílný počet vstupních argumentů, a tím se odlišují. Při tvorbě naší nové {\em entity} jako živého objektu ji můžeme vytvořit oběma způsoby. V~druhém konstruktoru jsem použil příkaz \vyraz{random()}, ten zatím neznáme, více se o něm můžete dočíst v další kapitole o náhodě. V podstatě nám tento příkaz umožňuje vygenerovat náhodné číslo\footnote{Správně tedy pseudonáhodné číslo.}. To se nám nyní bude hodit: chceme, aby každá z entit, kterou vytvoříme, měla vlastní způsob chování.
+ Dále přichází ony dva konstruktory. Oba se jmenují stejně, mají ovšem rozdílný počet vstupních argumentů, a tím se odlišují. Při tvorbě naší nové {\em entity} jako živého objektu ji můžeme vytvořit oběma způsoby. V~druhém konstruktoru jsem použil příkaz \vyraz{random()}, ten zatím neznáme, více se o něm můžete dočíst v další kapitole o náhodě. V podstatě nám tento příkaz umožňuje vygenerovat náhodné číslo\poznamka{Správně tedy pseudonáhodné číslo.}. To se nám nyní bude hodit: chceme, aby každá z entit, kterou vytvoříme, měla vlastní způsob chování.
  
 Funkce {\em kresli()} pouze zobrazí na konkrétních souřadnicích každé {\em entity} elipsu. Stejně tak bychom zde mohli kreslit jakoukoli jinou obrazovou reprezentaci našeho objektu. Tvar ponechám na vaší fantazii.
  
@@ -2687,7 +2695,7 @@ Pohyb obrazce bude nyní probíhat plynule ve zdánlivě nepředpovídatelných 
 
 \oddil{Renderovací mody}
 
-Doposud jsme pracovali pouze s jednou metodou zobrazení. Standardně je {\em Processing} nastaven do dvourozměrného modu vykreslování, který se nazývá {\em JAVA2D}. Tento mod bude nastaven vždy, nezvolíte-li jiný mód. Další varianty jsou následující\footnote{{\em Processing 2.0} přichází se značně pozměněným renderovacím enginem, varianty renderů {\em P2D} a {\em P3D} vzhledem ke zpětné kompatibilitě fungují, vnitřně je ovšem kompletně nahrazuje render {\em OPENGL}.}:
+Doposud jsme pracovali pouze s jednou metodou zobrazení. Standardně je {\em Processing} nastaven do dvourozměrného modu vykreslování, který se nazývá {\em JAVA2D}. Tento mod bude nastaven vždy, nezvolíte-li jiný mód. Další varianty jsou následující\poznamka{{\em Processing 2.0} přichází se značně pozměněným renderovacím enginem, varianty renderů {\em P2D} a {\em P3D} vzhledem ke zpětné kompatibilitě fungují, vnitřně je ovšem kompletně nahrazuje render {\em OPENGL}.}:
 
 \begin{itemize}
 \item[{\em JAVA2D}] Základní renderovací engine, který jsme používali doposud. Tento render podporuje dvoudimenzionální kresbu  a vyznačuje se dobrou kvalitou a precizností obrazu. Je obecně pomalejší než akcelerované rendery.
@@ -2696,7 +2704,7 @@ Doposud jsme pracovali pouze s jednou metodou zobrazení. Standardně je {\em Pr
 
 \item[{\em P3D}]({\em Processing 3D}) -- Akcelerovaný 3D render, používaný zejména pro webové aplikace. Přesnost je opět menší než u standardního renderu, dominuje rychlost.
 
-\item[{\em OPENGL}] Rychlý 3D render využívající systém {\em OpenGL} pro grafické karty. {\em OpenGL} se hodí k vykreslování velkého množství objektů v relativně dobré kvalitě. Kvalita a hlavně rychlost velmi závisí na hardwaru.\footnote{Ve verzi 1.0 render vyžaduje \vyraz{import} knihovny \odkaz{Knihovny}.}
+\item[{\em OPENGL}] Rychlý 3D render využívající systém {\em OpenGL} pro grafické karty. {\em OpenGL} se hodí k vykreslování velkého množství objektů v relativně dobré kvalitě. Kvalita a hlavně rychlost velmi závisí na hardwaru.\poznamka{Ve verzi 1.0 render vyžaduje \vyraz{import} knihovny \odkaz{Knihovny}.}
 \end{itemize}
 
 Použití jednotlivých vykreslovacích prostředí lze provést ve funkci \vyraz{setup()} pomocí příkazu \vyraz{size()}:
@@ -2817,7 +2825,7 @@ Zde si musíme uvědomit, že konstrukce objektu po nás bude vyžadovat veliké
 
 Metod, jak konstruovat 3D objekt, je mnoho a rozhodně by toto téma vystačilo na celého průvodce. Nyní nám postačí vědět, že je možné konstruovat i složitější tvary.
 
-Další možností k tvorbě modelů je využít jiných programů (jako například otevřený software {\em Blender}) a následně pomocí rozšíření importovat externí modely přímo do {\em Processingu}\footnote{K tomu lze použít externí knihovnu {\em ObjLoader} v {\em Processingu 1.x} anebo vestavěnou proměnnou {\em PShape} v {\em Processingu 2.x}.} \odkaz{Knihovny}.
+Další možností k tvorbě modelů je využít jiných programů (jako například otevřený software {\em Blender}) a následně pomocí rozšíření importovat externí modely přímo do {\em Processingu}\poznamka{K tomu lze použít externí knihovnu {\em ObjLoader} v {\em Processingu 1.x} anebo vestavěnou proměnnou {\em PShape} v {\em Processingu 2.x}.} \odkaz{Knihovny}.
 
 
 
@@ -3271,7 +3279,7 @@ nyní napsat jednoduše:
 PImage obrazek = loadImage("obrazek.jpg");
 \end{lstlisting}
 
-Načítání obrázků provádíme zpravidla ve funkci \vyraz{setup()}. Tedy obrázek potřebujeme načíst pouze jednou za celý běh programu, a jelikož se jedná \\o poměrně náročnou operaci, je dobré ji v průběhu neopakovat příliš často.\footnote{Jako například každé okénko animace, což je velmi obvyklá začátečnická chyba.}
+Načítání obrázků provádíme zpravidla ve funkci \vyraz{setup()}. Tedy obrázek potřebujeme načíst pouze jednou za celý běh programu, a jelikož se jedná \\o poměrně náročnou operaci, je dobré ji v průběhu neopakovat příliš často.\poznamka{Jako například každé okénko animace, což je velmi obvyklá začátečnická chyba.}
 
 Správné načítání obrázku do paměti a následné vykreslení bude vypadat takto:
 
@@ -3478,7 +3486,7 @@ Za povšimnutí zde stojí konstrukce linky \vyraz{line()}, která vždy spojuje
 \pododdil{Vestavěné knihovny}
 \index{vestavěné knihovny}
 
-Ve {\em sketchbooku} se dále nacházejí\footnote{Od verze 1.0.} veškerá rozšíření pomocí takzvaných knihoven neboli libraries. Ty jsou umístěny v adresáři {\em sketchbooku} ve~složce {\em libraries}. Knihovny jsou silným rozšířením celého jazyka a pokrývají \lnb mnoho možností nakládání s externími daty, zajišťují komunikaci se zařízeními, práci s videem, zvukem nebo s trojrozměrnými daty či vektorovým obrazem.
+Ve {\em sketchbooku} se dále nacházejí\poznamka{Od verze 1.0.} veškerá rozšíření pomocí takzvaných knihoven neboli libraries. Ty jsou umístěny v adresáři {\em sketchbooku} ve~složce {\em libraries}. Knihovny jsou silným rozšířením celého jazyka a pokrývají \lnb mnoho možností nakládání s externími daty, zajišťují komunikaci se zařízeními, práci s videem, zvukem nebo s trojrozměrnými daty či vektorovým obrazem.
 
 
 Knihovny jsou v podstatě moduly, které se zaměřují většinou pouze na jednu problematiku. Některé moduly umí například komunikovat se zapojenou kamerou nebo videem, jiné dovedou přenášet informace přes síť anebo komunikovat se zařízeními napojenými přes sériový port. Knihovna je sada příkazů, jež rozšiřuje samotný jazyk o nové možnosti.
