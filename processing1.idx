@@ -235,6 +235,8 @@
 \indexentry{line()|hyperpage}{103}
 \indexentry{sphereDetail()|hyperpage}{103}
 \indexentry{sphereDetail()|hyperpage}{103}
+\indexentry{fill()|hyperpage}{104}
+\indexentry{stroke()|hyperpage}{104}
 \indexentry{vertex()|hyperpage}{104}
 \indexentry{beginShape()|hyperpage}{104}
 \indexentry{endShape()|hyperpage}{104}
@@ -245,21 +247,21 @@
 \indexentry{translate()|hyperpage}{106}
 \indexentry{pushMatrix()|hyperpage}{107}
 \indexentry{popMatrix()|hyperpage}{107}
+\indexentry{rotate()|hyperpage}{107}
+\indexentry{radians()|hyperpage}{107}
+\indexentry{degrees()|hyperpage}{107}
+\indexentry{translate()|hyperpage}{108}
 \indexentry{rotate()|hyperpage}{108}
-\indexentry{radians()|hyperpage}{108}
-\indexentry{degrees()|hyperpage}{108}
-\indexentry{translate()|hyperpage}{109}
-\indexentry{rotate()|hyperpage}{109}
-\indexentry{rotateX()|hyperpage}{109}
-\indexentry{rotateY()|hyperpage}{109}
-\indexentry{rotateZ()|hyperpage}{109}
-\indexentry{Použití transformací|hyperpage}{109}
-\indexentry{setup()|hyperpage}{110}
-\indexentry{smooth()|hyperpage}{110}
-\indexentry{smooth()|hyperpage}{110}
-\indexentry{noSmooth()|hyperpage}{110}
-\indexentry{strokeWeight()|hyperpage}{110}
-\indexentry{stroke()|hyperpage}{110}
+\indexentry{rotateX()|hyperpage}{108}
+\indexentry{rotateY()|hyperpage}{108}
+\indexentry{rotateZ()|hyperpage}{108}
+\indexentry{Použití transformací|hyperpage}{108}
+\indexentry{setup()|hyperpage}{109}
+\indexentry{smooth()|hyperpage}{109}
+\indexentry{smooth()|hyperpage}{109}
+\indexentry{noSmooth()|hyperpage}{109}
+\indexentry{strokeWeight()|hyperpage}{109}
+\indexentry{stroke()|hyperpage}{109}
 \indexentry{atan2()|hyperpage}{110}
 \indexentry{cos()|hyperpage}{110}
 \indexentry{sin()|hyperpage}{110}
