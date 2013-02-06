@@ -299,12 +299,12 @@ Příručka {\em Processing Beta} je základním úvodem do jazyka {\em Processi
 
 Publikace vychází v tištěné podobě v době, kdy vývoj programovacího prostředí {\em Processing} opouští vývojovou fázi 1.0 a přibližuje se k fázi 2.0. Problematika, které se tento průvodce dotýká, je natolik základní, že se \lnb vztahuje na obě verze {\em Processingu}. Název příručky {\em Beta} by tedy měl co nejobecněji shrnovat základy všech dostupných verzí do dnešních dnů. 
 
-Podobné příručky v posledních letech vznikly pouze v anglickém jazyce, např. Casey Reas a Ben Fry: {\em A Programming Handbook for Visual Designers and Artists} (2007), Ira Greenberg: {\em Processing Creative Coding and \lnb Computational Art}  (2007), Daniel Shiffman: {\em Learning Processing: A Begin\-ner's Guide to Programming Images, Animation, and Interaction}  (2008), Tom Igoe: {\em Making Thinks Talk: Practical Methods for Connecting Physical Objects} (2007). V českém jazyce žádná podobná kniha doposud nevyšla.
+Podobné příručky v posledních letech vznikly pouze v anglickém jazyce, např. Casey Reas a Ben Fry: {\em A Programming Handbook for Visual Designers and Artists} (2007), Ira Greenberg: {\em Processing Creative Coding and \lnb Computational Art}  (2007), Daniel Shiffman: {\em Learning Processing: A~Be\-ginner's Guide to Programming Images, Animation, and Interaction}  (2008), Tom Igoe: {\em Making Thinks Talk: Practical Methods for Connecting Physical Objects} (2007). V českém jazyce žádná podobná kniha doposud nevyšla.
 
 Příručka by měla přiblížit, ve shodě s původním smyslem {\em Processingu}, technologie i netechnicky zaměřeným oborům, hlavně pak studentům výtvarných škol bez předešlé zkušenosti -- nebo jen s malou praxí s programováním.
 
 
-Publikace byla zpracována jako diplomová práce studijního oboru \lnb Centra audiovizuálních studií na pražské FAMU a vznikla za podpory \lnb grantu {\em SGS AMU} (2011 - 2012). 
+Publikace byla zpracována jako diplomová práce studijního oboru \lnb Centra audiovizuálních studií na pražské FAMU a vznikla za podpory \lnb grantu {\em SGS AMU} (2011 -- 2012). 
 
 
 
@@ -333,7 +333,7 @@ Publikace byla zpracována jako diplomová práce studijního oboru \lnb Centra 
 
 
 
-\oddil{Úvodem}
+\oddil{Na úvod}
 
 \pagestyle{fancyplain}
 
@@ -1579,7 +1579,7 @@ void draw(){
 
 \end{lstlisting}
 
-Definicí této hodnoty lze například časovat animace. Další metodou je animaci časovat pomocí funkce \vyraz{millis()}. Tato funkce je nezávislá na počtu vykreslených okének za vteřinu, měří počet uběhnutých milisekund od startu programu. Může se nám také hodit pro precizní časování událostí v~programu. \index{časování}
+Definicí této hodnoty lze například časovat animace. Další metodou je animaci časovat pomocí funkce \vyraz{millis()}. Tato funkce je nezávislá na počtu vykreslených okének za vteřinu, měří počet uběhnutých milisekund od startu programu. Může se nám také hodit pro precizní časování událostí v~programu.
 
 
 \pododdil{Dynamika pohybu}
@@ -2668,7 +2668,7 @@ Příkazy {\em width} a {\em height} označují šířku a výšku plátna.
 
 
 
-\pododdil{Šum}
+\pododdil{Perlinův šum}
 
 Dalším možným strůjcem pseudonáhodně generované hodnoty je takzvaný {\em Perlinův šum} ({\em Perlin noise}). {\em Perlinův šum} je pojmenovaný po svém vynálezci Kenu Perlinovi a je velmi často využíván při generování přirozeně vypadajícího náhodného pohybu. Oproti příkazu \vyraz{random()} se {\em Perlinův šum} \vyraz{noise()} odvíjí plynule. Pro ilustraci si zde můžeme ukázat rozdíl mezi {\em Perlinovým šumem} a holým pseudonáhodným číslem.
 
@@ -3426,7 +3426,7 @@ Po načtení všech hodnot se program vrací do funkce \vyraz{setup()}, odkud by
 \bublina{Ujistěte se, že dobře rozumíte rozdílu mezi textovou informací a číselnou hodnotou v~programu. Zkuste vytvořit jinou strukturu dat a poté ji sami přečíst pomocí funkce parseInt() nebo parseFloat().}
 
 
-\chapter{Vizualizace hodnot}
+\oddil{Vizualizace hodnot}
 
 Vyjdeme-li z předchozího příkladu, máme již hodnoty zpracovány ve dvou číselných polích. Cesta k jejich následné vizualizaci je již prostá. Potřebujeme smyčku, která bude procházet celé pole a nakreslí podle hodnot patřičný tvar.
 
@@ -3667,7 +3667,15 @@ Aktualizovanou podobu tohoto průvodce můžete najít v elektronické verzi rep
 {\em Kryštof Pešek, 12. května 2012}
 \end{flushright}
 
+\page
+
+
+\addcontentsline{toc}{chapter}{Slovník}}
+
 \printglossaries\thispagestyle{empty}
+
+
+\addcontentsline{toc}{chapter}{Rejstřík}}
 
 %\printglossaries
 \printindex\thispagestyle{empty}

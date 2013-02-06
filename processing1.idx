@@ -1,7 +1,7 @@
 \indexentry{Poděkování|hyperpage}{3}
 \indexentry{Abstrakt|hyperpage}{4}
 \indexentry{obsah|hyperpage}{4}
-\indexentry{Úvodem|hyperpage}{9}
+\indexentry{Na úvod|hyperpage}{9}
 \indexentry{Cíle příručky|hyperpage}{10}
 \indexentry{Uspořádání informací|hyperpage}{11}
 \indexentry{Pravidla formátování v knize|hyperpage}{12}
@@ -127,7 +127,6 @@
 \indexentry{setup()|hyperpage}{66}
 \indexentry{frameCount|hyperpage}{66}
 \indexentry{millis()|hyperpage}{67}
-\indexentry{časování|hyperpage}{67}
 \indexentry{Dynamika pohybu|hyperpage}{67}
 \indexentry{nelineární pohyb|hyperpage}{68}
 \indexentry{Podmínka|hyperpage}{68}
@@ -211,7 +210,7 @@
 \indexentry{Náhoda|hyperpage}{95}
 \indexentry{random()|hyperpage}{95}
 \indexentry{random()|hyperpage}{95}
-\indexentry{Šum|hyperpage}{96}
+\indexentry{Perlinův šum|hyperpage}{96}
 \indexentry{random()|hyperpage}{96}
 \indexentry{noise()|hyperpage}{96}
 \indexentry{noise()|hyperpage}{97}
@@ -323,6 +322,7 @@
 \indexentry{parseFloat()|hyperpage}{124}
 \indexentry{parseInt()|hyperpage}{124}
 \indexentry{setup()|hyperpage}{124}
+\indexentry{Vizualizace hodnot|hyperpage}{124}
 \indexentry{line()|hyperpage}{126}
 \indexentry{Knihovny|hyperpage}{127}
 \indexentry{Vestavěné knihovny|hyperpage}{127}
